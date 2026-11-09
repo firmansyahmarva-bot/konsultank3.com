@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Pelatihan K3 Penanggulangan Kebakaran (Kelas D, C, B, A)";
+const description = "Sertifikasi K3 kebakaran resmi Kemnaker RI sesuai Kepmenaker No. 186/MEN/1999: Petugas Peran (D), Regu (C), Koordinator (B), dan Ahli K3 Kebakaran (A).";
+const canonical = "/pelatihan-k3-kebakaran/";
+---
+
+<BaseLayout title={`${title} » Konsultan K3`} description={description} canonical={canonical}>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+      
+      <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Katalog Pelatihan</a>
+        <span>/</span>
+        <span class="text-slate-300">K3 Kebakaran</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Headline & Key Highlights -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 text-rose-400 text-xs font-semibold border border-rose-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-ping"></span>
+            Sertifikasi Resmi Kemnaker RI &bull; Kepmenaker No. 186/MEN/1999
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan K3 <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">Penanggulangan Kebakaran</span> (Kelas D, C, B, A)
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program sertifikasi kompetensi penanggulangan kebakaran di tempat kerja berlisensi Kementerian Ketenagakerjaan RI untuk membentuk unit tanggap darurat yang siap memadamkan api, mengoperasikan hydran &amp; APAR, serta menyelamatkan jiwa.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20info%20jadwal%20pelatihan%20K3%20Kebakaran%20Kelas%20D/C/B/A"
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
+            >
+              Daftar Batch Kebakaran &rarr;
+            </a>
+            <a
+              href="#modul-kebakaran"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Jenjang Kelas D / C / B / A
+            </a>
+          </div>
+
+          <!-- Quick Stats Bar -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi</span>
+              <p class="text-white font-bold text-sm">3 – 6 Hari</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Metode</span>
+              <p class="text-white font-bold text-sm">Praktik APAR &amp; Hydran</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Dokumen</span>
+              <p class="text-white font-bold text-sm">Lisensi Kemnaker Sah</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Tingkat Uji</span>
+              <p class="text-emerald-400 font-bold text-sm">Garansi 100%</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Photography Card with Floating Badges -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/fire-safety-apar.jpg"
+              alt="Praktik Lapangan Pemadaman Api APAR Pelatihan K3 Kebakaran"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-rose-500 text-white mb-2">
+                Simulasi Live Fire Fighting
+              </span>
+              <div class="text-lg font-bold">Teknik Penjinakan Api Nyata</div>
+              <p class="text-xs text-slate-300 mt-1">Latihan penggunaan tabung racun api APAR, penggelaran selang fire hydrant, dan formasi regu darurat.</p>
+            </div>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center font-bold text-lg">
+              🔥
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white">Lisensi Kebakaran Sah</div>
+              <div class="text-[10px] text-slate-400">Kepmenaker 186/1999</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">🚒</div>
+            <div>
+              <div class="text-xs font-bold text-white">Fire Emergency Response</div>
+              <div class="text-[10px] text-slate-400">Standar Evakuasi Gedung &amp; Pabrik</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Body Layout -->
+  <main class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <div class="lg:col-span-8 space-y-12">
+        <div id="modul-kebakaran" class="grid grid-cols-1 sm:grid-cols-2 gap-6 scroll-mt-24">
+          
+    <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
+      <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
+        01
+      </div>
+      <h3 class="font-serif text-2xl font-normal text-zinc-900">Petugas Peran Kebakaran (Kelas D)</h3>
+      <p class="text-zinc-600 font-light text-sm leading-relaxed">Tingkat dasar pencegahan dan pemadaman api menggunakan APAR dan evakuasi darurat penghuni gedung.</p>
+    </div>
+  
+    <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
+      <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
+        02
+      </div>
+      <h3 class="font-serif text-2xl font-normal text-zinc-900">Regu Penanggulangan Kebakaran (Kelas C)</h3>
+      <p class="text-zinc-600 font-light text-sm leading-relaxed">Operasional hidran, selang pemadam (hose), nozzle, dan pengendalian kobaran api bertekanan tinggi.</p>
+    </div>
+  
+    <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
+      <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
+        03
+      </div>
+      <h3 class="font-serif text-2xl font-normal text-zinc-900">Koordinator Unit Kebakaran (Kelas B)</h3>
+      <p class="text-zinc-600 font-light text-sm leading-relaxed">Pengorganisasian tim tanggap darurat, mitigasi risiko kebakaran fasilitas, dan komunikasi lintas komando.</p>
+    </div>
+  
+    <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
+      <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
+        04
+      </div>
+      <h3 class="font-serif text-2xl font-normal text-zinc-900">Ahli K3 Spesialis Kebakaran (Kelas A)</h3>
+      <p class="text-zinc-600 font-light text-sm leading-relaxed">Audit sistem proteksi aktif-pasif, perencanaan instalasi sprinkler otomatis, dan analisa beban api industri.</p>
+    </div>
+  
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-zinc-200/80 shadow-sm space-y-8">
+          <div class="border-b border-zinc-200 pb-6">
+            <span class="text-xs font-mono uppercase tracking-widest text-zinc-400 block mb-1">Materi Pokok</span>
+            <h2 class="font-serif text-3xl font-normal text-zinc-900">Silabus &amp; Kurikulum Pelatihan</h2>
+          </div>
+          <div class="space-y-6">
+            
+    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/60 space-y-3">
+      <h4 class="font-serif text-xl font-normal text-zinc-900">A. Teori Dasar & Regulasi (Kepmenaker 186/1999)</h4>
+      <ul class="list-disc pl-6 space-y-1.5 text-zinc-600 text-sm font-light">
+        <li>Kebijakan K3 Nasional Penanggulangan Kebakaran</li><li>Teori Segitiga Api & Klasifikasi Kelas Kebakaran (A, B, C, D)</li><li>Sistem Proteksi Pasif (Kompartemen, Pintu Tahan Api, Smoke Damper)</li>
+      </ul>
+    </div>
+  
+    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/60 space-y-3">
+      <h4 class="font-serif text-xl font-normal text-zinc-900">B. Sistem Proteksi Aktif & Instalasi</h4>
+      <ul class="list-disc pl-6 space-y-1.5 text-zinc-600 text-sm font-light">
+        <li>Inspeksi & Pemeliharaan APAR berbagai media</li><li>Sistem Pompa Hidran Gedung (Jockey, Duty, Standby Diesel Pump)</li><li>Sistem Alarm Kebakaran Otomatis & Smoke Detector</li><li>Instalasi Otomatis Sprinkler & Gas Suppression System</li>
+      </ul>
+    </div>
+  
+    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/60 space-y-3">
+      <h4 class="font-serif text-xl font-normal text-zinc-900">C. Praktik Lapangan (Fire Ground)</h4>
+      <ul class="list-disc pl-6 space-y-1.5 text-zinc-600 text-sm font-light">
+        <li>Pemadaman api mula menggunakan kain basah & APAR Powder/CO2</li><li>Penggelaran dan penggulungan selang hidran 1.5 & 2.5 inch</li><li>Formasi pemadaman regu dan teknik nosel semprotan kabut (spray) & lurus (jet)</li><li>Simulasi evakuasi korban dari area berasap tebal</li>
+      </ul>
+    </div>
+  
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-zinc-200/80 shadow-sm space-y-6">
+          <div class="border-b border-zinc-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-zinc-400 block mb-1">Persyaratan Peserta</span>
+            <h3 class="font-serif text-2xl font-normal text-zinc-900">Kualifikasi &amp; Berkas Administrasi</h3>
+          </div>
+          <p class="text-zinc-700 font-light text-sm leading-relaxed">Pendidikan minimal SLTA/sederajat untuk Kelas D & C; D3/S1 untuk Kelas B & A. Melampirkan surat penugasan perusahaan dan surat keterangan sehat dari dokter.</p>
+        </div>
+      </div>
+
+      <aside class="lg:col-span-4 space-y-8 lg:sticky lg:top-32 self-start">
+        <div class="bg-zinc-900 text-white rounded-3xl p-8 space-y-6 shadow-xl">
+          <div class="space-y-2">
+            <span class="text-xs font-mono uppercase tracking-widest text-zinc-400">Pendaftaran Batch Resmi</span>
+            <h3 class="font-serif text-2xl font-normal text-white">Amankan Kursi Pembinaan Anda</h3>
+            <p class="text-xs font-mono text-zinc-400 leading-relaxed">
+              Daftar sekarang untuk mendapatkan silabus lengkap, penawaran korporasi, dan kepastian kuota batch resmi Kemnaker RI.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 space-y-2 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-zinc-400">Batch Terdekat:</span>
+              <span class="text-white font-mono font-bold">10 – 23 November 2026</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-zinc-400">Status Kuota:</span>
+              <span class="text-emerald-400 font-mono font-bold">Tersisa 4 Kursi</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20mendaftar%20Pelatihan%20K3%20Penanggulangan%20Kebakaran%20(Kelas%20D%2C%20C%2C%20B%2C%20A)" target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg">
+            <span>Daftar via WhatsApp Resmi</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-3">
+          <span class="text-xs font-mono uppercase tracking-widest text-zinc-500 block">Jaminan Layanan</span>
+          <p class="text-xs text-zinc-600 font-light leading-relaxed">
+            Didukung oleh instruktur senior praktisi industri dengan sertifikasi resmi Kemnaker RI dan fasilitas uji komprehensif.
+          </p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  
+</BaseLayout>

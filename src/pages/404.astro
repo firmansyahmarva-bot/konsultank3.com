@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="404 - Halaman Tidak Ditemukan » Konsultan K3"
+  description="Halaman yang Anda tuju tidak tersedia atau telah dipindahkan."
+  canonical="/404.html"
+  robots="noindex, nofollow"
+>
+  <section class="min-h-[70vh] flex items-center justify-center py-20 px-4 sm:px-6">
+    <div class="max-w-xl mx-auto text-center space-y-6">
+      <div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-amber-500/10 text-amber-500 font-extrabold text-3xl border border-amber-500/20 font-serif">
+        404
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif">
+        Halaman Tidak Ditemukan
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-md mx-auto">
+        Tautan yang Anda ikuti mungkin telah kedaluwarsa atau dialihkan ke struktur kurikulum terbaru.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-4">
+        <a
+          href="/"
+          class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all"
+        >
+          &larr; Kembali ke Beranda
+        </a>
+        <a
+          href="/pelatihan/"
+          class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all"
+        >
+          Katalog Pelatihan K3 &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

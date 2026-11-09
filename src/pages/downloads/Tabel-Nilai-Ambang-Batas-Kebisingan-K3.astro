@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Tabel Nilai Ambang Batas (NAB) Kebisingan Tempat Kerja";
+const description = "Tabel referensi resmi Nilai Ambang Batas (NAB) kebisingan di tempat kerja sesuai Permenaker No. 5 Tahun 2018. Siap cetak ke PDF.";
+const canonical = "/downloads/Tabel-Nilai-Ambang-Batas-Kebisingan-K3.html";
+
+const nabSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pusat Unduhan", "item": "https://konsultank3.com/program-pengendalian-kebisingan/" },
+        { "@type": "ListItem", "position": 3, "name": "Tabel Standar NAB Kebisingan", "item": `https://konsultank3.com${canonical}` }
+      ]
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": title,
+      "description": description,
+      "publisher": {
+        "@type": "Organization",
+        "name": "PT Wahana Totalita Konsultan",
+        "url": "https://wahanatotalita.com"
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={`${title} » Konsultan K3 Indonesia`}
+  description={description}
+  canonical={canonical}
+  schema={nabSchema}
+  presetMessage="Halo KonsultanK3, saya ingin meminta format PDF / tabel asli Nilai Ambang Batas Kebisingan K3."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-8 py-10 my-8 bg-white rounded-3xl shadow-sm border border-slate-200">
+    
+    <!-- Action Toolbar (Hidden in Print) -->
+    <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-slate-200 not-prose">
+      <a href="/program-pengendalian-kebisingan/" class="text-sm font-semibold text-slate-600 hover:text-amber-600 flex items-center gap-1.5 transition-colors">
+        <span>&larr;</span> Panduan Pengendalian Kebisingan
+      </a>
+      
+      <div class="flex flex-wrap items-center gap-3">
+        <button
+          onclick="window.print()"
+          class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center gap-2 cursor-pointer"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+          <span>Cetak / Simpan PDF</span>
+        </button>
+        <a
+          href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20konsultasi%20pengukuran%20kebisingan%20dan%20audiometri"
+          target="_blank"
+          rel="noopener"
+          class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-emerald-600/20 transition-all flex items-center gap-2"
+        >
+          <span>Konsultasi Pengukuran &rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Document Header -->
+    <div class="space-y-3 mb-8">
+      <div class="inline-block px-3 py-1 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-700 border border-amber-500/20 uppercase tracking-wider">
+        Standar Higiene Industri Permenaker 05/2018
+      </div>
+      <h1 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+        Tabel Nilai Ambang Batas (NAB) Kebisingan Tempat Kerja
+      </h1>
+      <p class="text-sm text-slate-600 font-sans">
+        <strong>Sumber Regulasi:</strong> Lampiran Peraturan Menteri Ketenagakerjaan No. 5 Tahun 2018 tentang Keselamatan dan Kesehatan Kerja Lingkungan Kerja.
+      </p>
+    </div>
+    
+    <!-- Printable Table -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse border border-slate-300">
+        <thead>
+          <tr class="bg-slate-100 text-slate-900 font-bold font-serif">
+            <th class="p-3 border border-slate-300 w-1/2">Waktu Pemaparan per Hari (Shift Kerja)</th>
+            <th class="p-3 border border-slate-300 w-1/2">Intensitas Kebisingan Maksimum dalam dBA</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200 text-slate-700">
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300 font-semibold text-slate-900">8 Jam (Shift Normal)</td><td class="p-3 border border-slate-300 font-mono font-bold text-slate-900">85 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">4 Jam</td><td class="p-3 border border-slate-300 font-mono">88 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">2 Jam</td><td class="p-3 border border-slate-300 font-mono">91 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">1 Jam</td><td class="p-3 border border-slate-300 font-mono">94 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">30 Menit</td><td class="p-3 border border-slate-300 font-mono">97 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">15 Menit</td><td class="p-3 border border-slate-300 font-mono">100 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">7,5 Menit</td><td class="p-3 border border-slate-300 font-mono">103 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">3,75 Menit</td><td class="p-3 border border-slate-300 font-mono">106 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">1,88 Menit</td><td class="p-3 border border-slate-300 font-mono">109 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">0,94 Menit (56 Detik)</td><td class="p-3 border border-slate-300 font-mono">112 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">28,12 Detik</td><td class="p-3 border border-slate-300 font-mono">115 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">14,06 Detik</td><td class="p-3 border border-slate-300 font-mono">118 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">7,03 Detik</td><td class="p-3 border border-slate-300 font-mono">121 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">3,52 Detik</td><td class="p-3 border border-slate-300 font-mono">124 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">1,76 Detik</td><td class="p-3 border border-slate-300 font-mono">127 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">0,88 Detik</td><td class="p-3 border border-slate-300 font-mono">130 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">0,44 Detik</td><td class="p-3 border border-slate-300 font-mono">133 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">0,22 Detik</td><td class="p-3 border border-slate-300 font-mono">136 dBA</td></tr>
+          <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-300">0,11 Detik</td><td class="p-3 border border-slate-300 font-mono">139 dBA</td></tr>
+          <tr class="bg-rose-50 text-rose-900 font-bold">
+            <td class="p-3 border border-slate-300">Tidak boleh terpapar sama sekali (Peak Sound Pressure)</td>
+            <td class="p-3 border border-slate-300 font-mono">&ge; 140 dBA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Document Footer -->
+    <div class="mt-8 pt-6 border-t border-slate-200 text-center text-xs text-slate-500 font-sans">
+      Dokumen diterbitkan oleh <strong>KonsultanK3.com</strong> sebagai kartu panduan saku keselamatan kerja industri.<br/>
+      Layanan pengujian lingkungan kerja &amp; surveilans audiometri: WhatsApp <strong>0813-9294-3146</strong>
+    </div>
+
+  </div>
+</BaseLayout>

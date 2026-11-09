@@ -1,0 +1,90 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const title = "Standar Pemilihan & Penggunaan Alat Pelindung Diri (APD)";
+const description = "Panduan standar penyediaan, pemilihan, dan inspeksi Alat Pelindung Diri (APD / PPE) sesuai Permenakertrans No. PER.08/MEN/VII/2010 dan standar mutu SNI/ANSI.";
+const canonical = "/alat-pelindung-diri/";
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  category="Regulasi & Standar APD"
+  readTime="5 menit baca"
+>
+  <!-- Summary Metric Highlights -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-slate-100/80 border border-slate-200/80 text-center not-prose mb-8">
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Kewajiban Biaya</span>
+      <span class="text-sm font-extrabold text-slate-900">Disediakan Cuma-Cuma</span>
+    </div>
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Standar Wajib</span>
+      <span class="text-sm font-extrabold text-slate-900">SNI / Standar Mutu</span>
+    </div>
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Hierarki Pengendalian</span>
+      <span class="text-sm font-extrabold text-slate-900">Upaya Terakhir (Last Defense)</span>
+    </div>
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Evaluasi &amp; Rawat</span>
+      <span class="text-sm font-extrabold text-slate-900">Inspeksi &amp; Uji Rutin</span>
+    </div>
+  </div>
+
+  <p>
+    Berdasarkan <strong>Peraturan Menteri Tenaga Kerja dan Transmigrasi RI No. PER.08/MEN/VII/2010</strong>, pengusaha wajib menyediakan Alat Pelindung Diri (APD) bagi pekerja/buruh di tempat kerja secara cuma-cuma. APD yang disediakan harus memenuhi Standar Nasional Indonesia (SNI) atau standar internasional yang setara dan disesuaikan dengan hasil identifikasi bahaya dan penilaian risiko (IBPR / HIRADC).
+  </p>
+
+  <h2>1. Hierarki Pengendalian Risiko &amp; Posisi APD</h2>
+  <p>
+    Dalam keselamatan kerja modern, penyediaan APD merupakan pertahanan terakhir (<em>last line of defense</em>). Sebelum mewajibkan APD, manajemen wajib membuktikan bahwa bahaya tidak dapat diatasi melalui tahapan pengendalian yang lebih tinggi:
+  </p>
+  <ol>
+    <li><strong>Eliminasi:</strong> Menghilangkan sumber bahaya secara total dari proses produksi.</li>
+    <li><strong>Substitusi:</strong> Mengganti bahan kimia beracun atau mesin berbahaya dengan alternatif yang lebih aman.</li>
+    <li><strong>Rekayasa Teknis (Engineering Controls):</strong> Memasang ventilasi pembuang lokal (LEV), peredam akustik, atau guard pengaman mesin.</li>
+    <li><strong>Pengendalian Administratif:</strong> Pelatihan K3, rotasi shift kerja, izin kerja (PTW), dan pemasangan rambu keselamatan.</li>
+    <li><strong>Alat Pelindung Diri (APD):</strong> Melindungi tubuh pekerja ketika risiko residual masih ada.</li>
+  </ol>
+
+  <h2>2. Klasifikasi Jenis APD Sesuai Standar Mutu</h2>
+  <ul class="space-y-3">
+    <li>
+      <strong>Pelindung Kepala (Safety Helmet):</strong> Melindungi kepala dari kejatuhan material, benturan keras, dan sengatan listrik (Kelas E/G/C sesuai SNI ISO 3873 / ANSI Z89.1). Dilengkapi tali dagu (chinstrap) elastis.
+    </li>
+    <li>
+      <strong>Pelindung Mata &amp; Wajah (Safety Glasses &amp; Face Shield):</strong> Menahan serpihan logam berkecepatan tinggi, percikan cairan kimia asam/basa, dan radiasi inframerah/ultraviolet pengelasan (standar ANSI Z87.1).
+    </li>
+    <li>
+      <strong>Pelindung Pendengaran (Ear Plug &amp; Ear Muff):</strong> Wajib digunakan pada area kerja dengan intensitas suara melebihi 85 dBA. Memiliki sertifikasi Noise Reduction Rating (NRR) teruji.
+    </li>
+    <li>
+      <strong>Pelindung Pernafasan (Respirator):</strong> Mulai dari masker partikulat N95 untuk debu, hingga respirator cartridge kimia (gas asam, uap organik, amonia), dan Self-Contained Breathing Apparatus (SCBA) untuk confined space.
+    </li>
+    <li>
+      <strong>Pelindung Jatuh Ketinggian (Full Body Harness):</strong> Wajib untuk pekerjaan pada ketinggian &ge; 1,8 meter dengan tali ganda (double lanyard), snap hook besar, dan energy absorber (standar EN 361).
+    </li>
+    <li>
+      <strong>Pelindung Kaki (Safety Shoes):</strong> Dilengkapi pelindung jari baja (steel toe cap tahan benturan 200 Joule) dan sol antipaku serta tahan minyak (anti-slip &amp; anti-static sesuai SNI 7079).
+    </li>
+  </ul>
+
+  <h2>3. Manajemen Pemeliharaan, Inspeksi &amp; Pembuangan APD Rusak</h2>
+  <p>
+    Perusahaan wajib menyusun SOP penyimpanan dan jadwal inspeksi berkala APD. APD yang mengalami keretakan, kadaluarsa (misalnya masa pakai helm polimer maksimum 3-5 tahun), atau telah terkena beban kejatuhan (seperti harness pasca insiden) harus segera diafkir, dihancurkan, dan diganti baru tanpa membebankan biaya kepada pekerja.
+  </p>
+
+  <!-- Download Toolkits Banner -->
+  <div class="mt-8 p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 text-white flex flex-col sm:flex-row justify-between items-center gap-6 not-prose border border-white/10 shadow-lg">
+    <div>
+      <span class="text-[11px] uppercase tracking-wider text-amber-400 font-bold block mb-1">Toolkits HSE Siap Pakai</span>
+      <h3 class="text-lg font-bold text-white font-serif">Unduh Formulir Job Safety Analysis (JSA) &amp; APD</h3>
+      <p class="text-xs text-slate-400 mt-1 max-w-md">Template matriks penentuan APD berdasarkan jenis pekerjaan dan risiko bahaya kerja di lapangan.</p>
+    </div>
+    <a href="/downloads/Formulir-JSA-Job-Safety-Analysis.html" target="_blank" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shadow-md hover:scale-105 shrink-0">
+      Unduh Formulir JSA &rarr;
+    </a>
+  </div>
+</ArticleLayout>

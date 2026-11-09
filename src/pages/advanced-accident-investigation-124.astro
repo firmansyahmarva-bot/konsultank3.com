@@ -1,0 +1,49 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+
+const title = "Investigasi Kecelakaan Kerja Tingkat Lanjut (Advanced Accident Investigation)";
+const description = "Metodologi investigasi kecelakaan kerja mendalam, analisis akar penyebab (Root Cause Analysis - RCA), Swiss Cheese Model, SCAT, dan tindakan korektif pencegahan.";
+const canonical = "/advanced-accident-investigation-124.html";
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  category="Panduan & Regulasi K3"
+>
+  <p>Setiap kecelakaan kerja yang terjadi di tempat kerja bukan semata-mata nasib buruk, melainkan indikasi adanya kegagalan pada sistem manajemen keselamatan. Investigasi kecelakaan kerja tingkat lanjut (<em>Advanced Accident Investigation</em>) bertujuan menemukan akar masalah (<em>root cause</em>) mendasar dan memastikan insiden serupa tidak akan pernah terulang kembali.</p>
+
+            <h2>1. Tujuan Utama Investigasi Kecelakaan Kerja</h2>
+            <p>Prinsip fundamental dari investigasi K3 adalah <strong>No Blame Culture</strong> (bukan mencari siapa yang bersalah), melainkan:</p>
+            <ul>
+              <li>Mengidentifikasi urutan kejadian faktual (kronologi kecelakaan).</li>
+              <li>Menemukan kondisi tidak aman (<em>unsafe conditions</em>) dan tindakan tidak aman (<em>unsafe acts</em>).</li>
+              <li>Menemukan kegagalan sistemik manajemen, desain peralatan, atau prosedur kerja.</li>
+              <li>Menyusun rekomendasi tindakan perbaikan (<em>corrective & preventive actions / CAPA</em>).</li>
+            </ul>
+
+            <h2>2. Metodologi Analisis Akar Penyebab (Root Cause Analysis - RCA)</h2>
+            <p>Beberapa metode investigasi ilmiah yang diakui secara internasional:</p>
+            <ul>
+              <li><strong>5-Why Analysis:</strong> Menelusuri lapisan penyebab dengan menanyakan "Mengapa" minimal 5 kali hingga menemukan kelemahan mendasar pada kebijakan atau pengawasan.</li>
+              <li><strong>Fishbone Diagram (Ishikawa):</strong> Mengelompokkan faktor penyebab berdasarkan Manusia (Man), Mesin (Machine), Metode (Method), Material, dan Lingkungan (Environment).</li>
+              <li><strong>SCAT (Systematic Cause Analysis Technique):</strong> Bagan sistematis pemetaan dari kerugian &rarr; kontak insiden &rarr; penyebab langsung &rarr; penyebab dasar &rarr; kurangnya kontrol manajemen.</li>
+              <li><strong>Swiss Cheese Model (James Reason):</strong> Menjelaskan bagaimana lubang kelemahan pada lapisan pertahanan organisasi (kebijakan, pengawasan, SOP, APD) saling sejajar sehingga menyebabkan kecelakaan fatal.</li>
+            </ul>
+
+            <h2>3. Tahapan Pelaksanaan Investigasi</h2>
+            <ol>
+              <li><strong>Tanggap Darurat & Pengamanan TKP:</strong> Prioritaskan pertolongan pertama pada korban dan pasang safety line agar bukti fisik di TKP tidak berubah.</li>
+              <li><strong>Pengumpulan Bukti & Data (4P Method):</strong>
+                <ul>
+                  <li><em>People:</em> Wawancara saksi mata, korban, dan supervisor.</li>
+                  <li><em>Position:</em> Dokumentasi posisi korban, mesin, tumpahan, dan foto TKP.</li>
+                  <li><em>Parts:</em> Pengujian kondisi mekanik, kegagalan sensor, atau serpihan material.</li>
+                  <li><em>Paperwork:</em> Pemeriksaan JSA, izin kerja khusus (Permit to Work), manual mesin, dan logbook pemeliharaan.</li>
+                </ul>
+              </li>
+              <li><strong>Analisis Data & Kesimpulan:</strong> Memetakan korelasi kausalitas antar fakta.</li>
+              <li><strong>Penyusunan Laporan & Rekomendasi:</strong> Formulasi tindakan SMART (Specific, Measurable, Achievable, Relevant, Time-bound).</li>
+            </ol>
+</ArticleLayout>

@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Hubungi Konsultan K3 » Asistensi Sertifikasi & Penawaran Pelatihan";
+const description = "Saluran komunikasi resmi PT Wahana Totalita Konsultan. Hubungi tim konsultan untuk pendaftaran batch, penawaran in-house corporate, dan asistensi audit SMK3.";
+const canonical = "/kontak/";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Kontak Kami", "item": "https://konsultank3.com/kontak/" }
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "name": "Hubungi Konsultan K3 Indonesia",
+      "description": description,
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "PT Wahana Totalita Konsultan",
+        "telephone": "+62-813-9294-3146",
+        "email": "info@konsultank3.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jalan Wonosari KM 8.5, Gandu, Sendangtirto, Kec. Berbah",
+          "addressLocality": "Sleman",
+          "addressRegion": "D.I. Yogyakarta",
+          "postalCode": "55573",
+          "addressCountry": "ID"
+        }
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={`${title} » Konsultan K3 Indonesia`}
+  description={description}
+  canonical={canonical}
+  schema={contactSchema}
+  presetMessage="Halo KonsultanK3, saya ingin menghubungi tim konsultan K3 untuk konsultasi program perusahaan."
+>
+  <!-- Hero Section -->
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <span class="text-slate-300">Hubungi Konsultan</span>
+      </nav>
+
+      <div class="space-y-6 max-w-4xl">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          Respon Cepat Tim Teknis &bull; Layanan Korporasi &amp; Publik
+        </div>
+
+        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          Konsultasi &amp; Pendaftaran <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Resmi Pelatihan K3</span>
+        </h1>
+
+        <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-3xl">
+          Diskusikan kebutuhan pelatihan keselamatan kerja tim Anda, pengajuan proposal in-house corporate training, atau konfirmasi jadwal audit SMK3 PP 50/2012 bersama konsultan spesialis kami.
+        </p>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Body Layout -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Direct Contact Channels (8 cols) -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <!-- Fast WhatsApp Box -->
+        <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-sm space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs uppercase tracking-wider text-emerald-600 font-bold block mb-1">Saluran Utama 24/7</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-900">Asistensi Konsultan WhatsApp</h2>
+          </div>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Dapatkan respon langsung dari konsultan kami untuk pengecekan kuota kursi, rincian biaya investasi, silabus resmi Ditjen Binwasnaker Kemnaker RI, dan formulir pendaftaran batch terdekat.
+          </p>
+          <div class="pt-2">
+            <a
+              href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20konsultasi%20layanan%20pelatihan%20dan%20sertifikasi%20K3"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm sm:text-base shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
+            >
+              <span>Chat WhatsApp: 0813-9294-3146</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Headquarters & Branch Details -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm space-y-3">
+            <span class="text-xs uppercase tracking-wider text-slate-500 font-bold block">Kantor Operasional Yogyakarta</span>
+            <h3 class="font-serif text-xl font-bold text-slate-900">PT Wahana Totalita Konsultan</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Jalan Wonosari KM 8.5, Gandu, Sendangtirto, Kec. Berbah, Kabupaten Sleman, D.I. Yogyakarta 55573
+            </p>
+            <p class="text-xs text-slate-900 font-bold pt-2">Telepon: +62-813-9294-3146</p>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm space-y-3">
+            <span class="text-xs uppercase tracking-wider text-slate-500 font-bold block">Email &amp; Administrasi Surat</span>
+            <h3 class="font-serif text-xl font-bold text-slate-900">Departemen Pelatihan &amp; Kemitraan</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Pengiriman surat penawaran, proposal korporasi, dan verifikasi berkas peserta pelatihan:
+            </p>
+            <p class="text-xs text-emerald-600 font-bold pt-2">info@konsultank3.com</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Summary Sidebar (4 cols) -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+        <div class="bg-slate-950 text-white rounded-3xl p-8 space-y-6 shadow-2xl border border-white/10">
+          <span class="text-xs uppercase tracking-widest text-amber-400 font-bold block">Jam Layanan Konsultasi</span>
+          <div class="space-y-3 text-xs text-slate-300">
+            <div class="flex justify-between border-b border-white/10 pb-2">
+              <span class="text-slate-400">Senin – Jumat</span>
+              <span class="text-white font-bold">08.00 – 17.00 WIB</span>
+            </div>
+            <div class="flex justify-between border-b border-white/10 pb-2">
+              <span class="text-slate-400">Sabtu</span>
+              <span class="text-white font-bold">08.30 – 14.00 WIB</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Hotline WhatsApp</span>
+              <span class="text-emerald-400 font-bold">24 Jam (Fast Response)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-2">
+          <span class="text-xs uppercase tracking-wider text-slate-500 font-bold block">Jaminan Keaslian Dokumen</span>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Seluruh sertifikat, lisensi kewenangan, dan SKP yang diterbitkan terdaftar secara resmi di pangkalan data Ditjen Binwasnaker Kemnaker RI dan dapat diverifikasi keasliannya secara online.
+          </p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+</BaseLayout>

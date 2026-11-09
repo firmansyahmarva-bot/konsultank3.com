@@ -1,0 +1,83 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const title = "Diagnosis & Pencegahan Penyakit Akibat Kerja (PAK)";
+const description = "Pedoman identifikasi pajanan lingkungan kerja, 7 langkah diagnosis medis okupasi, dan program pencegahan Penyakit Akibat Kerja (PAK) sesuai Perpres No. 7 Tahun 2019.";
+const canonical = "/penyakit-akibat-kerja/";
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  category="Kesehatan Kerja & Okupasi"
+  readTime="6 menit baca"
+>
+  <!-- Summary Metric Highlights -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-slate-100/80 border border-slate-200/80 text-center not-prose mb-8">
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Regulasi Rujukan</span>
+      <span class="text-sm font-extrabold text-slate-900">Perpres No. 7/2019</span>
+    </div>
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Standar Diagnosis</span>
+      <span class="text-sm font-extrabold text-slate-900">7 Langkah Okupasi</span>
+    </div>
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Cakupan Bahaya</span>
+      <span class="text-sm font-extrabold text-slate-900">Fisika, Kimia, Ergonomi</span>
+    </div>
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Pencegahan</span>
+      <span class="text-sm font-extrabold text-slate-900">MCU &amp; Surveilans Rutin</span>
+    </div>
+  </div>
+
+  <p>
+    Berdasarkan <strong>Peraturan Presiden Republik Indonesia No. 7 Tahun 2019</strong> tentang Penyakit Akibat Kerja, PAK adalah penyakit yang disebabkan oleh pekerjaan dan/atau lingkungan kerja. Deteksi dini faktor bahaya di tempat kerja dan surveilans kesehatan berkala merupakan kunci utama mencegah disabilitas kerja kronis serta tuntutan kompensasi kecelakaan kerja.
+  </p>
+
+  <h2>1. Protokol 7 Langkah Diagnosis Medis Okupasi</h2>
+  <p>
+    Penetapan diagnosis Penyakit Akibat Kerja wajib dilakukan oleh dokter yang memiliki kompetensi kedokteran okupasi melalui 7 langkah pembuktian ilmiah kausalitas:
+  </p>
+  <ol>
+    <li><strong>Menentukan Diagnosis Klinis:</strong> Melalui anamnesis keluhan medis, pemeriksaan fisik menyeluruh, dan pemeriksaan penunjang (laboratorium darah, rontgen thoraks, spirometri, atau audiometri).</li>
+    <li><strong>Menentukan Pajanan di Tempat Kerja:</strong> Mendokumentasikan riwayat pekerjaan lengkap, bahan kimia/fisika yang berkontak, durasi kerja harian, dan kondisi ventilasi tempat kerja.</li>
+    <li><strong>Menentukan Hubungan Kausalitas Pajanan dengan Diagnosis:</strong> Mengkaji literatur medis ilmiah tentang hubungan antara bahaya tertentu dengan timbulnya penyakit tersebut.</li>
+    <li><strong>Menentukan Besarnya Dosis Pajanan:</strong> Mengevaluasi lama masa kerja, hasil pengukuran lingkungan kerja (pengujian higiene industri), dan kepatuhan penggunaan APD.</li>
+    <li><strong>Menentukan Faktor Kerentanan Individu:</strong> Menilai riwayat alergi, penyakit keturunan, kebugaran fisik, atau riwayat penyakit bawaan pekerja.</li>
+    <li><strong>Menentukan Faktor di Luar Lingkungan Kerja:</strong> Memeriksa kebiasaan merokok, paparan hobi di rumah, atau aktivitas kerja sekunder di luar jam kantor.</li>
+    <li><strong>Menetapkan Kesimpulan Diagnosis PAK:</strong> Menegakkan apakah penyakit merupakan Penyakit Akibat Kerja murni, diperberat oleh pekerjaan (<em>work-related disease</em>), atau bukan penyakit akibat kerja.</li>
+  </ol>
+
+  <h2>2. Kategori Bahaya Lingkungan Kerja Pemicu PAK</h2>
+  <ul>
+    <li><strong>Faktor Bahaya Kimia:</strong> Paparan uap benzena (risiko leukemia), silika bebas (silikosis), asbes (asbestosis/mesothelioma), dan timbal (keracunan sistemik hematologi).</li>
+    <li><strong>Faktor Bahaya Fisika:</strong> Kebisingan &gt; 85 dBA (tuli bising / NIHL), getaran mekanis lengan tangan (Hand-Arm Vibration Syndrome / White Finger Disease), suhu ekstrem (heat stroke).</li>
+    <li><strong>Faktor Ergonomi:</strong> Postur janggal berulang, angkat angkut manual beban berat tanpa alat bantu mekanis yang menyebabkan Low Back Pain (LBP) dan Hernia Nucleus Pulposus (HNP).</li>
+    <li><strong>Faktor Biologi:</strong> Infeksi bakteri, virus Hepatitis B/C, atau patogen udara pada pekerja fasilitas kesehatan dan laboratorium mikrobiologi.</li>
+  </ul>
+
+  <h2>3. Program Surveilans Kesehatan Pekerja (Medical Check-Up)</h2>
+  <p>
+    Sesuai Permenaker No. PER.02/MEN/1980, perusahaan berkewajiban menyelenggarakan tiga jenis pemeriksaan kesehatan tenaga kerja:
+  </p>
+  <ul>
+    <li><strong>Pemeriksaan Kesehatan Sebelum Bekerja (Awal):</strong> Menentukan kesesuaian fisik pekerja dengan tuntutan risiko jabatan kerja baru.</li>
+    <li><strong>Pemeriksaan Kesehatan Berkala (Tahunan):</strong> Evaluasi berkala untuk mendeteksi sedini mungkin penurunan kapasitas fisiologis tubuh akibat pajanan lingkungan.</li>
+    <li><strong>Pemeriksaan Kesehatan Khusus:</strong> Ditujukan untuk kelompok pekerja berisiko tinggi (misalnya pekerja radiasi, ruang terbatas, pestisida, atau pekerja yang baru pulih dari sakit berat).</li>
+  </ul>
+
+  <!-- Download Toolkits Banner -->
+  <div class="mt-8 p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 text-white flex flex-col sm:flex-row justify-between items-center gap-6 not-prose border border-white/10 shadow-lg">
+    <div>
+      <span class="text-[11px] uppercase tracking-wider text-amber-400 font-bold block mb-1">Panduan Audit K3</span>
+      <h3 class="text-lg font-bold text-white font-serif">Unduh Checklist Audit SMK3 (Kriteria Kesehatan Kerja)</h3>
+      <p class="text-xs text-slate-400 mt-1 max-w-md">Format penilaian klausul kesehatan kerja, higene industri, dan program MCU sesuai kriteria audit PP 50/2012.</p>
+    </div>
+    <a href="/downloads/Checklist-Audit-SMK3-166-Kriteria.html" target="_blank" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shadow-md hover:scale-105 shrink-0">
+      Unduh Checklist Audit &rarr;
+    </a>
+  </div>
+</ArticleLayout>

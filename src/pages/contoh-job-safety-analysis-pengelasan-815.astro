@@ -1,0 +1,71 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+
+const title = "Contoh Job Safety Analysis (JSA) Pekerjaan Pengelasan (Welding)";
+const description = "Tabel contoh Job Safety Analysis (JSA) pekerjaan panas pengelasan (hot work welding). Langkah kerja, potensi bahaya api, radiasi UV, gas beracun, dan APD wajib.";
+const canonical = "/contoh-job-safety-analysis-pengelasan-815.html";
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  category="Panduan & Regulasi K3"
+>
+  <p>Pekerjaan pengelasan (<em>welding</em>) dan pemotongan logam (<em>cutting</em>) digolongkan sebagai <strong>pekerjaan panas (Hot Work)</strong> yang memiliki risiko tinggi menimbulkan kebakaran, ledakan uap mudah terbakar, radiasi sinar ultraviolet/inframerah yang merusak kornea mata (<em>welder's flash</em>), sengatan listrik arus tinggi, dan paparan asap logam beracun (<em>metal fume fever</em>).</p>
+
+            <h2>Tabel Matriks JSA Pekerjaan Pengelasan Listrik (SMAW)</h2>
+            <div style="overflow-x: auto; margin: 20px 0;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;" border="1" cellpadding="10" bordercolor="#e2e8f0">
+                <tr style="background: #f1f5f9; text-align: left;">
+                  <th>Urutan Langkah Kerja</th>
+                  <th>Potensi Bahaya Teridentifikasi</th>
+                  <th>Tindakan Pengendalian & Pencegahan</th>
+                </tr>
+                <tr>
+                  <td><strong>1. Persiapan Area & Izin Kerja (Permit)</strong></td>
+                  <td>Kebakaran bahan mudah terbakar di sekitar lokasi, izin kerja belum lengkap.</td>
+                  <td>
+                    <ul>
+                      <li>Mengajukan Hot Work Permit kepada HSE Officer.</li>
+                      <li>Membersihkan material mudah terbakar dalam radius minimal 10-15 meter.</li>
+                      <li>Memasang tirai tahan api (fire blanket) dan menyiapkan APAR Powder min. 6 kg di samping welder.</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>2. Inspeksi Trafo & Kabel Las</strong></td>
+                  <td>Sengatan listrik (electric shock), kabel terkelupas korsleting.</td>
+                  <td>
+                    <ul>
+                      <li>Memastikan mesin las memiliki grounding terpasang baik.</li>
+                      <li>Memeriksa kabel tidak ada insulasi yang sobek atau sambungan kendor.</li>
+                      <li>Memastikan area kerja kering, tidak ada genangan air.</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>3. Proses Pengelasan Logam</strong></td>
+                  <td>Radiasi sinar las (UV/IR), percikan terak panas, asap las karsinogenik.</td>
+                  <td>
+                    <ul>
+                      <li>Wajib memakai kedok las (Welding Helmet) dengan shade filter kaca no. 10 - 12.</li>
+                      <li>Memakai sarung tangan las kulit panjang (leather welding gloves) dan apron dada.</li>
+                      <li>Memakai respirator penyaring partikel asap las (P100 / N95).</li>
+                      <li>Menyediakan ventilasi pembuangan (local exhaust ventilation) jika di area terbatas.</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>4. Pembersihan & Fire Watch</strong></td>
+                  <td>Bara api tersembunyi yang menyala setelah ditinggalkan pekerja.</td>
+                  <td>
+                    <ul>
+                      <li>Melakukan pengawasan api (Fire Watch) selama minimal 30 - 60 menit setelah pengelasan selesai.</li>
+                      <li>Mematikan daya listrik mesin las dan mengunci panel (LOTO).</li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
+            </div>
+</ArticleLayout>

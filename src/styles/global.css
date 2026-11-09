@@ -1,0 +1,161 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  @font-face {
+    font-family: 'Centabel Book';
+    src: url('/assets/CentabelBook-CfwuszX3.woff2') format('woff2'),
+         url('/assets/CentabelBook-BM7JaFMm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --font-sans: 'Plus Jakarta Sans', 'Figtree', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Alice', 'Centabel Book', Georgia, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Theme brand colors */
+    --brand-primary: #0f172a;       /* Deep Obsidian Navy */
+    --brand-accent: #0abd55;        /* Wahana Totalita Green */
+    --brand-accent-hover: #07873d;
+    --brand-gold: #f59e0b;          /* Construction / Safety Gold */
+    --brand-blue: #1d4ed8;          /* Electric Royal Blue */
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color: #1e293b;
+    background-color: #f8fafc;
+  }
+
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: #0f172a;
+    color: #ffffff;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-centabel {
+  font-family: 'Centabel Book', 'Alice', Georgia, serif;
+}
+
+/* Pulsing Beacon */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.4;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* Glassmorphism utility */
+.glass-nav {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Smooth micro-interactions */
+.card-hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
+}
+
+/* Rich Editorial Content Typography */
+article.prose h2 {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 2.25rem;
+  margin-bottom: 0.875rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+article.prose h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+article.prose p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  color: #334155;
+}
+
+article.prose ul {
+  list-style-type: disc !important;
+  padding-left: 1.75rem !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+article.prose ol {
+  list-style-type: decimal !important;
+  padding-left: 1.75rem !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+article.prose li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+  color: #334155;
+  display: list-item !important;
+}
+
+article.prose strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+article.prose blockquote {
+  border-left: 4px solid #f59e0b;
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  color: #1e293b;
+  background-color: #f8fafc;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+}

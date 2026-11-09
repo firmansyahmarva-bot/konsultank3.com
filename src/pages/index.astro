@@ -1,0 +1,614 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'Pembinaan Calon Ahli K3 Umum',
+    badge: '🔥 Paling Diminati',
+    badgeColor: 'bg-amber-500/10 text-amber-500 border-amber-500/20',
+    desc: 'Sertifikasi calon Ahli K3 Umum 12 hari (120 JP) resmi Kemnaker RI. Mempersiapkan sekretaris P2K3 dengan modul lengkap dan bimbingan PKL sampai lulus ujian.',
+    img: '/assets/images/training-session.jpg',
+    href: '/pelatihan-ahli-k3-umum/',
+    specs: 'Sertifikat SKP Kemnaker RI • Online & Offline'
+  },
+  {
+    title: 'K3 Penanggulangan Kebakaran',
+    badge: 'Praktik Lapangan',
+    badgeColor: 'bg-rose-500/10 text-rose-500 border-rose-500/20',
+    desc: 'Pelatihan teknis pemadaman APAR & hydran, formasi fire brigade darurat, serta sertifikasi koordinator keselamatan kebakaran Kelas D, C, B, dan A sesuai Kepmenaker 186/1999.',
+    img: '/assets/images/fire-safety-apar.jpg',
+    href: '/pelatihan-k3-kebakaran/',
+    specs: 'Kelas D/C/B/A • Lisensi Kemnaker RI'
+  },
+  {
+    title: 'Konsultasi & Audit SMK3 PP 50/2012',
+    badge: 'Bendera Emas 166 Kriteria',
+    badgeColor: 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20',
+    desc: 'Pendampingan penyusunan manual, SOP, dan audit 64, 122, hingga 166 kriteria SMK3 menuju perolehan Sertifikat dan Bendera Emas Kemnaker RI serta ISO 45001:2018.',
+    img: '/assets/images/smk3-audit.jpg',
+    href: '/panduan-penerapan-smk3/',
+    specs: 'Audit Internal & Eksternal Lembaga Audit'
+  },
+  {
+    title: 'Teknisi & Ahli K3 Listrik Industri',
+    badge: 'Permenaker 12/2015',
+    badgeColor: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
+    desc: 'Kompetensi pemeliharaan panel daya, proteksi bahaya arus bocor, inspeksi instalasi penyalur petir, dan pengukuran resistansi pembumian (grounding) standar PUIL.',
+    img: '/assets/images/Ilmu-Keseker.jpg',
+    href: '/pelatihan-k3-listrik/',
+    specs: 'Teknisi & Ahli K3 Listrik Kemnaker'
+  },
+  {
+    title: 'K3 Bekerja di Ruang Terbatas (Confined Space)',
+    badge: 'Kep.113/MEN/2006',
+    badgeColor: 'bg-purple-500/10 text-purple-500 border-purple-500/20',
+    desc: 'Sertifikasi Petugas Madya & Utama ruang terbatas. Meliputi teknik ventilasi, deteksi gas beracun/explosive, izin kerja (entry permit), dan prosedur penyelamatan darurat rescue.',
+    img: '/assets/images/hero-safety-officer.jpg',
+    href: '/pelatihan-k3-ruang-terbatas/',
+    specs: 'Petugas Madya & Utama Ruang Terbatas'
+  },
+  {
+    title: 'Standar APD & Ergonomi Kerja',
+    badge: 'SNI & ANSI Standard',
+    badgeColor: 'bg-teal-500/10 text-teal-500 border-teal-500/20',
+    desc: 'Pedoman penyediaan dan inspeksi kelayakan APD sesuai Permenakertrans 08/2010 serta kajian ergonomi industri guna menekan risiko Musculoskeletal Disorders (MSDs).',
+    img: '/assets/images/Advanced-Accident-Investigation.jpg',
+    href: '/alat-pelindung-diri/',
+    specs: 'Permenakertrans No. 08/MEN/VII/2010'
+  }
+];
+
+const batchSchedules = [
+  {
+    program: 'Pembinaan Calon Ahli K3 Umum (Kemnaker RI)',
+    dates: '10 – 23 November 2026',
+    mode: 'Blended (Online Teori + PKL Mandiri)',
+    slots: 'Tersisa 4 Kursi',
+    status: 'Segera Penuh',
+    statusColor: 'text-amber-500 bg-amber-500/10'
+  },
+  {
+    program: 'K3 Penanggulangan Kebakaran Kelas D & C',
+    dates: '17 – 20 November 2026',
+    mode: 'Tatap Muka & Praktik Lapangan APAR',
+    slots: 'Tersisa 6 Kursi',
+    status: 'Tersedia',
+    statusColor: 'text-emerald-500 bg-emerald-500/10'
+  },
+  {
+    program: 'Teknisi K3 Listrik Industri (PUIL & Grounding)',
+    dates: '24 – 28 November 2026',
+    mode: 'Interactive Live Zoom + Praktik',
+    slots: 'Tersisa 5 Kursi',
+    status: 'Tersedia',
+    statusColor: 'text-emerald-500 bg-emerald-500/10'
+  },
+  {
+    program: 'K3 Ruang Terbatas (Confined Space) - Petugas Madya',
+    dates: '01 – 04 Desember 2026',
+    mode: 'Teori Gas Detector + Simulasi Masuk Manhole',
+    slots: 'Pendaftaran Dibuka',
+    status: 'Buka Batch Baru',
+    statusColor: 'text-blue-500 bg-blue-500/10'
+  }
+];
+
+const faqs = [
+  {
+    q: 'Apakah sertifikat Ahli K3 Umum yang diterbitkan resmi dari Kementerian Ketenagakerjaan RI?',
+    a: 'Ya, seluruh program sertifikasi reguler di KonsultanK3.com didukung oleh PT Wahana Totalita Konsultan sebagai PJK3 resmi berlisensi Kemnaker RI. Peserta yang lulus akan mendapatkan Surat Keputusan Penunjukan (SKP) dan Lisensi Kewenangan Ahli K3 Umum resmi Kemnaker RI dengan masa berlaku nasional.'
+  },
+  {
+    q: 'Apa perbedaan sertifikasi K3 Kemnaker RI dan sertifikasi BNSP?',
+    a: 'Sertifikasi Kemnaker RI memberikan SKP dan kewenangan legal bagi personel untuk bertindak sebagai pengawas K3 atau sekretaris P2K3 di perusahaan sesuai regulasi ketenagakerjaan. Sedangkan sertifikasi BNSP (Badan Nasional Sertifikasi Profesi) berbasis standar kompetensi kerja nasional (SKKNI) yang mengakui keahlian teknis seseorang secara profesi. Kami menyelenggarakan kedua jalur tersebut.'
+  },
+  {
+    q: 'Bagaimana prosedur pendampingan Audit SMK3 PP 50/2012 hingga meraih Bendera Emas?',
+    a: 'Pendampingan kami terbagi dalam 4 tahap: (1) Gap Analysis & Baseline Review terhadap 64, 122, atau 166 kriteria, (2) Penyusunan & Revisi Dokumen Manual K3, SOP, JSA, HIRARC, dan Instruksi Kerja, (3) Pelatihan Internal Auditor & Pelaksanaan Pra-Audit Mock, serta (4) Pendampingan saat audit eksternal resmi oleh Badan Audit independen yang ditunjuk Kemnaker RI.'
+  },
+  {
+    q: 'Apakah tersedia layanan In-House Training yang disesuaikan dengan jenis risiko perusahaan kami?',
+    a: 'Tentu. Tim konsultan senior kami secara rutin mengadakan in-house training khusus untuk sektor pertambangan, minyak & gas, manufaktur kimia, konstruksi, dan fasilitas pelayanan kesehatan (rumah sakit). Materi dan studi kasus disesuaikan langsung dengan dokumen HIRARC dan potensi bahaya spesifik di tempat kerja Anda.'
+  }
+];
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://konsultank3.com/#organization",
+      "name": "Konsultan K3 Indonesia",
+      "url": "https://konsultank3.com",
+      "logo": "https://konsultank3.com/assets/images/logo.png",
+      "description": "Pusat pembinaan sertifikasi Ahli K3 Umum resmi Kemnaker RI, K3 Kebakaran, K3 Listrik, dan audit SMK3 PP 50/2012 sejak 2011.",
+      "telephone": "+62-813-9294-3146"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://konsultank3.com/#website",
+      "url": "https://konsultank3.com",
+      "name": "Konsultan K3 Indonesia"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://konsultank3.com/#faq",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": f.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Konsultan K3 Indonesia » Sertifikasi Kemnaker RI, BNSP & Audit SMK3"
+  description="Pusat pembinaan sertifikasi Ahli K3 Umum resmi Kemnaker RI, K3 Kebakaran, K3 Listrik, dan audit SMK3 PP 50/2012. Didukung PJK3 berlisensi dengan garansi bimbingan 100%."
+  canonical="/"
+  schema={homeSchema}
+>
+  <!-- Hero Section with Split-Screen & Quotation Engine -->
+  <section class="bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Value Proposition & High-CTR WhatsApp Form -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-amber-400">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+            </svg>
+            PJK3 Resmi Berlisensi Kemnaker RI & BNSP
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-serif">
+            Sertifikasi &amp; Konsultasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">Keselamatan Kerja (K3)</span> Resmi Industri
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans max-w-2xl">
+            Dampingi perusahaan Anda memenuhi regulasi ketenagakerjaan, cetak personel <strong>Ahli K3 Umum bersertifikat Kemnaker RI</strong>, serta raih predikat <strong>Bendera Emas Audit SMK3 PP 50/2012</strong> bersama konsultan senior berpengalaman 15+ tahun.
+          </p>
+
+          <!-- Interactive 1-Click WhatsApp Quick Quote / Syllabus Form -->
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl space-y-4">
+            <div class="flex items-center gap-2 text-sm font-bold text-amber-400">
+              <span>⚡</span> Hitung Biaya &amp; Cek Kuota Batch Terdekat:
+            </div>
+            
+            <form id="hero-quote-form" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <select id="hero-prog" class="px-3 py-2.5 rounded-xl bg-slate-900 border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-amber-400">
+                <option value="Pembinaan Ahli K3 Umum (Kemnaker RI)">Pembinaan Ahli K3 Umum</option>
+                <option value="K3 Penanggulangan Kebakaran (Kelas D/C/B/A)">K3 Kebakaran (Kelas D/C/B/A)</option>
+                <option value="Teknisi & Ahli K3 Listrik Industri">Teknisi &amp; Ahli K3 Listrik</option>
+                <option value="K3 Ruang Terbatas (Confined Space)">K3 Ruang Terbatas</option>
+                <option value="Pendampingan Audit SMK3 PP 50/2012">Pendampingan Audit SMK3</option>
+                <option value="In-House Training Corporate Khusus">In-House Corporate Training</option>
+              </select>
+
+              <select id="hero-qty" class="px-3 py-2.5 rounded-xl bg-slate-900 border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-amber-400">
+                <option value="1 Peserta (Individu)">1 Peserta (Individu)</option>
+                <option value="2-4 Peserta (Grup Tim)">2–4 Peserta (Grup Tim)</option>
+                <option value="Corporate (>5 Peserta In-House)">In-House (&gt;5 Peserta)</option>
+              </select>
+
+              <button
+                type="submit"
+                class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-emerald-600/30 transition-all hover:scale-[1.02] flex items-center justify-center gap-1.5"
+              >
+                <span>Cek Promo &amp; Silabus</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Dual Quick Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href="/pelatihan-ahli-k3-umum/"
+              class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all hover:scale-105"
+            >
+              Lihat Jadwal &amp; Silabus Ahli K3 &rarr;
+            </a>
+            <a
+              href="/downloads/Checklist-Audit-SMK3-166-Kriteria.html"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Unduh Checklist Audit SMK3
+            </a>
+          </div>
+
+          <!-- Stats Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/10">
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-white font-serif">15+ <span class="text-amber-400 text-base">Tahun</span></div>
+              <div class="text-xs text-slate-400 mt-0.5">Pengalaman sejak 2011</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-white font-serif">12.500+</div>
+              <div class="text-xs text-slate-400 mt-0.5">Alumni Tersertifikasi</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-white font-serif">450+</div>
+              <div class="text-xs text-slate-400 mt-0.5">Klien Industri &amp; BUMN</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-serif">100%</div>
+              <div class="text-xs text-slate-400 mt-0.5">Garansi Bimbingan Ujian</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Real Visual Card with Floating Glassmorphic Badges -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/hero-safety-officer.jpg"
+              alt="Petugas HSE Safety Officer KonsultanK3.com"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500 text-slate-950 mb-2">
+                HSE Excellence
+              </span>
+              <div class="text-lg font-bold">Standardisasi K3 Zero Accident</div>
+              <p class="text-xs text-slate-300 mt-1">Implementasi sistem keselamatan kerja teruji untuk sektor konstruksi, manufaktur, dan pertambangan.</p>
+            </div>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-lg">
+              ✓
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white">SKP Kemnaker Terverifikasi</div>
+              <div class="text-[10px] text-slate-400">PJK3 Resmi Nasional</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">⭐</div>
+            <div>
+              <div class="text-xs font-bold text-white">Rating 4.9 / 5.0</div>
+              <div class="text-[10px] text-slate-400">Dari 1.200+ Review Klien Korporasi</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Accreditations & Client Trust Strip -->
+  <section class="py-10 bg-slate-900 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6">
+        Standarisasi Mutu &amp; Legalitas Akreditasi Resmi
+      </div>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-slate-200">
+          🏛️ Kemnaker RI (PJK3 Resmi)
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-slate-200">
+          📜 BNSP (LSP K3 Terakreditasi)
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-slate-200">
+          🛡️ ISO 45001:2018 OHSMS
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-slate-200">
+          🥇 SMK3 PP 50/2012 Bendera Emas
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Services & Training Grid -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/10 text-amber-600 border border-amber-500/20">
+          Program Unggulan Industri
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-serif">
+          Layanan Pembinaan &amp; Sertifikasi K3 Resmi
+        </h2>
+        <p class="text-base text-slate-600">
+          Pilih program pembinaan kompetensi K3 dengan fasilitas lengkap: modul resmi Kemnaker RI, bimbingan intensif ujian, dan surat penunjukan SKP berlisensi.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((item) => (
+          <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
+            <div class="relative h-48 overflow-hidden bg-slate-900">
+              <img
+                src={item.img}
+                alt={item.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <span class={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold border backdrop-blur-md bg-white/90 ${item.badgeColor}`}>
+                {item.badge}
+              </span>
+            </div>
+            
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="text-xs font-semibold text-emerald-600 mb-1.5">{item.specs}</div>
+              <h3 class="text-xl font-bold text-slate-900 font-serif mb-3 group-hover:text-amber-600 transition-colors">
+                <a href={item.href}>{item.title}</a>
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">
+                {item.desc}
+              </p>
+              
+              <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                <a
+                  href={item.href}
+                  class="text-sm font-bold text-slate-900 hover:text-amber-600 transition-colors flex items-center gap-1"
+                >
+                  <span>Detail &amp; Silabus</span> &rarr;
+                </a>
+                <a
+                  href={`https://wa.me/6281392943146?text=${encodeURIComponent(`Halo KonsultanK3, saya ingin konsultasi pendaftaran: ${item.title}`)}`}
+                  target="_blank"
+                  rel="noopener"
+                  class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors"
+                >
+                  Tanya Kuota
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <a
+          href="/pelatihan/"
+          class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-xl transition-all hover:scale-105"
+        >
+          <span>Lihat Katalog Lengkap Semua Sertifikasi K3</span> &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Live Batch Schedules Table -->
+  <section class="py-20 bg-white border-y border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="space-y-2">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
+            Jadwal Terdekat 2026
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif">
+            Kalender Pembinaan &amp; Sertifikasi
+          </h2>
+          <p class="text-sm text-slate-600">Amankan kursi sebelum kuota batch ditutup resmi oleh sistem TemanK3 Kemnaker.</p>
+        </div>
+        <a
+          href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20mohon%20kirimkan%20jadwal%20lengkap%20batch%20pelatihan%20K3"
+          target="_blank"
+          rel="noopener"
+          class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shrink-0 flex items-center gap-2"
+        >
+          <span>Minta Jadwal Lengkap PDF via WA</span> &rarr;
+        </a>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-200">
+        <table class="w-full text-left text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white text-xs uppercase font-semibold">
+            <tr>
+              <th class="py-4 px-6">Program Sertifikasi</th>
+              <th class="py-4 px-6">Tanggal Pelaksanaan</th>
+              <th class="py-4 px-6">Metode Belajar</th>
+              <th class="py-4 px-6">Status Kuota</th>
+              <th class="py-4 px-6 text-right">Aksi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            {batchSchedules.map((b) => (
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="py-4 px-6 font-bold text-slate-900">{b.program}</td>
+                <td class="py-4 px-6 text-slate-600">{b.dates}</td>
+                <td class="py-4 px-6 text-slate-600">{b.mode}</td>
+                <td class="py-4 px-6">
+                  <span class={`inline-block px-2.5 py-1 rounded-full text-xs font-bold ${b.statusColor}`}>
+                    {b.slots}
+                  </span>
+                </td>
+                <td class="py-4 px-6 text-right">
+                  <a
+                    href={`https://wa.me/6281392943146?text=${encodeURIComponent(`Halo KonsultanK3, saya ingin daftar program: ${b.program} tanggal ${b.dates}`)}`}
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-block px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold transition-colors"
+                  >
+                    Daftar Batch &rarr;
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Download Center: Free Safety Toolkits -->
+  <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">
+          Pusat Toolkit &amp; Regulasi Gratis
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-serif">
+          Unduh Dokumen &amp; Template K3 Resmi
+        </h2>
+        <p class="text-base text-slate-300">
+          Gunakan materi praktis dan checklist audit terstandar untuk persiapan kepatuhan keselamatan kerja di perusahaan Anda.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="p-8 rounded-3xl bg-white/5 border border-white/10 flex flex-col justify-between hover:bg-white/10 transition-colors">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xl">
+              📋
+            </div>
+            <h3 class="text-xl font-bold font-serif text-white">Checklist Audit SMK3 166 Kriteria</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Panduan evaluasi mandiri tingkat lanjutan untuk persiapan perolehan Bendera Emas PP No. 50 Tahun 2012.
+            </p>
+          </div>
+          <a
+            href="/downloads/Checklist-Audit-SMK3-166-Kriteria.html"
+            class="mt-6 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition-all"
+          >
+            Buka &amp; Unduh Dokumen &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white/5 border border-white/10 flex flex-col justify-between hover:bg-white/10 transition-colors">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xl">
+              📊
+            </div>
+            <h3 class="text-xl font-bold font-serif text-white">Formulir JSA (Job Safety Analysis)</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Template formulir analisis bahaya tugas standar industri migas &amp; konstruksi lengkap dengan langkah pengendalian risiko.
+            </p>
+          </div>
+          <a
+            href="/downloads/Formulir-JSA-Job-Safety-Analysis.html"
+            class="mt-6 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center transition-all"
+          >
+            Buka &amp; Unduh Dokumen &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white/5 border border-white/10 flex flex-col justify-between hover:bg-white/10 transition-colors">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xl">
+              🔊
+            </div>
+            <h3 class="text-xl font-bold font-serif text-white">Tabel Nilai Ambang Batas (NAB) Kebisingan</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Tabel batas paparan kebisingan per jam kerja sesuai Permenaker No. 5 Tahun 2018 tentang Keselamatan Lingkungan Kerja.
+            </p>
+          </div>
+          <a
+            href="/downloads/Tabel-Nilai-Ambang-Batas-Kebisingan-K3.html"
+            class="mt-6 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs text-center transition-all"
+          >
+            Buka &amp; Unduh Dokumen &rarr;
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center mb-16 space-y-3">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-200 text-slate-700">
+          Pertanyaan Umum
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif">
+          Frequently Asked Questions (FAQ)
+        </h2>
+        <p class="text-base text-slate-600">Jawaban cepat seputar legalitas sertifikasi, jadwal, dan pelaksanaan program.</p>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <details class="group bg-white rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 font-serif text-lg">
+              <span>{f.q}</span>
+              <span class="ml-4 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed pt-3 border-t border-slate-100 font-sans">
+              {f.a}
+            </p>
+          </details>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final High-Impact Lead Banner -->
+  <section class="py-16 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white border-t border-white/10 text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-6">
+      <span class="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+        Konsultasi Kepatuhan &amp; Penawaran Resmi
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif">
+        Tingkatkan Kompetensi HSE &amp; Kepatuhan Regulasi Perusahaan Anda
+      </h2>
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-sans">
+        Dapatkan silabus lengkap, penawaran harga corporate in-house, dan diskon batch terdekat bersama PT Wahana Totalita Konsultan.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <a
+          href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20meminta%20penawaran%20resmi%20untuk%20pelatihan%20K3"
+          target="_blank"
+          rel="noopener"
+          class="px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 flex items-center gap-2"
+        >
+          <span>Hubungi Konsultan via WhatsApp</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a
+          href="/kontak/"
+          class="px-8 py-4 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-bold text-base border border-white/15 transition-all"
+        >
+          Formulir Kontak Resmi
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive script for Hero Quick Quote -->
+  <script>
+    function setupQuoteForm() {
+      const form = document.getElementById('hero-quote-form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const prog = (document.getElementById('hero-prog') as HTMLSelectElement)?.value;
+          const qty = (document.getElementById('hero-qty') as HTMLSelectElement)?.value;
+          const msg = `Halo KonsultanK3, saya ingin konsultasi pendaftaran program: ${prog} untuk ${qty}. Mohon info jadwal terdekat, silabus lengkap, dan penawaran biayanya.`;
+          window.open(`https://wa.me/6281392943146?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+      }
+    }
+    document.addEventListener('astro:page-load', setupQuoteForm);
+  </script>
+</BaseLayout>

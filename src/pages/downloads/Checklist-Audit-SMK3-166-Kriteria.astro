@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Checklist Audit SMK3 166 Kriteria (PP No. 50 Tahun 2012)";
+const description = "Lembar checklist mandiri audit SMK3 166 kriteria berdasarkan PP No. 50 Tahun 2012. Format tabel siap cetak dan simpan ke PDF.";
+const canonical = "/downloads/Checklist-Audit-SMK3-166-Kriteria.html";
+
+const downloadSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pusat Unduhan", "item": "https://konsultank3.com/panduan-penerapan-smk3/" },
+        { "@type": "ListItem", "position": 3, "name": "Checklist Audit SMK3 166 Kriteria", "item": `https://konsultank3.com${canonical}` }
+      ]
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": title,
+      "description": description,
+      "publisher": {
+        "@type": "Organization",
+        "name": "PT Wahana Totalita Konsultan",
+        "url": "https://wahanatotalita.com"
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={`${title} » Konsultan K3 Indonesia`}
+  description={description}
+  canonical={canonical}
+  schema={downloadSchema}
+  presetMessage="Halo KonsultanK3, saya ingin meminta format file asli XLS/DOCX Checklist Audit SMK3 166 Kriteria."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-8 py-10 my-8 bg-white rounded-3xl shadow-sm border border-slate-200">
+    
+    <!-- Action Toolbar (Hidden in Print) -->
+    <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-slate-200 not-prose">
+      <a href="/panduan-penerapan-smk3/" class="text-sm font-semibold text-slate-600 hover:text-amber-600 flex items-center gap-1.5 transition-colors">
+        <span>&larr;</span> Panduan Audit SMK3
+      </a>
+      
+      <div class="flex flex-wrap items-center gap-3">
+        <button
+          onclick="window.print()"
+          class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center gap-2 cursor-pointer"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+          <span>Cetak / Simpan PDF</span>
+        </button>
+        <a
+          href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20meminta%20format%20asli%20(DOCX/XLS)%20Checklist%20Audit%20SMK3%20166%20Kriteria"
+          target="_blank"
+          rel="noopener"
+          class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-emerald-600/20 transition-all flex items-center gap-2"
+        >
+          <span>Format XLS Asli (WhatsApp) &rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Document Header -->
+    <div class="space-y-3 mb-8">
+      <div class="inline-block px-3 py-1 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-700 border border-amber-500/20 uppercase tracking-wider">
+        Format Audit Mandiri Lanjutan
+      </div>
+      <h1 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+        Checklist Audit Mandiri SMK3 &bull; 166 Kriteria
+      </h1>
+      <p class="text-sm text-slate-600 font-sans">
+        <strong>Dasar Hukum:</strong> Peraturan Pemerintah No. 50 Tahun 2012 tentang Penerapan Sistem Manajemen K3 (Tingkat Lanjutan).
+      </p>
+    </div>
+    
+    <!-- Printable Table -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse border border-slate-300">
+        <thead>
+          <tr class="bg-slate-100 text-slate-900 font-bold font-serif">
+            <th class="p-3 border border-slate-300 w-16 text-center">No.</th>
+            <th class="p-3 border border-slate-300 w-36">Kriteria</th>
+            <th class="p-3 border border-slate-300">Deskripsi Elemen Audit</th>
+            <th class="p-3 border border-slate-300 w-24 text-center">Status</th>
+            <th class="p-3 border border-slate-300 w-44">Bukti Objektif</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200 text-slate-700">
+          <tr class="hover:bg-slate-50">
+            <td class="p-3 border border-slate-300 font-mono text-center">1.1.1</td>
+            <td class="p-3 border border-slate-300 font-semibold text-slate-900">Kebijakan K3</td>
+            <td class="p-3 border border-slate-300">Terdapat kebijakan K3 tertulis, bertanggal, ditandatangani oleh pimpinan tertinggi, dan disosialisasikan ke seluruh pekerja.</td>
+            <td class="p-3 border border-slate-300 text-center font-mono">[ &nbsp; ]</td>
+            <td class="p-3 border border-slate-300">SK Kebijakan K3 Tertulis</td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="p-3 border border-slate-300 font-mono text-center">1.2.2</td>
+            <td class="p-3 border border-slate-300 font-semibold text-slate-900">Penanggung Jawab K3</td>
+            <td class="p-3 border border-slate-300">Penunjukan penanggung jawab K3 (Ahli K3 Umum) secara resmi dan memenuhi kualifikasi perundangan Kemnaker RI.</td>
+            <td class="p-3 border border-slate-300 text-center font-mono">[ &nbsp; ]</td>
+            <td class="p-3 border border-slate-300">SKP &amp; Lisensi K3 Kemnaker</td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="p-3 border border-slate-300 font-mono text-center">1.4.1</td>
+            <td class="p-3 border border-slate-300 font-semibold text-slate-900">Struktur P2K3</td>
+            <td class="p-3 border border-slate-300">Organisasi P2K3 (Panitia Pembina Keselamatan &amp; Kesehatan Kerja) telah disahkan oleh Disnaker setempat.</td>
+            <td class="p-3 border border-slate-300 text-center font-mono">[ &nbsp; ]</td>
+            <td class="p-3 border border-slate-300">SK Pengesahan Disnaker</td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="p-3 border border-slate-300 font-mono text-center">2.1.1</td>
+            <td class="p-3 border border-slate-300 font-semibold text-slate-900">HIRARC / IBPR</td>
+            <td class="p-3 border border-slate-300">Identifikasi bahaya, penilaian risiko, dan penentuan kendali (HIRARC) terdokumentasi untuk seluruh lini kegiatan.</td>
+            <td class="p-3 border border-slate-300 text-center font-mono">[ &nbsp; ]</td>
+            <td class="p-3 border border-slate-300">Matriks HIRARC / JSA</td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="p-3 border border-slate-300 font-mono text-center">6.1.1</td>
+            <td class="p-3 border border-slate-300 font-semibold text-slate-900">Alat Pelindung Diri</td>
+            <td class="p-3 border border-slate-300">Identifikasi kebutuhan APD, penyediaan cuma-cuma sesuai standar SNI/ANSI, dan rekaman kartu serah terima.</td>
+            <td class="p-3 border border-slate-300 text-center font-mono">[ &nbsp; ]</td>
+            <td class="p-3 border border-slate-300">Form Serah Terima APD</td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="p-3 border border-slate-300 font-mono text-center">6.7.1</td>
+            <td class="p-3 border border-slate-300 font-semibold text-slate-900">Tanggap Darurat</td>
+            <td class="p-3 border border-slate-300">Rencana tanggap darurat terdokumentasi, simulasi (drill) kebakaran berkala, dan tim tanggap darurat terlatih.</td>
+            <td class="p-3 border border-slate-300 text-center font-mono">[ &nbsp; ]</td>
+            <td class="p-3 border border-slate-300">Laporan Fire Drill &amp; Evakuasi</td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="p-3 border border-slate-300 font-mono text-center">11.1.1</td>
+            <td class="p-3 border border-slate-300 font-semibold text-slate-900">Audit Internal</td>
+            <td class="p-3 border border-slate-300">Audit internal SMK3 dilakukan secara periodik oleh auditor internal bersertifikat dan dilaporkan dalam tinjauan manajemen.</td>
+            <td class="p-3 border border-slate-300 text-center font-mono">[ &nbsp; ]</td>
+            <td class="p-3 border border-slate-300">Laporan Audit Internal</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Document Footer -->
+    <div class="mt-8 pt-6 border-t border-slate-200 text-center text-xs text-slate-500 font-sans">
+      Dokumen diterbitkan oleh <strong>KonsultanK3.com</strong> bekerjasama dengan <strong>PT Wahana Totalita Konsultan</strong>.<br/>
+      Konsultasi persiapan pendampingan sertifikasi SMK3 PP 50/2012: WhatsApp <strong>0813-9294-3146</strong>
+    </div>
+
+  </div>
+</BaseLayout>

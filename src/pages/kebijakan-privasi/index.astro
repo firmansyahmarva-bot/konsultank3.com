@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Kebijakan Privasi (Privacy Policy)";
+const description = "Kebijakan privasi perlindungan data pribadi pengunjung dan klien layanan pelatihan KonsultanK3.com sesuai UU No. 27 Tahun 2022 (UU PDP).";
+const canonical = "/kebijakan-privasi/";
+---
+
+<BaseLayout
+  title={`${title} » Konsultan K3 Indonesia`}
+  description={description}
+  canonical={canonical}
+  presetMessage="Halo KonsultanK3, saya ingin menanyakan perihal privasi dan kerahasiaan data perusahaan kami."
+>
+  <!-- Hero Section -->
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-6">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <span class="text-slate-300">Kebijakan Privasi</span>
+      </nav>
+
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold border border-amber-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+          Kepatuhan Regulasi &bull; UU No. 27 Tahun 2022 (UU PDP)
+        </div>
+
+        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          Kebijakan Privasi &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">Perlindungan Data</span>
+        </h1>
+
+        <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed">
+          Standar tata kelola, keamanan, dan kerahasiaan data pribadi klien serta peserta pembinaan sertifikasi K3 PT Wahana Totalita Konsultan.
+        </p>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Body Content -->
+  <main class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
+      
+      <div class="p-6 rounded-2xl bg-amber-50 border border-amber-200/80 shadow-sm text-sm text-amber-950 leading-relaxed font-sans">
+        <strong>Komitmen Kerahasiaan:</strong> KonsultanK3.com dan PT Wahana Totalita Konsultan berkomitmen penuh menjaga kerahasiaan seluruh dokumen korporasi, identitas peserta pelatihan, serta data hasil audit K3 sesuai amanat UU PDP No. 27 Tahun 2022.
+      </div>
+
+      <article class="prose max-w-none space-y-6">
+        <section class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+          <h2 class="font-serif text-2xl font-bold text-slate-900">1. Data yang Kami Kumpulkan</h2>
+          <p>Kami mengumpulkan data secara terbatas dan terukur semata-mata untuk keperluan administrasi resmi:</p>
+          <ul>
+            <li><strong>Formulir Konsultasi &amp; Pendaftaran:</strong> Nama lengkap peserta, NIK/KTP untuk penerbitan sertifikat Kemnaker/BNSP, nama perusahaan sponsor, jabatan, nomor WhatsApp aktif, dan alamat surat elektronik resmi.</li>
+            <li><strong>Data Analitik Teknis Anonim:</strong> Data diagnostik performa situs web (jenis peramban, kecepatan muat halaman) tanpa menyimpan identitas personal individu.</li>
+          </ul>
+        </section>
+
+        <section class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+          <h2 class="font-serif text-2xl font-bold text-slate-900">2. Tujuan Penggunaan Informasi</h2>
+          <p>Data yang Anda berikan dipergunakan secara eksklusif untuk:</p>
+          <ul>
+            <li>Memproses pendaftaran dan pelaporan peserta ke pangkalan data TemanK3 Ditjen Binwasnaker &amp; K3 Kemnaker RI.</li>
+            <li>Mengirimkan jadwal resmi, tautan Zoom blended learning, konfirmasi kelulusan, dan pengiriman berkas sertifikat fisik.</li>
+            <li>Menyediakan penawaran in-house corporate dan invoice resmi atas nama PT Wahana Totalita Konsultan.</li>
+          </ul>
+        </section>
+
+        <section class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+          <h2 class="font-serif text-2xl font-bold text-slate-900">3. Jaminan Perlindungan &amp; Tidak Ada Penjualan Data</h2>
+          <p>
+            Kami tidak pernah menjual, menyewakan, atau membagikan data pribadi Anda kepada pihak ketiga manapun untuk tujuan periklanan atau pemasaran di luar ekosistem resmi pembinaan K3 PT Wahana Totalita Konsultan.
+          </p>
+        </section>
+      </article>
+
+    </div>
+  </main>
+</BaseLayout>

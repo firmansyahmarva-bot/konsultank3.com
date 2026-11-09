@@ -1,0 +1,23 @@
+{
+  "name": "konsultank3.com",
+  "version": "1.0.0",
+  "description": "This project repository contains the architectural blueprints, technical SEO recovery specifications, backlink audit, and content strategies for relaunching **`KonsultanK3.com`** as an authoritative lead-generation satellite for **PT Wahana Totalita Konsultan** (`wahanatotalita.com`).",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/post-build.js",
+    "preview": "astro preview",
+    "serve": "node server.js"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.4",
+    "astro": "^7.4.5",
+    "tailwindcss": "^4.3.4"
+  }
+}

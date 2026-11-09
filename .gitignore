@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Astro cache
+.astro/
+
+# Build artifacts
+dist/
+
+# Environment files
+.env
+.env.production
+.env.development
+.env.local
+.env.*.local
+
+# Logs & OS metadata
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db

@@ -1,0 +1,8 @@
+# 301 Permanent Redirects for Clean Canonicals & Legacy URLs
+/program-pengendalian-kebisingan-331.html   /program-pengendalian-kebisingan/   301
+/privacy-policy                            /kebijakan-privasi/                 301
+/privacy-policy/*                          /kebijakan-privasi/                 301
+/hubungi-kami                              /kontak/                            301
+/hubungi-kami/*                            /kontak/                            301
+/arsip                                     /                                   301
+/arsip/*                                   /                                   301

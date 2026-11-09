@@ -1,0 +1,97 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const title = "Program Pengendalian Kebisingan di Tempat Kerja & Standar NAB 85 dBA";
+const description = "Panduan teknis hierarki pengendalian kebisingan industri, Nilai Ambang Batas (NAB) 85 dBA, program hearing conservation, audiometri, dan NRR APD telinga Permenaker No. 5/2018.";
+const canonical = "/program-pengendalian-kebisingan/";
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  category="Higiene & Lingkungan Kerja"
+  readTime="6 menit baca"
+>
+  <!-- Summary Metric Highlights -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-slate-100/80 border border-slate-200/80 text-center not-prose mb-8">
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Nilai Ambang Batas</span>
+      <span class="text-sm font-extrabold text-slate-900">85 dBA (8 Jam)</span>
+    </div>
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Regulasi Rujukan</span>
+      <span class="text-sm font-extrabold text-slate-900">Permenaker 05/2018</span>
+    </div>
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Metode Kendali</span>
+      <span class="text-sm font-extrabold text-slate-900">Eliminasi, Akustik, APD</span>
+    </div>
+    <div>
+      <span class="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-1">Surveilans Medis</span>
+      <span class="text-sm font-extrabold text-slate-900">Audiometri Berkala</span>
+    </div>
+  </div>
+
+  <p>
+    Kebisingan di tempat kerja merupakan salah satu faktor bahaya fisika yang paling sering dijumpai pada sektor manufaktur, fabrikasi logam, pertambangan, dan pembangkit listrik. Pajanan bising melebihi Nilai Ambang Batas (NAB) secara kronis dapat menyebabkan <em>Noise-Induced Hearing Loss (NIHL)</em> atau Gangguan Pendengaran Akibat Bising (GPAB) yang bersifat permanen dan tidak dapat disembuhkan.
+  </p>
+
+  <h2>1. Nilai Ambang Batas (NAB) Kebisingan (Permenaker No. 5/2018)</h2>
+  <p>
+    Berdasarkan Lampiran Peraturan Menteri Ketenagakerjaan No. 5 Tahun 2018 tentang Keselamatan dan Kesehatan Kerja Lingkungan Kerja, standar pajanan kebisingan maksimum harian tanpa alat pelindung pendengaran adalah sebagai berikut:
+  </p>
+  <ul>
+    <li><strong>85 dBA:</strong> Maksimum pajanan 8 jam per hari (standar shift kerja harian normal).</li>
+    <li><strong>88 dBA:</strong> Maksimum pajanan 4 jam per hari (setiap kenaikan 3 dBA, durasi pajanan dibagi dua).</li>
+    <li><strong>91 dBA:</strong> Maksimum pajanan 2 jam per hari.</li>
+    <li><strong>94 dBA:</strong> Maksimum pajanan 1 jam per hari.</li>
+    <li><strong>97 dBA:</strong> Maksimum pajanan 30 menit per hari.</li>
+    <li><strong>100 dBA:</strong> Maksimum pajanan 15 menit per hari.</li>
+    <li><strong>140 dBA:</strong> Tidak boleh terpapar sama sekali bahkan sesaat (<em>peak sound pressure level</em>).</li>
+  </ul>
+
+  <h2>2. Hierarki Pengendalian Kebisingan Industri</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-6">
+    <div class="p-5 rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <h3 class="font-bold text-slate-900 text-base mb-1 font-serif">1. Rekayasa Teknis (Engineering)</h3>
+      <p class="text-xs text-slate-600 leading-relaxed">Pemasangan silencer pada exhaust kompresor, acoustic enclosure penutup mesin genset, vibration dampener pada pondasi mesin, dan penyekatan ruang operator.</p>
+    </div>
+    <div class="p-5 rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <h3 class="font-bold text-slate-900 text-base mb-1 font-serif">2. Pengendalian Administratif</h3>
+      <p class="text-xs text-slate-600 leading-relaxed">Rotasi jam kerja pekerja dari zona bising tinggi ke zona tenang, pemetaan kontur kebisingan (noise mapping), serta pembatasan akses hanya untuk personil berwenang.</p>
+    </div>
+    <div class="p-5 rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <h3 class="font-bold text-slate-900 text-base mb-1 font-serif">3. Alat Pelindung Diri Telinga</h3>
+      <p class="text-xs text-slate-600 leading-relaxed">Penggunaan sumbat telinga (ear plug) dan penutup telinga (ear muff) dengan spesifikasi Noise Reduction Rating (NRR) teruji laboratorium dan terkalibrasi.</p>
+    </div>
+    <div class="p-5 rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <h3 class="font-bold text-slate-900 text-base mb-1 font-serif">4. Hearing Conservation Program (HCP)</h3>
+      <p class="text-xs text-slate-600 leading-relaxed">Program surveilans kesehatan terpadu: uji audiometri berkala saat pra-kerja, berkala tahunan, dan evaluasi pergeseran ambang dengar standar (Standard Threshold Shift / STS).</p>
+    </div>
+  </div>
+
+  <h2>3. Tata Cara Pemilihan &amp; Perhitungan Efektivitas NRR APD</h2>
+  <p>
+    Banyak perusahaan melakukan kesalahan fatal dengan menganggap APD dengan NRR 30 dB otomatis menurunkan kebisingan 100 dBA menjadi 70 dBA di gendang telinga pekerja. Menurut formula <strong>OSHA / NIOSH</strong>, reduksi nyata di lapangan dihitung dengan formula derating:
+  </p>
+  <blockquote class="p-4 bg-slate-100 rounded-xl border-l-4 border-amber-500 font-mono text-xs text-slate-800">
+    Estimasi Dosis Bising di Telinga = Kebisingan Terukur (dBC) - NRR<br/>
+    Atau bila terukur dalam dBA: Kebisingan Terukur (dBA) - [(NRR - 7) / 2]
+  </blockquote>
+  <p>
+    Jika area kerja memiliki intensitas 95 dBA dan pekerja menggunakan Ear Plug bernilai NRR 25 dB, maka estimasi reduksi nyata adalah: <code>95 - [(25 - 7) / 2] = 95 - 9 = 86 dBA</code>. Nilai ini masih berada di atas batas aman 85 dBA, sehingga dibutuhkan kombinasi (Dual Protection: Ear Plug + Ear Muff).
+  </p>
+
+  <!-- Download Toolkits Banner -->
+  <div class="mt-8 p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 text-white flex flex-col sm:flex-row justify-between items-center gap-6 not-prose border border-white/10 shadow-lg">
+    <div>
+      <span class="text-[11px] uppercase tracking-wider text-amber-400 font-bold block mb-1">Dokumen Standar Siap Pakai</span>
+      <h3 class="text-lg font-bold text-white font-serif">Unduh Tabel Standar Durasi Pajanan &amp; NAB Kebisingan</h3>
+      <p class="text-xs text-slate-400 mt-1 max-w-md">Dokumen tabel NAB kebisingan resmi Permenaker No. 5/2018 format PDF siap cetak untuk panduan tim HSE di lapangan.</p>
+    </div>
+    <a href="/downloads/Tabel-Nilai-Ambang-Batas-Kebisingan-K3.html" target="_blank" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shadow-md hover:scale-105 shrink-0">
+      Unduh Tabel NAB &rarr;
+    </a>
+  </div>
+</ArticleLayout>

@@ -1,0 +1,356 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const programs = [
+  {
+    title: 'Pembinaan Calon Ahli K3 Umum',
+    authority: 'Kemnaker RI',
+    authorityColor: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20',
+    duration: '12 Hari (120 JP)',
+    method: 'Blended Learning / Tatap Muka',
+    audience: 'Calon Sekretaris P2K3, HSE Officer, Manajer Operasional',
+    summary: 'Program pembinaan sertifikasi paling fundamental di Indonesia sesuai Permenaker No. 02/MEN/1992. Membekali peserta dengan wewenang legal mengawasi ditaatinya UU No. 1/1970.',
+    highlights: ['Sertifikat & SKP Resmi Kemnaker RI', 'Lisensi Kewenangan K3 Nasional', 'Modul Perundangan & Bimbingan PKL', 'Garansi Bimbingan Ujian 100%'],
+    href: '/pelatihan-ahli-k3-umum/',
+    featured: true
+  },
+  {
+    title: 'K3 Penanggulangan Kebakaran (Kelas D, C, B, A)',
+    authority: 'Kemnaker RI',
+    authorityColor: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20',
+    duration: '3 – 6 Hari',
+    method: 'Tatap Muka & Praktik Lapangan APAR/Hydran',
+    audience: 'Regu Pemadam Kebakaran Gedung & Industri, Koordinator Fire Safety',
+    summary: 'Sertifikasi berjenjang sesuai Kepmenaker No. KEP.186/MEN/1999 untuk membentuk unit penanggulangan kebakaran di tempat kerja mulai dari petugas peran kebakaran (Kelas D) hingga Ahli K3 Kebakaran (Kelas A).',
+    highlights: ['Simulasi Live Fire Fighting', 'Inspeksi Fire Hydrant & Alarm Smoke', 'Penyusunan Emergency Response Plan', 'Lisensi Petugas/Koordinator Kebakaran'],
+    href: '/pelatihan-k3-kebakaran/',
+    featured: false
+  },
+  {
+    title: 'Teknisi & Ahli K3 Listrik Industri',
+    authority: 'Kemnaker RI',
+    authorityColor: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20',
+    duration: '6 – 12 Hari',
+    method: 'Interactive Zoom + Praktik Pengukuran',
+    audience: 'Teknisi Listrik, Electrical Engineer, Supervisor Maintenance',
+    summary: 'Standar kompetensi keselamatan instalasi listrik tegangan rendah dan tinggi sesuai Permenaker No. 12 Tahun 2015 dan standar teknis SNI/PUIL 2011.',
+    highlights: ['Pengukuran Grounding Resistansi Tanah', 'Proteksi Arus Bocor (ELCB/RCD)', 'Inspeksi Penangkal Penyalur Petir', 'Sertifikat & Lisensi K3 Listrik'],
+    href: '/pelatihan-k3-listrik/',
+    featured: false
+  },
+  {
+    title: 'K3 Bekerja di Ruang Terbatas (Confined Space)',
+    authority: 'Kemnaker RI',
+    authorityColor: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20',
+    duration: '3 – 5 Hari',
+    method: 'Simulasi Tangki/Manhole & Gas Testing',
+    audience: 'Pekerja Masuk Tangki, Vessel, Boiler, Manhole, Safety Standby',
+    summary: 'Pedoman keselamatan bekerja di ruang terbatas sesuai Surat Keputusan Dirjen Binwasnaker No. KEP.113/DJPPK/IX/2006 (Petugas Madya & Petugas Utama).',
+    highlights: ['Pengoperasian Multi-Gas Detector', 'Sistem Izin Kerja (Entry Permit)', 'Penggunaan SCBA & Tripod Winch', 'Prosedur Evakuasi & Rescue'],
+    href: '/pelatihan-k3-ruang-terbatas/',
+    featured: false
+  },
+  {
+    title: 'Sertifikasi BNSP PPPA (Pengendalian Pencemaran Air)',
+    authority: 'BNSP / LSP Lingkungan',
+    authorityColor: 'bg-blue-500/10 text-blue-700 border-blue-500/20',
+    duration: '3 Hari Pembekalan & Uji',
+    method: 'Online Bimbingan Pra-Uji + Asesmen BNSP',
+    audience: 'Operator IPAL, Environmental Officer, Compliance Supervisor',
+    summary: 'Sertifikasi kompetensi resmi BNSP bagi penanggung jawab dan operator instalasi pengolahan air limbah (IPAL) industri sesuai SKKNI No. 187/2016.',
+    highlights: ['Uji Portofolio & Wawancara Asesor', 'Pengukuran Parameter COD, BOD, TSS', 'Sertifikat Kompetensi Resmi BNSP', 'Didukung Materi Praktik Lapangan'],
+    href: '/pelatihan-pppa-popal/',
+    featured: false
+  },
+  {
+    title: 'Sertifikasi BNSP PPPU (Pengendalian Pencemaran Udara)',
+    authority: 'BNSP / LSP Lingkungan',
+    authorityColor: 'bg-blue-500/10 text-blue-700 border-blue-500/20',
+    duration: '3 Hari Pembekalan & Uji',
+    method: 'Online Bimbingan Pra-Uji + Asesmen BNSP',
+    audience: 'Penanggung Jawab Boiler, Operator Cerobong, HSE Officer',
+    summary: 'Sertifikasi kompetensi resmi BNSP untuk pengelolaan emisi gas buang sumber tidak bergerak (boiler, genset, kiln) industri sesuai SKKNI No. 282/2020.',
+    highlights: ['Pemantauan Isokinetik Cerobong', 'Pengendalian Opasitas & Emisi Gas', 'Penyusunan Laporan Semester KLHK', 'Sertifikat Kompetensi BNSP Resmi'],
+    href: '/pelatihan-pppu-poippu/',
+    featured: false
+  }
+];
+
+const catalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Katalog Program Pelatihan & Sertifikasi K3 Kemnaker RI & BNSP",
+  "itemListElement": programs.map((p, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": p.title,
+    "description": p.summary,
+    "url": `https://konsultank3.com${p.href}`
+  }))
+};
+---
+
+<BaseLayout
+  title="Katalog Pelatihan & Sertifikasi K3 Kemnaker RI & BNSP » Konsultan K3"
+  description="Daftar lengkap program pembinaan sertifikasi personel K3 resmi Kemnaker RI dan BNSP. Ahli K3 Umum, K3 Kebakaran, K3 Listrik, Ruang Terbatas, dan Lingkungan."
+  canonical="/pelatihan/"
+  schema={catalogSchema}
+  presetMessage="Halo KonsultanK3, saya ingin melihat katalog lengkap dan biaya pelatihan K3."
+>
+  <!-- Hero Banner with Visual Photography Card -->
+  <section class="bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <span class="text-slate-300">Katalog Pelatihan &amp; Sertifikasi K3</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Value Proposition -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+            </svg>
+            Sertifikasi Kemnaker RI &amp; Standar Kompetensi BNSP
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight text-white leading-tight">
+            Pusat Pembinaan &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">Sertifikasi Personel K3</span> Resmi Industri
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans max-w-2xl">
+            Tingkatkan kompetensi personil keselamatan kerja dan penuhi kepatuhan regulasi ketenagakerjaan di perusahaan Anda melalui program pembinaan resmi Kemnaker RI, BNSP, dan audit SMK3 PP 50/2012.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20mohon%20kirimkan%20silabus%20dan%20jadwal%20lengkap%20semua%20pelatihan%20K3"
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
+            >
+              Konsultasi Jadwal &amp; Biaya &rarr;
+            </a>
+            <a
+              href="#katalog-grid"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Telusuri Program ({programs.length})
+            </a>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 text-center sm:text-left">
+            <div>
+              <div class="text-2xl font-bold text-white font-serif">12.500+</div>
+              <div class="text-xs text-slate-400 mt-1">Alumni Tersertifikasi</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-emerald-400 font-serif">100%</div>
+              <div class="text-xs text-slate-400 mt-1">Garansi Bimbingan Ujian</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-amber-400 font-serif">PJK3 Resmi</div>
+              <div class="text-xs text-slate-400 mt-1">Kemnaker RI No. KEP.560</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Photography Card with Floating Badges -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/training-session.jpg"
+              alt="Sesi Pembinaan Pelatihan K3 Resmi PT Wahana Totalita Konsultan"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500 text-slate-950 mb-2">
+                Batch K3 Kemnaker 2026
+              </span>
+              <div class="text-lg font-bold">Pembinaan Kelas Interaktif &amp; Praktik</div>
+              <p class="text-xs text-slate-300 mt-1">Metode Blended Learning (Zoom tatap maya) dan workshop lapangan bimbingan praktisi senior.</p>
+            </div>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-lg">
+              ✓
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white">Akreditasi Kemnaker RI</div>
+              <div class="text-[10px] text-slate-400">Lisensi &amp; SKP Sah Nasional</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">⭐</div>
+            <div>
+              <div class="text-xs font-bold text-white">Kepuasan Klien 4.9 / 5.0</div>
+              <div class="text-[10px] text-slate-400">Dari 450+ Korporasi Mitra</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Main Programs Catalog Grid -->
+  <section id="katalog-grid" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Filter / Category Indicator -->
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-slate-200">
+        <div class="text-sm font-semibold text-slate-700">
+          Menampilkan <span class="text-emerald-600 font-bold">{programs.length} Program Unggulan</span> Terakreditasi:
+        </div>
+        <div class="flex items-center gap-2 text-xs">
+          <span class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 font-bold">Kemnaker RI</span>
+          <span class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 font-bold">BNSP RI</span>
+          <span class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 font-bold">Audit SMK3</span>
+        </div>
+      </div>
+
+      <!-- Programs Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {programs.map((prog) => (
+          <div class={`bg-white rounded-3xl p-8 border ${prog.featured ? 'border-amber-400 ring-2 ring-amber-400/20' : 'border-slate-200'} shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group`}>
+            
+            <div class="space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class={`px-3 py-1 rounded-full text-xs font-bold border ${prog.authorityColor}`}>
+                  {prog.authority}
+                </span>
+                <span class="text-xs font-semibold text-slate-500">
+                  {prog.duration}
+                </span>
+              </div>
+
+              <h2 class="text-2xl font-bold font-serif text-slate-900 group-hover:text-emerald-700 transition-colors">
+                <a href={prog.href}>{prog.title}</a>
+              </h2>
+
+              <p class="text-sm text-slate-600 leading-relaxed">
+                {prog.summary}
+              </p>
+
+              <!-- Program Highlights Checklist -->
+              <div class="pt-2 space-y-2">
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Keunggulan &amp; Fasilitas:</div>
+                <ul class="space-y-1.5 text-xs text-slate-700">
+                  {prog.highlights.map(h => (
+                    <li class="flex items-center gap-2">
+                      <span class="text-emerald-500 font-bold">✓</span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between gap-3">
+              <a
+                href={prog.href}
+                class="text-sm font-bold text-slate-900 hover:text-emerald-600 transition-colors flex items-center gap-1"
+              >
+                <span>Silabus &amp; Detail</span> &rarr;
+              </a>
+              <a
+                href={`https://wa.me/6281392943146?text=${encodeURIComponent(`Halo KonsultanK3, saya ingin info biaya & jadwal: ${prog.title}`)}`}
+                target="_blank"
+                rel="noopener"
+                class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md transition-all hover:scale-105"
+              >
+                Cek Biaya
+              </a>
+            </div>
+
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Comparison Matrix: Kemnaker vs BNSP -->
+  <section class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+        <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900">
+          Perbandingan Jalur Sertifikasi: Kemnaker RI vs. BNSP
+        </h2>
+        <p class="text-sm text-slate-600">
+          Pahami perbedaan landasan hukum dan peruntukan sertifikasi sebelum mendaftarkan tim kerja Anda.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-200">
+        <table class="w-full text-left text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white text-xs uppercase font-semibold">
+            <tr>
+              <th class="py-4 px-6">Aspek Pembeda</th>
+              <th class="py-4 px-6 bg-emerald-950">Sertifikasi Kemnaker RI</th>
+              <th class="py-4 px-6 bg-blue-950">Sertifikasi BNSP</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-4 px-6 font-bold text-slate-900">Dasar Hukum Utama</td>
+              <td class="py-4 px-6">UU No. 1 Tahun 1970 &amp; Permenaker Ketenagakerjaan</td>
+              <td class="py-4 px-6">UU No. 13 Tahun 2003 &amp; Standar SKKNI</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-slate-900">Output Legalitas</td>
+              <td class="py-4 px-6">Sertifikat Pembinaan, SKP, dan Lisensi Kewenangan Resmi</td>
+              <td class="py-4 px-6">Sertifikat Kompetensi Profesi Berlambang Garuda</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-slate-900">Kewajiban di Perusahaan</td>
+              <td class="py-4 px-6 text-emerald-700 font-semibold">Wajib untuk syarat penunjukan Sekretaris P2K3 &amp; Lisensi Alat</td>
+              <td class="py-4 px-6">Pengakuan kompetensi profesi keahlian kerja individu</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-slate-900">Masa Berlaku</td>
+              <td class="py-4 px-6">3 Tahun (Dapat diperpanjang melalui PJK3 resmi)</td>
+              <td class="py-4 px-6">3 Tahun (Melalui asesmen uji ulang kompetensi)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Corporate In-House Consultation Banner -->
+  <section class="py-16 bg-slate-950 text-white border-t border-white/10 text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
+      <h2 class="text-3xl font-bold font-serif">
+        Rencanakan Pelatihan Khusus (In-House) untuk Perusahaan Anda
+      </h2>
+      <p class="text-base text-slate-300 max-w-2xl mx-auto">
+        Jadwal fleksibel, lokasi di pabrik/kantor Anda, dan kurikulum disesuaikan dengan profil risiko tempat kerja Anda.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <a
+          href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20mengajukan%20penawaran%20In-House%20Training%20perusahaan"
+          target="_blank"
+          rel="noopener"
+          class="px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl transition-all"
+        >
+          Konsultasi In-House via WhatsApp &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

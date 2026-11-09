@@ -1,0 +1,99 @@
+---
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+  schema?: any;
+  robots?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  ogImage = 'https://konsultank3.com/assets/images/hero-safety-officer.jpg',
+  type = 'website',
+  schema,
+  robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+} = Astro.props;
+
+const siteUrl = 'https://konsultank3.com';
+const fullCanonical = canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
+
+const defaultSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://konsultank3.com/#organization",
+      "name": "Konsultan K3 Indonesia",
+      "url": "https://konsultank3.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://konsultank3.com/assets/images/logo.png"
+      },
+      "description": "Pusat informasi kepatuhan K3, pembinaan sertifikasi Kemnaker RI, BNSP, dan pendampingan audit SMK3 PP 50/2012.",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "PT Wahana Totalita Konsultan",
+        "url": "https://wahanatotalita.com"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-813-9294-3146",
+        "contactType": "customer service",
+        "areaServed": "ID",
+        "availableLanguage": ["Indonesian", "English"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://konsultank3.com/#website",
+      "url": "https://konsultank3.com",
+      "name": "Konsultan K3 Indonesia",
+      "publisher": {
+        "@id": "https://konsultank3.com/#organization"
+      }
+    }
+  ]
+};
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="robots" content={robots} />
+<link rel="canonical" href={fullCanonical} />
+<link rel="icon" type="image/png" href="/assets/favicon.png" />
+<link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon" />
+
+<!-- Google Fonts preconnect & stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Alice&family=Figtree:ital,wght@0,300..900;1,300..900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={fullCanonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content="Konsultan K3 Indonesia" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={fullCanonical} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={ogImage} />
+
+<!-- View Transitions for ultra-smooth app-like page changes -->
+<ClientRouter />
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(schema || defaultSchema)} />
