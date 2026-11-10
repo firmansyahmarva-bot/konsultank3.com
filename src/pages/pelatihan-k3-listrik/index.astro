@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { batches } from '../../data/batches.js';
+
+const batch = batches.listrik;
 
 const title = "Pelatihan Teknisi & Ahli K3 Listrik Kemnaker";
 const description = "Program pembinaan sertifikasi Teknisi K3 Listrik dan Ahli K3 Listrik berlisensi resmi Kemnaker RI sesuai Permenaker No. 12 Tahun 2015.";
@@ -209,16 +212,22 @@ const canonical = "/pelatihan-k3-listrik/";
             </p>
           </div>
 
-          <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 space-y-2 text-xs">
-            <div class="flex items-center justify-between">
-              <span class="text-zinc-400">Batch Terdekat:</span>
-              <span class="text-white font-mono font-bold">10 – 23 November 2026</span>
+          {batch ? (
+            <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 space-y-2 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-400">Jadwal Batch:</span>
+                <span class="text-white font-mono font-bold">{batch.tanggal}</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-400">Sisa Kursi:</span>
+                <span class="text-emerald-400 font-mono font-bold">{batch.sisa} Kursi</span>
+              </div>
             </div>
-            <div class="flex items-center justify-between">
-              <span class="text-zinc-400">Status Kuota:</span>
-              <span class="text-emerald-400 font-mono font-bold">Kuota Terbatas (4 Kursi)</span>
+          ) : (
+            <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 text-xs text-zinc-300">
+              <p>Jadwal batch dan biaya terbaru: tanyakan via WhatsApp</p>
             </div>
-          </div>
+          )}
 
           <a href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20mendaftar%20Pelatihan%20Teknisi%20%26%20Ahli%20K3%20Listrik%20Kemnaker%20RI" target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg">
             <span>Daftar via WhatsApp Resmi</span>

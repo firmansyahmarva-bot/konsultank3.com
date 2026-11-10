@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { batches } from '../../data/batches.js';
+
+const batch = batches.ahliK3Umum;
 
 const title = "Pelatihan Ahli K3 Umum Kemnaker Bersertifikat";
 const description = "Program pembinaan sertifikasi calon Ahli K3 Umum resmi Kemnaker RI selama 12 hari (120 JP). Modul resmi, bimbingan PKL, dan lisensi SKP nasional.";
@@ -245,16 +248,22 @@ const canonical = "/pelatihan-ahli-k3-umum/";
             </p>
           </div>
 
-          <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 space-y-2 text-xs">
-            <div class="flex items-center justify-between">
-              <span class="text-zinc-400">Batch Mendatang:</span>
-              <span class="text-white font-mono font-bold">10 – 23 November 2026</span>
+          {batch ? (
+            <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 space-y-2 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-400">Jadwal Batch:</span>
+                <span class="text-white font-mono font-bold">{batch.tanggal}</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-400">Sisa Kursi:</span>
+                <span class="text-emerald-400 font-mono font-bold">{batch.sisa} Kursi</span>
+              </div>
             </div>
-            <div class="flex items-center justify-between">
-              <span class="text-zinc-400">Status Kuota:</span>
-              <span class="text-emerald-400 font-mono font-bold">Kuota Terbatas (4 Kursi)</span>
+          ) : (
+            <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 text-xs text-zinc-300">
+              <p>Jadwal batch dan biaya terbaru: tanyakan via WhatsApp</p>
             </div>
-          </div>
+          )}
 
           <a href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20mendaftar%20Pelatihan%20Ahli%20K3%20Umum%20Batch%20Terdekat" target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg">
             <span>Daftar via WhatsApp Resmi</span>

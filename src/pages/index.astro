@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { batches } from '../data/batches.js';
 
 const services = [
   {
@@ -61,35 +62,23 @@ const services = [
 const batchSchedules = [
   {
     program: 'Pembinaan Calon Ahli K3 Umum (Kemnaker RI)',
-    dates: '10 – 23 November 2026',
-    mode: 'Blended (Online Teori + PKL Mandiri)',
-    slots: 'Kuota Terbatas (4 Kursi)',
-    status: 'Segera Penuh',
-    statusColor: 'text-amber-500 bg-amber-500/10'
+    key: 'ahliK3Umum',
+    mode: 'Blended (Online Teori + PKL Mandiri)'
   },
   {
     program: 'K3 Penanggulangan Kebakaran Kelas D & C',
-    dates: '17 – 20 November 2026',
-    mode: 'Tatap Muka & Praktik Lapangan APAR',
-    slots: 'Kuota Terbuka (6 Kursi)',
-    status: 'Tersedia',
-    statusColor: 'text-emerald-500 bg-emerald-500/10'
+    key: 'kebakaran',
+    mode: 'Tatap Muka & Praktik Lapangan APAR'
   },
   {
     program: 'Teknisi K3 Listrik Industri (PUIL & Grounding)',
-    dates: '24 – 28 November 2026',
-    mode: 'Interactive Live Zoom + Praktik',
-    slots: 'Kuota Terbuka (5 Kursi)',
-    status: 'Tersedia',
-    statusColor: 'text-emerald-500 bg-emerald-500/10'
+    key: 'listrik',
+    mode: 'Interactive Live Zoom + Praktik'
   },
   {
     program: 'K3 Ruang Terbatas (Confined Space) - Petugas Madya',
-    dates: '01 – 04 Desember 2026',
-    mode: 'Teori Gas Detector + Simulasi Masuk Manhole',
-    slots: 'Pendaftaran Dibuka',
-    status: 'Buka Batch Baru',
-    statusColor: 'text-blue-500 bg-blue-500/10'
+    key: 'ruangTerbatas',
+    mode: 'Teori Gas Detector + Simulasi Masuk Manhole'
   }
 ];
 
@@ -189,7 +178,7 @@ const homeSchema = {
           <!-- Interactive 1-Click WhatsApp Quick Quote / Syllabus Form -->
           <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl space-y-4">
             <div class="flex items-center gap-2 text-sm font-bold text-amber-400">
-              <span>⚡</span> Hitung Biaya &amp; Cek Kuota Batch Terdekat:
+              <span>⚡</span> Hitung Biaya &amp; Cek Jadwal Batch:
             </div>
             
             <form id="hero-quote-form" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -432,28 +421,51 @@ const homeSchema = {
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-200">
-            {batchSchedules.map((b) => (
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-4 px-6 font-bold text-slate-900">{b.program}</td>
-                <td class="py-4 px-6 text-slate-600">{b.dates}</td>
-                <td class="py-4 px-6 text-slate-600">{b.mode}</td>
-                <td class="py-4 px-6">
-                  <span class={`inline-block px-2.5 py-1 rounded-full text-xs font-bold ${b.statusColor}`}>
-                    {b.slots}
-                  </span>
-                </td>
-                <td class="py-4 px-6 text-right">
-                  <a
-                    href={`https://wa.me/6281392943146?text=${encodeURIComponent(`Halo KonsultanK3, saya ingin daftar program: ${b.program} tanggal ${b.dates}`)}`}
-                    target="_blank"
-                    rel="noopener"
-                    class="inline-block px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold transition-colors"
-                  >
-                    Daftar Batch &rarr;
-                  </a>
-                </td>
-              </tr>
-            ))}
+            {batchSchedules.map((b) => {
+              const batch = batches[b.key];
+              return (
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="py-4 px-6 font-bold text-slate-900">{b.program}</td>
+                  {batch ? (
+                    <>
+                      <td class="py-4 px-6 text-slate-600">{batch.tanggal}</td>
+                      <td class="py-4 px-6 text-slate-600">{b.mode}</td>
+                      <td class="py-4 px-6">
+                        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-bold text-emerald-500 bg-emerald-500/10">
+                          {batch.sisa} Kursi
+                        </span>
+                      </td>
+                      <td class="py-4 px-6 text-right">
+                        <a
+                          href={`https://wa.me/6289510253435?text=${encodeURIComponent(`Halo KonsultanK3, saya ingin daftar program: ${b.program} tanggal ${batch.tanggal}`)}`}
+                          target="_blank"
+                          rel="noopener"
+                          class="inline-block px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold transition-colors"
+                        >
+                          Daftar Batch &rarr;
+                        </a>
+                      </td>
+                    </>
+                  ) : (
+                    <>
+                      <td class="py-4 px-6 text-slate-600" colspan="3">
+                        Jadwal batch dan biaya terbaru: tanyakan via WhatsApp
+                      </td>
+                      <td class="py-4 px-6 text-right">
+                        <a
+                          href={`https://wa.me/6289510253435?text=${encodeURIComponent(`Halo KonsultanK3, saya ingin tanya jadwal dan biaya terbaru program: ${b.program}`)}`}
+                          target="_blank"
+                          rel="noopener"
+                          class="inline-block px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold transition-colors"
+                        >
+                          Tanya via WA &rarr;
+                        </a>
+                      </td>
+                    </>
+                  )}
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
