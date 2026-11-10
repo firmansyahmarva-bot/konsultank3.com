@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { batches } from '../../data/batches.js';
+import { waLink } from '../../data/contact.js';
 
 const batch = batches.ahliK3Umum;
 
@@ -42,7 +43,7 @@ const canonical = "/pelatihan-ahli-k3-umum/";
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20mendaftar%20pembinaan%20Ahli%20K3%20Umum%20batch%20terdekat"
+              href={waLink("Halo KonsultanK3, saya ingin mendaftar pembinaan Ahli K3 Umum batch terdekat")}
               target="_blank"
               rel="noopener"
               class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
@@ -265,7 +266,7 @@ const canonical = "/pelatihan-ahli-k3-umum/";
             </div>
           )}
 
-          <a href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20mendaftar%20Pelatihan%20Ahli%20K3%20Umum%20Batch%20Terdekat" target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg">
+          <a href={waLink("Halo KonsultanK3, saya ingin mendaftar Pelatihan Ahli K3 Umum Batch Terdekat")} target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg">
             <span>Daftar via WhatsApp Resmi</span>
             <span>&rarr;</span>
           </a>

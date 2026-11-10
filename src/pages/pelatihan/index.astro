@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
 
 const programs = [
   {
@@ -129,7 +130,7 @@ const catalogSchema = {
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20mohon%20kirimkan%20silabus%20dan%20jadwal%20lengkap%20semua%20pelatihan%20K3"
+              href={waLink("Halo KonsultanK3, mohon kirimkan silabus dan jadwal lengkap semua pelatihan K3")}
               target="_blank"
               rel="noopener"
               class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
@@ -266,7 +267,7 @@ const catalogSchema = {
                 <span>Silabus &amp; Detail</span> &rarr;
               </a>
               <a
-                href={`https://wa.me/6281392943146?text=${encodeURIComponent(`Halo KonsultanK3, saya ingin info biaya & jadwal: ${prog.title}`)}`}
+                href={waLink(`Halo KonsultanK3, saya ingin info biaya & jadwal: ${prog.title}`)}
                 target="_blank"
                 rel="noopener"
                 class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md transition-all hover:scale-105"
@@ -343,7 +344,7 @@ const catalogSchema = {
       </p>
       <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
         <a
-          href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20mengajukan%20penawaran%20In-House%20Training%20perusahaan"
+          href={waLink("Halo KonsultanK3, saya ingin mengajukan penawaran In-House Training perusahaan")}
           target="_blank"
           rel="noopener"
           class="px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl transition-all"

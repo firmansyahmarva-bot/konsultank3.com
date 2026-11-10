@@ -15,6 +15,7 @@
     "check:standalone": "node scripts/check-standalone.mjs",
     "check:seo": "node scripts/check-seo.mjs",
     "check:service": "node scripts/check-service-pages.mjs",
+    "check:contact": "node scripts/check-contact.mjs",
     "preview": "astro preview",
     "serve": "node server.js"
   },

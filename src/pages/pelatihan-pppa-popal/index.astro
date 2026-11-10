@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
 
 const units = [
   { code: 'E.370000.001.01', title: 'Mengidentifikasi Sumber Pencemaran Air Limbah', desc: 'Pemetaan neraca air industri, titik buang (outfall), debit influen-efluen, dan karakteristik air limbah.' },
@@ -89,7 +90,7 @@ const courseSchema = {
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20info%20jadwal%20dan%20biaya%20sertifikasi%20BNSP%20PPPA%20POPAL"
+              href={waLink("Halo KonsultanK3, saya ingin info jadwal dan biaya sertifikasi BNSP PPPA POPAL")}
               target="_blank"
               rel="noopener"
               class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
@@ -263,7 +264,7 @@ const courseSchema = {
           </div>
 
           <a
-            href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20mendaftar%20sertifikasi%20BNSP%20PPPA%20POPAL"
+            href={waLink("Halo KonsultanK3, saya ingin mendaftar sertifikasi BNSP PPPA POPAL")}
             target="_blank"
             rel="noopener"
             class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"

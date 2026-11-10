@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { batches } from '../data/batches.js';
+import { WA_SCHEMA, waLink } from '../data/contact.js';
 
 const services = [
   {
@@ -116,7 +117,7 @@ const homeSchema = {
       "description": "Pusat informasi kepatuhan K3, pembinaan sertifikasi Kemnaker RI, BNSP, dan pendampingan audit SMK3 PP 50/2012.",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+62-813-9294-3146",
+        "telephone": WA_SCHEMA,
         "contactType": "customer service",
         "areaServed": "ID",
         "availableLanguage": ["Indonesian", "English"]
@@ -360,7 +361,7 @@ const homeSchema = {
                   <span>Detail &amp; Silabus</span> &rarr;
                 </a>
                 <a
-                  href={`https://wa.me/6281392943146?text=${encodeURIComponent(`Halo KonsultanK3, saya ingin konsultasi pendaftaran: ${item.title}`)}`}
+                  href={waLink(`Halo KonsultanK3, saya ingin konsultasi pendaftaran: ${item.title}`)}
                   target="_blank"
                   rel="noopener"
                   class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors"
@@ -400,7 +401,7 @@ const homeSchema = {
           <p class="text-sm text-slate-600">Amankan kursi sebelum kuota batch ditutup resmi oleh sistem TemanK3 Kemnaker.</p>
         </div>
         <a
-          href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20mohon%20kirimkan%20jadwal%20lengkap%20batch%20pelatihan%20K3"
+          href={waLink("Halo KonsultanK3, mohon kirimkan jadwal lengkap batch pelatihan K3")}
           target="_blank"
           rel="noopener"
           class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shrink-0 flex items-center gap-2"
@@ -437,7 +438,7 @@ const homeSchema = {
                       </td>
                       <td class="py-4 px-6 text-right">
                         <a
-                          href={`https://wa.me/6289510253435?text=${encodeURIComponent(`Halo KonsultanK3, saya ingin daftar program: ${b.program} tanggal ${batch.tanggal}`)}`}
+                          href={waLink(`Halo KonsultanK3, saya ingin daftar program: ${b.program} tanggal ${batch.tanggal}`)}
                           target="_blank"
                           rel="noopener"
                           class="inline-block px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold transition-colors"
@@ -453,7 +454,7 @@ const homeSchema = {
                       </td>
                       <td class="py-4 px-6 text-right">
                         <a
-                          href={`https://wa.me/6289510253435?text=${encodeURIComponent(`Halo KonsultanK3, saya ingin tanya jadwal dan biaya terbaru program: ${b.program}`)}`}
+                          href={waLink(`Halo KonsultanK3, saya ingin tanya jadwal dan biaya terbaru program: ${b.program}`)}
                           target="_blank"
                           rel="noopener"
                           class="inline-block px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold transition-colors"
@@ -598,7 +599,7 @@ const homeSchema = {
 
       <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
         <a
-          href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20meminta%20penawaran%20resmi%20untuk%20pelatihan%20K3"
+          href={waLink("Halo KonsultanK3, saya ingin meminta penawaran resmi untuk pelatihan K3")}
           target="_blank"
           rel="noopener"
           class="px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 flex items-center gap-2"
@@ -618,6 +619,8 @@ const homeSchema = {
 
   <!-- Interactive script for Hero Quick Quote -->
   <script>
+    import { WA_NUMBER } from '../data/contact.js';
+
     function setupQuoteForm() {
       const form = document.getElementById('hero-quote-form');
       if (form) {
@@ -626,7 +629,7 @@ const homeSchema = {
           const prog = (document.getElementById('hero-prog') as HTMLSelectElement)?.value;
           const qty = (document.getElementById('hero-qty') as HTMLSelectElement)?.value;
           const msg = `Halo KonsultanK3, saya ingin konsultasi pendaftaran program: ${prog} untuk ${qty}. Mohon info jadwal terdekat, silabus lengkap, dan penawaran biayanya.`;
-          window.open(`https://wa.me/6281392943146?text=${encodeURIComponent(msg)}`, '_blank');
+          window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
         });
       }
     }

@@ -1,4 +1,6 @@
 ---
+import { waLink } from '../data/contact.js';
+
 interface Props {
   presetMessage?: string;
 }
@@ -7,7 +9,7 @@ const {
   presetMessage = 'Halo KonsultanK3, saya ingin konsultasi mengenai program pelatihan dan sertifikasi K3.'
 } = Astro.props;
 
-const waUrl = `https://wa.me/6281392943146?text=${encodeURIComponent(presetMessage)}`;
+const waUrl = waLink(presetMessage);
 ---
 
 <div class="fixed bottom-6 right-6 z-50 flex items-center group">

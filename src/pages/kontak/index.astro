@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, WA_SCHEMA, waLink } from '../../data/contact.js';
 
 const title = "Hubungi Konsultan K3 Indonesia";
 const description = "Hubungi tim KonsultanK3.com untuk pendaftaran pelatihan K3 Kemnaker & BNSP, penawaran in-house corporate, dan pendampingan audit SMK3 PP 50/2012.";
@@ -22,7 +23,7 @@ const contactSchema = {
       "mainEntity": {
         "@type": "Organization",
         "name": "Konsultan K3 Indonesia",
-        "telephone": "+62-813-9294-3146",
+        "telephone": WA_SCHEMA,
         "email": "info@konsultank3.com",
         "address": {
           "@type": "PostalAddress",
@@ -93,12 +94,12 @@ const contactSchema = {
           </p>
           <div class="pt-2">
             <a
-              href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20konsultasi%20layanan%20pelatihan%20dan%20sertifikasi%20K3"
+              href={waLink("Halo KonsultanK3, saya ingin konsultasi layanan pelatihan dan sertifikasi K3")}
               target="_blank"
               rel="noopener"
               class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm sm:text-base shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
             >
-              <span>Chat WhatsApp: 0813-9294-3146</span>
+              <span>Chat WhatsApp: {WA_DISPLAY}</span>
               <span>&rarr;</span>
             </a>
           </div>
@@ -112,7 +113,7 @@ const contactSchema = {
             <p class="text-slate-600 text-sm leading-relaxed">
               Jalan Wonosari KM 8.5, Gandu, Sendangtirto, Kec. Berbah, Kabupaten Sleman, D.I. Yogyakarta 55573
             </p>
-            <p class="text-xs text-slate-900 font-bold pt-2">Telepon: +62-813-9294-3146</p>
+            <p class="text-xs text-slate-900 font-bold pt-2">Telepon: {WA_SCHEMA}</p>
           </div>
 
           <div class="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm space-y-3">

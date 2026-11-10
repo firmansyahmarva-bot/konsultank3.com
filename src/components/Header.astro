@@ -1,4 +1,6 @@
 ---
+import { WA_DISPLAY, waLink } from '../data/contact.js';
+
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
@@ -27,11 +29,11 @@ const navLinks = [
     </div>
     <div class="hidden sm:flex items-center gap-3 text-xs shrink-0">
       <span class="text-slate-400">Hotline Kepatuhan K3:</span>
-      <a href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20konsultasi%20program%20K3" 
+      <a href={waLink("Halo KonsultanK3, saya ingin konsultasi program K3")} 
          target="_blank" 
          rel="noopener" 
          class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors flex items-center gap-1">
-        <span>0813-9294-3146</span>
+        <span>{WA_DISPLAY}</span>
       </a>
     </div>
   </div>
@@ -81,7 +83,7 @@ const navLinks = [
     <!-- Right Action Button & Mobile Hamburger -->
     <div class="flex items-center gap-3">
       <a
-        href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20konsultasi%20sertifikasi%20K3"
+        href={waLink("Halo KonsultanK3, saya ingin konsultasi sertifikasi K3")}
         target="_blank"
         rel="noopener"
         class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-md shadow-emerald-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
@@ -123,7 +125,7 @@ const navLinks = [
     ))}
     <div class="pt-4 border-t border-white/10">
       <a
-        href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20konsultasi%20sertifikasi%20K3"
+        href={waLink("Halo KonsultanK3, saya ingin konsultasi sertifikasi K3")}
         target="_blank"
         rel="noopener"
         class="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-base font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/20"

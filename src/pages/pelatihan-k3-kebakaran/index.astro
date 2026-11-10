@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { batches } from '../../data/batches.js';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
 
 const batch = batches.kebakaran;
 
@@ -65,7 +66,7 @@ const courseSchema = {
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="https://wa.me/6289510253435?text=Halo%20KonsultanK3,%20saya%20ingin%20konsultasi%20Pelatihan%20K3%20Penanggulangan%20Kebakaran%20Kelas%20D,%20C,%20B,%20A"
+              href={waLink("Halo KonsultanK3, saya ingin konsultasi Pelatihan K3 Penanggulangan Kebakaran Kelas D, C, B, A")}
               target="_blank"
               rel="noopener"
               class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
@@ -718,13 +719,13 @@ const courseSchema = {
               <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-semibold block">Konsultasi Kepatuhan &amp; Pelatihan K3</span>
               <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Siapkan Unit Penanggulangan Kebakaran Resmi di Perusahaan Anda</h3>
               <p class="text-sm text-slate-300 font-light leading-relaxed max-w-2xl">
-                Dapatkan informasi silabus pembinaan, jadwal batch resmi, dan konsultasi kebutuhan kualifikasi personel penanggulangan kebakaran sesuai regulasi Kemnaker RI. Hubungi konsultan kami langsung via WhatsApp di <strong>+62 895-1025-3435</strong>.
+                Dapatkan informasi silabus pembinaan, jadwal batch resmi, dan konsultasi kebutuhan kualifikasi personel penanggulangan kebakaran sesuai regulasi Kemnaker RI. Hubungi konsultan kami langsung via WhatsApp di <strong>{WA_DISPLAY}</strong>.
               </p>
             </div>
 
             <div class="flex flex-wrap items-center gap-4">
               <a
-                href="https://wa.me/6289510253435?text=Halo%20KonsultanK3,%20saya%20ingin%20konsultasi%20Pelatihan%20K3%20Penanggulangan%20Kebakaran%20Kelas%20D,%20C,%20B,%20A"
+                href={waLink("Halo KonsultanK3, saya ingin konsultasi Pelatihan K3 Penanggulangan Kebakaran Kelas D, C, B, A")}
                 target="_blank"
                 rel="noopener"
                 class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-transform hover:scale-105"
@@ -804,7 +805,7 @@ const courseSchema = {
           )}
 
           <a
-            href="https://wa.me/6289510253435?text=Halo%20KonsultanK3,%20saya%20ingin%20mendaftar%20Pelatihan%20K3%20Penanggulangan%20Kebakaran%20(Kelas%20D%2C%20C%2C%20B%2C%20A)"
+            href={waLink("Halo KonsultanK3, saya ingin mendaftar Pelatihan K3 Penanggulangan Kebakaran (Kelas D, C, B, A)")}
             target="_blank"
             rel="noopener"
             class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg"

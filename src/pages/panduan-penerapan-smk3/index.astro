@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getArticlesForPillar } from '../../data/topics.js';
+import { waLink } from '../../data/contact.js';
 
 const title = "Panduan Penerapan & Audit SMK3 PP 50/2012";
 const description = "Panduan lengkap penerapan dan pendampingan audit SMK3 PP No. 50 Tahun 2012 serta Permenaker 26/2014 untuk 64, 122, dan 166 kriteria meraih Bendera Emas.";
@@ -123,7 +124,7 @@ const faqs = [
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20konsultasi%20pendampingan%20audit%20SMK3%20PP%2050/2012"
+              href={waLink("Halo KonsultanK3, saya ingin konsultasi pendampingan audit SMK3 PP 50/2012")}
               target="_blank"
               rel="noopener"
               class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
@@ -533,7 +534,7 @@ const faqs = [
           </div>
 
           <a
-            href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20jadwalkan%20konsultasi%20pendampingan%20audit%20SMK3%20PP%2050/2012"
+            href={waLink("Halo KonsultanK3, saya ingin jadwalkan konsultasi pendampingan audit SMK3 PP 50/2012")}
             target="_blank"
             rel="noopener"
             class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-600/30 hover:scale-[1.02]"

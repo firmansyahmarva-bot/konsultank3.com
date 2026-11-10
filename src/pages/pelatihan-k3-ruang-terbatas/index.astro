@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
 
 const courseSchema = {
   "@context": "https://schema.org",
@@ -86,7 +87,7 @@ const faqs = [
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20konsultasi%20jadwal%20dan%20biaya%20K3%20Ruang%20Terbatas"
+              href={waLink("Halo KonsultanK3, saya ingin konsultasi jadwal dan biaya K3 Ruang Terbatas")}
               target="_blank"
               rel="noopener"
               class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
@@ -253,7 +254,7 @@ const faqs = [
             </div>
 
             <a
-              href="https://wa.me/6281392943146?text=Halo%20KonsultanK3,%20saya%20ingin%20mendaftar%20K3%20Ruang%20Terbatas"
+              href={waLink("Halo KonsultanK3, saya ingin mendaftar K3 Ruang Terbatas")}
               target="_blank"
               rel="noopener"
               class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
