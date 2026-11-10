@@ -1,6 +1,6 @@
 # Recovery & Purge Strategy Plan
 **Target Domain:** `konsultank3.com`  
-**Execution Context:** Site Relaunch / Sister Portal for `wahanatotalita.com`  
+**Execution Context:** Site Relaunch as a stand-alone K3 information portal  
 
 ---
 
@@ -8,7 +8,7 @@
 
 When acquiring an aged domain with previous programmatic scaling:
 * **DO NOT** attempt a 100% full recovery.
-* **DO NOT** use a catch-all 301 redirect to your money site (`wahanatotalita.com`).
+* **DO NOT** use a catch-all 301 redirect to any other domain.
 * **DO** apply the **80/20 Rule**: Recover the authoritative top 20% of content that generated 80% of real trust, while permanently discarding programmatic doorway pages.
 
 ---
@@ -45,7 +45,7 @@ flowchart TD
 3. **Core Transactional / Lead Pages:**
    * Services / Layanan Konsultasi K3 (Audits, SMK3, ISO)
    * Training & Pembinaan K3 (Kemnaker & BNSP certified)
-   * Kontak & Hubungi Kami (Direct lead routing to Wahana Totalita)
+   * Kontak & Hubungi Kami (Direct inquiries via the site's own WhatsApp and contact form)
 
 ### B. The PURGE List (HTTP 410 Gone)
 1. **All Programmatic City Permutations (1,600+ URLs):**

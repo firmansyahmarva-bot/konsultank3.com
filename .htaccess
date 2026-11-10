@@ -7,7 +7,7 @@ RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^ https://konsultank3.com%{REQUEST_URI} [L,R=301]
 
-RewriteRule ^(_legacy_backup|docs|src|scripts|node_modules|\.git|\.astro)(/|$) - [R=404,L]
+RewriteRule ^(_legacy_backup|docs|src|scripts|public|node_modules|\.git|\.astro)(/|$) - [R=404,L]
 RewriteRule ^(server\.js|package\.json|package-lock\.json|astro\.config\.mjs|README\.md|_redirects)$ - [R=404,L]
 
 # 2. Reclaim Cited Backlink & Legacy URLs (1:1 301 Mapping)

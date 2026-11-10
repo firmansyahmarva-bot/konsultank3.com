@@ -1,7 +1,7 @@
 {
   "name": "konsultank3.com",
   "version": "1.0.0",
-  "description": "This project repository contains the architectural blueprints, technical SEO recovery specifications, backlink audit, and content strategies for relaunching **`KonsultanK3.com`** as an authoritative lead-generation satellite for **PT Wahana Totalita Konsultan** (`wahanatotalita.com`).",
+  "description": "This project repository contains the architectural blueprints, technical SEO recovery specifications, backlink audit, and content strategies for relaunching **`KonsultanK3.com`** as an independent, authoritative K3 (occupational safety and health) information and consulting portal.",
   "main": "server.js",
   "directories": {
     "doc": "docs"

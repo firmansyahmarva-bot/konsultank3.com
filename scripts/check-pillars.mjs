@@ -5,7 +5,8 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.join(__dirname, '..');
-const distDir = path.join(rootDir, 'dist');
+const distDir = fs.existsSync(path.join(rootDir, 'dist')) ? path.join(rootDir, 'dist') : rootDir;
+const SKIP_DIRS = new Set(['.git', 'node_modules', 'docs', 'src', 'scripts', 'public', '_astro', '.astro']);
 const srcDir = path.join(rootDir, 'src');
 
 let hasErrors = false;
@@ -53,7 +54,7 @@ function getAllFiles(dir, ext) {
   if (!fs.existsSync(dir)) return res;
   for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, item.name);
-    if (item.isDirectory()) res = res.concat(getAllFiles(full, ext));
+    if (item.isDirectory()) { if (SKIP_DIRS.has(item.name)) continue; res = res.concat(getAllFiles(full, ext)); }
     else if (item.name.endsWith(ext)) res.push(full);
   }
   return res;

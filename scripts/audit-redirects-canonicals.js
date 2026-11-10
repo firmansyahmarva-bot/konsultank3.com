@@ -4,14 +4,15 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const distDir = path.join(__dirname, '..', 'dist');
+const distDir = fs.existsSync(path.join(__dirname, '..', 'dist')) ? path.join(__dirname, '..', 'dist') : path.join(__dirname, '..');
+const SKIP_DIRS = new Set(['.git', 'node_modules', 'docs', 'src', 'scripts', 'public', '_astro', '.astro']);
 const rootDir = path.join(__dirname, '..');
 
 function getAllFiles(dir, ext) {
   let res = [];
   for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, item.name);
-    if (item.isDirectory()) res = res.concat(getAllFiles(full, ext));
+    if (item.isDirectory()) { if (SKIP_DIRS.has(item.name)) continue; res = res.concat(getAllFiles(full, ext)); }
     else if (item.name.endsWith(ext)) res.push(full);
   }
   return res;

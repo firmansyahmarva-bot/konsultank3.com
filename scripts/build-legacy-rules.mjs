@@ -209,6 +209,13 @@ if (fs.existsSync(redirectsPath)) {
   console.log(`✓ Updated ${redirectsPath} with legacy 301 rules.`);
 }
 
+// Keep public/_redirects identical so every copy of the redirect list stays in sync
+const publicRedirectsPath = path.join(rootDir, 'public', '_redirects');
+if (fs.existsSync(redirectsPath) && fs.existsSync(path.dirname(publicRedirectsPath))) {
+  fs.copyFileSync(redirectsPath, publicRedirectsPath);
+  console.log('✓ Synced public/_redirects from _redirects.');
+}
+
 // Clean up local cache if present
 if (fs.existsSync(localCache)) {
   fs.unlinkSync(localCache);

@@ -1,5 +1,5 @@
 # Project Roadmap & Action Checklist
-**Project:** `KonsultanK3.com` Domain Rebirth & Lead-Gen Funnel for `wahanatotalita.com`  
+**Project:** `KonsultanK3.com` Domain Rebirth as a stand-alone K3 portal  
 
 ---
 
@@ -33,13 +33,13 @@
   - Publish `/pelatihan-k3-kebakaran/` (Kelas D, C, B, A).
   - Publish `/pelatihan-k3-listrik/`.
 - [ ] **Corporate Pages:**
-  - `/tentang-kami/` (Introducing KonsultanK3.com in association with PT Wahana Totalita).
+  - `/tentang-kami/` (Introducing KonsultanK3.com).
   - `/kontak/` (Direct phone, WhatsApp, office address in Sleman, Yogyakarta).
 
 ---
 
-## Phase 4: Lead Generation & Funnel Activation (Week 4)
-- [ ] Install Floating WhatsApp Lead Button linked to PT Wahana Totalita's sales team.
+## Phase 4: Lead Generation (Week 4)
+- [ ] Install Floating WhatsApp Lead Button (WhatsApp 0895-1025-3435).
 - [ ] Create downloadable lead magnet (e.g., *Checklist Mandiri Audit SMK3 166 Kriteria*).
 - [ ] Implement Google Analytics 4 (GA4) with custom events for `whatsapp_click` and `consultation_form_submit`.
 - [ ] Implement JSON-LD Structured Data (`Organization`, `Course`, `FAQPage`).
@@ -51,4 +51,4 @@
   - Verify that the 1,600+ doorway pages are progressively marked as 410/excluded.
   - Confirm that new pillar articles are indexed and receiving impressions.
 - [ ] Expand publishing schedule: 2 to 4 high-quality OHS articles per month.
-- [ ] Monitor referral conversions and training inquiries passing to `wahanatotalita.com`.
+- [ ] Monitor referral conversions and training inquiries (WhatsApp clicks and contact form submits).

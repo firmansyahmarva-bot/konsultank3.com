@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.join(__dirname, '..');
-const distDir = path.join(rootDir, 'dist');
+const distDir = fs.existsSync(path.join(rootDir, 'dist')) ? path.join(rootDir, 'dist') : rootDir;
 const frozenListFile = path.join(__dirname, 'frozen-urls.txt');
 
 if (!fs.existsSync(frozenListFile)) {
@@ -19,7 +19,7 @@ const lines = fs
   .map(l => l.trim())
   .filter(Boolean);
 
-console.log(`Checking ${lines.length} frozen URLs against build output in dist/...`);
+console.log(`Checking ${lines.length} frozen URLs against build output in ${path.relative(rootDir, distDir) || 'repo root'}...`);
 
 const missing = [];
 
