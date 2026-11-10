@@ -1,17 +1,46 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getArticlesForPillar } from '../../data/topics.js';
 
 const title = "Diagnosis & Pencegahan Penyakit Akibat Kerja (PAK)";
-const description = "Pedoman identifikasi pajanan lingkungan kerja, 7 langkah diagnosis medis okupasi, dan program pencegahan Penyakit Akibat Kerja (PAK) sesuai Perpres No. 7 Tahun 2019.";
+const metaTitle = "Diagnosis & Pencegahan Penyakit Akibat Kerja (PAK)";
+const description = "Pedoman identifikasi pajanan tempat kerja, 7 langkah penegakan diagnosis okupasi, dan program pencegahan Penyakit Akibat Kerja sesuai Perpres No. 7/2019.";
 const canonical = "/penyakit-akibat-kerja/";
+
+const mappedArticles = getArticlesForPillar('penyakit-akibat-kerja');
+
+const faqs = [
+  {
+    q: "Apa perbedaan antara Penyakit Akibat Kerja (PAK) murni dan penyakit terkait kerja (work-related disease)?",
+    a: "Penyakit Akibat Kerja (PAK) adalah penyakit yang memiliki hubungan sebab-akibat langsung dengan faktor bahaya pajanan di tempat kerja. Sedangkan penyakit terkait kerja (work-related disease) adalah penyakit umum yang diperberat atau dipicu manifestasinya oleh kondisi lingkungan atau beban kerja."
+  },
+  {
+    q: "Siapa yang berwenang menetapkan diagnosis formal Penyakit Akibat Kerja?",
+    a: "Penetapan diagnosis Penyakit Akibat Kerja wajib ditegakkan secara resmi oleh dokter pemeriksa kesehatan tenaga kerja atau dokter spesialis kedokteran okupasi melalui 7 langkah pembuktian kausalitas klinis okupasi."
+  },
+  {
+    q: "Mengapa riwayat pekerjaan masa lalu sangat penting dalam 7 langkah diagnosis okupasi?",
+    a: "Banyak Penyakit Akibat Kerja memiliki masa laten (latency period) yang sangat panjang sebelum menimbulkan gejala klinis, seperti asbestosis atau silikosis yang baru muncul belasan hingga puluhan tahun setelah masa paparan awal di tempat kerja sebelumnya."
+  },
+  {
+    q: "Kapan perusahaan wajib menyelenggarakan pemeriksaan kesehatan khusus bagi pekerja?",
+    a: "Pemeriksaan kesehatan khusus diselenggarakan bagi tenaga kerja yang melakukan pekerjaan dengan tingkat risiko bahaya tinggi, seperti terpapar radiasi, bekerja di ruang terbatas, menangani pestisida atau bahan kimia B3 karsinogenik, serta pekerja yang baru pulih dari penyakit berat."
+  },
+  {
+    q: "Bagaimana peran surveilans kesehatan berkala dalam mencegah disabilitas akibat PAK?",
+    a: "Surveilans kesehatan berkala (MCU rutin) berfungsi mendeteksi perubahan fungsi fisiologis atau kerusakan organ tubuh pada stadium preklinis sebelum timbulnya kecacatan permanen, sehingga intervensi perbaikan lingkungan kerja dapat segera dilakukan."
+  }
+];
 ---
 
 <ArticleLayout
   title={title}
+  metaTitle={metaTitle}
   description={description}
   canonical={canonical}
   category="Kesehatan Kerja & Okupasi"
-  readTime="6 menit baca"
+  readTime="12 menit baca"
+  pillarId="penyakit-akibat-kerja"
 >
   <!-- Summary Metric Highlights -->
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-slate-100/80 border border-slate-200/80 text-center not-prose mb-8">
@@ -33,40 +62,96 @@ const canonical = "/penyakit-akibat-kerja/";
     </div>
   </div>
 
+  <!-- Table of Contents -->
+  <nav class="my-8 p-6 rounded-2xl bg-white border border-slate-200 shadow-sm not-prose" aria-label="Daftar Isi Artikel">
+    <div class="flex items-center gap-2 text-slate-900 font-bold font-serif text-lg mb-4 pb-3 border-b border-slate-100">
+      <span>📑</span> Daftar Isi Pedoman Penyakit Akibat Kerja (PAK)
+    </div>
+    <ol class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-700 list-decimal list-inside font-medium">
+      <li><a href="#dasar-hukum" class="text-emerald-700 hover:text-emerald-600 hover:underline">Dasar Hukum Penyakit Akibat Kerja</a></li>
+      <li><a href="#protokol-diagnosis" class="text-emerald-700 hover:text-emerald-600 hover:underline">1. Protokol 7 Langkah Diagnosis Medis Okupasi</a></li>
+      <li><a href="#kategori-bahaya" class="text-emerald-700 hover:text-emerald-600 hover:underline">2. Kategori Bahaya Lingkungan Kerja Pemicu PAK</a></li>
+      <li><a href="#surveilans-mcu" class="text-emerald-700 hover:text-emerald-600 hover:underline">3. Program Surveilans Kesehatan Pekerja (MCU)</a></li>
+      <li><a href="#pencegahan-hierarkis-pak" class="text-emerald-700 hover:text-emerald-600 hover:underline">4. Strategi Pencegahan Primer, Sekunder, & Tersier</a></li>
+      <li><a href="#pelaporan-pencatatan-pak" class="text-emerald-700 hover:text-emerald-600 hover:underline">5. Prosedur Pelaporan Kasus & Hak Kompensasi Pekerja</a></li>
+      <li><a href="#artikel-pembahasan" class="text-emerald-700 hover:text-emerald-600 hover:underline">Artikel Pembahasan Terkait</a></li>
+      <li><a href="#faq-pak" class="text-emerald-700 hover:text-emerald-600 hover:underline">Pertanyaan yang Sering Diajukan (FAQ)</a></li>
+      <li><a href="#daftar-pustaka" class="text-emerald-700 hover:text-emerald-600 hover:underline">Daftar Pustaka</a></li>
+    </ol>
+  </nav>
+
   <p>
-    Berdasarkan <strong>Peraturan Presiden Republik Indonesia No. 7 Tahun 2019</strong> tentang Penyakit Akibat Kerja, PAK adalah penyakit yang disebabkan oleh pekerjaan dan/atau lingkungan kerja. Deteksi dini faktor bahaya di tempat kerja dan surveilans kesehatan berkala merupakan kunci utama mencegah disabilitas kerja kronis serta tuntutan kompensasi kecelakaan kerja.
+    Berdasarkan <strong>Peraturan Presiden Republik Indonesia No. 7 Tahun 2019</strong> tentang Penyakit Akibat Kerja, PAK adalah penyakit yang disebabkan oleh pekerjaan dan/atau lingkungan kerja. Deteksi dini faktor bahaya di tempat kerja dan surveilans kesehatan berkala merupakan kunci utama mencegah disabilitas kerja kronis serta tuntutan kompensasi kecelakaan kerja. Berbeda dengan kecelakaan kerja yang terjadi secara mendadak (akut), penyakit akibat kerja umumnya berkembang secara perlahan melalui paparan berulang dalam jangka waktu bulanan hingga tahunan tanpa disadari oleh tenaga kerja.
   </p>
 
-  <h2>1. Protokol 7 Langkah Diagnosis Medis Okupasi</h2>
+  <h2 id="dasar-hukum">Dasar Hukum Penyakit Akibat Kerja</h2>
+  <p>
+    Landasan hukum penanganan, pencegahan, dan penetapan status Penyakit Akibat Kerja diatur secara komprehensif dalam perundangan Republik Indonesia berikut:
+  </p>
+  <ul>
+    <li><strong>Undang-Undang No. 1 Tahun 1970</strong> tentang Keselamatan Kerja, yang mewajibkan pengurus tempat kerja untuk memeriksakan kesehatan badan, kondisi mental, serta kemampuan fisik tenaga kerja secara berkala guna mencegah timbulnya penyakit yang timbul akibat pekerjaan.</li>
+    <li><strong>Peraturan Presiden No. 7 Tahun 2019</strong> tentang Penyakit Akibat Kerja, yang menetapkan klasifikasi penyakit akibat kerja, hak pekerja yang didiagnosis menderita PAK untuk mendapatkan manfaat jaminan kecelakaan kerja, serta tata cara pembuktian hubungan kausalitas okupasi.</li>
+  </ul>
+
+  <h2 id="protokol-diagnosis">1. Protokol 7 Langkah Diagnosis Medis Okupasi</h2>
   <p>
     Penetapan diagnosis Penyakit Akibat Kerja wajib dilakukan oleh dokter yang memiliki kompetensi kedokteran okupasi melalui 7 langkah pembuktian ilmiah kausalitas:
   </p>
   <ol>
-    <li><strong>Menentukan Diagnosis Klinis:</strong> Melalui anamnesis keluhan medis, pemeriksaan fisik menyeluruh, dan pemeriksaan penunjang (laboratorium darah, rontgen thoraks, spirometri, atau audiometri).</li>
-    <li><strong>Menentukan Pajanan di Tempat Kerja:</strong> Mendokumentasikan riwayat pekerjaan lengkap, bahan kimia/fisika yang berkontak, durasi kerja harian, dan kondisi ventilasi tempat kerja.</li>
-    <li><strong>Menentukan Hubungan Kausalitas Pajanan dengan Diagnosis:</strong> Mengkaji literatur medis ilmiah tentang hubungan antara bahaya tertentu dengan timbulnya penyakit tersebut.</li>
-    <li><strong>Menentukan Besarnya Dosis Pajanan:</strong> Mengevaluasi lama masa kerja, hasil pengukuran lingkungan kerja (pengujian higiene industri), dan kepatuhan penggunaan APD.</li>
-    <li><strong>Menentukan Faktor Kerentanan Individu:</strong> Menilai riwayat alergi, penyakit keturunan, kebugaran fisik, atau riwayat penyakit bawaan pekerja.</li>
-    <li><strong>Menentukan Faktor di Luar Lingkungan Kerja:</strong> Memeriksa kebiasaan merokok, paparan hobi di rumah, atau aktivitas kerja sekunder di luar jam kantor.</li>
-    <li><strong>Menetapkan Kesimpulan Diagnosis PAK:</strong> Menegakkan apakah penyakit merupakan Penyakit Akibat Kerja murni, diperberat oleh pekerjaan (<em>work-related disease</em>), atau bukan penyakit akibat kerja.</li>
+    <li><strong>Menentukan Diagnosis Klinis:</strong> Melalui anamnesis keluhan medis, pemeriksaan fisik menyeluruh, dan pemeriksaan penunjang (laboratorium darah, rontgen thoraks, spirometri, atau audiometri). Penegakan diagnosis klinis harus mengikuti standar medis ilmiah yang baku sebelum menghubungkannya dengan tempat kerja.</li>
+    <li><strong>Menentukan Pajanan di Tempat Kerja:</strong> Mendokumentasikan riwayat pekerjaan lengkap, bahan kimia/fisika yang berkontak, durasi kerja harian, dan kondisi ventilasi tempat kerja. Seluruh rincian tugas harian, proses produksi, bahan baku, zat sampingan, serta lembar data keselamatan bahan (SDS) harus dianalisis secara cermat.</li>
+    <li><strong>Menentukan Hubungan Kausalitas Pajanan dengan Diagnosis:</strong> Mengkaji literatur medis ilmiah tentang hubungan antara bahaya tertentu dengan timbulnya penyakit tersebut. Hubungan sebab-akibat (evidence-based medicine) harus terbukti secara epidemiologis dan patofisiologis dalam kepustakaan kedokteran kerja.</li>
+    <li><strong>Menentukan Besarnya Dosis Pajanan:</strong> Mengevaluasi lama masa kerja, hasil pengukuran lingkungan kerja (pengujian higiene industri), dan kepatuhan penggunaan APD. Penilaian dosis memperhitungkan konsentrasi agen bahaya di udara, frekuensi kontak per minggu, serta efektivitas proteksi teknis yang terpasang di lapangan.</li>
+    <li><strong>Menentukan Faktor Kerentanan Individu:</strong> Menilai riwayat alergi, penyakit keturunan, kebugaran fisik, atau riwayat penyakit bawaan pekerja. Riwayat atopi keluarga atau kelainan genetik tertentu dapat meningkatkan kerentanan seseorang terhadap paparan bahan iritan atau debu alergenik.</li>
+    <li><strong>Menentukan Faktor di Luar Lingkungan Kerja:</strong> Memeriksa kebiasaan merokok, paparan hobi di rumah, atau aktivitas kerja sekunder di luar jam kantor. Paparan zat beracun di tempat tinggal atau paparan asap rokok kronis harus dipisahkan dari kontribusi pajanan murni yang dialami pekerja saat menjalankan tugas perusahaan.</li>
+    <li><strong>Menetapkan Kesimpulan Diagnosis PAK:</strong> Menegakkan apakah penyakit merupakan Penyakit Akibat Kerja murni, diperberat oleh pekerjaan (<em>work-related disease</em>), atau bukan penyakit akibat kerja. Keputusan akhir dituangkan secara tertulis dan berkekuatan hukum dalam resume medis okupasi.</li>
   </ol>
+  <p>
+    Ketujuh tahapan ini wajib terdokumentasi dalam rekam medis okupasi pekerja. Kegagalan melakukan analisis komprehensif pada langkah 5 dan 6 sering kali menyebabkan perdebatan legal mengenai klaim kompensasi jaminan ketenagakerjaan antara pihak perusahaan, pekerja, dan badan penyelenggara jaminan sosial.
+  </p>
 
-  <h2>2. Kategori Bahaya Lingkungan Kerja Pemicu PAK</h2>
+  <h2 id="kategori-bahaya">2. Kategori Bahaya Lingkungan Kerja Pemicu PAK</h2>
+  <p>
+    Faktor bahaya lingkungan kerja yang berpotensi memicu penyakit akibat kerja dikelompokkan ke dalam empat domain utama:
+  </p>
   <ul>
-    <li><strong>Faktor Bahaya Kimia:</strong> Paparan uap benzena (risiko leukemia), silika bebas (silikosis), asbes (asbestosis/mesothelioma), dan timbal (keracunan sistemik hematologi).</li>
-    <li><strong>Faktor Bahaya Fisika:</strong> Kebisingan &gt; 85 dBA (tuli bising / NIHL), getaran mekanis lengan tangan (Hand-Arm Vibration Syndrome / White Finger Disease), suhu ekstrem (heat stroke).</li>
-    <li><strong>Faktor Ergonomi:</strong> Postur janggal berulang, angkat angkut manual beban berat tanpa alat bantu mekanis yang menyebabkan Low Back Pain (LBP) dan Hernia Nucleus Pulposus (HNP).</li>
-    <li><strong>Faktor Biologi:</strong> Infeksi bakteri, virus Hepatitis B/C, atau patogen udara pada pekerja fasilitas kesehatan dan laboratorium mikrobiologi.</li>
+    <li><strong>Faktor Bahaya Kimia:</strong> Paparan uap benzena (risiko leukemia), silika bebas (silikosis), asbes (asbestosis/mesothelioma), dan timbal (keracunan sistemik hematologi). Jalur masuk bahan kimia beracun dapat melalui inhalasi pernafasan, absorpsi kulit, maupun tertelan akibat kontaminasi tangan saat makan. Tindakan pencegahan menuntut isolasi proses berdebu dan penyediaan respirator khusus uap beracun.</li>
+    <li><strong>Faktor Bahaya Fisika:</strong> Kebisingan &gt; 85 dBA (tuli bising / NIHL), getaran mekanis lengan tangan (Hand-Arm Vibration Syndrome / White Finger Disease), suhu ekstrem panas (heat stroke dan dehidrasi berat), serta pajanan radiasi ionisasi maupun non-ionisasi. Pengendalian mencakup penyediaan air minum garam isotonik bagi pekerja panas serta jadwal jeda istirahat teratur.</li>
+    <li><strong>Faktor Ergonomi:</strong> Postur janggal berulang, gerakan repetitif pergelangan tangan (Carpal Tunnel Syndrome), dan angkat angkut manual beban berat tanpa alat bantu mekanis yang menyebabkan Low Back Pain (LBP) dan Hernia Nucleus Pulposus (HNP). Penyesuaian stasiun kerja dengan antropometri fisik dan penggunaan konveyor hidrolik menjadi solusi utama.</li>
+    <li><strong>Faktor Biologi:</strong> Infeksi bakteri, virus Hepatitis B/C, tuberkulosis, atau patogen udara pada pekerja fasilitas pelayanan kesehatan, rumah sakit, tempat pengolahan limbah, dan laboratorium mikrobiologi. Vaksinasi profilaksis dan prosedur disinfeksi ketat wajib diterapkan secara berkala.</li>
   </ul>
 
-  <h2>3. Program Surveilans Kesehatan Pekerja (Medical Check-Up)</h2>
+  <h2 id="surveilans-mcu">3. Program Surveilans Kesehatan Pekerja (Medical Check-Up)</h2>
   <p>
     Sesuai Permenaker No. PER.02/MEN/1980, perusahaan berkewajiban menyelenggarakan tiga jenis pemeriksaan kesehatan tenaga kerja:
   </p>
   <ul>
-    <li><strong>Pemeriksaan Kesehatan Sebelum Bekerja (Awal):</strong> Menentukan kesesuaian fisik pekerja dengan tuntutan risiko jabatan kerja baru.</li>
-    <li><strong>Pemeriksaan Kesehatan Berkala (Tahunan):</strong> Evaluasi berkala untuk mendeteksi sedini mungkin penurunan kapasitas fisiologis tubuh akibat pajanan lingkungan.</li>
-    <li><strong>Pemeriksaan Kesehatan Khusus:</strong> Ditujukan untuk kelompok pekerja berisiko tinggi (misalnya pekerja radiasi, ruang terbatas, pestisida, atau pekerja yang baru pulih dari sakit berat).</li>
+    <li><strong>Pemeriksaan Kesehatan Sebelum Bekerja (Awal):</strong> Menentukan kesesuaian fisik pekerja dengan tuntutan risiko jabatan kerja baru serta memetakan kondisi kesehatan baseline sebelum terpapar lingkungan kerja. Data baseline ini mencakup kapasitas vital paru dan batas ketajaman pendengaran normal.</li>
+    <li><strong>Pemeriksaan Kesehatan Berkala (Tahunan):</strong> Evaluasi berkala untuk mendeteksi sedini mungkin penurunan kapasitas fisiologis tubuh akibat pajanan lingkungan serta mengevaluasi efektivitas kendali teknis yang telah dipasang. Hasil MCU berkala dianalisis secara statistik kelompok untuk melihat apakah ada tren kenaikan keluhan kesehatan pada unit kerja tertentu.</li>
+    <li><strong>Pemeriksaan Kesehatan Khusus:</strong> Ditujukan untuk kelompok pekerja berisiko tinggi (misalnya pekerja radiasi, ruang terbatas, pestisida, atau pekerja yang baru pulih dari sakit berat). Pemeriksaan khusus juga diwajibkan bila timbul dugaan terjadinya keracunan massal atau keluhan luar biasa di lingkungan pabrik.</li>
+  </ul>
+  <p>
+    Seluruh rekaman data pemeriksaan medis kesehatan tenaga kerja wajib disimpan secara rahasia dan aman oleh dokter perusahaan sekurang-kurangnya selama 30 tahun setelah tenaga kerja berhenti bekerja. Periode penyimpanan yang panjang ini sangat krusial mengingat onset gejala klinis beberapa jenis penyakit akibat kerja baru bermanifestasi setelah masa pensiun tenaga kerja bersangkutan.
+  </p>
+
+  <h2 id="pencegahan-hierarkis-pak">4. Strategi Pencegahan Primer, Sekunder, &amp; Tersier</h2>
+  <p>
+    Manajemen kesehatan kerja industri yang efektif menerapkan pendekatan tiga tingkatan pencegahan berjenjang guna menghentikan perkembangan penyakit akibat kerja:
+  </p>
+  <ol>
+    <li><strong>Pencegahan Primer (Primary Prevention):</strong> Dilakukan sebelum pekerja mengalami gangguan kesehatan. Meliputi substitusi bahan baku berbahaya dengan zat yang tidak toksik, pemasangan sistem ventilasi pembuangan lokal (local exhaust ventilation / LEV), otomatisasi proses tertutup, dan edukasi higiene perorangan pekerja.</li>
+    <li><strong>Pencegahan Sekunder (Secondary Prevention):</strong> Ditujukan untuk mendeteksi gangguan kesehatan sedini mungkin pada fase subklinis sebelum timbulnya kerusakan ireversibel. Instrumen utamanya adalah surveilans biologi (biological monitoring) kadar metabolit dalam darah/urine serta uji faal paru (spirometri) dan uji pendengaran (audiometri) berkala.</li>
+    <li><strong>Pencegahan Tersier (Tertiary Prevention):</strong> Berfokus pada penanganan kuratif dan rehabilitasi pekerja yang telah terdiagnosis menderita PAK. Langkahnya meliputi rotasi pemindahan ke bagian kerja yang bebas pajanan, terapi kedokteran okupasi, dan program kembali kerja (return to work) yang disesuaikan dengan kapasitas fungsi tubuh pekerja.</li>
+  </ol>
+
+  <h2 id="pelaporan-pencatatan-pak">5. Prosedur Pelaporan Kasus &amp; Hak Kompensasi Pekerja</h2>
+  <p>
+    Bila dokter perusahaan atau fasilitas kesehatan menegakkan diagnosis resmi Penyakit Akibat Kerja, pengurus tempat kerja berkewajiban melaporkan temuan tersebut dalam kurun waktu 2 x 24 jam kepada dinas ketenagakerjaan setempat dan badan pengelola jaminan sosial ketenagakerjaan. Hak pekerja yang menderita PAK dijamin sepenuhnya oleh regulasi nasional:
+  </p>
+  <ul>
+    <li>Mendapatkan pembiayaan pengobatan, perawatan medis komprehensif, dan rehabilitasi okupasi sampai dinyatakan sembuh atau mencapai kondisi maksimal tanpa pungutan biaya pribadi.</li>
+    <li>Menerima santunan sementara tidak mampu bekerja (STMB) selama masa pemulihan dan santunan cacat fungsi/anatomi apabila terjadi disabilitas anatomis permanen.</li>
+    <li>Larangan pemutusan hubungan kerja (PHK) secara sepihak bagi pekerja yang sedang dalam masa perawatan atau menderita cacat akibat penyakit yang bersumber dari pekerjaan.</li>
   </ul>
 
   <!-- Download Toolkits Banner -->
@@ -76,8 +161,81 @@ const canonical = "/penyakit-akibat-kerja/";
       <h3 class="text-lg font-bold text-white font-serif">Unduh Checklist Audit SMK3 (Kriteria Kesehatan Kerja)</h3>
       <p class="text-xs text-slate-400 mt-1 max-w-md">Format penilaian klausul kesehatan kerja, higene industri, dan program MCU sesuai kriteria audit PP 50/2012.</p>
     </div>
-    <a href="/downloads/Checklist-Audit-SMK3-166-Kriteria.html" target="_blank" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shadow-md hover:scale-105 shrink-0">
+    <a href="/downloads/Checklist-Audit-SMK3-166-Kriteria.html" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shadow-md hover:scale-105 shrink-0">
       Unduh Checklist Audit &rarr;
     </a>
   </div>
+
+  <!-- Artikel Pembahasan Section -->
+  <section id="artikel-pembahasan" class="my-12 pt-8 border-t border-slate-200 not-prose">
+    <div class="mb-6">
+      <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 block mb-1">Rangkaian Pembahasan</span>
+      <h3 class="font-serif text-2xl font-bold text-slate-900">
+        Artikel Pembahasan Kesehatan Kerja, Ergonomi, &amp; PAK
+      </h3>
+      <p class="text-xs sm:text-sm text-slate-600 mt-1">
+        Kumpulan panduan ilmiah, metodologi ergonomi, pencegahan kelelahan kerja, dan referensi medis okupasi:
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {mappedArticles.map((art) => (
+        <a
+          href={art.path}
+          class="p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-emerald-500 hover:shadow-md transition-all flex flex-col justify-between group"
+        >
+          <div>
+            <div class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider mb-1.5">Rujukan Teknis</div>
+            <h4 class="font-serif font-bold text-base text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug mb-2">
+              {art.title}
+            </h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              {art.desc}
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-bold text-emerald-600 group-hover:text-emerald-700">
+            <span>Baca dokumen &amp; pembahasan</span> &rarr;
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Visible FAQ Block -->
+  <section id="faq-pak" class="my-12 pt-8 border-t border-slate-200 not-prose">
+    <div class="mb-6">
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block mb-1">Tanya Jawab Teknis</span>
+      <h3 class="font-serif text-2xl font-bold text-slate-900">
+        Pertanyaan Seputar Penyakit Akibat Kerja (FAQ)
+      </h3>
+      <p class="text-xs sm:text-sm text-slate-600 mt-1">
+        Jawaban praktis seputar kriteria penetapan diagnosis, kewajiban pemeriksaan kesehatan kerja, dan hak perlindungan buruh:
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((f) => (
+        <details class="group bg-white rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 font-serif text-base sm:text-lg">
+            <span>{f.q}</span>
+            <span class="ml-4 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <p class="mt-4 text-slate-600 text-sm leading-relaxed pt-3 border-t border-slate-100 font-sans">
+            {f.a}
+          </p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <h2 id="daftar-pustaka">Daftar Pustaka</h2>
+  <p>
+    Ketentuan hukum, metodologi diagnosis okupasi, dan protokol perlindungan tenaga kerja dalam artikel ini disusun mengacu pada ketentuan perundang-undangan resmi berikut:
+  </p>
+  <ul>
+    <li>Undang-Undang No. 1 Tahun 1970 tentang Keselamatan Kerja.</li>
+    <li>Peraturan Presiden No. 7 Tahun 2019 tentang Penyakit Akibat Kerja.</li>
+  </ul>
 </ArticleLayout>

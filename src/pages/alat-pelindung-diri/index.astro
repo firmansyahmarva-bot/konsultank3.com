@@ -1,17 +1,46 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getArticlesForPillar } from '../../data/topics.js';
 
 const title = "Standar Pemilihan & Penggunaan Alat Pelindung Diri (APD)";
-const description = "Panduan standar penyediaan, pemilihan, dan inspeksi Alat Pelindung Diri (APD / PPE) sesuai Permenakertrans No. PER.08/MEN/VII/2010 dan standar mutu SNI/ANSI.";
+const metaTitle = "Standar Pemilihan & Penggunaan Alat Pelindung Diri APD";
+const description = "Pedoman standar penyediaan dan pemilihan Alat Pelindung Diri (APD) industri sesuai Permenakertrans PER.08/MEN/VII/2010 dan hierarki pengendalian bahaya kerja.";
 const canonical = "/alat-pelindung-diri/";
+
+const mappedArticles = getArticlesForPillar('alat-pelindung-diri');
+
+const faqs = [
+  {
+    q: "Apakah perusahaan berhak memotong gaji karyawan untuk biaya penyediaan APD?",
+    a: "Tidak berhak. Berdasarkan Permenakertrans No. PER.08/MEN/VII/2010 dan UU No. 1 Tahun 1970, pengusaha wajib menyediakan seluruh Alat Pelindung Diri (APD) bagi tenaga kerja dan orang lain yang memasuki tempat kerja secara cuma-cuma tanpa pungutan biaya apa pun."
+  },
+  {
+    q: "Mengapa APD ditempatkan pada urutan paling bawah dalam hierarki pengendalian bahaya kerja?",
+    a: "APD ditempatkan sebagai upaya terakhir (last line of defense) karena APD tidak mengeliminasi atau menurunkan potensi sumber bahaya di tempat kerja, melainkan hanya memberikan pembatas perlindungan fisik pada tubuh pekerja saat bahaya residual masih terjadi."
+  },
+  {
+    q: "Berapa batas ketinggian kerja yang mewajibkan pekerja mengenakan Full Body Harness?",
+    a: "Pekerja wajib mengenakan Full Body Harness saat melaksanakan pekerjaan pada ketinggian sama dengan atau lebih dari 1,8 meter, dilengkapi tali ganda (double lanyard), snap hook pengunci besar, serta energy absorber peredam kejut."
+  },
+  {
+    q: "Berapa lama batas masa pakai (kedaluwarsa) helm keselamatan kerja (safety helmet)?",
+    a: "Helm polimer keselamatan kerja umumnya memiliki masa pakai optimal berkisar antara 3 hingga 5 tahun sejak tanggal produksi atau penggunaan pertama, tergantung intensitas paparan panas matahari, bahan kimia, atau benturan fisik di lapangan."
+  },
+  {
+    q: "Apa tindakan yang wajib dilakukan apabila APD mengalami kerusakan atau cacat fisik?",
+    a: "APD yang retak, rusak, kedaluwarsa, atau telah menerima beban kejatuhan ekstrem (seperti body harness yang pernah menahan pekerja jatuh) harus segera ditarik dari peredaran, diafkir, dihancurkan agar tidak digunakan kembali, serta diganti baru secara cuma-cuma oleh pengusaha."
+  }
+];
 ---
 
 <ArticleLayout
   title={title}
+  metaTitle={metaTitle}
   description={description}
   canonical={canonical}
   category="Regulasi & Standar APD"
-  readTime="5 menit baca"
+  readTime="12 menit baca"
+  pillarId="alat-pelindung-diri"
 >
   <!-- Summary Metric Highlights -->
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-slate-100/80 border border-slate-200/80 text-center not-prose mb-8">
@@ -33,11 +62,38 @@ const canonical = "/alat-pelindung-diri/";
     </div>
   </div>
 
+  <!-- Table of Contents -->
+  <nav class="my-8 p-6 rounded-2xl bg-white border border-slate-200 shadow-sm not-prose" aria-label="Daftar Isi Artikel">
+    <div class="flex items-center gap-2 text-slate-900 font-bold font-serif text-lg mb-4 pb-3 border-b border-slate-100">
+      <span>📑</span> Daftar Isi Standar Alat Pelindung Diri (APD)
+    </div>
+    <ol class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-700 list-decimal list-inside font-medium">
+      <li><a href="#dasar-hukum" class="text-emerald-700 hover:text-emerald-600 hover:underline">Dasar Hukum K3 APD</a></li>
+      <li><a href="#hierarki-pengendalian" class="text-emerald-700 hover:text-emerald-600 hover:underline">1. Hierarki Pengendalian Risiko & Posisi APD</a></li>
+      <li><a href="#klasifikasi-apd" class="text-emerald-700 hover:text-emerald-600 hover:underline">2. Klasifikasi Jenis APD Sesuai Standar Mutu</a></li>
+      <li><a href="#manajemen-pemeliharaan" class="text-emerald-700 hover:text-emerald-600 hover:underline">3. Manajemen Pemeliharaan, Inspeksi & Pembuangan APD Rusak</a></li>
+      <li><a href="#matriks-penentuan-apd" class="text-emerald-700 hover:text-emerald-600 hover:underline">4. Matriks Penilaian Bahaya dan Kebutuhan APD</a></li>
+      <li><a href="#pelatihan-kepatuhan-apd" class="text-emerald-700 hover:text-emerald-600 hover:underline">5. Pelatihan Kompetensi Penggunaan & Budaya Disiplin APD</a></li>
+      <li><a href="#artikel-pembahasan" class="text-emerald-700 hover:text-emerald-600 hover:underline">Artikel Pembahasan Terkait</a></li>
+      <li><a href="#faq-apd" class="text-emerald-700 hover:text-emerald-600 hover:underline">Pertanyaan yang Sering Diajukan (FAQ)</a></li>
+      <li><a href="#daftar-pustaka" class="text-emerald-700 hover:text-emerald-600 hover:underline">Daftar Pustaka</a></li>
+    </ol>
+  </nav>
+
   <p>
-    Berdasarkan <strong>Peraturan Menteri Tenaga Kerja dan Transmigrasi RI No. PER.08/MEN/VII/2010</strong>, pengusaha wajib menyediakan Alat Pelindung Diri (APD) bagi pekerja/buruh di tempat kerja secara cuma-cuma. APD yang disediakan harus memenuhi Standar Nasional Indonesia (SNI) atau standar internasional yang setara dan disesuaikan dengan hasil identifikasi bahaya dan penilaian risiko (IBPR / HIRADC).
+    Berdasarkan <strong>Peraturan Menteri Tenaga Kerja dan Transmigrasi RI No. PER.08/MEN/VII/2010</strong>, pengusaha wajib menyediakan Alat Pelindung Diri (APD) bagi pekerja/buruh di tempat kerja secara cuma-cuma. APD yang disediakan harus memenuhi Standar Nasional Indonesia (SNI) atau standar internasional yang setara dan disesuaikan dengan hasil identifikasi bahaya dan penilaian risiko (IBPR / HIRADC). Pemberian perlindungan fisik ini merupakan tanggung jawab hukum pengurus guna memastikan setiap tenaga kerja terlindungi dari paparan bahaya mekanik, fisik, kimia, maupun biologis di tempat kerja.
   </p>
 
-  <h2>1. Hierarki Pengendalian Risiko &amp; Posisi APD</h2>
+  <h2 id="dasar-hukum">Dasar Hukum K3 APD</h2>
+  <p>
+    Kewajiban pengadaan, penggunaan, dan standardisasi Alat Pelindung Diri di tempat kerja diatur secara tegas dalam peraturan perundang-undangan Republik Indonesia berikut:
+  </p>
+  <ul>
+    <li><strong>Undang-Undang No. 1 Tahun 1970</strong> tentang Keselamatan Kerja, Pasal 3, Pasal 9, Pasal 12, Pasal 13, dan Pasal 14 yang mewajibkan pengurus menyediakan alat-alat perlindungan diri secara cuma-cuma bagi tenaga kerja dan setiap orang yang memasuki tempat kerja, serta mewajibkan tenaga kerja untuk memakai APD yang diwajibkan secara patuh.</li>
+    <li><strong>Peraturan Menteri Tenaga Kerja dan Transmigrasi No. PER.08/MEN/VII/2010</strong> tentang Alat Pelindung Diri, yang mengatur secara terperinci mengenai definisi, jenis-jenis APD, syarat mutu standar teknis pembuatan, tata cara pemeliharaan, kewajiban penyuluhan, hingga prosedur pemusnahan APD yang kedaluwarsa atau rusak.</li>
+  </ul>
+
+  <h2 id="hierarki-pengendalian">1. Hierarki Pengendalian Risiko &amp; Posisi APD</h2>
   <p>
     Dalam keselamatan kerja modern, penyediaan APD merupakan pertahanan terakhir (<em>last line of defense</em>). Sebelum mewajibkan APD, manajemen wajib membuktikan bahwa bahaya tidak dapat diatasi melalui tahapan pengendalian yang lebih tinggi:
   </p>
@@ -48,33 +104,67 @@ const canonical = "/alat-pelindung-diri/";
     <li><strong>Pengendalian Administratif:</strong> Pelatihan K3, rotasi shift kerja, izin kerja (PTW), dan pemasangan rambu keselamatan.</li>
     <li><strong>Alat Pelindung Diri (APD):</strong> Melindungi tubuh pekerja ketika risiko residual masih ada.</li>
   </ol>
+  <p>
+    Kelemahan mendasar dari APD adalah alat ini tidak mengurangi intensitas bahaya di sumbernya. Bila APD terlepas, rusak, atau dipasang tidak tepat oleh tenaga kerja, maka paparan bahaya akan langsung mengenai organ tubuh tanpa perantara. Oleh karenanya, pengawasan kepatuhan di lapangan dan pemahaman filosofi hierarki kontrol ini wajib ditekankan kepada setiap supervisor dan pengawas keselamatan kerja di lingkungan operasional perusahaan.
+  </p>
 
-  <h2>2. Klasifikasi Jenis APD Sesuai Standar Mutu</h2>
+  <h2 id="klasifikasi-apd">2. Klasifikasi Jenis APD Sesuai Standar Mutu</h2>
+  <p>
+    Setiap komponen APD harus memiliki sertifikat pengujian mutu dan kesesuaian standar resmi agar mampu memberikan daya lindung nyata sesuai fungsi spesifikasinya:
+  </p>
   <ul class="space-y-3">
     <li>
-      <strong>Pelindung Kepala (Safety Helmet):</strong> Melindungi kepala dari kejatuhan material, benturan keras, dan sengatan listrik (Kelas E/G/C sesuai SNI ISO 3873 / ANSI Z89.1). Dilengkapi tali dagu (chinstrap) elastis.
+      <strong>Pelindung Kepala (Safety Helmet):</strong> Melindungi kepala dari kejatuhan material, benturan keras, dan sengatan listrik (Kelas E/G/C sesuai SNI ISO 3873 / ANSI Z89.1). Dilengkapi tali dagu (chinstrap) elastis untuk menjaga posisi helm agar tidak terlepas saat pekerja membungkuk atau menatap ke atas.
     </li>
     <li>
-      <strong>Pelindung Mata &amp; Wajah (Safety Glasses &amp; Face Shield):</strong> Menahan serpihan logam berkecepatan tinggi, percikan cairan kimia asam/basa, dan radiasi inframerah/ultraviolet pengelasan (standar ANSI Z87.1).
+      <strong>Pelindung Mata &amp; Wajah (Safety Glasses &amp; Face Shield):</strong> Menahan serpihan logam berkecepatan tinggi, percikan cairan kimia asam/basa, dan radiasi inframerah/ultraviolet pengelasan (standar ANSI Z87.1). Lensa harus memiliki lapisan antipores (anti-scratch) dan antikabut (anti-fog) untuk menjamin kejernihan visibilitas kerja.
     </li>
     <li>
-      <strong>Pelindung Pendengaran (Ear Plug &amp; Ear Muff):</strong> Wajib digunakan pada area kerja dengan intensitas suara melebihi 85 dBA. Memiliki sertifikasi Noise Reduction Rating (NRR) teruji.
+      <strong>Pelindung Pendengaran (Ear Plug &amp; Ear Muff):</strong> Wajib digunakan pada area kerja dengan intensitas suara melebihi 85 dBA. Memiliki sertifikasi Noise Reduction Rating (NRR) teruji laboratorium guna meredam tekanan suara berbahaya sebelum mencapai membran timpani telinga bagian tengah.
     </li>
     <li>
-      <strong>Pelindung Pernafasan (Respirator):</strong> Mulai dari masker partikulat N95 untuk debu, hingga respirator cartridge kimia (gas asam, uap organik, amonia), dan Self-Contained Breathing Apparatus (SCBA) untuk confined space.
+      <strong>Pelindung Pernafasan (Respirator):</strong> Mulai dari masker partikulat N95 untuk debu, hingga respirator cartridge kimia (gas asam, uap organik, amonia), dan Self-Contained Breathing Apparatus (SCBA) untuk confined space dan lingkungan kerja yang kekurangan kadar oksigen.
     </li>
     <li>
-      <strong>Pelindung Jatuh Ketinggian (Full Body Harness):</strong> Wajib untuk pekerjaan pada ketinggian &ge; 1,8 meter dengan tali ganda (double lanyard), snap hook besar, dan energy absorber (standar EN 361).
+      <strong>Pelindung Jatuh Ketinggian (Full Body Harness):</strong> Wajib untuk pekerjaan pada ketinggian &ge; 1,8 meter dengan tali ganda (double lanyard), snap hook besar, dan energy absorber (standar EN 361) yang bertugas menyerap hentakan energi deselerasi jatuh bebas ke tubuh pekerja.
     </li>
     <li>
-      <strong>Pelindung Kaki (Safety Shoes):</strong> Dilengkapi pelindung jari baja (steel toe cap tahan benturan 200 Joule) dan sol antipaku serta tahan minyak (anti-slip &amp; anti-static sesuai SNI 7079).
+      <strong>Pelindung Kaki (Safety Shoes):</strong> Dilengkapi pelindung jari baja (steel toe cap tahan benturan 200 Joule) dan sol antipaku serta tahan minyak (anti-slip &amp; anti-static sesuai SNI 7079) guna melindungi telapak kaki dari tusukan benda tajam dan bahaya tergelincir pada lantai licin.
     </li>
   </ul>
 
-  <h2>3. Manajemen Pemeliharaan, Inspeksi &amp; Pembuangan APD Rusak</h2>
+  <h2 id="manajemen-pemeliharaan">3. Manajemen Pemeliharaan, Inspeksi &amp; Pembuangan APD Rusak</h2>
   <p>
     Perusahaan wajib menyusun SOP penyimpanan dan jadwal inspeksi berkala APD. APD yang mengalami keretakan, kadaluarsa (misalnya masa pakai helm polimer maksimum 3-5 tahun), atau telah terkena beban kejatuhan (seperti harness pasca insiden) harus segera diafkir, dihancurkan, dan diganti baru tanpa membebankan biaya kepada pekerja.
   </p>
+  <p>
+    Setiap unit kerja wajib memiliki lemari penyimpanan APD yang bersih, terlindung dari sinar matahari langsung, kelembaban berlebih, dan uap pelarut kimia yang dapat mendegradasi polimer plastik maupun serat sintetis harness. Pemeriksaan pra-pakai (pre-use inspection) wajib dilakukan secara mandiri oleh pekerja setiap kali sebelum memulai pekerjaan, dilengkapi inspeksi formal bulanan oleh tim inspektor keselamatan kerja.
+  </p>
+  <p>
+    Dokumentasi kartu riwayat APD (PPE log card) harus dicatat secara tertib, mencantumkan tanggal penyerahan alat, nomor seri atau lot pabrik, catatan riwayat pembersihan, dan tanggal penggantian berkala. Hal ini penting untuk membuktikan kepatuhan dalam audit SMK3 sekaligus memastikan tidak ada pekerja yang menggunakan peralatan pelindung yang telah melewati batas usia pakai aman.
+  </p>
+
+  <h2 id="matriks-penentuan-apd">4. Matriks Penilaian Bahaya dan Kebutuhan APD</h2>
+  <p>
+    Penentuan jenis APD yang tepat harus mengacu pada dokumen Identifikasi Bahaya, Penilaian Risiko, dan Penentuan Kendali (HIRADC) serta Job Safety Analysis (JSA). Analisis bahaya mencakup empat kategori paparan utama:
+  </p>
+  <ul>
+    <li><strong>Bahaya Mekanik:</strong> Benturan benda jatuh, gesekan permukaan tajam, serpihan beterbangan, dan jeratan putaran mesin. Matriks kendali mensyaratkan safety helmet, kacamata keselamatan, sarung tangan tahan sayatan, dan safety shoes bersol baja.</li>
+    <li><strong>Bahaya Termal &amp; Api:</strong> Panas radiasi, percikan bunga api pengelasan, dan logam cair. Perlindungan membutuhkan pakaian kerja katun tahan api (flame-retardant wear), kedok las berfilter gelap, dan sarung tangan las kulit sapi tebal.</li>
+    <li><strong>Bahaya Bahan Kimia Korosif:</strong> Percikan cairan asam/basa, pelarut hidrokarbon, dan uap beracun. Pemilihan APD wajib mengacu pada Safety Data Sheet (SDS) bahan, meliputi sarung tangan nitril/neoprena, kacamata goggle rapat, apron pelindung kimia, dan respirator cartridge gas.</li>
+    <li><strong>Bahaya Listrik:</strong> Busur api (arc flash), tegangan sentuh, dan sambaran arus listrik. Perlindungan menggunakan sarung tangan isolasi berperingkat tegangan uji dan sepatu keselamatan berspesifikasi dielectric/electrical hazard.</li>
+  </ul>
+
+  <h2 id="pelatihan-kepatuhan-apd">5. Pelatihan Kompetensi Penggunaan &amp; Budaya Disiplin APD</h2>
+  <p>
+    Pemberian APD tercanggih sekalipun tidak akan memberikan perlindungan jika pekerja tidak memahami tata cara pemakaian yang benar. Program pelatihan kepatuhan APD wajib mencakup tiga kompetensi utama:
+  </p>
+  <ol>
+    <li><strong>Penyesuaian Ukuran &amp; Kenyamanan Fisik (Fit-Testing):</strong> Memastikan helm tidak longgar saat menggelengkan kepala, kacamata tidak menekan pangkal hidung, dan respirator menempel kedap pada kontur wajah pekerja tanpa celah kebocoran udara kotor. Uji kerapatan segel positif dan negatif harus dipraktikkan secara mandiri sebelum memasuki area kerja berdebu atau beracun.</li>
+    <li><strong>Keterbatasan Proteksi Alat:</strong> Menjelaskan secara transparan kepada tenaga kerja mengenai batas kemampuan pelindung, batas daya serap cartridge respirator, dan batas beban benturan toe cap 200 Joule agar pekerja tidak melakukan tindakan sembrono atau mengambil risiko berlebihan hanya karena merasa telah memakai APD.</li>
+    <li><strong>Pembersihan dan Dekontaminasi Harian:</strong> Melatih pekerja untuk mencuci respirator dan face shield dengan air sabun hangat, mengeringkan pada suhu kamar, dan tidak menjemur perlengkapan polimer di bawah terik matahari yang merusak molekul plastik pelindung.</li>
+    <li><strong>Tata Cara Penyimpanan di Kotak Khusus:</strong> Melarang kebiasaan menggantung helm di spion kendaraan atau meletakkan body harness di lantai kotor berminyak yang dapat mempercepat pelapukan bahan anyaman serat webbing penahan jatuh.</li>
+  </ol>
 
   <!-- Download Toolkits Banner -->
   <div class="mt-8 p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 text-white flex flex-col sm:flex-row justify-between items-center gap-6 not-prose border border-white/10 shadow-lg">
@@ -83,8 +173,81 @@ const canonical = "/alat-pelindung-diri/";
       <h3 class="text-lg font-bold text-white font-serif">Unduh Formulir Job Safety Analysis (JSA) &amp; APD</h3>
       <p class="text-xs text-slate-400 mt-1 max-w-md">Template matriks penentuan APD berdasarkan jenis pekerjaan dan risiko bahaya kerja di lapangan.</p>
     </div>
-    <a href="/downloads/Formulir-JSA-Job-Safety-Analysis.html" target="_blank" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shadow-md hover:scale-105 shrink-0">
+    <a href="/downloads/Formulir-JSA-Job-Safety-Analysis.html" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shadow-md hover:scale-105 shrink-0">
       Unduh Formulir JSA &rarr;
     </a>
   </div>
+
+  <!-- Artikel Pembahasan Section -->
+  <section id="artikel-pembahasan" class="my-12 pt-8 border-t border-slate-200 not-prose">
+    <div class="mb-6">
+      <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 block mb-1">Rangkaian Pembahasan</span>
+      <h3 class="font-serif text-2xl font-bold text-slate-900">
+        Artikel Pembahasan Standar Alat Pelindung Diri (APD)
+      </h3>
+      <p class="text-xs sm:text-sm text-slate-600 mt-1">
+        Kumpulan panduan teknis, template dokumen keselamatan, dan artikel rujukan terkait implementasi APD di tempat kerja:
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {mappedArticles.map((art) => (
+        <a
+          href={art.path}
+          class="p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-emerald-500 hover:shadow-md transition-all flex flex-col justify-between group"
+        >
+          <div>
+            <div class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider mb-1.5">Rujukan Teknis</div>
+            <h4 class="font-serif font-bold text-base text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug mb-2">
+              {art.title}
+            </h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              {art.desc}
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-bold text-emerald-600 group-hover:text-emerald-700">
+            <span>Baca dokumen &amp; pembahasan</span> &rarr;
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Visible FAQ Block -->
+  <section id="faq-apd" class="my-12 pt-8 border-t border-slate-200 not-prose">
+    <div class="mb-6">
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block mb-1">Tanya Jawab Teknis</span>
+      <h3 class="font-serif text-2xl font-bold text-slate-900">
+        Pertanyaan Seputar Alat Pelindung Diri (FAQ)
+      </h3>
+      <p class="text-xs sm:text-sm text-slate-600 mt-1">
+        Jawaban ringkas dan aplikatif seputar regulasi pengadaan, pengujian mutu, dan kewajiban hukum penyediaan APD:
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((f) => (
+        <details class="group bg-white rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 font-serif text-base sm:text-lg">
+            <span>{f.q}</span>
+            <span class="ml-4 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <p class="mt-4 text-slate-600 text-sm leading-relaxed pt-3 border-t border-slate-100 font-sans">
+            {f.a}
+          </p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <h2 id="daftar-pustaka">Daftar Pustaka</h2>
+  <p>
+    Seluruh kriteria keselamatan, acuan pengujian teknis, dan kewajiban penyediaan APD dalam dokumen ini merujuk secara ketat pada regulasi resmi pemerintah Indonesia berikut:
+  </p>
+  <ul>
+    <li>Undang-Undang No. 1 Tahun 1970 tentang Keselamatan Kerja.</li>
+    <li>Peraturan Menteri Tenaga Kerja dan Transmigrasi No. PER.08/MEN/VII/2010 tentang Alat Pelindung Diri.</li>
+  </ul>
 </ArticleLayout>

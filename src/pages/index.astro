@@ -63,7 +63,7 @@ const batchSchedules = [
     program: 'Pembinaan Calon Ahli K3 Umum (Kemnaker RI)',
     dates: '10 – 23 November 2026',
     mode: 'Blended (Online Teori + PKL Mandiri)',
-    slots: 'Tersisa 4 Kursi',
+    slots: 'Kuota Terbatas (4 Kursi)',
     status: 'Segera Penuh',
     statusColor: 'text-amber-500 bg-amber-500/10'
   },
@@ -71,7 +71,7 @@ const batchSchedules = [
     program: 'K3 Penanggulangan Kebakaran Kelas D & C',
     dates: '17 – 20 November 2026',
     mode: 'Tatap Muka & Praktik Lapangan APAR',
-    slots: 'Tersisa 6 Kursi',
+    slots: 'Kuota Terbuka (6 Kursi)',
     status: 'Tersedia',
     statusColor: 'text-emerald-500 bg-emerald-500/10'
   },
@@ -79,7 +79,7 @@ const batchSchedules = [
     program: 'Teknisi K3 Listrik Industri (PUIL & Grounding)',
     dates: '24 – 28 November 2026',
     mode: 'Interactive Live Zoom + Praktik',
-    slots: 'Tersisa 5 Kursi',
+    slots: 'Kuota Terbuka (5 Kursi)',
     status: 'Tersedia',
     statusColor: 'text-emerald-500 bg-emerald-500/10'
   },
@@ -96,7 +96,7 @@ const batchSchedules = [
 const faqs = [
   {
     q: 'Apakah sertifikat Ahli K3 Umum yang diterbitkan resmi dari Kementerian Ketenagakerjaan RI?',
-    a: 'Ya, seluruh program sertifikasi reguler di KonsultanK3.com didukung oleh PT Wahana Totalita Konsultan sebagai PJK3 resmi berlisensi Kemnaker RI. Peserta yang lulus akan mendapatkan Surat Keputusan Penunjukan (SKP) dan Lisensi Kewenangan Ahli K3 Umum resmi Kemnaker RI dengan masa berlaku nasional.'
+    a: 'Ya, seluruh program sertifikasi reguler di KonsultanK3.com diselenggarakan bekerja sama dengan PT Wahana Totalita Konsultan sebagai PJK3 resmi berlisensi Kemnaker RI. Peserta yang lulus akan mendapatkan Surat Keputusan Penunjukan (SKP) dan Lisensi Kewenangan Ahli K3 Umum resmi Kemnaker RI dengan masa berlaku nasional.'
   },
   {
     q: 'Apa perbedaan sertifikasi K3 Kemnaker RI dan sertifikasi BNSP?',
@@ -120,9 +120,23 @@ const homeSchema = {
       "@id": "https://konsultank3.com/#organization",
       "name": "Konsultan K3 Indonesia",
       "url": "https://konsultank3.com",
-      "logo": "https://konsultank3.com/assets/images/logo.png",
-      "description": "Pusat pembinaan sertifikasi Ahli K3 Umum resmi Kemnaker RI, K3 Kebakaran, K3 Listrik, dan audit SMK3 PP 50/2012 sejak 2011.",
-      "telephone": "+62-813-9294-3146"
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://konsultank3.com/assets/images/logo.png"
+      },
+      "description": "Pusat informasi kepatuhan K3, pembinaan sertifikasi Kemnaker RI, BNSP, dan pendampingan audit SMK3 PP 50/2012.",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "PT Wahana Totalita Konsultan",
+        "url": "https://wahanatotalita.com"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-813-9294-3146",
+        "contactType": "customer service",
+        "areaServed": "ID",
+        "availableLanguage": ["Indonesian", "English"]
+      }
     },
     {
       "@type": "WebSite",
@@ -572,7 +586,7 @@ const homeSchema = {
         Tingkatkan Kompetensi HSE &amp; Kepatuhan Regulasi Perusahaan Anda
       </h2>
       <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-sans">
-        Dapatkan silabus lengkap, penawaran harga corporate in-house, dan diskon batch terdekat bersama PT Wahana Totalita Konsultan.
+        Dapatkan silabus lengkap, penawaran harga corporate in-house, dan informasi pendaftaran batch terdekat.
       </p>
 
       <div class="flex flex-wrap items-center justify-center gap-4 pt-4">

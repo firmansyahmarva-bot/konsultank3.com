@@ -10,6 +10,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && node scripts/post-build.js",
+    "check:frozen": "node scripts/check-frozen.mjs",
+    "check:pillars": "node scripts/check-pillars.mjs",
     "preview": "astro preview",
     "serve": "node server.js"
   },

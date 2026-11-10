@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "Profil PT Wahana Totalita Konsultan";
-const description = "Profil lengkap PT Wahana Totalita Konsultan, Perusahaan Jasa K3 (PJK3) berlisensi resmi Kemnaker RI dan mitra strategis pembinaan keselamatan kerja sejak 2011.";
+const title = "Tentang KonsultanK3.com";
+const description = "Tentang portal KonsultanK3.com: pusat literatur edukasi keselamatan kerja, konsultasi kepatuhan, dan panduan sertifikasi resmi Kemnaker RI sejak 2011.";
 const canonical = "/tentang-kami/";
 
 const aboutSchema = {
@@ -17,13 +17,17 @@ const aboutSchema = {
     },
     {
       "@type": "AboutPage",
-      "name": "Tentang PT Wahana Totalita Konsultan (KonsultanK3.com)",
+      "name": "Tentang KonsultanK3.com",
       "description": description,
       "mainEntity": {
         "@type": "Organization",
-        "name": "PT Wahana Totalita Konsultan",
-        "url": "https://wahanatotalita.com",
-        "sameAs": "https://konsultank3.com"
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "PT Wahana Totalita Konsultan",
+          "url": "https://wahanatotalita.com"
+        }
       }
     }
   ]
@@ -31,11 +35,11 @@ const aboutSchema = {
 ---
 
 <BaseLayout
-  title={`${title} » Konsultan K3 Indonesia`}
+  title={title}
   description={description}
   canonical={canonical}
   schema={aboutSchema}
-  presetMessage="Halo KonsultanK3, saya ingin mengetahui profil kerjasama korporasi dengan PT Wahana Totalita Konsultan."
+  presetMessage="Halo KonsultanK3, saya ingin konsultasi layanan keselamatan kerja dan pelatihan K3."
 >
   <!-- Hero Section -->
   <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
@@ -46,41 +50,41 @@ const aboutSchema = {
       <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
         <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
         <span>/</span>
-        <span class="text-slate-300">Profil Perusahaan</span>
+        <span class="text-slate-300">Tentang Kami</span>
       </nav>
 
       <div class="space-y-6 max-w-4xl">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold border border-amber-500/20">
           <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-          PJK3 Resmi Kemnaker RI &bull; Terdaftar LPSE Nasional Sejak 2011
+          Portal Edukasi &amp; Kepatuhan Regulasi K3 Sejak 2011
         </div>
 
         <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          Membangun Budaya Keselamatan &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">Kepatuhan Industri Berkelanjutan</span>
+          Portal Edukasi, Konsultasi &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">Panduan Sertifikasi K3 Terpercaya</span>
         </h1>
 
         <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-3xl">
-          <strong>PT Wahana Totalita Konsultan</strong> adalah lembaga pembinaan sertifikasi personel K3 resmi dan pendampingan audit Sistem Manajemen K3 (SMK3) terpercaya di Indonesia yang telah mendampingi lebih dari 980+ korporasi sejak tahun 2011.
+          <strong>KonsultanK3.com</strong> adalah media referensi independen dan pusat informasi keselamatan dan kesehatan kerja (K3) terdepan di Indonesia. Sejak tahun 2011, kami mendampingi praktisi HSE, akademisi, dan manajemen industri dalam memahami regulasi ketenagakerjaan, standar SNI, serta penerapan Sistem Manajemen K3.
         </p>
       </div>
 
       <!-- Key Metrics Strip -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 max-w-5xl border-t border-white/10">
         <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
-          <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Tahun Berdiri</span>
-          <p class="text-white font-bold text-base sm:text-lg">2011 (15 Tahun)</p>
+          <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Eksistensi Digital</span>
+          <p class="text-white font-bold text-base sm:text-lg">Sejak 2011 (15 Tahun)</p>
         </div>
         <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
-          <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Alumni Tersertifikasi</span>
+          <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Alumni Terbina</span>
           <p class="text-white font-bold text-base sm:text-lg">14.850+ Personel</p>
         </div>
         <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
-          <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Klien Korporasi</span>
+          <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Mitra Korporasi</span>
           <p class="text-white font-bold text-base sm:text-lg">980+ Perusahaan</p>
         </div>
         <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
-          <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Status Legalitas</span>
-          <p class="text-emerald-400 font-bold text-base sm:text-lg">SKP Kemnaker RI Aktif</p>
+          <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Standar Regulasi</span>
+          <p class="text-emerald-400 font-bold text-base sm:text-lg">Kemnaker RI &amp; BNSP</p>
         </div>
       </div>
 
@@ -93,31 +97,40 @@ const aboutSchema = {
     <!-- Vision & Mission Bento Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/80 shadow-sm space-y-4">
-        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block">Visi Kami</span>
-        <h3 class="font-serif text-2xl font-bold text-slate-900 leading-tight">Menjadi Pusat Unggulan K3 Terdepan di Indonesia</h3>
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block">Visi Portal</span>
+        <h3 class="font-serif text-2xl font-bold text-slate-900 leading-tight">Mewujudkan Ekosistem Tempat Kerja Aman &amp; Zero Accident</h3>
         <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-          Mewujudkan ekosistem tempat kerja nasional yang aman, produktif, dan nihil kecelakaan (zero accident) melalui standardisasi kompetensi personel yang berintegritas tinggi serta kepatuhan hukum ketenagakerjaan berkelanjutan.
+          Menjadi kanal pengetahuan dan rujukan ilmiah keselamatan kerja terlengkap yang menjembatani regulasi pemerintah, kebutuhan industri, dan kompetensi tenaga kerja demi terciptanya tempat kerja nihil kecelakaan di seluruh nusantara.
         </p>
       </div>
 
       <div class="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/80 shadow-sm space-y-4">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block">Misi Kami</span>
-        <h3 class="font-serif text-2xl font-bold text-slate-900 leading-tight">Mencetak SDM Kompeten &amp; Menjamin Kepatuhan Regulasi</h3>
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block">Misi Utama</span>
+        <h3 class="font-serif text-2xl font-bold text-slate-900 leading-tight">Diseminasi Pengetahuan &amp; Standardisasi Mutu</h3>
         <ul class="space-y-3 text-slate-600 text-sm">
           <li class="flex items-start gap-3">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></span>
-            <span>Menyelenggarakan pembinaan sertifikasi K3 berbasis kompetensi praktis sesuai kurikulum Ditjen Binwasnaker &amp; K3 Kemnaker RI.</span>
+            <span>Menyediakan ulasan regulasi K3, instrumen penilaian risiko, dan panduan teknis yang mudah dipahami dan diunduh cuma-cuma.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></span>
-            <span>Mendampingi implementasi Sistem Manajemen K3 (SMK3 PP 50/2012) untuk membantu korporasi meraih predikat Memuaskan / Bendera Emas.</span>
+            <span>Memfasilitasi pendaftaran pembinaan kompetensi personil K3 resmi berlisensi Kemnaker RI dan sertifikasi profesi BNSP.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></span>
-            <span>Menyediakan literatur dan kajian ilmiah K3 yang terbuka dan mudah diakses bagi akademisi dan praktisi keselamatan di seluruh Indonesia.</span>
+            <span>Mendampingi pelaku industri menyusun manual dan prosedur Sistem Manajemen K3 (SMK3 PP 50/2012) menuju Bendera Emas.</span>
           </li>
         </ul>
       </div>
+    </div>
+
+    <!-- Operational Entity & Legal Backing Box -->
+    <div class="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/80 shadow-sm space-y-4">
+      <span class="text-xs font-bold uppercase tracking-widest text-slate-500 block">Tata Kelola &amp; Operasional</span>
+      <h3 class="font-serif text-2xl font-bold text-slate-900 leading-tight">Pengelola &amp; Penyelenggara Layanan</h3>
+      <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+        KonsultanK3.com dioperasikan oleh <strong>PT Wahana Totalita Konsultan</strong>, Perusahaan Jasa Keselamatan dan Kesehatan Kerja (PJK3) berlisensi resmi Kementerian Ketenagakerjaan Republik Indonesia (Kemnaker RI) dengan izin Surat Keputusan Penunjukan (SKP) aktif di bidang pembinaan K3, asesmen lingkungan kerja, dan pengujian sertifikasi ketenagakerjaan.
+      </p>
     </div>
 
     <!-- Corporate Credentials & Accreditations -->
@@ -126,7 +139,7 @@ const aboutSchema = {
         <span class="text-xs font-bold uppercase tracking-widest text-amber-400 block">Landasan Legalitas</span>
         <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Akreditasi &amp; Lisensi Penunjukan PJK3</h3>
         <p class="text-slate-300 text-sm leading-relaxed">
-          PT Wahana Totalita Konsultan beroperasi dengan izin resmi dan Surat Keputusan Penunjukan (SKP) dari Kementerian Ketenagakerjaan Republik Indonesia untuk bidang Pembinaan K3, Asesmen Lingkungan Kerja, dan Sertifikasi Ketenagakerjaan.
+          Seluruh program pembinaan kompetensi, ujian sertifikasi, dan asesmen lapangan diselenggarakan sesuai ketetapan kurikulum resmi Ditjen Binwasnaker &amp; K3 Kemnaker RI serta standar BNSP.
         </p>
       </div>
 
@@ -147,6 +160,11 @@ const aboutSchema = {
           <p class="text-xs text-amber-400">Katalog Elektronik LKPP</p>
         </div>
       </div>
+    </div>
+
+    <!-- Footer Note Line -->
+    <div class="p-6 rounded-2xl bg-slate-100 border border-slate-200 text-center text-xs text-slate-600 font-medium">
+      Dioperasikan oleh PT Wahana Totalita Konsultan (PJK3 berlisensi Kemnaker RI)
     </div>
 
   </main>

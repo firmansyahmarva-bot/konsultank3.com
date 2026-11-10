@@ -1,51 +1,101 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { getPillarForArticle, getRelatedArticles, getPillarById, normalizePath } from '../data/topics.js';
 
 interface Props {
   title: string;
+  metaTitle?: string;
   description: string;
   canonical?: string;
   publishDate?: string;
+  updatedDate?: string;
   category?: string;
   readTime?: string;
+  pillarId?: string;
 }
 
 const {
   title,
+  metaTitle,
   description,
   canonical = Astro.url.pathname,
   publishDate = '2026-10-29',
+  updatedDate = '2026-11-10',
   category = 'Panduan & Kepatuhan K3',
-  readTime = '5 menit baca'
+  readTime = '5 menit baca',
+  pillarId
 } = Astro.props;
 
-const fullCanonical = canonical.startsWith('http') ? canonical : `https://konsultank3.com${canonical}`;
+const cleanPath = normalizePath(canonical);
+const fullCanonical = canonical.startsWith('http') ? canonical : `https://konsultank3.com${cleanPath.endsWith('/') ? cleanPath : cleanPath}`;
+
+// Determine pillar association
+const pillarFromProp = pillarId ? getPillarById(pillarId) : null;
+const detectedPillar = getPillarForArticle(cleanPath);
+const pathSlug = cleanPath.replace(/^\/|\/$/g, '');
+const isPillarPage = Boolean(getPillarById(pathSlug));
+const activePillar = pillarFromProp || detectedPillar || (isPillarPage ? getPillarById(pathSlug) : null);
+
+// Related articles for spokes
+const relatedArticles = (!isPillarPage && activePillar) ? getRelatedArticles(cleanPath, 3) : [];
+
+// Determine final page title (must not exceed 60 chars)
+const computedTitle = metaTitle || (
+  title.includes('Konsultan K3')
+    ? title
+    : (title.length + 24 <= 60 ? `${title} » Konsultan K3 Indonesia` : title)
+);
+
+const breadcrumbElements = [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Beranda",
+    "item": "https://konsultank3.com/"
+  }
+];
+
+if (isPillarPage) {
+  breadcrumbElements.push({
+    "@type": "ListItem",
+    "position": 2,
+    "name": title,
+    "item": fullCanonical
+  });
+} else if (activePillar) {
+  breadcrumbElements.push({
+    "@type": "ListItem",
+    "position": 2,
+    "name": activePillar.shortName,
+    "item": `https://konsultank3.com${activePillar.path}`
+  });
+  breadcrumbElements.push({
+    "@type": "ListItem",
+    "position": 3,
+    "name": title,
+    "item": fullCanonical
+  });
+} else {
+  breadcrumbElements.push({
+    "@type": "ListItem",
+    "position": 2,
+    "name": category,
+    "item": "https://konsultank3.com/pelatihan/"
+  });
+  breadcrumbElements.push({
+    "@type": "ListItem",
+    "position": 3,
+    "name": title,
+    "item": fullCanonical
+  });
+}
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Beranda",
-          "item": "https://konsultank3.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Katalog Edukasi K3",
-          "item": "https://konsultank3.com/pelatihan/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": title,
-          "item": fullCanonical
-        }
-      ]
+      "itemListElement": breadcrumbElements
     },
     {
       "@type": "Article",
@@ -53,11 +103,11 @@ const articleSchema = {
       "description": description,
       "mainEntityOfPage": fullCanonical,
       "datePublished": publishDate,
-      "dateModified": "2026-11-05",
+      "dateModified": updatedDate,
       "author": {
         "@type": "Organization",
-        "name": "Tim Ahli K3 PT Wahana Totalita Konsultan",
-        "url": "https://wahanatotalita.com"
+        "name": "Dewan Pakar K3 & Tim Redaksi KonsultanK3.com",
+        "url": "https://konsultank3.com/tentang-kami/"
       },
       "publisher": {
         "@type": "Organization",
@@ -73,7 +123,7 @@ const articleSchema = {
 ---
 
 <BaseLayout
-  title={`${title} » Konsultan K3 Indonesia`}
+  title={computedTitle}
   description={description}
   canonical={canonical}
   type="article"
@@ -86,18 +136,30 @@ const articleSchema = {
     <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
       
       <!-- Breadcrumbs -->
-      <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6">
+      <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6" aria-label="Breadcrumb">
         <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
         <span>/</span>
-        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">{category}</a>
-        <span>/</span>
-        <span class="text-slate-300 truncate max-w-[200px] sm:max-w-xs">{title}</span>
+        {isPillarPage ? (
+          <span class="text-amber-400 font-semibold">{title}</span>
+        ) : activePillar ? (
+          <>
+            <a href={activePillar.path} class="hover:text-amber-400 transition-colors font-medium">{activePillar.shortName}</a>
+            <span>/</span>
+            <span class="text-slate-300 truncate max-w-[200px] sm:max-w-xs">{title}</span>
+          </>
+        ) : (
+          <>
+            <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">{category}</a>
+            <span>/</span>
+            <span class="text-slate-300 truncate max-w-[200px] sm:max-w-xs">{title}</span>
+          </>
+        )}
       </nav>
 
       <!-- Badge strip -->
       <div class="flex flex-wrap items-center gap-3 mb-4">
         <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-          {category}
+          {activePillar ? activePillar.shortName : category}
         </span>
         <span class="text-xs text-slate-400 flex items-center gap-1.5">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -105,9 +167,9 @@ const articleSchema = {
           </svg>
           {readTime}
         </span>
-        <span class="text-xs text-slate-400 flex items-center gap-1.5">
+        <span class="text-xs text-emerald-400 font-medium flex items-center gap-1.5">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          Terverifikasi Tim K3 Senior
+          Terakhir diperbarui: November 2026
         </span>
       </div>
 
@@ -128,7 +190,7 @@ const articleSchema = {
           </div>
           <div>
             <div class="text-sm font-semibold text-white">Dewan Redaksi K3 & Kepatuhan Regulasi</div>
-            <div class="text-xs text-slate-400">Ditinjau bersama Instruktur PJK3 PT Wahana Totalita</div>
+            <div class="text-xs text-slate-400">KonsultanK3.com &bull; Terverifikasi Praktisi K3 Senior</div>
           </div>
         </div>
         <div class="text-xs text-slate-400">
@@ -144,7 +206,7 @@ const articleSchema = {
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       
       <!-- Key Executive Takeaways Card -->
-      <div class="p-6 rounded-2xl bg-amber-50 border border-amber-200/80 mb-10 shadow-sm">
+      <div class="p-6 rounded-2xl bg-amber-50 border border-amber-200/80 mb-10 shadow-sm not-prose">
         <div class="flex items-center gap-2 text-amber-900 font-bold text-sm uppercase tracking-wider mb-2">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -156,13 +218,89 @@ const articleSchema = {
         </p>
       </div>
 
+      <!-- Up-Link to Pillar Guide (Home > Pillar > Article hierarchy) -->
+      {!isPillarPage && activePillar && (
+        <div class="mb-8 p-4 rounded-2xl bg-emerald-50 border border-emerald-200/90 text-emerald-950 text-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 not-prose shadow-sm">
+          <div class="space-y-0.5">
+            <span class="text-[11px] uppercase tracking-wider font-bold text-emerald-700 block">Panduan Induk K3</span>
+            <p class="text-xs sm:text-sm text-slate-700">
+              Artikel ini merupakan bagian dari rujukan pilar <strong class="text-slate-900">{activePillar.title}</strong>.
+            </p>
+          </div>
+          <a
+            href={activePillar.path}
+            class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm hover:scale-105 shrink-0 text-center"
+          >
+            {activePillar.anchorText} &rarr;
+          </a>
+        </div>
+      )}
+
       <!-- Main Prose Content -->
       <article class="prose prose-slate max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-headings:tracking-tight prose-h2:text-2xl prose-h2:sm:text-3xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-p:text-slate-700 prose-p:leading-relaxed prose-p:text-base prose-li:text-slate-700 prose-strong:text-slate-900 prose-img:rounded-2xl">
         <slot />
       </article>
 
-      <!-- In-Article Consultation & Lead Funnel Box -->
-      <div class="mt-14 p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 text-white shadow-xl border border-white/10 relative overflow-hidden">
+      <!-- Up-Link to Pillar Guide at bottom of content -->
+      {!isPillarPage && activePillar && (
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-r from-emerald-900 to-slate-900 text-white shadow-md not-prose flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-emerald-400 font-bold block mb-1">Rujukan Komprehensif</span>
+            <h4 class="font-serif font-bold text-base text-white">{activePillar.title}</h4>
+            <p class="text-xs text-slate-300 mt-0.5">Pelajari pedoman regulasi resmi, instrumen penilaian, dan prosedur implementasi teknis.</p>
+          </div>
+          <a
+            href={activePillar.path}
+            class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shrink-0 shadow"
+          >
+            Buka Panduan Lengkap &rarr;
+          </a>
+        </div>
+      )}
+
+      <!-- Related Articles (3 links, same pillar) -->
+      {!isPillarPage && relatedArticles.length > 0 && activePillar && (
+        <section class="mt-12 pt-8 border-t border-slate-200 not-prose">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-amber-600 font-bold block mb-1">Eksplorasi Topik</span>
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-slate-900">
+                Artikel Terkait dalam {activePillar.shortName}
+              </h3>
+            </div>
+            <a href={activePillar.path} class="text-xs font-bold text-emerald-600 hover:text-emerald-700">
+              Lihat Semua &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {relatedArticles.map((rel) => (
+              <a
+                href={rel.path}
+                class="group p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-amber-400 hover:shadow-lg transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1.5">
+                    {activePillar.shortName}
+                  </span>
+                  <h4 class="font-serif font-bold text-sm text-slate-900 group-hover:text-amber-600 transition-colors leading-snug line-clamp-2 mb-2">
+                    {rel.title}
+                  </h4>
+                  <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                    {rel.desc}
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-bold text-emerald-600 group-hover:text-emerald-700">
+                  <span>Baca ulasan</span> &rarr;
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- In-Article Consultation Box -->
+      <div class="mt-12 p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 text-white shadow-xl border border-white/10 relative overflow-hidden not-prose">
         <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div class="space-y-2 max-w-lg">
             <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
@@ -170,7 +308,7 @@ const articleSchema = {
             </span>
             <h3 class="text-2xl font-bold font-serif text-white">Butuh Bimbingan Teknis atau Sertifikasi Tim Anda?</h3>
             <p class="text-sm text-slate-300 leading-relaxed">
-              Konsultasikan kebutuhan pelatihan personil, implementasi SMK3, atau in-house training perusahaan Anda langsung bersama tim PJK3 resmi Kemnaker RI.
+              Konsultasikan kebutuhan pelatihan personil, implementasi SMK3, atau in-house training perusahaan Anda langsung bersama tim ahli K3.
             </p>
           </div>
           <a
@@ -186,7 +324,7 @@ const articleSchema = {
       </div>
 
       <!-- Back to Library Navigation -->
-      <div class="mt-10 pt-6 border-t border-slate-200 flex items-center justify-between">
+      <div class="mt-10 pt-6 border-t border-slate-200 flex items-center justify-between not-prose">
         <a href="/" class="text-sm font-semibold text-slate-600 hover:text-slate-900 flex items-center gap-2">
           &larr; Kembali ke Beranda
         </a>

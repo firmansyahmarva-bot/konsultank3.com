@@ -31,15 +31,22 @@ for (const file of files) {
   const raw = fs.readFileSync(file, 'utf8');
 
   // Extract title
-  const titleMatch = raw.match(/title\s*=\s*(?:\{`([^`]+)`\}|"([^"]+)"|'([^']+)')/i);
+  let titleMatch = raw.match(/title\s*=\s*(?:\{`([^`]+)`\}|"([^"]+)"|'([^']+)')/i);
+  if (!titleMatch) {
+    titleMatch = raw.match(/<title>([^<]+)<\/title>/i);
+  }
   const title = titleMatch ? (titleMatch[1] || titleMatch[2] || titleMatch[3]) : 'NO_TITLE';
 
   // Extract description
-  const descMatch = raw.match(/description\s*=\s*(?:\{`([^`]+)`\}|"([^"]+)"|'([^']+)'|\{description\})/i);
-  let desc = descMatch ? (descMatch[1] || descMatch[2] || descMatch[3]) : 'NO_DESC';
-  if (desc === undefined) {
+  let descMatch = raw.match(/description\s*=\s*(?:\{`([^`]+)`\}|"([^"]+)"|'([^']+)'|\{description\})/i);
+  let desc = descMatch ? (descMatch[1] || descMatch[2] || descMatch[3]) : undefined;
+  if (!desc) {
     const descVarMatch = raw.match(/const\s+description\s*=\s*["']([^"']+)["']/i);
-    desc = descVarMatch ? descVarMatch[1] : 'NO_DESC';
+    desc = descVarMatch ? descVarMatch[1] : undefined;
+  }
+  if (!desc) {
+    const metaDescMatch = raw.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i);
+    desc = metaDescMatch ? metaDescMatch[1] : 'NO_DESC';
   }
 
   // Extract clean text body
@@ -74,6 +81,7 @@ console.log('=== 1. TITLE DUPLICATION CHECK ===');
 const titleMap = new Map();
 pages.forEach(p => {
   const normTitle = p.title.toLowerCase().replace(/»\s*konsultan\s*k3.*/, '').trim();
+  if (normTitle === 'no_title') return;
   if (!titleMap.has(normTitle)) titleMap.set(normTitle, []);
   titleMap.get(normTitle).push(p.file);
 });
@@ -93,6 +101,7 @@ console.log('\n=== 2. META DESCRIPTION DUPLICATION CHECK ===');
 const descMap = new Map();
 pages.forEach(p => {
   const normDesc = p.desc.trim().toLowerCase();
+  if (normDesc === 'no_desc') return;
   if (!descMap.has(normDesc)) descMap.set(normDesc, []);
   descMap.get(normDesc).push(p.file);
 });

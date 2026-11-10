@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getArticlesForPillar } from '../../data/topics.js';
 
-const title = "Panduan Penerapan & Pendampingan Audit SMK3 PP 50/2012";
-const description = "Layanan konsultasi dan pendampingan implementasi Sistem Manajemen Keselamatan dan Kesehatan Kerja (SMK3) sesuai Peraturan Pemerintah No. 50 Tahun 2012 untuk meraih predikat Bendera Emas.";
+const title = "Panduan Penerapan & Audit SMK3 PP 50/2012";
+const description = "Panduan lengkap penerapan dan pendampingan audit SMK3 PP No. 50 Tahun 2012 serta Permenaker 26/2014 untuk 64, 122, dan 166 kriteria meraih Bendera Emas.";
 const canonical = "/panduan-penerapan-smk3/";
+
+const mappedArticles = getArticlesForPillar('panduan-penerapan-smk3');
 
 const smk3Schema = {
   "@context": "https://schema.org",
@@ -17,21 +20,65 @@ const smk3Schema = {
       ]
     },
     {
+      "@type": "Article",
+      "headline": title,
+      "description": description,
+      "mainEntityOfPage": "https://konsultank3.com/panduan-penerapan-smk3/",
+      "datePublished": "2026-10-29",
+      "dateModified": "2026-11-10",
+      "author": {
+        "@type": "Organization",
+        "name": "Dewan Pakar K3 & Tim Redaksi KonsultanK3.com",
+        "url": "https://konsultank3.com/tentang-kami/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://konsultank3.com/assets/images/logo.png"
+        }
+      }
+    },
+    {
       "@type": "Service",
       "name": "Pendampingan Audit SMK3 PP 50/2012 Menuju Bendera Emas",
       "description": description,
       "provider": {
         "@type": "Organization",
         "name": "PT Wahana Totalita Konsultan",
-        "sameAs": "https://konsultank3.com"
+        "url": "https://wahanatotalita.com"
       }
     }
   ]
 };
+
+const faqs = [
+  {
+    q: "Perusahaan apa saja yang wajib menerapkan SMK3 sesuai PP No. 50 Tahun 2012?",
+    a: "Sesuai Pasal 5 PP No. 50 Tahun 2012, kewajiban penerapan SMK3 berlaku bagi setiap perusahaan yang mempekerjakan tenaga kerja paling sedikit 100 orang, atau perusahaan yang mempunyai potensi bahaya tinggi (seperti sektor pertambangan, minyak & gas, konstruksi, kimia, dan manufaktur berat)."
+  },
+  {
+    q: "Berapa pembagian tingkat kriteria audit SMK3 berdasarkan Permenaker No. 26 Tahun 2014?",
+    a: "Permenaker No. 26 Tahun 2014 menetapkan tiga tingkatan penilaian penerapan SMK3: Tingkat Awal (64 kriteria untuk perusahaan berisiko rendah), Tingkat Transisi (122 kriteria untuk perusahaan berisiko sedang), dan Tingkat Lanjutan (166 kriteria untuk perusahaan berisiko tinggi atau skala besar)."
+  },
+  {
+    q: "Berapa persentase pencapaian pemenuhan kriteria untuk meraih predikat Bendera Emas SMK3?",
+    a: "Untuk meraih predikat Memuaskan (Bendera Emas) dari Kementerian Ketenagakerjaan RI, perusahaan wajib memenuhi pencapaian minimal 85% sampai dengan 100% dari total kriteria audit yang dinilai, tanpa adanya temuan ketidaksesuaian kategori Mayor."
+  },
+  {
+    q: "Apa saja 4 tahapan metodologi pendampingan audit SMK3 yang terstruktur?",
+    a: "Tahapan pendampingan mencakup: (1) Gap Analysis & Diagnostik Awal terhadap kriteria regulasi, (2) Penyusunan & Revisi Manual Kebijakan K3 serta Prosedur SOP, (3) Pelatihan & Pelaksanaan Audit Internal mandiri, serta (4) Pendampingan saat audit eksternal resmi oleh Badan Audit independen yang ditunjuk Kemnaker."
+  },
+  {
+    q: "Apa saja 5 prinsip dasar penerapan SMK3 sesuai amanat PP No. 50 Tahun 2012?",
+    a: "Lima prinsip dasar SMK3 meliputi: (1) Penetapan kebijakan K3 oleh pimpinan tertinggi, (2) Perencanaan K3 berbasis matriks HIRADC, (3) Pelaksanaan rencana K3 didukung sumber daya personel kompeten, (4) Pemantauan dan evaluasi kinerja K3 melalui inspeksi dan audit internal, serta (5) Peninjauan dan peningkatan kinerja manajemen K3 secara berkesinambungan."
+  }
+];
 ---
 
 <BaseLayout
-  title={`${title} » Konsultan K3 Indonesia`}
+  title={title}
   description={description}
   canonical={canonical}
   schema={smk3Schema}
@@ -55,9 +102,15 @@ const smk3Schema = {
         
         <!-- Left: Headline & Key Highlights -->
         <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold border border-amber-500/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
-            Regulasi Wajib Pemerintah &bull; PP No. 50 Tahun 2012
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold border border-amber-500/20">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+              Regulasi Wajib Pemerintah &bull; PP No. 50 Tahun 2012
+            </span>
+            <span class="text-xs text-emerald-400 font-medium flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              Terakhir diperbarui: November 2026
+            </span>
           </div>
 
           <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -79,7 +132,6 @@ const smk3Schema = {
             </a>
             <a
               href="/downloads/Checklist-Audit-SMK3-166-Kriteria.html"
-              target="_blank"
               class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
             >
               Unduh Checklist 166 Kriteria
@@ -154,8 +206,44 @@ const smk3Schema = {
       <!-- Main Content Column -->
       <div class="lg:col-span-8 space-y-12">
         
+        <!-- Table of Contents -->
+        <nav class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm not-prose" aria-label="Daftar Isi Halaman">
+          <div class="flex items-center gap-2 text-slate-900 font-bold font-serif text-lg mb-4 pb-3 border-b border-slate-100">
+            <span>📑</span> Daftar Isi Panduan Penerapan &amp; Audit SMK3
+          </div>
+          <ol class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-700 list-decimal list-inside font-medium">
+            <li><a href="#dasar-hukum" class="text-emerald-700 hover:text-emerald-600 hover:underline">Dasar Hukum Penerapan &amp; Penilaian SMK3</a></li>
+            <li><a href="#tahapan-pendampingan" class="text-emerald-700 hover:text-emerald-600 hover:underline">4 Tahapan Pendampingan Audit SMK3</a></li>
+            <li><a href="#kriteria-penilaian" class="text-emerald-700 hover:text-emerald-600 hover:underline">Tingkatan Kriteria Penilaian SMK3 (64 / 122 / 166)</a></li>
+            <li><a href="#ruang-lingkup" class="text-emerald-700 hover:text-emerald-600 hover:underline">Ruang Lingkup Pendampingan Sistem SMK3</a></li>
+            <li><a href="#strategi-bendera-emas" class="text-emerald-700 hover:text-emerald-600 hover:underline">Strategi Kelulusan Predikat Bendera Emas</a></li>
+            <li><a href="#artikel-pembahasan" class="text-emerald-700 hover:text-emerald-600 hover:underline">Artikel Pembahasan Terkait</a></li>
+            <li><a href="#faq-smk3" class="text-emerald-700 hover:text-emerald-600 hover:underline">Pertanyaan yang Sering Diajukan (FAQ)</a></li>
+            <li><a href="#daftar-pustaka" class="text-emerald-700 hover:text-emerald-600 hover:underline">Daftar Pustaka</a></li>
+          </ol>
+        </nav>
+
+        <!-- Dasar Hukum Section -->
+        <section id="dasar-hukum" class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm space-y-4">
+          <div class="border-b border-slate-200 pb-3">
+            <span class="text-xs uppercase tracking-wider text-slate-500 font-bold block mb-1">Landasan Regulasi</span>
+            <h2 class="font-serif text-2xl font-bold text-slate-900">Dasar Hukum Penerapan &amp; Penilaian SMK3</h2>
+          </div>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            Penyelenggaraan Sistem Manajemen Keselamatan dan Kesehatan Kerja (SMK3) serta pelaksanaan audit eksternal di Indonesia diatur secara sah dan mengikat melalui ketentuan hukum pemerintah berikut:
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-slate-700 text-sm">
+            <li>
+              <strong>Peraturan Pemerintah No. 50 Tahun 2012</strong> tentang Penerapan Sistem Manajemen Keselamatan dan Kesehatan Kerja, yang mewajibkan penerapan SMK3 bagi setiap perusahaan yang mempekerjakan pekerja/buruh paling sedikit 100 orang atau memiliki potensi bahaya tinggi.
+            </li>
+            <li>
+              <strong>Peraturan Menteri Ketenagakerjaan No. 26 Tahun 2014</strong> tentang Penyelenggaraan Penilaian Penerapan Sistem Manajemen Keselamatan dan Kesehatan Kerja (penilaian SMK3: 166 kriteria untuk tingkat lanjutan/perusahaan potensi bahaya tinggi, 122 kriteria untuk tingkat transisi/perusahaan potensi bahaya sedang, dan 64 kriteria untuk tingkat awal/perusahaan potensi bahaya rendah).
+            </li>
+          </ul>
+        </section>
+
         <!-- 4 Step Methodology Bento Grid -->
-        <div>
+        <div id="tahapan-pendampingan">
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-serif mb-6">
             4 Tahapan Pendampingan Audit SMK3 Terstruktur
           </h2>
@@ -194,45 +282,131 @@ const smk3Schema = {
           </div>
         </div>
 
+        <!-- Tingkatan Kriteria Penilaian SMK3 Permenaker 26/2014 -->
+        <section id="kriteria-penilaian" class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm space-y-6">
+          <div class="border-b border-slate-200 pb-3">
+            <span class="text-xs uppercase tracking-wider text-slate-500 font-bold block mb-1">Standardisasi Penilaian</span>
+            <h2 class="font-serif text-2xl font-bold text-slate-900">Tingkatan Kriteria Penilaian SMK3 (Permenaker No. 26 Tahun 2014)</h2>
+          </div>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            Berdasarkan Peraturan Menteri Ketenagakerjaan No. 26 Tahun 2014, penilaian penerapan SMK3 dikelompokkan ke dalam tiga tingkatan skala pembuktian audit yang disesuaikan dengan profil risiko dan skala operasi perusahaan:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 not-prose">
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 block">Tingkat Awal</span>
+              <h4 class="font-serif text-lg font-bold text-slate-900">64 Kriteria</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Ditujukan bagi perusahaan dengan tingkat potensi bahaya rendah. Menitikberatkan pada kebijakan K3 mendasar, pembentukan panitia P2K3, dan prosedur identifikasi bahaya awal.
+              </p>
+            </div>
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Tingkat Transisi</span>
+              <h4 class="font-serif text-lg font-bold text-slate-900">122 Kriteria</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Ditujukan bagi perusahaan dengan tingkat potensi bahaya sedang. Mencakup pengendalian dokumen, inspeksi terencana, kesiapsiagaan darurat, dan manajemen kesehatan kerja.
+              </p>
+            </div>
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-blue-600 block">Tingkat Lanjutan</span>
+              <h4 class="font-serif text-lg font-bold text-slate-900">166 Kriteria</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Wajib bagi perusahaan dengan tingkat potensi bahaya tinggi atau skala besar. Mencakup seluruh klausul audit termasuk audit internal mandiri dan evaluasi manajemen puncak berkesinambungan.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <!-- Curriculum & Deliverables -->
-        <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-sm space-y-6">
+        <div id="ruang-lingkup" class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-sm space-y-6">
           <div class="border-b border-slate-200 pb-4">
             <span class="text-xs uppercase tracking-wider text-slate-500 font-bold block mb-1">Cakupan Layanan</span>
             <h2 class="font-serif text-2xl font-bold text-slate-900">Ruang Lingkup Pendampingan Sistem SMK3</h2>
           </div>
           
-          <div class="space-y-4">
-            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/60 space-y-2">
+          <div class="space-y-6">
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/60 space-y-3">
               <h4 class="font-serif text-lg font-bold text-slate-900">A. 5 Prinsip Dasar SMK3 PP 50/2012</h4>
-              <ul class="list-disc pl-5 space-y-1 text-slate-600 text-sm">
-                <li>Penetapan Komitmen &amp; Kebijakan K3 Pimpinan Tertinggi</li>
-                <li>Perencanaan Strategis K3 &amp; Matriks HIRADC (Identifikasi Bahaya &amp; Penilaian Risiko)</li>
-                <li>Pelaksanaan Rencana K3 dengan Dukungan Sumber Daya Personel Terlatih</li>
-                <li>Pemantauan, Evaluasi Kinerja K3, &amp; Uji Lingkungan Fisika/Kimia</li>
-                <li>Peninjauan &amp; Peningkatan Kinerja Manajemen secara Berkelanjutan</li>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2">
+                Penerapan SMK3 berlandaskan siklus PDCA (Plan-Do-Check-Act) yang terangkum dalam lima prinsip pokok wajib:
+              </p>
+              <ul class="list-disc pl-5 space-y-2 text-slate-700 text-sm">
+                <li>
+                  <strong>Penetapan Kebijakan K3:</strong> Komitmen tertulis bertanggal yang ditandatangani oleh pimpinan tertinggi organisasi, memuat visi keselamatan kerja, serta disosialisasikan secara efektif kepada seluruh karyawan dan tamu perusahaan.
+                </li>
+                <li>
+                  <strong>Perencanaan K3:</strong> Disusun berdasarkan telaah awal (initial review), identifikasi potensi bahaya, penilaian dan pengendalian risiko (HIRADC), serta pemenuhan seluruh peraturan perundangan ketenagakerjaan yang relevan.
+                </li>
+                <li>
+                  <strong>Pelaksanaan Rencana K3:</strong> Penyediaan sarana dan prasarana penunjang, penunjukan personil berlisensi, alokasi anggaran safety, pembentukan tim tanggap darurat, dan pelaksanaan instruksi kerja operasional yang aman.
+                </li>
+                <li>
+                  <strong>Pemantauan &amp; Evaluasi Kinerja K3:</strong> Pengukuran berkala higiene lingkungan kerja, inspeksi peralatan kerja rutin, pencatatan statistik insiden, dan pelaksanaan audit internal SMK3 secara berkala oleh personil auditor internal bersertifikat.
+                </li>
+                <li>
+                  <strong>Peninjauan &amp; Peningkatan Kinerja SMK3:</strong> Rapat tinjauan manajemen (Management Review Meeting) secara periodik oleh dewan direksi guna menjamin kesesuaian dan keefektifan sistem manajemen keselamatan kerja yang berkelanjutan.
+                </li>
               </ul>
             </div>
 
-            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/60 space-y-2">
-              <h4 class="font-serif text-lg font-bold text-slate-900">B. Dokumentasi Sistem &amp; Operasional</h4>
-              <ul class="list-disc pl-5 space-y-1 text-slate-600 text-sm">
-                <li>Penyusunan Manual Kebijakan K3, Prosedur ERP (Tanggap Darurat), &amp; Evakuasi</li>
-                <li>Pengendalian Rekanan Kontraktor (Contractor Safety Management System - CSMS)</li>
-                <li>Sistem Izin Kerja Khusus (Hot Work, Confined Space, Working at Height, Electrical LOTO)</li>
-                <li>Penyusunan Standar Penyelenggaraan Pelayanan Kesehatan Kerja &amp; MCU Karyawan</li>
-              </ul>
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/60 space-y-3">
+              <h4 class="font-serif text-lg font-bold text-slate-900">B. 12 Elemen Audit Pemenuhan Kriteria SMK3</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2">
+                Dalam pelaksanaan audit 64, 122, maupun 166 kriteria, pendampingan kami membedah secara menyeluruh kedua belas elemen audit resmi:
+              </p>
+              <ol class="list-decimal pl-5 space-y-1.5 text-slate-700 text-sm">
+                <li><strong>Pembangunan dan Pemeliharaan Komitmen:</strong> Pembentukan Panitia Pembina Keselamatan dan Kesehatan Kerja (P2K3), keterlibatan serikat pekerja, dan tinjauan kontrak kerja.</li>
+                <li><strong>Strategi Pendokumentasian:</strong> Manual SMK3 terpusat, pengendalian prosedur kerja, dan tata kelola formulir operasional.</li>
+                <li><strong>Pengendalian Perancangan dan Peninjauan Kontrak:</strong> Identifikasi bahaya saat tahap desain proyek dan verifikasi aspek keselamatan vendor kontraktor.</li>
+                <li><strong>Pengendalian Dokumen:</strong> Sistem persetujuan, penerbitan, penomoran revisi, dan penarikan dokumen kedaluwarsa.</li>
+                <li><strong>Pembelian dan Pengendalian Produk:</strong> Spesifikasi K3 pada pesanan pengadaan barang dan verifikasi lembar data keselamatan (SDS).</li>
+                <li><strong>Keamanan Bekerja Berdasarkan SMK3:</strong> Sistem izin kerja risiko tinggi (PTW), prosedur LOTO (Lockout/Tagout), dan standardisasi APD.</li>
+                <li><strong>Standar Pemantauan:</strong> Kalibrasi instrumen uji, pengukuran lingkungan kerja fisik/kimia, dan pemantauan kesehatan kerja.</li>
+                <li><strong>Pelaporan dan Perbaikan Kekurangan:</strong> Investigasi kecelakaan kerja, pelaporan near-miss, dan tindakan korektif (CAPA).</li>
+                <li><strong>Pengelolaan Material dan Perpindahannya:</strong> Penanganan bahan kimia B3, pelabelan simbol bahaya, dan kelayakan alat angkut-angkat.</li>
+                <li><strong>Pengumpulan dan Penggunaan Data:</strong> Statistik frekuensi dan keparahan kecelakaan serta evaluasi efektivitas pelatihan K3.</li>
+                <li><strong>Pemeriksaan SMK3:</strong> Audit internal terencana, kompetensi auditor independen internal, dan laporan audit komprehensif.</li>
+                <li><strong>Pengembangan Keterampilan dan Kemampuan:</strong> Matriks kompetensi pelatihan karyawan, lisensi keahlian resmi, dan evaluasi hasil belajar.</li>
+              </ol>
             </div>
 
-            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/60 space-y-2">
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/60 space-y-3">
               <h4 class="font-serif text-lg font-bold text-slate-900">C. Simulasi Mock-Audit &amp; Penyelesaian Temuan</h4>
-              <ul class="list-disc pl-5 space-y-1 text-slate-600 text-sm">
-                <li>Pre-Audit internal menyeluruh sebelum kedatangan auditor eksternal Kemnaker</li>
-                <li>Perbaikan temuan ketidaksesuaian (Non-Conformance) kategori Minor &amp; Mayor</li>
-                <li>Asistensi verifikasi bukti objektif saat audit lapangan berlangsung</li>
+              <ul class="list-disc pl-5 space-y-1.5 text-slate-700 text-sm">
+                <li>Pre-Audit internal menyeluruh sebelum kedatangan auditor eksternal Kemnaker untuk menguji kesiapan dokumen dan fisik lapangan.</li>
+                <li>Penyusunan rencana perbaikan temuan ketidaksesuaian (Corrective Action Plan) kategori Minor maupun Mayor secara sistematis.</li>
+                <li>Asistensi penyiapan personel kunci (P2K3, teknisi, operator) menghadapi sesi klarifikasi dan wawancara auditor independen.</li>
               </ul>
             </div>
           </div>
         </div>
+
+        <!-- Strategi Kelulusan Bendera Emas -->
+        <section id="strategi-bendera-emas" class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm space-y-4">
+          <div class="border-b border-slate-200 pb-3">
+            <span class="text-xs uppercase tracking-wider text-slate-500 font-bold block mb-1">Target Prestasi K3</span>
+            <h2 class="font-serif text-2xl font-bold text-slate-900">Strategi Kelulusan Predikat Bendera Emas (&gt; 85% Kriteria)</h2>
+          </div>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            Penghargaan Sertifikat dan Bendera Emas SMK3 dari Kementerian Ketenagakerjaan RI merupakan pengakuan tertinggi atas keberhasilan tata kelola keselamatan kerja perusahaan. Agar berhasil meraih predikat memuaskan ini, strategi pemenuhan bukti objektif harus dipersiapkan secara matang:
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-slate-700 text-sm">
+            <li>
+              <strong>Pencegahan Mutlak Temuan Kategori Mayor:</strong> Temuan kategori mayor (seperti tidak adanya kebijakan K3 tertulis, tidak dibentuknya organisasi P2K3 berlisensi, atau ketiadaan dokumen identifikasi bahaya dasar) secara otomatis membatalkan kelulusan sertifikasi meskipun perolehan skor persentase pemenuhan kriteria tinggi.
+            </li>
+            <li>
+              <strong>Kelengkapan Rekaman Verifikasi Bukti:</strong> Setiap dokumen prosedur wajib memiliki bukti implementasi nyata di lapangan, seperti notulen rapat bulanan P2K3, rekaman sertifikat lisensi personel, laporan inspeksi harian, dan formulir serah terima APD.
+            </li>
+            <li>
+              <strong>Kesiapan Wawancara Personel di Lapangan:</strong> Auditor eksternal tidak hanya memeriksa arsip dokumen di ruang rapat, tetapi juga melakukan wawancara acak kepada operator mesin, petugas kebersihan, dan kontraktor untuk menguji sejauh mana budaya keselamatan kerja telah dipahami dan diterapkan secara konsisten.
+            </li>
+            <li>
+              <strong>Penyelenggaraan Tinjauan Manajemen Rutin:</strong> Rapat tinjauan manajemen wajib terdokumentasi rapi, mencakup evaluasi hasil audit internal, tindak lanjut perbaikan, laporan kinerja keselamatan, dan alokasi sumber daya K3 untuk periode selanjutnya.
+            </li>
+            <li>
+              <strong>Pengendalian Area Kerja Kritis &amp; Fasilitas ERP:</strong> Menjamin seluruh instalasi proteksi kebakaran, jalur evakuasi, eyewash darurat, dan kotak P3K telah diinspeksi berkala serta siap difungsikan sewaktu-waktu.
+            </li>
+          </ul>
+        </section>
 
         <!-- Download Toolkit Callout -->
         <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 text-white shadow-xl border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -243,12 +417,94 @@ const smk3Schema = {
           </div>
           <a
             href="/downloads/Checklist-Audit-SMK3-166-Kriteria.html"
-            target="_blank"
             class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shadow-md hover:scale-105 shrink-0"
           >
             Buka Checklist 166 Kriteria &rarr;
           </a>
         </div>
+
+        <!-- Artikel Pembahasan Section -->
+        <section id="artikel-pembahasan" class="my-12 pt-8 border-t border-slate-200 not-prose">
+          <div class="mb-6">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 block mb-1">Rangkaian Pembahasan</span>
+            <h3 class="font-serif text-2xl font-bold text-slate-900">
+              Artikel Pembahasan Audit &amp; Implementasi SMK3
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              Kumpulan panduan komprehensif, evaluasi sistem manajemen, transisi standar ISO 45001, dan studi kasus implementasi:
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {mappedArticles.map((art) => (
+              <a
+                href={art.path}
+                class="p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-emerald-500 hover:shadow-md transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <div class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider mb-1.5">Rujukan Teknis</div>
+                  <h4 class="font-serif font-bold text-base text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug mb-2">
+                    {art.title}
+                  </h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    {art.desc}
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-bold text-emerald-600 group-hover:text-emerald-700">
+                  <span>Baca dokumen &amp; pembahasan</span> &rarr;
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <!-- Visible FAQ Block -->
+        <section id="faq-smk3" class="my-12 pt-8 border-t border-slate-200 not-prose">
+          <div class="mb-6">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block mb-1">Tanya Jawab Teknis</span>
+            <h3 class="font-serif text-2xl font-bold text-slate-900">
+              Pertanyaan Seputar Penerapan &amp; Audit SMK3 (FAQ)
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              Jawaban terperinci seputar regulasi PP 50/2012, kriteria penilaian, dan tahapan persiapan sertifikasi:
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            {faqs.map((f) => (
+              <details class="group bg-white rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+                <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 font-serif text-base sm:text-lg">
+                  <span>{f.q}</span>
+                  <span class="ml-4 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </span>
+                </summary>
+                <p class="mt-4 text-slate-600 text-sm leading-relaxed pt-3 border-t border-slate-100 font-sans">
+                  {f.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <!-- Daftar Pustaka Section -->
+        <section id="daftar-pustaka" class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm space-y-4">
+          <div class="border-b border-slate-200 pb-3">
+            <span class="text-xs uppercase tracking-wider text-slate-500 font-bold block mb-1">Rujukan Kepustakaan</span>
+            <h2 class="font-serif text-2xl font-bold text-slate-900">Daftar Pustaka</h2>
+          </div>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            Seluruh panduan teknis, tahapan audit, dan metodologi asistensi SMK3 dalam halaman ini mengacu secara ketat pada peraturan perundang-undangan resmi Republik Indonesia berikut:
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-slate-700 text-sm">
+            <li>
+              Peraturan Pemerintah No. 50 Tahun 2012 tentang Penerapan Sistem Manajemen Keselamatan dan Kesehatan Kerja.
+            </li>
+            <li>
+              Peraturan Menteri Ketenagakerjaan No. 26 Tahun 2014 tentang Penyelenggaraan Penilaian Penerapan Sistem Manajemen Keselamatan dan Kesehatan Kerja (penilaian SMK3: 166 kriteria risiko tinggi, 122 sedang, 64 rendah).
+            </li>
+          </ul>
+        </section>
 
       </div>
 
