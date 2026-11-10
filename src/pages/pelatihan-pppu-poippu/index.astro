@@ -1,30 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { waLink } from '../../data/contact.js';
+import { batches } from '../../data/batches.js';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
 
-const units = [
-  { code: 'E.370000.010.01', title: 'Mengidentifikasi Sumber Pencemaran Udara dari Emisi', desc: 'Inventarisasi sumber tidak bergerak (boiler, genset, kiln, incinerator, thermal oxidizer) dan cerobong pembuangan.' },
-  { code: 'E.370000.011.01', title: 'Menentukan Karakteristik Sumber Pencemaran Udara', desc: 'Parameter SO2, NO2, CO, partikulat debu (PM10/PM2.5), opasitas, kecepatan alir gas buang, dan suhu cerobong.' },
-  { code: 'E.370000.012.01', title: 'Menilai Tingkat Pencemaran Udara dari Emisi', desc: 'Perhitungan beban emisi tahunan dan kesesuaian terhadap Permen LHK No. 11/2021 dan Permen LHK No. P.15/2019.' },
-  { code: 'E.370000.013.01', title: 'Mengoperasikan Alat Pengendali Pencemaran Udara (APPU)', desc: 'Pengendalian unit Wet Scrubber, Bag Filter (Dust Collector), Cyclone, dan Electrostatic Precipitator (ESP).' },
-  { code: 'E.370000.015.01', title: 'Melakukan Perawatan Alat Pengendali Pencemaran Udara', desc: 'Penggantian filter bag, pembersihan hopper debu, pemeriksaan tekanan diferensial (magnehelic), dan sistem pelumasan fan blower.' },
-  { code: 'E.370000.018.01', title: 'Mengidentifikasi Bahaya & K3 pada Cerobong Emisi', desc: 'Keselamatan bekerja di ketinggian (tangga monyet cerobong), lubang sampling isokinetik, dan gas panas beracun.' }
-];
+const batch = batches.pppu;
 
-const faqs = [
-  {
-    q: 'Apa perbedaan skema PPPU dan POIPPU dalam sertifikasi BNSP?',
-    a: 'PPPU (Penanggung Jawab Pengendalian Pencemaran Udara) diperuntukkan bagi level manajer teknis atau kepala HSE yang bertugas mengelola kepatuhan perizinan emisi, pelaporan SIMPEL/SISPEK KLHK, dan perencanaan reduksi emisi. Sedangkan POIPPU (Penanggung Jawab Operasional Instalasi Pengendalian Pencemaran Udara) adalah sertifikasi untuk operator lapangan yang mengoperasikan boiler, scrubber, baghouse, atau dust collector.'
-  },
-  {
-    q: 'Apakah sertifikasi ini mencakup integrasi sistem Continuous Emission Monitoring System (CEMS)?',
-    a: 'Ya, modul pembekalan mencakup pemahaman regulasi CEMS online, konektivitas SISPEK KLHK, uji relatif akurasi (RATA), dan kalibrasi instrumen penganalisis gas emisi.'
-  },
-  {
-    q: 'Bagaimana pelaksanaan uji kompetensi BNSP berlangsung?',
-    a: 'Uji kompetensi dilaksanakan melalui metode verifikasi portofolio berkas kerja, tes tulis, dan wawancara teknis mendalam bersama Asesor Lembaga Sertifikasi Profesi (LSP) berlisensi resmi BNSP.'
-  }
-];
+const title = "Sertifikasi BNSP PPPU & POIPPU Emisi Udara";
+const description = "Pelatihan & sertifikasi resmi BNSP PPPU dan POIPPU Operasional Emisi sesuai SKKNI 282/2020. Pembekalan intensif, bimbingan portofolio, dan uji kompetensi.";
+const canonical = "/pelatihan-pppu-poippu/";
 
 const courseSchema = {
   "@context": "https://schema.org",
@@ -51,13 +34,7 @@ const courseSchema = {
 };
 ---
 
-<BaseLayout
-  title="Sertifikasi BNSP PPPU & POIPPU Emisi Udara"
-  description="Pelatihan & sertifikasi resmi BNSP PPPU dan POIPPU (Operasional Alat Emisi) sesuai SKKNI 282/2020. Pembekalan intensif & bimbingan portofolio."
-  canonical="/pelatihan-pppu-poippu/"
-  schema={courseSchema}
-  presetMessage="Halo KonsultanK3, saya ingin konsultasi pendaftaran sertifikasi BNSP PPPU / POIPPU emisi udara."
->
+<BaseLayout title={title} description={description} canonical={canonical} schema={courseSchema}>
   <!-- Hero Section -->
   <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
@@ -90,38 +67,38 @@ const courseSchema = {
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href={waLink("Halo KonsultanK3, saya ingin info jadwal dan biaya sertifikasi BNSP PPPU POIPPU")}
+              href={waLink("Halo KonsultanK3, saya ingin konsultasi Sertifikasi BNSP PPPU dan POIPPU Emisi Udara")}
               target="_blank"
               rel="noopener"
               class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
             >
-              Daftar Batch Terdekat &rarr;
+              Konsultasi WhatsApp Resmi &rarr;
             </a>
             <a
-              href="#unit-kompetensi-udara"
+              href="#jenjang-pelatihan"
               class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
             >
-              Lihat Unit Kompetensi
+              Skema PPPU &amp; POIPPU
             </a>
           </div>
 
           <!-- Quick Stats Bar -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi</span>
-              <p class="text-white font-bold text-sm">3 Hari (Bimtek + Uji)</p>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Skema</span>
+              <p class="text-white font-bold text-sm">PPPU &amp; POIPPU</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Metode</span>
-              <p class="text-white font-bold text-sm">Online / Hybrid</p>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Standar</span>
+              <p class="text-white font-bold text-sm">SKKNI 282/2020</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Sertifikat</span>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Dokumen</span>
               <p class="text-white font-bold text-sm">Garuda Emas BNSP</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Masa Berlaku</span>
-              <p class="text-emerald-400 font-bold text-sm">3 Tahun Nasional</p>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kualifikasi</span>
+              <p class="text-emerald-400 font-bold text-sm">LSP Lingkungan</p>
             </div>
           </div>
         </div>
@@ -174,114 +151,577 @@ const courseSchema = {
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       
-      <div class="lg:col-span-8 space-y-12">
+      <!-- Article Content Column -->
+      <article class="lg:col-span-8 space-y-14 text-slate-800 leading-relaxed">
         
-        <!-- Overview Card -->
-        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
-          <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900">
-            Mengapa Personel Pengendali Udara Wajib Bersertifikat BNSP?
-          </h2>
-          <p class="text-base text-slate-700 leading-relaxed font-sans">
-            Sesuai regulasi Kementerian LHK, setiap industri yang mengoperasikan sumber emisi tidak bergerak (seperti pembangkit genset, boiler bahan bakar batu bara/biomassa/gas, serta proses pembakaran industri) wajib melakukan pengendalian emisi udara secara berkala. Sertifikasi BNSP memberikan legalitas pengakuan keahlian bagi personel dalam mengoperasikan alat pengendali pencemaran udara (APPU) dan memastikan emisi memenuhi baku mutu udara nasional.
+        <!-- Section 1: Apa itu Sertifikasi BNSP PPPU & POIPPU -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Pengenalan Program</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Apa itu Sertifikasi BNSP PPPU &amp; POIPPU</h2>
+          </div>
+          <p class="text-base sm:text-lg text-slate-700 font-light leading-relaxed">
+            Sertifikasi BNSP PPPU dan POIPPU adalah program sertifikasi profesi resmi berskala nasional yang diselenggarakan melalui Lembaga Sertifikasi Profesi (LSP) terakreditasi Badan Nasional Sertifikasi Profesi (BNSP) untuk memberikan pengakuan atas kompetensi kerja Penanggung Jawab Pengendalian Pencemaran Udara (PPPU) dan Penanggung Jawab Operasional Instalasi Pengendalian Pencemaran Udara (POIPPU). Sertifikat kompetensi yang diterbitkan berlambang Garuda Emas dan menjadi bukti autentik pemenuhan kualifikasi teknis di bidang pengendalian emisi industri.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Aktivitas pembakaran bahan bakar pada boiler industri, generator pembangkit (genset), tanur peleburan (kiln), insinerator limbah, dan peralatan termal lainnya melepaskan emisi gas buang ke atmosfer yang berpotensi menurunkan kualitas udara ambien. Polutan udara seperti sulfur dioksida (SO2), nitrogen dioksida (NO2), karbon monoksida (CO), serta partikulat debu halus (PM10 dan PM2.5) dapat memicu gangguan kesehatan pernapasan akut bagi manusia serta hujan asam. Kehadiran personel pengendali pencemaran udara menjamin operasional peralatan pembersih gas buang berjalan efektif dan konsisten memenuhi standar baku mutu emisi nasional.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Regulasi Kementerian Lingkungan Hidup dan Kehutanan (KLHK) menetapkan kepatuhan baku mutu emisi cerobong sebagai indikator wajib dalam penilaian PROPER dan pelaporan berkala melalui platform Sistem Informasi Pelaporan Lingkungan Hidup (SIMPEL) dan Sistem Informasi Pemantauan Emisi Industri Secara Terus Menerus (SISPEK). Skema sertifikasi ini berpedoman pada Standar Kompetensi Kerja Nasional Indonesia (SKKNI) No. 282 Tahun 2020 guna menjamin keandalan pengawasan emisi industri.
+          </p>
+          <div class="p-6 rounded-2xl bg-amber-500/5 border border-amber-500/20 space-y-3">
+            <h3 class="text-base font-bold text-amber-900">Siapa Saja yang Membutuhkan Sertifikasi Ini?</h3>
+            <p class="text-sm text-slate-700 font-light leading-relaxed">
+              Program sertifikasi ini wajib dipenuhi oleh industri manufaktur dan fasilitas yang mengoperasikan sumber emisi tidak bergerak, antara lain:
+            </p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700 font-light">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Manajer Lingkungan &amp; HSE Pabrik:</strong> Bertanggung jawab atas perencanaan mitigasi polusi udara, integrasi CEMS, dan pelaporan semester SIMPEL/SISPEK.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Operator Alat Pengendali Udara (APPU):</strong> Mengoperasikan dan merawat wet scrubber, baghouse filter (dust collector), cyclone, dan electrostatic precipitator (ESP).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Pabrik Semen, Baja, Kimia &amp; Keramik:</strong> Industri dengan emisi debu partikulat, asam gas buang, dan suhu cerobong tinggi.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Pembangkit Listrik (PLTU / PLTD / PLTG):</strong> Mengelola cerobong emisi skala besar, boiler batu bara/biomassa, dan jaringan genset darurat.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Pabrik Kelapa Sawit &amp; Pengolahan Kayu:</strong> Mengoperasikan boiler biomassa cangkang-fiber dengan potensi asap dan partikulat cerobong.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Teknisi Sampling Emisi Isokinetik:</strong> Melakukan pengukuran kecepatan alir gas buang, kadar opasitas, dan sampling partikulat di ketinggian cerobong.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 2: Jenjang / Jenis Pelatihan -->
+        <section id="jenjang-pelatihan" class="space-y-6 scroll-mt-24">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Klasifikasi &amp; Tingkatan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Jenjang / Jenis Pelatihan</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Sertifikasi BNSP bidang pengendalian pencemaran udara terbagi menjadi dua skema kualifikasi profesi yang memiliki batas tanggung jawab spesifik:
           </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-              <span class="text-xs font-bold uppercase tracking-wider text-cyan-700 block mb-1">Skema PPPU (Penanggung Jawab)</span>
-              <p class="text-xs text-slate-600 leading-relaxed">Pengelolaan strategi pencegahan polusi udara, kalkulasi beban emisi, koordinasi laboratorium lingkungan terakreditasi KAN, dan pelaporan SISPEK.</p>
-            </div>
-            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-              <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">Skema POIPPU (Operator Teknis)</span>
-              <p class="text-xs text-slate-600 leading-relaxed">Pengoperasian praktis alat pengendali udara (Cyclone, Wet Scrubber, Baghouse Filter, ESP), inspeksi fan blower, dan pembersihan filter berkala.</p>
-            </div>
+          <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+            <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+              <thead class="bg-slate-900 text-white text-xs uppercase font-semibold">
+                <tr>
+                  <th class="py-4 px-4 sm:px-6">Jenjang / Skema</th>
+                  <th class="py-4 px-4 sm:px-6">Peran</th>
+                  <th class="py-4 px-4 sm:px-6">Tugas utama</th>
+                  <th class="py-4 px-4 sm:px-6">Materi kunci</th>
+                  <th class="py-4 px-4 sm:px-6">Persyaratan</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 font-mono">PPPU</td>
+                  <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800">Penanggung Jawab Pengendalian Pencemaran Udara (Tingkat Manajerial)</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Merancang program reduksi emisi, mengawasi integrasi sistem Continuous Emission Monitoring System (CEMS), mengoordinasikan uji emisi laboratorium terakreditasi KAN, dan pelaporan SISPEK KLHK</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Identifikasi sumber emisi boiler/genset/insinerator, karakterisasi emisi SO2, NO2, CO, partikulat debu, kalkulasi beban emisi tahunan, regulasi baku mutu cerobong, pelaporan SIMPEL/SISPEK</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-800 font-semibold">Pendidikan relevan atau pengalaman kerja terbukti di bidang pengendalian pencemaran udara industri</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 font-mono">POIPPU</td>
+                  <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800">Penanggung Jawab Operasional Instalasi Pengendalian Pencemaran Udara (Tingkat Operasional)</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Mengoperasikan alat pengendali pencemaran udara (APPU), memantau indikator tekanan diferensial filter, melakukan pembersihan hopper debu, dan merawat blower hisap</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Pengoperasian unit Wet Scrubber, Bag Filter (Baghouse), Cyclone, Electrostatic Precipitator (ESP), penggantian filter bag, pemeriksaan magnehelic gauge, dan keselamatan K3 sampling cerobong</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-800 font-semibold">Pendidikan relevan atau pengalaman operasional alat pengendali emisi APPU di industri</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
 
-        <!-- Unit Kompetensi SKKNI -->
-        <div id="unit-kompetensi-udara" class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6 scroll-mt-24">
-          <h3 class="text-2xl font-bold font-serif text-slate-900">
-            Daftar Unit Kompetensi SKKNI No. 282 Tahun 2020
-          </h3>
-          
+          <p class="text-sm text-slate-600 font-light leading-relaxed">
+            Pembagian skema PPPU dan POIPPU menciptakan integrasi kendali emisi yang kokoh. Penanggung Jawab Pengendalian (PPPU) mengelola kalkulasi beban emisi dan kepatuhan perizinan lingkungan, sedangkan Operator Instalasi (POIPPU) memastikan bahwa peralatan scrubber, baghouse filter, dan blower pembuangan berfungsi dalam efisiensi penangkapan polutan tertinggi setiap saat.
+          </p>
+        </section>
+
+        <!-- Section 3: Dasar Hukum -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Landasan Regulasi</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Dasar Hukum</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Penyelenggaraan pembinaan dan sertifikasi kompetensi profesi pengendalian emisi udara berpijak pada ketentuan perundang-undangan nasional yang berkekuatan hukum tetap, meliputi:
+          </p>
+
           <div class="space-y-4">
-            {units.map((u, idx) => (
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div class="space-y-1">
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs font-mono font-bold text-cyan-700 bg-cyan-100 px-2 py-0.5 rounded-md">{u.code}</span>
-                    <span class="text-xs font-bold text-slate-500">Unit {idx + 1}</span>
-                  </div>
-                  <h4 class="font-bold text-slate-900 text-base">{u.title}</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">{u.desc}</p>
-                </div>
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                <h3 class="text-base font-bold text-slate-900">UU No. 1 Tahun 1970 tentang Keselamatan Kerja</h3>
               </div>
-            ))}
-          </div>
-        </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Undang-Undang Keselamatan Kerja mewajibkan perlindungan keselamatan terhadap seluruh faktor fisik dan kimia berbahaya di tempat kerja. Pada Pasal 3 ayat (1) huruf f dan k diatur kewajiban untuk mencegah dan mengendalikan timbulnya atau menyebarluasnya suhu, kelembaban, debu, kotoran, asap, uap, dan gas buang beracun di tempat kerja guna melindungi kesehatan tenaga kerja serta mencegah bahaya peledakan atau kebakaran.
+              </p>
+            </div>
 
-        <!-- FAQs -->
-        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
-          <h3 class="text-2xl font-bold font-serif text-slate-900">
-            Pertanyaan Umum Seputar Uji Kompetensi Emisi
-          </h3>
-          
-          <div class="space-y-3">
-            {faqs.map(f => (
-              <details class="group p-4 rounded-2xl bg-slate-50 border border-slate-200 [&_summary::-webkit-details-marker]:hidden">
-                <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm">
-                  <span>{f.q}</span>
-                  <span class="ml-2 text-slate-400 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p class="mt-3 text-xs text-slate-600 leading-relaxed pt-2 border-t border-slate-200">
-                  {f.a}
-                </p>
-              </details>
-            ))}
-          </div>
-        </div>
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                <h3 class="text-base font-bold text-slate-900">SKKNI No. 282 Tahun 2020 tentang Pengendalian Pencemaran Udara</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Standar Kompetensi Kerja Nasional Indonesia yang ditetapkan oleh Menteri Ketenagakerjaan RI sebagai acuan baku kompetensi profesi bidang pengendalian pencemaran udara. Menetapkan standar unit kompetensi yang meliputi identifikasi sumber emisi, penilaian tingkat pencemaran gas buang, pengoperasian dan perawatan alat pengendali emisi (APPU), pemantauan sistem CEMS, hingga keselamatan kerja K3 pada cerobong emisi.
+              </p>
+            </div>
 
-      </div>
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                <h3 class="text-base font-bold text-slate-900">Permen LHK No. 11 Tahun 2021 tentang Baku Mutu Emisi Mesin dengan Pembakaran Dalam</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Peraturan Menteri Lingkungan Hidup dan Kehutanan yang menetapkan standar baku mutu emisi gas buang untuk mesin pembakaran dalam (Internal Combustion Engine), seperti genset pembangkit listrik dan pompa berbahan bakar minyak atau gas. Mengatur batas ambang konsentrasi parameter karbon monoksida (CO), nitrogen oksida (NOx), sulfur dioksida (SO2), dan partikulat debu serta kewajiban pengukuran berkala.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                <h3 class="text-base font-bold text-slate-900">Permen LHK No. P.15/MENLHK/SETJEN/KUM.1/4/2019 tentang Baku Mutu Emisi Pembangkit Termal</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Regulasi yang menetapkan batas baku mutu emisi cerobong untuk pembangkit listrik tenaga termal berbahan bakar batu bara, gas, dan minyak. Menetapkan kewajiban pemasangan Continuous Emission Monitoring System (CEMS) yang terkoneksi langsung secara online ke sistem SISPEK KLHK serta mengatur tata cara uji akurasi relatif (RATA) pada instrumen penganalisis gas emisi.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Silabus Pembelajaran -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Materi Kurikulum</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Silabus Pembelajaran</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Kurikulum pembekalan disusun secara terstruktur berdasarkan daftar unit kompetensi SKKNI No. 282 Tahun 2020, memadukan wawasan regulasi emisi dengan keterampilan teknis pengoperasian alat pengendali udara:
+          </p>
+
+          <div class="space-y-5">
+            <!-- Topic 1 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-cyan-500/10 text-cyan-700 font-mono text-xs flex items-center justify-center font-bold">01</span>
+                Mengidentifikasi Sumber Pencemaran Udara dari Emisi (Unit E.370000.010.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Unit kompetensi ini membekali peserta dengan keterampilan melakukan inventarisasi menyeluruh terhadap sumber-sumber emisi tidak bergerak di fasilitas industri. Peserta memetakan cerobong buangan boiler, cerobong genset diesel, tanur kiln peleburan, insinerator limbah, dan thermal oxidizer. Diidentifikasi jenis bahan bakar yang digunakan, laju konsumsi energi, serta dimensi teknis cerobong pembuangan.
+              </p>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-cyan-500/10 text-cyan-700 font-mono text-xs flex items-center justify-center font-bold">02</span>
+                Menentukan Karakteristik Sumber Pencemaran Udara (Unit E.370000.011.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Modul ini mendalami analisis parameter gas buang industri, meliputi konsentrasi sulfur dioksida (SO2), nitrogen dioksida (NO2), karbon monoksida (CO), kadar partikulat debu (PM10 dan PM2.5), serta tingkat kepekatan asap (opasitas). Peserta mempelajari pengaruh kecepatan alir gas buang cerobong dan suhu gas buang terhadap pola dispersi polutan di atmosfer. Pemahaman ini menjadi rujukan utama penentuan teknologi pengendalian emisi yang sesuai.
+              </p>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-cyan-500/10 text-cyan-700 font-mono text-xs flex items-center justify-center font-bold">03</span>
+                Menilai Tingkat Pencemaran Udara dari Emisi (Unit E.370000.012.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Topik ini membahas metodologi kalkulasi beban emisi tahunan berdasarkan konsentrasi gas polutan, laju alir volumetrik cerobong, dan jam kerja operasional peralatan. Peserta mengevaluasi kesesuaian hasil emisi terhadap baku mutu Permen LHK No. 11/2021 dan Permen LHK No. P.15/2019. Analisis ini esensial guna memastikan perusahaan tidak melampaui kuota alokasi beban pencemaran udara yang ditetapkan pemerintah.
+              </p>
+            </div>
+
+            <!-- Topic 4 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-cyan-500/10 text-cyan-700 font-mono text-xs flex items-center justify-center font-bold">04</span>
+                Mengoperasikan Alat Pengendali Pencemaran Udara / APPU (Unit E.370000.013.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Peserta dibekali keahlian operasional terhadap berbagai teknologi unit APPU, mencakup sistem Wet Scrubber untuk menyerap gas asam, Bag Filter (Baghouse Dust Collector) untuk menangkap debu partikulat, Cyclone untuk pemisahan partikel kasar, serta Electrostatic Precipitator (ESP). Dipelajari prosedur startup, penyesuaian laju aliran cairan scrubbing, pembersihan kantong filter secara pneumatik, serta prosedur penghentian sistem secara aman.
+              </p>
+            </div>
+
+            <!-- Topic 5 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-cyan-500/10 text-cyan-700 font-mono text-xs flex items-center justify-center font-bold">05</span>
+                Melakukan Perawatan Alat Pengendali Pencemaran Udara (Unit E.370000.015.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Modul ini menitikberatkan pada pemeliharaan preventif instrumen pengendali emisi di lapangan. Peserta dilatih memantau pembacaan tekanan diferensial menggunakan magnehelic gauge guna mendeteksi penyumbatan atau robekan pada kantong filter bag. Pembahasan mencakup prosedur penggantian filter bag yang rusak, pengosongan hopper debu, pemeriksaan nozzle semprot scrubber, serta pelumasan berkala pada bearing fan blower pengisap gas.
+              </p>
+            </div>
+
+            <!-- Topic 6 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-cyan-500/10 text-cyan-700 font-mono text-xs flex items-center justify-center font-bold">06</span>
+                Mengidentifikasi Bahaya &amp; K3 pada Cerobong Emisi (Unit E.370000.018.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Topik ini berfokus pada pencegahan kecelakaan kerja saat melakukan aktivitas pemantauan di ketinggian cerobong industri. Peserta mempelajari kriteria tangga monyet berpelindung kurung (cage ladder), kelaikan platform lantai kerja sampling cerobong, serta penyediaan lubang sampling isokinetik berflens 8D/2D yang memenuhi standar teknis. Dipelajari pula penggunaan alat pelindung diri pernapasan terhadap gas panas beracun dan fall arrester penahan jatuh.
+              </p>
+            </div>
+
+            <!-- Topic 7 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-cyan-500/10 text-cyan-700 font-mono text-xs flex items-center justify-center font-bold">07</span>
+                Bimbingan Teknis Portofolio Asesmen BNSP
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Sesi pendampingan intensif bagi peserta dalam mengumpulkan dan menyusun berkas bukti kerja autentik untuk uji asesmen BNSP. Peserta dibimbing mengorganisasikan dokumen SOP pengoperasian APPU, logbook pemeliharaan scrubber/baghouse, foto kegiatan pengukuran cerobong, serta Laporan Hasil Uji (LHU) laboratorium lingkungan terakreditasi KAN. Pendampingan ini memastikan seluruh bukti portofolio memenuhi standar validitas pengujian kompetensi.
+              </p>
+            </div>
+
+            <!-- Topic 8 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-cyan-500/10 text-cyan-700 font-mono text-xs flex items-center justify-center font-bold">08</span>
+                Pelaksanaan Uji Kompetensi Asesor LSP BNSP
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Tahap evaluasi akhir yang diselenggarakan secara independen oleh Asesor Kompetensi LSP terlisensi BNSP. Ujian meliputi verifikasi portofolio dokumen kerja, ujian tulis mengenai unit-unit kompetensi emisi, dan sesi wawancara klarifikasi teknis mendalam. Peserta yang memenuhi standar asesmen dinyatakan Kompeten dan berhak mendapatkan sertifikat resmi berlambang Garuda Emas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: Alur Pelatihan dan Ujian -->
+        <section id="alur-pelatihan" class="space-y-6 scroll-mt-24">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Tahapan Penyelenggaraan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Alur Pelatihan dan Ujian</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Pelaksanaan pembekalan teknis dan uji sertifikasi BNSP bidang emisi udara diselenggarakan melalui tahapan alur yang terstruktur:
+          </p>
+
+          <div class="relative border-l-2 border-cyan-500/30 pl-6 ml-3 space-y-8">
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-cyan-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">1. Pendaftaran</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Calon peserta melakukan registrasi resmi, memilih skema sertifikasi yang dituju (skema manajerial PPPU atau skema operasional POIPPU), dan mengisi formulir permohonan asesmen mandiri APL-01.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-cyan-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">2. Verifikasi Berkas</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Tim asesor memvalidasi berkas persyaratan dasar pendaftaran, meliputi kesesuaian ijazah pendidikan, surat keterangan penugasan dari perusahaan, CV pengalaman kerja, serta pra-penilaian asesmen mandiri APL-02.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-cyan-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">3. Teori</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Penyampaian modul pembekalan komprehensif mengenai unit-unit kompetensi SKKNI No. 282 Tahun 2020, regulasi baku mutu emisi cerobong KLHK, prinsip kerja alat APPU, dan integrasi sistem CEMS online.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-cyan-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">4. Praktik &amp; Pemantapan Portofolio</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Simulasi pemecahan kasus emisi dan bimbingan pengumpulan bukti kerja autentik (logbook pemeliharaan filter baghouse/scrubber, laporan hasil uji emisi lab KAN, dan SOP tertulis pengoperasian APPU).
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-cyan-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">5. Ujian &amp; Asesmen Asesor</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Pelaksanaan asesmen kompetensi yang diuji langsung oleh Asesor Lembaga Sertifikasi Profesi (LSP) BNSP melalui metode evaluasi tertulis dan wawancara teknis klarifikasi bukti portofolio kerja.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-cyan-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">6. Penerbitan Sertifikat</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Bagi peserta yang direkomendasikan Kompeten (K) oleh tim asesor, Badan Nasional Sertifikasi Profesi (BNSP) menerbitkan Sertifikat Kompetensi resmi berlogo Garuda Emas yang diakui secara nasional di Indonesia.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6: Persyaratan Peserta -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Administrasi Kepesertaan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Persyaratan Peserta</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Calon peserta uji kompetensi BNSP skema PPPU dan POIPPU diwajibkan melengkapi dokumen administrasi dasar serta menyusun bukti portofolio kegiatan operasional pengendalian emisi di industri:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 class="text-base font-bold text-slate-900">Dokumen Dasar Kepesertaan</h3>
+              <ul class="space-y-2.5 text-sm text-slate-700 font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span>Salinan ijazah pendidikan terakhir sesuai kualifikasi skema yang dipilih.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span>Salinan Kartu Tanda Penduduk (KTP) yang masih aktif.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span>Daftar Riwayat Hidup (Curriculum Vitae / CV) terbaru yang relevan.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span>Surat penugasan atau surat rekomendasi bekerja dari instansi perusahaan.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span>Pas foto berwarna terbaru dengan latar belakang merah.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 class="text-base font-bold text-slate-900">Bukti Portofolio Kerja Lapangan</h3>
+              <p class="text-xs text-slate-600 font-light leading-relaxed">
+                Dokumen bukti unjuk kerja autentik di fasilitas instalasi pengendalian emisi perusahaan:
+              </p>
+              <ul class="space-y-2 text-xs text-slate-700 font-light">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                  <span>Foto dokumentasi cerobong emisi dan unit alat pengendali emisi (APPU)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                  <span>Salinan Standar Operasional Prosedur (SOP) pengoperasian APPU</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                  <span>Laporan Hasil Uji (LHU) laboratorium lingkungan terakreditasi KAN</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                  <span>Salinan logbook rekaman pemeliharaan filter bag, scrubber, atau blower</span>
+                </li>
+              </ul>
+              <div class="pt-2 border-t border-slate-100 text-xs font-semibold text-cyan-700">
+                Catatan: daftar final dikonfirmasi saat pendaftaran.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 7: Pertanyaan yang Sering Diajukan -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Pusat Informasi</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Pertanyaan yang Sering Diajukan</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Berikut adalah rangkuman tanya jawab resmi seputar sertifikasi profesi BNSP PPPU &amp; POIPPU:
+          </p>
+
+          <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apa perbedaan skema PPPU dan POIPPU dalam sertifikasi BNSP?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                PPPU (Penanggung Jawab Pengendalian Pencemaran Udara) diperuntukkan bagi level manajer teknis atau kepala departemen HSE yang bertugas mengelola kepatuhan perizinan emisi cerobong, kalkulasi beban emisi, pelaporan semester SIMPEL/SISPEK KLHK, dan perencanaan reduksi polusi. Sedangkan POIPPU (Penanggung Jawab Operasional Instalasi Pengendalian Pencemaran Udara) adalah skema kompetensi untuk operator lapangan yang mengoperasikan boiler, wet scrubber, baghouse filter, atau cyclone pembersih emisi.
+              </p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apakah sertifikasi ini mencakup integrasi sistem Continuous Emission Monitoring System (CEMS)?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Ya, modul pembekalan mencakup pemahaman regulasi CEMS online, konektivitas pelaporan ke sistem SISPEK KLHK, uji relatif akurasi (Relative Accuracy Test Audit / RATA), serta prosedur kalibrasi instrumen penganalisis gas buang emisi cerobong.
+              </p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Bagaimana metode asesmen uji kompetensi BNSP dilaksanakan oleh asesor?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Uji kompetensi dilaksanakan melalui metode verifikasi bukti portofolio berkas kerja autentik (VATM), ujian tulis pemahaman unit kompetensi SKKNI No. 282 Tahun 2020, serta wawancara teknis mendalam bersama Asesor Lembaga Sertifikasi Profesi (LSP) berlisensi resmi BNSP.
+              </p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Mengapa perusahaan industri wajib memiliki personel pengendali emisi udara bersertifikasi?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Sesuai regulasi Kementerian LHK dan ketentuan pemenuhan kriteria PROPER, industri yang mengoperasikan sumber emisi tidak bergerak wajib memastikan emisi gas buang cerobong dikendalikan oleh personel yang kompeten. Kepemilikan sertifikat BNSP menjamin instalasi APPU beroperasi sesuai baku mutu lingkungan dan mencegah sanksi administratif.
+              </p>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Peralatan pengendali pencemaran udara (APPU) apa saja yang dipelajari dalam skema ini?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Materi pembekalan mencakup prinsip kerja dan perawatan Wet Scrubber untuk eliminasi gas asam, Baghouse Filter (Fabric Filter) untuk penyaringan partikulat debu, Cyclone mekanis untuk penangkap partikel kasar, serta Electrostatic Precipitator (ESP) bertegangan tinggi.
+              </p>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Bagaimana aspek keselamatan kerja K3 diterapkan pada cerobong emisi industri?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Aspek K3 cerobong mencakup penerapan keselamatan bekerja di ketinggian pada tangga monyet berpelindung, konstruksi platform lantai kerja yang kokoh dengan handrail pengaman, pemasangan lubang sampling isokinetik berflens aman, serta pemakaian alat pelindung diri pernapasan terhadap paparan gas panas beracun.
+              </p>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Dokumen apa saja yang perlu dipersiapkan untuk pendaftaran uji sertifikasi?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Dokumen yang dipersiapkan meliputi salinan ijazah pendidikan terakhir, salinan KTP, CV pengalaman kerja, surat rekomendasi/penugasan perusahaan, pas foto latar merah, serta bukti portofolio operasional cerobong dan LHU laboratorium terakreditasi KAN, dengan daftar final dikonfirmasi saat pendaftaran.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 8: Strategic Cross-Links & WhatsApp CTA Block -->
+        <section class="space-y-6 pt-4 border-t border-slate-200">
+          <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-950 text-white space-y-6 shadow-xl">
+            <div class="space-y-2">
+              <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold block">Konsultasi Kepatuhan &amp; Pelatihan K3</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Pastikan Emisi Cerobong Industri Memenuhi Baku Mutu KLHK</h3>
+              <p class="text-sm text-slate-300 font-light leading-relaxed max-w-2xl">
+                Dapatkan informasi silabus pembinaan, jadwal batch resmi, dan konsultasi sertifikasi BNSP PPPU &amp; POIPPU untuk tim lingkungan perusahaan Anda. Hubungi konsultan kami via WhatsApp di <strong>{WA_DISPLAY}</strong>.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <a
+                href={waLink("Halo KonsultanK3, saya ingin info pendaftaran sertifikasi BNSP PPPU dan POIPPU")}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-transform hover:scale-105"
+              >
+                <span>Hubungi via WhatsApp</span>
+                <span>&rarr;</span>
+              </a>
+              <a
+                href="/pelatihan/"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-colors"
+              >
+                <span>Katalog Lengkap Pelatihan dan Sertifikasi K3</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Cross-Links Hub -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-4">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Rekomendasi Program Terkait &amp; Panduan Lingkungan Kerja</h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+              <li>
+                <a href="/pelatihan-pppa-popal/" class="text-cyan-700 hover:text-cyan-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Sertifikasi BNSP PPPA &amp; POPAL Air Limbah Industri</span>
+                </a>
+              </li>
+              <li>
+                <a href="/panduan-penerapan-smk3/" class="text-cyan-700 hover:text-cyan-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Panduan Penerapan SMK3 di Tempat Kerja</span>
+                </a>
+              </li>
+              <li>
+                <a href="/pelatihan-k3-kebakaran/" class="text-cyan-700 hover:text-cyan-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Pelatihan K3 Penanggulangan Kebakaran Kelas D, C, B, A</span>
+                </a>
+              </li>
+              <li>
+                <a href="/alat-pelindung-diri/" class="text-cyan-700 hover:text-cyan-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Standar Penggunaan Alat Pelindung Diri (APD)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+      </article>
 
       <!-- Sticky Sidebar -->
-      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
-        
-        <div class="p-6 rounded-3xl bg-slate-900 text-white space-y-4 shadow-xl">
-          <div class="text-xs font-bold uppercase tracking-wider text-amber-400">Pendaftaran Batch</div>
-          <h4 class="text-lg font-bold font-serif">Jadwal Sertifikasi BNSP Terdekat</h4>
-          <div class="space-y-2 text-xs text-slate-300">
-            <div class="flex justify-between border-b border-white/10 pb-1.5">
-              <span>Metode:</span>
-              <strong class="text-white">Online Pra-Uji + Uji Asesor</strong>
-            </div>
-            <div class="flex justify-between border-b border-white/10 pb-1.5">
-              <span>Output:</span>
-              <strong class="text-emerald-400">Sertifikat Garuda BNSP</strong>
-            </div>
-            <div class="flex justify-between">
-              <span>Status:</span>
-              <strong class="text-cyan-400">Buka Kuota Peserta</strong>
-            </div>
+      <aside class="lg:col-span-4 space-y-8 lg:sticky lg:top-32 self-start">
+        <div class="bg-zinc-900 text-white rounded-3xl p-8 space-y-6 shadow-xl">
+          <div class="space-y-2">
+            <span class="text-xs font-mono uppercase tracking-widest text-zinc-400">Pendaftaran Batch Resmi</span>
+            <h3 class="font-serif text-2xl font-normal text-white">Amankan Kursi Pembinaan Anda</h3>
+            <p class="text-xs font-mono text-zinc-400 leading-relaxed">
+              Daftar sekarang untuk mendapatkan silabus lengkap, penawaran korporasi, dan kepastian kuota batch resmi BNSP.
+            </p>
           </div>
 
+          {batch ? (
+            <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 space-y-2 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-400">Jadwal Batch:</span>
+                <span class="text-white font-mono font-bold">{batch.tanggal}</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-400">Sisa Kursi:</span>
+                <span class="text-emerald-400 font-mono font-bold">{batch.sisa} Kursi</span>
+              </div>
+            </div>
+          ) : (
+            <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 text-xs text-zinc-300">
+              <p>Jadwal batch dan biaya terbaru: tanyakan via WhatsApp</p>
+            </div>
+          )}
+
           <a
-            href={waLink("Halo KonsultanK3, saya ingin mendaftar sertifikasi BNSP PPPU POIPPU")}
+            href={waLink("Halo KonsultanK3, saya ingin mendaftar sertifikasi BNSP PPPU POIPPU Emisi Udara")}
             target="_blank"
             rel="noopener"
-            class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+            class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg"
           >
-            <span>Daftar via WhatsApp</span> &rarr;
+            <span>Daftar via WhatsApp Resmi</span>
+            <span>&rarr;</span>
           </a>
         </div>
 
-        <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Sertifikasi Terkait</div>
-          <div class="space-y-2 text-sm font-semibold text-slate-800">
-            <a href="/pelatihan-pppa-popal/" class="block hover:text-cyan-600">💧 Sertifikasi BNSP PPPA &amp; POPAL (Air Limbah)</a>
-            <a href="/pelatihan-k3-kebakaran/" class="block hover:text-cyan-600">🔥 K3 Penanggulangan Kebakaran</a>
-            <a href="/pelatihan-ahli-k3-umum/" class="block hover:text-cyan-600">🎓 Pembinaan Ahli K3 Umum</a>
-          </div>
+        <div class="p-6 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-3">
+          <span class="text-xs font-mono uppercase tracking-widest text-zinc-500 block">Jaminan Kepatuhan</span>
+          <p class="text-xs text-zinc-600 font-light leading-relaxed">
+            Diselenggarakan bersama LSP Lingkungan terakreditasi BNSP dengan asesor profesional dan bimbingan portofolio intensif.
+          </p>
         </div>
-
       </aside>
 
     </div>

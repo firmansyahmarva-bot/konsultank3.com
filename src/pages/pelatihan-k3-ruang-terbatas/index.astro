@@ -1,6 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { waLink } from '../../data/contact.js';
+import { batches } from '../../data/batches.js';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const batch = batches.ruangTerbatas;
+
+const title = "Pelatihan K3 Ruang Terbatas (Confined Space)";
+const description = "Pelatihan sertifikasi K3 Bekerja di Ruang Terbatas resmi Kemnaker RI untuk Petugas Madya dan Utama. Kuasai deteksi gas, APD pernapasan, dan evakuasi darurat.";
+const canonical = "/pelatihan-k3-ruang-terbatas/";
 
 const courseSchema = {
   "@context": "https://schema.org",
@@ -16,7 +23,7 @@ const courseSchema = {
     {
       "@type": "Course",
       "name": "Pembinaan & Sertifikasi K3 Bekerja di Ruang Terbatas (Confined Space)",
-      "description": "Pelatihan dan sertifikasi Petugas Madya dan Utama K3 Ruang Terbatas resmi Kemnaker RI sesuai Kep.113/DJPPK/IX/2006.",
+      "description": "Pelatihan dan sertifikasi Petugas Madya dan Petugas Utama K3 Ruang Terbatas resmi Kemnaker RI sesuai Keputusan Dirjen Binwasnaker No. KEP.113/DJPPK/IX/2006.",
       "provider": {
         "@type": "Organization",
         "name": "Konsultan K3 Indonesia",
@@ -25,44 +32,15 @@ const courseSchema = {
     }
   ]
 };
-
-const syllabus = [
-  { mod: 'Modul 1', title: 'Kebijakan & Dasar Hukum K3 Ruang Terbatas', desc: 'UU No. 1 Tahun 1970, SE No. 01/MEN/1997, dan Keputusan Dirjen Binwasnaker No. KEP.113/DJPPK/IX/2006.' },
-  { mod: 'Modul 2', title: 'Karakteristik & Bahaya Atmosfer Ruang Terbatas', desc: 'Identifikasi gas mudah terbakar (LEL), gas beracun (H2S, CO), serta batas aman oksigen (19.5% - 23.5%).' },
-  { mod: 'Modul 3', title: 'Teknik Pengukuran Gas & Kalibrasi Gas Detector', desc: 'Metodologi sampling udara berlapis (atas, tengah, bawah) dan bump test alat ukur atmosfer multi-gas.' },
-  { mod: 'Modul 4', title: 'Sistem Izin Kerja Khusus (Confined Space Entry Permit)', desc: 'Penerbitan surat izin masuk, checklist keselamatan pra-masuk, isolasi energi Lockout/Tagout (LOTO), dan purging/ventilasi.' },
-  { mod: 'Modul 5', title: 'Alat Pelindung Diri & Peralatan Akses Vertikal', desc: 'Penggunaan Full Body Harness D-Ring, Tripod Rescue Winch, Self-Contained Breathing Apparatus (SCBA), dan airline respirator.' },
-  { mod: 'Modul 6', title: 'Prosedur Tanggap Darurat & Penyelamatan (Emergency Rescue)', desc: 'Simulasi evakuasi korban tanpa memasuki ruang terbatas (non-entry rescue) dan koordinasi regu medis darurat.' }
-];
-
-const faqs = [
-  {
-    q: 'Siapa saja yang wajib memiliki sertifikat K3 Ruang Terbatas Kemnaker RI?',
-    a: 'Sesuai Kep.113/MEN/2006, setiap pekerja yang bertugas memasuki tangki, bejana transport, silo, bunker, saluran pembuangan (sewer), palka kapal, dan gorong-gorong (Petugas Utama), serta personel pengawas pintu masuk yang siaga di luar (Petugas Madya) wajib memiliki lisensi K3 resmi Kemnaker RI.'
-  },
-  {
-    q: 'Berapa batas aman kandungan oksigen di dalam ruang terbatas sebelum pekerja diizinkan masuk?',
-    a: 'Berdasarkan standar regulasi K3 nasional dan OSHA, kadar oksigen aman berada pada rentang 19.5% hingga 23.5%. Jika kadar oksigen berada di bawah 19.5% (asfiksia/defisiensi oksigen) atau di atas 23.5% (bahaya ledakan/oksigen enriched), pekerja dilarang masuk tanpa ventilasi kontinu atau alat bantu pernapasan mandiri (SCBA).'
-  },
-  {
-    q: 'Apakah pelatihan mencakup simulasi praktik lapangan langsung?',
-    a: 'Ya. Peserta akan mempraktikkan langsung pengoperasian multi-gas detector, pemasangan tripod winch dan retrieval line, pemakaian harness keselamatan, serta skenario simulasi evakuasi darurat menggunakan manekin.'
-  }
-];
 ---
 
-<BaseLayout
-  title="Pelatihan K3 Ruang Terbatas (Confined Space)"
-  description="Pelatihan sertifikasi K3 Bekerja di Ruang Terbatas resmi Kemnaker RI (Petugas Madya & Utama Kep.113/2006). Modul, simulasi gas detector & rescue."
-  canonical="/pelatihan-k3-ruang-terbatas/"
-  schema={courseSchema}
-  presetMessage="Halo KonsultanK3, saya ingin info pendaftaran sertifikasi K3 Ruang Terbatas (Confined Space)."
->
+<BaseLayout title={title} description={description} canonical={canonical} schema={courseSchema}>
   <!-- Hero Section -->
-  <section class="bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
       
-      <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6">
+      <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
         <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
         <span>/</span>
         <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Katalog Pelatihan</a>
@@ -74,7 +52,8 @@ const faqs = [
         
         <div class="lg:col-span-7 space-y-6">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20">
-            <span>🛡️</span> Keputusan Dirjen Binwasnaker No. KEP.113/DJPPK/IX/2006
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping"></span>
+            Keputusan Dirjen Binwasnaker No. KEP.113/DJPPK/IX/2006
           </div>
 
           <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
@@ -87,33 +66,38 @@ const faqs = [
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href={waLink("Halo KonsultanK3, saya ingin konsultasi jadwal dan biaya K3 Ruang Terbatas")}
+              href={waLink("Halo KonsultanK3, saya ingin konsultasi Pelatihan K3 Ruang Terbatas Petugas Madya dan Utama")}
               target="_blank"
               rel="noopener"
               class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
             >
-              Daftar Batch Terdekat &rarr;
+              Konsultasi WhatsApp Resmi &rarr;
             </a>
             <a
-              href="#silabus"
+              href="#jenjang-pelatihan"
               class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
             >
-              Lihat Silabus Lengkap
+              Jenjang Madya &amp; Utama
             </a>
           </div>
 
-          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 text-center sm:text-left">
-            <div>
-              <div class="text-2xl font-bold text-white font-serif">3–5 Hari</div>
-              <div class="text-xs text-slate-400 mt-1">Durasi Pelatihan</div>
+          <!-- Quick Stats Bar -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Tingkatan</span>
+              <p class="text-white font-bold text-sm">Madya &amp; Utama</p>
             </div>
-            <div>
-              <div class="text-2xl font-bold text-emerald-400 font-serif">Kemnaker RI</div>
-              <div class="text-xs text-slate-400 mt-1">Sertifikat &amp; Lisensi</div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Metode</span>
+              <p class="text-white font-bold text-sm">Gas Test &amp; Rescue</p>
             </div>
-            <div>
-              <div class="text-2xl font-bold text-amber-400 font-serif">Praktik Nyata</div>
-              <div class="text-xs text-slate-400 mt-1">Gas Testing &amp; SCBA</div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Dokumen</span>
+              <p class="text-white font-bold text-sm">Lisensi Kemnaker RI</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kualifikasi</span>
+              <p class="text-emerald-400 font-bold text-sm">Confined Space</p>
             </div>
           </div>
         </div>
@@ -130,7 +114,7 @@ const faqs = [
             
             <div class="absolute bottom-6 left-6 right-6 text-white">
               <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-purple-500 text-white mb-2">
-                Standard Kep.113/MEN/2006
+                Standar Kep.113/DJPPK/IX/2006
               </span>
               <div class="text-lg font-bold">Petugas Madya &amp; Utama Resmi</div>
               <p class="text-xs text-slate-300 mt-1">Simulasi gas detector sampling bertingkat, isolasi energi LOTO, dan pemakaian tripod rescue winch.</p>
@@ -152,7 +136,7 @@ const faqs = [
             <div class="text-xl">🦺</div>
             <div>
               <div class="text-xs font-bold text-white">Non-Entry Rescue Ready</div>
-              <div class="text-[10px] text-slate-400">Prosedur Evakuasi Tanggap Darurat</div>
+              <div class="text-[10px] text-slate-400">Prosedur Tanggap Darurat</div>
             </div>
           </div>
         </div>
@@ -160,123 +144,573 @@ const faqs = [
       </div>
 
     </div>
-  </section>
+  </header>
 
-  <!-- Comprehensive Technical Overview -->
-  <section class="py-16 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Main Body Layout -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <!-- Article Content Column -->
+      <article class="lg:col-span-8 space-y-14 text-slate-800 leading-relaxed">
         
-        <div class="lg:col-span-8 space-y-12">
-          
-          <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
-            <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900">
-              Mengapa Sertifikasi K3 Ruang Terbatas Sangat Kritis?
-            </h2>
-            <p class="text-base text-slate-700 leading-relaxed">
-              Bekerja di dalam ruang terbatas (<em>confined space</em>) seperti tangki penyimpanan bahan bakar, boiler, reaktor kimia, manhole saluran pipa bawah tanah, dan silo biji-bijian mengandung potensi bahaya fatalitas yang sangat tinggi. Sebagian besar insiden fatal di ruang terbatas terjadi akibat <strong>kekurangan oksigen (asfiksia)</strong> atau <strong>keracunan gas beracun tak berbau</strong>, di mana lebih dari 60% korban jiwa adalah calon penolong yang masuk tanpa persiapan peralatan keselamatan.
+        <!-- Section 1: Apa itu Pelatihan K3 Ruang Terbatas -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Pengenalan Program</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Apa itu Pelatihan K3 Ruang Terbatas</h2>
+          </div>
+          <p class="text-base sm:text-lg text-slate-700 font-light leading-relaxed">
+            Pelatihan K3 Ruang Terbatas (Confined Space) adalah program pembinaan dan sertifikasi kompetensi teknis yang dirancang khusus untuk memberikan pengetahuan, pemahaman bahaya atmosfer berbahaya, serta keterampilan penyelamatan darurat bagi tenaga kerja yang bertugas di dalam maupun di luar ruang terbatas. Ruang terbatas didefinisikan sebagai ruangan yang memiliki akses masuk dan keluar terbatas, tidak dirancang untuk tempat kerja berkelanjutan, serta memiliki ventilasi alami yang sangat minim sehingga rentan mengalami akumulasi gas beracun, uap mudah terbakar, atau kekurangan kadar oksigen.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Bekerja di dalam ruang terbatas menyimpan tingkat fatalitas yang sangat tinggi. Sebagian besar kecelakaan fatal terjadi akibat pekerja mengalami kekurangan oksigen (asfiksia) atau terpapar gas beracun mematikan seperti hidrogen sulfida (H2S) dan karbon monoksida (CO) yang tidak kasat mata dan kerap tidak berbau pada konsentrasi tertentu. Selain itu, potensi gas hidrokarbon mudah meledak (Lower Explosive Limit / LEL) serta bahaya tertimbun material curah menjadi ancaman konstan. Tragedi kerap diperparah ketika calon penolong memasuki ruangan secara spontan tanpa alat pelindung pernapasan mandiri, sehingga turut menjadi korban jiwa.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Landasan yuridis penanganan pekerjaan ini ditetapkan melalui Keputusan Direktur Jenderal Pembinaan Pengawasan Ketenagakerjaan No. KEP.113/DJPPK/IX/2006 tentang Pedoman Pembinaan Teknis Petugas Keselamatan dan Kesehatan Kerja Ruang Terbatas. Regulasi ini mewajibkan pengusaha untuk memastikan bahwa setiap aktivitas pekerjaan di dalam ruang terbatas harus diawasi oleh Petugas Madya K3 Ruang Terbatas yang siaga di luar ruangan dan dilaksanakan oleh Petugas Utama K3 Ruang Terbatas yang telah lulus uji kompetensi dan berlisensi sah dari Kemnaker RI.
+          </p>
+          <div class="p-6 rounded-2xl bg-amber-500/5 border border-amber-500/20 space-y-3">
+            <h3 class="text-base font-bold text-amber-900">Siapa Saja yang Membutuhkan Pelatihan Ini?</h3>
+            <p class="text-sm text-slate-700 font-light leading-relaxed">
+              Program pembinaan keselamatan ini wajib diikuti oleh industri dan tenaga kerja yang mengoperasikan fasilitas terbatas, meliputi:
             </p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700 font-light">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Petugas Tangki Minyak &amp; Bahan Kimia:</strong> Personel yang melakukan pencucian (tank cleaning), perbaikan dinding tangki, dan pemeliharaan bejana.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Pekerja Utilitas Gorong-Gorong &amp; Saluran Bawah Tanah:</strong> Melakukan perawatan pipa sewer, manhole saluran kabel utilitas, dan terowongan bawah tanah.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Industri Pengolahan Pangan &amp; Pertanian:</strong> Personel perawatan silo penyimpanan biji-bijian, bunker gandum, dan bejana fermentasi.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Sektor Pembangkit Listrik &amp; Boiler:</strong> Teknisi pembersihan ruang bakar boiler, economizer, deaerator, dan kondensor pendingin.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Industri Maritim &amp; Perkapalan:</strong> Pekerja perawatan palka kapal, double bottom ballast tank, dan ruang mesin kapal.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Pengawas K3 &amp; Tim Tanggap Darurat:</strong> Petugas yang menerbitkan surat izin masuk (entry permit) dan memimpin skenario evakuasi darurat.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-                <span class="text-xs font-bold uppercase tracking-wider text-rose-600 block mb-1">Bahaya Atmosfer Utama</span>
-                <p class="text-xs text-slate-700 leading-relaxed">Defisiensi Oksigen (&lt;19.5%), Gas Beracun H2S &amp; CO, serta Gas Mudah Meledak Metana (CH4).</p>
+        <!-- Section 2: Jenjang / Jenis Pelatihan -->
+        <section id="jenjang-pelatihan" class="space-y-6 scroll-mt-24">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Klasifikasi &amp; Tingkatan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Jenjang / Jenis Pelatihan</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Sistem kualifikasi K3 ruang terbatas diatur ke dalam dua jenjang peran fungsional yang saling melengkapi guna membentuk sistem kerja yang selamat:
+          </p>
+
+          <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+            <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+              <thead class="bg-slate-900 text-white text-xs uppercase font-semibold">
+                <tr>
+                  <th class="py-4 px-4 sm:px-6">Jenjang / Jenis</th>
+                  <th class="py-4 px-4 sm:px-6">Peran</th>
+                  <th class="py-4 px-4 sm:px-6">Tugas utama</th>
+                  <th class="py-4 px-4 sm:px-6">Materi kunci</th>
+                  <th class="py-4 px-4 sm:px-6">Persyaratan</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 font-mono">Petugas Madya</td>
+                  <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800">Pengawas Siaga di Luar (Standby Person)</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Berjaga di pintu masuk ruang terbatas, mengawasi pergerakan pekerja, memantau atmosfer gas secara kontinu, dan mengendalikan evakuasi tanpa memasuki ruangan</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Regulasi K3 confined space, bahaya gas beracun H2S &amp; CO, batas aman oksigen (19.5% - 23.5%), verifikasi Confined Space Entry Permit, isolasi energi LOTO, serta pengoperasian tripod rescue winch</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-800 font-semibold">Minimal SLTA / sederajat</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 font-mono">Petugas Utama</td>
+                  <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800">Pekerja yang Masuk (Entrant)</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Memasuki ruang terbatas untuk melakukan pembersihan, perbaikan, pemotongan, atau inspeksi dengan perlengkapan keselamatan lengkap</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Karakteristik atmosfer berbahaya, penggunaan alat bantu pernapasan mandiri SCBA dan airline respirator, pemakaian Full Body Harness D-Ring vertikal, teknik pergerakan ruang sempit, dan penyelamatan darurat</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-800 font-semibold">Minimal SLTA / sederajat</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-sm text-slate-600 font-light leading-relaxed">
+            Sinergi antara Petugas Madya dan Petugas Utama merupakan syarat mutlak sebelum pekerjaan diizinkan berlangsung. Petugas Madya dilarang keras meninggalkan pos jaga pintu masuk atau memasuki ruangan selama ada pekerja di dalam. Bila terjadi perubahan atmosfer berbahaya atau kondisi darurat medis, Petugas Madya segera memerintahkan evakuasi dan mengoperasikan sistem kerek tripod dari luar ruangan (non-entry rescue) tanpa membahayakan dirinya sendiri.
+          </p>
+        </section>
+
+        <!-- Section 3: Dasar Hukum -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Landasan Regulasi</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Dasar Hukum</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Penyelenggaraan pembinaan keselamatan dan izin kerja di ruang terbatas berlandaskan pada ketentuan regulasi nasional yang berkekuatan hukum tetap, meliputi:
+          </p>
+
+          <div class="space-y-4">
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">UU No. 1 Tahun 1970 tentang Keselamatan Kerja</h3>
               </div>
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-                <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 block mb-1">Kewajiban Hukum</span>
-                <p class="text-xs text-slate-700 leading-relaxed">Wajib izin masuk tertulis (<em>Confined Space Entry Permit</em>) dan penunjukan personel bersertifikat SKP resmi.</p>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Undang-Undang Keselamatan Kerja merupakan landasan pokok perlindungan keselamatan pekerja di segala tempat kerja di wilayah hukum Indonesia. Pada Pasal 2 ayat (2) huruf b, c, dan f diatur perlindungan bagi pekerjaan yang dilakukan dalam ruangan tertutup atau ruang terbatas di mana terdapat bahaya gas, uap, asap, atau kekurangan oksigen. Ketentuan ini mewajibkan pengusaha menyediakan syarat-syarat keselamatan dan alat perlindungan diri yang sesuai.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">Keputusan Dirjen Binwasnaker No. KEP.113/DJPPK/IX/2006 tentang Pedoman Pembinaan Teknis Petugas K3 Ruang Terbatas</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Keputusan ini merupakan petunjuk teknis operasional resmi yang mengatur standar kurikulum, kualifikasi peserta, serta mekanisme sertifikasi Petugas Madya dan Petugas Utama K3 Ruang Terbatas di Indonesia. Regulasi ini menetapkan kewajiban izin masuk tertulis (Confined Space Entry Permit), pengujian atmosfer berkala, penyediaan sistem ventilasi tiup (blower), serta kewajiban prosedur penyelamatan darurat.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">Surat Edaran Menteri Tenaga Kerja No. SE.01/MEN/1997 tentang Nilai Ambang Batas Faktor Kimia di Udara Lingkungan Kerja</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Surat Edaran ini memuat standar batas konsentrasi kontaminan kimia dan gas berbahaya yang diperbolehkan di udara lingkungan tempat kerja. Regulasi ini menjadi pedoman batas paparan aman untuk gas beracun seperti H2S dan CO, serta menetapkan kadar oksigen aman di ruang terbatas agar pekerja terhindar dari bahaya keracunan sistemik dan kekurangan oksigen akut.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Silabus Pembelajaran -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Materi Kurikulum</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Silabus Pembelajaran</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Kurikulum pembinaan K3 Ruang Terbatas dirancang secara komprehensif mengacu pada modul standar Ditjen Binwasnaker Kemnaker RI, memadukan teori pengawasan atmosfer dengan praktik simulasi fisik penyelamatan:
+          </p>
+
+          <div class="space-y-5">
+            <!-- Topic 1 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-500/10 text-purple-700 font-mono text-xs flex items-center justify-center font-bold">01</span>
+                Kebijakan &amp; Dasar Hukum K3 Ruang Terbatas
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Modul ini mengkaji landasan yuridis keselamatan kerja berdasarkan UU No. 1 Tahun 1970, SE No. 01/MEN/1997, serta Keputusan Dirjen Binwasnaker No. KEP.113/DJPPK/IX/2006. Peserta mempelajari hak dan kewajiban hukum pengurus maupun tenaga kerja dalam kegiatan di ruang terbatas. Materi ini menekankan akuntabilitas kepatuhan regulasi dalam mencegah terjadinya insiden fatalitas di lingkungan kerja industri.
+              </p>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-500/10 text-purple-700 font-mono text-xs flex items-center justify-center font-bold">02</span>
+                Karakteristik &amp; Bahaya Atmosfer Ruang Terbatas
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Topik ini membedah berbagai parameter bahaya atmosfer, mencakup gas mudah terbakar (Lower Explosive Limit / LEL), gas beracun mematikan seperti hidrogen sulfida (H2S) dan karbon monoksida (CO), serta batas aman kandungan oksigen antara 19.5% hingga 23.5%. Peserta mempelajari dampak fisiologis defisiensi oksigen terhadap hilangnya kesadaran dalam hitungan detik. Pembahasan difokuskan pada bahaya atmosfer yang tidak terdeteksi oleh indra manusia.
+              </p>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-500/10 text-purple-700 font-mono text-xs flex items-center justify-center font-bold">03</span>
+                Teknik Pengukuran Gas &amp; Kalibrasi Gas Detector
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Peserta dibekali pemahaman cara pengoperasian alat multi-gas detector portabel dan pelaksanaan uji respons (bump test) sebelum instrumen digunakan. Dipelajari metodologi pengambilan sampel udara secara bertingkat pada lapisan atas, tengah, dan bawah ruangan untuk mendeteksi variasi berat jenis gas kontaminan. Keterampilan ini krusial guna memastikan atmosfer benar-benar aman sebelum izin masuk diterbitkan.
+              </p>
+            </div>
+
+            <!-- Topic 4 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-500/10 text-purple-700 font-mono text-xs flex items-center justify-center font-bold">04</span>
+                Sistem Izin Kerja Khusus (Confined Space Entry Permit)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Modul ini membahas tata cara penerbitan surat izin kerja masuk ruang terbatas dan pengisian daftar periksa keselamatan pra-masuk secara disiplin. Peserta mempelajari prosedur isolasi energi berbahaya melalui penerapan Lockout/Tagout (LOTO), penutupan jalur pipa menggunakan blind flange, serta pelaksanaan pembersihan dan ventilasi udara terus-menerus menggunakan blower mekanis. Prosedur ini menjamin tidak ada energi sisa atau gas susulan yang masuk ke ruang kerja.
+              </p>
+            </div>
+
+            <!-- Topic 5 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-500/10 text-purple-700 font-mono text-xs flex items-center justify-center font-bold">05</span>
+                Alat Pelindung Diri &amp; Peralatan Akses Vertikal
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Pembahasan mencakup pemilihan dan penggunaan Full Body Harness dengan cincin D-Ring vertikal, sistem kerek penyelamatan tripod rescue winch, serta tali penahan jatuh (retrieval line). Peserta juga mempelajari pengoperasian alat bantu pernapasan mandiri Self-Contained Breathing Apparatus (SCBA) dan airline respirator dengan tabung cadangan darurat. Peralatan ini wajib dikuasai untuk mengamankan jalur masuk dan evakuasi pekerja pada posisi vertikal maupun horizontal.
+              </p>
+            </div>
+
+            <!-- Topic 6 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-500/10 text-purple-700 font-mono text-xs flex items-center justify-center font-bold">06</span>
+                Prosedur Tanggap Darurat &amp; Penyelamatan (Emergency Rescue)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Materi ini menekankan prinsip utama keselamatan penolong dalam kondisi darurat di ruang terbatas. Peserta dilatih mempraktikkan skenario evakuasi korban tanpa memasuki ruangan (non-entry rescue) menggunakan tripod winch yang terhubung ke harness korban sejak awal masuk. Dipelajari pula komunikasi darurat berantai, koordinasi dengan tim medis darurat, serta langkah pertolongan pertama pada korban asfiksia akibat kekurangan oksigen.
+              </p>
+            </div>
+
+            <!-- Topic 7 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-500/10 text-purple-700 font-mono text-xs flex items-center justify-center font-bold">07</span>
+                Praktik Lapangan &amp; Simulasi Evakuasi
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Sesi praktik langsung di simulator tangki atau manhole tiruan. Peserta mempraktikkan kalibrasi dan pembacaan multi-gas detector pada berbagai level kedalaman, pemasangan tripod penyelamat, pemakaian harness keselamatan, serta simulasi pengangkatan manekin korban dari dalam tangki. Latihan praktis ini menanamkan kesiapsiagaan mental, ketelitian prosedur, dan keterampilan fisik bagi petugas madya maupun utama.
+              </p>
+            </div>
+
+            <!-- Topic 8 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-500/10 text-purple-700 font-mono text-xs flex items-center justify-center font-bold">08</span>
+                Evaluasi
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Tahap evaluasi komprehensif diselenggarakan untuk menilai pemahaman peserta terhadap seluruh materi instruksional dan ketepatan prosedur di lapangan. Evaluasi terdiri dari ujian teori tertulis mengenai regulasi serta bahaya atmosfer, ditambah ujian unjuk kerja praktik peragaan pengujian gas dan evakuasi tripod. Peserta yang memenuhi standar kelulusan berhak diajukan untuk penerbitan lisensi resmi Kemnaker RI.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: Alur Pelatihan dan Ujian -->
+        <section id="alur-pelatihan" class="space-y-6 scroll-mt-24">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Tahapan Penyelenggaraan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Alur Pelatihan dan Ujian</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Pelaksanaan pembinaan dan sertifikasi K3 ruang terbatas diselenggarakan melalui rangkaian tahapan terstandarisasi untuk menjamin integritas mutu kelulusan:
+          </p>
+
+          <div class="relative border-l-2 border-purple-500/30 pl-6 ml-3 space-y-8">
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">1. Pendaftaran</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Calon peserta atau perwakilan instansi perusahaan mengisi formulir registrasi resmi, menentukan skema kualifikasi yang diikuti (Petugas Madya atau Petugas Utama), dan melengkapi data awal calon peserta.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">2. Verifikasi Berkas</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Validasi kelayakan dokumen administratif kepesertaan, meliputi ijazah minimal SLTA atau sederajat, surat penugasan resmi perusahaan, salinan KTP, serta surat keterangan sehat dokter yang menyatakan bebas dari claustrophobia dan gangguan pernapasan.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">3. Teori</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Penyampaian modul instruksional di ruang kelas bersama instruktur praktisi senior dan pejabat pengawas spesialis K3. Pembahasan mencakup dasar hukum Kep.113/2006, bahaya gas beracun H2S/CO, batas aman oksigen, sistem entry permit, dan prosedur LOTO.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">4. Praktik</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Simulasi lapangan komprehensif di area peragaan ruang terbatas. Peserta mempraktikkan langsung pengambilan sampel gas bertingkat dengan gas detector, pengoperasian blower ventilasi, pemasangan tripod winch dan retrieval line, serta peragaan evakuasi manekin.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">5. Ujian</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Pelaksanaan evaluasi menyeluruh yang diselenggarakan bersama tim penguji Pengawas Ketenagakerjaan Ditjen Binwasnaker Kemnaker RI, mencakup ujian teori tertulis dan evaluasi praktik simulasi evakuasi darurat.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">6. Penerbitan Sertifikat</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Kementerian Ketenagakerjaan RI menerbitkan sertifikat kompetensi resmi pembinaan K3 Ruang Terbatas beserta kartu lisensi kewenangan kerja (Petugas Madya atau Petugas Utama) bagi peserta yang dinyatakan lulus evaluasi.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6: Persyaratan Peserta -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Administrasi Kepesertaan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Persyaratan Peserta</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Untuk menjaga standar keselamatan dan memenuhi ketentuan regulasi pengawasan ketenagakerjaan, calon peserta diwajibkan memenuhi persyaratan latar belakang pendidikan serta kondisi fisik sebagai berikut:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 class="text-base font-bold text-slate-900">Kualifikasi Pendidikan &amp; Fisik</h3>
+              <ul class="space-y-2.5 text-sm text-slate-700 font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span><strong>Pendidikan Minimal:</strong> Lulusan SLTA atau sederajat (SMK / SMA / MA) untuk skema Petugas Madya maupun Petugas Utama.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span><strong>Kelaikan Fisik:</strong> Sehat jasmani dan rohani, tidak memiliki riwayat fobia ruangan sempit tertutup (claustrophobia), asma, penyakit jantung, atau gangguan pernapasan.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 class="text-base font-bold text-slate-900">Kelengkapan Berkas Administrasi</h3>
+              <p class="text-xs text-slate-600 font-light leading-relaxed">
+                Dokumen yang dipersiapkan untuk proses verifikasi pendaftaran kepesertaan resmi:
+              </p>
+              <ul class="space-y-2 text-xs text-slate-700 font-light">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                  <span>Salinan Kartu Tanda Penduduk (KTP) yang sah</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                  <span>Salinan ijazah terakhir minimal SLTA / sederajat</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                  <span>Surat penugasan atau surat rekomendasi dari instansi perusahaan</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                  <span>Pas foto berwarna terbaru dengan latar belakang merah</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                  <span>Surat keterangan sehat jasmani dari dokter pemeriksa</span>
+                </li>
+              </ul>
+              <div class="pt-2 border-t border-slate-100 text-xs font-semibold text-purple-700">
+                Catatan: daftar final dikonfirmasi saat pendaftaran.
               </div>
             </div>
           </div>
+        </section>
 
-          <!-- Syllabus Section -->
-          <div id="silabus" class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
-            <h3 class="text-2xl font-bold font-serif text-slate-900">
-              Kurikulum &amp; Silabus Resmi Kemnaker RI
-            </h3>
-            
-            <div class="space-y-4">
-              {syllabus.map(s => (
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                  <div>
-                    <span class="text-xs font-bold uppercase text-amber-600 tracking-wider">{s.mod}</span>
-                    <h4 class="font-bold text-slate-900 text-base">{s.title}</h4>
-                    <p class="text-xs text-slate-600 mt-1">{s.desc}</p>
-                  </div>
-                </div>
-              ))}
+        <!-- Section 7: Pertanyaan yang Sering Diajukan -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Pusat Informasi</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Pertanyaan yang Sering Diajukan</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Berikut adalah rangkuman jawaban atas pertanyaan umum terkait sertifikasi K3 Ruang Terbatas (Confined Space):
+          </p>
+
+          <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Siapa saja yang wajib memiliki sertifikat K3 Ruang Terbatas Kemnaker RI?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Sesuai Keputusan Dirjen Binwasnaker No. KEP.113/DJPPK/IX/2006, setiap pekerja yang bertugas memasuki tangki, bejana transport, silo, bunker, saluran pembuangan (sewer), palka kapal, dan gorong-gorong (Petugas Utama), serta personel pengawas pintu masuk yang siaga di luar ruangan (Petugas Madya), wajib memiliki lisensi K3 resmi Kemnaker RI.
+              </p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Berapa batas aman kandungan oksigen di dalam ruang terbatas sebelum pekerja diizinkan masuk?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Berdasarkan standar regulasi K3 nasional dan pedoman teknis, kadar oksigen aman berada pada rentang 19.5% hingga 23.5%. Jika kadar oksigen berada di bawah 19.5% (bahaya defisiensi oksigen atau asfiksia) atau di atas 23.5% (bahaya pengayaan oksigen yang memicu ledakan), pekerja dilarang masuk tanpa ventilasi kontinu atau pemakaian alat bantu pernapasan mandiri SCBA.
+              </p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apa perbedaan peran antara Petugas Madya dan Petugas Utama di lapangan?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Petugas Madya berperan sebagai pengawas keselamatan yang berjaga di luar ruangan (standby person) untuk memverifikasi izin masuk entry permit, memantau atmosfer gas, dan memandu evakuasi darurat tanpa masuk. Sedangkan Petugas Utama adalah tenaga kerja pelaksana (entrant) yang secara fisik masuk ke dalam ruangan sempit untuk melakukan pekerjaan pembersihan atau pemeliharaan.
+              </p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apakah pelatihan mencakup simulasi praktik lapangan langsung?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Ya, peserta mempraktikkan langsung pengoperasian multi-gas detector, pemasangan tripod winch dan retrieval line, pemakaian full body harness keselamatan, pengoperasian alat bantu pernapasan SCBA, serta skenario simulasi evakuasi darurat non-entry rescue menggunakan manekin.
+              </p>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Mengapa prosedur penyelamatan tanpa masuk (non-entry rescue) sangat diutamakan?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Prosedur non-entry rescue menggunakan tripod winch dan tali penahan jatuh diutamakan karena statistik kecelakaan membuktikan lebih dari 60% korban jiwa di ruang terbatas adalah calon penolong yang masuk tanpa persiapan peralatan keselamatan lengkap. Sistem non-entry rescue memungkinkan pengangkatan korban dari luar ruangan secara cepat dan aman.
+              </p>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Bagaimana tahapan alur pelatihan hingga diterbitkannya sertifikat dan lisensi resmi?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Alur pelatihan diawali dari tahapan pendaftaran, validasi berkas administrasi dan surat keterangan sehat dokter, penyampaian teori regulasi dan atmosfer berbahaya, praktik simulasi pengujian gas dan evakuasi lapangan, ujian evaluasi teori serta praktik bersama pengawas Kemnaker RI, hingga penerbitan sertifikat kompetensi dan kartu lisensi kewenangan resmi.
+              </p>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apa saja kelengkapan dokumen yang wajib dipersiapkan calon peserta saat registrasi?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Dokumen administratif yang dipersiapkan mencakup salinan ijazah terakhir minimal SLTA/sederajat, salinan Kartu Tanda Penduduk (KTP), surat rekomendasi atau surat tugas dari perusahaan, pas foto latar merah, dan surat keterangan sehat dokter bebas claustrophobia serta gangguan pernapasan, dengan daftar final dikonfirmasi saat pendaftaran.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 8: Strategic Cross-Links & WhatsApp CTA Block -->
+        <section class="space-y-6 pt-4 border-t border-slate-200">
+          <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-purple-950 text-white space-y-6 shadow-xl">
+            <div class="space-y-2">
+              <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold block">Konsultasi Kepatuhan &amp; Pelatihan K3</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Cegah Fatalitas Kerja di Ruang Terbatas Industri</h3>
+              <p class="text-sm text-slate-300 font-light leading-relaxed max-w-2xl">
+                Dapatkan informasi silabus pembinaan, jadwal batch resmi, dan konsultasi kualifikasi Petugas Madya maupun Utama K3 Ruang Terbatas Kemnaker RI. Hubungi konsultan kami langsung via WhatsApp di <strong>{WA_DISPLAY}</strong>.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <a
+                href={waLink("Halo KonsultanK3, saya ingin info pendaftaran Pelatihan K3 Ruang Terbatas")}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-transform hover:scale-105"
+              >
+                <span>Hubungi via WhatsApp</span>
+                <span>&rarr;</span>
+              </a>
+              <a
+                href="/pelatihan/"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-colors"
+              >
+                <span>Katalog Lengkap Pelatihan dan Sertifikasi K3</span>
+              </a>
             </div>
           </div>
 
-          <!-- FAQ Accordion -->
-          <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
-            <h3 class="text-2xl font-bold font-serif text-slate-900">
-              Pertanyaan Umum (FAQ)
-            </h3>
-            
-            <div class="space-y-3">
-              {faqs.map(f => (
-                <details class="group p-4 rounded-2xl bg-slate-50 border border-slate-200 [&_summary::-webkit-details-marker]:hidden">
-                  <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm">
-                    <span>{f.q}</span>
-                    <span class="ml-2 text-slate-400 group-open:rotate-180 transition-transform">▼</span>
-                  </summary>
-                  <p class="mt-3 text-xs text-slate-600 leading-relaxed pt-2 border-t border-slate-200">
-                    {f.a}
-                  </p>
-                </details>
-              ))}
-            </div>
+          <!-- Cross-Links Hub -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-4">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Rekomendasi Program Terkait &amp; Panduan Keselamatan Kerja</h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+              <li>
+                <a href="/pelatihan-ahli-k3-umum/" class="text-purple-700 hover:text-purple-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Pembinaan Calon Ahli K3 Umum Kemnaker RI</span>
+                </a>
+              </li>
+              <li>
+                <a href="/pelatihan-k3-kebakaran/" class="text-purple-700 hover:text-purple-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Pelatihan K3 Penanggulangan Kebakaran Kelas D, C, B, A</span>
+                </a>
+              </li>
+              <li>
+                <a href="/pelatihan-k3-listrik/" class="text-purple-700 hover:text-purple-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Pelatihan Teknisi &amp; Ahli K3 Listrik Industri</span>
+                </a>
+              </li>
+              <li>
+                <a href="/panduan-penerapan-smk3/" class="text-purple-700 hover:text-purple-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Panduan Penerapan SMK3 di Tempat Kerja</span>
+                </a>
+              </li>
+              <li>
+                <a href="/alat-pelindung-diri/" class="text-purple-700 hover:text-purple-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Standar Penggunaan Alat Pelindung Diri (APD)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="lg:col-span-4 space-y-8 lg:sticky lg:top-32 self-start">
+        <div class="bg-zinc-900 text-white rounded-3xl p-8 space-y-6 shadow-xl">
+          <div class="space-y-2">
+            <span class="text-xs font-mono uppercase tracking-widest text-zinc-400">Pendaftaran Batch Resmi</span>
+            <h3 class="font-serif text-2xl font-normal text-white">Amankan Kursi Pembinaan Anda</h3>
+            <p class="text-xs font-mono text-zinc-400 leading-relaxed">
+              Daftar sekarang untuk mendapatkan silabus lengkap, penawaran korporasi, dan kepastian kuota batch resmi Kemnaker RI.
+            </p>
           </div>
 
+          {batch ? (
+            <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 space-y-2 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-400">Jadwal Batch:</span>
+                <span class="text-white font-mono font-bold">{batch.tanggal}</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-400">Sisa Kursi:</span>
+                <span class="text-emerald-400 font-mono font-bold">{batch.sisa} Kursi</span>
+              </div>
+            </div>
+          ) : (
+            <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 text-xs text-zinc-300">
+              <p>Jadwal batch dan biaya terbaru: tanyakan via WhatsApp</p>
+            </div>
+          )}
+
+          <a
+            href={waLink("Halo KonsultanK3, saya ingin mendaftar Pelatihan K3 Ruang Terbatas Kemnaker RI")}
+            target="_blank"
+            rel="noopener"
+            class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg"
+          >
+            <span>Daftar via WhatsApp Resmi</span>
+            <span>&rarr;</span>
+          </a>
         </div>
 
-        <!-- Sidebar -->
-        <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
-          
-          <div class="p-6 rounded-3xl bg-slate-900 text-white space-y-4 shadow-xl">
-            <div class="text-xs font-bold uppercase tracking-wider text-amber-400">Jadwal Batch</div>
-            <h4 class="text-lg font-bold font-serif">Pendaftaran Batch Bulan Ini</h4>
-            <div class="space-y-2 text-xs text-slate-300">
-              <div class="flex justify-between border-b border-white/10 pb-1.5">
-                <span>Tanggal:</span>
-                <strong class="text-white">Batch Mendatang</strong>
-              </div>
-              <div class="flex justify-between border-b border-white/10 pb-1.5">
-                <span>Lokasi:</span>
-                <strong class="text-white">Online Teori + Praktik</strong>
-              </div>
-              <div class="flex justify-between">
-                <span>Status:</span>
-                <strong class="text-emerald-400">Pendaftaran Dibuka</strong>
-              </div>
-            </div>
-
-            <a
-              href={waLink("Halo KonsultanK3, saya ingin mendaftar K3 Ruang Terbatas")}
-              target="_blank"
-              rel="noopener"
-              class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
-            >
-              <span>Amankan Kursi Sekarang</span> &rarr;
-            </a>
-          </div>
-
-          <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3">
-            <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Program Terkait</div>
-            <div class="space-y-2 text-sm font-semibold text-slate-800">
-              <a href="/pelatihan-ahli-k3-umum/" class="block hover:text-amber-600">🎓 Pembinaan Ahli K3 Umum</a>
-              <a href="/pelatihan-k3-kebakaran/" class="block hover:text-amber-600">🔥 K3 Penanggulangan Kebakaran</a>
-              <a href="/pelatihan-k3-listrik/" class="block hover:text-amber-600">⚡ Teknisi &amp; Ahli K3 Listrik</a>
-              <a href="/panduan-penerapan-smk3/" class="block hover:text-amber-600">📋 Audit SMK3 PP 50/2012</a>
-            </div>
-          </div>
-
-        </aside>
-
-      </div>
+        <div class="p-6 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-3">
+          <span class="text-xs font-mono uppercase tracking-widest text-zinc-500 block">Jaminan Kepatuhan</span>
+          <p class="text-xs text-zinc-600 font-light leading-relaxed">
+            Didukung oleh instruktur senior praktisi industri dengan sertifikasi resmi Kemnaker RI dan fasilitas uji komprehensif.
+          </p>
+        </div>
+      </aside>
 
     </div>
-  </section>
+  </main>
 </BaseLayout>

@@ -1,16 +1,40 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { batches } from '../../data/batches.js';
-import { waLink } from '../../data/contact.js';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
 
 const batch = batches.listrik;
 
 const title = "Pelatihan Teknisi & Ahli K3 Listrik Kemnaker";
-const description = "Program pembinaan sertifikasi Teknisi K3 Listrik dan Ahli K3 Listrik berlisensi resmi Kemnaker RI sesuai Permenaker No. 12 Tahun 2015.";
+const description = "Program pembinaan sertifikasi Teknisi K3 Listrik dan Ahli K3 Listrik resmi Kemnaker RI sesuai Permenaker No. 12 Tahun 2015 dan standar teknis PUIL 2020.";
 const canonical = "/pelatihan-k3-listrik/";
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Katalog Pelatihan", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "K3 Listrik", "item": "https://konsultank3.com/pelatihan-k3-listrik/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Teknisi & Ahli K3 Listrik Industri Kemnaker RI",
+      "description": "Program pembinaan kompetensi teknis keselamatan ketenagalistrikan industri untuk Teknisi K3 Listrik dan Ahli K3 Listrik sesuai Permenaker No. 12 Tahun 2015.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<BaseLayout title={title} description={description} canonical={canonical} schema={courseSchema}>
   <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
@@ -42,38 +66,38 @@ const canonical = "/pelatihan-k3-listrik/";
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href={waLink("Halo KonsultanK3, saya ingin info jadwal pelatihan Teknisi dan Ahli K3 Listrik")}
+              href={waLink("Halo KonsultanK3, saya ingin konsultasi Pelatihan Teknisi dan Ahli K3 Listrik")}
               target="_blank"
               rel="noopener"
               class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
             >
-              Daftar Batch Listrik &rarr;
+              Konsultasi WhatsApp Resmi &rarr;
             </a>
             <a
-              href="#modul-listrik"
+              href="#jenjang-pelatihan"
               class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
             >
-              Kurikulum Teknisi &amp; Ahli
+              Jenjang Teknisi &amp; Ahli
             </a>
           </div>
 
           <!-- Quick Stats Bar -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi</span>
-              <p class="text-white font-bold text-sm">6 – 15 Hari</p>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Tingkatan</span>
+              <p class="text-white font-bold text-sm">Teknisi &amp; Ahli</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Metode</span>
-              <p class="text-white font-bold text-sm">Zoom + Workshop PUIL</p>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Standar</span>
+              <p class="text-white font-bold text-sm">PUIL 2020 &amp; IEC</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
               <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Dokumen</span>
-              <p class="text-white font-bold text-sm">SKP &amp; Lisensi Kemnaker</p>
+              <p class="text-white font-bold text-sm">Lisensi Kemnaker RI</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Tingkat Uji</span>
-              <p class="text-emerald-400 font-bold text-sm">Garansi 100%</p>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kualifikasi</span>
+              <p class="text-emerald-400 font-bold text-sm">Kompetensi Industri</p>
             </div>
           </div>
         </div>
@@ -93,7 +117,7 @@ const canonical = "/pelatihan-k3-listrik/";
                 Standar PUIL &amp; SNI Elektrikal
               </span>
               <div class="text-lg font-bold">Kelaikan Panel &amp; Proteksi Arus Bocor</div>
-              <p class="text-xs text-slate-300 mt-1">Uji resistansi isolasi, pembumian (grounding &lt;5 Ohm), dan penyalur petir gedung bertingkat.</p>
+              <p class="text-xs text-slate-300 mt-1">Uji resistansi isolasi, pembumian grounding &lt;5 Ohm, serta proteksi penyalur petir instalasi gedung dan pabrik.</p>
             </div>
           </div>
 
@@ -123,86 +147,518 @@ const canonical = "/pelatihan-k3-listrik/";
   </header>
 
   <!-- Main Body Layout -->
-  <main class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       
-      <div class="lg:col-span-8 space-y-12">
-        <div id="modul-listrik" class="grid grid-cols-1 sm:grid-cols-2 gap-6 scroll-mt-24">
-          
-    <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
-      <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
-        01
-      </div>
-      <h3 class="font-serif text-2xl font-normal text-zinc-900">Dasar Keselamatan Listrik</h3>
-      <p class="text-zinc-600 font-light text-sm leading-relaxed">Pemahaman tegangan sentuh, bahaya arus kejut tubuh manusia, dan mitigasi bahaya short circuit.</p>
-    </div>
-  
-    <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
-      <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
-        02
-      </div>
-      <h3 class="font-serif text-2xl font-normal text-zinc-900">Prosedur LOTO (Lockout/Tagout)</h3>
-      <p class="text-zinc-600 font-light text-sm leading-relaxed">Pengendalian energi berbahaya pada pemeliharaan gardu induk, panel distribusi, dan motor industri.</p>
-    </div>
-  
-    <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
-      <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
-        03
-      </div>
-      <h3 class="font-serif text-2xl font-normal text-zinc-900">Sistem Grounding & Proteksi Petir</h3>
-      <p class="text-zinc-600 font-light text-sm leading-relaxed">Pengukuran resistansi pembumian menggunakan Earth Tester dan audit instalasi penangkal petir.</p>
-    </div>
-  
-    <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
-      <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
-        04
-      </div>
-      <h3 class="font-serif text-2xl font-normal text-zinc-900">Inspeksi & Audit K3 Listrik</h3>
-      <p class="text-zinc-600 font-light text-sm leading-relaxed">Kualifikasi Ahli K3 Listrik untuk menyusun laporan evaluasi kelaikan instalasi berlisensi Kemnaker RI.</p>
-    </div>
-  
-        </div>
-
-        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-zinc-200/80 shadow-sm space-y-8">
-          <div class="border-b border-zinc-200 pb-6">
-            <span class="text-xs font-mono uppercase tracking-widest text-zinc-400 block mb-1">Materi Pokok</span>
-            <h2 class="font-serif text-3xl font-normal text-zinc-900">Silabus &amp; Kurikulum Pelatihan</h2>
+      <!-- Article Content Column -->
+      <article class="lg:col-span-8 space-y-14 text-slate-800 leading-relaxed">
+        
+        <!-- Section 1: Apa itu Pelatihan K3 Listrik -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Pengenalan Program</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Apa itu Pelatihan K3 Listrik</h2>
           </div>
-          <div class="space-y-6">
-            
-    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/60 space-y-3">
-      <h4 class="font-serif text-xl font-normal text-zinc-900">A. Peraturan Perundang-undangan K3 Listrik</h4>
-      <ul class="list-disc pl-6 space-y-1.5 text-zinc-600 text-sm font-light">
-        <li>Kebijakan K3 Nasional di Bidang Kelistrikan</li><li>Permenaker No. 12 Tahun 2015 tentang K3 Listrik di Tempat Kerja</li><li>Penerapan Standar PUIL 2020 & Standar IEC/NFPA</li>
-      </ul>
-    </div>
-  
-    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/60 space-y-3">
-      <h4 class="font-serif text-xl font-normal text-zinc-900">B. Identifikasi Bahaya & Proteksi Listrik</h4>
-      <ul class="list-disc pl-6 space-y-1.5 text-zinc-600 text-sm font-light">
-        <li>Bahaya Arus Kejut, Busur Api (Arc Flash), & Ledakan Listrik</li><li>Sistem Pengamanan Sentuh Langsung & Tak Langsung</li><li>Proteksi Perlengkapan Instalasi & Karakteristik Circuit Breaker</li><li>Penyelenggaraan Prosedur Isolasi & Lockout Tagout (LOTO)</li>
-      </ul>
-    </div>
-  
-    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/60 space-y-3">
-      <h4 class="font-serif text-xl font-normal text-zinc-900">C. Praktik Workshop & Pengujian</h4>
-      <ul class="list-disc pl-6 space-y-1.5 text-zinc-600 text-sm font-light">
-        <li>Pengukuran Tahanan Isolasi menggunakan Megger Tester</li><li>Pengujian Tahanan Pembumian (Grounding Resistance < 5 Ohm)</li><li>Inspeksi Termografi Inframerah pada Terminal Panel Listrik</li><li>Penyusunan Rencana Tindakan Perbaikan Instalasi Elektrikal</li>
-      </ul>
-    </div>
-  
+          <p class="text-base sm:text-lg text-slate-700 font-light leading-relaxed">
+            Pelatihan K3 Listrik adalah program pembinaan dan sertifikasi kompetensi ketenagakerjaan yang dirancang secara terpadu untuk membekali tenaga kerja teknik dengan wawasan regulasi, pemahaman bahaya listrik, keterampilan pengukuran instrumen elektrikal, serta penerapan prosedur keselamatan kerja pada instalasi listrik di industri. Energi listrik merupakan penggerak utama mesin produksi dan fasilitas fasilitas kerja modern, namun menyimpan potensi bahaya fatal apabila tidak dirancang, dipasang, dioperasikan, dan diperiksa oleh personel yang memiliki kompetensi teknis resmi.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Bahaya ketenagalistrikan di tempat kerja dapat termanifestasi dalam berbagai bentuk ancaman fisik. Bahaya sengatan arus kejut listrik terhadap tubuh manusia dapat melumpuhkan sistem syaraf dan menyebabkan henti jantung mendadak. Selain itu, arus hubung singkat (short circuit) berpotensi memicu percikan bunga api berkekuatan tinggi, pelepasan energi busur api (arc flash), serta ledakan termal pada ruang panel distribusi yang berujung pada kebakaran fasilitas industri berskala besar.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Kewajiban penyelenggaraan keselamatan instalasi listrik ditegaskan secara yuridis dalam ketentuan Permenaker No. 12 Tahun 2015 tentang Keselamatan dan Kesehatan Kerja Listrik di Tempat Kerja. Peraturan ini mewajibkan setiap perusahaan yang membangkitkan, mentransmisikan, mendistribusikan, atau memanfaatkan energi listrik untuk mempekerjakan Teknisi K3 Listrik dan Ahli K3 Listrik yang telah lulus pembinaan dan memiliki lisensi kewenangan resmi dari Kementerian Ketenagakerjaan RI.
+          </p>
+          <div class="p-6 rounded-2xl bg-amber-500/5 border border-amber-500/20 space-y-3">
+            <h3 class="text-base font-bold text-amber-900">Siapa Saja yang Membutuhkan Pelatihan Ini?</h3>
+            <p class="text-sm text-slate-700 font-light leading-relaxed">
+              Program pembinaan teknis ketenagalistrikan ini mutlak dibutuhkan oleh seluruh instalasi kerja yang menggunakan jaringan listrik industri, antara lain:
+            </p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700 font-light">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Teknisi Pemeliharaan Listrik (Electrical Maintenance):</strong> Bertanggung jawab atas perawatan rutin trafo, kubikel, dan gardu distribusi.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Pabrik Manufaktur &amp; Industri Berat:</strong> Mengoperasikan motor listrik berdaya besar, kompresor, dan panel daya tegangan menengah.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Kontraktor Mekanikal &amp; Elektrikal (MEP):</strong> Melakukan instalasi kabel jaringan, terminasi panel distribusi, dan pemipaan konduit.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Pengelola Gedung Komersial &amp; Rumah Sakit:</strong> Mengelola gardu listrik internal, generator cadangan (genset), dan instalasi sistem UPS.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Supervisor &amp; Ahli K3 Perusahaan:</strong> Mengawasi kepatuhan kelaikan instalasi listrik dan menyusun dokumen izin kerja kelistrikan.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Sektor Pembangkit &amp; Energi:</strong> Menjalankan operasional turbin, jaringan transmisi daya, serta gardu hubung tegangan tinggi.</span>
+              </li>
+            </ul>
           </div>
-        </div>
+        </section>
 
-        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-zinc-200/80 shadow-sm space-y-6">
-          <div class="border-b border-zinc-200 pb-4">
-            <span class="text-xs font-mono uppercase tracking-widest text-zinc-400 block mb-1">Persyaratan Peserta</span>
-            <h3 class="font-serif text-2xl font-normal text-zinc-900">Kualifikasi &amp; Berkas Administrasi</h3>
+        <!-- Section 2: Jenjang / Jenis Pelatihan -->
+        <section id="jenjang-pelatihan" class="space-y-6 scroll-mt-24">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Klasifikasi &amp; Tingkatan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Jenjang / Jenis Pelatihan</h2>
           </div>
-          <p class="text-zinc-700 font-light text-sm leading-relaxed">Teknisi: Minimal SMK Teknik Listrik / SLTA + pengalaman kerja 2 tahun. Ahli K3 Listrik: Minimal D3/S1 Teknik Elektro / Mesin / Fisika.</p>
-        </div>
-      </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Sistem kualifikasi K3 kelistrikan diatur secara berjenjang guna membedakan ruang lingkup pelaksanaan teknis lapangan dengan fungsi perencanaan, pengawasan, serta audit kelaikan instalasi. Penjenjangan resmi terdiri dari Teknisi K3 Listrik dan Ahli K3 Listrik sebagaimana dirangkum dalam tabel berikut:
+          </p>
 
+          <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+            <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+              <thead class="bg-slate-900 text-white text-xs uppercase font-semibold">
+                <tr>
+                  <th class="py-4 px-4 sm:px-6">Jenjang / Jenis</th>
+                  <th class="py-4 px-4 sm:px-6">Peran</th>
+                  <th class="py-4 px-4 sm:px-6">Tugas utama</th>
+                  <th class="py-4 px-4 sm:px-6">Materi kunci</th>
+                  <th class="py-4 px-4 sm:px-6">Persyaratan</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 font-mono">Teknisi K3 Listrik</td>
+                  <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800">Pelaksana Teknis Lapangan</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Pemasangan, perbaikan, pemeliharaan instalasi listrik, serta penerapan isolasi energi berbahaya LOTO</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Dasar keselamatan listrik, bahaya arus kejut &amp; short circuit, prosedur isolasi energi Lockout Tagout (LOTO), pengukuran tahanan isolasi &amp; pembumian</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-800 font-semibold">Minimal SMK Teknik Listrik / SLTA + pengalaman kerja 2 tahun</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 font-mono">Ahli K3 Listrik</td>
+                  <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800">Pengawas &amp; Auditor Kelaikan</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Perencanaan sistem proteksi, pengawasan norma keselamatan elektrikal, serta penyusunan laporan audit kelaikan instalasi berlisensi</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Kajian regulasi &amp; PUIL 2020, proteksi perlengkapan &amp; circuit breaker, audit &amp; inspeksi K3 listrik, penyusunan laporan evaluasi kelaikan instalasi berlisensi Kemnaker RI</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-800 font-semibold">Minimal D3 / S1 Teknik Elektro / Mesin / Fisika</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-sm text-slate-600 font-light leading-relaxed">
+            Pembagian jenjang ini memastikan pembagian tanggung jawab yang jelas dalam operasional kelistrikan. Teknisi K3 Listrik bertindak sebagai pelaksana yang memastikan setiap tindakan intervensi pada kabel, panel, dan mesin industri dilakukan dengan aman tanpa risiko sengatan listrik. Sementara itu, Ahli K3 Listrik menjalankan kewenangan pengawasan kepatuhan teknis menyeluruh, merancang instalasi proteksi, serta mengevaluasi keandalan sistem agar seluruh peralatan memenuhi standar kelaikan operasi yang ditetapkan pemerintah.
+          </p>
+        </section>
+
+        <!-- Section 3: Dasar Hukum -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Landasan Regulasi</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Dasar Hukum</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Pelaksanaan pembinaan kompetensi K3 listrik serta penerapan norma keselamatan ketenagalistrikan di tempat kerja berlandaskan pada peraturan perundang-undangan nasional yang berkekuatan hukum tetap, meliputi:
+          </p>
+
+          <div class="space-y-4">
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">UU No. 1 Tahun 1970 tentang Keselamatan Kerja</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Undang-Undang Keselamatan Kerja merupakan payung hukum utama perlindungan keselamatan tenaga kerja di Indonesia. Pada Pasal 3 ayat (1) huruf q diamanatkan secara tegas kewajiban untuk mencegah terkena aliran listrik yang berbahaya di setiap tempat kerja. Regulasi ini menjadi landasan primer yang mewajibkan pengusaha menyediakan lingkungan kerja yang aman dari risiko sengatan listrik dan kebakaran instalasi daya.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">Permenaker No. 12 Tahun 2015 tentang Keselamatan dan Kesehatan Kerja Listrik di Tempat Kerja</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Peraturan ini mengatur secara komprehensif kewajiban perencanaan, pemasangan, penggunaan, perubahan, pemeliharaan, serta pemeriksaan dan pengujian instalasi listrik di tempat kerja. Regulasi ini mewajibkan perusahaan menunjuk Teknisi K3 Listrik dan Ahli K3 Listrik berlisensi resmi Kemnaker RI guna mengendalikan potensi bahaya arus listrik, sengatan listrik, serta bahaya kebakaran akibat korsleting. Ketentuan ini juga mewajibkan pemeriksaan dan pengujian instalasi listrik secara berkala oleh pengawas atau ahli yang berwenang.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">Standar PUIL 2020 (Persyaratan Umum Instalasi Listrik) &amp; Standar IEC/NFPA</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Standar PUIL 2020 adalah acuan teknis nasional utama bagi seluruh perancangan dan pemasangan instalasi ketenagalistrikan tegangan rendah maupun menengah di Indonesia. Standar ini menetapkan batas aman resistansi pembumian grounding kurang dari 5 Ohm, tata cara proteksi sentuh langsung dan tidak langsung, serta pemilihan kapasitas pemutus arus sirkuit. Pedoman ini diharmonisasikan dengan standar internasional seperti IEC dan NFPA guna menjamin keselamatan manusia dan keandalan proteksi properti industri.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Silabus Pembelajaran -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Materi Kurikulum</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Silabus Pembelajaran</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Kurikulum pembinaan K3 listrik disusun secara sistematis mengacu pada standar pengawasan norma ketenagalistrikan Kemnaker RI. Setiap modul materi menggabungkan penguasaan landasan regulasi, pemahaman fisika kelistrikan, serta aplikasi instrumen pengujian lapangan:
+          </p>
+
+          <div class="space-y-5">
+            <!-- Topic 1 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-700 font-mono text-xs flex items-center justify-center font-bold">01</span>
+                Dasar Keselamatan Listrik
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Modul ini mengkaji fenomena fisika tegangan sentuh, ambang batas arus listrik yang berbahaya bagi tubuh manusia, serta mekanisme terjadinya fibrilasi jantung saat tersengat listrik. Peserta mempelajari kalkulasi beban daya, identifikasi potensi bahaya hubung singkat (short circuit), serta analisis bahaya termal akibat kelebihan beban jaringan. Pemahaman konseptual ini menjadi fondasi penting bagi teknisi dalam mengantisipasi kegagalan sistem kelistrikan sejak dini.
+              </p>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-700 font-mono text-xs flex items-center justify-center font-bold">02</span>
+                Prosedur LOTO (Lockout / Tagout)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Topik ini membahas metodologi isolasi energi berbahaya pada pemeliharaan gardu induk, panel distribusi utama, dan motor-motor listrik industri bertenaga besar. Peserta dilatih menerapkan gembok pengaman fisik (lockout), label peringatan larangan operasi (tagout), serta prosedur pengujian energi sisa (zero energy state verification) sebelum pekerjaan dimulai. Penerapan disiplin prosedur LOTO terbukti efektif mengeliminasi risiko kecelakaan fatal akibat penyalaan mesin tanpa sengaja selama masa perbaikan.
+              </p>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-700 font-mono text-xs flex items-center justify-center font-bold">03</span>
+                Sistem Grounding &amp; Proteksi Petir
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Materi ini mendalami konfigurasi sistem pembumian proteksi dan pembumian operasional pada jaringan distribusi listrik. Peserta dibekali teknik pengukuran nilai tahanan tanah menggunakan alat ukur Earth Resistance Tester guna memastikan resistansi pembumian berada di bawah batas ambang 5 Ohm. Selain itu, dipelajari pula audit instalasi sistem proteksi petir eksternal maupun internal pada gedung bertingkat dan bangunan industri guna melindungi struktur dari sambaran petir langsung.
+              </p>
+            </div>
+
+            <!-- Topic 4 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-700 font-mono text-xs flex items-center justify-center font-bold">04</span>
+                Peraturan Perundang-undangan K3 Listrik
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Kelompok materi ini membedah kebijakan nasional keselamatan kerja di sektor ketenagalistrikan sesuai amanat UU No. 1 Tahun 1970 dan Permenaker No. 12 Tahun 2015. Peserta mempelajari hak serta kewajiban hukum pengusaha, peran pengawasan ketenagakerjaan, serta harmonisasi ketentuan teknis dengan standar PUIL 2020 dan standar internasional IEC/NFPA. Modul ini menegaskan akuntabilitas hukum bagi penanggung jawab instalasi listrik dalam menjamin keselamatan fasilitas kerja.
+              </p>
+            </div>
+
+            <!-- Topic 5 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-700 font-mono text-xs flex items-center justify-center font-bold">05</span>
+                Identifikasi Bahaya &amp; Proteksi Listrik
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Modul ini berfokus pada analisis bahaya sengatan arus kejut listrik, pelepasan energi busur api (arc flash), serta potensi ledakan kelistrikan di area berbahaya. Peserta mempelajari prinsip rekayasa sistem pengamanan sentuh langsung melalui isolasi kabel dan penutup panel, serta proteksi sentuh tak langsung menggunakan gawai proteksi arus sisa (RCD/ELCB). Pembahasan juga mencakup karakteristik pemutus daya sirkuit (circuit breaker) dalam mengisolasi gangguan beban lebih secara selektif.
+              </p>
+            </div>
+
+            <!-- Topic 6 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-700 font-mono text-xs flex items-center justify-center font-bold">06</span>
+                Praktik Workshop &amp; Pengujian Instrumen
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Sesi workshop memberikan pengalaman langsung dalam melakukan pengujian fisik instalasi listrik menggunakan peralatan ukur standar industri. Peserta mempraktikkan pengukuran tahanan isolasi konduktor kabel menggunakan Megger Tester untuk mendeteksi degradasi isolasi sebelum terjadi kebocoran arus. Dilakukan pula pengukuran resistansi elektroda pembumian grounding dan inspeksi termografi inframerah pada sambungan terminal panel guna menemukan titik panas (hotspot) penyebab kebakaran.
+              </p>
+            </div>
+
+            <!-- Topic 7 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-700 font-mono text-xs flex items-center justify-center font-bold">07</span>
+                Inspeksi &amp; Audit K3 Listrik
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Topik ini dirancang khusus untuk membekali calon Ahli K3 Listrik dengan keterampilan melakukan audit instalasi elektrikal secara komprehensif. Peserta dilatih menyusun daftar periksa inspeksi kelaikan panel, menganalisis hasil uji resistansi, mengidentifikasi ketidaksesuaian terhadap standar PUIL 2020, serta merumuskan rencana tindakan perbaikan teknis. Kompetensi ini bermuara pada penyusunan dokumen laporan evaluasi kelaikan instalasi berlisensi resmi Kemnaker RI.
+              </p>
+            </div>
+
+            <!-- Topic 8 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-700 font-mono text-xs flex items-center justify-center font-bold">08</span>
+                Evaluasi
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Tahap evaluasi komprehensif diselenggarakan untuk mengukur daya serap materi teoritis dan kemahiran teknis peserta setelah mengikuti seluruh sesi pembinaan. Evaluasi mencakup ujian tertulis mengenai regulasi serta norma kelistrikan nasional, pengujian praktik penggunaan instrumen ukur, dan presentasi kertas kerja evaluasi instalasi. Hasil evaluasi ini menentukan kelayakan peserta untuk memperoleh lisensi kewenangan K3 listrik resmi.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: Alur Pelatihan dan Ujian -->
+        <section id="alur-pelatihan" class="space-y-6 scroll-mt-24">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Tahapan Penyelenggaraan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Alur Pelatihan dan Ujian</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Penyelenggaraan pelatihan dan sertifikasi K3 listrik dilaksanakan secara berurutan untuk menjamin integritas mutu serta kesiapan kompetensi lulusan di lingkungan industri:
+          </p>
+
+          <div class="relative border-l-2 border-blue-500/30 pl-6 ml-3 space-y-8">
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">1. Pendaftaran</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Calon peserta atau perwakilan instansi perusahaan melakukan pengisian formulir pendaftaran resmi, menentukan skema jenjang pembinaan yang dituju (Teknisi K3 Listrik atau Ahli K3 Listrik), dan melengkapi data awal calon peserta.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">2. Verifikasi Berkas</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Tim administrasi melakukan validasi kelayakan dokumen kepesertaan, mencakup kesesuaian ijazah pendidikan minimal, surat keterangan pengalaman kerja di bidang elektrikal, salinan kartu identitas, dan surat tugas perusahaan sesuai kualifikasi yang dipersyaratkan.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">3. Teori</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Penyampaian modul instruksional di ruang kelas interaktif yang dibimbing oleh instruktur praktisi senior dan pejabat spesialis pengawasan norma K3 listrik. Pembahasan mencakup regulasi ketenagakerjaan, kaidah PUIL 2020, proteksi bahaya arus kejut, dan prosedur keselamatan LOTO.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">4. Praktik</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Pelaksanaan sesi workshop dan peragaan teknis lapangan. Peserta mempraktikkan langsung pengukuran tahanan isolasi kabel dengan Megger Tester, pengujian resistansi pembumian grounding dengan Earth Tester, inspeksi panel termografi inframerah, dan simulasi penutupan energi berbahaya.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">5. Ujian</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Pelaksanaan evaluasi menyeluruh yang diselenggarakan dan diawasi langsung oleh tim penilai pengawas ketenagakerjaan. Ujian terdiri dari evaluasi teori tertulis untuk menguji pemahaman norma regulasi serta ujian praktik untuk memvalidasi kemahiran teknis instrumen pengujian.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">6. Penerbitan Sertifikat</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Bagi peserta yang telah menuntaskan seluruh rangkaian pembinaan dan dinyatakan memenuhi standar kelulusan evaluasi, Kementerian Ketenagakerjaan RI menerbitkan sertifikat kompetensi resmi pembinaan K3 listrik beserta kartu lisensi kewenangan kerja sesuai jenjang yang ditempuh.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6: Persyaratan Peserta -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Administrasi Kepesertaan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Persyaratan Peserta</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Guna menjaga mutu kompetensi teknis dan mematuhi ketentuan pengawasan ketenagakerjaan, calon peserta diwajibkan memenuhi kualifikasi latar belakang pendidikan minimal serta melengkapi berkas administrasi kepesertaan sebagai berikut:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 class="text-base font-bold text-slate-900">Pendidikan Minimal per Jenjang</h3>
+              <ul class="space-y-2.5 text-sm text-slate-700 font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span><strong>Teknisi K3 Listrik:</strong> Minimal SMK Teknik Listrik atau SLTA sederajat ditambah pengalaman kerja di bidang kelistrikan sekurang-kurangnya 2 tahun.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span><strong>Ahli K3 Listrik:</strong> Minimal Diploma 3 (D3) atau Sarjana (S1) bidang Teknik Elektro, Teknik Mesin, atau Fisika.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 class="text-base font-bold text-slate-900">Kelengkapan Berkas Administrasi</h3>
+              <p class="text-xs text-slate-600 font-light leading-relaxed">
+                Dokumen yang dipersiapkan untuk proses verifikasi pendaftaran kepesertaan resmi:
+              </p>
+              <ul class="space-y-2 text-xs text-slate-700 font-light">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  <span>Salinan Kartu Tanda Penduduk (KTP) yang masih berlaku</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  <span>Salinan ijazah pendidikan terakhir sesuai kualifikasi jenjang pembinaan</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  <span>Surat keterangan penugasan atau surat keterangan bekerja dari perusahaan</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  <span>Pas foto berwarna terbaru dengan latar belakang merah</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  <span>Surat keterangan sehat jasmani dari dokter pemeriksa</span>
+                </li>
+              </ul>
+              <div class="pt-2 border-t border-slate-100 text-xs font-semibold text-blue-700">
+                Catatan: daftar final dikonfirmasi saat pendaftaran.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 7: Pertanyaan yang Sering Diajukan -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Pusat Informasi</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Pertanyaan yang Sering Diajukan</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Berikut adalah rangkuman jawaban atas pertanyaan umum terkait teknis pembinaan, dasar regulasi, dan kualifikasi program K3 Listrik:
+          </p>
+
+          <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apa perbedaan mendasar antara Teknisi K3 Listrik dan Ahli K3 Listrik?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Teknisi K3 Listrik ditujukan bagi pelaksana teknis operasional yang bertugas melakukan pemasangan, perawatan, inspeksi fisik harian, dan penerapan isolasi energi LOTO pada instalasi listrik di lapangan. Sedangkan Ahli K3 Listrik ditujukan bagi personel tingkat perencana atau supervisor dengan wewenang menganalisis desain instalasi proteksi, mengawasi penerapan standar PUIL 2020, memimpin audit kelaikan listrik industri, serta menyusun dokumen laporan evaluasi kelaikan berlisensi Kemnaker RI.
+              </p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Mengapa perusahaan wajib memiliki personel K3 Listrik tersertifikasi?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Berdasarkan ketentuan Permenaker No. 12 Tahun 2015, setiap perusahaan yang mengoperasikan instalasi listrik wajib memiliki Teknisi dan Ahli K3 Listrik berlisensi resmi guna mengendalikan bahaya arus kejut, bahaya ledakan busur api, serta korsleting pemicu kebakaran. Sertifikasi ini menjamin sistem kelistrikan dioperasikan secara aman, meminimalkan risiko kecelakaan kerja fatal, dan memastikan pemenuhan regulasi ketenagakerjaan.
+              </p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Berapa nilai resistansi pembumian grounding yang dipersyaratkan standar teknis?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Sesuai ketentuan standar PUIL 2020 dan regulasi K3 nasional, nilai resistansi tahanan pembumian (grounding resistance) untuk instalasi listrik dan proteksi petir di tempat kerja dipersyaratkan berada di bawah 5 Ohm. Pengukuran rutin wajib dilakukan menggunakan instrumen Earth Resistance Tester untuk memastikan arus gangguan dapat disalurkan secara aman ke tanah.
+              </p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apa saja instrumen pengujian yang dipraktikkan dalam sesi workshop pelatihan?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Peserta melakukan praktik langsung pengujian kelistrikan menggunakan Megger Tester untuk mengukur resistansi isolasi kabel dan gulungan motor, Earth Tester untuk menguji tahanan pembumian sistem grounding, serta kamera termografi inframerah untuk mengidentifikasi kenaikan suhu abnormal dan hotspot pada sambungan kabel panel distribusi.
+              </p>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Bagaimana tahapan alur pelatihan hingga terbitnya lisensi resmi Kemnaker RI?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Alur pelatihan diawali dari tahapan registrasi calon peserta, verifikasi kelayakan dokumen administrasi, pemaparan teori regulasi dan teknik elektro keselamatan, praktik simulasi pengujian workshop lapangan, pelaksanaan ujian evaluasi tertulis dan pengujian praktik bersama pengawas Kemnaker RI, hingga penerbitan sertifikat kompetensi serta kartu lisensi resmi.
+              </p>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apakah lulusan non-teknik dapat mendaftar pada program pembinaan Ahli K3 Listrik?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Sesuai regulasi pengawasan ketenagakerjaan Kemnaker RI, program Ahli K3 Listrik mensyaratkan latar belakang pendidikan minimal Diploma 3 (D3) atau Sarjana (S1) bidang Teknik Elektro, Teknik Mesin, atau Fisika karena kurikulumnya menuntut analisis teknik jaringan daya, sistem proteksi, dan pembacaan diagram satu garis kelistrikan.
+              </p>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Dokumen apa saja yang perlu disiapkan oleh calon peserta saat registrasi?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Dokumen administratif yang perlu disiapkan meliputi salinan Kartu Tanda Penduduk (KTP), salinan ijazah terakhir sesuai kualifikasi jenjang, surat tugas atau penugasan dari perusahaan tempat bekerja, surat keterangan sehat jasmani dari dokter, dan pas foto berlatar belakang merah, dengan daftar final dikonfirmasi saat pendaftaran.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 8: Strategic Cross-Links & WhatsApp CTA Block -->
+        <section class="space-y-6 pt-4 border-t border-slate-200">
+          <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950 text-white space-y-6 shadow-xl">
+            <div class="space-y-2">
+              <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-semibold block">Konsultasi Kepatuhan &amp; Pelatihan K3</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Lindungi Fasilitas Industri dari Bahaya Listrik &amp; Kebakaran</h3>
+              <p class="text-sm text-slate-300 font-light leading-relaxed max-w-2xl">
+                Dapatkan informasi silabus pembinaan, jadwal batch resmi, dan konsultasi kualifikasi Teknisi maupun Ahli K3 Listrik berlisensi Kemnaker RI. Hubungi konsultan kami via WhatsApp di <strong>{WA_DISPLAY}</strong>.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <a
+                href={waLink("Halo KonsultanK3, saya ingin info pendaftaran Pelatihan Teknisi dan Ahli K3 Listrik")}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-transform hover:scale-105"
+              >
+                <span>Hubungi via WhatsApp</span>
+                <span>&rarr;</span>
+              </a>
+              <a
+                href="/pelatihan/"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-colors"
+              >
+                <span>Katalog Lengkap Pelatihan dan Sertifikasi K3</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Cross-Links Hub -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-4">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Rekomendasi Program Terkait &amp; Panduan Keselamatan Kerja</h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+              <li>
+                <a href="/pelatihan-ahli-k3-umum/" class="text-blue-700 hover:text-blue-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Pembinaan Calon Ahli K3 Umum Kemnaker RI</span>
+                </a>
+              </li>
+              <li>
+                <a href="/pelatihan-k3-kebakaran/" class="text-blue-700 hover:text-blue-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Pelatihan K3 Penanggulangan Kebakaran Kelas D, C, B, A</span>
+                </a>
+              </li>
+              <li>
+                <a href="/panduan-penerapan-smk3/" class="text-blue-700 hover:text-blue-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Panduan Penerapan SMK3 di Tempat Kerja</span>
+                </a>
+              </li>
+              <li>
+                <a href="/alat-pelindung-diri/" class="text-blue-700 hover:text-blue-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Standar Penggunaan Alat Pelindung Diri (APD)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- Sidebar Column -->
       <aside class="lg:col-span-4 space-y-8 lg:sticky lg:top-32 self-start">
         <div class="bg-zinc-900 text-white rounded-3xl p-8 space-y-6 shadow-xl">
           <div class="space-y-2">
@@ -230,14 +686,19 @@ const canonical = "/pelatihan-k3-listrik/";
             </div>
           )}
 
-          <a href={waLink("Halo KonsultanK3, saya ingin mendaftar Pelatihan Teknisi & Ahli K3 Listrik Kemnaker RI")} target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg">
+          <a
+            href={waLink("Halo KonsultanK3, saya ingin mendaftar Pelatihan Teknisi & Ahli K3 Listrik Kemnaker RI")}
+            target="_blank"
+            rel="noopener"
+            class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg"
+          >
             <span>Daftar via WhatsApp Resmi</span>
             <span>&rarr;</span>
           </a>
         </div>
 
         <div class="p-6 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-3">
-          <span class="text-xs font-mono uppercase tracking-widest text-zinc-500 block">Jaminan Layanan</span>
+          <span class="text-xs font-mono uppercase tracking-widest text-zinc-500 block">Jaminan Kepatuhan</span>
           <p class="text-xs text-zinc-600 font-light leading-relaxed">
             Didukung oleh instruktur senior praktisi industri dengan sertifikasi resmi Kemnaker RI dan fasilitas uji komprehensif.
           </p>
@@ -246,6 +707,4 @@ const canonical = "/pelatihan-k3-listrik/";
 
     </div>
   </main>
-
-  
 </BaseLayout>

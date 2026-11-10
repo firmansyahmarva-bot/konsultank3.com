@@ -7,18 +7,14 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.join(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
 
-const htmlPath = fs.existsSync(path.join(distDir, 'pelatihan-k3-kebakaran', 'index.html'))
-  ? path.join(distDir, 'pelatihan-k3-kebakaran', 'index.html')
-  : path.join(rootDir, 'pelatihan-k3-kebakaran', 'index.html');
-
-console.log(`Checking service page: ${htmlPath}`);
-
-if (!fs.existsSync(htmlPath)) {
-  console.error(`❌ FAILED: File not found: ${htmlPath}`);
-  process.exit(1);
-}
-
-const html = fs.readFileSync(htmlPath, 'utf8');
+const servicePages = [
+  'pelatihan-k3-kebakaran',
+  'pelatihan-k3-listrik',
+  'pelatihan-ahli-k3-umum',
+  'pelatihan-k3-ruang-terbatas',
+  'pelatihan-pppa-popal',
+  'pelatihan-pppu-poippu'
+];
 
 function countWords(text) {
   return text
@@ -32,65 +28,91 @@ function countWords(text) {
     .length;
 }
 
-let hasErrors = false;
-
-// 1. Word count >= 1400
-const words = countWords(html);
-if (words < 1400) {
-  console.error(`❌ FAILED: Word count is ${words} (< 1400 words)`);
-  hasErrors = true;
-} else {
-  console.log(`✓ Word count: ${words} (>= 1400)`);
-}
-
-// 2. Required headings: "Dasar Hukum", "Alur Pelatihan dan Ujian", "Pertanyaan yang Sering Diajukan"
 const requiredHeadings = [
+  'Apa itu',
+  'Jenjang / Jenis Pelatihan',
   'Dasar Hukum',
+  'Silabus Pembelajaran',
   'Alur Pelatihan dan Ujian',
+  'Persyaratan Peserta',
   'Pertanyaan yang Sering Diajukan'
 ];
 
-for (const heading of requiredHeadings) {
-  const headingRegex = new RegExp(`<h[1-4][^>]*>[\\s\\S]*?${heading}[\\s\\S]*?<\\/h[1-4]>`, 'i');
-  if (!headingRegex.test(html) && !html.includes(heading)) {
-    console.error(`❌ FAILED: Missing heading "${heading}"`);
-    hasErrors = true;
+const forbiddenStrings = [
+  'Garansi',
+  'Kuota Terbatas',
+  'Batch Terdekat:',
+  '3 – 6 Hari',
+  '3 &ndash; 6 Hari',
+  '3 - 6 Hari'
+];
+
+let totalErrors = 0;
+
+for (const page of servicePages) {
+  console.log(`\n========================================`);
+  console.log(`Checking service page: ${page}`);
+  console.log(`========================================`);
+
+  const htmlPath = fs.existsSync(path.join(distDir, page, 'index.html'))
+    ? path.join(distDir, page, 'index.html')
+    : path.join(rootDir, page, 'index.html');
+
+  if (!fs.existsSync(htmlPath)) {
+    console.error(`❌ FAILED: File not found: ${htmlPath}`);
+    totalErrors++;
+    continue;
+  }
+
+  const html = fs.readFileSync(htmlPath, 'utf8');
+
+  // 1. Word count >= 1400
+  const words = countWords(html);
+  if (words < 1400) {
+    console.error(`❌ FAILED: Word count is ${words} (< 1400 words)`);
+    totalErrors++;
   } else {
-    console.log(`✓ Contains heading "${heading}"`);
+    console.log(`✓ Word count: ${words} (>= 1400)`);
+  }
+
+  // 2. Required headings
+  for (const heading of requiredHeadings) {
+    const headingRegex = new RegExp(`<h[1-4][^>]*>[\\s\\S]*?${heading.replace('/', '\\/')}[\\s\\S]*?<\\/h[1-4]>`, 'i');
+    if (!headingRegex.test(html) && !html.includes(heading)) {
+      console.error(`❌ FAILED: Missing heading "${heading}"`);
+      totalErrors++;
+    } else {
+      console.log(`✓ Contains heading "${heading}"`);
+    }
+  }
+
+  // 3. Has >= 7 FAQ questions
+  const faqItems = (html.match(/class=["'][^"']*faq-item[^"']*["']/gi) || []).length;
+  const faqH3s = (html.match(/<h3[^>]*>[\s\S]*?\?[\s\S]*?<\/h3>/gi) || []).length;
+  const faqCount = Math.max(faqItems, faqH3s);
+
+  if (faqCount < 7) {
+    console.error(`❌ FAILED: Found only ${faqCount} FAQ questions (< 7)`);
+    totalErrors++;
+  } else {
+    console.log(`✓ Contains ${faqCount} FAQ questions (>= 7)`);
+  }
+
+  // 4. Forbidden strings
+  for (const forbidden of forbiddenStrings) {
+    if (html.includes(forbidden)) {
+      console.error(`❌ FAILED: Contains forbidden string "${forbidden}"`);
+      totalErrors++;
+    } else {
+      console.log(`✓ Does not contain "${forbidden}"`);
+    }
   }
 }
 
-// 3. Has >= 7 FAQ questions
-const faqItems = (html.match(/class=["'][^"']*faq-item[^"']*["']/gi) || []).length;
-const faqH3s = (html.match(/<h3[^>]*>[\s\S]*?\?[\s\S]*?<\/h3>/gi) || []).length;
-const faqCount = Math.max(faqItems, faqH3s);
-
-if (faqCount < 7) {
-  console.error(`❌ FAILED: Found only ${faqCount} FAQ questions (< 7)`);
-  hasErrors = true;
-} else {
-  console.log(`✓ Contains ${faqCount} FAQ questions (>= 7)`);
-}
-
-// 4. Does not contain "3 – 6 Hari" or "Garansi 100%"
-if (html.includes('3 – 6 Hari') || html.includes('3 &ndash; 6 Hari') || html.includes('3 - 6 Hari')) {
-  console.error(`❌ FAILED: Contains forbidden string "3 – 6 Hari"`);
-  hasErrors = true;
-} else {
-  console.log(`✓ Does not contain "3 – 6 Hari"`);
-}
-
-if (html.includes('Garansi 100%')) {
-  console.error(`❌ FAILED: Contains forbidden string "Garansi 100%"`);
-  hasErrors = true;
-} else {
-  console.log(`✓ Does not contain "Garansi 100%"`);
-}
-
-if (hasErrors) {
-  console.error('\n❌ Service page checks FAILED!');
+if (totalErrors > 0) {
+  console.error(`\n❌ Service page checks FAILED with ${totalErrors} error(s)!`);
   process.exit(1);
 } else {
-  console.log('\n✓ All service page checks PASSED!');
+  console.log(`\n✓ All ${servicePages.length} service page checks PASSED!`);
   process.exit(0);
 }

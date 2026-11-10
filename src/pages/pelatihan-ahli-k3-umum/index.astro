@@ -1,16 +1,40 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { batches } from '../../data/batches.js';
-import { waLink } from '../../data/contact.js';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
 
 const batch = batches.ahliK3Umum;
 
 const title = "Pelatihan Ahli K3 Umum Kemnaker Bersertifikat";
-const description = "Program pembinaan sertifikasi calon Ahli K3 Umum resmi Kemnaker RI selama 12 hari (120 JP). Modul resmi, bimbingan PKL, dan lisensi SKP nasional.";
+const description = "Program pembinaan sertifikasi calon Ahli K3 Umum resmi Kemnaker RI. Pembekalan regulasi keselamatan kerja, audit SMK3, investigasi insiden, dan lisensi SKP.";
 const canonical = "/pelatihan-ahli-k3-umum/";
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Katalog Pelatihan", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "Ahli K3 Umum", "item": "https://konsultank3.com/pelatihan-ahli-k3-umum/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pembinaan & Sertifikasi Calon Ahli K3 Umum Kemnaker RI",
+      "description": "Program pembinaan kompetensi calon Ahli K3 Umum untuk pengawasan norma K3 dan penunjukan sekretaris P2K3 berlisensi resmi Kemnaker RI sesuai Permenaker No. 02/MEN/1992.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<BaseLayout title={title} description={description} canonical={canonical} schema={courseSchema}>
   <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
@@ -38,43 +62,43 @@ const canonical = "/pelatihan-ahli-k3-umum/";
           </h1>
 
           <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
-            Program wajib pemerintah 120 Jam Pelajaran (12 Hari) untuk mencetak personel pengawas kepatuhan norma K3 di tempat kerja dengan lisensi dan Surat Keputusan Penunjukan (SKP) resmi dari Kementerian Ketenagakerjaan RI.
+            Program strategis pemerintah untuk mencetak personel pengawas kepatuhan norma K3 di tempat kerja dengan lisensi dan Surat Keputusan Penunjukan (SKP) resmi dari Kementerian Ketenagakerjaan RI.
           </p>
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href={waLink("Halo KonsultanK3, saya ingin mendaftar pembinaan Ahli K3 Umum batch terdekat")}
+              href={waLink("Halo KonsultanK3, saya ingin konsultasi pembinaan Calon Ahli K3 Umum Kemnaker RI")}
               target="_blank"
               rel="noopener"
               class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
             >
-              Daftar Batch Terdekat &rarr;
+              Konsultasi WhatsApp Resmi &rarr;
             </a>
             <a
-              href="#modul-kurikulum"
+              href="#jenjang-pelatihan"
               class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
             >
-              Lihat Silabus 120 JP
+              Jenjang &amp; Kompetensi
             </a>
           </div>
 
-          <!-- Quick Fast-Track Key Info Bar -->
+          <!-- Quick Stats Bar -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi</span>
-              <p class="text-white font-bold text-sm">12 Hari (120 JP)</p>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Tingkatan</span>
+              <p class="text-white font-bold text-sm">Ahli K3 Umum</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
               <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Metode</span>
-              <p class="text-white font-bold text-sm">Blended / Zoom + PKL</p>
+              <p class="text-white font-bold text-sm">Teori, PKL &amp; Ujian</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
               <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Dokumen</span>
               <p class="text-white font-bold text-sm">SKP &amp; Lisensi Sah</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kelulusan</span>
-              <p class="text-emerald-400 font-bold text-sm">Garansi 100%</p>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kualifikasi</span>
+              <p class="text-emerald-400 font-bold text-sm">Sekretaris P2K3</p>
             </div>
           </div>
         </div>
@@ -94,7 +118,7 @@ const canonical = "/pelatihan-ahli-k3-umum/";
                 Mandatori Permenaker 02/1992
               </span>
               <div class="text-lg font-bold">Kualifikasi Sekretaris P2K3</div>
-              <p class="text-xs text-slate-300 mt-1">Wajib dimiliki perusahaan dengan tenaga kerja &gt;100 orang atau memiliki potensi bahaya tinggi.</p>
+              <p class="text-xs text-slate-300 mt-1">Wajib dimiliki perusahaan dengan tenaga kerja lebih dari 100 orang atau memiliki potensi bahaya tinggi.</p>
             </div>
           </div>
 
@@ -105,15 +129,15 @@ const canonical = "/pelatihan-ahli-k3-umum/";
             </div>
             <div>
               <div class="text-xs font-bold text-white">Lisensi SKP Kemnaker</div>
-              <div class="text-[10px] text-slate-400">Berlaku Nasional 3 Tahun</div>
+              <div class="text-[10px] text-slate-400">Pengawasan Norma K3</div>
             </div>
           </div>
 
           <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
-            <div class="text-xl">🏆</div>
+            <div class="text-xl">📋</div>
             <div>
-              <div class="text-xs font-bold text-white">Garansi Pembinaan</div>
-              <div class="text-[10px] text-slate-400">Pendampingan Ujian TemanK3</div>
+              <div class="text-xs font-bold text-white">Audit SMK3 Terstruktur</div>
+              <div class="text-[10px] text-slate-400">Sesuai PP 50/2012</div>
             </div>
           </div>
         </div>
@@ -124,117 +148,551 @@ const canonical = "/pelatihan-ahli-k3-umum/";
   </header>
 
   <!-- Main Subpage Body Layout -->
-  <main class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       
       <!-- Left Column: Rich Curriculum & Modules (8 cols) -->
-      <div class="lg:col-span-8 space-y-12">
+      <article class="lg:col-span-8 space-y-14 text-slate-800 leading-relaxed">
         
-        <!-- 4 Bento Feature Modules -->
-        <div id="modul-kurikulum" class="grid grid-cols-1 sm:grid-cols-2 gap-6 scroll-mt-24">
-          <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
-              01
-            </div>
-            <h3 class="font-serif text-2xl font-normal text-zinc-900">Perundang-undangan K3</h3>
-            <p class="text-zinc-600 font-light text-sm leading-relaxed">
-              Kajian mendalam UU No. 1/1970, kebijakan nasional ketenagakerjaan, kelembagaan P2K3, dan landasan hukum keselamatan operasional.
+        <!-- Section 1: Apa itu Pembinaan Calon Ahli K3 Umum -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Pengenalan Program</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Apa itu Pembinaan Calon Ahli K3 Umum</h2>
+          </div>
+          <p class="text-base sm:text-lg text-slate-700 font-light leading-relaxed">
+            Pembinaan Calon Ahli K3 Umum adalah program pendidikan dan pelatihan kualifikasi keahlian khusus yang diselenggarakan untuk mempersiapkan tenaga ahli profesional yang memiliki kewenangan hukum dalam mengawasi ditaatinya peraturan perundang-undangan keselamatan dan kesehatan kerja di tempat kerja. Program ini membekali peserta dengan penguasaan norma pengawasan ketenagakerjaan, identifikasi potensi bahaya industri, teknik audit internal sistem manajemen K3, serta kemampuan menyusun rekomendasi mitigasi risiko kerja bagi pimpinan manajemen perusahaan.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Tingginya angka kecelakaan kerja, penyakit akibat kerja, serta kerugian finansial akibat kerusakan aset operasional menuntut kehadiran personel yang menguasai regulasi keselamatan secara komprehensif. Personel Ahli K3 Umum bertindak sebagai tangan kanan manajemen sekaligus perpanjangan tangan pengawas ketenagakerjaan pemerintah dalam memastikan tempat kerja memenuhi standar keselamatan lingkungan, keandalan permesinan mekanik, pesawat uap, instalasi listrik, serta kesiapsiagaan tanggap darurat kebakaran.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Kewajiban penunjukan Ahli K3 Umum ditetapkan secara mandatori melalui Permenaker No. 02/MEN/1992 tentang Tata Cara Penunjukan, Kewajiban dan Wewenang Ahli Keselamatan dan Kesehatan Kerja. Peraturan ini mengamanatkan bahwa perusahaan yang mempekerjakan tenaga kerja sebanyak 100 orang atau lebih, atau perusahaan dengan potensi bahaya tinggi (high risk), wajib membentuk Panitia Pembina Keselamatan dan Kesehatan Kerja (P2K3) di mana posisi Sekretaris P2K3 wajib dijabat oleh Ahli K3 Umum yang memiliki Surat Keputusan Penunjukan (SKP) dan Kartu Lisensi resmi dari Kementerian Ketenagakerjaan RI.
+          </p>
+          <div class="p-6 rounded-2xl bg-amber-500/5 border border-amber-500/20 space-y-3">
+            <h3 class="text-base font-bold text-amber-900">Siapa Saja yang Membutuhkan Pelatihan Ini?</h3>
+            <p class="text-sm text-slate-700 font-light leading-relaxed">
+              Program pembinaan Ahli K3 Umum merupakan kebutuhan wajib bagi berbagai profil profesional dan sektor usaha, antara lain:
             </p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700 font-light">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Calon Sekretaris P2K3 Perusahaan:</strong> Tenaga kerja yang ditunjuk manajemen untuk memimpin kelembagaan keselamatan kerja internal.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Manajer HSE &amp; Supervisor K3:</strong> Bertanggung jawab atas perancangan kebijakan K3, audit SMK3, dan kepatuhan perizinan norma kerja.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Industri Manufaktur, Tambang, Migas &amp; Kimia:</strong> Sektor dengan intensitas risiko tinggi yang membutuhkan pengawasan norma ketat.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Perusahaan Konstruksi &amp; Kontraktor Infrastruktur:</strong> Mengelola keselamatan proyek pembangunan gedung, jembatan, dan instalasi mekanikal.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Rumah Sakit, Perhotelan &amp; Fasilitas Publik:</strong> Mengamankan keselamatan pasien, staf medis, tamu, serta fasilitas sarana gedung.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Lulusan Perguruan Tinggi (Fresh Graduate):</strong> Membangun keunggulan karir profesional di bidang Keselamatan dan Kesehatan Kerja nasional.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 2: Jenjang / Jenis Pelatihan -->
+        <section id="jenjang-pelatihan" class="space-y-6 scroll-mt-24">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Klasifikasi &amp; Tingkatan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Jenjang / Jenis Pelatihan</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Pembinaan Calon Ahli K3 Umum diselenggarakan secara spesifik untuk membentuk tenaga ahli kepengawasan norma keselamatan lintas sektor industri dengan rincian skema kompetensi pada tabel berikut:
+          </p>
+
+          <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+            <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+              <thead class="bg-slate-900 text-white text-xs uppercase font-semibold">
+                <tr>
+                  <th class="py-4 px-4 sm:px-6">Jenjang / Jenis</th>
+                  <th class="py-4 px-4 sm:px-6">Peran</th>
+                  <th class="py-4 px-4 sm:px-6">Tugas utama</th>
+                  <th class="py-4 px-4 sm:px-6">Materi kunci</th>
+                  <th class="py-4 px-4 sm:px-6">Persyaratan</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 font-mono">Calon Ahli K3 Umum</td>
+                  <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800">Sekretaris P2K3 &amp; Pengawas Norma K3</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Memimpin rapat P2K3, menyusun laporan triwulan kepatuhan K3 ke Disnaker, mengaudit implementasi SMK3, dan memimpin investigasi kecelakaan kerja</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Kebijakan nasional K3, norma mekanik, pesawat uap &amp; bejana tekan, instalasi listrik &amp; petir, proteksi kebakaran, konstruksi, lingkungan kerja, audit SMK3, analisis insiden &amp; JSA, Praktik Kerja Lapangan (PKL)</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-800 font-semibold">Minimal Diploma 3 (D3) atau Sarjana (S1) semua jurusan</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
-              02
+          <p class="text-sm text-slate-600 font-light leading-relaxed">
+            Kualifikasi Calon Ahli K3 Umum merupakan sertifikasi payung yang memberikan mandat kepengawasan menyeluruh. Pemegang SKP Ahli K3 Umum memiliki hak untuk memasuki tempat kerja guna memeriksa kesesuaian instalasi permesinan, meminta keterangan kepada pengurus mengenai pelaksanaan K3, serta mengusulkan tindakan pencegahan bahaya yang mengikat bagi manajemen perusahaan demi keselamatan seluruh pekerja.
+          </p>
+        </section>
+
+        <!-- Section 3: Dasar Hukum -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Landasan Regulasi</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Dasar Hukum</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Penyelenggaraan program pembinaan Calon Ahli K3 Umum dan kewajiban penunjukan personel ahli di perusahaan bertumpu pada ketentuan peraturan perundang-undangan nasional yang berkekuatan hukum tetap, meliputi:
+          </p>
+
+          <div class="space-y-4">
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">UU No. 1 Tahun 1970 tentang Keselamatan Kerja</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Undang-Undang Keselamatan Kerja merupakan landasan konstitusional perlindungan tenaga kerja di Indonesia. Pada Pasal 1 ayat (6) dan Pasal 10 diatur secara tegas ketentuan mengenai penunjukan ahli keselamatan kerja serta kewajiban pembentukan Panitia Pembina Keselamatan dan Kesehatan Kerja (P2K3) di tempat kerja guna mengembangkan kerja sama, saling pengertian, dan partisipasi efektif antara pengusaha dan pekerja.
+              </p>
             </div>
-            <h3 class="font-serif text-2xl font-normal text-zinc-900">Keahlian Bidang Teknis</h3>
-            <p class="text-zinc-600 font-light text-sm leading-relaxed">
-              Norma K3 mekanik, pesawat uap &amp; bejana tekan, instalasi listrik, penanggulangan kebakaran, konstruksi, dan kesehatan kerja.
-            </p>
-          </div>
 
-          <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
-              03
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">Permenaker No. 02/MEN/1992 tentang Tata Cara Penunjukan, Kewajiban dan Wewenang Ahli Keselamatan dan Kesehatan Kerja</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Peraturan ini menetapkan tata cara penunjukan resmi Ahli K3 oleh Menteri Ketenagakerjaan RI, persyaratan administrasi calon peserta, serta kewajiban dan wewenang hukum yang melekat pada pemegang lisensi. Regulasi ini menegaskan bahwa perusahaan dengan jumlah pekerja di atas 100 orang atau memiliki potensi bahaya tinggi wajib memiliki sekurang-kurangnya satu orang Ahli K3 Umum sebagai sekretaris P2K3.
+              </p>
             </div>
-            <h3 class="font-serif text-2xl font-normal text-zinc-900">Praktik Lapangan (PKL)</h3>
-            <p class="text-zinc-600 font-light text-sm leading-relaxed">
-              Observasi lapangan langsung di fasilitas industri, identifikasi bahaya faktual, dan penyusunan kertas kerja laporan audit K3.
-            </p>
-          </div>
 
-          <div class="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 font-mono font-semibold">
-              04
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">PP No. 50 Tahun 2012 tentang Penerapan Sistem Manajemen Keselamatan dan Kesehatan Kerja (SMK3)</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Peraturan Pemerintah ini mewajibkan setiap perusahaan yang mempekerjakan lebih dari 100 orang atau memiliki tingkat potensi bahaya tinggi untuk menerapkan SMK3 yang terintegrasi dengan sistem manajemen perusahaan. Peraturan ini memuat pedoman penetapan kebijakan, perencanaan, pelaksanaan, pemantauan, serta audit berkala SMK3 yang harus dikawal oleh personel ahli K3 kompeten.
+              </p>
             </div>
-            <h3 class="font-serif text-2xl font-normal text-zinc-900">Ujian &amp; Evaluasi Akhir</h3>
-            <p class="text-zinc-600 font-light text-sm leading-relaxed">
-              Evaluasi teori komprehensif dari Pengawas Ditjen Binwasnaker Kemnaker RI, seminar PKL, dan verifikasi berkas lisensi.
-            </p>
-          </div>
-        </div>
 
-        <!-- Detailed Syllabus Breakdown Accordion / Sections -->
-        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-zinc-200/80 shadow-sm space-y-8">
-          <div class="border-b border-zinc-200 pb-6">
-            <span class="text-xs font-mono uppercase tracking-widest text-zinc-400 block mb-1">Materi Pembinaan</span>
-            <h2 class="font-serif text-3xl font-normal text-zinc-900">Struktur Kurikulum 120 Jam Pelajaran (JP)</h2>
-          </div>
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">Permenaker No. 12 Tahun 2015 &amp; Permenaker No. 31 Tahun 2015 tentang K3 Kelistrikan dan Penyalur Petir</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Rangkaian regulasi ini memuat standar teknis pengawasan keselamatan instalasi ketenagalistrikan dan instalasi proteksi penyalur petir pada bangunan tempat kerja. Mengatur ketentuan perencanaan, pemasangan, pemeliharaan, serta pemeriksaan dan pengujian berkala terhadap panel daya, resistansi grounding pembumian, dan instalasi penangkal petir guna mencegah bahaya kebakaran dan sengatan listrik fatal.
+              </p>
+            </div>
 
-          <div class="space-y-6">
-            <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/60 space-y-3">
-              <h4 class="font-serif text-xl font-normal text-zinc-900">A. Kelompok Dasar (10 JP)</h4>
-              <ul class="list-disc pl-6 space-y-1.5 text-zinc-600 text-sm font-light">
-                <li>Kebijakan Nasional K3 &amp; Pengawasan Ketenagakerjaan</li>
-                <li>Undang-Undang No. 1 Tahun 1970 tentang Keselamatan Kerja</li>
-                <li>Kelembagaan, Panitia Pembina K3 (P2K3), dan Perusahaan Jasa K3 (PJK3)</li>
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">Kepmenaker No. KEP.186/MEN/1999 tentang Unit Penanggulangan Kebakaran di Tempat Kerja</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Keputusan ini mewajibkan pengusaha membentuk unit penanggulangan kebakaran di tempat kerja sesuai klasifikasi tingkat risiko kebakaran fasilitas. Menetapkan peran penugasan personel proteksi kebakaran mulai dari petugas peran, regu pemadam, hingga koordinator unit, serta mengatur standar penyediaan alat pemadam api ringan (APAR) dan instalasi hidran gedung.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Silabus Pembelajaran -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Materi Kurikulum</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Silabus Pembelajaran</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Kurikulum pembinaan Ahli K3 Umum disusun secara terstruktur mengacu pada modul kurikulum resmi Direktorat Bina Pengawasan Ketenagakerjaan Kemnaker RI, mencakup kelompok dasar, kelompok keahlian teknis, serta praktik kerja lapangan:
+          </p>
+
+          <div class="space-y-5">
+            <!-- Topic 1 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-700 font-mono text-xs flex items-center justify-center font-bold">01</span>
+                Kebijakan Nasional K3 &amp; Kelembagaan
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Materi pokok ini mengkaji arah kebijakan nasional keselamatan kerja dan sistem pengawasan ketenagakerjaan di Indonesia berdasarkan UU No. 1 Tahun 1970. Peserta mempelajari pembentukan dan tata kelola Panitia Pembina Keselamatan dan Kesehatan Kerja (P2K3) di perusahaan serta mekanisme kemitraan bersama Perusahaan Jasa K3 (PJK3). Modul ini menekankan hak, kewajiban, dan tanggung jawab hukum pengusaha maupun tenaga kerja dalam mewujudkan nihil kecelakaan kerja.
+              </p>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-700 font-mono text-xs flex items-center justify-center font-bold">02</span>
+                Sistem Manajemen K3 (SMK3) Sesuai PP No. 50 Tahun 2012 &amp; Audit SMK3
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Modul ini mendalami lima prinsip dasar penerapan SMK3 yang mencakup penetapan kebijakan, perencanaan, pelaksanaan rencana, pemantauan dan evaluasi kinerja K3, serta peninjauan dan peningkatan kinerja manajemen. Peserta dibekali pemahaman mendalam mengenai pedoman audit SMK3, interpretasi 166 kriteria audit, teknik pengumpulan bukti kepatuhan, serta penyusunan laporan audit internal. Pembahasan ini membekali peserta untuk mempersiapkan perusahaan menghadapi audit sertifikasi SMK3 eksternal.
+              </p>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-700 font-mono text-xs flex items-center justify-center font-bold">03</span>
+                Norma K3 Pesawat Uap, Bejana Tekan, &amp; Tangki Timbun
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Topik ini membahas potensi bahaya ledakan dan pelepasan fluida bertekanan tinggi pada boiler industri, kompresor angin, bejana penyimpanan gas, serta tangki timbun bahan kimia. Peserta mempelajari regulasi pengawasan teknis instalasi uap, fungsi katup pengaman (safety valve), manometer tekanan, dan kaca penduga air. Materi menekankan pentingnya pemeriksaan berkala, uji hidrostatis, dan surat keterangan kelaikan operasi (suker) dari instansi pengawas ketenagakerjaan.
+              </p>
+            </div>
+
+            <!-- Topic 4 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-700 font-mono text-xs flex items-center justify-center font-bold">04</span>
+                Norma K3 Pesawat Angkat &amp; Angkut (PAA)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Modul ini membedah kelaikan operasional peralatan angkat dan angkut seperti overhead crane, mobile crane, forklift, dan elevator lift barang di area industri. Peserta mempelajari batas beban kerja aman (Safe Working Load / SWL), inspeksi fisik tali kawat baja (wire rope) dari keausan atau putus kawat, serta kelengkapan rem pengaman. Pembahasan juga mencakup kewajiban lisensi operator (SIO) dan sertifikat pengujian alat guna mencegah bahaya tertimpa beban jatuh atau alat terguling.
+              </p>
+            </div>
+
+            <!-- Topic 5 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-700 font-mono text-xs flex items-center justify-center font-bold">05</span>
+                Norma K3 Kelistrikan &amp; Penyalur Petir (Permenaker 12/2015 &amp; 31/2015)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Materi ini mengupas pengawasan keselamatan instalasi daya listrik industri dan proteksi bahaya petir sesuai Permenaker No. 12 Tahun 2015 dan Permenaker No. 31 Tahun 2015. Peserta mempelajari pencegahan bahaya arus hubung singkat, sengatan listrik, serta penerapan pembumian grounding dengan tahanan di bawah 5 Ohm. Dipelajari pula inspeksi instalasi penyalur petir elektrostatis maupun konvensional guna mengamankan struktur gedung dari sambaran petir langsung.
+              </p>
+            </div>
+
+            <!-- Topic 6 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-700 font-mono text-xs flex items-center justify-center font-bold">06</span>
+                Norma K3 Penanggulangan Kebakaran (Kepmenaker 186/1999)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Topik ini mengkaji klasifikasi potensi bahaya kebakaran tempat kerja dan pembentukan unit tanggap darurat kebakaran sesuai Kepmenaker No. KEP.186/MEN/1999. Peserta mempelajari prinsip kerja sistem proteksi aktif seperti instalasi alarm deteksi asap, tabung APAR berbagai media pemadam, jaringan hidran gedung, serta sistem sprinkler otomatis. Modul ini membekali peserta dalam merancang skenario evakuasi darurat, jalur penyelamatan, dan titik kumpul yang aman.
+              </p>
+            </div>
+
+            <!-- Topic 7 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-700 font-mono text-xs flex items-center justify-center font-bold">07</span>
+                Norma K3 Konstruksi Bangunan &amp; Bekerja di Ketinggian
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Pembahasan materi ini menitikberatkan pada mitigasi risiko pada pekerjaan konstruksi sipil, pembongkaran, galian tanah, serta aktivitas bekerja di ketinggian lebih dari 1,8 meter. Peserta mempelajari inspeksi perancah (scaffolding), pemasangan jaring pengaman (safety net), penggunaan full body harness terhubung ke lifeline penahan jatuh, serta prosedur izin kerja risiko tinggi (Work Permit). Pengetahuan ini esensial guna mencegah fatalitas akibat insiden terjatuh dari ketinggian.
+              </p>
+            </div>
+
+            <!-- Topic 8 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-700 font-mono text-xs flex items-center justify-center font-bold">08</span>
+                Norma Kesehatan Kerja, Ergonomi, &amp; Toksikologi Industri
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Modul ini membedah faktor-faktor bahaya lingkungan kerja yang mempengaruhi kesehatan pekerja, mencakup faktor fisik (kebisingan, getaran, iklim kerja), faktor kimia (debu, uap pelarut, gas beracun), serta faktor biologis. Peserta dilatih menerapkan prinsip ergonomi gerakan kerja guna mencegah keluhan muskuloskeletal, memahami pemeriksaan kesehatan tenaga kerja (awal, berkala, khusus), serta mengelola fasilitas Pertolongan Pertama Pada Kecelakaan (P3K) di tempat kerja.
+              </p>
+            </div>
+
+            <!-- Topic 9 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-700 font-mono text-xs flex items-center justify-center font-bold">09</span>
+                Analisis Kecelakaan Kerja, JSA, &amp; Investigasi Insiden
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Kelompok materi ini memberikan metodologi praktis dalam menyusun Job Safety Analysis (JSA) untuk mengidentifikasi bahaya di setiap tahapan langkah kerja sebelum aktivitas dimulai. Peserta dibekali keahlian investigasi insiden menggunakan metode analisis akar penyebab (root cause analysis) guna menemukan tindakan tidak aman (unsafe act) dan kondisi tidak aman (unsafe condition). Hasil investigasi dituangkan ke dalam format laporan kecelakaan resmi untuk pelaporan ke instansi ketenagakerjaan dan pencegahan kejadian berulang.
+              </p>
+            </div>
+
+            <!-- Topic 10 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-700 font-mono text-xs flex items-center justify-center font-bold">10</span>
+                Praktik Kerja Lapangan (PKL), Seminar &amp; Ujian Evaluasi
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Peserta melaksanakan observasi langsung ke fasilitas pabrik industri untuk melakukan audit inspeksi norma keselamatan kerja secara faktual. Hasil temuan di lapangan disusun menjadi kertas kerja laporan komprehensif yang diseminarkan di hadapan tim penguji. Rangkaian pembinaan diakhiri dengan ujian evaluasi teori tertulis yang diawasi langsung oleh pejabat pengawas Ditjen Binwasnaker Kemnaker RI untuk menentukan kelayakan penetapan Surat Keputusan Penunjukan.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: Alur Pelatihan dan Ujian -->
+        <section id="alur-pelatihan" class="space-y-6 scroll-mt-24">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Tahapan Penyelenggaraan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Alur Pelatihan dan Ujian</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Penyelenggaraan pembinaan dan sertifikasi Calon Ahli K3 Umum dilaksanakan melalui tahapan baku sesuai petunjuk teknis Kementerian Ketenagakerjaan RI:
+          </p>
+
+          <div class="relative border-l-2 border-amber-500/30 pl-6 ml-3 space-y-8">
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">1. Pendaftaran</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Calon peserta atau manajemen perusahaan melakukan registrasi resmi, mengisikan profil lengkap, serta memilih jadwal angkatan pembinaan yang diselenggarakan.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">2. Verifikasi Berkas</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Pemeriksaan keabsahan dokumen administratif calon peserta oleh tim verifikator, meliputi ijazah minimal D3/S1 legalisir, surat rekomendasi/tugas dari perusahaan, salinan KTP, serta pas foto latar merah sesuai standar Kemnaker RI.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">3. Teori</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Penyampaian materi instruksional interaktif mengenai kebijakan nasional K3, regulasi ketenagakerjaan, norma teknis keselamatan permesinan, listrik, kebakaran, lingkungan kerja, serta audit SMK3 bersama instruktur senior dan pengawas ketenagakerjaan.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">4. Praktik Lapangan (PKL)</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Pelaksanaan observasi lapangan langsung di fasilitas industri untuk mengidentifikasi bahaya faktual, memeriksa kelaikan instalasi mekanik-elektrikal, serta menyusun kertas kerja laporan hasil audit inspeksi K3 secara berkelompok.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">5. Ujian &amp; Seminar</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Pelaksanaan seminar presentasi laporan PKL di hadapan penguji serta ujian evaluasi komprehensif teori tertulis yang diawasi langsung oleh Pengawas Ketenagakerjaan Ditjen Binwasnaker Kemnaker RI.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">6. Penerbitan Sertifikat &amp; SKP</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Kementerian Ketenagakerjaan RI menerbitkan Sertifikat Pembinaan Calon Ahli K3 Umum, Surat Keputusan Penunjukan (SKP) resmi dari Menteri Ketenagakerjaan, serta Kartu Lisensi Kewenangan Ahli K3 bagi peserta yang dinyatakan lulus evaluasi.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6: Persyaratan Peserta -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Administrasi Kepesertaan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Persyaratan Peserta</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Berdasarkan ketentuan Permenaker No. 02/MEN/1992 dan petunjuk teknis pengawasan ketenagakerjaan, calon peserta pembinaan Calon Ahli K3 Umum wajib memenuhi persyaratan latar belakang pendidikan serta melengkapi berkas administrasi berikut:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 class="text-base font-bold text-slate-900">Kualifikasi Pendidikan Minimal</h3>
+              <ul class="space-y-2.5 text-sm text-slate-700 font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span><strong>Tingkat Pendidikan:</strong> Pendidikan minimal Diploma 3 (D3) atau Sarjana (S1) semua jurusan, baik latar belakang teknik maupun non-teknik.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span><strong>Status Peserta:</strong> Terbuka untuk utusan instansi perusahaan yang dipersiapkan menjadi Sekretaris P2K3 maupun peserta mandiri (fresh graduate / pencari karir).</span>
+                </li>
               </ul>
             </div>
 
-            <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/60 space-y-3">
-              <h4 class="font-serif text-xl font-normal text-zinc-900">B. Kelompok Keahlian &amp; Teknis (80 JP)</h4>
-              <ul class="list-disc pl-6 space-y-1.5 text-zinc-600 text-sm font-light">
-                <li>Sistem Manajemen K3 (SMK3) sesuai PP No. 50 Tahun 2012 &amp; Audit SMK3</li>
-                <li>Norma K3 Pesawat Uap, Bejana Tekan, &amp; Tangki Timbun</li>
-                <li>Norma K3 Pesawat Angkat &amp; Angkut (PAA)</li>
-                <li>Norma K3 Kelistrikan &amp; Penyalur Petir (Permenaker 12/2015 &amp; 31/2015)</li>
-                <li>Norma K3 Penanggulangan Kebakaran (Kepmenaker 186/1999)</li>
-                <li>Norma K3 Konstruksi Bangunan &amp; Bekerja di Ketinggian</li>
-                <li>Norma Kesehatan Kerja, Ergonomi, &amp; Toksikologi Industri</li>
-                <li>Metodologi Analisis Kecelakaan Kerja, JSA, dan Laporan Investigasi Insiden</li>
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 class="text-base font-bold text-slate-900">Kelengkapan Berkas Administrasi</h3>
+              <p class="text-xs text-slate-600 font-light leading-relaxed">
+                Dokumen yang wajib dipersiapkan untuk proses validasi dan penerbitan lisensi resmi:
+              </p>
+              <ul class="space-y-2 text-xs text-slate-700 font-light">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                  <span>Salinan ijazah terakhir minimal D3/S1 yang telah dilegalisir</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                  <span>Salinan Kartu Tanda Penduduk (KTP) yang masih aktif</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                  <span>Surat penugasan atau surat rekomendasi dari instansi perusahaan pengutus</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                  <span>Pas foto berwarna terbaru dengan latar belakang merah</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                  <span>Surat keterangan sehat jasmani dari dokter pemeriksa</span>
+                </li>
               </ul>
-            </div>
-
-            <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/60 space-y-3">
-              <h4 class="font-serif text-xl font-normal text-zinc-900">C. Praktik Kerja Lapangan &amp; Evaluasi (30 JP)</h4>
-              <ul class="list-disc pl-6 space-y-1.5 text-zinc-600 text-sm font-light">
-                <li>Studi Kasus &amp; Praktik Observasi Lapangan di Pabrik/Fasilitas Industri</li>
-                <li>Penyusunan Kertas Kerja &amp; Laporan Hasil Praktik Kerja Lapangan (PKL)</li>
-                <li>Seminar &amp; Presentasi Laporan di Hadapan Pengawas Kemnaker RI</li>
-                <li>Ujian Teori Evaluasi Akhir Kemnaker RI</li>
-              </ul>
+              <div class="pt-2 border-t border-slate-100 text-xs font-semibold text-amber-700">
+                Catatan: daftar final dikonfirmasi saat pendaftaran.
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- Requirements & Prerequisites Card -->
-        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-zinc-200/80 shadow-sm space-y-6">
-          <div class="border-b border-zinc-200 pb-4">
-            <span class="text-xs font-mono uppercase tracking-widest text-zinc-400 block mb-1">Persyaratan Calon Peserta</span>
-            <h3 class="font-serif text-2xl font-normal text-zinc-900">Kelayakan Administrasi Pendaftaran</h3>
+        <!-- Section 7: Pertanyaan yang Sering Diajukan -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Pusat Informasi</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Pertanyaan yang Sering Diajukan</h2>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/60 space-y-2">
-              <span class="text-xs font-mono uppercase text-zinc-500 font-bold block">Tingkat Pendidikan Minimal</span>
-              <p class="text-zinc-800 text-sm leading-relaxed">Pendidikan minimal Diploma 3 (D3) atau Sarjana (S1) semua jurusan (teknik maupun non-teknik).</p>
-            </div>
-            <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/60 space-y-2">
-              <span class="text-xs font-mono uppercase text-zinc-500 font-bold block">Dokumen Wajib</span>
-              <p class="text-zinc-800 text-sm leading-relaxed">Salinan ijazah legalisir, KTP, pas foto latar merah (2x3, 3x4, 4x6), dan surat rekomendasi instansi.</p>
-            </div>
-          </div>
-        </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Berikut adalah rangkuman tanya jawab resmi seputar pembinaan, dasar regulasi, dan lisensi Calon Ahli K3 Umum:
+          </p>
 
-      </div>
+          <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Mengapa perusahaan diwajibkan memiliki Ahli K3 Umum berlisensi Kemnaker RI?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Berdasarkan ketentuan Permenaker No. 02/MEN/1992, setiap tempat kerja yang mempekerjakan 100 orang atau lebih, atau memiliki potensi bahaya tinggi, diwajibkan memiliki Ahli K3 Umum sebagai sekretaris Panitia Pembina Keselamatan dan Kesehatan Kerja (P2K3). Keberadaan Ahli K3 Umum memastikan pengawasan norma keselamatan kerja berjalan efektif, meminimalkan kecelakaan kerja, dan memenuhi kepatuhan regulasi ketenagakerjaan.
+              </p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apa perbedaan antara Sertifikat Pembinaan Calon Ahli K3 Umum dengan SKP dan Kartu Lisensi?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Sertifikat Pembinaan diberikan kepada peserta yang telah menyelesaikan seluruh materi dan lulus ujian evaluasi sebagai bukti kompetensi pribadi. Sedangkan Surat Keputusan Penunjukan (SKP) dan Kartu Lisensi Kewenangan diterbitkan oleh Menteri Ketenagakerjaan RI kepada tenaga kerja yang diajukan oleh perusahaan tempat bekerja untuk melaksanakan kewenangan pengawasan norma K3 di perusahaan tersebut.
+              </p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apakah lulusan sarjana non-teknik dapat mengikuti pembinaan Ahli K3 Umum?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Ya, peserta dengan latar belakang pendidikan minimal Diploma 3 (D3) atau Sarjana (S1) dari semua jurusan, baik rumpun ilmu teknik maupun non-teknik (seperti hukum, manajemen, kesehatan masyarakat, atau ekonomi), dapat mendaftar pembinaan Calon Ahli K3 Umum karena seluruh materi norma keselamatan diajarkan secara terstruktur dari tingkat dasar.
+              </p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Materi teknis apa saja yang dipelajari selama rangkaian pembinaan?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Materi yang dipelajari mencakup kebijakan nasional K3, Sistem Manajemen K3 sesuai PP No. 50 Tahun 2012 beserta audit SMK3, norma pesawat uap dan bejana tekan, pesawat angkat dan angkut, kelistrikan dan penyalur petir, penanggulangan kebakaran, konstruksi bangunan dan bekerja di ketinggian, kesehatan kerja dan ergonomi, hingga analisis kecelakaan kerja dan JSA.
+              </p>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Bagaimana bentuk pelaksanaan Praktik Kerja Lapangan (PKL) dalam pembinaan ini?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Peserta melakukan observasi lapangan langsung ke perusahaan atau fasilitas industri untuk memeriksa penerapan norma-norma K3 secara nyata. Hasil observasi tersebut dituangkan ke dalam format laporan audit kelompok yang kemudian diseminarkan di hadapan penguji dan Pengawas Ketenagakerjaan Kemnaker RI.
+              </p>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Bagaimana tahapan alur pembinaan dari pendaftaran hingga diterbitkannya SKP resmi?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Tahapan diawali dari registrasi pendaftaran peserta, validasi berkas administrasi pendidikan dan surat tugas perusahaan, penyampaian modul teori instruksional, pelaksanaan Praktik Kerja Lapangan (PKL), seminar presentasi laporan, ujian evaluasi teori tertulis bersama Kemnaker RI, hingga proses penerbitan sertifikat pembinaan dan SKP lisensi resmi.
+              </p>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Berkas apa saja yang wajib dilengkapi calon peserta pada saat pendaftaran?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Berkas administratif yang dipersiapkan mencakup salinan ijazah minimal D3/S1 legalisir, salinan Kartu Tanda Penduduk (KTP), surat rekomendasi atau surat tugas penunjukan dari perusahaan, pas foto berlatar belakang merah, dan surat keterangan sehat dari dokter, dengan daftar final dikonfirmasi saat pendaftaran.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 8: Strategic Cross-Links & WhatsApp CTA Block -->
+        <section class="space-y-6 pt-4 border-t border-slate-200">
+          <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950 text-white space-y-6 shadow-xl">
+            <div class="space-y-2">
+              <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-semibold block">Konsultasi Kepatuhan &amp; Pelatihan K3</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Lengkapi Kualifikasi Sekretaris P2K3 Perusahaan Anda</h3>
+              <p class="text-sm text-slate-300 font-light leading-relaxed max-w-2xl">
+                Dapatkan informasi silabus pembinaan, jadwal batch resmi, dan konsultasi kebutuhan penunjukan Ahli K3 Umum berlisensi Kemnaker RI. Hubungi tim konsultan kami via WhatsApp di <strong>{WA_DISPLAY}</strong>.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <a
+                href={waLink("Halo KonsultanK3, saya ingin info pendaftaran Pembinaan Calon Ahli K3 Umum Kemnaker RI")}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-transform hover:scale-105"
+              >
+                <span>Hubungi via WhatsApp</span>
+                <span>&rarr;</span>
+              </a>
+              <a
+                href="/pelatihan/"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-colors"
+              >
+                <span>Katalog Lengkap Pelatihan dan Sertifikasi K3</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Cross-Links Hub -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-4">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Rekomendasi Program Terkait &amp; Panduan Keselamatan Kerja</h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+              <li>
+                <a href="/pelatihan-k3-kebakaran/" class="text-amber-700 hover:text-amber-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Pelatihan K3 Penanggulangan Kebakaran Kelas D, C, B, A</span>
+                </a>
+              </li>
+              <li>
+                <a href="/pelatihan-k3-listrik/" class="text-amber-700 hover:text-amber-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Pelatihan Teknisi &amp; Ahli K3 Listrik Industri</span>
+                </a>
+              </li>
+              <li>
+                <a href="/panduan-penerapan-smk3/" class="text-amber-700 hover:text-amber-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Panduan Penerapan SMK3 di Tempat Kerja</span>
+                </a>
+              </li>
+              <li>
+                <a href="/alat-pelindung-diri/" class="text-amber-700 hover:text-amber-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Standar Penggunaan Alat Pelindung Diri (APD)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+      </article>
 
       <!-- Right Column: Conversion Sidebar (4 cols) -->
       <aside class="lg:col-span-4 space-y-8 lg:sticky lg:top-32 self-start">
@@ -245,7 +703,7 @@ const canonical = "/pelatihan-ahli-k3-umum/";
             <span class="text-xs font-mono uppercase tracking-widest text-zinc-400">Pendaftaran Batch Resmi</span>
             <h3 class="font-serif text-2xl font-normal text-white">Amankan Kursi Pembinaan Anda</h3>
             <p class="text-xs font-mono text-zinc-400 leading-relaxed">
-              Kuota dibatasi 30 peserta per batch sesuai regulasi pengawasan ketenagakerjaan RI untuk menjamin kualitas bimbingan PKL.
+              Daftar sekarang untuk mendapatkan silabus lengkap, penawaran korporasi, dan kepastian kuota batch resmi Kemnaker RI.
             </p>
           </div>
 
@@ -266,7 +724,7 @@ const canonical = "/pelatihan-ahli-k3-umum/";
             </div>
           )}
 
-          <a href={waLink("Halo KonsultanK3, saya ingin mendaftar Pelatihan Ahli K3 Umum Batch Terdekat")} target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg">
+          <a href={waLink("Halo KonsultanK3, saya ingin mendaftar Pelatihan Ahli K3 Umum Kemnaker RI")} target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg">
             <span>Daftar via WhatsApp Resmi</span>
             <span>&rarr;</span>
           </a>
@@ -290,20 +748,20 @@ const canonical = "/pelatihan-ahli-k3-umum/";
             </li>
             <li class="flex items-center gap-2">
               <span class="text-emerald-600 font-bold">&check;</span>
-              <span>Modul Eksklusif &amp; Kompilasi UU K3 Lengkap</span>
+              <span>Modul Komprehensif &amp; Kompilasi UU K3 Lengkap</span>
             </li>
             <li class="flex items-center gap-2">
               <span class="text-emerald-600 font-bold">&check;</span>
-              <span>Pin Kewenangan K3 &amp; Seminar Kit Eksklusif</span>
+              <span>Bimbingan Penyusunan Laporan Praktik Kerja Lapangan</span>
             </li>
           </ul>
         </div>
 
         <!-- Official Accreditation Seal -->
         <div class="p-6 rounded-3xl bg-zinc-50 border border-zinc-200/80 space-y-2">
-          <span class="text-[0.65rem] font-mono uppercase tracking-wider text-zinc-500 block">Akreditasi &amp; Legalitas</span>
+          <span class="text-[0.65rem] font-mono uppercase tracking-wider text-zinc-500 block">Jaminan Kepatuhan</span>
           <p class="text-xs text-zinc-600 font-light leading-relaxed">
-            Diselenggarakan bersama PJK3 mitra berlisensi Kemnaker RI dengan nomor SKP aktif dan terdaftar di LPSE Nasional.
+            Didukung oleh instruktur senior praktisi industri dengan sertifikasi resmi Kemnaker RI dan fasilitas uji komprehensif.
           </p>
         </div>
 
@@ -311,6 +769,4 @@ const canonical = "/pelatihan-ahli-k3-umum/";
 
     </div>
   </main>
-
-  
 </BaseLayout>

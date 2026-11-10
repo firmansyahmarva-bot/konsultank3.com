@@ -1,30 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { waLink } from '../../data/contact.js';
+import { batches } from '../../data/batches.js';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
 
-const units = [
-  { code: 'E.370000.001.01', title: 'Mengidentifikasi Sumber Pencemaran Air Limbah', desc: 'Pemetaan neraca air industri, titik buang (outfall), debit influen-efluen, dan karakteristik air limbah.' },
-  { code: 'E.370000.002.01', title: 'Menentukan Karakteristik Sumber Pencemaran Air Limbah', desc: 'Analisis parameter kunci COD, BOD, TSS, minyak lemak, pH, dan logam berat sesuai baku mutu Permen LHK.' },
-  { code: 'E.370000.003.01', title: 'Menilai Tingkat Pencemaran Air Limbah', desc: 'Kalkulasi beban pencemaran air limbah harian dan kepatuhan baku mutu terhadap izin pembuangan air limbah (IPLC).' },
-  { code: 'E.370000.004.01', title: 'Melakukan Pengolahan Air Limbah (Fisika, Kimia & Biologi)', desc: 'Pengendalian unit operasi koagulasi-flokulasi, sedimentasi, aerasi lumpur aktif (activated sludge), dan filtrasi.' },
-  { code: 'E.370000.007.01', title: 'Melakukan Perawatan Instalasi Pengolahan Air Limbah (IPAL)', desc: 'Pembersihan bar screen, kalibrasi sensor pH/DO meter online, perawatan pompa submersible, dan blower aerasi.' },
-  { code: 'E.370000.009.01', title: 'Mengidentifikasi Bahaya & Tanggap Darurat di IPAL', desc: 'Mitigasi gas H2S beracun di bak ekualisasi, tumpahan bahan kimia PAC/polimer, dan prosedur keselamatan ruang terbatas.' }
-];
+const batch = batches.pppa;
 
-const faqs = [
-  {
-    q: 'Apa perbedaan skema PPPA dan POPAL dalam sertifikasi BNSP?',
-    a: 'PPPA (Penanggung Jawab Pengendalian Pencemaran Air) ditujukan bagi level manajerial, supervisor lingkungan, atau kepala departemen HSE yang bertanggung jawab atas perencanaan, perizinan, dan kepatuhan regulasi lingkungan. Sedangkan POPAL (Penanggung Jawab Operasional Pengolahan Air Limbah) ditujukan bagi operator teknis yang mengoperasikan unit IPAL sehari-hari di lapangan.'
-  },
-  {
-    q: 'Apakah sertifikat yang diterbitkan resmi berlogo Garuda BNSP?',
-    a: 'Ya, seluruh asesmen kompetensi diselenggarakan oleh Lembaga Sertifikasi Profesi (LSP) terakreditasi Badan Nasional Sertifikasi Profesi (BNSP) dengan sertifikat kompetensi berlogo Garuda Emas yang diakui secara nasional di Indonesia.'
-  },
-  {
-    q: 'Apa saja berkas persyaratan portofolio yang perlu disiapkan peserta?',
-    a: 'Peserta perlu menyiapkan salinan ijazah, KTP, CV/riwayat kerja, surat rekomendasi/penugasan perusahaan, foto operasional di unit IPAL, SOP pengolahan air limbah, dan hasil uji laboratorium efluen berkala (LHU).'
-  }
-];
+const title = "Sertifikasi BNSP PPPA & POPAL Air Limbah";
+const description = "Pelatihan & sertifikasi resmi BNSP PPPA dan POPAL Operasional IPAL sesuai SKKNI 187/2016. Pembekalan intensif, bimbingan portofolio, dan uji kompetensi.";
+const canonical = "/pelatihan-pppa-popal/";
 
 const courseSchema = {
   "@context": "https://schema.org",
@@ -40,7 +23,7 @@ const courseSchema = {
     {
       "@type": "Course",
       "name": "Pelatihan dan Sertifikasi BNSP PPPA & POPAL Air Limbah Industri",
-      "description": "Sertifikasi kompetensi resmi BNSP untuk Penanggung Jawab Pengendalian Pencemaran Air (PPPA) dan Operasional IPAL (POPAL) sesuai SKKNI No. 187 Tahun 2016.",
+      "description": "Sertifikasi kompetensi resmi BNSP untuk Penanggung Jawab Pengendalian Pencemaran Air (PPPA) dan Penanggung Jawab Operasional IPAL (POPAL) sesuai SKKNI No. 187 Tahun 2016.",
       "provider": {
         "@type": "Organization",
         "name": "Konsultan K3 Indonesia",
@@ -51,13 +34,7 @@ const courseSchema = {
 };
 ---
 
-<BaseLayout
-  title="Sertifikasi BNSP PPPA & POPAL Air Limbah"
-  description="Pelatihan & sertifikasi resmi BNSP PPPA dan POPAL (Operasional IPAL) sesuai SKKNI 187/2016. Pembekalan intensif & bimbingan pra-uji."
-  canonical="/pelatihan-pppa-popal/"
-  schema={courseSchema}
-  presetMessage="Halo KonsultanK3, saya ingin konsultasi pendaftaran sertifikasi BNSP PPPA / POPAL air limbah."
->
+<BaseLayout title={title} description={description} canonical={canonical} schema={courseSchema}>
   <!-- Hero Section -->
   <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
@@ -90,38 +67,38 @@ const courseSchema = {
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href={waLink("Halo KonsultanK3, saya ingin info jadwal dan biaya sertifikasi BNSP PPPA POPAL")}
+              href={waLink("Halo KonsultanK3, saya ingin konsultasi Sertifikasi BNSP PPPA dan POPAL Air Limbah")}
               target="_blank"
               rel="noopener"
               class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105"
             >
-              Daftar Batch Terdekat &rarr;
+              Konsultasi WhatsApp Resmi &rarr;
             </a>
             <a
-              href="#unit-kompetensi"
+              href="#jenjang-pelatihan"
               class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
             >
-              Lihat Unit Kompetensi
+              Skema PPPA &amp; POPAL
             </a>
           </div>
 
           <!-- Quick Stats Bar -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi</span>
-              <p class="text-white font-bold text-sm">3 Hari (Bimtek + Uji)</p>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Skema</span>
+              <p class="text-white font-bold text-sm">PPPA &amp; POPAL</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Metode</span>
-              <p class="text-white font-bold text-sm">Online / Hybrid</p>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Standar</span>
+              <p class="text-white font-bold text-sm">SKKNI 187/2016</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Sertifikat</span>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Dokumen</span>
               <p class="text-white font-bold text-sm">Garuda Emas BNSP</p>
             </div>
             <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Masa Berlaku</span>
-              <p class="text-emerald-400 font-bold text-sm">3 Tahun Nasional</p>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kualifikasi</span>
+              <p class="text-emerald-400 font-bold text-sm">LSP Lingkungan</p>
             </div>
           </div>
         </div>
@@ -174,114 +151,567 @@ const courseSchema = {
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       
-      <div class="lg:col-span-8 space-y-12">
+      <!-- Article Content Column -->
+      <article class="lg:col-span-8 space-y-14 text-slate-800 leading-relaxed">
         
-        <!-- Overview Card -->
-        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
-          <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900">
-            Mengapa Personel IPAL Wajib Bersertifikat BNSP?
-          </h2>
-          <p class="text-base text-slate-700 leading-relaxed font-sans">
-            Berdasarkan Peraturan Menteri Lingkungan Hidup dan Kehutanan (Permen LHK) dan ketentuan penilaian PROPER, industri manufaktur, tekstil, makanan-minuman, farmasi, rumah sakit, dan kelapa sawit diwajibkan memiliki personel yang kompeten dan tersertifikasi dalam mengoperasikan unit pengolahan air limbah (IPAL). Sertifikasi BNSP menjamin personel memiliki keterampilan teruji dalam menjaga air efluen tidak mencemari badan air umum.
+        <!-- Section 1: Apa itu Sertifikasi BNSP PPPA & POPAL -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Pengenalan Program</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Apa itu Sertifikasi BNSP PPPA &amp; POPAL</h2>
+          </div>
+          <p class="text-base sm:text-lg text-slate-700 font-light leading-relaxed">
+            Sertifikasi BNSP PPPA dan POPAL adalah program sertifikasi kompetensi profesi resmi berskala nasional yang diselenggarakan melalui Lembaga Sertifikasi Profesi (LSP) terlisensi Badan Nasional Sertifikasi Profesi (BNSP) guna memberikan pengakuan formal atas keterampilan, pengetahuan, serta sikap kerja personel penanggung jawab pengendalian pencemaran air dan operator Instalasi Pengolahan Air Limbah (IPAL) di fasilitas industri. Sertifikat kompetensi yang diterbitkan berlambang Garuda Emas dan diakui secara legal di seluruh wilayah Negara Kesatuan Republik Indonesia.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Pengelolaan air limbah industri merupakan instrumen penting dalam menjaga kelestarian ekosistem perairan dan mematuhi baku mutu lingkungan hidup. Buangan air limbah cair yang tidak memenuhi standar baku mutu dapat menyebabkan pencemaran sungai, penurunan kualitas air tanah, sanksi administratif penghentian operasional pabrik, hingga tuntutan pidana lingkungan. Keberadaan personel pengelola air limbah yang kompeten menjamin unit operasi fisik, kimia, dan biologi di IPAL berjalan stabil dan efisien dalam mendegradasi polutan berbahaya.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Kewajiban kepemilikan personel bersertifikat kompetensi pengelolaan air limbah dipersyaratkan oleh regulasi Kementerian Lingkungan Hidup dan Kehutanan (KLHK) serta menjadi indikator penilaian mutlak dalam Program Penilaian Peringkat Kinerja Perusahaan dalam Pengelolaan Lingkungan Hidup (PROPER). Skema ini mengacu pada Standar Kompetensi Kerja Nasional Indonesia (SKKNI) No. 187 Tahun 2016 bidang Pengelolaan Limbah Industri, memastikan industri memiliki penanggung jawab manajerial dan operator teknis yang andal.
+          </p>
+          <div class="p-6 rounded-2xl bg-amber-500/5 border border-amber-500/20 space-y-3">
+            <h3 class="text-base font-bold text-amber-900">Siapa Saja yang Membutuhkan Sertifikasi Ini?</h3>
+            <p class="text-sm text-slate-700 font-light leading-relaxed">
+              Sertifikasi profesi air limbah ini ditujukan bagi industri penghasil air buangan proses dan limbah domestik terpadu, antara lain:
+            </p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700 font-light">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Manajer Lingkungan &amp; HSE:</strong> Penanggung jawab penyusunan dokumen persetujuan teknis (Pertek), neraca air, dan pemenuhan baku mutu IPLC.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Operator &amp; Teknisi IPAL Lapangan:</strong> Bertugas mengoperasikan bak ekualisasi, aerator lumpur aktif, dosing bahan kimia, dan filtrasi.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Pabrik Tekstil, Makanan-Minuman &amp; Sawit:</strong> Industri dengan beban pencemaran organik BOD, COD, dan minyak lemak tinggi.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Industri Farmasi &amp; Kimia:</strong> Fasilitas dengan karakteristik limbah bahan kimia kompleks dan logam berat berbahaya.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Rumah Sakit &amp; Fasilitas Pelayanan Medis:</strong> Pengelolaan air buangan medis infeksius dan instalasi desinfeksi efluen.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 font-bold mt-0.5">&bull;</span>
+                <span><strong>Pengelola Kawasan Industri:</strong> Operator Centralized Effluent Treatment Plant (CETP) kawasan industri terpadu.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 2: Jenjang / Jenis Pelatihan -->
+        <section id="jenjang-pelatihan" class="space-y-6 scroll-mt-24">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Klasifikasi &amp; Tingkatan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Jenjang / Jenis Pelatihan</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Sertifikasi BNSP bidang air limbah industri diklasifikasikan ke dalam dua skema kompetensi utama yang membedakan jenjang manajerial perencanaan dengan jenjang operasional lapangan:
           </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue-700 block mb-1">Skema PPPA (Manajerial)</span>
-              <p class="text-xs text-slate-600 leading-relaxed">Fokus pada perencanaan strategis pengolahan air limbah, pemantauan debit &amp; beban pencemaran, koordinasi laboratorium eksternal, dan pelaporan perizinan lingkungan.</p>
-            </div>
-            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-              <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">Skema POPAL (Operasional)</span>
-              <p class="text-xs text-slate-600 leading-relaxed">Fokus pada pengoperasian pompa, bak sedimentasi, aerator, dosing kimia koagulan (PAC/tawas/polimer), pengecekan sludge volume (SV30), dan pemeliharaan alat.</p>
-            </div>
+          <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+            <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+              <thead class="bg-slate-900 text-white text-xs uppercase font-semibold">
+                <tr>
+                  <th class="py-4 px-4 sm:px-6">Jenjang / Skema</th>
+                  <th class="py-4 px-4 sm:px-6">Peran</th>
+                  <th class="py-4 px-4 sm:px-6">Tugas utama</th>
+                  <th class="py-4 px-4 sm:px-6">Materi kunci</th>
+                  <th class="py-4 px-4 sm:px-6">Persyaratan</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 font-mono">PPPA</td>
+                  <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800">Penanggung Jawab Pengendalian Pencemaran Air (Tingkat Manajerial)</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Perencanaan strategis pengolahan air limbah, pemantauan debit &amp; beban pencemaran, perizinan lingkungan, koordinasi uji laboratorium eksternal, dan pelaporan PROPER KLHK</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Identifikasi sumber dan karakteristik air limbah, penilaian tingkat pencemaran, kalkulasi beban pencemaran harian terhadap baku mutu, evaluasi efisiensi IPAL, pelaporan lingkungan</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-800 font-semibold">Pendidikan relevan atau pengalaman kerja terbukti di bidang pengelolaan lingkungan air limbah</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 font-mono">POPAL</td>
+                  <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800">Penanggung Jawab Operasional Pengolahan Air Limbah (Tingkat Operasional)</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Pengoperasian peralatan fisik, kimia, dan biologi di unit IPAL, dosing bahan kimia koagulan/flokulan, pemantauan lumpur aktif SV30, dan pemeliharaan mesin</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-600 font-light">Pengendalian proses koagulasi-flokulasi, sedimentasi, lumpur aktif (activated sludge), pembersihan bar screen, kalibrasi sensor pH/DO meter, mitigasi bahaya H2S &amp; tanggap darurat IPAL</td>
+                  <td class="py-4 px-4 sm:px-6 text-slate-800 font-semibold">Pendidikan relevan atau pengalaman operasional unit IPAL di fasilitas industri</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
 
-        <!-- Unit Kompetensi SKKNI -->
-        <div id="unit-kompetensi" class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6 scroll-mt-24">
-          <h3 class="text-2xl font-bold font-serif text-slate-900">
-            Daftar Unit Kompetensi SKKNI No. 187 Tahun 2016
-          </h3>
-          
+          <p class="text-sm text-slate-600 font-light leading-relaxed">
+            Kedua skema ini menjamin tata kelola instalasi pengolahan air limbah terpadu. Pemegang sertifikasi PPPA memimpin perumusan strategi, memantau ketaatan baku mutu efluen sebelum dibuang ke badan air penerima, dan menyusun laporan perizinan. Sementara itu, pemegang sertifikasi POPAL memastikan bahwa pompa submersible, blower aerasi, dan takaran bahan kimia koagulan di lapangan beroperasi dengan optimal tanpa henti.
+          </p>
+        </section>
+
+        <!-- Section 3: Dasar Hukum -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Landasan Regulasi</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Dasar Hukum</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Penyelenggaraan sertifikasi profesi kompetensi air limbah berpijak pada landasan hukum ketenagakerjaan dan ketentuan lingkungan hidup yang berlaku secara nasional:
+          </p>
+
           <div class="space-y-4">
-            {units.map((u, idx) => (
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div class="space-y-1">
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs font-mono font-bold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-md">{u.code}</span>
-                    <span class="text-xs font-bold text-slate-500">Unit {idx + 1}</span>
-                  </div>
-                  <h4 class="font-bold text-slate-900 text-base">{u.title}</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">{u.desc}</p>
-                </div>
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">UU No. 1 Tahun 1970 tentang Keselamatan Kerja</h3>
               </div>
-            ))}
-          </div>
-        </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Undang-Undang Keselamatan Kerja merupakan payung hukum utama yang mewajibkan pencegahan dan pengendalian faktor bahaya lingkungan di tempat kerja. Pada Pasal 3 ayat (1) huruf k diamanatkan kewajiban memelihara kebersihan, kesehatan, dan ketertiban di lingkungan kerja, termasuk pengendalian pembuangan air kotor dan limbah cair agar tidak menimbulkan bahaya kesehatan bagi tenaga kerja dan masyarakat sekitar.
+              </p>
+            </div>
 
-        <!-- FAQs -->
-        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
-          <h3 class="text-2xl font-bold font-serif text-slate-900">
-            Pertanyaan Umum Seputar Uji BNSP
-          </h3>
-          
-          <div class="space-y-3">
-            {faqs.map(f => (
-              <details class="group p-4 rounded-2xl bg-slate-50 border border-slate-200 [&_summary::-webkit-details-marker]:hidden">
-                <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm">
-                  <span>{f.q}</span>
-                  <span class="ml-2 text-slate-400 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p class="mt-3 text-xs text-slate-600 leading-relaxed pt-2 border-t border-slate-200">
-                  {f.a}
-                </p>
-              </details>
-            ))}
-          </div>
-        </div>
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">SKKNI No. 187 Tahun 2016 tentang Pengelolaan Limbah Industri</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Standar Kompetensi Kerja Nasional Indonesia yang ditetapkan oleh Menteri Ketenagakerjaan RI sebagai rujukan baku kompetensi profesi di bidang pengelolaan limbah industri. Standar ini memuat unit-unit kompetensi inti yang harus dikuasai personel air limbah mulai dari identifikasi sumber buangan, karakterisasi polutan, pengendalian unit operasi IPAL, pemeliharaan alat, hingga prosedur tanggap darurat tumpahan kimia dan gas beracun.
+              </p>
+            </div>
 
-      </div>
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <h3 class="text-base font-bold text-slate-900">Ketentuan Baku Mutu Permen LHK dan Penilaian PROPER KLHK</h3>
+              </div>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Regulasi teknis Kementerian Lingkungan Hidup dan Kehutanan yang menetapkan batas kadar maksimum polutan air limbah yang boleh dialirkan ke badan air permukaan untuk masing-masing sektor industri. Peraturan ini diintegrasikan ke dalam mekanisme penilaian PROPER yang mewajibkan kepemilikan personel bersertifikat kompetensi resmi sebagai bukti pemenuhan ketaatan hukum lingkungan hidup.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Silabus Pembelajaran -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Materi Kurikulum</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Silabus Pembelajaran</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Kurikulum pembekalan disusun secara sistematis mengacu pada daftar unit kompetensi SKKNI No. 187 Tahun 2016, mempersiapkan peserta dalam penguasaan teknis operasional dan kelengkapan portofolio uji:
+          </p>
+
+          <div class="space-y-5">
+            <!-- Topic 1 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-700 font-mono text-xs flex items-center justify-center font-bold">01</span>
+                Mengidentifikasi Sumber Pencemaran Air Limbah (Unit E.370000.001.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Unit kompetensi ini membekali peserta dengan keterampilan melakukan pemetaan neraca air industri secara menyeluruh dari titik penggunaan hingga saluran buang. Peserta mempelajari penentuan titik buang (outfall), pengukuran debit influen dan efluen, serta identifikasi proses produksi yang menghasilkan beban cemaran cair. Pemahaman ini krusial dalam menyusun strategi reduksi air limbah langsung dari sumber proses.
+              </p>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-700 font-mono text-xs flex items-center justify-center font-bold">02</span>
+                Menentukan Karakteristik Sumber Pencemaran Air Limbah (Unit E.370000.002.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Modul ini mendalami analisis parameter kunci kualitas air buangan industri sesuai baku mutu Permen LHK. Peserta mempelajari parameter organik seperti Chemical Oxygen Demand (COD) dan Biochemical Oxygen Demand (BOD), padatan tersuspensi (Total Suspended Solids / TSS), kandungan minyak dan lemak, derajat keasaman (pH), serta cemaran logam berat. Penguasaan karakterisasi ini menentukan pemilihan teknologi pengolahan limbah yang tepat sasaran.
+              </p>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-700 font-mono text-xs flex items-center justify-center font-bold">03</span>
+                Menilai Tingkat Pencemaran Air Limbah (Unit E.370000.003.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Topik ini membahas kalkulasi beban pencemaran air limbah harian, bulanan, dan tahunan berdasarkan volume debit dan konsentrasi polutan. Peserta mengevaluasi kepatuhan beban buangan terhadap dokumen izin pembuangan air limbah (IPLC) atau Persetujuan Teknis (Pertek). Pembahasan mencakup perbandingan kinerja efluen terhadap standar lingkungan hidup guna mencegah terjadinya pelanggaran baku mutu.
+              </p>
+            </div>
+
+            <!-- Topic 4 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-700 font-mono text-xs flex items-center justify-center font-bold">04</span>
+                Melakukan Pengolahan Air Limbah Fisika, Kimia &amp; Biologi (Unit E.370000.004.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Peserta mempelajari operasional pengolahan limbah secara terpadu melalui tahapan pengolahan fisik (screening dan sedimentasi), kimiawi (koagulasi dan flokulasi dengan PAC/tawas dan polimer), serta biologi menggunakan proses lumpur aktif (activated sludge). Dilatih pula pengendalian parameter operasional lumpur aktif seperti dissolved oxygen (DO), rasio nutrisi F/M, dan pengendapan lumpur Sludge Volume 30 menit (SV30).
+              </p>
+            </div>
+
+            <!-- Topic 5 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-700 font-mono text-xs flex items-center justify-center font-bold">05</span>
+                Melakukan Perawatan Instalasi Pengolahan Air Limbah / IPAL (Unit E.370000.007.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Modul ini menitikberatkan pada prosedur pemeliharaan preventif sarana mekanikal dan elektrikal IPAL. Peserta dibekali teknik pembersihan saringan kasar (bar screen), kalibrasi sensor pH meter dan DO meter online secara berkala, pemeriksaan getaran pompa celup (submersible pump), serta sistem pelumasan mesin blower aerasi. Perawatan berkala menjamin kontinuitas operasi pengolahan air limbah tanpa hambatan teknis.
+              </p>
+            </div>
+
+            <!-- Topic 6 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-700 font-mono text-xs flex items-center justify-center font-bold">06</span>
+                Mengidentifikasi Bahaya &amp; Tanggap Darurat di IPAL (Unit E.370000.009.01)
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Topik ini berfokus pada mitigasi bahaya K3 di lingkungan fasilitas IPAL, seperti bahaya gas beracun hidrogen sulfida (H2S) yang terbentuk di bak ekualisasi dan bak pengendap lumpur anaerobik. Peserta dilatih menangani insiden tumpahan bahan kimia koagulan berbahaya, prosedur kerja selamat di ruang terbatas (confined space), serta penggunaan alat pelindung diri pernapasan dan pelampung penyelamat air.
+              </p>
+            </div>
+
+            <!-- Topic 7 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-700 font-mono text-xs flex items-center justify-center font-bold">07</span>
+                Bimbingan Teknis Portofolio Asesmen BNSP
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Sesi pendampingan intensif bagi peserta dalam menginventarisasi dan menyusun dokumen bukti kerja (portofolio) sesuai skema uji BNSP. Peserta dibimbing melengkapi dokumen SOP operasional IPAL, logbook pencatatan debit harian, foto kegiatan operasional di lapangan, serta Laporan Hasil Uji (LHU) laboratorium lingkungan. Bimbingan ini memastikan seluruh bukti kompetensi memenuhi prinsip Valid, Asli, Terkini, dan Memadai (VATM).
+              </p>
+            </div>
+
+            <!-- Topic 8 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-700 font-mono text-xs flex items-center justify-center font-bold">08</span>
+                Pelaksanaan Uji Kompetensi Asesor LSP BNSP
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Tahap asesmen kompetensi yang dilaksanakan secara objektif oleh Asesor Kompetensi berlisensi resmi BNSP dari Lembaga Sertifikasi Profesi (LSP) terakreditasi. Uji kompetensi meliputi verifikasi portofolio dokumen kerja, ujian tulis pemahaman unit kompetensi, serta wawancara teknis mendalam. Peserta yang dinyatakan kompeten berhak direkomendasikan untuk menerima sertifikat profesi berlogo Garuda Emas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: Alur Pelatihan dan Ujian -->
+        <section id="alur-pelatihan" class="space-y-6 scroll-mt-24">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Tahapan Penyelenggaraan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Alur Pelatihan dan Ujian</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Pelaksanaan pembekalan dan asesmen uji kompetensi BNSP ditempuh melalui alur tahapan terstruktur sebagai berikut:
+          </p>
+
+          <div class="relative border-l-2 border-emerald-500/30 pl-6 ml-3 space-y-8">
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">1. Pendaftaran</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Calon peserta melakukan registrasi pendaftaran resmi, menentukan skema sertifikasi yang dipilih (skema manajerial PPPA atau operasional POPAL), dan mengisi formulir aplikasi asesmen APL-01.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">2. Verifikasi Berkas</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Tim asesor melakukan penilaian mandiri APL-02 dan memverifikasi kelayakan berkas persyaratan dasar, meliputi ijazah, surat penugasan kerja perusahaan, riwayat hidup (CV), serta dokumen bukti pengalaman kerja.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">3. Teori</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Penyampaian pembekalan materi instruksional terfokus mengenai unit-unit kompetensi SKKNI No. 187 Tahun 2016, regulasi baku mutu lingkungan KLHK, teknologi pengolahan air buangan, dan mitigasi bahaya kimia.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">4. Praktik &amp; Pemantapan Portofolio</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Simulasi pemecahan studi kasus lapangan di instalasi IPAL dan pendampingan penyusunan dokumen portofolio kerja autentik (logbook debit, formulir pemeliharaan mesin, laporan hasil uji lab, dan SOP tertulis).
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">5. Ujian &amp; Asesmen Asesor</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Pelaksanaan asesmen kompetensi resmi yang diuji langsung oleh Asesor Lembaga Sertifikasi Profesi (LSP) BNSP, meliputi evaluasi tertulis dan wawancara klarifikasi portofolio secara mendalam.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow"></div>
+              <h3 class="text-base font-bold text-slate-900">6. Penerbitan Sertifikat</h3>
+              <p class="text-sm text-slate-600 font-light mt-1 leading-relaxed">
+                Bagi asesi yang direkomendasikan Kompeten (K) oleh tim asesor, Badan Nasional Sertifikasi Profesi (BNSP) menerbitkan Sertifikat Kompetensi resmi berlogo Garuda Emas yang diakui secara nasional.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6: Persyaratan Peserta -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Administrasi Kepesertaan</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Persyaratan Peserta</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Untuk mengikuti asesmen sertifikasi BNSP skema PPPA dan POPAL, calon peserta wajib melengkapi dokumen administratif serta bukti portofolio kerja operasional di unit pengolahan air limbah:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 class="text-base font-bold text-slate-900">Dokumen Dasar Kepesertaan</h3>
+              <ul class="space-y-2.5 text-sm text-slate-700 font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span>Salinan ijazah pendidikan terakhir sesuai kualifikasi skema yang dipilih.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span>Salinan Kartu Tanda Penduduk (KTP) yang masih aktif.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span>Daftar Riwayat Hidup (Curriculum Vitae / CV) terbaru yang relevan.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span>Surat penugasan atau surat rekomendasi bekerja dari instansi perusahaan.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">&check;</span>
+                  <span>Pas foto berwarna terbaru dengan latar belakang merah.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 class="text-base font-bold text-slate-900">Bukti Portofolio Kerja Lapangan</h3>
+              <p class="text-xs text-slate-600 font-light leading-relaxed">
+                Dokumen bukti unjuk kerja autentik di fasilitas IPAL tempat bekerja:
+              </p>
+              <ul class="space-y-2 text-xs text-slate-700 font-light">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>Foto dokumentasi kegiatan operasional di unit instalasi IPAL</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>Salinan Standar Operasional Prosedur (SOP) pengolahan air limbah</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>Laporan Hasil Uji (LHU) laboratorium lingkungan terhadap kualitas efluen</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>Salinan logbook pencatatan debit harian dan pemakaian bahan kimia</span>
+                </li>
+              </ul>
+              <div class="pt-2 border-t border-slate-100 text-xs font-semibold text-emerald-700">
+                Catatan: daftar final dikonfirmasi saat pendaftaran.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 7: Pertanyaan yang Sering Diajukan -->
+        <section class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block mb-1">Pusat Informasi</span>
+            <h2 class="font-serif text-3xl font-bold text-slate-900 tracking-tight">Pertanyaan yang Sering Diajukan</h2>
+          </div>
+          <p class="text-base text-slate-700 leading-relaxed font-light">
+            Berikut adalah rangkuman tanya jawab resmi seputar asesmen kompetensi BNSP PPPA &amp; POPAL:
+          </p>
+
+          <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apa perbedaan skema PPPA dan POPAL dalam sertifikasi BNSP?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                PPPA (Penanggung Jawab Pengendalian Pencemaran Air) ditujukan bagi level manajerial, supervisor lingkungan, atau kepala departemen HSE yang bertanggung jawab atas perencanaan strategis, neraca air, kepatuhan baku mutu perizinan IPLC/Pertek, dan pelaporan PROPER KLHK. Sedangkan POPAL (Penanggung Jawab Operasional Pengolahan Air Limbah) ditujukan bagi teknisi dan operator yang mengoperasikan mesin pompa, aerator lumpur aktif, dosing bahan kimia, dan perawatan fisik unit IPAL harian di lapangan.
+              </p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apakah sertifikat yang diterbitkan resmi berlogo Garuda BNSP?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Ya, seluruh pelaksanaan uji kompetensi diselenggarakan melalui Lembaga Sertifikasi Profesi (LSP) terakreditasi Badan Nasional Sertifikasi Profesi (BNSP). Sertifikat kompetensi yang diterbitkan memiliki lambang Garuda Emas resmi yang diakui secara nasional sebagai bukti kualifikasi kompetensi profesi di Indonesia.
+              </p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Apa saja berkas persyaratan portofolio yang perlu disiapkan peserta?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Peserta perlu menyiapkan salinan ijazah terakhir, KTP, Curriculum Vitae (CV), surat rekomendasi/penugasan perusahaan, foto kegiatan operasional di unit IPAL, dokumen SOP pengolahan air limbah, rekaman pencatatan logbook debit, dan Laporan Hasil Uji (LHU) laboratorium lingkungan terhadap kualitas air buangan, dengan daftar final dikonfirmasi saat pendaftaran.
+              </p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Mengapa perusahaan industri wajib memiliki personel IPAL bersertifikasi BNSP?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Berdasarkan ketentuan regulasi Kementerian LHK dan kriteria pemenuhan PROPER, setiap industri penghasil air limbah wajib membuktikan bahwa sistem pengolahan limbah cairnya dikelola oleh personel yang teruji kompetensinya. Sertifikasi BNSP menjamin bahwa pengolahan air limbah dilakukan secara profesional untuk mencegah sanksi hukum pencemaran lingkungan.
+              </p>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Unit pengolahan air limbah apa saja yang dipelajari dalam skema ini?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Materi pembekalan mencakup seluruh spektrum pengolahan IPAL, meliputi pengolahan fisik (saringan bar screen dan bak sedimentasi), pengolahan kimia (koagulasi dan flokulasi menggunakan tawas, PAC, dan polimer), pengolahan biologi lumpur aktif (activated sludge), sistem desinfeksi efluen, pengeringan lumpur (sludge dewatering), serta perawatan pompa dan blower.
+              </p>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Bagaimana metode asesmen uji kompetensi dilaksanakan oleh asesor?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Asesmen kompetensi dilaksanakan oleh Asesor LSP BNSP melalui metode verifikasi bukti portofolio kerja autentik (VATM), ujian tertulis penguasaan konsep unit kompetensi SKKNI, serta wawancara teknis mendalam guna memvalidasi bahwa asesi benar-benar memiliki pengalaman praktis dan kompeten menjalankan tugasnya.
+              </p>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                Bagaimana alur penyelenggaraan mulai dari bimbingan teknis hingga penerbitan sertifikat?
+              </h3>
+              <p class="text-sm text-slate-600 font-light leading-relaxed">
+                Alur penyelenggaraan dimulai dari pendaftaran aplikasi asesmen, verifikasi berkas administrasi dan pra-asesmen APL-02, penyampaian teori pembekalan materi SKKNI No. 187 Tahun 2016, pemantapan bukti dokumen portofolio kerja, pelaksanaan asesmen uji tulis dan wawancara oleh Asesor BNSP, hingga penerbitan sertifikat resmi berlogo Garuda Emas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 8: Strategic Cross-Links & WhatsApp CTA Block -->
+        <section class="space-y-6 pt-4 border-t border-slate-200">
+          <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-teal-950 text-white space-y-6 shadow-xl">
+            <div class="space-y-2">
+              <span class="text-xs font-mono uppercase tracking-widest text-teal-400 font-semibold block">Konsultasi Kepatuhan &amp; Pelatihan K3</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Wujudkan Pengelolaan Air Limbah Industri Sesuai Standar PROPER</h3>
+              <p class="text-sm text-slate-300 font-light leading-relaxed max-w-2xl">
+                Dapatkan informasi silabus pembinaan, jadwal batch resmi, dan konsultasi sertifikasi BNSP PPPA &amp; POPAL untuk staf industri Anda. Hubungi tim konsultan kami via WhatsApp di <strong>{WA_DISPLAY}</strong>.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <a
+                href={waLink("Halo KonsultanK3, saya ingin info pendaftaran sertifikasi BNSP PPPA dan POPAL")}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-transform hover:scale-105"
+              >
+                <span>Hubungi via WhatsApp</span>
+                <span>&rarr;</span>
+              </a>
+              <a
+                href="/pelatihan/"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-colors"
+              >
+                <span>Katalog Lengkap Pelatihan dan Sertifikasi K3</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Cross-Links Hub -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-4">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Rekomendasi Program Terkait &amp; Panduan Lingkungan Kerja</h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+              <li>
+                <a href="/pelatihan-pppu-poippu/" class="text-teal-700 hover:text-teal-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Sertifikasi BNSP PPPU &amp; POIPPU Emisi Udara Industri</span>
+                </a>
+              </li>
+              <li>
+                <a href="/panduan-penerapan-smk3/" class="text-teal-700 hover:text-teal-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Panduan Penerapan SMK3 di Tempat Kerja</span>
+                </a>
+              </li>
+              <li>
+                <a href="/pelatihan-ahli-k3-umum/" class="text-teal-700 hover:text-teal-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Pembinaan Calon Ahli K3 Umum Kemnaker RI</span>
+                </a>
+              </li>
+              <li>
+                <a href="/alat-pelindung-diri/" class="text-teal-700 hover:text-teal-600 font-medium hover:underline flex items-center gap-1.5">
+                  <span>&rarr;</span>
+                  <span>Standar Penggunaan Alat Pelindung Diri (APD)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+      </article>
 
       <!-- Sticky Sidebar -->
-      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
-        
-        <div class="p-6 rounded-3xl bg-slate-900 text-white space-y-4 shadow-xl">
-          <div class="text-xs font-bold uppercase tracking-wider text-amber-400">Pendaftaran Batch</div>
-          <h4 class="text-lg font-bold font-serif">Jadwal Sertifikasi BNSP Terdekat</h4>
-          <div class="space-y-2 text-xs text-slate-300">
-            <div class="flex justify-between border-b border-white/10 pb-1.5">
-              <span>Metode:</span>
-              <strong class="text-white">Online Pra-Uji + Uji Asesor</strong>
-            </div>
-            <div class="flex justify-between border-b border-white/10 pb-1.5">
-              <span>Output:</span>
-              <strong class="text-emerald-400">Sertifikat Garuda BNSP</strong>
-            </div>
-            <div class="flex justify-between">
-              <span>Status:</span>
-              <strong class="text-cyan-400">Buka Kuota Peserta</strong>
-            </div>
+      <aside class="lg:col-span-4 space-y-8 lg:sticky lg:top-32 self-start">
+        <div class="bg-zinc-900 text-white rounded-3xl p-8 space-y-6 shadow-xl">
+          <div class="space-y-2">
+            <span class="text-xs font-mono uppercase tracking-widest text-zinc-400">Pendaftaran Batch Resmi</span>
+            <h3 class="font-serif text-2xl font-normal text-white">Amankan Kursi Pembinaan Anda</h3>
+            <p class="text-xs font-mono text-zinc-400 leading-relaxed">
+              Daftar sekarang untuk mendapatkan silabus lengkap, penawaran korporasi, dan kepastian kuota batch resmi BNSP.
+            </p>
           </div>
 
+          {batch ? (
+            <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 space-y-2 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-400">Jadwal Batch:</span>
+                <span class="text-white font-mono font-bold">{batch.tanggal}</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-400">Sisa Kursi:</span>
+                <span class="text-emerald-400 font-mono font-bold">{batch.sisa} Kursi</span>
+              </div>
+            </div>
+          ) : (
+            <div class="p-4 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 text-xs text-zinc-300">
+              <p>Jadwal batch dan biaya terbaru: tanyakan via WhatsApp</p>
+            </div>
+          )}
+
           <a
-            href={waLink("Halo KonsultanK3, saya ingin mendaftar sertifikasi BNSP PPPA POPAL")}
+            href={waLink("Halo KonsultanK3, saya ingin mendaftar sertifikasi BNSP PPPA POPAL Air Limbah")}
             target="_blank"
             rel="noopener"
-            class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+            class="w-full inline-flex items-center justify-center gap-2 p-4 rounded-full bg-white text-zinc-900 font-semibold text-xs font-mono uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg"
           >
-            <span>Daftar via WhatsApp</span> &rarr;
+            <span>Daftar via WhatsApp Resmi</span>
+            <span>&rarr;</span>
           </a>
         </div>
 
-        <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Sertifikasi Lingkungan Terkait</div>
-          <div class="space-y-2 text-sm font-semibold text-slate-800">
-            <a href="/pelatihan-pppu-poippu/" class="block hover:text-emerald-600">💨 Sertifikasi BNSP PPPU &amp; POIPPU (Udara)</a>
-            <a href="/panduan-penerapan-smk3/" class="block hover:text-emerald-600">📋 Audit SMK3 &amp; ISO 14001</a>
-            <a href="/pelatihan-ahli-k3-umum/" class="block hover:text-emerald-600">🎓 Pembinaan Ahli K3 Umum</a>
-          </div>
+        <div class="p-6 rounded-3xl bg-white border border-zinc-200/80 shadow-sm space-y-3">
+          <span class="text-xs font-mono uppercase tracking-widest text-zinc-500 block">Jaminan Kepatuhan</span>
+          <p class="text-xs text-zinc-600 font-light leading-relaxed">
+            Diselenggarakan bersama LSP Lingkungan terakreditasi BNSP dengan asesor profesional dan bimbingan portofolio intensif.
+          </p>
         </div>
-
       </aside>
 
     </div>
