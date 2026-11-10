@@ -12,6 +12,8 @@
     "build": "astro build && node scripts/post-build.js",
     "check:frozen": "node scripts/check-frozen.mjs",
     "check:pillars": "node scripts/check-pillars.mjs",
+    "check:standalone": "node scripts/check-standalone.mjs",
+    "check:seo": "node scripts/check-seo.mjs",
     "preview": "astro preview",
     "serve": "node server.js"
   },
