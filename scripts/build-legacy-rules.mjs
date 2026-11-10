@@ -13,50 +13,55 @@ const htaccessPath = path.join(rootDir, '.htaccess');
 const redirectsPath = path.join(rootDir, '_redirects');
 const frozenUrlsPath = path.join(__dirname, 'frozen-urls.txt');
 
-console.log('Fetching Wayback CDX data for konsultank3.com...');
+let allCleanPaths = [];
 
-let rawData = null;
-
-try {
-  const resp = await fetch(cdxUrl, {
-    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
-  });
-  if (resp.ok) {
-    rawData = await resp.json();
-    console.log(`✓ Fetched ${rawData.length} records from Wayback Machine API.`);
-  }
-} catch (err) {
-  console.warn(`Wayback fetch warning: ${err.message}. Checking local cache...`);
-}
-
-if (!rawData && fs.existsSync(localCache)) {
-  rawData = JSON.parse(fs.readFileSync(localCache, 'utf8'));
-  console.log(`✓ Loaded ${rawData.length} records from local cache.`);
-}
-
-if (!rawData) {
-  console.error('❌ Could not fetch or load Wayback CDX data.');
-  process.exit(1);
-}
-
-// Extract clean unique paths
-const rows = rawData.slice(1);
-const cleanPathsSet = new Set();
-
-for (const r of rows) {
-  const original = r[0];
+// Prefer existing legacy-urls.txt if present, or fetch from CDX
+if (fs.existsSync(legacyUrlsFile) && fs.statSync(legacyUrlsFile).size > 0) {
+  const content = fs.readFileSync(legacyUrlsFile, 'utf8');
+  allCleanPaths = content.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+  console.log(`✓ Loaded ${allCleanPaths.length} clean paths from ${path.relative(rootDir, legacyUrlsFile)}`);
+} else {
+  console.log('Fetching Wayback CDX data for konsultank3.com...');
+  let rawData = null;
   try {
-    const parsed = new URL(original);
-    let p = parsed.pathname;
-    if (p) {
-      cleanPathsSet.add(p);
+    const resp = await fetch(cdxUrl, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+    });
+    if (resp.ok) {
+      rawData = await resp.json();
+      console.log(`✓ Fetched ${rawData.length} records from Wayback Machine API.`);
     }
-  } catch {}
-}
+  } catch (err) {
+    console.warn(`Wayback fetch warning: ${err.message}. Checking local cache...`);
+  }
 
-const allCleanPaths = Array.from(cleanPathsSet).sort();
-fs.writeFileSync(legacyUrlsFile, allCleanPaths.join('\n') + '\n', 'utf8');
-console.log(`✓ Saved ${allCleanPaths.length} clean paths to ${path.relative(rootDir, legacyUrlsFile)}`);
+  if (!rawData && fs.existsSync(localCache)) {
+    rawData = JSON.parse(fs.readFileSync(localCache, 'utf8'));
+    console.log(`✓ Loaded ${rawData.length} records from local cache.`);
+  }
+
+  if (!rawData) {
+    console.error('❌ Could not fetch or load Wayback CDX data.');
+    process.exit(1);
+  }
+
+  // Extract clean unique paths
+  const rows = rawData.slice(1);
+  const cleanPathsSet = new Set();
+  for (const r of rows) {
+    const original = r[0];
+    try {
+      const parsed = new URL(original);
+      let p = parsed.pathname;
+      if (p) {
+        cleanPathsSet.add(p);
+      }
+    } catch {}
+  }
+  allCleanPaths = Array.from(cleanPathsSet).sort();
+  fs.writeFileSync(legacyUrlsFile, allCleanPaths.join('\n') + '\n', 'utf8');
+  console.log(`✓ Saved ${allCleanPaths.length} clean paths to ${path.relative(rootDir, legacyUrlsFile)}`);
+}
 
 // Load frozen URLs
 const frozenUrls = fs.existsSync(frozenUrlsPath)
@@ -106,20 +111,33 @@ for (const p of allCleanPaths) {
     continue;
   }
 
-  // 3) Keyword mapping to pillars
+  // 3) Keyword mapping - order matters (first match wins):
   const slug = noSlash.toLowerCase();
   let target = null;
 
   if (slug === 'index.html' || slug === 'index.php') {
     target = '/';
+  } else if (/iso-26000|tanggung-jawab-sosial|csr/i.test(slug)) {
+    target = '/apa-pentingtinya-iso-26000-357.html';
+  } else if (/ohsas/i.test(slug)) {
+    target = '/apakah-ohsas-18001-35.html';
+  } else if (/iso-9001/i.test(slug)) {
+    target = '/apakah-iso-9001-2008-80.html';
+  } else if (/ergonomi/i.test(slug)) {
+    target = '/beberapa-prinsip-ergonomi-288.html';
+  } else if (/iso-31000|manajemen-risiko|risk/i.test(slug)) {
+    target = '/panduan-penerapan-smk3/';
   } else if (/bising|kebisingan/i.test(slug)) {
     target = '/program-pengendalian-kebisingan/';
   } else if (/\bapd\b|pelindung/i.test(slug)) {
     target = '/alat-pelindung-diri/';
-  } else if (/penyakit|ergonomi|kesehatan[-_]kerja|\bpak\b/i.test(slug)) {
+  } else if (/penyakit|kesehatan[-_]kerja|\bpak\b/i.test(slug)) {
     target = '/penyakit-akibat-kerja/';
-  } else if (/smk3|audit|ohsas|\biso\b|hirarc|\bjsa\b|p2k3/i.test(slug)) {
+  } else if (/smk3|audit|hirarc|\bjsa\b|p2k3/i.test(slug)) {
     target = '/panduan-penerapan-smk3/';
+  } else {
+    // iso-14001 | iso-17025 | iso-iec | laboratorium | anything else: no redirect (leave 404)
+    target = null;
   }
 
   if (target) {

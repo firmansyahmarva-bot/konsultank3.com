@@ -12,8 +12,10 @@ const allowedWahanaPages = new Set([
   'syarat-ketentuan/index.html'
 ]);
 
-function getAllHtmlFiles(dir) {
+function getAllFiles(dir, matchExts, skipDirs = []) {
   let results = [];
+  if (!fs.existsSync(dir)) return results;
+
   const entries = fs.readdirSync(dir, { withFileTypes: true });
 
   for (const entry of entries) {
@@ -21,30 +23,51 @@ function getAllHtmlFiles(dir) {
     const rel = path.relative(rootDir, full).replace(/\\/g, '/');
 
     if (entry.isDirectory()) {
-      if (
-        rel.startsWith('docs') ||
-        rel.startsWith('node_modules') ||
-        rel.startsWith('.git') ||
-        rel.startsWith('.astro') ||
-        rel.startsWith('src') ||
-        rel.startsWith('scripts')
-      ) {
+      if (skipDirs.some(skip => rel === skip || rel.startsWith(skip + '/'))) {
         continue;
       }
-      results = results.concat(getAllHtmlFiles(full));
-    } else if (entry.isFile() && entry.name.endsWith('.html')) {
-      results.push({ full, rel });
+      results = results.concat(getAllFiles(full, matchExts, skipDirs));
+    } else if (entry.isFile()) {
+      const ext = path.extname(entry.name).toLowerCase();
+      if (matchExts.includes(ext)) {
+        results.push({ full, rel });
+      }
     }
   }
 
   return results;
 }
 
-const htmlFiles = getAllHtmlFiles(rootDir);
-console.log(`Checking stand-alone isolation on ${htmlFiles.length} built HTML files...`);
+const skipDefault = ['docs', 'node_modules', '.git', '.astro', 'src', 'scripts'];
+
+// 1. Gather all built HTML files
+const htmlFiles = getAllFiles(rootDir, ['.html'], skipDefault);
+
+// 2. Gather assets/**/*.js and *.css
+const assetDirs = ['assets', 'public/assets'];
+let assetJsFiles = [];
+for (const ad of assetDirs) {
+  const dirPath = path.join(rootDir, ad);
+  if (fs.existsSync(dirPath)) {
+    assetJsFiles = assetJsFiles.concat(getAllFiles(dirPath, ['.js', '.mjs', '.css'], []));
+  }
+}
+
+// Also find all *.css in root and output
+const cssFiles = getAllFiles(rootDir, ['.css'], ['docs', 'node_modules', '.git', 'src', 'scripts']);
+
+// Combine unique JS & CSS files to check
+const jsAndCssMap = new Map();
+for (const f of [...assetJsFiles, ...cssFiles]) {
+  jsAndCssMap.set(f.rel, f);
+}
+const jsAndCssFiles = Array.from(jsAndCssMap.values());
+
+console.log(`Checking stand-alone isolation on ${htmlFiles.length} HTML files and ${jsAndCssFiles.length} JS/CSS asset files...`);
 
 let failed = false;
 
+// Check HTML files
 for (const { full, rel } of htmlFiles) {
   const content = fs.readFileSync(full, 'utf8');
 
@@ -65,10 +88,19 @@ for (const { full, rel } of htmlFiles) {
   }
 }
 
+// Check JS and CSS asset files (no "wahana" allowed anywhere)
+for (const { full, rel } of jsAndCssFiles) {
+  const content = fs.readFileSync(full, 'utf8');
+  if (/wahana/i.test(content)) {
+    console.error(`❌ FAILED: Found "wahana" in asset file [${rel}]`);
+    failed = true;
+  }
+}
+
 if (failed) {
   console.error('\n❌ check:standalone FAILED: Found forbidden cross-references!');
   process.exit(1);
 } else {
-  console.log('✓ check:standalone PASSED: 0 cross-references found across all built HTML.');
+  console.log('✓ check:standalone PASSED: 0 cross-references found across all built HTML and JS/CSS assets.');
   process.exit(0);
 }
