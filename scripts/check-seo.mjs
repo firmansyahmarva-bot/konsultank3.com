@@ -97,6 +97,16 @@ for (const { full, rel } of files) {
     errors.push('Missing canonical <link>');
   }
 
+  // 4. Visible comment leakage check
+  const visibleText = html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
+    .replace(/<[^>]+>/g, '');
+
+  if (visibleText.includes('-->') || visibleText.includes('<!--')) {
+    errors.push('Visible text contains leaking HTML comment markers ("-->" or "<!--")');
+  }
+
   if (errors.length > 0) {
     console.error(`❌ [${rel}]:`);
     errors.forEach(e => console.error(`   - ${e}`));

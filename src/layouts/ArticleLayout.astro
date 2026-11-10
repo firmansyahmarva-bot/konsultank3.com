@@ -9,6 +9,8 @@ interface Props {
   canonical?: string;
   publishDate?: string;
   updatedDate?: string;
+  updated?: string;
+  summary?: string;
   category?: string;
   readTime?: string;
   pillarId?: string;
@@ -20,7 +22,9 @@ const {
   description,
   canonical = Astro.url.pathname,
   publishDate = '2026-10-29',
-  updatedDate = '2026-11-10',
+  updatedDate,
+  updated,
+  summary,
   category = 'Panduan & Kepatuhan K3',
   readTime = '5 menit baca',
   pillarId
@@ -35,6 +39,9 @@ const detectedPillar = getPillarForArticle(cleanPath);
 const pathSlug = cleanPath.replace(/^\/|\/$/g, '');
 const isPillarPage = Boolean(getPillarById(pathSlug));
 const activePillar = pillarFromProp || detectedPillar || (isPillarPage ? getPillarById(pathSlug) : null);
+
+// Effective updated date: only when updated prop is explicitly passed or for pillar pages
+const effectiveUpdated = updated || (isPillarPage ? 'November 2026' : null);
 
 // Related articles for spokes
 const relatedArticles = (!isPillarPage && activePillar) ? getRelatedArticles(cleanPath, 3) : [];
@@ -102,11 +109,11 @@ const articleSchema = {
       "headline": title,
       "description": description,
       "mainEntityOfPage": fullCanonical,
-      "datePublished": publishDate,
-      "dateModified": updatedDate,
+      ...(publishDate ? { "datePublished": publishDate } : {}),
+      ...(effectiveUpdated ? { "dateModified": "2026-11-10" } : {}),
       "author": {
         "@type": "Organization",
-        "name": "Dewan Pakar K3 & Tim Redaksi KonsultanK3.com",
+        "name": "Tim Redaksi KonsultanK3.com",
         "url": "https://konsultank3.com/tentang-kami/"
       },
       "publisher": {
@@ -167,10 +174,12 @@ const articleSchema = {
           </svg>
           {readTime}
         </span>
-        <span class="text-xs text-emerald-400 font-medium flex items-center gap-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          Terakhir diperbarui: November 2026
-        </span>
+        {effectiveUpdated && (
+          <span class="text-xs text-emerald-400 font-medium flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            Terakhir diperbarui: {effectiveUpdated}
+          </span>
+        )}
       </div>
 
       <!-- Main Headline -->
@@ -189,12 +198,8 @@ const articleSchema = {
             K3
           </div>
           <div>
-            <div class="text-sm font-semibold text-white">Dewan Redaksi K3 & Kepatuhan Regulasi</div>
-            <div class="text-xs text-slate-400">KonsultanK3.com &bull; Terverifikasi Praktisi K3 Senior</div>
+            <div class="text-sm font-semibold text-white">Tim Redaksi KonsultanK3.com</div>
           </div>
-        </div>
-        <div class="text-xs text-slate-400">
-          Standar: <strong class="text-slate-300">Kemnaker RI & Standar SNI</strong>
         </div>
       </div>
 
@@ -205,20 +210,22 @@ const articleSchema = {
   <section class="py-12 bg-slate-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       
-      <!-- Key Executive Takeaways Card -->
-      <div class="p-6 rounded-2xl bg-amber-50 border border-amber-200/80 mb-10 shadow-sm not-prose">
-        <div class="flex items-center gap-2 text-amber-900 font-bold text-sm uppercase tracking-wider mb-2">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          Ringkasan Eksekutif & Kepatuhan
+      <!-- Key Executive Takeaways Card (optional summary) -->
+      {summary && (
+        <div class="p-6 rounded-2xl bg-amber-50 border border-amber-200/80 mb-10 shadow-sm not-prose">
+          <div class="flex items-center gap-2 text-amber-900 font-bold text-sm uppercase tracking-wider mb-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Ringkasan Eksekutif
+          </div>
+          <p class="text-sm text-amber-950 leading-relaxed">
+            {summary}
+          </p>
         </div>
-        <p class="text-sm text-amber-950 leading-relaxed">
-          Penerapan standar keselamatan kerja ini merupakan bagian integral dari pemenuhan audit SMK3 (PP 50/2012) dan UU No. 1 Tahun 1970 untuk mencegah kecelakaan fatalitas serta kerugian operasional perusahaan.
-        </p>
-      </div>
+      )}
 
-      <!-- Up-Link to Pillar Guide (Home > Pillar > Article hierarchy) -->
+      {/* Up-link to pillar guide */}
       {!isPillarPage && activePillar && (
         <div class="mb-8 p-4 rounded-2xl bg-emerald-50 border border-emerald-200/90 text-emerald-950 text-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 not-prose shadow-sm">
           <div class="space-y-0.5">
