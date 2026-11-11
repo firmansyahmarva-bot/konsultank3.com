@@ -11,61 +11,71 @@ const canonical = "/contoh-job-safety-analysis-pengelasan-815.html";
   description={description}
   canonical={canonical}
   category="Panduan & Regulasi K3"
+  updated="November 2026"
+  readTime="5 menit baca"
 >
-  <p>Pekerjaan pengelasan (<em>welding</em>) dan pemotongan logam (<em>cutting</em>) digolongkan sebagai <strong>pekerjaan panas (Hot Work)</strong> yang memiliki risiko tinggi menimbulkan kebakaran, ledakan uap mudah terbakar, radiasi sinar ultraviolet/inframerah yang merusak kornea mata (<em>welder's flash</em>), sengatan listrik arus tinggi, dan paparan asap logam beracun (<em>metal fume fever</em>).</p>
-
-            <h2>Tabel Matriks JSA Pekerjaan Pengelasan Listrik (SMAW)</h2>
-            <div style="overflow-x: auto; margin: 20px 0;">
-              <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;" border="1" cellpadding="10" bordercolor="#e2e8f0">
-                <tr style="background: #f1f5f9; text-align: left;">
-                  <th>Urutan Langkah Kerja</th>
-                  <th>Potensi Bahaya Teridentifikasi</th>
-                  <th>Tindakan Pengendalian & Pencegahan</th>
-                </tr>
-                <tr>
-                  <td><strong>1. Persiapan Area & Izin Kerja (Permit)</strong></td>
-                  <td>Kebakaran bahan mudah terbakar di sekitar lokasi, izin kerja belum lengkap.</td>
-                  <td>
-                    <ul>
-                      <li>Mengajukan Hot Work Permit kepada HSE Officer.</li>
-                      <li>Membersihkan material mudah terbakar dalam radius minimal 10-15 meter.</li>
-                      <li>Memasang tirai tahan api (fire blanket) dan menyiapkan APAR Powder min. 6 kg di samping welder.</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>2. Inspeksi Trafo & Kabel Las</strong></td>
-                  <td>Sengatan listrik (electric shock), kabel terkelupas korsleting.</td>
-                  <td>
-                    <ul>
-                      <li>Memastikan mesin las memiliki grounding terpasang baik.</li>
-                      <li>Memeriksa kabel tidak ada insulasi yang sobek atau sambungan kendor.</li>
-                      <li>Memastikan area kerja kering, tidak ada genangan air.</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>3. Proses Pengelasan Logam</strong></td>
-                  <td>Radiasi sinar las (UV/IR), percikan terak panas, asap las karsinogenik.</td>
-                  <td>
-                    <ul>
-                      <li>Wajib memakai kedok las (Welding Helmet) dengan shade filter kaca no. 10 - 12.</li>
-                      <li>Memakai sarung tangan las kulit panjang (leather welding gloves) dan apron dada.</li>
-                      <li>Memakai respirator penyaring partikel asap las (P100 / N95).</li>
-                      <li>Menyediakan ventilasi pembuangan (local exhaust ventilation) jika di area terbatas.</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>4. Pembersihan & Fire Watch</strong></td>
-                  <td>Bara api tersembunyi yang menyala setelah ditinggalkan pekerja.</td>
-                  <td>
-                    <ul>
-                      <li>Melakukan pengawasan api (Fire Watch) selama minimal 30 - 60 menit setelah pengelasan selesai.</li>
-                      <li>Mematikan daya listrik mesin las dan mengunci panel (LOTO).</li>
-                    </ul>
-                  </td>
-                </tr>
-              </table>
-            </div>
+  <p>Pengelasan dan pemotongan logam termasuk pekerjaan panas (<em>hot work</em>). Bahayanya berlapis: percikan dan terak panas yang bisa menyulut kebakaran, arus listrik, radiasi ultraviolet dan inframerah yang melukai mata, serta asap logam yang berbahaya bila terhirup. Job Safety Analysis (JSA) memecah pekerjaan menjadi langkah-langkah, mengidentifikasi bahaya di setiap langkah, lalu menetapkan pengendaliannya sebelum pekerjaan dimulai.</p>
+  <p>Berikut contoh JSA untuk pengelasan listrik (SMAW) di area bengkel atau lapangan, beserta cara menyusunnya, siapa yang harus terlibat, dan hal-hal yang sering terlewat. Semua isi bersifat contoh dan harus disesuaikan dengan kondisi lokasi Anda.</p>
+  
+  <h2>Cara Menyusun JSA</h2>
+  <ol>
+  <li>Pilih pekerjaan yang jelas batasnya, misalnya &quot;pengelasan sambungan pipa di area workshop&quot;.</li>
+  <li>Pecah menjadi langkah berurutan, cukup 5 sampai 10 langkah. Terlalu rinci membuat JSA tidak terbaca, terlalu umum membuat bahaya terlewat.</li>
+  <li>Untuk tiap langkah, tanyakan: apa yang bisa menyebabkan cedera atau kerusakan, dan bagaimana terjadinya.</li>
+  <li>Tentukan pengendalian dengan urutan prioritas: hilangkan bahaya, ganti, rekayasa teknis, administratif, baru APD. Kerangka ini sejalan dengan manajemen risiko ala ISO 31000:2018 dan dengan persyaratan perencanaan dalam ISO 45001:2018.</li>
+  <li>Susun JSA bersama welder, pengawas, dan petugas K3. Pekerja yang mengerjakan sehari-hari biasanya tahu bahaya yang tidak terlihat di atas kertas.</li>
+  </ol>
+  
+  <h2>Contoh Tabel JSA Pengelasan Listrik (SMAW)</h2>
+  <table>
+  <thead><tr><th>No</th><th>Langkah kerja</th><th>Potensi bahaya</th><th>Pengendalian</th><th>Penanggung jawab</th></tr></thead>
+  <tbody>
+  <tr><td>1</td><td>Persiapan area dan izin kerja panas (contoh)</td><td>Kebakaran bahan mudah terbakar di sekitar, izin belum lengkap</td><td>Terbitkan izin kerja panas. Singkirkan bahan mudah terbakar dari area kerja pada radius yang ditetapkan prosedur (praktik umum sekitar 10 meter) atau lindungi dengan selimut tahan api. Siapkan APAR yang sesuai di dekat titik las.</td><td>Pengawas dan petugas K3</td></tr>
+  <tr><td>2</td><td>Pemeriksaan mesin las, kabel, dan penjepit massa</td><td>Sengatan listrik, kabel terkelupas, sambungan longgar</td><td>Periksa isolasi kabel dan terminal. Pastikan pembumian dan penjepit massa terpasang baik. Jangan bekerja di lantai basah. Rujukan: persyaratan keselamatan listrik di tempat kerja.</td><td>Welder</td></tr>
+  <tr><td>3</td><td>Penyiapan benda kerja dan gerinda</td><td>Percikan gerinda, serpihan ke mata, bising</td><td>Pakai pelindung wajah dan kacamata, periksa pelindung batu gerinda, jepit benda kerja dengan kuat, pakai pelindung telinga.</td><td>Welder</td></tr>
+  <tr><td>4</td><td>Proses pengelasan</td><td>Radiasi busur las, percikan, asap las, panas</td><td>Helm las dengan filter sesuai arus las (ikuti spesifikasi pemasok), sarung tangan kulit, apron, sepatu keselamatan. Ventilasi lokal atau penghisap asap. Respirator bila ventilasi tidak memadai.</td><td>Welder dan pengawas</td></tr>
+  <tr><td>5</td><td>Pemukulan terak dan pendinginan</td><td>Serpihan terak panas ke mata, sentuhan logam panas</td><td>Kacamata pelindung di bawah helm saat memukul terak, beri tanda &quot;panas&quot; pada benda kerja, gunakan penjepit.</td><td>Welder</td></tr>
+  <tr><td>6</td><td>Pengawasan api (<em>fire watch</em>) dan penutupan izin</td><td>Bara tersembunyi yang menyala setelah pekerjaan selesai</td><td>Tugaskan pengawas api selama dan setelah pekerjaan untuk durasi yang ditetapkan prosedur (praktik umum sedikitnya 30 menit). Periksa area sekitar sebelum izin ditutup.</td><td>Pengawas api</td></tr>
+  <tr><td>7</td><td>Penyimpanan peralatan</td><td>Kabel berserakan, tersandung, kerusakan alat</td><td>Gulung kabel, lepaskan elektroda dari penjepit, matikan mesin, simpan di tempat kering.</td><td>Welder</td></tr>
+  </tbody>
+  </table>
+  
+  <h2>Bahaya Khusus yang Sering Terlewat</h2>
+  <h3>Bahan pelapis dan logam khusus</h3>
+  <p>Mengelas atau memotong logam berlapis seng, cat, atau bahan lain dapat menghasilkan asap berbahaya. Cantumkan pemeriksaan jenis material dan lapisan di langkah persiapan, dan ganti pengendalian bila bahan berubah.</p>
+  <h3>Ruang terbatas</h3>
+  <p>Pengelasan di dalam tangki, pipa besar, atau ruang sempit menambah risiko kekurangan oksigen, penumpukan asap, dan sulitnya penyelamatan. Pekerjaan semacam ini memerlukan izin masuk ruang terbatas, pemantauan atmosfer, dan pengawas luar, di luar JSA las biasa. Pelatihan terkait tersedia di <a href="/pelatihan-k3-ruang-terbatas/">pelatihan K3 ruang terbatas</a>.</p>
+  <h3>Pekerjaan di ketinggian</h3>
+  <p>Bila las dilakukan di atas, percikan jatuh ke area bawah. Pasang penahan percikan dan batasi akses di bawah. Aspek jatuh dari ketinggian mengacu pada Peraturan Menteri Ketenagakerjaan No. 9 Tahun 2016.</p>
+  <h3>Tabung gas dan pemotongan</h3>
+  <p>Untuk las atau potong gas, tambahkan langkah pemeriksaan selang, regulator, dan penahan nyala balik, serta penyimpanan tabung dalam posisi berdiri dan terikat.</p>
+  
+  <h2>Kesalahan Umum Penyusunan JSA</h2>
+  <ul>
+  <li>JSA disalin dari proyek lain tanpa memeriksa kondisi lokasi.</li>
+  <li>Pengendalian hanya berisi &quot;gunakan APD&quot;, tanpa pengendalian yang lebih tinggi.</li>
+  <li>Welder tidak ikut membaca dan menandatangani JSA.</li>
+  <li>JSA tidak diperbarui saat metode, lokasi, atau material berubah.</li>
+  <li>Pengawas api ditunjuk tetapi merangkap pekerjaan lain.</li>
+  </ul>
+  
+  <h2>Pertanyaan yang Sering Diajukan</h2>
+  <h3>Apa beda JSA dan izin kerja panas?</h3>
+  <p>JSA menganalisis langkah dan bahaya suatu pekerjaan. Izin kerja panas adalah otorisasi tertulis untuk melakukan pekerjaan pada waktu dan tempat tertentu setelah syarat keselamatan dipastikan. Keduanya saling melengkapi.</p>
+  <h3>Siapa yang menandatangani JSA?</h3>
+  <p>Lazimnya penyusun (pengawas atau welder senior), petugas K3 yang memeriksa, dan penanggung jawab area yang menyetujui. Semua pekerja yang terlibat sebaiknya menandatangani tanda sudah memahami.</p>
+  <h3>Apakah JSA sama dengan HIRA?</h3>
+  <p>Tidak persis. HIRA menilai risiko pada tingkat aktivitas atau area dengan skor risiko, sedangkan JSA bekerja pada tingkat langkah tugas. Banyak perusahaan memakai HIRA sebagai dasar dan JSA untuk pekerjaan nonrutin.</p>
+  
+  <h2>Kesimpulan</h2>
+  <p>JSA pengelasan yang baik menghubungkan setiap langkah kerja dengan bahaya konkret dan pengendalian yang bisa dicek. Tabel contoh di atas adalah titik awal, bukan pengganti penilaian di lokasi. Libatkan welder, perbarui saat kondisi berubah, dan pastikan izin kerja panas serta pengawasan api berjalan.</p>
+  
+  <h2>Daftar Pustaka</h2>
+  <ul>
+  <li>Undang-Undang No. 1 Tahun 1970 tentang Keselamatan Kerja</li>
+  <li>Peraturan Menteri Ketenagakerjaan No. 12 Tahun 2015 tentang Keselamatan dan Kesehatan Kerja Listrik di Tempat Kerja</li>
+  <li>Peraturan Menteri Ketenagakerjaan No. 9 Tahun 2016 tentang Keselamatan dan Kesehatan Kerja dalam Pekerjaan pada Ketinggian</li>
+  <li>ISO 45001:2018 Occupational health and safety management systems</li>
+  <li>ISO 31000:2018 Risk management guidelines</li>
+  </ul>
 </ArticleLayout>

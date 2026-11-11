@@ -11,15 +11,90 @@ const canonical = "/contoh-bentuk-laporan-qc-788.html";
   description={description}
   canonical={canonical}
   category="Panduan & Regulasi K3"
+  updated="November 2026"
+  readTime="5 menit baca"
 >
-  <p>Pengawasan mutu produk atau pekerjaan konstruksi oleh tim <em>Quality Control</em> (QC) selalu berjalan beriringan dengan pengawasan keselamatan kerja (K3/HSE). Dokumen laporan harian dan mingguan QC menjadi bukti ketertelusuran (<em>traceability</em>) pemenuhan spesifikasi teknis dan standar keselamatan kerja.</p>
-
-            <h2>Elemen Pokok Laporan Harian QC / QHSE</h2>
-            <ol>
-              <li><strong>Data Administratif Proyek:</strong> Nama Proyek, Kontraktor Pelaksana, Konsultan Pengawas, Nomor Laporan, dan Tanggal.</li>
-              <li><strong>Kondisi Cuaca & Jam Kerja:</strong> Catatan curah hujan, kecepatan angin, dan durasi jam kerja aman (Safe Man-Hours).</li>
-              <li><strong>Daftar Item Pekerjaan yang Diinspeksi (Inspection & Test Plan / ITP):</strong> Status lolos uji (Pass), perbaikan ulang (Rework), atau ditolak (Reject).</li>
-              <li><strong>Temuan Ketidaksesuaian (NCR / Non-Conformance Report):</strong> Dokumentasi visual cacat fisik atau deviasi prosedur beserta target batas waktu perbaikan.</li>
-              <li><strong>Pemeriksaan Keselamatan (Safety Aspect):</strong> Verifikasi bahwa pekerjaan QC (seperti uji NDT / Radiografi sinar-X, hydrotest bertekanan) telah dilengkapi barikade pengaman dan izin kerja panas/radiasi.</li>
-            </ol>
+<p>Laporan Quality Control (QC) adalah catatan tertulis yang membuktikan bahwa pekerjaan di proyek konstruksi atau pabrikasi sudah diperiksa terhadap spesifikasi, gambar kerja, dan rencana inspeksi. Di proyek yang tertib, laporan QC tidak berdiri sendiri: pemeriksaan mutu dan pemeriksaan keselamatan dilakukan pada pekerjaan yang sama, sehingga laporannya sering digabung menjadi laporan QHSE.</p>
+  <p>Artikel ini memberi contoh format laporan harian dan mingguan yang bisa langsung disalin ke spreadsheet atau dokumen perusahaan, lengkap dengan baris contoh fiktif, cara mengisi, dan kesalahan yang sering ditemukan saat audit.</p>
+  
+  <h2>Fungsi Laporan QC dan Kaitannya dengan K3</h2>
+  <p>Laporan QC punya tiga fungsi utama. Pertama, ketertelusuran: setiap item pekerjaan bisa dilacak ke lokasi, tanggal, pemeriksa, dan hasilnya. Kedua, dasar keputusan: pemilik proyek atau konsultan pengawas memakainya untuk menyetujui tahap berikutnya (<em>hold point</em> atau <em>witness point</em>). Ketiga, bukti saat audit mutu, misalnya terhadap persyaratan <em>ISO 9001:2015</em> yang menuntut informasi terdokumentasi sebagai bukti pengendalian proses.</p>
+  <p>Sisi K3 masuk karena beberapa kegiatan QC sendiri berbahaya: uji tekanan (<em>hydrotest</em>), uji radiografi, pemeriksaan di ketinggian, dan pengambilan sampel beton di area alat berat. Sistem manajemen yang baik, sebagaimana dituntut <a href="/panduan-penerapan-smk3/">panduan penerapan SMK3</a>, memastikan risiko kegiatan inspeksi ikut dikendalikan, bukan hanya risiko pekerjaan yang diinspeksi.</p>
+  
+  <h2>Format Laporan Harian QC</h2>
+  <h3>Bagian header</h3>
+  <ul>
+  <li>Nama proyek, lokasi, kontraktor, dan konsultan pengawas.</li>
+  <li>Nomor laporan (urut, misalnya QC-HR-001), tanggal, dan nama pembuat laporan.</li>
+  <li>Kondisi cuaca dan jam kerja efektif, karena hujan atau angin kencang memengaruhi pengecoran, pengelasan, dan pekerjaan ketinggian.</li>
+  <li>Jumlah tenaga kerja hadir dan jam kerja, sebagai data pendukung statistik keselamatan.</li>
+  </ul>
+  <h3>Tabel inspeksi harian</h3>
+  <table>
+  <thead><tr><th>No</th><th>Item pekerjaan</th><th>Lokasi</th><th>Acuan (spesifikasi/ITP)</th><th>Hasil</th><th>Status</th><th>Catatan K3</th></tr></thead>
+  <tbody>
+  <tr><td>1</td><td>Pembesian kolom K-12 (contoh)</td><td>Lantai 3, as C-4</td><td>Gambar S-014, ITP struktur</td><td>Jarak sengkang sesuai, selimut beton diukur</td><td>Lolos</td><td>Pagar pengaman tepi terpasang</td></tr>
+  <tr><td>2</td><td>Sambungan las pipa spool 7 (contoh)</td><td>Bengkel fabrikasi</td><td>WPS-03, ITP perpipaan</td><td>Visual: ada undercut</td><td>Perbaikan ulang</td><td>Izin kerja panas terbuka</td></tr>
+  <tr><td>3</td><td>Pengambilan sampel beton K-300 (contoh)</td><td>Pengecoran pelat lantai 3</td><td>Spesifikasi beton</td><td>Slump terukur, 3 benda uji dibuat</td><td>Lolos</td><td>Area truk mixer diberi pemandu</td></tr>
+  <tr><td>4</td><td>Cat primer rangka baja (contoh)</td><td>Gudang B</td><td>Spesifikasi pelapisan</td><td>Ketebalan film kurang</td><td>Ditolak</td><td>Ventilasi dan APD respirator dicek</td></tr>
+  </tbody>
+  </table>
+  <p>Semua nilai di atas hanya contoh. Gunakan status yang baku dan sama di seluruh dokumen: Lolos, Perbaikan ulang (<em>rework</em>), atau Ditolak (<em>reject</em>).</p>
+  
+  <h2>Format Laporan Ketidaksesuaian (NCR)</h2>
+  <p>Setiap item berstatus Ditolak atau berulang kali Perbaikan ulang sebaiknya diangkat menjadi <em>Non-Conformance Report</em>. Isi minimum NCR:</p>
+  <table>
+  <thead><tr><th>Kolom</th><th>Isi contoh</th></tr></thead>
+  <tbody>
+  <tr><td>Nomor NCR dan tanggal</td><td>NCR-007, tanggal temuan (contoh)</td></tr>
+  <tr><td>Uraian temuan</td><td>Ketebalan film cat primer di bawah spesifikasi pada 5 dari 12 titik ukur (contoh)</td></tr>
+  <tr><td>Akar masalah</td><td>Jumlah lapisan kurang, alat ukur tidak dipakai (contoh)</td></tr>
+  <tr><td>Tindakan koreksi</td><td>Aplikasi ulang lapisan primer dan ukur ulang</td></tr>
+  <tr><td>Tindakan pencegahan</td><td>Pengukuran film basah wajib sebelum lapisan berikutnya</td></tr>
+  <tr><td>Penanggung jawab dan tenggat</td><td>Supervisor pengecatan, tanggal target</td></tr>
+  <tr><td>Verifikasi dan penutupan</td><td>Nama inspektur QC, tanggal ditutup</td></tr>
+  </tbody>
+  </table>
+  
+  <h2>Format Laporan Mingguan</h2>
+  <p>Laporan mingguan merangkum laporan harian, bukan menyalinnya. Bagian yang lazim dimuat:</p>
+  <ol>
+  <li>Ringkasan jumlah inspeksi: berapa yang Lolos, Perbaikan ulang, dan Ditolak, dihitung dari data harian proyek sendiri.</li>
+  <li>Daftar NCR terbuka dan tertutup, termasuk umur NCR yang belum selesai.</li>
+  <li>Hasil uji laboratorium atau uji tidak merusak yang keluar pada minggu itu.</li>
+  <li>Ringkasan temuan keselamatan dari inspeksi: kondisi tidak aman, tindakan tidak aman, dan status perbaikannya.</li>
+  <li>Rencana inspeksi minggu depan, terutama <em>hold point</em> yang membutuhkan kehadiran pemilik atau konsultan.</li>
+  <li>Lampiran foto bertanggal dengan keterangan lokasi.</li>
+  </ol>
+  
+  <h2>Integrasi Inspeksi K3 dalam Laporan QC</h2>
+  <p>Tambahkan satu blok kecil berjudul &quot;Aspek keselamatan pekerjaan inspeksi&quot; pada setiap laporan. Isinya mencakup: izin kerja yang berlaku (panas, ketinggian, ruang terbatas), barikade dan rambu pada area uji tekanan atau radiografi, serta APD inspektur. Untuk radiografi, pastikan hanya personel berwenang yang bekerja dan batas area ditandai sesuai prosedur pemegang izin. Untuk pekerjaan di ketinggian, rujuk Peraturan Menteri Ketenagakerjaan No. 9 Tahun 2016 tentang Keselamatan dan Kesehatan Kerja dalam Pekerjaan pada Ketinggian.</p>
+  
+  <h2>Kesalahan Umum yang Ditemukan Auditor</h2>
+  <ul>
+  <li>Laporan diisi di akhir minggu dari ingatan, sehingga tanggal dan hasil tidak cocok dengan catatan lapangan.</li>
+  <li>Kolom &quot;Acuan&quot; kosong, jadi tidak jelas terhadap apa pekerjaan dinilai.</li>
+  <li>NCR dibuka tetapi tidak pernah ditutup, atau ditutup tanpa bukti verifikasi.</li>
+  <li>Foto tanpa tanggal, lokasi, atau keterangan.</li>
+  <li>Temuan K3 dicatat di buku terpisah sehingga tidak terhubung dengan item pekerjaan yang bersangkutan.</li>
+  </ul>
+  
+  <h2>Pertanyaan yang Sering Diajukan</h2>
+  <h3>Apakah laporan QC dan laporan K3 harus dipisah?</h3>
+  <p>Tidak ada kewajiban umum untuk memisah. Banyak proyek memakai satu format QHSE, asalkan kolom mutu dan kolom keselamatan sama-sama terisi dan penanggung jawabnya jelas.</p>
+  <h3>Berapa lama laporan harus disimpan?</h3>
+  <p>Lama penyimpanan ditentukan kontrak proyek dan prosedur pengendalian rekaman perusahaan. Tetapkan masa simpan secara tertulis, lalu patuhi.</p>
+  <h3>Siapa yang menandatangani laporan?</h3>
+  <p>Umumnya dibuat oleh inspektur QC, diperiksa oleh QC manager atau site manager, dan diketahui konsultan pengawas. Tuliskan alur tanda tangan itu di prosedur.</p>
+  
+  <h2>Kesimpulan</h2>
+  <p>Laporan QC yang baik singkat, konsisten, dan bisa ditelusuri dari item pekerjaan sampai bukti tindak lanjutnya. Menggabungkan catatan keselamatan ke dalam format yang sama membuat pemeriksaan mutu dan K3 saling menguatkan. Sesuaikan contoh di atas dengan ITP dan kontrak proyek Anda sebelum dipakai.</p>
+  
+  <h2>Daftar Pustaka</h2>
+  <ul>
+  <li>ISO 9001:2015 Quality management systems</li>
+  <li>Peraturan Pemerintah No. 50 Tahun 2012 tentang Penerapan Sistem Manajemen Keselamatan dan Kesehatan Kerja (SMK3)</li>
+  <li>Peraturan Menteri Ketenagakerjaan No. 9 Tahun 2016 tentang Keselamatan dan Kesehatan Kerja dalam Pekerjaan pada Ketinggian</li>
+  <li>Undang-Undang No. 1 Tahun 1970 tentang Keselamatan Kerja</li>
+  </ul>
 </ArticleLayout>
