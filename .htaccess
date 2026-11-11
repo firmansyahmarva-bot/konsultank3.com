@@ -12,6 +12,16 @@ RewriteRule ^(server\.js|package\.json|package-lock\.json|astro\.config\.mjs|REA
 
 # 2. Reclaim Cited Backlink & Legacy URLs (1:1 301 Mapping)
 
+# --- High-Priority Verified External Backlinks (Direct 1-Hop 301 Reclaim) ---
+RewriteRule ^training/dokumen-amdal-pabrik-kayu\.html(/.*)?$ https://konsultank3.com/contoh-lembar-checklist-amdal-gedung-862.html [R=301,L]
+RewriteRule ^training/contoh-pembuatan-jsa-penggalian-dengan-cangkul\.html(/.*)?$ https://konsultank3.com/contoh-job-safety-analysis-pengelasan-815.html [R=301,L]
+RewriteRule ^training/pengenalan-peralatan-basic-trauma-life-support-for-jpam\.html(/.*)?$ https://konsultank3.com/bclsbasic-cardiac-life-support-for-paramedic-111.html [R=301,L]
+RewriteRule ^pdf/faktor-penyebab-akibat-kerja\.html(/.*)?$ https://konsultank3.com/penyakit-akibat-kerja/ [R=301,L]
+RewriteRule ^category/konsultan-industri-perusahaan(/.*)?$ https://konsultank3.com/ [R=301,L]
+RewriteRule ^category/industri(/.*)?$ https://konsultank3.com/ [R=301,L]
+RewriteRule ^category/penyakit-akibat-kerja-2(/.*)?$ https://konsultank3.com/penyakit-akibat-kerja/ [R=301,L]
+RewriteRule ^rambu-rambu-k3-beserta-penjelasannya-993\.html(/.*)?$ https://konsultank3.com/alat-pelindung-diri/ [R=301,L]
+
 # BEGIN legacy-301
 # Auto-generated historical Wayback 301 mappings to core pillars
 RewriteRule ^apa-pentingtinya-iso-26000-357\.html/iso-26000-2$ /apa-pentingtinya-iso-26000-357.html [R=301,L]
@@ -404,3 +414,11 @@ RewriteRule ^tag/ - [G,L]
 # Custom Error Pages
 ErrorDocument 410 /410.html
 ErrorDocument 404 /404.html
+
+# Canonical Header & Caching for Legacy Image Backlinks (Consolidate Image PageRank)
+<Files "Rambu-Rambu-K3-Beserta-Penjelasannya.png">
+    <IfModule mod_headers.c>
+        Header set Link '<https://konsultank3.com/alat-pelindung-diri/>; rel="canonical"'
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </IfModule>
+</Files>

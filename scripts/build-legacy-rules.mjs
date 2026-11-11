@@ -83,6 +83,18 @@ const p410Patterns = [
   /^tag\//
 ];
 
+// Verified high-priority external backlinks (preserve 100% link juice, never 410/404)
+const verifiedBacklinkOverrides = {
+  'training/dokumen-amdal-pabrik-kayu.html': '/contoh-lembar-checklist-amdal-gedung-862.html',
+  'training/contoh-pembuatan-jsa-penggalian-dengan-cangkul.html': '/contoh-job-safety-analysis-pengelasan-815.html',
+  'training/pengenalan-peralatan-basic-trauma-life-support-for-jpam.html': '/bclsbasic-cardiac-life-support-for-paramedic-111.html',
+  'pdf/faktor-penyebab-akibat-kerja.html': '/penyakit-akibat-kerja/',
+  'category/konsultan-industri-perusahaan': '/',
+  'category/industri': '/',
+  'category/penyakit-akibat-kerja-2': '/penyakit-akibat-kerja/',
+  'rambu-rambu-k3-beserta-penjelasannya-993.html': '/alat-pelindung-diri/'
+};
+
 function escapeRegex(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -103,6 +115,16 @@ for (const p of allCleanPaths) {
     fs.existsSync(path.join(rootDir, noSlash)) ||
     (noSlash && fs.existsSync(path.join(rootDir, noSlash, 'index.html')))
   ) {
+    continue;
+  }
+
+  // 1b) Priority match for verified external backlink URLs
+  if (verifiedBacklinkOverrides[noSlash]) {
+    mappedRules.push({
+      originalPath: norm,
+      regexPath: escapeRegex(noSlash),
+      target: verifiedBacklinkOverrides[noSlash]
+    });
     continue;
   }
 

@@ -17,7 +17,9 @@
     "check:service": "node scripts/check-service-pages.mjs",
     "check:contact": "node scripts/check-contact.mjs",
     "preview": "astro preview",
-    "serve": "node server.js"
+    "serve": "node server.js",
+    "check:backlinks": "node scripts/verify-backlink-juice.mjs",
+    "test": "npm run check:frozen && npm run check:pillars && npm run check:standalone && npm run check:seo && npm run check:service && npm run check:contact && npm run check:backlinks"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

@@ -31,6 +31,33 @@ const server = http.createServer((req, res) => {
   let reqUrl = req.url.split('?')[0];
 
   // 301 Redirects
+  const redirectMap = {
+    '/training/dokumen-amdal-pabrik-kayu.html': '/contoh-lembar-checklist-amdal-gedung-862.html',
+    '/training/contoh-pembuatan-jsa-penggalian-dengan-cangkul.html': '/contoh-job-safety-analysis-pengelasan-815.html',
+    '/training/pengenalan-peralatan-basic-trauma-life-support-for-jpam.html': '/bclsbasic-cardiac-life-support-for-paramedic-111.html',
+    '/pdf/faktor-penyebab-akibat-kerja.html': '/penyakit-akibat-kerja/',
+    '/category/konsultan-industri-perusahaan': '/',
+    '/category/konsultan-industri-perusahaan/': '/',
+    '/category/industri': '/',
+    '/category/industri/': '/',
+    '/category/penyakit-akibat-kerja-2': '/penyakit-akibat-kerja/',
+    '/category/penyakit-akibat-kerja-2/': '/penyakit-akibat-kerja/',
+    '/rambu-rambu-k3-beserta-penjelasannya-993.html': '/alat-pelindung-diri/',
+    '/program-pengendalian-kebisingan-331.html': '/program-pengendalian-kebisingan/',
+    '/privacy-policy': '/kebijakan-privasi/',
+    '/privacy-policy/': '/kebijakan-privasi/',
+    '/hubungi-kami': '/kontak/',
+    '/hubungi-kami/': '/kontak/',
+    '/arsip': '/',
+    '/arsip/': '/'
+  };
+
+  if (redirectMap[reqUrl]) {
+    res.writeHead(301, { 'Location': redirectMap[reqUrl] });
+    return res.end();
+  }
+
+  // Legacy 301 Redirects
   if (reqUrl === '/program-pengendalian-kebisingan-331.html') {
     res.writeHead(301, { 'Location': '/program-pengendalian-kebisingan/' });
     return res.end();
@@ -57,7 +84,12 @@ const server = http.createServer((req, res) => {
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
     const ext = path.extname(filePath).toLowerCase();
     const mime = MIME_TYPES[ext] || 'application/octet-stream';
-    res.writeHead(200, { 'Content-Type': mime });
+    const headers = { 'Content-Type': mime };
+    if (filePath.endsWith('Rambu-Rambu-K3-Beserta-Penjelasannya.png')) {
+      headers['Link'] = '<https://konsultank3.com/alat-pelindung-diri/>; rel="canonical"';
+      headers['Cache-Control'] = 'public, max-age=31536000, immutable';
+    }
+    res.writeHead(200, headers);
     fs.createReadStream(filePath).pipe(res);
   } else {
     const notFoundPage = path.join(ROOT, '404.html');
