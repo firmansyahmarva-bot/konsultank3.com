@@ -122,4 +122,83 @@ const nabSchema = {
     </div>
 
   </div>
+<style is:inline>
+.dl-guide{max-width:64rem;margin:0 auto 3rem;padding:0 1rem;color:#334155;line-height:1.7}
+.dl-guide h2{font-size:1.5rem;line-height:1.3;color:#0f172a;margin:2rem 0 .75rem;font-weight:800}
+.dl-guide h3{font-size:1.15rem;line-height:1.4;color:#0f172a;margin:1.75rem 0 .5rem;font-weight:700}
+.dl-guide p,.dl-guide li{font-size:.95rem}
+.dl-guide p{margin:.5rem 0}
+.dl-guide ul,.dl-guide ol{padding-left:1.25rem;margin:.5rem 0 1rem}
+.dl-guide ul{list-style:disc}
+.dl-guide ol{list-style:decimal}
+.dl-guide li{margin:.25rem 0}
+.dl-scroll{overflow-x:auto}
+.dl-guide table{width:100%;border-collapse:collapse;font-size:.85rem;margin:1rem 0}
+.dl-guide th,.dl-guide td{border:1px solid #cbd5e1;padding:.6rem .75rem;text-align:left;vertical-align:top}
+.dl-guide th{background:#f1f5f9;color:#0f172a}
+.dl-guide a{color:#047857;text-decoration:underline}
+@media print{.dl-guide{display:none}}
+</style>
+<section class="dl-guide" aria-labelledby="dl-guide-title">
+<h2 id="dl-guide-title">Cara Membaca dan Memakai Tabel NAB Kebisingan</h2>
+<p>Nilai Ambang Batas (NAB) kebisingan adalah batas tingkat bunyi yang masih dapat diterima pekerja selama jam kerja tanpa menimbulkan gangguan kesehatan. Peraturan Menteri Ketenagakerjaan No. 5 Tahun 2018 menetapkan NAB sebesar 85 dBA untuk pemaparan 8 jam per hari atau 40 jam per minggu. Tabel di atas menunjukkan berapa lama pekerja boleh berada pada tingkat bunyi yang lebih tinggi. Setiap kenaikan 3 dBA, waktu pemaparan yang diperbolehkan menjadi setengahnya.</p>
+
+<h3>Rumus Sederhana di Balik Tabel</h3>
+<p>Waktu pemaparan maksimum dapat dihitung dengan rumus T = 8 / 2^((L − 85) / 3), di mana T dalam jam dan L adalah tingkat kebisingan dalam dBA. Contoh: pada 91 dBA, (91 − 85) / 3 = 2, sehingga T = 8 / 4 = 2 jam, sesuai baris tabel. Pada 100 dBA, (100 − 85) / 3 = 5, sehingga T = 8 / 32 = 0,25 jam atau 15 menit.</p>
+
+<h3>Contoh Menghitung Pemaparan Campuran</h3>
+<p>Pekerja jarang berada pada satu tingkat bunyi sepanjang shift. Untuk pemaparan campuran, bagi lama pemaparan setiap tingkat dengan batas waktunya pada tabel, lalu jumlahkan. Hasil penjumlahan tidak boleh melebihi 1.</p>
+<div class="dl-scroll">
+<table>
+<thead><tr><th>Aktivitas (contoh)</th><th>Tingkat (dBA)</th><th>Lama (jam)</th><th>Batas tabel (jam)</th><th>Bagian</th></tr></thead>
+<tbody>
+<tr><td>Persiapan di area produksi</td><td>85</td><td>3</td><td>8</td><td>3 / 8 = 0,375</td></tr>
+<tr><td>Mengoperasikan mesin press</td><td>94</td><td>1</td><td>1</td><td>1 / 1 = 1,000</td></tr>
+<tr><td>Istirahat di ruang tenang</td><td>70</td><td>0,5</td><td>-</td><td>Tidak dihitung (di bawah 85)</td></tr>
+<tr><td><strong>Jumlah</strong></td><td></td><td></td><td></td><td><strong>1,375 (melampaui NAB)</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p>Pada contoh ini, pekerja melampaui NAB walaupun tidak ada satu aktivitas pun yang melewati batas waktunya sendiri. Karena itu, dosis harian harus dihitung dari seluruh aktivitas, bukan satu per satu. Angka dalam tabel contoh hanya ilustrasi.</p>
+
+<h3>Langkah Memakai Tabel di Lapangan</h3>
+<ol>
+<li>Ukur tingkat bunyi dengan alat terkalibrasi, yaitu sound level meter atau noise dosimeter, dengan pembobotan A (dBA).</li>
+<li>Catat lama pekerja berada di setiap area atau menjalankan setiap tugas.</li>
+<li>Cocokkan dengan tabel atau hitung dosis seperti contoh di atas.</li>
+<li>Tetapkan area di atas 85 dBA sebagai area pengendalian dan pasang rambu peringatan.</li>
+<li>Lakukan pengendalian sesuai hierarki, lalu catat hasilnya sebagai bukti.</li>
+<li>Ulangi pengukuran bila ada perubahan mesin, proses, atau tata letak.</li>
+</ol>
+
+<h3>Bila Pemaparan Melebihi NAB</h3>
+<p>Urutan pengendalian yang dianjurkan dari yang paling efektif: hilangkan atau gantikan sumber bunyi (misalnya mesin yang lebih senyap), pasang pengendalian teknik seperti kurungan peredam dan isolasi getaran, atur pekerjaan secara administratif melalui rotasi dan pembatasan durasi, dan terakhir sediakan alat pelindung telinga seperti earplug atau earmuff. Alat pelindung telinga melengkapi pengendalian lain, bukan menggantikannya. Pemeriksaan audiometri berkala membantu mendeteksi penurunan pendengaran sejak dini. Pembahasan lengkapnya ada di <a href="/program-pengendalian-kebisingan/">panduan program pengendalian kebisingan</a> dan <a href="/alat-pelindung-diri/">panduan pemilihan APD</a>.</p>
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+<ul>
+<li>Memakai satuan dB biasa, padahal NAB dinyatakan dalam dBA.</li>
+<li>Merata-ratakan angka dBA secara aritmetika. Pemaparan harus dihitung sebagai dosis seperti contoh di atas.</li>
+<li>Mengukur sekali lalu menganggap hasilnya berlaku selamanya.</li>
+<li>Mengabaikan bunyi impulsif. Tingkat tekanan bunyi puncak 140 dBA atau lebih tidak boleh dialami pekerja.</li>
+<li>Menganggap pembagian earplug sudah menyelesaikan masalah tanpa pelatihan pemakaian dan pemeriksaan kecocokan.</li>
+</ul>
+
+<h2>Pertanyaan yang Sering Diajukan</h2>
+<h3>Apakah NAB sama dengan batas yang pasti aman bagi semua orang?</h3>
+<p>NAB adalah batas pemaparan yang diterima umum untuk pekerja pada jam kerja normal. Kepekaan setiap orang berbeda, sehingga pekerja yang sudah mengalami gangguan pendengaran perlu perhatian lebih dan pemantauan yang lebih ketat.</p>
+<h3>Apakah bunyi di bawah 85 dBA tidak perlu dipantau?</h3>
+<p>Bunyi di bawah 85 dBA umumnya tidak ikut dihitung dalam dosis harian, tetapi tetap perlu dicatat dalam penilaian lingkungan kerja, terutama bila ada keluhan atau perubahan proses.</p>
+<h3>Seberapa sering pengukuran kebisingan dilakukan?</h3>
+<p>Tidak ada satu jadwal untuk semua tempat kerja. Lakukan pengukuran ulang setiap kali ada perubahan mesin, proses, atau tata letak, serta mengikuti program pemantauan lingkungan kerja yang ditetapkan perusahaan.</p>
+
+<h3>Catatan Penggunaan</h3>
+<p>Tabel ini merupakan ringkasan nilai NAB untuk keperluan referensi dan edukasi. Untuk keperluan hukum atau audit, rujuk teks resmi peraturan yang berlaku.</p>
+
+<h3>Daftar Pustaka</h3>
+<ul>
+<li>Peraturan Menteri Ketenagakerjaan No. 5 Tahun 2018 tentang Keselamatan dan Kesehatan Kerja Lingkungan Kerja</li>
+<li>Undang-Undang No. 1 Tahun 1970 tentang Keselamatan Kerja</li>
+<li>ILO: Safety and Health at Work (panduan umum)</li>
+</ul>
+</section>
 </BaseLayout>
