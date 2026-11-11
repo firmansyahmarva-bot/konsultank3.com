@@ -85,7 +85,7 @@ const server = http.createServer((req, res) => {
     const ext = path.extname(filePath).toLowerCase();
     const mime = MIME_TYPES[ext] || 'application/octet-stream';
     const headers = { 'Content-Type': mime };
-    if (filePath.endsWith('Rambu-Rambu-K3-Beserta-Penjelasannya.png')) {
+    if (filePath.endsWith('Rambu-Rambu-K3-Beserta-Penjelasannya.png') || filePath.endsWith('Rambu-Rambu-K3-Beserta-Penjelasannya-510x261.png')) {
       headers['Link'] = '<https://konsultank3.com/alat-pelindung-diri/>; rel="canonical"';
       headers['Cache-Control'] = 'public, max-age=31536000, immutable';
     }

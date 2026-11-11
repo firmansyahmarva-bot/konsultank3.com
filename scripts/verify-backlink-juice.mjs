@@ -111,16 +111,22 @@ for (const target of uniqueTargets) {
   console.log(`  ✓ Target exists: ${target} (Canonical: ${canonicalExpected})`);
 }
 
-// 4. Verify Image Asset exists in dist/ and public/
-console.log('\n4. Checking Image Asset:');
-const imgDist = path.join(rootDir, 'dist', 'wp-content', 'uploads', '2017', '03', 'Rambu-Rambu-K3-Beserta-Penjelasannya.png');
-const imgPub = path.join(rootDir, 'public', 'wp-content', 'uploads', '2017', '03', 'Rambu-Rambu-K3-Beserta-Penjelasannya.png');
-if (!fs.existsSync(imgDist) || !fs.existsSync(imgPub)) {
-  console.error('❌ Image file missing in dist or public');
-  process.exit(1);
+// 4. Verify Image Assets exist in dist/ and public/
+console.log('\n4. Checking Image Assets:');
+const imagesToCheck = [
+  'Rambu-Rambu-K3-Beserta-Penjelasannya.png',
+  'Rambu-Rambu-K3-Beserta-Penjelasannya-510x261.png'
+];
+for (const imgName of imagesToCheck) {
+  const imgDist = path.join(rootDir, 'dist', 'wp-content', 'uploads', '2017', '03', imgName);
+  const imgPub = path.join(rootDir, 'public', 'wp-content', 'uploads', '2017', '03', imgName);
+  if (!fs.existsSync(imgDist) || !fs.existsSync(imgPub)) {
+    console.error(`❌ Image file missing in dist or public: ${imgName}`);
+    process.exit(1);
+  }
+  const stat = fs.statSync(imgDist);
+  console.log(`  ✓ Asset verified: ${imgName} (${stat.size} bytes in public & dist)`);
 }
-const stat = fs.statSync(imgDist);
-console.log(`  ✓ Asset verified: ${stat.size} bytes (Valid PNG in public & dist)`);
 
 console.log('\n======================================================');
 console.log('✓ ALL 8 BACKLINK ASSETS VERIFIED FOR 100% LINK JUICE!');
