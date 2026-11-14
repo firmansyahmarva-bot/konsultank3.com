@@ -1,0 +1,368 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink, WA_DISPLAY } from '../../data/contact.js';
+
+const page = {
+  "title": "Jasa Fire Risk Assessment & Audit Proteksi Kebakaran",
+  "description": "Jasa Fire & Explosion Risk Assessment industri dan gedung. Audit proteksi aktif, evakuasi, fire risk register, dan roadmap CAPA berbasis risiko.",
+  "canonical": "/fire-risk-assessment/",
+  "label": "Fire & Explosion Risk Assessment",
+  "serviceType": "Fire & Explosion Risk Assessment dan Audit Sistem Proteksi Kebakaran",
+  "h1": "Jasa Fire & Explosion Risk Assessment dan Audit Proteksi Kebakaran",
+  "intro": "Tentukan investasi proteksi kebakaran berdasarkan skenario, kondisi sistem, dan konsekuensi bisnis. Layanan FERA untuk industri dan gedung menghubungkan penilaian risiko, audit teknis, serta roadmap CAPA agar Plant Director dan Procurement memiliki dasar yang jelas sebelum memperbaiki atau mengganti sistem.",
+  "image": "/assets/images/fire-safety-apar.jpg",
+  "imageAlt": "Ilustrasi peralatan proteksi kebakaran untuk penilaian risiko fasilitas",
+  "highlights": [
+    "Proteksi aktif & pasif",
+    "Fire / explosion scenarios",
+    "Roadmap CAPEX & OPEX"
+  ],
+  "presetMessage": "Halo KonsultanK3, kami membutuhkan proposal B2B Fire & Explosion Risk Assessment dan audit proteksi kebakaran. Mohon diskusi TOR, lokasi, sistem terpasang, pengujian, deliverables, serta jadwal survei.",
+  "brief": "Siapkan jenis okupansi, luas fasilitas, daftar bahan, gambar sistem kebakaran, riwayat pengujian, dan target keputusan investasi untuk pembahasan TOR.",
+  "ctaHeading": "Ubah temuan kebakaran menjadi prioritas investasi yang jelas",
+  "cta": "Sampaikan profil fasilitas, jenis bahaya, dan tujuan assessment. Proposal akan memperjelas area survei, standar pembanding, kebutuhan pengujian, analisis konsekuensi, dokumen keluaran, serta batas tanggung jawab. Pengaturan akses dan keselamatan pengujian disepakati sebelum mobilisasi.",
+  "sections": [
+    {
+      "id": "lingkup",
+      "nav": "Ruang lingkup",
+      "heading": "Assessment fasilitas untuk keselamatan jiwa dan kontinuitas operasi",
+      "paragraphs": [
+        "Fire & Explosion Risk Assessment menguji hubungan antara sumber bahaya, kemungkinan kejadian, kerentanan fasilitas, dan kemampuan proteksi. Lingkupnya melampaui pengecekan jumlah APAR. Penilaian menghubungkan bahan bakar, sumber penyalaan, penyebaran api dan asap, akses evakuasi, respons darurat, serta potensi gangguan operasi. Hasil dipakai untuk menetapkan tindakan segera, pekerjaan maintenance, dan paket engineering yang memerlukan investasi.",
+        "Tank farms membutuhkan perhatian pada inventori cairan, bund, transfer material, sumber penyalaan, dan potensi eskalasi antartangki. Gudang kimia memerlukan review segregasi bahan, packaging, ventilasi, tinggi penyimpanan, serta kecocokan proteksi. Pabrik dan smelter dapat memiliki bahaya panas proses, bahan bakar, conveyor, atau debu mudah terbakar. Untuk high-rise, fokus tambahan meliputi kompartemen, shaft, jalan keluar, penghuni yang membutuhkan bantuan, serta kesinambungan sistem saat kondisi darurat.",
+        "Penawaran disusun berdasarkan karakter fasilitas dan tujuan bisnis, misalnya persiapan insurer review, ekspansi, akuisisi, perbaikan temuan audit, atau evaluasi perubahan okupansi. Audit visual, witnessed testing, hydraulic assessment, dan pemodelan konsekuensi adalah lingkup berbeda. Procurement dapat memilih kombinasi yang tepat dengan menyebut keluaran dan batas pemeriksaannya secara eksplisit."
+      ]
+    },
+    {
+      "id": "regulasi",
+      "nav": "Regulasi & NFPA",
+      "heading": "Pisahkan kewajiban Indonesia dari standar pembanding teknis",
+      "paragraphs": [
+        "Basis hukum nasional mencakup UU No. 1 Tahun 1970 tentang Keselamatan Kerja; Permenaker No. PER.04/MEN/1980 untuk pemasangan dan pemeliharaan APAR; serta Kepmenaker No. KEP.186/MEN/1999 untuk unit penanggulangan kebakaran di tempat kerja. Permen PU No. 26/PRT/M/2008 menjadi rujukan persyaratan teknis sistem proteksi kebakaran bangunan gedung dan lingkungan. Penerapannya diperiksa bersama karakter bangunan, aturan daerah, persetujuan yang relevan, dan ketentuan sektoral.",
+        "NFPA digunakan sebagai standar teknis sesuai basis desain, persyaratan kontrak, insurer, atau rujukan yang diberlakukan. Seluruh ketentuan NFPA tidak otomatis menjadi kewajiban hukum nasional. Pada kick-off, tim menyepakati edisi dan klausul yang relevan, lalu membedakan temuan pelanggaran regulasi, gap terhadap desain, dan peluang peningkatan. Perbedaan standar tidak boleh diselesaikan dengan memilih persyaratan termudah tanpa penilaian engineering.",
+        "NFPA 551 merupakan panduan mengevaluasi kesesuaian dan pelaksanaan fire risk assessment. Acuan ini membantu memeriksa logika skenario, metode, data, serta keterbatasan analisis; bukan sertifikasi fasilitas. Untuk bahaya khusus seperti foam, combustible dust, atau bahan tertentu, standar tambahan dapat diperlukan dan dicantumkan dalam scope sebelum analisis dilakukan."
+      ],
+      "table": {
+        "headers": [
+          "Acuan teknis",
+          "Fokus pembandingan",
+          "Bukti yang ditinjau"
+        ],
+        "rows": [
+          [
+            "NFPA 10",
+            "Pemilihan dan pengelolaan alat pemadam portabel",
+            "Jenis media, distribusi, akses, kondisi fisik, serta rekaman pemeliharaan."
+          ],
+          [
+            "NFPA 13 / NFPA 14",
+            "Sprinkler serta standpipe dan hose systems",
+            "Basis desain, klasifikasi okupansi, layout, perubahan penggunaan, dan cakupan sistem."
+          ],
+          [
+            "NFPA 20 / NFPA 25",
+            "Instalasi pompa serta inspeksi, pengujian, dan pemeliharaan sistem berbasis air",
+            "Kurva pompa, suplai air, kondisi valve, log pengujian, serta temuan impairment."
+          ],
+          [
+            "NFPA 72 / NFPA 101",
+            "Deteksi dan alarm; life safety dan means of egress",
+            "Cause-effect, notifikasi, jalur keluar, penghuni, serta kondisi kompartemen."
+          ],
+          [
+            "NFPA 551",
+            "Evaluasi kualitas fire risk assessment",
+            "Kesesuaian metode, skenario, asumsi, konsekuensi, dan dasar rekomendasi."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "metodologi",
+      "nav": "5 tahap engineering",
+      "heading": "Dari inventori bahaya sampai CAPA Priority Roadmap",
+      "paragraphs": [
+        "Tahap 1 — Hazard & Combustible Inventory. Survei memetakan bahan mudah terbakar, bahan reaktif, debu, gas, cairan, serta konstruksi dan material interior. Tim memeriksa SDS, kuantitas maksimum yang kredibel, cara penyimpanan, handling, dan aktivitas transfer. Sumber penyalaan mencakup pekerjaan panas, listrik, listrik statis, permukaan panas, serta kegagalan proses. Kondisi normal, maintenance, dan perubahan sementara dimasukkan dalam pemilihan skenario.",
+        "Tahap 2 — Active Protection Audit. Pemeriksaan mencakup APAR, hydrant, sprinkler, pompa, suplai air, deteksi, dan alarm sesuai instalasi yang ada. Hydrant flow dan pressure dievaluasi melalui pengujian terencana atau rekaman yang dapat diverifikasi. Pengukuran satu titik tidak otomatis membuktikan seluruh jaringan memenuhi kebutuhan hidraulik. Tim meninjau lokasi ukur, kondisi aliran simultan, status valve, kurva pompa, dan kapasitas suplai sebelum memberi kesimpulan.",
+        "Tahap 3 — Passive Compartment & Means of Egress Review. Inspeksi menelusuri dinding tahan api, pintu, penetrasi utilitas, fire stopping, shaft, serta potensi penyebaran asap. Jalur evakuasi dinilai dari karakter okupansi, jumlah penghuni, hambatan, pencahayaan darurat, signage, dan akses menuju tempat aman. Jalur yang terlihat bebas saat audit tetap perlu ditinjau terhadap kondisi pergantian shift dan penumpukan barang pada jam sibuk.",
+        "Tahap 4 — Fire Load & Consequence Analysis. Inventori bahan dan luas kompartemen digunakan untuk menilai fire load jika datanya memadai. Analisis konsekuensi memilih skenario yang relevan: kebakaran tumpahan, jet fire, penyebaran asap, atau ledakan sesuai sifat bahan. Luas dampak, paparan manusia, aset kritis, dan kemungkinan eskalasi ditelaah. Pemodelan kuantitatif hanya disajikan apabila metode, input, dan kompetensi yang diperlukan termasuk dalam kontrak.",
+        "Tahap 5 — CAPA Priority Roadmap. Temuan disusun berdasarkan risiko, kewajiban, urgensi, dan ketergantungan pekerjaan. Perbaikan sederhana seperti akses terhalang tidak disamakan dengan penggantian jaringan atau peningkatan kapasitas pompa. Tindakan sementara, kebutuhan shutdown, pemilik anggaran, dan bukti verifikasi ditulis jelas. Roadmap memungkinkan manajemen mengalokasikan biaya tanpa menunda pengendalian temuan kritis hanya karena proyek besar belum disetujui."
+      ]
+    },
+    {
+      "id": "data",
+      "nav": "Data & pengujian",
+      "heading": "Kesiapan survei dan pengujian yang terkendali",
+      "paragraphs": [
+        "Dokumen awal meliputi layout fasilitas, gambar proteksi kebakaran, daftar inventori dan SDS, occupancy profile, hydraulic calculation bila tersedia, spesifikasi pompa, serta riwayat inspeksi dan testing. Sertakan catatan perubahan layout, penggantian material, impairment, kebakaran atau near miss, dan emergency response plan. Ketika gambar as-built tidak tersedia, proposal harus menyatakan apakah pemetaan lapangan termasuk atau dibatasi pada verifikasi area sampel.",
+        "Pengujian bukan aktivitas coba-coba pada sistem aktif. Sebelum flow test atau functional alarm test, perusahaan menyepakati permit, pemberitahuan ke pengguna, isolasi yang diperlukan, jalur pembuangan air, dan pengaturan proteksi sementara. Pelaksana yang kompeten menjalankan prosedur uji dengan alat ukur yang sesuai dan status kalibrasi dapat ditelusuri. Semua isolasi harus dipulihkan, kemudian status normal dikonfirmasi oleh penanggung jawab fasilitas.",
+        "Temuan yang berpotensi menimbulkan bahaya segera dikomunikasikan saat survei, tanpa menunggu laporan final. Assessment tidak menginstruksikan tim audit membuka instalasi bertegangan atau memasuki area berbahaya tanpa otorisasi. Kondisi yang tidak dapat diperiksa diberi status belum diverifikasi, beserta kebutuhan akses lanjutan. Transparansi ini membuat laporan lebih berguna daripada pernyataan umum bahwa seluruh sistem telah diperiksa."
+      ]
+    },
+    {
+      "id": "deliverables",
+      "nav": "Deliverables",
+      "heading": "Dokumen pengadaan dengan bukti dan acceptance criteria",
+      "paragraphs": [
+        "Setiap temuan memakai identitas lokasi, referensi foto atau dokumen, dasar pembandingan, tingkat risiko, dan rekomendasi yang dapat dilaksanakan. Paket laporan menghubungkan kondisi teknis dengan keputusan manajemen. Format editable membantu pemilik fasilitas memantau implementasi; versi PDF menjadi rekaman baseline yang disetujui. Kriteria penerimaan harus menguji kelengkapan scope, bukan meminta hasil akhir tanpa temuan."
+      ],
+      "table": {
+        "headers": [
+          "Deliverable",
+          "Konten untuk klien",
+          "Acceptance criteria"
+        ],
+        "rows": [
+          [
+            "Fire Risk Register",
+            "Skenario, sumber bahaya, area terdampak, existing control, konsekuensi, risk ranking, dan asumsi.",
+            "Area dalam TOR terpetakan; setiap prioritas terhubung ke bukti dan skenario."
+          ],
+          [
+            "Technical Audit Matrix",
+            "Proteksi aktif, standar atau ketentuan pembanding, status, hasil pengujian yang tersedia, serta keterbatasan.",
+            "Membedakan visual inspection, verified record, witnessed test, dan item belum diperiksa."
+          ],
+          [
+            "Evacuation & Compartment Gap Report",
+            "Hambatan egress, pintu dan penetrasi, jalur asap, serta kebutuhan perbaikan kompartemen.",
+            "Lokasi temuan dapat ditemukan kembali pada gambar atau penanda area."
+          ],
+          [
+            "Fire Load & Consequence Note",
+            "Basis inventori, pilihan skenario, asumsi perhitungan, dan dampak yang dianalisis.",
+            "Kualitas input serta batas ketelitian disebut; output model hanya untuk scope yang disepakati."
+          ],
+          [
+            "Risk-ranked CAPA Roadmap",
+            "Owner, prioritas, target waktu, ketergantungan shutdown, kebutuhan CAPEX/OPEX, dan bukti closure.",
+            "Tindakan segera dipisahkan dari desain rinci; estimasi biaya diberi basis dan batas akurasi."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "jadwal",
+      "nav": "Timeline",
+      "heading": "Jadwal indikatif dan milestone keputusan",
+      "paragraphs": [
+        "Untuk satu fasilitas dengan data cukup, kerangka pekerjaan dapat disusun dalam empat sampai enam minggu. Fasilitas multi-site, sistem beragam, keterbatasan akses, atau model konsekuensi rinci memerlukan penjadwalan tersendiri. Hari survei bukan keseluruhan durasi proyek karena desk review, analisis, verifikasi temuan, dan review manajemen juga memerlukan waktu. Jadwal kontrak ditetapkan setelah daftar area dan metode pengujian disepakati."
+      ],
+      "table": {
+        "headers": [
+          "Milestone",
+          "Aktivitas utama",
+          "Keputusan pemilik fasilitas"
+        ],
+        "rows": [
+          [
+            "Minggu 1",
+            "Kick-off, inventori data, pemilihan standar, sampling plan, dan rencana pengujian.",
+            "Menyetujui scope, akses, standar pembanding, serta penanggung jawab sistem."
+          ],
+          [
+            "Minggu 2",
+            "Survei bahaya, audit aktif dan pasif, serta witnessing pengujian sesuai permit.",
+            "Menindaklanjuti isu kritis dan menutup kekurangan bukti awal."
+          ],
+          [
+            "Minggu 3–4",
+            "Penilaian skenario, analisis fire load atau konsekuensi sesuai kontrak, dan draft register.",
+            "Mengonfirmasi kondisi faktual tanpa menghapus temuan yang terbukti."
+          ],
+          [
+            "Minggu 5–6",
+            "Workshop CAPA, finalisasi laporan, dan presentasi eksekutif.",
+            "Menetapkan owner, prioritas pendanaan, jadwal, serta rencana verifikasi."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "investasi",
+      "nav": "CAPEX & integrasi",
+      "heading": "Roadmap yang mempertimbangkan risiko, biaya, dan operasi",
+      "paragraphs": [
+        "Rekomendasi disusun dalam kelompok tindakan cepat dengan effort rendah, perbaikan menengah, dan investasi besar. Kelompok biaya tersebut bukan pengganti tingkat risiko. Temuan kritis dengan biaya besar tetap membutuhkan pengendalian sementara dan eskalasi segera. Sebaliknya, pembelian peralatan baru belum tentu menjadi prioritas bila masalah utama adalah ketidakandalan suplai, valve tertutup, atau perubahan okupansi yang tidak pernah dikaji.",
+        "Pada handover, manajemen memerlukan daftar keputusan: tindakan mana yang dapat ditangani maintenance, mana yang membutuhkan desain rinci, serta mana yang harus menunggu shutdown terencana. Pengadaan engineering lanjutan dapat mencantumkan kebutuhan design review, commissioning, dan pengujian penerimaan. Assessment tidak otomatis mencakup pekerjaan konstruksi, pengesahan desain, pengurusan persetujuan, atau sertifikasi sistem; setiap tambahan dijelaskan dalam penawaran.",
+        "FERA dapat memakai temuan HAZOP untuk memilih skenario kehilangan containment dan menghindari duplikasi studi. Gap kompetensi tim tanggap darurat diteruskan ke program personel yang sesuai, sedangkan gap izin atau kewajiban periodik masuk legal register. Kualitas pelaporan impairment dan respons pimpinan juga dapat dinilai melalui assessment budaya keselamatan. Hubungan ini membantu perusahaan menyatukan pengendalian teknis dan tata kelola."
+      ],
+      "links": [
+        {
+          "href": "/jasa-konsultasi-hazop/",
+          "text": "HAZOP / HAZID untuk risiko proses dan kehilangan containment"
+        },
+        {
+          "href": "/pelatihan-k3-kebakaran/",
+          "text": "Program kompetensi personel K3 kebakaran"
+        },
+        {
+          "href": "/audit-kepatuhan-regulasi-k3/",
+          "text": "Audit kepatuhan regulasi dan kewajiban proteksi kebakaran"
+        },
+        {
+          "href": "/safety-culture-assessment/",
+          "text": "Diagnosis budaya pelaporan dan respons keselamatan"
+        },
+        {
+          "href": "/panduan-penerapan-smk3/",
+          "text": "Tindak lanjut temuan dalam sistem SMK3"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Apa perbedaan FERA dengan pelatihan K3 kebakaran?",
+      "a": "FERA menilai risiko dan kecukupan pengendalian fasilitas melalui data, inspeksi, serta analisis teknis. Pelatihan berfokus pada kompetensi personel sesuai peran. Laporan assessment dapat menemukan kebutuhan peningkatan kompetensi, tetapi tidak menggantikan pembinaan atau sertifikasi personel. Proposal FERA harus dinilai dari cakupan area, metode, bukti pengujian, dan deliverables, bukan jumlah peserta atau jam pembelajaran."
+    },
+    {
+      "q": "Apakah semua paket mencakup flow test hydrant dan pengujian alarm?",
+      "a": "Tidak otomatis. TOR harus menyebut apakah tim meninjau rekaman uji, menyaksikan pengujian, atau menyediakan pelaksana dan alat ukur. Flow test memerlukan persiapan operasional, pengendalian pembuangan air, dan prosedur pemulihan sistem. Jika pengujian tidak dapat dilakukan, laporan menyatakan batas verifikasi dan kebutuhan tindak lanjut. Kesimpulan kapasitas sistem tidak dibuat hanya dari inspeksi visual."
+    },
+    {
+      "q": "Apakah pemodelan ledakan selalu diperlukan?",
+      "a": "Kebutuhannya ditentukan oleh karakter bahan, inventori, confinement, congestion, sumber penyalaan, serta keputusan yang ingin diambil. Screening dapat menunjukkan perlunya analisis lanjutan, tetapi tidak semua fasilitas memerlukan model ledakan rinci. Jika dimasukkan, proposal harus menyebut skenario, perangkat atau metode, input, asumsi, dan batas akurasi. Angka konsekuensi tanpa basis data yang jelas tidak cukup untuk keputusan desain."
+    },
+    {
+      "q": "Bisakah laporan dipakai untuk kebutuhan insurer atau kantor pusat?",
+      "a": "Bisa disiapkan sebagai masukan dengan menyepakati format, bahasa, standar pembanding, dan kebutuhan bukti sejak awal. Penerimaan akhirnya tetap mengikuti persyaratan insurer atau kantor pusat. Mintalah daftar ekspektasi mereka sebelum survei agar scope tidak harus diulang. Assessment tidak menjanjikan persetujuan polis, penurunan premi, atau penerimaan otomatis tanpa proses evaluasi pihak tersebut."
+    },
+    {
+      "q": "Bagaimana menangani temuan kritis saat fasilitas tetap beroperasi?",
+      "a": "Temuan dikomunikasikan segera kepada penanggung jawab fasilitas untuk keputusan pengendalian sesuai prosedur perusahaan. Laporan mencatat kondisi, konsekuensi, tindakan sementara yang perlu dirancang, owner, serta kebutuhan eskalasi. Tim operasi menentukan pelaksanaan dengan mempertimbangkan keselamatan dan otoritas yang berlaku. Menunggu laporan final atau anggaran tahunan bukan mekanisme penutupan untuk kondisi kritis yang masih terbuka."
+    },
+    {
+      "q": "Apakah audit mencakup seluruh area atau menggunakan sampling?",
+      "a": "Cakupan ditentukan berdasarkan luas, konfigurasi, okupansi, dan risiko. Daftar area yang diperiksa serta area yang tidak dapat diakses harus disampaikan. Sampling komponen sejenis perlu memiliki alasan dan tidak boleh disebut pemeriksaan seratus persen. Procurement dapat meminta perluasan bila variasi sistem atau temuan awal menunjukkan risiko yang tidak terwakili oleh sampel semula."
+    },
+    {
+      "q": "Apa yang memengaruhi biaya dan durasi assessment?",
+      "a": "Faktor utamanya adalah jumlah lokasi, luas dan tipe bangunan, inventori bahan, kompleksitas sistem, kesiapan gambar, kebutuhan testing, serta kedalaman analisis konsekuensi. Mobilisasi, jadwal shutdown, dan bahasa laporan juga berpengaruh. Penawaran sebaiknya memisahkan survei, pengujian, modeling, serta verifikasi CAPA agar perubahan kebutuhan dapat dihitung secara transparan tanpa mengaburkan keluaran utama."
+    },
+    {
+      "q": "Bagaimana membuktikan bahwa CAPA sudah efektif?",
+      "a": "Bukti ditetapkan sesuai temuan: foto dapat membuktikan penghilangan hambatan, tetapi kapasitas pompa membutuhkan bukti uji yang relevan. Modifikasi sistem memerlukan dokumen desain dan penerimaan sesuai scope. Register mencatat reviewer, tanggal, serta residual risk. Verifikasi pascaperbaikan dapat dimasukkan sebagai opsi terpisah sehingga pengadaan awal dan pemeriksaan efektivitas memiliki milestone yang dapat diukur."
+    }
+  ],
+  "sources": [
+    {
+      "href": "https://peraturan.bpk.go.id/Details/104475/permen-pupr",
+      "text": "Permen PU 26/PRT/M/2008 — sistem proteksi kebakaran gedung"
+    },
+    {
+      "href": "https://jdih.kemnaker.go.id/asset/data_puu/1999kmnaker186.pdf",
+      "text": "Kepmenaker KEP.186/MEN/1999 — unit penanggulangan kebakaran"
+    },
+    {
+      "href": "https://www.nfpa.org/for-professionals/codes-and-standards/list-of-codes-and-standards",
+      "text": "NFPA — katalog standar proteksi kebakaran"
+    },
+    {
+      "href": "https://www.nfpa.org/codes-and-standards/nfpa-551-standard-development/551",
+      "text": "NFPA 551 — Guide for the Evaluation of Fire Risk Assessments"
+    }
+  ]
+};
+const { title, description, canonical, faqs, presetMessage } = page;
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Beranda", item: "https://konsultank3.com/" },
+      { "@type": "ListItem", position: 2, name: page.label, item: "https://konsultank3.com" + canonical }
+    ] },
+    { "@type": "Service", "@id": "https://konsultank3.com" + canonical + "#service",
+      name: page.h1, description, url: "https://konsultank3.com" + canonical,
+      serviceType: page.serviceType, areaServed: "ID",
+      provider: { "@type": "Organization", name: "Konsultan K3 Indonesia", url: "https://konsultank3.com" }
+    },
+    { "@type": "FAQPage", mainEntity: faqs.map(({ q, a }) => ({
+      "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a }
+    })) }
+  ]
+};
+---
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema} presetMessage={presetMessage}>
+  <header class="relative overflow-hidden bg-slate-950 text-white border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      <nav aria-label="Breadcrumb" class="flex flex-wrap gap-2 text-sm text-slate-300 mb-10">
+        <a href="/" class="hover:text-amber-400">Beranda</a><span aria-hidden="true">/</span><span aria-current="page">{page.label}</span>
+      </nav>
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <p class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Corporate advisory / Indonesia</p>
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">{page.h1}</h1>
+          <p class="text-slate-300 text-lg leading-relaxed">{page.intro}</p>
+          <div class="flex flex-wrap gap-3">
+            <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl px-6 py-4 bg-emerald-600 hover:bg-emerald-500 font-bold">Diskusikan TOR &amp; Proposal</a>
+            <a href="#deliverables" class="inline-flex rounded-xl px-6 py-4 border border-white/20 hover:bg-white/10 font-semibold">Lihat Deliverables</a>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-3 pt-5">
+            {page.highlights.map(item => <p class="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-amber-300">{item}</p>)}
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <img src={page.image} alt={page.imageAlt} width="800" height="600" fetchpriority="high" class="w-full aspect-[4/3] object-cover rounded-3xl border border-white/15 shadow-xl" />
+          <p class="text-xs text-slate-400 mt-3">Ilustrasi kegiatan K3 industri. Lingkup, personel, dan jadwal ditetapkan dalam proposal proyek.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <nav aria-label="Navigasi layanan" class="rounded-2xl bg-white border border-slate-200 p-5 mb-10">
+      <ul class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-emerald-800">
+        {page.sections.map(section => <li><a class="hover:underline" href={"#" + section.id}>{section.nav}</a></li>)}
+        <li><a class="hover:underline" href="#faq">FAQ Pengadaan</a></li>
+      </ul>
+    </nav>
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-9 space-y-8">
+        {page.sections.map((section, index) => (
+          <section id={section.id} class="scroll-mt-24 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+            <p class="text-xs uppercase tracking-widest text-emerald-700 font-bold mb-3">{String(index + 1).padStart(2, '0')} / {section.nav}</p>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-5">{section.heading}</h2>
+            <div class="space-y-4 text-slate-700 leading-relaxed">
+              {section.paragraphs.map(p => <p>{p}</p>)}
+            </div>
+            {section.table && <div class="overflow-x-auto mt-6 rounded-xl border border-slate-200" role="region" aria-label={section.heading} tabindex="0">
+              <table class="w-full text-sm text-left">
+                <caption class="sr-only">{section.heading}</caption>
+                <thead class="bg-slate-900 text-white"><tr>{section.table.headers.map(h => <th scope="col" class="p-4 font-semibold">{h}</th>)}</tr></thead>
+                <tbody>{section.table.rows.map(row => <tr class="border-t border-slate-200 even:bg-slate-50">{row.map((cell, i) => i === 0 ? <th scope="row" class="p-4 align-top font-semibold text-slate-900">{cell}</th> : <td class="p-4 align-top text-slate-700">{cell}</td>)}</tr>)}</tbody>
+              </table>
+            </div>}
+            {section.links && <ul class="mt-5 space-y-3">{section.links.map(link => <li><a href={link.href} class="font-semibold text-emerald-800 underline underline-offset-4 hover:text-emerald-600">{link.text}</a></li>)}</ul>}
+          </section>
+        ))}
+        <section id="faq" class="scroll-mt-24 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8">
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Pertanyaan yang Sering Diajukan oleh Procurement &amp; HSE</h2>
+          <div class="divide-y divide-slate-200">{faqs.map(({ q, a }) => (
+            <details class="faq-item py-5 group">
+              <summary class="cursor-pointer font-bold text-slate-900 leading-relaxed">{q}</summary>
+              <p class="pt-4 text-slate-700 leading-relaxed">{a}</p>
+            </details>
+          ))}</div>
+        </section>
+        <section class="rounded-3xl bg-slate-950 text-white p-6 sm:p-8">
+          <h2 class="font-serif text-2xl font-bold mb-4">{page.ctaHeading}</h2>
+          <p class="text-slate-300 leading-relaxed mb-6">{page.cta}</p>
+          <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-4 font-bold">Kirim Kebutuhan Proyek — {WA_DISPLAY}</a>
+          <p class="mt-4 text-sm"><a href="/kontak/" class="text-amber-300 underline underline-offset-4">Koordinasi pengadaan melalui halaman kontak</a></p>
+        </section>
+        <section aria-label="Referensi teknis" class="px-2 text-sm text-slate-600">
+          <h2 class="font-bold text-slate-900 mb-3">Acuan untuk penetapan lingkup proyek</h2>
+          <ul class="space-y-2">{page.sources.map(source => <li><a href={source.href} target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 hover:text-emerald-700">{source.text}</a></li>)}</ul>
+          <p class="mt-4">Edisi standar, keberlakuan regulasi, dan persyaratan khusus fasilitas dikonfirmasi kembali pada kick-off dan dicatat dalam basis penilaian.</p>
+        </section>
+      </div>
+      <aside class="lg:col-span-3 lg:sticky lg:top-24 rounded-2xl bg-white border border-slate-200 p-6 space-y-5">
+        <p class="text-xs font-bold uppercase tracking-widest text-emerald-700">Untuk tim pengadaan</p>
+        <h2 class="font-serif text-xl font-bold text-slate-900">Mulai dari ruang lingkup yang jelas</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">{page.brief}</p>
+        <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="block text-center rounded-xl bg-emerald-700 text-white px-4 py-3 font-bold hover:bg-emerald-600">Minta Proposal B2B</a>
+        <p class="text-xs text-slate-500">Dokumen sensitif dibagikan setelah pengaturan kerahasiaan disepakati.</p>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+

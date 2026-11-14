@@ -1,0 +1,412 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink, WA_DISPLAY } from '../../data/contact.js';
+
+const page = {
+  "title": "Jasa Safety Culture & Safety Climate Assessment",
+  "description": "Assessment budaya K3 untuk BUMN, tambang, energi, dan korporasi multi-site. Survei, FGD, maturity scoreboard, serta roadmap kepemimpinan 12 bulan.",
+  "canonical": "/safety-culture-assessment/",
+  "label": "Safety Culture Assessment",
+  "serviceType": "Safety Culture dan Safety Climate Assessment Program",
+  "h1": "Jasa Safety Culture & Safety Climate Assessment Korporasi",
+  "intro": "Ketahui mengapa kebijakan K3 belum selalu menjadi praktik lapangan. Gabungkan survei, wawancara, FGD, observasi, dan bukti operasional menjadi diagnosis kematangan budaya keselamatan yang membantu direksi memilih intervensi, menetapkan akuntabilitas pimpinan, dan menyusun roadmap perbaikan 12 bulan.",
+  "image": "/assets/images/training-session.jpg",
+  "imageAlt": "Ilustrasi diskusi tim untuk penilaian budaya keselamatan perusahaan",
+  "highlights": [
+    "Survei & bukti lapangan",
+    "Scoreboard per site",
+    "Roadmap 12 bulan"
+  ],
+  "presetMessage": "Halo KonsultanK3, kami membutuhkan proposal B2B Safety Culture/Safety Climate Assessment. Mohon diskusi TOR, jumlah site dan pekerja, sampling, kerahasiaan, maturity scoreboard, serta roadmap 12 bulan.",
+  "brief": "Siapkan jumlah site, populasi pekerja dan kontraktor, pembagian shift, tujuan manajemen, bahasa responden, serta rencana tindak lanjut setelah diagnosis.",
+  "ctaHeading": "Mulai diagnosis dengan keputusan manajemen yang ingin dijawab",
+  "cta": "Sampaikan struktur organisasi, jumlah site, dan tantangan keselamatan yang sedang dihadapi. Proposal perlu menjelaskan desain sampling, instrumen, perlindungan responden, metode triangulasi, dan keluaran bagi direksi. Data individu tidak diperlukan untuk pembicaraan awal.",
+  "sections": [
+    {
+      "id": "mandat",
+      "nav": "Tujuan bisnis",
+      "heading": "Diagnosis untuk BUMN, pertambangan, energi, dan korporasi multi-site",
+      "paragraphs": [
+        "Safety Culture Assessment membantu manajemen melihat apakah keputusan sehari-hari mendukung pengendalian risiko yang ditetapkan perusahaan. Isunya dapat muncul sebagai pelaporan near miss yang rendah, penyimpangan prosedur berulang, ketergantungan pada pengawas, atau perbedaan persepsi antara kantor pusat dan frontline. Assessment menguji kondisi tersebut dengan bukti, kemudian menerjemahkannya menjadi agenda perubahan yang memiliki sponsor dan pemilik tindakan.",
+        "Bagi VP HSE, hasil yang dibutuhkan adalah peta kekuatan dan gap per fungsi, bukan satu skor yang meratakan seluruh organisasi. Plant Director memerlukan prioritas yang dapat dijalankan bersama operasi dan maintenance. Corporate Procurement membutuhkan lingkup, metode sampling, format laporan, serta acceptance criteria yang dapat dibandingkan. Program ini dirancang sebagai diagnosis organisasi dan executive roadmap, dengan coaching kepemimpinan sebagai opsi tindak lanjut.",
+        "Populasi dapat meliputi pekerja tetap, kontraktor, supervisor, manajemen, dan fungsi pendukung sesuai struktur risiko. Pada perusahaan tambang atau energi, lokasi terpencil dan pola roster perlu diperhitungkan. Pada BUMN dan grup multi-site, perbedaan tata kelola, umur fasilitas, serta hubungan kantor pusat dengan unit operasi harus diperiksa sebelum skor antarunit dibandingkan."
+      ]
+    },
+    {
+      "id": "scope",
+      "nav": "Culture vs climate",
+      "heading": "Tentukan kedalaman assessment sebelum memilih instrumen",
+      "paragraphs": [
+        "Safety climate survey menangkap persepsi pekerja pada periode tertentu. Hasilnya berguna sebagai baseline atau pulse check, tetapi dapat dipengaruhi kejadian baru, pergantian pimpinan, dan cara survei dilaksanakan. Safety culture assessment menambahkan penelusuran kebiasaan, keputusan, serta asumsi organisasi melalui wawancara dan observasi. Scope yang lebih mendalam diperlukan ketika manajemen ingin memahami penyebab kesenjangan, bukan hanya melihat distribusi jawaban.",
+        "Kerangka Safety Culture Maturity Model dari HSE UK dan The Keil Centre dapat menjadi salah satu rujukan pembahasan tingkat kematangan. Model dipilih sesuai tujuan dan tidak dicampur tanpa menjelaskan definisi serta aturan penilaiannya. Referensi sejarah program Bulan K3 atau kampanye internal tidak diperlakukan sebagai bukti bahwa suatu unit sudah matang. Diagnosis tetap memerlukan data yang mewakili pekerjaan aktual.",
+        "Penilaian harus berujung pada keputusan: pola supervisi apa yang perlu diubah, hambatan pelaporan mana yang perlu dihilangkan, serta proses pembelajaran apa yang perlu diperkuat. Komunikasi kepada pekerja menjelaskan tujuan tersebut sebelum pengumpulan data. Survei yang tidak diikuti umpan balik dan tindakan dapat mengurangi kepercayaan, sehingga kesiapan sponsor merupakan bagian dari gate proyek."
+      ],
+      "table": {
+        "headers": [
+          "Paket lingkup",
+          "Metode dan kedalaman",
+          "Keputusan yang didukung"
+        ],
+        "rows": [
+          [
+            "Safety Climate Diagnostic",
+            "Survei terstruktur dengan analisis strata dan validasi konteks melalui diskusi terbatas.",
+            "Menentukan baseline persepsi, dimensi prioritas, serta kebutuhan diagnosis lanjutan."
+          ],
+          [
+            "Safety Culture Assessment",
+            "Survei ditriangulasi dengan FGD, wawancara mendalam, observasi, dan review dokumen.",
+            "Memahami mekanisme organisasi yang menjelaskan gap dan memilih intervensi sistemik."
+          ],
+          [
+            "Executive Roadmap & Follow-up",
+            "Workshop pimpinan, penetapan owner, indikator, serta review implementasi sesuai kontrak.",
+            "Mengubah diagnosis menjadi agenda 12 bulan dan memeriksa efektivitas tindakan."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "triangulasi",
+      "nav": "Metode triangulasi",
+      "heading": "Kuantitatif dan kualitatif dengan jejak bukti yang jelas",
+      "paragraphs": [
+        "Survei kuantitatif menggunakan instrumen safety climate tervalidasi yang sesuai tujuan, misalnya NOSACQ-50, dengan memperhatikan ketentuan penggunaan dan versi bahasa. Adaptasi lokal tidak otomatis mewarisi validitas instrumen asal. Pilot memeriksa keterbacaan, relevansi istilah, dan pemahaman pekerja. Analisis mengikuti aturan scoring instrumen, termasuk item terbalik dan jawaban kosong, lalu memeriksa konsistensi internal serta keterbatasan sampel sebelum interpretasi.",
+        "Sampling disusun berdasarkan site, departemen, shift, status hubungan kerja, dan strata management, supervisor, serta frontline. Undangan massal saja tidak memastikan keterwakilan. Response rate ditampilkan per kelompok agar manajemen mengetahui area yang kurang terwakili. Kelompok kecil tidak dipaksakan menjadi ranking; hasil dapat digabung atau dibatasi untuk menjaga kerahasiaan dan menghindari kesimpulan yang tidak stabil.",
+        "FGD memisahkan kelompok dengan perbedaan kekuasaan yang dapat membatasi keterbukaan. Diskusi menelusuri contoh keputusan saat target produksi berbenturan dengan kontrol risiko, respons terhadap laporan, dan pengalaman menghentikan pekerjaan. Wawancara mendalam dengan pimpinan menguji konsistensi antara prioritas yang dinyatakan dan mekanisme anggaran, evaluasi kinerja, serta eskalasi yang sebenarnya dipakai.",
+        "Field safety behavior observation dilakukan pada aktivitas yang disepakati, termasuk briefing, interaksi supervisor, izin kerja, dan respons terhadap kondisi berubah. Observasi tidak hanya menghitung perilaku pekerja; hambatan peralatan, prosedur, beban kerja, dan koordinasi juga dicatat. Review dokumen memeriksa tren insiden, near miss, audit, tindakan korektif, serta bukti pembelajaran lintas site.",
+        "Triangulasi menyandingkan pola survei dengan tema wawancara, observasi, dan rekaman operasional. Bila management memberi skor tinggi tetapi frontline meragukan perlindungan pelapor, laporan menelusuri perbedaan itu sebagai temuan. Ketidaksesuaian antarjenis bukti tidak dihapus untuk menghasilkan cerita yang rapi. Tim menyatakan tingkat keyakinan dan pertanyaan yang masih perlu diverifikasi sebelum memutuskan intervensi."
+      ]
+    },
+    {
+      "id": "maturity",
+      "nav": "Maturity matrix",
+      "heading": "Hudson lima tahap dan DuPont Bradley Curve secara proporsional",
+      "paragraphs": [
+        "Hudson atau Hearts and Minds menggambarkan perkembangan dari Pathological, Reactive, Calculative, Proactive, hingga Generative. Tabel berikut adalah rubric kerja ilustratif untuk menyepakati bukti per dimensi, bukan instrumen berlisensi yang diklaim sebagai milik sendiri. Penilaian proyek menetapkan indikator, anchor, serta mekanisme moderasi sebelum data dianalisis. Angka ordinal tidak boleh dianggap jarak matematis yang sama antarlevel.",
+        "DuPont Bradley Curve, kini dirujuk melalui dss+, memakai empat tahap: Reactive, Dependent, Independent, dan Interdependent. Kerangka tersebut berguna untuk membahas pergeseran tanggung jawab keselamatan dari reaksi menuju kepemilikan bersama. Tahap Bradley tidak dikonversi satu banding satu dengan Hudson. Penggunaan alat proprietary atau benchmark komersial memerlukan hak penggunaan; penawaran harus membedakan diskusi konsep dari asesmen resmi berlisensi."
+      ],
+      "table": {
+        "headers": [
+          "Anchor Hudson",
+          "Bukti ilustratif yang diuji",
+          "Arah intervensi"
+        ],
+        "rows": [
+          [
+            "1 — Pathological",
+            "Masalah disembunyikan; keputusan keselamatan diperlakukan sebagai hambatan dan pelapor takut konsekuensi.",
+            "Perlindungan pelapor, kejelasan tanggung jawab, serta pengendalian dasar yang dapat dipercaya."
+          ],
+          [
+            "2 — Reactive",
+            "Perhatian meningkat setelah kejadian, lalu melemah ketika tekanan operasi kembali normal.",
+            "Review pola kejadian, tindak lanjut konsisten, dan rutinitas supervisi yang terencana."
+          ],
+          [
+            "3 — Calculative",
+            "Sistem dan indikator tersedia, tetapi kepatuhan administratif belum selalu mencerminkan praktik lapangan.",
+            "Periksa kegunaan prosedur, kualitas dialog, dan efektivitas penyelesaian temuan."
+          ],
+          [
+            "4 — Proactive",
+            "Tim mencari sinyal lemah dan menangani risiko sebelum kejadian; pekerja dilibatkan dalam solusi.",
+            "Perkuat deteksi dini, kualitas keputusan, dan pembelajaran antardepartemen."
+          ],
+          [
+            "5 — Generative",
+            "Pertimbangan keselamatan menyatu dalam keputusan operasi dan pembelajaran berlangsung lintas batas organisasi.",
+            "Pelihara kewaspadaan terhadap perubahan, tantang asumsi, dan uji ketahanan kontrol."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "indikator",
+      "nav": "Leading & lagging",
+      "heading": "Skor budaya harus terhubung ke efektivitas pengendalian",
+      "paragraphs": [
+        "Maturity scoreboard menyajikan dimensi per site atau departemen, kesenjangan antarkelompok, dan kualitas bukti. Skor agregat tidak digunakan untuk menutupi unit dengan masalah serius. Jika organisasi memakai skala iklim tertentu, skor tersebut dilaporkan sesuai instrumennya; penetapan maturity membutuhkan evaluasi bukti tambahan. Laporan menjelaskan cara pembobotan, missing data, batas interpretasi, serta perubahan komposisi sampel yang memengaruhi perbandingan.",
+        "Leading indicators dapat mencakup kualitas verifikasi kontrol kritis, waktu respons terhadap laporan, penyelesaian action yang terbukti efektif, dan tindak lanjut dialog pimpinan. Lagging indicators dapat mencakup kejadian dengan konsekuensi aktual, lost time, atau gangguan operasi sesuai definisi perusahaan. Tidak adanya cedera tidak otomatis membuktikan budaya matang. Sebaliknya, kenaikan pelaporan near miss dapat mencerminkan peningkatan kepercayaan dan perlu ditafsirkan bersama bukti.",
+        "Untuk menghindari gaming, target tidak berhenti pada banyaknya observasi atau rapat. Contohnya, leadership walk dinilai dari isu yang ditemukan, kualitas respons, serta umpan balik kepada pekerja. CAPA dinilai dari efektivitas dan berkurangnya pengulangan, bukan persentase closed saja. Sponsor menyepakati indikator yang dapat dipengaruhi pemilik tindakan dan tetap relevan terhadap risiko utama fasilitas."
+      ]
+    },
+    {
+      "id": "deliverables",
+      "nav": "Deliverables",
+      "heading": "Keluaran untuk direksi, HSE, dan pemilik program",
+      "paragraphs": [
+        "Procurement sebaiknya menetapkan format presentasi eksekutif, laporan teknis, serta register tindakan dalam kontrak. Seluruh insight harus dapat ditelusuri ke kategori bukti tanpa membuka identitas responden. Kutipan kualitatif disamarkan dan detail yang memungkinkan identifikasi dihapus. Dataset yang dibagikan mengikuti persetujuan dan tata kelola yang disepakati, bukan permintaan informal untuk mengetahui siapa yang memberi jawaban negatif."
+      ],
+      "table": {
+        "headers": [
+          "Deliverable",
+          "Isi minimum",
+          "Kriteria penerimaan"
+        ],
+        "rows": [
+          [
+            "Maturity Scoreboard by Site/Department",
+            "Skor dimensi, strata, response rate, keterwakilan, serta batas interpretasi.",
+            "Rumus scoring terdokumentasi; kelompok kecil terlindungi; perbandingan memiliki basis yang setara."
+          ],
+          [
+            "Gap Analysis & Evidence Map",
+            "Pola survei, tema FGD, wawancara, observasi, dan tren insiden yang saling menguatkan atau berbeda.",
+            "Temuan memisahkan fakta, interpretasi, dan hipotesis yang belum terkonfirmasi."
+          ],
+          [
+            "12-Month Culture Improvement & Leadership Roadmap",
+            "Prioritas, sponsor, owner, milestone, indikator, dependensi, dan mekanisme review.",
+            "Setiap intervensi menjawab gap tertentu serta memiliki hasil yang dapat diperiksa."
+          ],
+          [
+            "Executive Readout",
+            "Keputusan yang diperlukan, risiko organisasi, serta opsi fokus program dan sumber daya.",
+            "Pimpinan memahami batas data dan menyepakati keputusan tindak lanjut."
+          ],
+          [
+            "Methodology & Data Governance Note",
+            "Instrumen, sampling, consent, anonimisasi, akses, retensi, dan rencana pemusnahan data.",
+            "Metode dapat ditinjau; hak responden dan tanggung jawab pengelola jelas."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "timeline",
+      "nav": "Timeline & roadmap",
+      "heading": "Pisahkan periode diagnosis dari program perubahan 12 bulan",
+      "paragraphs": [
+        "Assessment awal dapat direncanakan sekitar enam sampai delapan minggu untuk lingkup yang disepakati. Durasi dipengaruhi jumlah site, roster, bahasa, dan akses responden. Roadmap 12 bulan adalah agenda implementasi setelah diagnosis, bukan klaim bahwa budaya berubah permanen dalam waktu tersebut. Pemantauan diperlukan untuk melihat apakah praktik kepemimpinan dan pengendalian benar-benar membaik."
+      ],
+      "table": {
+        "headers": [
+          "Periode indikatif",
+          "Pekerjaan",
+          "Gate keputusan"
+        ],
+        "rows": [
+          [
+            "Minggu 1–2",
+            "Kick-off, sampling, pemilihan instrumen, pengaturan kerahasiaan, dan pilot.",
+            "Sponsor menyetujui metode, komunikasi pekerja, serta batas pelaporan kelompok."
+          ],
+          [
+            "Minggu 3–4",
+            "Survei, FGD, wawancara, dan observasi lintas shift sesuai rencana.",
+            "Keterwakilan dievaluasi; kekurangan sampel atau bukti ditindaklanjuti."
+          ],
+          [
+            "Minggu 5–6",
+            "Analisis, triangulasi, dan moderasi maturity per dimensi.",
+            "Temuan diuji konsistensinya dan keterbatasan dinyatakan."
+          ],
+          [
+            "Minggu 7–8",
+            "Executive workshop, finalisasi scoreboard, gap analysis, dan roadmap.",
+            "Pimpinan menetapkan prioritas, owner, sumber daya, serta mekanisme review."
+          ],
+          [
+            "Bulan 1–3 implementasi",
+            "Perkuat kepercayaan pelaporan, respons supervisor, dan tindakan terhadap hambatan utama.",
+            "Baseline indikator dan bukti tindakan awal tersedia."
+          ],
+          [
+            "Bulan 4–6 implementasi",
+            "Coaching pimpinan dan perbaikan proses kerja terpilih.",
+            "Efektivitas diperiksa dengan bukti lapangan dan umpan balik pekerja."
+          ],
+          [
+            "Bulan 7–12 implementasi",
+            "Replikasi praktik efektif, pulse check, serta review kemajuan lintas site.",
+            "Keputusan kelanjutan program berdasarkan hasil dan perubahan konteks."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "governance",
+      "nav": "Kerahasiaan & TOR",
+      "heading": "Kepercayaan responden menjadi bagian dari kualitas data",
+      "paragraphs": [
+        "TOR harus menetapkan siapa yang mengelola data mentah, lokasi penyimpanan, masa retensi, akses terbatas, serta prosedur penghapusan. Responden menerima penjelasan tentang tujuan, sifat partisipasi, dan pelaporan agregat. Atasan tidak mendampingi pekerja mengisi jawaban. Ambang minimum kelompok untuk publikasi disepakati sebelum analisis; unit kecil digabung apabila risiko identifikasi tinggi.",
+        "Biaya dipengaruhi populasi, jumlah strata, kedalaman kualitatif, jumlah lokasi, perjalanan, lisensi instrumen bila diperlukan, serta kebutuhan laporan bilingual. Penawaran perlu memisahkan diagnosis, leadership coaching, pelaksanaan intervensi, dan repeat survey. Tim internal menyediakan akses, kalender shift, serta sponsor yang mampu menindaklanjuti temuan. Kepastian kontribusi ini lebih penting daripada sekadar menargetkan tanggal presentasi.",
+        "Diagnosis budaya dapat dipadukan dengan bukti audit kepatuhan, HAZOP, atau FERA untuk memeriksa mengapa tindakan teknis terlambat atau deviasi berulang. Integrasi ke SMK3 membantu memasukkan roadmap ke tinjauan manajemen. Assessment budaya tidak menggantikan audit regulasi atau analisis engineering; masing-masing menjawab pertanyaan berbeda yang kemudian dipertemukan pada keputusan pimpinan."
+      ],
+      "links": [
+        {
+          "href": "/audit-kepatuhan-regulasi-k3/",
+          "text": "Audit kepatuhan untuk menguji pelaksanaan kewajiban K3"
+        },
+        {
+          "href": "/jasa-konsultasi-hazop/",
+          "text": "HAZOP untuk kualitas pengendalian risiko proses"
+        },
+        {
+          "href": "/fire-risk-assessment/",
+          "text": "FERA untuk risiko kebakaran dan keandalan proteksi"
+        },
+        {
+          "href": "/panduan-penerapan-smk3/",
+          "text": "Integrasi roadmap budaya ke penerapan SMK3"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Apakah kuesioner saja cukup untuk menilai budaya keselamatan?",
+      "a": "Kuesioner memberikan gambaran persepsi pada waktu tertentu. Untuk menyimpulkan mekanisme budaya yang lebih luas, hasil perlu dibandingkan dengan wawancara, observasi, dan bukti operasional. Jika kebutuhan perusahaan hanya baseline climate, lingkup dapat lebih ringkas. Proposal harus menjelaskan batas kesimpulan agar hasil survei tidak dipasarkan sebagai diagnosis menyeluruh tanpa dukungan metode lain."
+    },
+    {
+      "q": "Bagaimana memastikan survei tervalidasi sesuai kondisi perusahaan?",
+      "a": "Pilih instrumen yang memiliki dasar validasi, lalu pastikan versi bahasa dan tata cara penggunaannya sesuai. Pilot lokal memeriksa pemahaman istilah serta konteks pekerja. Perubahan item atau skala perlu dicatat karena dapat memengaruhi validitas dan komparabilitas. Laporan menyertakan pemeriksaan kualitas data, konsistensi, serta keterbatasan; label tervalidasi tidak menjadi alasan mengabaikan karakter populasi yang berbeda."
+    },
+    {
+      "q": "Apakah setiap pekerja harus ikut dan berapa sampel yang dibutuhkan?",
+      "a": "Ukuran serta strategi sampel ditentukan dari populasi, struktur kelompok, tujuan perbandingan, dan tingkat ketelitian yang dibutuhkan. Sensus dapat dipilih, tetapi response rate tetap harus diperiksa. Partisipasi tidak boleh dipaksa untuk menghasilkan angka tinggi. Kelompok penting seperti shift malam dan kontraktor perlu terwakili; kelompok kecil dapat digabung untuk menjaga kerahasiaan dan stabilitas hasil."
+    },
+    {
+      "q": "Bisakah direksi membandingkan peringkat seluruh site?",
+      "a": "Perbandingan bisa dilakukan jika instrumen, waktu pengambilan, definisi kelompok, serta kualitas sampel cukup setara. Perbedaan risiko, ukuran site, dan kondisi operasi harus dipertimbangkan. Scoreboard sebaiknya membantu prioritisasi dukungan, bukan mempermalukan unit. Ranking tunggal tanpa informasi ketidakpastian dapat mendorong manipulasi jawaban dan menghilangkan kesempatan belajar dari masalah yang sebenarnya."
+    },
+    {
+      "q": "Apakah skor survei langsung menentukan level Hudson atau Bradley?",
+      "a": "Tidak. Skor instrumen climate harus ditafsirkan menurut aturannya sendiri. Level maturity memerlukan rubric dan bukti yang disepakati, termasuk praktik pimpinan dan keputusan lapangan. Hudson memiliki lima tahap, sementara Bradley menggunakan empat tahap; keduanya tidak dikonversi otomatis. Jika alat berlisensi dipakai, hak penggunaan serta metode resminya harus diperjelas dalam proposal."
+    },
+    {
+      "q": "Bagaimana melindungi pekerja yang memberi penilaian negatif?",
+      "a": "Desain pengumpulan meminimalkan identitas yang tidak diperlukan dan pelaporan menggunakan kelompok dengan ukuran aman. Kutipan disamarkan, akses data mentah dibatasi, serta atasan menerima insight agregat. Ketentuan tersebut dijelaskan sebelum survei. Jika ada kebutuhan penanganan laporan bahaya serius atau pengaduan, jalur khusus perusahaan dibedakan dari dataset assessment agar janji kerahasiaan tidak dibuat secara keliru."
+    },
+    {
+      "q": "Apakah roadmap termasuk pelatihan dan coaching kepemimpinan?",
+      "a": "Roadmap menetapkan intervensi yang disarankan berdasarkan gap. Pelaksanaan pelatihan, coaching supervisor, atau fasilitasi perubahan dapat ditawarkan sebagai pekerjaan lanjutan dengan tujuan dan evaluasi tersendiri. Coaching sebaiknya menggunakan situasi keputusan nyata, diikuti penerapan dan review hasil. Pengadaan tidak perlu membeli seluruh program sebelum diagnosis menunjukkan masalah prioritas dan kesiapan organisasi untuk berubah."
+    },
+    {
+      "q": "Kapan pengukuran ulang dilakukan dan bagaimana melihat kemajuan?",
+      "a": "Waktu pengukuran ulang mengikuti kebutuhan program dan kesempatan intervensi menghasilkan perubahan. Pulse check dapat memeriksa isu terpilih, sedangkan repeat assessment memakai basis yang sebanding dengan baseline. Kemajuan juga dilihat dari respons laporan, efektivitas CAPA, dan kualitas keputusan pimpinan. Perubahan skor tanpa perubahan praktik atau dengan komposisi sampel berbeda harus ditafsirkan secara hati-hati."
+    }
+  ],
+  "sources": [
+    {
+      "href": "https://www.hse.gov.uk/humanfactors/topics/culture.htm",
+      "text": "HSE UK — organisational culture dan safety climate"
+    },
+    {
+      "href": "https://nfa.dk/nosacq",
+      "text": "National Research Centre for the Working Environment — NOSACQ-50"
+    },
+    {
+      "href": "https://heartsandminds.energyinst.org/toolkit/UYC",
+      "text": "Energy Institute — Understanding your HSE culture"
+    },
+    {
+      "href": "https://www.consultdss.com/content-hub/dss-bradley-curve-infographic/",
+      "text": "dss+ — Bradley Curve dan empat tahap budaya keselamatan"
+    }
+  ]
+};
+const { title, description, canonical, faqs, presetMessage } = page;
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Beranda", item: "https://konsultank3.com/" },
+      { "@type": "ListItem", position: 2, name: page.label, item: "https://konsultank3.com" + canonical }
+    ] },
+    { "@type": "Service", "@id": "https://konsultank3.com" + canonical + "#service",
+      name: page.h1, description, url: "https://konsultank3.com" + canonical,
+      serviceType: page.serviceType, areaServed: "ID",
+      provider: { "@type": "Organization", name: "Konsultan K3 Indonesia", url: "https://konsultank3.com" }
+    },
+    { "@type": "FAQPage", mainEntity: faqs.map(({ q, a }) => ({
+      "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a }
+    })) }
+  ]
+};
+---
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema} presetMessage={presetMessage}>
+  <header class="relative overflow-hidden bg-slate-950 text-white border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      <nav aria-label="Breadcrumb" class="flex flex-wrap gap-2 text-sm text-slate-300 mb-10">
+        <a href="/" class="hover:text-amber-400">Beranda</a><span aria-hidden="true">/</span><span aria-current="page">{page.label}</span>
+      </nav>
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <p class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Corporate advisory / Indonesia</p>
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">{page.h1}</h1>
+          <p class="text-slate-300 text-lg leading-relaxed">{page.intro}</p>
+          <div class="flex flex-wrap gap-3">
+            <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl px-6 py-4 bg-emerald-600 hover:bg-emerald-500 font-bold">Diskusikan TOR &amp; Proposal</a>
+            <a href="#deliverables" class="inline-flex rounded-xl px-6 py-4 border border-white/20 hover:bg-white/10 font-semibold">Lihat Deliverables</a>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-3 pt-5">
+            {page.highlights.map(item => <p class="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-amber-300">{item}</p>)}
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <img src={page.image} alt={page.imageAlt} width="800" height="600" fetchpriority="high" class="w-full aspect-[4/3] object-cover rounded-3xl border border-white/15 shadow-xl" />
+          <p class="text-xs text-slate-400 mt-3">Ilustrasi kegiatan K3 industri. Lingkup, personel, dan jadwal ditetapkan dalam proposal proyek.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <nav aria-label="Navigasi layanan" class="rounded-2xl bg-white border border-slate-200 p-5 mb-10">
+      <ul class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-emerald-800">
+        {page.sections.map(section => <li><a class="hover:underline" href={"#" + section.id}>{section.nav}</a></li>)}
+        <li><a class="hover:underline" href="#faq">FAQ Pengadaan</a></li>
+      </ul>
+    </nav>
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-9 space-y-8">
+        {page.sections.map((section, index) => (
+          <section id={section.id} class="scroll-mt-24 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+            <p class="text-xs uppercase tracking-widest text-emerald-700 font-bold mb-3">{String(index + 1).padStart(2, '0')} / {section.nav}</p>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-5">{section.heading}</h2>
+            <div class="space-y-4 text-slate-700 leading-relaxed">
+              {section.paragraphs.map(p => <p>{p}</p>)}
+            </div>
+            {section.table && <div class="overflow-x-auto mt-6 rounded-xl border border-slate-200" role="region" aria-label={section.heading} tabindex="0">
+              <table class="w-full text-sm text-left">
+                <caption class="sr-only">{section.heading}</caption>
+                <thead class="bg-slate-900 text-white"><tr>{section.table.headers.map(h => <th scope="col" class="p-4 font-semibold">{h}</th>)}</tr></thead>
+                <tbody>{section.table.rows.map(row => <tr class="border-t border-slate-200 even:bg-slate-50">{row.map((cell, i) => i === 0 ? <th scope="row" class="p-4 align-top font-semibold text-slate-900">{cell}</th> : <td class="p-4 align-top text-slate-700">{cell}</td>)}</tr>)}</tbody>
+              </table>
+            </div>}
+            {section.links && <ul class="mt-5 space-y-3">{section.links.map(link => <li><a href={link.href} class="font-semibold text-emerald-800 underline underline-offset-4 hover:text-emerald-600">{link.text}</a></li>)}</ul>}
+          </section>
+        ))}
+        <section id="faq" class="scroll-mt-24 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8">
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Pertanyaan yang Sering Diajukan oleh Procurement &amp; HSE</h2>
+          <div class="divide-y divide-slate-200">{faqs.map(({ q, a }) => (
+            <details class="faq-item py-5 group">
+              <summary class="cursor-pointer font-bold text-slate-900 leading-relaxed">{q}</summary>
+              <p class="pt-4 text-slate-700 leading-relaxed">{a}</p>
+            </details>
+          ))}</div>
+        </section>
+        <section class="rounded-3xl bg-slate-950 text-white p-6 sm:p-8">
+          <h2 class="font-serif text-2xl font-bold mb-4">{page.ctaHeading}</h2>
+          <p class="text-slate-300 leading-relaxed mb-6">{page.cta}</p>
+          <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-4 font-bold">Kirim Kebutuhan Proyek — {WA_DISPLAY}</a>
+          <p class="mt-4 text-sm"><a href="/kontak/" class="text-amber-300 underline underline-offset-4">Koordinasi pengadaan melalui halaman kontak</a></p>
+        </section>
+        <section aria-label="Referensi teknis" class="px-2 text-sm text-slate-600">
+          <h2 class="font-bold text-slate-900 mb-3">Acuan untuk penetapan lingkup proyek</h2>
+          <ul class="space-y-2">{page.sources.map(source => <li><a href={source.href} target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 hover:text-emerald-700">{source.text}</a></li>)}</ul>
+          <p class="mt-4">Edisi standar, keberlakuan regulasi, dan persyaratan khusus fasilitas dikonfirmasi kembali pada kick-off dan dicatat dalam basis penilaian.</p>
+        </section>
+      </div>
+      <aside class="lg:col-span-3 lg:sticky lg:top-24 rounded-2xl bg-white border border-slate-200 p-6 space-y-5">
+        <p class="text-xs font-bold uppercase tracking-widest text-emerald-700">Untuk tim pengadaan</p>
+        <h2 class="font-serif text-xl font-bold text-slate-900">Mulai dari ruang lingkup yang jelas</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">{page.brief}</p>
+        <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="block text-center rounded-xl bg-emerald-700 text-white px-4 py-3 font-bold hover:bg-emerald-600">Minta Proposal B2B</a>
+        <p class="text-xs text-slate-500">Dokumen sensitif dibagikan setelah pengaturan kerahasiaan disepakati.</p>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+

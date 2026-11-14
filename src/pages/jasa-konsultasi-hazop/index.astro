@@ -1,0 +1,401 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink, WA_DISPLAY } from '../../data/contact.js';
+
+const page = {
+  "title": "Jasa Konsultasi HAZOP & HAZID Industri | Konsultan K3",
+  "description": "Jasa studi HAZOP dan HAZID industri: fasilitasi workshop, risk ranking, laporan bilingual, serta action register untuk keputusan proyek dan operasi.",
+  "canonical": "/jasa-konsultasi-hazop/",
+  "label": "Konsultasi HAZOP & HAZID",
+  "serviceType": "Konsultasi dan Fasilitasi Studi HAZOP / HAZID Proses Industri",
+  "h1": "Jasa Konsultasi & Fasilitasi Studi HAZOP / HAZID Industri",
+  "intro": "Bawa keputusan keselamatan proses ke meja engineering dan direksi dengan dasar yang dapat ditelusuri. Susun studi HAZOP untuk fasilitas baru, modifikasi proses, atau evaluasi plant eksisting: batas node jelas, penyimpangan terdokumentasi, serta rekomendasi yang memiliki penanggung jawab dan bukti penyelesaian.",
+  "image": "/assets/images/hero-safety-officer.jpg",
+  "imageAlt": "Ilustrasi profesional K3 untuk kajian risiko proses industri",
+  "highlights": [
+    "Basis IEC 61882",
+    "Workshop lintas disiplin",
+    "Laporan Indonesia / Inggris"
+  ],
+  "presetMessage": "Halo KonsultanK3, kami membutuhkan proposal B2B studi HAZOP/HAZID. Mohon diskusi TOR, jumlah P&ID/node, kesiapan dokumen, jadwal workshop, dan deliverables untuk fasilitas kami.",
+  "brief": "Siapkan jenis proses, lokasi plant, fase proyek, perkiraan P&ID, target keputusan engineering, dan jadwal tim operasi untuk menyusun TOR HAZOP.",
+  "ctaHeading": "Siapkan studi yang dapat dipakai untuk keputusan engineering",
+  "cta": "Kirim ringkasan proses dan target workshop. Proposal perlu menetapkan jumlah node indikatif, kebutuhan facilitator dan scribe, hari sesi, bahasa laporan, batas revisi, serta mekanisme close-out. Gambar proses lengkap dapat diserahkan melalui saluran yang disetujui setelah NDA.",
+  "sections": [
+    {
+      "id": "lingkup",
+      "nav": "Ruang lingkup",
+      "heading": "Dukungan keputusan untuk Plant Director, VP HSE, dan pemilik proyek",
+      "paragraphs": [
+        "Jasa konsultasi HAZOP ini ditujukan untuk oil & gas, petrochemical, power plant, chemical, dan manufacturing dengan interaksi proses yang kompleks. Fokus pekerjaan adalah menemukan skenario kehilangan kendali proses sebelum rekomendasi diterjemahkan menjadi perubahan desain atau operasi. Pemilik fasilitas memperoleh dasar untuk menentukan prioritas investasi, keputusan kesiapan start-up, dan kebutuhan kajian lanjutan. Setiap kesimpulan harus terhubung ke kondisi proses, bukti safeguard, serta asumsi yang dipakai dalam diskusi.",
+        "Untuk proyek baru, penilaian dapat dimulai dengan HAZID ketika pilihan lokasi dan konsep masih terbuka, kemudian HAZOP ketika P&ID cukup matang. Pada fasilitas beroperasi, lingkup dapat dipicu oleh Management of Change, penggantian bahan baku, peningkatan kapasitas, kejadian abnormal, atau revalidasi. Studi brownfield harus menyertakan kondisi aktual, bypass, perubahan tidak terdokumentasi, dan pengalaman operator agar kajian tidak hanya mengevaluasi gambar desain.",
+        "Deliverable komersialnya adalah paket kajian dan fasilitasi, bukan sekadar kehadiran peserta workshop. Procurement dapat memisahkan studi utama, verifikasi tindakan, coaching tim internal, dan analisis khusus sebagai item penawaran. Batas tersebut penting agar permintaan tambahan seperti perhitungan relief, SIL determination, atau simulasi konsekuensi memiliki sumber daya dan persetujuan biaya yang jelas."
+      ]
+    },
+    {
+      "id": "metode",
+      "nav": "Basis studi",
+      "heading": "IEC 61882 dan integrasi Process Safety Management",
+      "paragraphs": [
+        "IEC 61882 menjadi acuan prosedur HAZOP berbasis guide words: penetapan tujuan, persiapan, pemeriksaan sistematis, dokumentasi, serta tindak lanjut. Basis studi proyek menerjemahkan kerangka tersebut menjadi aturan praktis: definisi node, cakupan mode operasi, format worksheet, matriks risiko perusahaan, kriteria eskalasi, dan otoritas penerimaan risiko. Standar tidak menggantikan pengetahuan spesifik proses; keputusan teknis tetap membutuhkan personel yang memahami desain dan pengoperasian fasilitas.",
+        "OSHA 1910.119 digunakan sebagai rujukan Process Safety Management apabila relevan terhadap kebijakan korporat atau kontrak. Ketentuan Amerika Serikat tersebut tidak otomatis menjadi kewajiban hukum seluruh plant Indonesia. Untuk proses yang termasuk cakupannya, pembaruan dan revalidasi process hazard analysis sedikitnya setiap lima tahun merupakan persyaratan OSHA; interval tersebut tidak boleh dipasarkan sebagai aturan universal Indonesia.",
+        "Integrasi praktis dilakukan dengan menghubungkan rekomendasi ke MOC, prosedur operasi, mechanical integrity, serta pre-startup safety review. Evaluasi juga mempertimbangkan faktor manusia, tata letak fasilitas, riwayat insiden, dan kegagalan pengendalian. Studi ini tidak menyatakan plant aman hanya karena workshop selesai: tindakan kritis, asumsi belum terverifikasi, dan keputusan yang tertunda harus tetap terlihat pada laporan direksi."
+      ]
+    },
+    {
+      "id": "perbandingan",
+      "nav": "HAZID / HAZOP / LOPA",
+      "heading": "Pilih kedalaman kajian sesuai keputusan proyek",
+      "paragraphs": [
+        "HAZID, HAZOP, dan LOPA melayani pertanyaan keputusan yang berbeda. Ketiganya dapat disusun sebagai rangkaian pekerjaan, tetapi tidak harus dimasukkan dalam satu harga dasar. Tim proposal perlu menilai kematangan data dan skenario berkonsekuensi besar sebelum menentukan kebutuhan analisis semi-kuantitatif. HAZOP menghasilkan identifikasi skenario; kebutuhan LOPA ditetapkan dari hasil screening dan toleransi risiko yang disepakati."
+      ],
+      "table": {
+        "headers": [
+          "Kajian",
+          "Fokus dan kesiapan data",
+          "Output untuk pemilik fasilitas"
+        ],
+        "rows": [
+          [
+            "HAZID",
+            "Identifikasi bahaya tingkat fasilitas, interaksi aktivitas, lokasi, lingkungan sekitar, dan konsep proses; dapat dimulai dari layout serta deskripsi desain.",
+            "Hazard register, isu tata letak, dan keputusan mitigasi awal sebelum detail engineering dikunci."
+          ],
+          [
+            "HAZOP",
+            "Deviasi terhadap design intention pada node proses dengan P&ID, kondisi operasi, interlock, dan informasi peralatan yang cukup.",
+            "Worksheet sebab–konsekuensi–safeguard, risk ranking, serta rekomendasi dengan pemilik tindakan."
+          ],
+          [
+            "LOPA",
+            "Evaluasi skenario terpilih dengan frekuensi initiating event dan lapisan proteksi independen yang dibuktikan.",
+            "Kecukupan reduksi risiko dan kebutuhan perlindungan tambahan; bukan kredit otomatis untuk setiap alarm."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "kesiapan",
+      "nav": "Kesiapan dokumen",
+      "heading": "P&ID, PFD, dan komposisi tim sebelum workshop",
+      "paragraphs": [
+        "Readiness review memeriksa revisi PFD dan P&ID, mass and energy balance bila tersedia, design pressure dan temperature, deskripsi proses, cause-effect diagram atau SAFE chart, control philosophy, serta dokumen vendor. SOP start-up, shutdown, cleaning, dan operasi abnormal perlu dicocokkan dengan batas studi. SDS bahan, plot plan, daftar alarm, interlock, relief device, serta catatan insiden membantu menghindari asumsi yang keliru tentang bahan dan safeguard.",
+        "Dokumen belum lengkap diberi status, pemilik klarifikasi, serta tanggal penyelesaian. P&ID yang belum as-built tidak otomatis menghentikan seluruh studi, tetapi node terdampak dapat ditunda atau ditandai bersyarat. Walkdown diperlukan bila terdapat perbedaan signifikan antara gambar dan kondisi lapangan. Setiap revisi setelah workshop harus ditinjau dampaknya terhadap skenario yang telah ditutup.",
+        "Independent Chairman atau Facilitator memimpin metode dan menjaga diskusi dari dominasi satu fungsi. Scribe mencatat sebab, konsekuensi, safeguard, keputusan, dan action secara real time. Process Engineer menjelaskan design intention; Instrument Engineer menguji logika alarm dan trip; Safety Engineer menjaga konsistensi penilaian risiko. Operation, maintenance, mechanical atau piping engineer, serta perwakilan vendor bergabung sesuai node. Pemilik fasilitas menunjuk pengambil keputusan dan peserta yang benar-benar memahami proses."
+      ]
+    },
+    {
+      "id": "matrix",
+      "nav": "Node & guide words",
+      "heading": "Matriks deviasi yang diuji terhadap kondisi proses",
+      "paragraphs": [
+        "Setiap node memiliki batas fisik, fungsi, parameter desain, mode operasi, dan dokumen referensi. Matriks berikut adalah contoh pemicu diskusi, bukan daftar deviasi yang wajib dianggap masuk akal pada semua peralatan. Kombinasi yang tidak relevan dicatat alasannya. Untuk tiap deviasi yang kredibel, tim menelusuri penyebab, konsekuensi tanpa mengasumsikan keberhasilan safeguard, pengendalian yang ada, serta kebutuhan rekomendasi."
+      ],
+      "table": {
+        "headers": [
+          "Parameter node",
+          "More",
+          "Less",
+          "No",
+          "Reverse"
+        ],
+        "rows": [
+          [
+            "Flow",
+            "Aliran melebihi kebutuhan downstream",
+            "Aliran rendah menuju pengguna",
+            "Tidak ada aliran pada jalur aktif",
+            "Aliran balik ke sumber atau tangki"
+          ],
+          [
+            "Pressure",
+            "Tekanan melampaui batas desain",
+            "Tekanan rendah atau vakum",
+            "Kehilangan tekanan yang dibutuhkan",
+            "Gradien tekanan terbalik; relevansi dikonfirmasi"
+          ],
+          [
+            "Temperature",
+            "Temperatur terlalu tinggi",
+            "Temperatur terlalu rendah",
+            "Tidak ada pemanasan atau pendinginan yang diperlukan",
+            "Arah perpindahan panas berbalik bila kredibel"
+          ],
+          [
+            "Level",
+            "Level tinggi hingga potensi overflow",
+            "Level rendah yang mengganggu pompa",
+            "Inventori cairan kosong",
+            "Tidak selalu bermakna; gunakan deviasi relevan"
+          ],
+          [
+            "Composition",
+            "Kadar komponen tertentu meningkat",
+            "Kadar komponen penting menurun",
+            "Komponen yang dibutuhkan tidak ada",
+            "Tidak selalu relevan; kaji kontaminasi atau salah material"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "workflow",
+      "nav": "Jadwal proyek",
+      "heading": "Workflow multi-minggu dengan gate keputusan",
+      "paragraphs": [
+        "Jadwal berikut merupakan kerangka estimasi untuk lingkup yang terkendali, bukan janji durasi semua plant. Jumlah node, kerumitan kimia, ketersediaan peserta, bahasa, dan kualitas data menentukan kebutuhan hari kerja. Penawaran final harus memisahkan waktu persiapan, workshop, review draft, serta verifikasi action agar rapat teknis tidak dipadatkan hanya demi mengejar kalender pengadaan.",
+        "Pada workshop, facilitator mengunci satu skenario sebelum melanjutkan pembahasan. Alarm tidak langsung dianggap lapisan proteksi independen; tim memeriksa deteksi, waktu respons, tindakan operator, dan potensi common cause. Untuk protective function yang memerlukan pembuktian khusus, worksheet mencatat kebutuhan kajian lanjutan. Usulan perubahan desain juga diperiksa agar tidak memindahkan risiko ke node lain."
+      ],
+      "table": {
+        "headers": [
+          "Tahap indikatif",
+          "Pekerjaan dan tanggung jawab",
+          "Gate penerimaan"
+        ],
+        "rows": [
+          [
+            "Minggu 1 — Kick-off & Node Breakdown",
+            "Pemilik fasilitas menyerahkan data; facilitator mengusulkan node, matriks risiko, peserta, serta agenda.",
+            "Daftar dokumen, node list, dan basis studi disetujui sebelum sesi."
+          ],
+          [
+            "Minggu 2–3 — Workshop Facilitation",
+            "Tim lintas disiplin menguji deviasi, sebab, konsekuensi, safeguard, risiko, dan rekomendasi.",
+            "Worksheet ditinjau bersama; isu tanpa data masuk clarification log."
+          ],
+          [
+            "Minggu 4 — Review laporan",
+            "Scribe dan facilitator mengonsolidasikan temuan; engineering memeriksa akurasi teknis.",
+            "Komentar draft diselesaikan dan laporan bilingual diterbitkan."
+          ],
+          [
+            "Minggu 5 dan seterusnya — Action Sheet Close-out",
+            "Pemilik action mengajukan bukti; reviewer memeriksa kecukupan terhadap intent rekomendasi.",
+            "Status closed, open, atau deferred beserta dasar keputusan tercatat."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "deliverables",
+      "nav": "Deliverables",
+      "heading": "Paket dokumen yang bisa diterima dan diaudit procurement",
+      "paragraphs": [
+        "TOR perlu menyebut format editable dan PDF, bahasa, jumlah putaran review, serta hak penggunaan dokumen oleh pemilik fasilitas. Nomor identifikasi temuan dipertahankan konsisten di worksheet, ringkasan eksekutif, dan action register. Dengan demikian perubahan status dapat ditelusuri tanpa menyandingkan file berbeda secara manual. Informasi yang belum tersedia ditulis sebagai keterbatasan, bukan dihilangkan dari laporan final."
+      ],
+      "table": {
+        "headers": [
+          "Deliverable",
+          "Isi minimum",
+          "Kriteria penerimaan"
+        ],
+        "rows": [
+          [
+            "HAZOP Worksheet",
+            "Node, revisi gambar, design intention, guide word, deviasi, sebab, konsekuensi, safeguard, dan rekomendasi.",
+            "Seluruh node dalam kontrak tercakup; asumsi dan keputusan dapat ditelusuri."
+          ],
+          [
+            "Risk Ranking Matrix",
+            "Definisi severity dan likelihood, kategori risiko, aturan kredit safeguard, dan ambang eskalasi.",
+            "Disepakati klien; skenario sejenis memakai logika penilaian konsisten."
+          ],
+          [
+            "Bilingual Executive Report Indonesia/Inggris",
+            "Temuan prioritas, keterbatasan studi, keputusan investasi, dan ringkasan tindakan kritis.",
+            "Istilah teknis setara antarbasa; referensi action sesuai worksheet final."
+          ],
+          [
+            "Action Tracking Register",
+            "Nomor action, owner, due date, prioritas, bukti penutupan, reviewer, dan status residual risk.",
+            "Dapat difilter per unit atau disiplin; penutupan memerlukan bukti."
+          ],
+          [
+            "Node dossier & session record",
+            "Node list, gambar rujukan, daftar peserta, attendance, dan catatan klarifikasi.",
+            "Revisi referensi konsisten dengan versi yang dibahas saat sesi."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pengadaan",
+      "nav": "TOR & integrasi",
+      "heading": "Kendalikan biaya, batas studi, dan tindak lanjut",
+      "paragraphs": [
+        "Estimasi biaya disusun dari jumlah P&ID dan node, kompleksitas proses, kebutuhan kunjungan, jumlah hari facilitator dan scribe, serta keluasan laporan. Dokumen berbahasa Inggris, sesi lintas zona waktu, atau kebutuhan vendor khusus dapat memengaruhi jadwal dan komposisi tim. Mintalah rincian pekerjaan dasar dan opsi sehingga penawaran antarpenyedia dapat dibandingkan menggunakan keluaran yang sama.",
+        "In-house HAZOP team coaching dapat ditambahkan untuk menyiapkan peserta membaca worksheet, merumuskan sebab yang spesifik, dan mengevaluasi kualitas rekomendasi. Latihan memakai contoh yang disepakati dan diikuti evaluasi pemahaman. Coaching tidak sama dengan sertifikasi kompetensi BNSP; apabila perusahaan membutuhkan jalur sertifikasi, persyaratan pendidikan, pengalaman, dokumen kandidat, serta asesmen LSP harus dibahas sebagai pengadaan terpisah.",
+        "Penguatan hasil studi dapat mencakup review risiko kebakaran pada skenario pelepasan material, pemeriksaan legal register untuk peralatan terkait, serta diagnosis budaya pelaporan deviasi. Untuk pekerjaan isolasi dan masuk vessel, kompetensi ruang terbatas perlu ditangani bersama pengendalian teknis. Prioritaskan integrasi yang menjawab temuan studi, bukan menambah program tanpa pemilik tindakan."
+      ],
+      "links": [
+        {
+          "href": "/fire-risk-assessment/",
+          "text": "FERA untuk skenario kebakaran dan ledakan proses"
+        },
+        {
+          "href": "/audit-kepatuhan-regulasi-k3/",
+          "text": "Audit kepatuhan peralatan dan regulatory register"
+        },
+        {
+          "href": "/safety-culture-assessment/",
+          "text": "Assessment budaya pelaporan dan kepemimpinan keselamatan"
+        },
+        {
+          "href": "/pelatihan-k3-ruang-terbatas/",
+          "text": "Kompetensi K3 ruang terbatas untuk pekerjaan vessel"
+        },
+        {
+          "href": "/panduan-penerapan-smk3/",
+          "text": "Integrasi tindakan ke penerapan SMK3"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Apakah studi dapat berjalan ketika P&ID belum final?",
+      "a": "Dapat dipertimbangkan setelah readiness review menetapkan bagian yang cukup matang. Gambar yang belum terkendali dapat menyebabkan skenario terlewat atau workshop berulang. Proposal perlu menentukan daftar asumsi, node yang ditunda, dan konsekuensi perubahan revisi. Untuk tahap konsep, HAZID sering lebih sesuai sebagai pekerjaan awal sebelum HAZOP rinci. Pemilik proyek menyetujui batas tersebut sebelum sesi dijadwalkan."
+    },
+    {
+      "q": "Bagaimana menentukan jumlah node dan hari workshop dalam tender?",
+      "a": "Lampirkan daftar P&ID, deskripsi proses, jenis peralatan, mode operasi, dan batas battery limit. Node dibentuk berdasarkan kesamaan design intention serta perubahan kondisi proses, bukan jumlah lembar gambar semata. Minta penawaran mencantumkan asumsi produktivitas sesi dan mekanisme perubahan lingkup. Jumlah hari final mengikuti kompleksitas diskusi dan ketersediaan informasi, sehingga kualitas kajian tetap dapat dipertanggungjawabkan."
+    },
+    {
+      "q": "Siapa yang wajib disediakan oleh perusahaan selama sesi?",
+      "a": "Perusahaan perlu menyediakan process owner, operator berpengalaman, engineering, maintenance, instrument, serta fungsi HSE sesuai node. Facilitator independen menjaga metode, tetapi tidak menggantikan pengetahuan plant. Perwakilan yang berwenang menetapkan action owner diperlukan saat keputusan tindak lanjut. Ketidakhadiran disiplin kunci harus tercatat sebagai keterbatasan dan dapat mengharuskan sesi tambahan untuk menutup isu teknis tertentu."
+    },
+    {
+      "q": "Apakah HAZOP sudah mencakup LOPA dan penetapan SIL?",
+      "a": "Tidak secara otomatis. HAZOP mengidentifikasi skenario yang dapat menjadi masukan screening LOPA. Analisis LOPA membutuhkan data frekuensi, konsekuensi, dan pembuktian independensi lapisan proteksi. Penetapan SIL membutuhkan lingkup serta kompetensi yang sesuai. TOR harus menyatakan apakah pekerjaan tersebut termasuk, menjadi opsi, atau akan ditenderkan terpisah berdasarkan hasil workshop dan kebutuhan reduksi risiko."
+    },
+    {
+      "q": "Bagaimana memastikan rekomendasi tidak berhenti menjadi laporan?",
+      "a": "Setiap rekomendasi diberi owner, target waktu, dan kriteria bukti yang menjawab intent tindakan. Status implementasi dipantau melalui action register, kemudian diverifikasi oleh reviewer yang ditentukan. Penundaan tindakan kritis memerlukan keputusan manajemen dan pengendalian sementara. Penyerahan laporan dan penutupan seluruh tindakan merupakan dua milestone berbeda; keduanya sebaiknya memiliki kriteria penerimaan tersendiri."
+    },
+    {
+      "q": "Apakah workshop dapat dilakukan daring dan dalam dua bahasa?",
+      "a": "Format daring atau hybrid dapat digunakan bila gambar terbaca, koneksi memadai, peserta tersedia, dan akses dokumen terkendali. Walkdown tetap diperlukan ketika kondisi aktual tidak dapat dibuktikan melalui dokumen. Kebutuhan bahasa Indonesia atau Inggris, glosarium teknis, serta versi laporan bilingual ditetapkan dalam proposal. Pembahasan teknis harus memberi kesempatan yang sama kepada operator dan tim engineering."
+    },
+    {
+      "q": "Apakah laporan merupakan sertifikat keselamatan fasilitas?",
+      "a": "Laporan HAZOP merupakan rekaman kajian berdasarkan data, peserta, dan batas studi yang disepakati. Dokumen ini bukan sertifikat bahwa seluruh risiko sudah hilang dan bukan pengganti riksa uji atau persetujuan otoritas. Perusahaan tetap bertanggung jawab terhadap implementasi rekomendasi, penerimaan residual risk, serta pengendalian perubahan. Kebutuhan bukti untuk regulator atau insurer perlu dikonfirmasi sejak penyusunan TOR."
+    },
+    {
+      "q": "Apa yang perlu dikirim untuk mendapatkan proposal teknis dan biaya?",
+      "a": "Mulai dengan ringkasan fasilitas, lokasi, fase proyek, jumlah P&ID indikatif, bahan utama, target waktu, dan bahasa laporan. Sebutkan apakah pekerjaan mencakup HAZID, HAZOP, coaching, atau close-out verification. Setelah pengaturan kerahasiaan disetujui, dokumen terpilih dapat ditinjau untuk menajamkan estimasi. Procurement memperoleh basis pembanding penawaran yang menjelaskan asumsi, exclusions, milestone, serta kebutuhan kontribusi tim internal."
+    }
+  ],
+  "sources": [
+    {
+      "href": "https://webstore.iec.ch/en/publication/24314",
+      "text": "IEC 61882:2016 — panduan aplikasi studi HAZOP"
+    },
+    {
+      "href": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.119",
+      "text": "OSHA 1910.119 — Process Safety Management, termasuk process hazard analysis"
+    }
+  ]
+};
+const { title, description, canonical, faqs, presetMessage } = page;
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Beranda", item: "https://konsultank3.com/" },
+      { "@type": "ListItem", position: 2, name: page.label, item: "https://konsultank3.com" + canonical }
+    ] },
+    { "@type": "Service", "@id": "https://konsultank3.com" + canonical + "#service",
+      name: page.h1, description, url: "https://konsultank3.com" + canonical,
+      serviceType: page.serviceType, areaServed: "ID",
+      provider: { "@type": "Organization", name: "Konsultan K3 Indonesia", url: "https://konsultank3.com" }
+    },
+    { "@type": "FAQPage", mainEntity: faqs.map(({ q, a }) => ({
+      "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a }
+    })) }
+  ]
+};
+---
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema} presetMessage={presetMessage}>
+  <header class="relative overflow-hidden bg-slate-950 text-white border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      <nav aria-label="Breadcrumb" class="flex flex-wrap gap-2 text-sm text-slate-300 mb-10">
+        <a href="/" class="hover:text-amber-400">Beranda</a><span aria-hidden="true">/</span><span aria-current="page">{page.label}</span>
+      </nav>
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <p class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Corporate advisory / Indonesia</p>
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">{page.h1}</h1>
+          <p class="text-slate-300 text-lg leading-relaxed">{page.intro}</p>
+          <div class="flex flex-wrap gap-3">
+            <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl px-6 py-4 bg-emerald-600 hover:bg-emerald-500 font-bold">Diskusikan TOR &amp; Proposal</a>
+            <a href="#deliverables" class="inline-flex rounded-xl px-6 py-4 border border-white/20 hover:bg-white/10 font-semibold">Lihat Deliverables</a>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-3 pt-5">
+            {page.highlights.map(item => <p class="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-amber-300">{item}</p>)}
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <img src={page.image} alt={page.imageAlt} width="800" height="600" fetchpriority="high" class="w-full aspect-[4/3] object-cover rounded-3xl border border-white/15 shadow-xl" />
+          <p class="text-xs text-slate-400 mt-3">Ilustrasi kegiatan K3 industri. Lingkup, personel, dan jadwal ditetapkan dalam proposal proyek.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <nav aria-label="Navigasi layanan" class="rounded-2xl bg-white border border-slate-200 p-5 mb-10">
+      <ul class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-emerald-800">
+        {page.sections.map(section => <li><a class="hover:underline" href={"#" + section.id}>{section.nav}</a></li>)}
+        <li><a class="hover:underline" href="#faq">FAQ Pengadaan</a></li>
+      </ul>
+    </nav>
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-9 space-y-8">
+        {page.sections.map((section, index) => (
+          <section id={section.id} class="scroll-mt-24 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+            <p class="text-xs uppercase tracking-widest text-emerald-700 font-bold mb-3">{String(index + 1).padStart(2, '0')} / {section.nav}</p>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-5">{section.heading}</h2>
+            <div class="space-y-4 text-slate-700 leading-relaxed">
+              {section.paragraphs.map(p => <p>{p}</p>)}
+            </div>
+            {section.table && <div class="overflow-x-auto mt-6 rounded-xl border border-slate-200" role="region" aria-label={section.heading} tabindex="0">
+              <table class="w-full text-sm text-left">
+                <caption class="sr-only">{section.heading}</caption>
+                <thead class="bg-slate-900 text-white"><tr>{section.table.headers.map(h => <th scope="col" class="p-4 font-semibold">{h}</th>)}</tr></thead>
+                <tbody>{section.table.rows.map(row => <tr class="border-t border-slate-200 even:bg-slate-50">{row.map((cell, i) => i === 0 ? <th scope="row" class="p-4 align-top font-semibold text-slate-900">{cell}</th> : <td class="p-4 align-top text-slate-700">{cell}</td>)}</tr>)}</tbody>
+              </table>
+            </div>}
+            {section.links && <ul class="mt-5 space-y-3">{section.links.map(link => <li><a href={link.href} class="font-semibold text-emerald-800 underline underline-offset-4 hover:text-emerald-600">{link.text}</a></li>)}</ul>}
+          </section>
+        ))}
+        <section id="faq" class="scroll-mt-24 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8">
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Pertanyaan yang Sering Diajukan oleh Procurement &amp; HSE</h2>
+          <div class="divide-y divide-slate-200">{faqs.map(({ q, a }) => (
+            <details class="faq-item py-5 group">
+              <summary class="cursor-pointer font-bold text-slate-900 leading-relaxed">{q}</summary>
+              <p class="pt-4 text-slate-700 leading-relaxed">{a}</p>
+            </details>
+          ))}</div>
+        </section>
+        <section class="rounded-3xl bg-slate-950 text-white p-6 sm:p-8">
+          <h2 class="font-serif text-2xl font-bold mb-4">{page.ctaHeading}</h2>
+          <p class="text-slate-300 leading-relaxed mb-6">{page.cta}</p>
+          <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-4 font-bold">Kirim Kebutuhan Proyek — {WA_DISPLAY}</a>
+          <p class="mt-4 text-sm"><a href="/kontak/" class="text-amber-300 underline underline-offset-4">Koordinasi pengadaan melalui halaman kontak</a></p>
+        </section>
+        <section aria-label="Referensi teknis" class="px-2 text-sm text-slate-600">
+          <h2 class="font-bold text-slate-900 mb-3">Acuan untuk penetapan lingkup proyek</h2>
+          <ul class="space-y-2">{page.sources.map(source => <li><a href={source.href} target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 hover:text-emerald-700">{source.text}</a></li>)}</ul>
+          <p class="mt-4">Edisi standar, keberlakuan regulasi, dan persyaratan khusus fasilitas dikonfirmasi kembali pada kick-off dan dicatat dalam basis penilaian.</p>
+        </section>
+      </div>
+      <aside class="lg:col-span-3 lg:sticky lg:top-24 rounded-2xl bg-white border border-slate-200 p-6 space-y-5">
+        <p class="text-xs font-bold uppercase tracking-widest text-emerald-700">Untuk tim pengadaan</p>
+        <h2 class="font-serif text-xl font-bold text-slate-900">Mulai dari ruang lingkup yang jelas</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">{page.brief}</p>
+        <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="block text-center rounded-xl bg-emerald-700 text-white px-4 py-3 font-bold hover:bg-emerald-600">Minta Proposal B2B</a>
+        <p class="text-xs text-slate-500">Dokumen sensitif dibagikan setelah pengaturan kerahasiaan disepakati.</p>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+

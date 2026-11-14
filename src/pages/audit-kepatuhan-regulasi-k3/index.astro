@@ -1,0 +1,397 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink, WA_DISPLAY } from '../../data/contact.js';
+
+const page = {
+  "title": "Jasa Audit Kepatuhan Regulasi K3 & Legal Register",
+  "description": "Audit kepatuhan hukum K3 untuk pabrik, BUMN, dan MNC. Legal register Excel, verifikasi izin dan riksa uji, compliance index, serta CAPA berbasis risiko.",
+  "canonical": "/audit-kepatuhan-regulasi-k3/",
+  "label": "Audit Kepatuhan Regulasi K3",
+  "serviceType": "OHS Legal Compliance Audit dan Penyusunan Regulatory Register",
+  "h1": "Jasa Audit Kepatuhan Hukum K3 & Penyusunan Regulatory Register",
+  "intro": "Ketahui kewajiban yang berlaku, bukti yang belum memadai, dan tindakan yang perlu didahulukan. Audit kepatuhan K3 menghubungkan regulasi dengan aset, personel, serta aktivitas plant agar direksi dan procurement memiliki legal register yang dapat dipakai untuk mengendalikan risiko operasional.",
+  "image": "/assets/images/smk3-audit.jpg",
+  "imageAlt": "Ilustrasi pemeriksaan dokumen dan bukti kepatuhan K3 perusahaan",
+  "highlights": [
+    "Legal register Excel",
+    "Verifikasi dokumen & Gemba",
+    "CAPA sesuai prioritas risiko"
+  ],
+  "presetMessage": "Halo KonsultanK3, kami membutuhkan proposal B2B audit kepatuhan hukum K3 dan regulatory register. Mohon diskusi TOR, jumlah site, jenis aset, kebutuhan pra-audit, deliverables Excel, dan jadwal verifikasi.",
+  "brief": "Siapkan profil fasilitas, sektor, jumlah pekerja, inventori peralatan, daftar izin, serta target audit atau transaksi untuk pembahasan scope.",
+  "ctaHeading": "Bangun baseline kepatuhan yang dapat ditindaklanjuti",
+  "cta": "Kirim ringkasan site, jenis operasi, dan kebutuhan pengadaan. Proposal akan menetapkan cluster regulasi, metode sampling, kunjungan lapangan, format legal register, timeline, serta opsi verifikasi closure. Dokumen izin dan data personel dibagikan melalui akses yang disepakati.",
+  "sections": [
+    {
+      "id": "lingkup",
+      "nav": "Kebutuhan korporat",
+      "heading": "Audit untuk MNC, BUMN, akuisisi plant, dan kesiapan pemeriksaan",
+      "paragraphs": [
+        "Jasa OHS Legal Compliance Audit membantu perusahaan memetakan kewajiban yang berlaku terhadap operasi tertentu, menguji bukti pelaksanaan, serta menetapkan rencana perbaikan. Lingkup dapat dipakai untuk baseline plant baru diakuisisi, harmonisasi persyaratan kantor pusat MNC, evaluasi unit BUMN, atau persiapan menghadapi pemeriksaan Disnaker. Hasilnya memberi gambaran kondisi pada tanggal audit, dengan batas area dan sampling yang dinyatakan.",
+        "Masalah yang sering perlu diurai adalah daftar regulasi generik yang tidak terhubung ke peralatan, dokumen lisensi yang tidak sesuai penugasan aktual, jadwal pengujian yang tidak terkendali, atau temuan lama tanpa owner. Audit menelusuri kewajiban sampai unit kerja dan bukti, sehingga manajemen dapat membedakan kekurangan dokumen, kegagalan implementasi, dan kewajiban yang belum diidentifikasi.",
+        "Program juga mendukung persiapan SMK3 dan ISO 45001 melalui evaluasi pemenuhan kewajiban hukum. Audit ini tidak menggantikan audit eksternal resmi, sertifikasi sistem, pemeriksaan pemerintah, atau penerbitan izin. Pembatasan peran tersebut perlu tertulis dalam TOR agar procurement membeli pekerjaan yang tepat dan pemilik fasilitas memahami keputusan mana yang tetap berada pada otoritas berwenang."
+      ]
+    },
+    {
+      "id": "register",
+      "nav": "Legal register",
+      "heading": "Register yang mengikuti profil risiko dan perubahan peraturan",
+      "paragraphs": [
+        "Penyusunan regulatory register dimulai dari jenis kegiatan, lokasi, jumlah pekerja, inventori aset, bahan, dan organisasi pelaksana. Setiap kewajiban diberi referensi pasal atau ketentuan, alasan applicable, pemilik, bukti yang dibutuhkan, frekuensi bila diatur, serta status pemenuhan. Aturan yang tidak relevan diberi alasan, bukan dihapus tanpa jejak. Kebutuhan sektoral dan daerah dibahas ketika lokasi serta jenis kegiatan sudah diketahui.",
+        "Status regulasi diperiksa melalui sumber resmi dan hubungan perubahan atau pencabutan dicatat. Contohnya, P2K3 kini mengacu pada Permenaker No. 13 Tahun 2025 yang menggantikan PER.04/MEN/1987. Untuk operator pesawat uap, Permenaker No. 4 Tahun 2025 menggantikan ketentuan operator tahun 1988. Pembaruan ini penting agar legal register tidak menyalin rujukan lama hanya karena masih tersimpan pada template perusahaan.",
+        "Daftar berikut merupakan kerangka cluster, bukan pernyataan bahwa semua kewajiban berlaku identik pada setiap site. Assessment final menurunkan ketentuan menjadi butir yang dapat diuji terhadap kondisi fasilitas. Perubahan penggunaan alat, penambahan kapasitas, perpindahan operator, serta pergantian entitas setelah akuisisi menjadi pemicu review register dan kebutuhan konfirmasi lebih lanjut."
+      ],
+      "table": {
+        "headers": [
+          "Cluster",
+          "Basis regulasi yang diperiksa",
+          "Bukti dan batas penerapan"
+        ],
+        "rows": [
+          [
+            "Kelembagaan & P2K3",
+            "UU No. 1/1970 dan Permenaker No. 13/2025.",
+            "Struktur, penetapan, program, pelaporan, dan pelaksanaan tugas sesuai kewajiban yang berlaku."
+          ],
+          [
+            "SMK3",
+            "PP No. 50/2012; ketentuan penilaian terkait sesuai scope.",
+            "Profil pekerja dan potensi bahaya, kebijakan, perencanaan, implementasi, evaluasi, serta tinjauan manajemen."
+          ],
+          [
+            "Mekanik / PAA / PTP",
+            "Permenaker No. 8/2020 untuk pesawat angkat angkut; No. 38/2016 untuk pesawat tenaga produksi.",
+            "Inventori, identitas alat, riksa uji, pengaman, kompetensi, dan kewenangan personel sesuai jenis pekerjaan."
+          ],
+          [
+            "Bejana tekanan & tangki timbun",
+            "Permenaker No. 37/2016.",
+            "Spesifikasi, pemeriksaan, pengujian, serta bukti persyaratan teknis; tidak disamakan dengan seluruh ketentuan pesawat uap."
+          ],
+          [
+            "Pesawat uap",
+            "Undang-Undang Uap 1930 dan ketentuan pelaksanaannya; Permenaker No. 4/2025 untuk operator.",
+            "Dokumen pesawat, pengawasan, pemeriksaan, dan kesesuaian operator; pemetaan terpisah dari bejana tekanan."
+          ],
+          [
+            "Listrik & petir",
+            "Permenaker No. 12/2015 jo. No. 33/2015; PER.02/MEN/1989 jo. No. 31/2015 untuk petir.",
+            "Instalasi, hasil riksa uji, personel, serta identitas sistem; aturan listrik tidak mencakup petir secara otomatis."
+          ],
+          [
+            "Penanggulangan kebakaran",
+            "Kepmenaker No. 186/1999 dan PER.04/MEN/1980; ketentuan gedung bila relevan.",
+            "Organisasi, kesiapsiagaan, APAR, proteksi, dan rekaman pengendalian sesuai karakter fasilitas."
+          ],
+          [
+            "Lingkungan kerja & B3",
+            "Permenaker No. 5/2018; Kepmenaker No. 187/1999; PP No. 22/2021 sesuai aspek lingkungan.",
+            "Paparan kerja, bahan kimia, dan kewajiban lingkungan atau limbah B3 dipisahkan; PP 22/2021 bukan satu-satunya dasar keselamatan bahan kimia."
+          ],
+          [
+            "Kesehatan kerja & P3K",
+            "PER.02/MEN/1980, PER.03/MEN/1982, serta PER.15/MEN/VIII/2008 sesuai lingkup.",
+            "Program pemeriksaan kesehatan, pelayanan kesehatan kerja, petugas dan fasilitas P3K; data medis individual dibatasi."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "metode",
+      "nav": "Metode audit",
+      "heading": "Audit berbasis bukti dengan panduan ISO 19011",
+      "paragraphs": [
+        "Metodologi menggunakan prinsip audit ISO 19011 untuk mengatur tujuan, kriteria, kompetensi auditor, sampling, komunikasi, dan pelaporan. ISO 19011 adalah pedoman audit sistem manajemen, bukan sertifikat kepatuhan hukum. Edisi yang digunakan dinyatakan dalam basis audit; rujukan ISO telah menerbitkan edisi 2026. Tim menilai kewajiban Indonesia dari sumber hukumnya, sementara metode audit menjaga konsistensi pengumpulan serta evaluasi bukti.",
+        "Langkah pertama adalah Permit/SIO/SKP/Riksa Uji verification. Auditor mencocokkan dokumen dengan aset, penugasan, lokasi, kapasitas, jenis pekerjaan, masa berlaku bila relevan, serta pihak penerbit. Istilah SIO yang lazim dipakai perusahaan harus dipadankan dengan nama dokumen atau lisensi yang diminta regulasi terkait. Sertifikat pelatihan tidak otomatis membuktikan kewenangan menjalankan seluruh pekerjaan atau mengoperasikan setiap kelas alat.",
+        "Langkah kedua adalah On-site Gemba inspection. Sampel lapangan menguji apakah dokumen mencerminkan kondisi nyata: tag alat sesuai, pengaman tersedia, operator ditugaskan dalam cakupan kewenangannya, serta kegiatan berjalan sesuai prosedur. Wawancara membantu menelusuri bagaimana kewajiban dipantau dan siapa yang menerima peringatan jatuh tempo. Bukti yang saling bertentangan ditindaklanjuti sebelum status pemenuhan diputuskan.",
+        "Langkah ketiga adalah Compliance Index Scoring dan penetapan temuan. Setiap butir memiliki status memenuhi, sebagian, tidak memenuhi, belum terverifikasi, atau tidak berlaku dengan alasan. Pemilik proses mendapat kesempatan memeriksa akurasi fakta, tetapi status tidak diubah hanya karena temuan sulit ditutup. Perselisihan interpretasi dicatat dan diteruskan untuk konfirmasi hukum atau otoritas yang relevan."
+      ]
+    },
+    {
+      "id": "scoring",
+      "nav": "Compliance index",
+      "heading": "Skor transparan tanpa menyembunyikan kewajiban kritis",
+      "paragraphs": [
+        "Metode penilaian disepakati sebelum audit. Sebagai contoh skema proyek, butir applicable dapat diberi skor 1 untuk bukti pemenuhan lengkap, 0,5 untuk pemenuhan sebagian, dan 0 untuk tidak memenuhi. Nilai tersebut adalah indeks pengelolaan internal, bukan rumus resmi pemerintah. Penilaian sebagian harus memiliki kriteria yang jelas agar kekurangan pada kewajiban wajib tidak dianggap selesai hanya karena nilainya tidak nol.",
+        "Compliance index dihitung dari total skor dibagi jumlah butir applicable yang digunakan dalam denominator, kemudian dikali seratus. Butir belum terverifikasi tetap terlihat dan tidak dikeluarkan semata-mata untuk menaikkan skor; dalam skema konservatif diberi nilai nol sampai bukti tersedia. Butir tidak berlaku dikeluarkan hanya setelah alasan applicability disetujui dan tetap tersimpan dalam register.",
+        "Laporan menampilkan indeks per cluster, cakupan pemeriksaan, jumlah bukti tertunda, serta daftar temuan kritis secara terpisah. Skor tinggi tidak membatalkan risiko sebuah izin yang tidak sesuai atau alat berbahaya dengan bukti uji yang tidak memadai. Severity dan urgensi CAPA ditetapkan dari konsekuensi, eksposur, dan kewajiban, bukan sekadar bobot angka dalam dashboard."
+      ]
+    },
+    {
+      "id": "deliverables",
+      "nav": "Deliverables",
+      "heading": "Paket hasil yang siap dipakai oleh Legal, HSE, dan Procurement",
+      "paragraphs": [
+        "Custom Excel Legal Register disusun agar bisa dikelola tim internal setelah handover. Struktur data, definisi status, formula, filter, dan petunjuk pemeliharaan perlu disertakan. Dokumen bukti tetap berada pada repositori yang disepakati; workbook menyimpan referensi sehingga akses dapat dikendalikan. Laporan PDF menjadi baseline audit dan membedakan temuan aktual dari rencana perbaikan yang belum terbukti."
+      ],
+      "table": {
+        "headers": [
+          "Deliverable",
+          "Isi minimum",
+          "Acceptance criteria"
+        ],
+        "rows": [
+          [
+            "Custom Excel Legal Register",
+            "Cluster, regulasi, pasal, applicability, kewajiban, owner, bukti, status, dan tanggal review.",
+            "Butir relevan dengan operasi; sumber resmi serta formula scoring dapat ditelusuri."
+          ],
+          [
+            "Statutory Gap & Licensing Tracker",
+            "Aset atau personel, identitas dokumen, masa berlaku bila ditetapkan, kekurangan bukti, dan kebutuhan tindak lanjut.",
+            "Data cocok dengan sampel lapangan; status pending tidak disajikan sebagai telah memenuhi."
+          ],
+          [
+            "Risk-Ranked CAPA Action Plan",
+            "Temuan, penyebab, tindakan, prioritas, owner, due date, sumber daya, serta bukti closure.",
+            "Tindakan menjawab gap spesifik; verifikasi dibedakan dari sekadar pengajuan dokumen."
+          ],
+          [
+            "Compliance Index & Executive Report",
+            "Indeks per cluster dan site, temuan kritis, batas sampling, serta keputusan yang diperlukan.",
+            "Denominator dan pembobotan jelas; temuan kritis tetap muncul terlepas dari skor total."
+          ],
+          [
+            "Audit Evidence & Handover Pack",
+            "Daftar sampel, catatan verifikasi, referensi dokumen, serta petunjuk update register.",
+            "Tim internal memahami penggunaan workbook dan pemicu review berikutnya."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "timeline",
+      "nav": "Jadwal proyek",
+      "heading": "Alur audit dari data room hingga keputusan CAPA",
+      "paragraphs": [
+        "Kerangka empat sampai enam minggu dapat digunakan untuk satu site dengan dokumen yang cukup tersedia. Durasi aktual mengikuti jumlah aset, cluster, lokasi, dan waktu klarifikasi. Untuk akuisisi, pekerjaan dapat dibagi menjadi red-flag review awal dan verifikasi lebih rinci setelah akses penuh tersedia. Keterbatasan akses tidak boleh hilang dari laporan yang dipakai untuk keputusan transaksi.",
+        "Procurement dapat mengikat pembayaran ke milestone keluaran, misalnya persetujuan audit plan, penyerahan draft register, dan finalisasi laporan setelah factual review. Pelaksanaan CAPA oleh perusahaan berlangsung sesudah diagnosis dan memiliki jadwal tersendiri. Penerbitan izin atau penyelesaian proses pada instansi tidak dapat dijanjikan sebagai hasil otomatis dari konsultasi."
+      ],
+      "table": {
+        "headers": [
+          "Tahap indikatif",
+          "Pekerjaan",
+          "Kontribusi perusahaan"
+        ],
+        "rows": [
+          [
+            "Minggu 1 — Scope & applicability",
+            "Kick-off, inventori operasi, data request, legal mapping, dan audit plan.",
+            "Menunjuk sponsor, owner per cluster, serta akses data room."
+          ],
+          [
+            "Minggu 2 — Desk verification",
+            "Memeriksa izin, lisensi, SKP, rekaman riksa uji, pelaporan, dan bukti program.",
+            "Menjelaskan identitas dokumen dan melengkapi kekurangan bukti."
+          ],
+          [
+            "Minggu 3 — On-site Gemba",
+            "Menelusuri sampel aset, personel, implementasi, dan kondisi operasional.",
+            "Menyediakan pendamping, permit, akses aman, dan perwakilan shift."
+          ],
+          [
+            "Minggu 4–5 — Scoring & factual review",
+            "Menyusun temuan, indeks, tracker, serta draft CAPA.",
+            "Memeriksa akurasi fakta dan mengusulkan owner serta jadwal realistis."
+          ],
+          [
+            "Minggu 6 — Executive handover",
+            "Final register, laporan manajemen, dan workshop penggunaan tracker.",
+            "Menyetujui sumber daya, eskalasi, dan mekanisme verifikasi closure."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pengadaan",
+      "nav": "TOR & tindak lanjut",
+      "heading": "Scope yang jelas menghindari register generik dan biaya tersembunyi",
+      "paragraphs": [
+        "Penawaran perlu menyebut jumlah site, cluster regulasi, estimasi aset atau dokumen, metode sampling, dan bahasa laporan. Tentukan apakah scope mencakup kewajiban lingkungan, persyaratan kontraktor, serta aturan sektoral di luar ketenagakerjaan. Pengujian teknis, pengukuran lingkungan kerja, legal opinion khusus, dan pengurusan izin merupakan pekerjaan berbeda yang perlu dicantumkan jika dibutuhkan.",
+        "Pada MNC, persyaratan korporat dapat dicatat sebagai other requirements dengan label terpisah dari kewajiban hukum Indonesia. Untuk BUMN multi-site, register induk dapat memakai struktur yang sama tetapi applicability tetap ditetapkan per lokasi. Pada plant hasil akuisisi, dokumen yang menyebut entitas lama perlu diperiksa konsekuensinya; audit tidak menganggap seluruh dokumen otomatis beralih hanya karena aset telah dibeli.",
+        "Setelah audit, tim internal perlu menetapkan pemantauan perubahan regulasi, evaluasi perubahan operasi, serta review berkala sesuai risiko dan kewajiban. Tracker sebaiknya menyimpan riwayat status agar temuan berulang dapat terlihat. Handover membekali owner menggunakan register, sedangkan opsi follow-up menguji apakah perbaikan benar-benar memenuhi ketentuan dan tidak hanya menghasilkan file baru."
+      ],
+      "links": [
+        {
+          "href": "/panduan-penerapan-smk3/",
+          "text": "Pendampingan penerapan SMK3 untuk tindak lanjut sistem"
+        },
+        {
+          "href": "/jasa-konsultasi-hazop/",
+          "text": "HAZOP / HAZID untuk risiko engineering proses"
+        },
+        {
+          "href": "/fire-risk-assessment/",
+          "text": "Audit proteksi kebakaran dan FERA yang lebih rinci"
+        },
+        {
+          "href": "/safety-culture-assessment/",
+          "text": "Assessment budaya untuk gap implementasi yang berulang"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Apakah audit ini menghasilkan sertifikat kepatuhan dari pemerintah?",
+      "a": "Tidak. Keluaran utamanya adalah laporan penilaian, legal register, tracker, dan rencana perbaikan berdasarkan lingkup yang disepakati. Pemeriksaan pemerintah, penerbitan izin, serta sertifikasi sistem memiliki mekanisme dan kewenangan tersendiri. Dokumen audit dapat mendukung persiapan dan penelusuran bukti, tetapi tidak menggantikan keputusan instansi atau badan penilai yang berwenang."
+    },
+    {
+      "q": "Bagaimana menentukan regulasi yang berlaku pada plant kami?",
+      "a": "Tim memetakan kegiatan, aset, bahan, jumlah pekerja, lokasi, dan organisasi pelaksana terhadap ketentuan yang relevan. Applicability dicatat per kewajiban dengan alasan serta sumber. Ketentuan yang bersyarat diverifikasi dari kondisi aktual. Daftar yang sama tidak diterapkan mentah pada semua industri; kegiatan khusus atau aturan daerah dapat membutuhkan penambahan scope dan konfirmasi lanjutan."
+    },
+    {
+      "q": "Apakah sertifikat pelatihan cukup sebagai bukti kewenangan operator?",
+      "a": "Tidak selalu. Auditor memeriksa jenis dokumen yang diminta aturan untuk peran serta alat terkait, termasuk kompetensi, lisensi, penunjukan, atau persyaratan lain bila berlaku. Dokumen dicocokkan dengan identitas, kapasitas atau kelas alat, lokasi, dan penugasan aktual. Kesimpulan tidak dibuat hanya dari judul sertifikat atau istilah SIO yang dipakai secara umum dalam administrasi perusahaan."
+    },
+    {
+      "q": "Bagaimana jika dokumen hilang atau masih dalam proses perpanjangan?",
+      "a": "Register mencatat kondisi sebenarnya, bukti pengajuan yang tersedia, serta status belum terverifikasi atau belum memenuhi sesuai kasus. Bukti permohonan tidak otomatis setara dengan dokumen yang telah diterbitkan. Perusahaan perlu menetapkan tindakan dan konfirmasi kewajiban kepada pihak berwenang. Audit tidak mengubah tanggal, mengisi identitas yang tidak dapat dibuktikan, atau menutup temuan berdasarkan janji pengurusan saja."
+    },
+    {
+      "q": "Apakah skor kepatuhan tinggi berarti perusahaan siap untuk semua audit?",
+      "a": "Skor hanya merangkum butir serta scope yang diperiksa pada saat tertentu. Temuan kritis, keterbatasan sampling, dan dokumen tertunda tetap harus dilihat terpisah. Audit SMK3, ISO 45001, inspeksi Disnaker, dan persyaratan pelanggan memiliki tujuan serta kriteria berbeda. Laporan harus membantu kesiapan, tanpa menjanjikan hasil eksternal hanya berdasarkan nilai compliance index internal."
+    },
+    {
+      "q": "Dapatkah legal register disiapkan untuk grup dengan banyak lokasi?",
+      "a": "Dapat disusun dengan taxonomy dan format yang seragam, lalu diturunkan menjadi applicability serta owner per site. Perbedaan aset, jumlah pekerja, izin, dan aturan lokal tetap dipertahankan. Dashboard grup sebaiknya menampilkan cakupan serta temuan kritis masing-masing lokasi. Tahapan mobilisasi dan sampling ditentukan agar perbandingan tidak menyamakan site yang bukti pemeriksaannya berbeda jauh."
+    },
+    {
+      "q": "Apakah Excel register dapat dipelihara tanpa konsultan setelah proyek?",
+      "a": "Ya, format editable dan petunjuk penggunaan dapat menjadi bagian deliverable. Handover menjelaskan definisi status, formula indeks, referensi bukti, serta pemicu pembaruan. Perusahaan menunjuk owner untuk memantau perubahan hukum dan operasi. Jika diperlukan, jasa update berkala atau review closure dapat dikontrak terpisah; ketergantungan pada format yang tidak dapat diakses tim internal sebaiknya dihindari."
+    },
+    {
+      "q": "Apa yang diperlukan untuk proposal audit dan estimasi biayanya?",
+      "a": "Sampaikan lokasi, sektor, jumlah pekerja, jenis aset utama, target audit, dan ketersediaan register saat ini. Jelaskan apakah ada kebutuhan akuisisi, bilingual report, lingkungan, atau regulasi sektoral. Estimasi mengikuti jumlah lokasi, kedalaman sampling, volume dokumen, dan kebutuhan lapangan. Proposal harus memisahkan audit diagnosis, pengujian, pengurusan dokumen, serta verifikasi perbaikan supaya tanggung jawab dan harga dapat dibandingkan."
+    }
+  ],
+  "sources": [
+    {
+      "href": "https://www.iso.org/standard/19011",
+      "text": "ISO 19011 — pedoman audit sistem manajemen"
+    },
+    {
+      "href": "https://peraturan.bpk.go.id/Details/5263/pp-no-50-tahun-2012",
+      "text": "PP No. 50 Tahun 2012 — penerapan SMK3"
+    },
+    {
+      "href": "https://jdih.kemnaker.go.id/peraturan/detail/2788/peraturan-menteri-nomor-13-tahun-2025",
+      "text": "Permenaker No. 13 Tahun 2025 — P2K3"
+    },
+    {
+      "href": "https://jdih.kemnaker.go.id/peraturan/detail/1429",
+      "text": "Permenaker No. 37 Tahun 2016 — bejana tekanan dan tangki timbun"
+    },
+    {
+      "href": "https://jdih.kemnaker.go.id/peraturan/detail/2684",
+      "text": "Permenaker No. 4 Tahun 2025 — operator pesawat uap"
+    },
+    {
+      "href": "https://jdih.kemnaker.go.id/peraturan/detail/1154/peraturan-menteri-ketenagakerjaan-nomor-31-tahun-2015",
+      "text": "Permenaker No. 31 Tahun 2015 — perubahan aturan penyalur petir"
+    }
+  ]
+};
+const { title, description, canonical, faqs, presetMessage } = page;
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Beranda", item: "https://konsultank3.com/" },
+      { "@type": "ListItem", position: 2, name: page.label, item: "https://konsultank3.com" + canonical }
+    ] },
+    { "@type": "Service", "@id": "https://konsultank3.com" + canonical + "#service",
+      name: page.h1, description, url: "https://konsultank3.com" + canonical,
+      serviceType: page.serviceType, areaServed: "ID",
+      provider: { "@type": "Organization", name: "Konsultan K3 Indonesia", url: "https://konsultank3.com" }
+    },
+    { "@type": "FAQPage", mainEntity: faqs.map(({ q, a }) => ({
+      "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a }
+    })) }
+  ]
+};
+---
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema} presetMessage={presetMessage}>
+  <header class="relative overflow-hidden bg-slate-950 text-white border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      <nav aria-label="Breadcrumb" class="flex flex-wrap gap-2 text-sm text-slate-300 mb-10">
+        <a href="/" class="hover:text-amber-400">Beranda</a><span aria-hidden="true">/</span><span aria-current="page">{page.label}</span>
+      </nav>
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <p class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Corporate advisory / Indonesia</p>
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">{page.h1}</h1>
+          <p class="text-slate-300 text-lg leading-relaxed">{page.intro}</p>
+          <div class="flex flex-wrap gap-3">
+            <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl px-6 py-4 bg-emerald-600 hover:bg-emerald-500 font-bold">Diskusikan TOR &amp; Proposal</a>
+            <a href="#deliverables" class="inline-flex rounded-xl px-6 py-4 border border-white/20 hover:bg-white/10 font-semibold">Lihat Deliverables</a>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-3 pt-5">
+            {page.highlights.map(item => <p class="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-amber-300">{item}</p>)}
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <img src={page.image} alt={page.imageAlt} width="800" height="600" fetchpriority="high" class="w-full aspect-[4/3] object-cover rounded-3xl border border-white/15 shadow-xl" />
+          <p class="text-xs text-slate-400 mt-3">Ilustrasi kegiatan K3 industri. Lingkup, personel, dan jadwal ditetapkan dalam proposal proyek.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <nav aria-label="Navigasi layanan" class="rounded-2xl bg-white border border-slate-200 p-5 mb-10">
+      <ul class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-emerald-800">
+        {page.sections.map(section => <li><a class="hover:underline" href={"#" + section.id}>{section.nav}</a></li>)}
+        <li><a class="hover:underline" href="#faq">FAQ Pengadaan</a></li>
+      </ul>
+    </nav>
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-9 space-y-8">
+        {page.sections.map((section, index) => (
+          <section id={section.id} class="scroll-mt-24 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+            <p class="text-xs uppercase tracking-widest text-emerald-700 font-bold mb-3">{String(index + 1).padStart(2, '0')} / {section.nav}</p>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-5">{section.heading}</h2>
+            <div class="space-y-4 text-slate-700 leading-relaxed">
+              {section.paragraphs.map(p => <p>{p}</p>)}
+            </div>
+            {section.table && <div class="overflow-x-auto mt-6 rounded-xl border border-slate-200" role="region" aria-label={section.heading} tabindex="0">
+              <table class="w-full text-sm text-left">
+                <caption class="sr-only">{section.heading}</caption>
+                <thead class="bg-slate-900 text-white"><tr>{section.table.headers.map(h => <th scope="col" class="p-4 font-semibold">{h}</th>)}</tr></thead>
+                <tbody>{section.table.rows.map(row => <tr class="border-t border-slate-200 even:bg-slate-50">{row.map((cell, i) => i === 0 ? <th scope="row" class="p-4 align-top font-semibold text-slate-900">{cell}</th> : <td class="p-4 align-top text-slate-700">{cell}</td>)}</tr>)}</tbody>
+              </table>
+            </div>}
+            {section.links && <ul class="mt-5 space-y-3">{section.links.map(link => <li><a href={link.href} class="font-semibold text-emerald-800 underline underline-offset-4 hover:text-emerald-600">{link.text}</a></li>)}</ul>}
+          </section>
+        ))}
+        <section id="faq" class="scroll-mt-24 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8">
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Pertanyaan yang Sering Diajukan oleh Procurement &amp; HSE</h2>
+          <div class="divide-y divide-slate-200">{faqs.map(({ q, a }) => (
+            <details class="faq-item py-5 group">
+              <summary class="cursor-pointer font-bold text-slate-900 leading-relaxed">{q}</summary>
+              <p class="pt-4 text-slate-700 leading-relaxed">{a}</p>
+            </details>
+          ))}</div>
+        </section>
+        <section class="rounded-3xl bg-slate-950 text-white p-6 sm:p-8">
+          <h2 class="font-serif text-2xl font-bold mb-4">{page.ctaHeading}</h2>
+          <p class="text-slate-300 leading-relaxed mb-6">{page.cta}</p>
+          <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-4 font-bold">Kirim Kebutuhan Proyek — {WA_DISPLAY}</a>
+          <p class="mt-4 text-sm"><a href="/kontak/" class="text-amber-300 underline underline-offset-4">Koordinasi pengadaan melalui halaman kontak</a></p>
+        </section>
+        <section aria-label="Referensi teknis" class="px-2 text-sm text-slate-600">
+          <h2 class="font-bold text-slate-900 mb-3">Acuan untuk penetapan lingkup proyek</h2>
+          <ul class="space-y-2">{page.sources.map(source => <li><a href={source.href} target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 hover:text-emerald-700">{source.text}</a></li>)}</ul>
+          <p class="mt-4">Edisi standar, keberlakuan regulasi, dan persyaratan khusus fasilitas dikonfirmasi kembali pada kick-off dan dicatat dalam basis penilaian.</p>
+        </section>
+      </div>
+      <aside class="lg:col-span-3 lg:sticky lg:top-24 rounded-2xl bg-white border border-slate-200 p-6 space-y-5">
+        <p class="text-xs font-bold uppercase tracking-widest text-emerald-700">Untuk tim pengadaan</p>
+        <h2 class="font-serif text-xl font-bold text-slate-900">Mulai dari ruang lingkup yang jelas</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">{page.brief}</p>
+        <a href={waLink(presetMessage)} target="_blank" rel="noopener noreferrer" class="block text-center rounded-xl bg-emerald-700 text-white px-4 py-3 font-bold hover:bg-emerald-600">Minta Proposal B2B</a>
+        <p class="text-xs text-slate-500">Dokumen sensitif dibagikan setelah pengaturan kerahasiaan disepakati.</p>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+
