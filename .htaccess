@@ -20,6 +20,7 @@ RewriteRule ^pdf/faktor-penyebab-akibat-kerja\.html(/.*)?$ https://konsultank3.c
 RewriteRule ^category/konsultan-industri-perusahaan(/.*)?$ https://konsultank3.com/ [R=301,L]
 RewriteRule ^category/industri(/.*)?$ https://konsultank3.com/ [R=301,L]
 RewriteRule ^category/penyakit-akibat-kerja-2(/.*)?$ https://konsultank3.com/penyakit-akibat-kerja/ [R=301,L]
+RewriteRule ^training/ahli-k3-umum-semarang-sertifikat-kemnaker(/.*)?$ https://konsultank3.com/pelatihan-ahli-k3-umum-semarang/ [R=301,L]
 RewriteRule ^rambu-rambu-k3-beserta-penjelasannya-993\.html(/.*)?$ https://konsultank3.com/alat-pelindung-diri/ [R=301,L]
 
 # BEGIN legacy-301
