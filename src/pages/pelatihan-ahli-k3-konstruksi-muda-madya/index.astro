@@ -1,0 +1,423 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Ahli K3 Konstruksi Muda & Madya (BNSP & Kemnaker RI)";
+const description = "Sertifikasi resmi Ahli K3 Konstruksi Muda & Madya (BNSP LPJK & Kemnaker RI). Kuasai SMKK Permen PUPR 10/2021, manajemen risiko proyek, dan lolos uji kompetensi.";
+const canonical = "/pelatihan-ahli-k3-konstruksi-muda-madya/";
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan K3", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "Ahli K3 Konstruksi Muda & Madya", "item": "https://konsultank3.com/pelatihan-ahli-k3-konstruksi-muda-madya/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan & Sertifikasi Ahli K3 Konstruksi Jenjang Muda & Madya (BNSP / Kemnaker)",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "educationalCredentialAwarded": "Sertifikat Kompetensi Kerja (SKK) Konstruksi LPJK / BNSP & SKP Kemnaker RI",
+      "occupationalCategory": "Construction Safety Specialist / Construction Safety Manager",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Blended / Online / In-House Project Site",
+        "courseWorkload": "PT40H"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Konsultasi SMKK & In-House Training K3 Konstruksi Proyek",
+      "serviceType": "Construction Safety Management System (SMKK) Certification",
+      "description": "Layanan pembinaan in-house dan pendampingan audit SMKK Permen PUPR 10/2021 untuk kontraktor BUMN dan swasta di proyek IKN Nusantara, Jabodetabek, Surabaya, dan seluruh Indonesia.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "areaServed": "Indonesia"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa perbedaan utama antara Ahli K3 Konstruksi Muda dan Madya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ahli K3 Konstruksi Muda (Jenjang 7 KKNI) bertugas melakukan pengawasan operasional harian di lapangan, inspeksi scaffold/crane, dan memastikan penerapan prosedur keselamatan pada proyek berisiko sedang. Sedangkan Ahli K3 Konstruksi Madya (Jenjang 8 KKNI) bertindak sebagai Safety Manager atau koordinator SMKK yang merancang Rencana Keselamatan Konstruksi (RKK), memimpin audit SMKK internal, dan bertanggung jawab pada proyek berskala besar bernilai di atas Rp 100 Miliar atau berisiko tinggi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa dasar hukum kewajiban Ahli K3 Konstruksi di proyek konstruksi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kewajiban ini didasarkan pada Peraturan Menteri PUPR No. 10 Tahun 2021 tentang Pedoman Sistem Manajemen Keselamatan Konstruksi (SMKK), UU No. 2 Tahun 2017 tentang Jasa Konstruksi, dan Permenakertrans No. Per.01/MEN/1980 tentang K3 pada Konstruksi Bangunan. Setiap paket pekerjaan konstruksi wajib memiliki personel K3 dengan kualifikasi yang sesuai dengan tingkat risiko proyek."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mana yang harus dipilih: Sertifikat BNSP/LPJK (SKK Konstruksi) atau Kemnaker RI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SKK Konstruksi dari BNSP/LPJK (Kementerian PUPR) wajib dimiliki untuk pemenuhan syarat tender proyek konstruksi pemerintah, BUMN, dan izin usaha jasa konstruksi. Sedangkan Lisensi Ahli K3 Konstruksi Kemnaker RI merupakan penunjukan resmi untuk pemenuhan kepatuhan norma ketenagakerjaan dan audit SMK3 di tempat kerja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa syarat pengalaman kerja untuk mendaftar Ahli K3 Konstruksi Madya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Untuk level Madya, disyaratkan minimal lulusan S1 Teknik dengan pengalaman kerja di bidang keselamatan konstruksi minimal 3 sampai 5 tahun, atau lulusan S2 Teknik dengan pengalaman kerja relevan minimal 2 tahun yang dibuktikan dengan portofolio proyek dan RKK yang pernah disusun."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah pelatihan bisa diselenggarakan in-house di site proyek kami di IKN atau luar pulau?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa. Kami memfasilitasi program pembinaan in-house training langsung di site office proyek Anda, termasuk di kawasan proyek Ibu Kota Nusantara (IKN), Jabodetabek, Surabaya, Medan, maupun Makassar dengan simulasi audit dokumen SMKK."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={pageSchema}>
+  <!-- Hero Header -->
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Pelatihan K3</a>
+        <span>/</span>
+        <span class="text-slate-300">Ahli K3 Konstruksi Muda &amp; Madya</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold border border-blue-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-ping"></span>
+            Permen PUPR No. 10/2021 &bull; Sertifikasi BNSP / Kemnaker
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Sertifikasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400">Ahli K3 Konstruksi Muda &amp; Madya</span>
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Tingkatkan kredibilitas tender dan kepatuhan proyek infrastruktur Anda. Kuasai penyusunan Rencana Keselamatan Konstruksi (RKK), audit SMKK PUPR, dan raih sertifikat resmi berstandar LPJK/BNSP &amp; Kemnaker RI.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo KonsultanK3, saya ingin mendaftar Sertifikasi Ahli K3 Konstruksi Muda / Madya. Mohon informasi jadwal, silabus SMKK, dan biaya pelatihan.")}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-400 hover:to-indigo-500 text-white font-bold text-sm shadow-lg shadow-blue-500/20 transition-all transform hover:-translate-y-0.5"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Konsultasi Sertifikasi Konstruksi
+            </a>
+            <a
+              href="#matriks-risiko"
+              class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-colors"
+            >
+              Cek Matriks Risiko Proyek
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Quick Profile -->
+        <div class="lg:col-span-5">
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 backdrop-blur-sm shadow-2xl space-y-6">
+            <h3 class="font-serif text-lg font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span>
+              Profil Kualifikasi Ahli K3 Konstruksi
+            </h3>
+            
+            <dl class="space-y-4 text-xs sm:text-sm">
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Jenjang Kualifikasi</dt>
+                <dd class="text-white font-semibold text-right">Muda (Jenjang 7) &amp; Madya (Jenjang 8)</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Landasan Hukum</dt>
+                <dd class="text-blue-300 font-semibold text-right">Permen PUPR 10/2021 &amp; UU 2/2017</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Jalur Sertifikasi</dt>
+                <dd class="text-white font-semibold text-right">BNSP / LPJK (SKK) &amp; Kemnaker RI</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Masa Berlaku Sertifikat</dt>
+                <dd class="text-white font-semibold text-right">5 Tahun (SKK LPJK) / 3 Tahun (Kemnaker)</dd>
+              </div>
+              <div class="flex justify-between">
+                <dt class="text-slate-400">Fokus Proyek</dt>
+                <dd class="text-indigo-400 font-semibold text-right">Gedung, Jembatan, Jalan Tol, IKN</dd>
+              </div>
+            </dl>
+
+            <div class="pt-2">
+              <div class="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs text-blue-200 leading-relaxed">
+                <strong>Syarat Tender LPSE/BUMN:</strong> Dalam dokumen tender proyek pemerintah bernilai puluhan hingga ratusan miliar, ketersediaan personel ber-SKK Ahli K3 Konstruksi Muda/Madya aktif merupakan syarat mutlak evaluasi teknis.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Navigation Anchor Strip -->
+  <div class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm text-xs sm:text-sm font-medium">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex overflow-x-auto gap-6 py-3 scrollbar-none text-slate-600">
+      <a href="#perbedaan" class="hover:text-blue-600 whitespace-nowrap">Perbedaan Muda vs Madya</a>
+      <a href="#matriks-risiko" class="hover:text-blue-600 whitespace-nowrap text-blue-700 font-bold">Matriks Proyek Permen PUPR 10/2021</a>
+      <a href="#jalur-sertifikasi" class="hover:text-blue-600 whitespace-nowrap">Jalur LPJK vs Kemnaker</a>
+      <a href="#kurikulum" class="hover:text-blue-600 whitespace-nowrap">Modul &amp; RKK</a>
+      <a href="#proyek-kota" class="hover:text-blue-600 whitespace-nowrap">Layanan Proyek IKN &amp; Kota</a>
+      <a href="#faq" class="hover:text-blue-600 whitespace-nowrap">FAQ</a>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Perbedaan Muda vs Madya -->
+    <section id="perbedaan" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-8 space-y-6 text-slate-700 leading-relaxed text-base">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 block">Klasifikasi Keahlian Berjenjang</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Perbedaan Ahli K3 Konstruksi Muda vs Ahli K3 Konstruksi Madya
+        </h2>
+        <p>
+          Dalam pelaksanaan konstruksi modern, keselamatan kerja tidak lagi dipandang sebagai formalitas pelengkap, melainkan bagian integral dari mutu dan jadwal proyek. Kegagalan struktur, kecelakaan crane roboh, atau insiden pekerja jatuh dari ketinggian (*fall from height*) dapat menghentikan proyek dan memicu sanksi pidana.
+        </p>
+        <p>
+          Berdasarkan Kerangka Kualifikasi Nasional Indonesia (KKNI) dan regulasi Kementerian PUPR, tanggung jawab dibagi secara tegas antara jenjang Muda dan Madya:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+            <span class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold inline-block">Jenjang 7 KKNI</span>
+            <h3 class="font-bold text-slate-900 text-base">Ahli K3 Konstruksi Muda</h3>
+            <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+              <li>&bull; Mengawasi pelaksanaan prosedur K3 harian di zona kerja.</li>
+              <li>&bull; Melakukan inspeksi scaffolding, formwork, dan alat berat sebelum dipakai.</li>
+              <li>&bull; Menilai kepatuhan APD (Safety Harness, helmet, jaring pengaman).</li>
+              <li>&bull; Berperan sebagai koordinator K3 pada proyek berisiko sedang.</li>
+            </ul>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-blue-50/50 border border-blue-200 space-y-3">
+            <span class="px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-800 text-xs font-bold inline-block">Jenjang 8 KKNI</span>
+            <h3 class="font-bold text-slate-900 text-base">Ahli K3 Konstruksi Madya</h3>
+            <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+              <li>&bull; Merancang Dokumen Rencana Keselamatan Konstruksi (RKK) tender &amp; pelaksanaan.</li>
+              <li>&bull; Memimpin audit internal SMKK dan mitigasi risiko struktur berskala besar.</li>
+              <li>&bull; Bertanggung jawab sebagai Safety Manager proyek bernilai &gt; Rp100 Miliar.</li>
+              <li>&bull; Mengoordinasikan tim Ahli Muda dan berkomunikasi dengan Pengawas PUPR.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 p-6 rounded-3xl bg-slate-900 text-white space-y-5 border border-slate-800 shadow-xl">
+        <h3 class="font-serif text-lg font-bold text-blue-400">Prasyarat Pendidikan &amp; Pengalaman</h3>
+        <ul class="space-y-4 text-xs leading-relaxed">
+          <li class="pb-3 border-b border-white/10 space-y-1">
+            <span class="font-bold text-white block text-sm">Syarat Level Muda</span>
+            <span class="text-slate-300">S1 Teknik (Fresh grad s.d. 1 thn pengalaman proyek) atau D3 Teknik dengan pengalaman kerja konstruksi minimal 2–3 tahun.</span>
+          </li>
+          <li class="space-y-1">
+            <span class="font-bold text-white block text-sm">Syarat Level Madya</span>
+            <span class="text-slate-300">S1 Teknik dengan pengalaman kerja terbukti di bidang K3 konstruksi minimal 3–5 tahun, atau lulusan S2 Teknik dengan pengalaman minimal 2 tahun.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: Matriks Proyek Permen PUPR 10/2021 -->
+    <section id="matriks-risiko" class="space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 block">Kesesuaian Regulasi SMKK</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Matriks Kualifikasi Tenaga Ahli K3 Berdasarkan Risiko Proyek
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Sesuai Lampiran Peraturan Menteri PUPR No. 10 Tahun 2021, penugasan personel keselamatan konstruksi diatur berdasarkan kriteria skala risiko pekerjaan:
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-slate-900 text-white font-semibold uppercase tracking-wider text-[11px]">
+            <tr>
+              <th class="p-4 sm:p-5">Tingkat Risiko SMKK</th>
+              <th class="p-4 sm:p-5">Nilai Pagu Kontrak</th>
+              <th class="p-4 sm:p-5">Karakteristik Pekerjaan Proyek</th>
+              <th class="p-4 sm:p-5">Kualifikasi Minimal Personel K3</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-700">
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-slate-900">Risiko Keselamatan Kecil</td>
+              <td class="p-4 sm:p-5 font-semibold text-slate-800">&lt; Rp 10 Miliar</td>
+              <td class="p-4 sm:p-5">Pekerjaan sederhana, tenaga kerja sedikit (&lt; 25 orang), tidak menggunakan alat berat canggih.</td>
+              <td class="p-4 sm:p-5"><span class="px-2.5 py-1 rounded-full bg-slate-100 font-bold text-slate-800">Petugas Keselamatan Konstruksi</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors bg-blue-50/20">
+              <td class="p-4 sm:p-5 font-bold text-blue-900">Risiko Keselamatan Sedang</td>
+              <td class="p-4 sm:p-5 font-semibold text-blue-900">Rp 10 M – Rp 100 Miliar</td>
+              <td class="p-4 sm:p-5">Pekerjaan bertingkat menengah, melibatkan alat berat standar, galian dalam sedang, tenaga kerja 25–100 orang.</td>
+              <td class="p-4 sm:p-5"><span class="px-2.5 py-1 rounded-full bg-blue-100 font-bold text-blue-800">Ahli K3 Konstruksi Muda</span> (atau pengalaman min. 3 thn)</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors bg-indigo-50/30">
+              <td class="p-4 sm:p-5 font-bold text-indigo-950">Risiko Keselamatan Besar</td>
+              <td class="p-4 sm:p-5 font-semibold text-indigo-950">&gt; Rp 100 Miliar</td>
+              <td class="p-4 sm:p-5">Pekerjaan kompleks tinggi (bendungan, terowongan, jalan layang, gedung tinggi &gt; 8 lantai, tenaga kerja &gt; 100 orang).</td>
+              <td class="p-4 sm:p-5"><span class="px-2.5 py-1 rounded-full bg-indigo-600 text-white font-bold">Ahli K3 Konstruksi Madya</span> / Utama</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 3: Dual Track LPJK vs Kemnaker -->
+    <section id="jalur-sertifikasi" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      <div class="p-8 rounded-3xl bg-slate-900 text-white space-y-4 border border-slate-800 shadow-xl">
+        <span class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider block">Jalur 01: Sektor Jasa Konstruksi</span>
+        <h3 class="font-serif text-xl font-bold text-white">SKK Konstruksi LPJK / BNSP</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Sertifikat Kompetensi Kerja (SKK) yang teregistrasi di Lembaga Pengembangan Jasa Konstruksi (LPJK) Kementerian PUPR dan diterbitkan oleh BNSP melalui Asosiasi Profesi resmi.
+        </p>
+        <ul class="space-y-2 text-xs text-slate-400">
+          <li>&check; Wajib untuk pemenuhan kualifikasi tender proyek APBN/APBD/BUMN.</li>
+          <li>&check; Terintegrasi dalam portal SIKI LPJK dan OSS RBA.</li>
+          <li>&check; Masa berlaku sertifikat: 5 (lima) tahun.</li>
+        </ul>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-xl space-y-4">
+        <span class="text-xs font-mono font-bold text-indigo-600 uppercase tracking-wider block">Jalur 02: Sektor Ketenagakerjaan</span>
+        <h3 class="font-serif text-xl font-bold text-slate-900">Sertifikat &amp; SKP Ahli K3 Konstruksi Kemnaker</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Penunjukan resmi dari Direktur Jenderal Pembinaan Pengawasan Ketenagakerjaan dan K3 (Ditjen Binwasnaker &amp; K3) Kementerian Ketenagakerjaan RI.
+        </p>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li>&check; Wajib untuk kepatuhan Permenakertrans No. 01/MEN/1980 di lokasi proyek.</li>
+          <li>&check; Memperoleh Surat Keputusan Penunjukan (SKP) dan Lisensi Kewenangan K3.</li>
+          <li>&check; Masa berlaku lisensi/SKP: 3 (tiga) tahun (dapat diperpanjang).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 4: Proyek IKN & Coverage Kota -->
+    <section id="proyek-kota" class="space-y-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 block">Jangkauan Proyek Nasional</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Dukungan Pelatihan Proyek IKN Nusantara &amp; Koridor Infrastruktur
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Kami memfasilitasi program sertifikasi reguler daring/luring serta program <strong>In-House Training &amp; Pendampingan SMKK langsung di basecamp proyek kontraktor</strong>:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Kawasan IKN &amp; Kalimantan</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Ibu Kota Nusantara (Sepaku, Penajam Paser Utara), Balikpapan, Samarinda, dan proyek jembatan/tol Kalimantan.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Jabodetabek &amp; Jawa</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Jakarta (LRT, MRT, High-Rise Building), Bandung, Surabaya, Semarang, dan proyek jalan tol Trans Jawa.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Sumatra &amp; Indonesia Timur</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Medan, Palembang, Padang (Tol Trans Sumatra), Makassar, Manado, dan proyek bendungan di Nusa Tenggara/Papua.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: FAQ -->
+    <section id="faq" class="space-y-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 block">Pertanyaan Seputar Sertifikasi</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Frequently Asked Questions (FAQ) Ahli K3 Konstruksi
+        </h2>
+      </div>
+
+      <div class="divide-y divide-slate-200 border-y border-slate-200">
+        {pageSchema["@graph"][3].mainEntity.map((item, idx) => (
+          <div class="py-5 space-y-2">
+            <h3 class="font-bold text-slate-900 text-base flex items-start gap-3">
+              <span class="text-blue-600 font-serif font-black">Q{idx + 1}.</span>
+              <span>{item.name}</span>
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed pl-8">
+              {item.acceptedAnswer.text}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Bottom Banner -->
+    <section class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white relative overflow-hidden shadow-2xl border border-white/10">
+      <div class="relative z-10 max-w-2xl space-y-6">
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Penuhi Kualifikasi Tender &amp; Lindungi Proyek Konstruksi Anda
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Amankan sertifikasi Ahli K3 Konstruksi Muda &amp; Madya resmi. Dapatkan bimbingan penyusunan berkas portofolio RKK dan simulasi uji kompetensi asesor hingga tuntas.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a
+            href={waLink("Halo KonsultanK3, kami ingin konsultasi pendaftaran Ahli K3 Konstruksi Muda / Madya untuk tim proyek perusahaan kami.")}
+            target="_blank"
+            rel="noopener"
+            class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-400 hover:to-indigo-500 text-white font-bold text-sm shadow-lg shadow-blue-500/20 transition-all"
+          >
+            Minta Proposal &amp; Jadwal Terdekat
+          </a>
+          <a
+            href="/in-house-training-k3-jakarta-surabaya-balikpapan/"
+            class="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-colors"
+          >
+            Layanan In-House Proyek &amp; IKN
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

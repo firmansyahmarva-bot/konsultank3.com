@@ -1,0 +1,461 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan & Sertifikasi POP Pertambangan BNSP (Pengawas Operasional Pertama)";
+const description = "Sertifikasi resmi Pengawas Operasional Pertama (POP) Pertambangan Minerba BNSP/ESDM. Kuasai 8 unit kompetensi wajib Kepmen ESDM 1827 K/2018 dan lulus uji asesor.";
+const canonical = "/pelatihan-pop-pertambangan-bnsp/";
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan K3", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "POP Pertambangan BNSP", "item": "https://konsultank3.com/pelatihan-pop-pertambangan-bnsp/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Pembekalan & Uji Kompetensi POP Pertambangan BNSP - ESDM",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "educationalCredentialAwarded": "Sertifikat Kompetensi Pengawas Operasional Pertama (POP) BNSP",
+      "occupationalCategory": "Frontline Mining Supervisor / Pengawas Operasional Tambang",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Online / Blended / In-House Site Tambang",
+        "courseWorkload": "PT36H"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "In-House Training & Uji Kompetensi POP Tambang di Site Operasional",
+      "serviceType": "Mining Operational Safety Competency Certification",
+      "description": "Layanan in-house pelatihan dan uji kompetensi POP Pertambangan resmi BNSP di site batubara dan mineral di Balikpapan, Samarinda, Banjarmasin, Morowali, Lahat, dan seluruh Indonesia.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "areaServed": "Indonesia"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu sertifikasi Pengawas Operasional Pertama (POP) Pertambangan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sertifikasi POP Pertambangan adalah sertifikasi kompetensi wajib yang diterbitkan oleh BNSP melalui Lembaga Sertifikasi Profesi (LSP) bidang pertambangan minerba yang diakui oleh Kementerian ESDM. Sertifikasi ini membuktikan bahwa seorang pengawas tingkat pertama (supervisor/foreman) memiliki kompetensi legal dan teknis dalam memimpin keselamatan operasional tambang sesuai kaidah teknik pertambangan yang baik (Good Mining Practice)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa dasar hukum kewajiban sertifikasi POP bagi pengawas tambang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kewajiban ini diatur secara tegas dalam Permen ESDM No. 26 Tahun 2018 dan Kepmen ESDM No. 1827 K/30/MEM/2018 Lampiran II tentang Pedoman Pelaksanaan Kaidah Teknik Pertambangan yang Baik. Setiap pemegang IUP, IUPK, IPR, atau IUJP wajib mengangkat pengawas operasional yang memiliki sertifikat kompetensi pengawas operasional (POP/POM/POU) yang disahkan oleh Kepala Teknik Tambang (KTT)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa saja syarat pendidikan dan pengalaman kerja untuk ikut uji POP BNSP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Persyaratan dasar pengalaman kerja di industri pertambangan minerba: Sarjana (S1/S2/S3) minimal pengalaman kerja 1 tahun di bidang pertambangan; Diploma 3 (D3) minimal pengalaman 3 tahun; dan lulusan SMA/SMK sederajat minimal pengalaman kerja 10 tahun di industri pertambangan. Seluruh pengalaman harus dibuktikan dengan Surat Keterangan Pengalaman Kerja resmi dari perusahaan tambang."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa unit kompetensi yang diujikan dalam asesmen POP Pertambangan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Terdapat 8 (delapan) unit kompetensi wajib: 1) Melaksanakan Peraturan Perundang-undangan Keselamatan Pertambangan, 2) Tugas & Tanggung Jawab Pengawas, 3) Pertemuan Keselamatan Terencana (P5M/Safety Talk), 4) Investigasi Kecelakaan, 5) Identifikasi Bahaya & Pengendalian Risiko (IBPR/HIRADC), 6) Job Safety Analysis (JSA), 7) Perlindungan Lingkungan Pertambangan, dan 8) Inspeksi Keselamatan Pertambangan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah pelatihan dan asesmen POP bisa diadakan langsung di site tambang kami di Kalimantan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sangat bisa. Kami berpengalaman menyelenggarakan In-House Training dan menghadirkan Master Asesor BNSP/ESDM langsung ke basecamp atau site tambang Anda di Balikpapan, Samarinda, Berau, Tabalong, Morowali, Kolaka, maupun Lahat/Tanjung Enim."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={pageSchema}>
+  <!-- Hero Header -->
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Pelatihan K3</a>
+        <span>/</span>
+        <span class="text-slate-300">POP Pertambangan BNSP</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold border border-amber-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+            Regulasi ESDM &bull; Kepmen ESDM No. 1827 K/30/MEM/2018
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Sertifikasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">POP Pertambangan BNSP</span> (Pengawas Operasional Pertama)
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Raih sertifikat kompetensi resmi pengawas tambang minerba berlogo Garuda BNSP. Kuasai 8 unit kompetensi wajib, penyusunan portofolio inspeksi &amp; JSA, serta pembekalan intensif persiapan wawancara Asesor ESDM.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo KonsultanK3, saya ingin mendaftar Pelatihan & Uji Kompetensi POP Pertambangan BNSP. Mohon jadwal terdekat dan verifikasi portofolio masa kerja tambang saya.")}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all transform hover:-translate-y-0.5"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Konsultasi Pendaftaran POP
+            </a>
+            <a
+              href="#kalkulator-pengalaman"
+              class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-colors"
+            >
+              Cek Syarat Pengalaman Tambang
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Highlight Card -->
+        <div class="lg:col-span-5">
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 backdrop-blur-sm shadow-2xl space-y-6">
+            <h3 class="font-serif text-lg font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+              Profil Sertifikasi POP Minerba
+            </h3>
+            
+            <dl class="space-y-4 text-xs sm:text-sm">
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Penerbit Sertifikat</dt>
+                <dd class="text-white font-semibold text-right">BNSP via LSP Perhapi/ESDM</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Regulasi Utama</dt>
+                <dd class="text-amber-300 font-semibold text-right">Kepmen ESDM 1827 K/2018</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Masa Berlaku Sertifikat</dt>
+                <dd class="text-white font-semibold text-right">5 Tahun (Sertifikat Garuda BNSP)</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Pengesahan Lapangan</dt>
+                <dd class="text-white font-semibold text-right">Surat Penunjukan KTT Perusahaan</dd>
+              </div>
+              <div class="flex justify-between">
+                <dt class="text-slate-400">Metode Kelas</dt>
+                <dd class="text-emerald-400 font-semibold text-right">Online Virtual / In-House Site</dd>
+              </div>
+            </dl>
+
+            <div class="pt-2">
+              <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200 leading-relaxed">
+                <strong>Ketentuan Wajib KTT:</strong> Tanpa sertifikat kompetensi POP, seorang foreman atau supervisor tidak dapat disahkan oleh KTT menjadi Pengawas Operasional Tambang yang sah di hadapan Inspektur Tambang ESDM.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Navigation Anchor Strip -->
+  <div class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm text-xs sm:text-sm font-medium">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex overflow-x-auto gap-6 py-3 scrollbar-none text-slate-600">
+      <a href="#urgensi" class="hover:text-amber-600 whitespace-nowrap">Urgensi POP Tambang</a>
+      <a href="#8-unit-kompetensi" class="hover:text-amber-600 whitespace-nowrap">8 Unit Kompetensi Wajib</a>
+      <a href="#kalkulator-pengalaman" class="hover:text-amber-600 whitespace-nowrap text-amber-700 font-bold">Cek Syarat Masa Kerja</a>
+      <a href="#portofolio-tips" class="hover:text-amber-600 whitespace-nowrap">Tips Portofolio Asesor</a>
+      <a href="#site-tambang-kota" class="hover:text-amber-600 whitespace-nowrap">In-House Site Tambang</a>
+      <a href="#faq" class="hover:text-amber-600 whitespace-nowrap">FAQ</a>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Urgensi POP Tambang -->
+    <section id="urgensi" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-8 space-y-6 text-slate-700 leading-relaxed text-base">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Kaidah Teknik Pertambangan yang Baik</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Mengapa Sertifikasi POP Pertambangan Menjadi Syarat Mutlak di Minerba?
+        </h2>
+        <p>
+          Industri pertambangan memiliki karakteristik bahaya ekstrem: operasi alat berat raksasa (*heavy equipment*), lereng tambang curam dengan potensi longsor, peledakan (*blasting*), serta penanganan bahan beracun seperti sianida pada tambang emas atau gas metana pada batubara.
+        </p>
+        <p>
+          Berdasarkan <strong>Kepmen ESDM No. 1827 K/30/MEM/2018 Lampiran II</strong>, tanggung jawab keselamatan operasional di lapangan tidak bisa dibebankan kepada staf biasa. Seorang <strong>Pengawas Operasional Pertama (POP)</strong> bertindak sebagai perpanjangan tangan langsung dari Kepala Teknik Tambang (KTT) untuk memastikan bahwa setiap pekerja pulang dengan selamat di akhir shift kerja.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold text-sm">01</div>
+            <h4 class="font-bold text-slate-900 text-sm">Legalitas Penunjukan Resmi KTT</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Memenuhi syarat sah pengesahan Kartu Pengawas Operasional Tambang oleh Inspektur Tambang Kementerian ESDM saat inspeksi kepatuhan di pit tambang.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-sm">02</div>
+            <h4 class="font-bold text-slate-900 text-sm">Kualifikasi Wajib Kontraktor IUJP</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Perusahaan jasa pertambangan (kontraktor hauling, rental alat berat, blasting, drilling) wajib memiliki rasio pengawas ber-POP untuk memenangkan tender owner tambang.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 p-6 rounded-3xl bg-slate-900 text-white space-y-5 border border-slate-800 shadow-xl">
+        <h3 class="font-serif text-lg font-bold text-amber-400">Jenjang Pengawas Operasional ESDM</h3>
+        <ul class="space-y-4 text-xs leading-relaxed">
+          <li class="pb-3 border-b border-white/10 space-y-1">
+            <span class="font-bold text-white block text-sm">POP (Pengawas Operasional Pertama)</span>
+            <span class="text-slate-300">Frontline supervisor / foreman / team lead yang mengawasi pekerja langsung di pit, disposal, hauling road, atau processing plant.</span>
+          </li>
+          <li class="pb-3 border-b border-white/10 space-y-1">
+            <span class="font-bold text-white block text-sm">POM (Pengawas Operasional Madya)</span>
+            <span class="text-slate-300">Superintendent / Section Head yang mengoordinasikan beberapa pengawas pertama dan mengelola sistem manajemen keselamatan pertambangan (SMKP).</span>
+          </li>
+          <li class="space-y-1">
+            <span class="font-bold text-white block text-sm">POU (Pengawas Operasional Utama)</span>
+            <span class="text-slate-300">Manager / KTT / PJO yang bertanggung jawab penuh terhadap kebijakan strategis operasional seluruh area konsesi tambang.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: 8 Unit Kompetensi Wajib -->
+    <section id="8-unit-kompetensi" class="space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Materi Uji Standar Kompetensi Kerja Khusus (SKKK)</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          8 Unit Kompetensi Wajib Uji Sertifikasi POP BNSP
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Seluruh unit kompetensi berikut wajib dikuasai dan dibuktikan dengan bukti dokumen portofolio saat uji asesmen tatap muka atau virtual:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <span class="text-xs font-mono font-bold text-amber-600 block">Unit 1</span>
+          <h3 class="font-bold text-slate-900 text-sm">Peraturan Keselamatan Pertambangan</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Penerapan UU No. 3/2020 (Minerba), Permen ESDM 26/2018, dan Kepmen 1827 K/2018 dalam aktivitas kerja harian.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <span class="text-xs font-mono font-bold text-amber-600 block">Unit 2</span>
+          <h3 class="font-bold text-slate-900 text-sm">Tugas &amp; Tanggung Jawab Pengawas</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Memahami hak dan kewajiban pengawas operasional sesuai mandat Pasal 12 Kepmen 1827 Lampiran II.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <span class="text-xs font-mono font-bold text-amber-600 block">Unit 3</span>
+          <h3 class="font-bold text-slate-900 text-sm">Pertemuan K3 Terencana (P5M)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Memimpin Safety Talk / Tool Box Meeting harian sebelum shift dimulai secara efektif dan terdokumentasi.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <span class="text-xs font-mono font-bold text-amber-600 block">Unit 4</span>
+          <h3 class="font-bold text-slate-900 text-sm">Investigasi Kecelakaan Tambang</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Melakukan olah TKP, mengumpulkan bukti saksi/fisik, menemukan akar penyebab (*root cause*), dan pelaporan insiden.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <span class="text-xs font-mono font-bold text-amber-600 block">Unit 5</span>
+          <h3 class="font-bold text-slate-900 text-sm">Identifikasi Bahaya &amp; Pengendalian Risiko</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Menyusun matriks IBPR / HIRADC spesifik untuk area tambang terbuka (*open pit*) maupun tambang bawah tanah.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <span class="text-xs font-mono font-bold text-amber-600 block">Unit 6</span>
+          <h3 class="font-bold text-slate-900 text-sm">Job Safety Analysis (JSA)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Menyusun langkah kerja aman tahap demi tahap untuk pekerjaan berisiko tinggi dan pekerjaan non-rutin.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <span class="text-xs font-mono font-bold text-amber-600 block">Unit 7</span>
+          <h3 class="font-bold text-slate-900 text-sm">Perlindungan Lingkungan Tambang</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Pengelolaan air asam tambang (AAT), sediment pond, penanganan limbah B3 oli bekas, dan reklamasi tanah pucuk (*top soil*).</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <span class="text-xs font-mono font-bold text-amber-600 block">Unit 8</span>
+          <h3 class="font-bold text-slate-900 text-sm">Inspeksi Keselamatan Pertambangan</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Melakukan inspeksi berkala terencana, mengidentifikasi tindakan tidak aman (KTA) &amp; kondisi tidak aman (TTA), serta evaluasi tindak lanjut.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Experience Eligibility Checker -->
+    <section id="kalkulator-pengalaman" class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white border border-white/10 shadow-2xl space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 block">Kalkulator Prasyarat Pengalaman</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Cek Syarat Pengalaman Tambang Anda Sebelum Mendaftar
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Asesor BNSP/ESDM sangat ketat dalam memverifikasi masa kerja tambang. Pastikan latar belakang pendidikan dan jam terbang Anda memenuhi ketentuan berikut:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/50 transition-colors space-y-3">
+          <div class="text-amber-400 font-bold text-sm">Sarjana (S1 / S2 / S3)</div>
+          <div class="text-3xl font-black text-white">Min. 1 Tahun</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Minimal memiliki 1 tahun pengalaman kerja di sektor pertambangan mineral atau batubara, atau minimal 6 bulan menjadi pengawas operasional lapangan.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/50 transition-colors space-y-3">
+          <div class="text-amber-400 font-bold text-sm">Diploma 3 (D3)</div>
+          <div class="text-3xl font-black text-white">Min. 3 Tahun</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Minimal memiliki 3 tahun pengalaman kerja operasional di industri pertambangan minerba dengan portofolio logbook inspeksi tambang.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/50 transition-colors space-y-3">
+          <div class="text-amber-400 font-bold text-sm">SMA / SMK Sederajat</div>
+          <div class="text-3xl font-black text-white">Min. 10 Tahun</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Wajib memiliki rekam jejak kerja minimal 10 tahun di industri pertambangan minerba yang diverifikasi lewat Surat Pengalaman Kerja bermaterai dari manajemen.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10">
+        <p class="text-xs text-slate-300">
+          Perlu pendampingan untuk penyusunan form APL-01 dan APL-02 agar tidak ditolak pra-asesmen?
+        </p>
+        <a
+          href={waLink("Halo KonsultanK3, saya ingin verifikasi apakah masa kerja dan portofolio saya memenuhi syarat sertifikasi POP Pertambangan BNSP")}
+          target="_blank"
+          rel="noopener"
+          class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider whitespace-nowrap"
+        >
+          Konsultasi Verifikasi Berkas
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 4: Site Tambang & Jangkauan Regional -->
+    <section id="site-tambang-kota" class="space-y-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Jangkauan Wilayah Layanan Site</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Layanan Pelatihan &amp; Asesmen POP di Seluruh Wilayah Tambang
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Kami memfasilitasi program Public Class (Virtual Zoom) setiap bulan serta program <strong>In-House Training &amp; Uji Kompetensi langsung di site tambang Anda</strong>:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Kalimantan (Pusat Batubara)</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Balikpapan, Samarinda, Kutai Kartanegara, Kutai Timur (Sangatta), Berau, Tabalong, Banjarmasin, dan Tanah Bumbu.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Sulawesi &amp; Maluku (Nikel &amp; Emas)</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Morowali (IMIP), Kolaka, Konawe, Luwu Timur (Sorowako), Halmahera Tengah (Weda Bay), dan Pulau Obi.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Sumatra &amp; Head Office</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Lahat, Muara Enim, Tanjung Enim, Sawahlunto, serta pelatihan eksekutif di Head Office Jakarta &amp; Surabaya.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: FAQ -->
+    <section id="faq" class="space-y-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Pertanyaan Seputar Sertifikasi POP</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Frequently Asked Questions (FAQ) POP Pertambangan
+        </h2>
+      </div>
+
+      <div class="divide-y divide-slate-200 border-y border-slate-200">
+        {pageSchema["@graph"][3].mainEntity.map((item, idx) => (
+          <div class="py-5 space-y-2">
+            <h3 class="font-bold text-slate-900 text-base flex items-start gap-3">
+              <span class="text-amber-600 font-serif font-black">Q{idx + 1}.</span>
+              <span>{item.name}</span>
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed pl-8">
+              {item.acceptedAnswer.text}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white relative overflow-hidden shadow-2xl border border-white/10">
+      <div class="relative z-10 max-w-2xl space-y-6">
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Pastikan Pengawas Tambang Anda Memiliki Sertifikat Resmi POP BNSP
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Tingkatkan standar keselamatan tambang Anda dan hindari temuan kritis Inspektur Tambang ESDM. Dapatkan pendampingan portofolio intensif hingga dinyatakan Kompeten oleh Asesor.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a
+            href={waLink("Halo KonsultanK3, kami ingin request proposal dan jadwal training POP Pertambangan BNSP untuk perusahaan kami.")}
+            target="_blank"
+            rel="noopener"
+            class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all"
+          >
+            Minta Proposal &amp; Jadwal Terdekat
+          </a>
+          <a
+            href="/in-house-training-k3-jakarta-surabaya-balikpapan/"
+            class="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-colors"
+          >
+            Info Pelatihan Balikpapan &amp; Site
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

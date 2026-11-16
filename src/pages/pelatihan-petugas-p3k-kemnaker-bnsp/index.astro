@@ -1,0 +1,465 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Petugas P3K di Tempat Kerja (Kemnaker RI & BNSP)";
+const description = "Sertifikasi resmi Petugas P3K di Tempat Kerja (Kemnaker RI & BNSP). Kuasai Permenakertrans 15/2008, teknik CPR/RJP & AED, pembalutan fraktur, serta rasio kotak P3K.";
+const canonical = "/pelatihan-petugas-p3k-kemnaker-bnsp/";
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan K3", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "Petugas P3K di Tempat Kerja", "item": "https://konsultank3.com/pelatihan-petugas-p3k-kemnaker-bnsp/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Pembinaan & Sertifikasi Petugas P3K di Tempat Kerja (Kemnaker RI & BNSP)",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "educationalCredentialAwarded": "Lisensi & Sertifikat Petugas P3K Kemnaker RI / Sertifikat BNSP First Aider",
+      "occupationalCategory": "Workplace First Aider / Emergency Medical Responder",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Blended / Offline / In-House Perusahaan",
+        "courseWorkload": "PT24H"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "In-House Training P3K Perusahaan & Layanan Pengurusan Lisensi Kemnaker",
+      "serviceType": "Workplace First Aid Compliance & Licensing Service",
+      "description": "Layanan in-house pelatihan pertolongan pertama pada kecelakaan kerja, audit kotak P3K, dan penerbitan lisensi penunjukan resmi Kemnaker RI untuk pabrik dan perkantoran di Jakarta, Cikarang, Karawang, Surabaya, dan kota lainnya.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "areaServed": "Indonesia"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa dasar hukum kewajiban perusahaan menyediakan Petugas P3K bersertifikat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kewajiban ini diatur dalam Peraturan Menteri Tenaga Kerja dan Transmigrasi (Permenakertrans) No. Per.15/MEN/VIII/2008 tentang Pertolongan Pertama Pada Kecelakaan di Tempat Kerja. Pengusaha wajib menyediakan petugas P3K yang telah memiliki sertifikat pembinaan dan lisensi resmi dari instansi ketenagakerjaan, serta ruang P3K dan kotak P3K berstandar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa rasio wajib jumlah Petugas P3K di perusahaan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Berdasarkan Lampiran I Permenakertrans No. 15/2008: Untuk tempat kerja potensi bahaya rendah (kantor, ritel), rasio wajib adalah 1 petugas P3K untuk setiap 150 orang pekerja. Untuk tempat kerja potensi bahaya tinggi (pabrik kimia, konstruksi, pertambangan, manufaktur logam), rasio wajib adalah 1 petugas P3K untuk setiap 100 orang pekerja atau kurang."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa perbedaan antara sertifikat Petugas P3K Kemnaker RI vs P3K BNSP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sertifikat Petugas P3K Kemnaker RI dilengkapi dengan Lisensi Resmi Penunjukan yang melekat pada perusahaan dan merupakan syarat mutlak kepatuhan hukum (*mandatory legal compliance*) saat audit SMK3 atau inspeksi Disnaker. Sedangkan sertifikat P3K BNSP merupakan sertifikasi pengakuan kompetensi individu berbasis SKKNI yang melekat pada person dan sangat ideal untuk portofolio karier profesional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama masa berlaku lisensi Petugas P3K Kemnaker RI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lisensi Petugas P3K Kemnaker RI berlaku selama 3 (tiga) tahun dan wajib diperpanjang dengan menyerahkan laporan kegiatan P3K di tempat kerja dan bukti penyegaran (*refreshment training*)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah pelatihan P3K bisa diselenggarakan secara in-house di pabrik kami?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa. Kami melayani In-House Training Petugas P3K langsung di lokasi pabrik atau gedung kantor Anda di kawasan Jabodetabek, Cikarang, Karawang, Surabaya, Semarang, Medan, dan Balikpapan dengan manekin CPR modern, simulator AED, dan alat balut-bidai lengkap."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={pageSchema}>
+  <!-- Hero Header -->
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Pelatihan K3</a>
+        <span>/</span>
+        <span class="text-slate-300">Petugas P3K di Tempat Kerja</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 text-rose-400 text-xs font-semibold border border-rose-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-ping"></span>
+            Permenakertrans No. 15/2008 &bull; Lisensi Kemnaker RI &amp; BNSP
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan &amp; Lisensi <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-300 to-amber-300">Petugas P3K di Tempat Kerja</span>
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Penuhi kewajiban hukum perusahaan dan siapkan tim tanggap darurat medis andal. Kuasai teknik Cardiopulmonary Resuscitation (CPR/RJP), pengoperasian AED, penanganan syok, fraktur, serta audit standar kotak P3K Bentuk A, B, dan C.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo KonsultanK3, kami ingin konsultasi pendaftaran Pelatihan Petugas P3K Kemnaker RI / BNSP untuk karyawan perusahaan kami. Mohon info jadwal dan penawaran in-house.")}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-400 hover:to-pink-500 text-white font-bold text-sm shadow-lg shadow-rose-500/20 transition-all transform hover:-translate-y-0.5"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Konsultasi Pelatihan P3K
+            </a>
+            <a
+              href="#kalkulator-rasio"
+              class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-colors"
+            >
+              Hitung Rasio Wajib Petugas
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Profile Card -->
+        <div class="lg:col-span-5">
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 backdrop-blur-sm shadow-2xl space-y-6">
+            <h3 class="font-serif text-lg font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span>
+              Profil Sertifikasi P3K Tempat Kerja
+            </h3>
+            
+            <dl class="space-y-4 text-xs sm:text-sm">
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Legalitas Lisensi</dt>
+                <dd class="text-white font-semibold text-right">Kemnaker RI (Sertifikat + Lisensi)</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Dasar Hukum Wajib</dt>
+                <dd class="text-rose-300 font-semibold text-right">Permenakertrans No. 15/2008</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Pilihan Jalur Profesi</dt>
+                <dd class="text-white font-semibold text-right">Kemnaker RI &amp; BNSP First Aider</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Masa Berlaku Lisensi</dt>
+                <dd class="text-white font-semibold text-right">3 Tahun (Dapat Diperpanjang)</dd>
+              </div>
+              <div class="flex justify-between">
+                <dt class="text-slate-400">Peralatan Praktik</dt>
+                <dd class="text-amber-300 font-semibold text-right">Manekin CPR, Trainer AED, Splint</dd>
+              </div>
+            </dl>
+
+            <div class="pt-2">
+              <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-xs text-rose-200 leading-relaxed">
+                <strong>Wajib Audit SMK3:</strong> Ketiadaan Petugas P3K berlisensi resmi Kemnaker RI merupakan temuan audit mayor yang dapat menggugurkan perolehan Bendera Emas SMK3 PP 50/2012 kriteria 6.8.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Navigation Anchor Strip -->
+  <div class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm text-xs sm:text-sm font-medium">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex overflow-x-auto gap-6 py-3 scrollbar-none text-slate-600">
+      <a href="#urgensi" class="hover:text-rose-600 whitespace-nowrap">Urgensi P3K</a>
+      <a href="#kalkulator-rasio" class="hover:text-rose-600 whitespace-nowrap text-rose-700 font-bold">Kalkulator Rasio Petugas &amp; Kotak</a>
+      <a href="#kemnaker-vs-bnsp" class="hover:text-rose-600 whitespace-nowrap">Kemnaker vs BNSP</a>
+      <a href="#silabus-cpr" class="hover:text-rose-600 whitespace-nowrap">Praktik CPR &amp; AED</a>
+      <a href="#in-house-pabrik" class="hover:text-rose-600 whitespace-nowrap">In-House Multi-Kota</a>
+      <a href="#faq" class="hover:text-rose-600 whitespace-nowrap">FAQ</a>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Urgensi P3K -->
+    <section id="urgensi" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-8 space-y-6 text-slate-700 leading-relaxed text-base">
+        <span class="text-xs font-bold uppercase tracking-wider text-rose-600 block">Golden Hour Penyelamatan Nyawa</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Mengapa Menunggu Ambulans Datang Saja Tidak Cukup?
+        </h2>
+        <p>
+          Dalam insiden henti jantung mendadak (*sudden cardiac arrest*), pendarahan masif arteri akibat mesin produksi, atau korban tersengat listrik, kematian otak permanen dapat terjadi dalam waktu <strong>4 hingga 6 menit pertama</strong> tanpa oksigenasi darah.
+        </p>
+        <p>
+          Petugas P3K di Tempat Kerja adalah penolong pertama (*first responder*) yang menjembatani rentang waktu kritis antara terjadinya kecelakaan hingga bantuan medis profesional tiba di lokasi. Melalui <strong>Permenakertrans No. 15 Tahun 2008</strong>, pemerintah mewajibkan setiap pemberi kerja melatih dan menugaskan sejumlah pekerja berlisensi resmi untuk mengantisipasi kondisi darurat tersebut.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-rose-500/10 text-rose-600 flex items-center justify-center font-bold text-sm">01</div>
+            <h4 class="font-bold text-slate-900 text-sm">Menyelamatkan Nyawa di 5 Menit Pertama</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Kompresi dada berkualitas tinggi dan defibrilasi dini dengan AED dapat melipatgandakan tingkat kelangsungan hidup korban henti jantung hingga 70%.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold text-sm">02</div>
+            <h4 class="font-bold text-slate-900 text-sm">Kepatuhan Hukum &amp; Audit Pengawas K3</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Menghindari teguran nota pemeriksaan Disnaker dan sanksi pelanggaran UU No. 1/1970 Pasal 14 mengenai penyediaan fasilitas P3K di tempat kerja.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 p-6 rounded-3xl bg-slate-900 text-white space-y-5 border border-slate-800 shadow-xl">
+        <h3 class="font-serif text-lg font-bold text-rose-400">Tiga Pilar Fasilitas P3K Wajib</h3>
+        <ul class="space-y-4 text-xs leading-relaxed text-slate-300">
+          <li class="pb-3 border-b border-white/10 space-y-1">
+            <strong class="text-white block text-sm">1. Personel Berlisensi</strong>
+            <span>Pekerja yang ditunjuk dan memiliki lisensi Petugas P3K resmi Kemnaker RI sesuai rasio headcount.</span>
+          </li>
+          <li class="pb-3 border-b border-white/10 space-y-1">
+            <strong class="text-white block text-sm">2. Kotak P3K &amp; Isi Standar</strong>
+            <span>Wajib menyediakan Kotak P3K Bentuk A, B, atau C dengan daftar 21 item obat/alat perban tanpa obat minum keras.</span>
+          </li>
+          <li class="space-y-1">
+            <strong class="text-white block text-sm">3. Ruang P3K Khusus</strong>
+            <span>Wajib disediakan bagi perusahaan dengan mempekerjakan 100 orang pekerja atau lebih, atau potensi bahaya tinggi.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: Interactive Compliance Ratio Calculator -->
+    <section id="kalkulator-rasio" class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white border border-white/10 shadow-2xl space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-rose-400 block">Kalkulator Rasio Kepatuhan Permenakertrans 15/2008</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Kebutuhan Wajib Petugas P3K &amp; Tipe Kotak P3K Perusahaan
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Hitung kebutuhan rasio legal personel bersertifikat dan spesifikasi kotak P3K berdasarkan tingkat risiko tempat kerja Anda:
+        </p>
+      </div>
+
+      <!-- Ratio Comparison Matrix -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Low Risk -->
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-white text-base">Potensi Bahaya Rendah</h3>
+            <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold">Kantor / Ritel</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Contoh industri: Perkantoran, perbankan, perhotelan, pusat perbelanjaan, sekolah.
+          </p>
+          <div class="space-y-3 pt-2 text-xs">
+            <div class="p-3.5 rounded-xl bg-slate-800/80 border border-white/10 flex justify-between items-center">
+              <span>25 s.d. 150 Orang Pekerja</span>
+              <strong class="text-rose-400 text-sm">1 Orang Petugas P3K</strong>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-800/80 border border-white/10 flex justify-between items-center">
+              <span>Setiap Tambahan 150 Orang</span>
+              <strong class="text-rose-400 text-sm">+1 Orang Petugas P3K</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- High Risk -->
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-white text-base">Potensi Bahaya Tinggi</h3>
+            <span class="px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-300 text-xs font-semibold">Pabrik / Site</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Contoh industri: Manufaktur kimia, peleburan logam, galangan kapal, konstruksi, migas, pertambangan.
+          </p>
+          <div class="space-y-3 pt-2 text-xs">
+            <div class="p-3.5 rounded-xl bg-slate-800/80 border border-white/10 flex justify-between items-center">
+              <span>&le; 100 Orang Pekerja</span>
+              <strong class="text-rose-400 text-sm">1 Orang Petugas P3K</strong>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-800/80 border border-white/10 flex justify-between items-center">
+              <span>Setiap Tambahan 100 Orang</span>
+              <strong class="text-rose-400 text-sm">+1 Orang Petugas P3K</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kotak P3K Types -->
+      <div class="p-6 rounded-2xl bg-slate-900 border border-white/10 space-y-4">
+        <h4 class="font-bold text-amber-300 text-sm">Ketentuan Tipe Kotak P3K Berdasarkan Jumlah Pekerja per Lantai/Ruang:</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-300">
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <strong class="text-white block mb-1">Kotak Bentuk A</strong>
+            <span>Untuk &le; 25 orang pekerja. Dilengkapi 21 item alat medis standar (kasa steril, perban, mitella, dll).</span>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <strong class="text-white block mb-1">Kotak Bentuk B</strong>
+            <span>Untuk &le; 50 orang pekerja (atau setara dengan penempatan 2 Kotak Bentuk A).</span>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <strong class="text-white block mb-1">Kotak Bentuk C</strong>
+            <span>Untuk &le; 100 orang pekerja (atau setara dengan penempatan 2 Kotak B / 4 Kotak A).</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10">
+        <p class="text-xs text-slate-300">
+          Butuh perhitungan presisi jumlah petugas per shift operasional untuk fasilitas Anda?
+        </p>
+        <a
+          href={waLink("Halo KonsultanK3, kami ingin dibantu menghitung kebutuhan Petugas P3K dan kotak P3K resmi untuk pabrik kami.")}
+          target="_blank"
+          rel="noopener"
+          class="px-5 py-2.5 rounded-xl bg-rose-500 hover:bg-rose-400 text-white font-bold text-xs uppercase tracking-wider whitespace-nowrap"
+        >
+          Konsultasi Rasio Perusahaan
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 3: Kemnaker vs BNSP -->
+    <section id="kemnaker-vs-bnsp" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      <div class="p-8 rounded-3xl bg-slate-900 text-white space-y-4 border border-slate-800 shadow-xl">
+        <span class="text-xs font-mono font-bold text-rose-400 uppercase tracking-wider block">Jalur 01: Legalitas Ketenagakerjaan</span>
+        <h3 class="font-serif text-xl font-bold text-white">Petugas P3K Kemnaker RI</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Program pembinaan resmi yang diakhiri dengan evaluasi pengawas ketenagakerjaan dan penerbitan Sertifikat serta <strong>Lisensi Kewenangan Petugas P3K Kemnaker RI</strong>.
+        </p>
+        <ul class="space-y-2 text-xs text-slate-400">
+          <li>&check; Wajib untuk pemenuhan legalitas audit SMK3 PP 50/2012 kriteria 6.8.</li>
+          <li>&check; Melekat pada surat penunjukan perusahaan tempat bekerja.</li>
+          <li>&check; Masa berlaku lisensi 3 tahun dan dapat diperpanjang resmi.</li>
+        </ul>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-xl space-y-4">
+        <span class="text-xs font-mono font-bold text-pink-600 uppercase tracking-wider block">Jalur 02: Kompetensi Profesi</span>
+        <h3 class="font-serif text-xl font-bold text-slate-900">Petugas P3K / First Aider BNSP</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Uji kompetensi profesi berbasis Standar Kompetensi Kerja Nasional Indonesia (SKKNI) yang diuji langsung oleh Asesor Lisensi BNSP.
+        </p>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li>&check; Memperoleh Sertifikat Kompetensi berlogo Garuda Emas BNSP.</li>
+          <li>&check; Melekat pada kompetensi individu (dapat dibawa berpindah perusahaan).</li>
+          <li>&check; Sangat ideal untuk syarat kualifikasi tender vendor internasional dan migas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 4: In-House Multi-Kota -->
+    <section id="in-house-pabrik" class="space-y-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-rose-600 block">Jangkauan Layanan In-House</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Layanan Pelatihan P3K di Pabrik &amp; Gedung Perusahaan Anda
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Konsultan K3 Indonesia melayani penyelenggaraan Public Class serta <strong>In-House Training tatap muka langsung di fasilitas perusahaan Anda</strong> dengan skenario simulasi darurat yang disesuaikan:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Jabodetabek &amp; Jawa Barat</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Jakarta, Kawasan Industri Cikarang (MM2100, Jababeka), Karawang (KIIC), Tangerang, Cilegon, dan Bogor.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Jawa Timur &amp; Jawa Tengah</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Surabaya, Sidoarjo, Gresik (JIIPE), Pasuruan (PIER), Semarang, dan Solo.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Sumatra, Kalimantan &amp; Riau</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Medan, Batam, Pekanbaru, Palembang, Balikpapan, dan Samarinda.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: FAQ -->
+    <section id="faq" class="space-y-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-rose-600 block">Pertanyaan Umum</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Frequently Asked Questions (FAQ) Petugas P3K
+        </h2>
+      </div>
+
+      <div class="divide-y divide-slate-200 border-y border-slate-200">
+        {pageSchema["@graph"][3].mainEntity.map((item, idx) => (
+          <div class="py-5 space-y-2">
+            <h3 class="font-bold text-slate-900 text-base flex items-start gap-3">
+              <span class="text-rose-600 font-serif font-black">Q{idx + 1}.</span>
+              <span>{item.name}</span>
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed pl-8">
+              {item.acceptedAnswer.text}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white relative overflow-hidden shadow-2xl border border-white/10">
+      <div class="relative z-10 max-w-2xl space-y-6">
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Latih Petugas P3K Perusahaan Anda &amp; Raih Lisensi Resmi Kemnaker RI
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Jangan tunggu sampai terjadi insiden fatal di tempat kerja. Pastikan perusahaan Anda memenuhi kuota legal petugas P3K dan dilengkapi keterampilan resusitasi medis terbaik.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a
+            href={waLink("Halo KonsultanK3, kami ingin meminta penawaran In-House Pelatihan Petugas P3K Kemnaker RI untuk perusahaan kami.")}
+            target="_blank"
+            rel="noopener"
+            class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-400 hover:to-pink-500 text-white font-bold text-sm shadow-lg shadow-rose-500/20 transition-all"
+          >
+            Minta Proposal &amp; Jadwal Terdekat
+          </a>
+          <a
+            href="/in-house-training-k3-jakarta-surabaya-balikpapan/"
+            class="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-colors"
+          >
+            Layanan In-House Multi-Kota
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

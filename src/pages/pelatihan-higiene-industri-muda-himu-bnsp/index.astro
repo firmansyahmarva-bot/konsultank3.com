@@ -1,0 +1,492 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan & Sertifikasi Higiene Industri Muda (HIMU) BNSP";
+const description = "Sertifikasi kompetensi Higiene Industri Muda (HIMU) BNSP resmi. Kuasai teknik sampling faktor fisika, kimia, biologi, ergonomi sesuai Permenaker 5/2018.";
+const canonical = "/pelatihan-higiene-industri-muda-himu-bnsp/";
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan K3", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "Higiene Industri Muda (HIMU)", "item": "https://konsultank3.com/pelatihan-higiene-industri-muda-himu-bnsp/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan & Uji Kompetensi Higiene Industri Muda (HIMU) Sertifikasi BNSP",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "educationalCredentialAwarded": "Sertifikat Kompetensi BNSP - Higiene Industri Muda (Garuda Emas)",
+      "occupationalCategory": "Industrial Hygienist / Junior Occupational Hygienist",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Blended / Online / In-House",
+        "courseWorkload": "PT32H"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "In-House Training & Pendampingan Pengukuran Lingkungan Kerja HIMU",
+      "serviceType": "Occupational Hygiene Assessment & Certification",
+      "description": "Layanan in-house pelatihan dan asistensi pengukuran faktor bahaya lingkungan kerja pabrik sesuai Permenaker No. 5 Tahun 2018 di Jakarta, Cikarang, Karawang, Surabaya, dan kawasan industri nasional.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "areaServed": "Indonesia"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu sertifikasi Higiene Industri Muda (HIMU) BNSP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sertifikasi Higiene Industri Muda (HIMU) BNSP adalah pengakuan kompetensi profesi resmi berskala nasional yang membuktikan bahwa pemegangnya kompeten dalam mengenali bahaya kesehatan kerja, melakukan sampling, mengoperasikan alat ukur lingkungan kerja (sound level meter, lux meter, gas detector, personal dust sampler), dan mengevaluasi hasil pengukuran berdasarkan Nilai Ambang Batas (NAB) Permenaker No. 5 Tahun 2018."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa perbedaan antara HIMU, HIMA, dan HIU?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Perbedaannya terletak pada jenjang tanggung jawab dan kompleksitas. HIMU (Muda) berfokus pada eksekusi sampling, pengukuran instrumen, dan pengumpulan data lapangan. HIMA (Madya) bertugas menganalisis data, merancang sistem ventilasi industri, dan mengelola program pemantauan pajanan. HIU (Utama) memegang otoritas strategis dalam merumuskan kebijakan korporat higiene industri, riset toksikologi, dan audit komprehensif tingkat enterprise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah lulusan D3 atau S1 Non-K3 bisa mengikuti sertifikasi HIMU BNSP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa. Sesuai skema LSP Higiene Industri terlisensi BNSP, lulusan S1 Teknik memerlukan pengalaman minimal 6 bulan di bidang K3/lingkungan kerja, S1 Non-Teknik minimal 1 tahun, D3 Teknik minimal 1,5 tahun, D3 Non-Teknik minimal 2 tahun, dan lulusan SMA/SMK dengan pengalaman kerja minimal 3-5 tahun di bidang higiene industri/K3."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mengapa perusahaan wajib memiliki personel yang menguasai Higiene Industri?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Berdasarkan Permenaker No. 5 Tahun 2018 tentang K3 Lingkungan Kerja, setiap pengurus tempat kerja wajib mengendalikan faktor bahaya fisika, kimia, biologi, ergonomi, dan psikologi agar tidak melampaui Nilai Ambang Batas (NAB). Memiliki personel bersertifikat HIMU menjamin kepatuhan audit SMK3 kriteria 9.1 dan menghindari sanksi administratif inspeksi ketenagakerjaan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah pelatihan HIMU ini bisa diselenggarakan secara in-house di pabrik kami?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa. Konsultan K3 Indonesia melayani In-House Training HIMU langsung di kawasan industri seperti Cikarang, Karawang, Cilegon, Surabaya, Gresik, Medan, maupun Balikpapan dengan simulasi pengukuran langsung pada mesin produksi, ventilasi, dan area kerja aktual perusahaan Anda."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={pageSchema}>
+  <!-- Hero Header -->
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Pelatihan K3</a>
+        <span>/</span>
+        <span class="text-slate-300">Higiene Industri Muda (HIMU)</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 text-teal-400 text-xs font-semibold border border-teal-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-ping"></span>
+            Sertifikasi Profesi BNSP &bull; Permenaker No. 5 Tahun 2018
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan &amp; Sertifikasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-teal-300 to-emerald-400">Higiene Industri Muda (HIMU)</span> BNSP
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Tingkatkan kepatuhan K3 lingkungan kerja perusahaan dengan menguasai metodologi antisipasi, rekognisi, evaluasi, dan pengendalian bahaya fisika, kimia, biologi, dan ergonomi. Dapatkan sertifikat kompetensi resmi berlogo Garuda BNSP.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo KonsultanK3, saya ingin konsultasi pendaftaran Pelatihan & Uji Kompetensi HIMU BNSP. Mohon info silabus, jadwal terdekat, dan verifikasi portofolio saya.")}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-slate-950 font-bold text-sm shadow-lg shadow-teal-500/20 transition-all transform hover:-translate-y-0.5"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Konsultasi Pendaftaran HIMU
+            </a>
+            <a
+              href="#kalkulator-syarat"
+              class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-colors"
+            >
+              Cek Syarat Kelayakan
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Card Overview -->
+        <div class="lg:col-span-5">
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 backdrop-blur-sm shadow-2xl space-y-6">
+            <h3 class="font-serif text-lg font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-teal-400"></span>
+              Profil Sertifikasi HIMU BNSP
+            </h3>
+            
+            <dl class="space-y-4 text-xs sm:text-sm">
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Lembaga Sertifikasi</dt>
+                <dd class="text-white font-semibold text-right">BNSP via LSP Terakreditasi</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Regulasi Acuan</dt>
+                <dd class="text-teal-300 font-semibold text-right">Permenaker No. 5 Tahun 2018</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Standar Kompetensi</dt>
+                <dd class="text-white font-semibold text-right">SKKNI Higiene Industri</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Masa Berlaku Sertifikat</dt>
+                <dd class="text-white font-semibold text-right">3 Tahun (Berlogo Garuda Emas)</dd>
+              </div>
+              <div class="flex justify-between">
+                <dt class="text-slate-400">Format Pelaksanaan</dt>
+                <dd class="text-teal-400 font-semibold text-right">Blended / In-House Site Visit</dd>
+              </div>
+            </dl>
+
+            <div class="pt-2">
+              <div class="p-3.5 rounded-xl bg-teal-500/10 border border-teal-500/20 text-xs text-teal-200 leading-relaxed">
+                <strong>Target Industri:</strong> Manufaktur, Petrokimia, Migas, Pembangkit Listrik, Otomotif, dan Pabrik Makanan/Minuman di kawasan Jabodetabek, Cikarang, Karawang, Surabaya, dan sekitarnya.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Navigation Anchor Strip -->
+  <div class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm text-xs sm:text-sm font-medium">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex overflow-x-auto gap-6 py-3 scrollbar-none text-slate-600">
+      <a href="#urgensi" class="hover:text-teal-600 whitespace-nowrap">Urgensi HIMU</a>
+      <a href="#faktor-lingkungan" class="hover:text-teal-600 whitespace-nowrap">5 Faktor Permenaker 5/2018</a>
+      <a href="#unit-kompetensi" class="hover:text-teal-600 whitespace-nowrap">Unit Uji SKKNI</a>
+      <a href="#kalkulator-syarat" class="hover:text-teal-600 whitespace-nowrap text-teal-700 font-bold">Cek Syarat Masa Kerja</a>
+      <a href="#in-house-kota" class="hover:text-teal-600 whitespace-nowrap">In-House Multi-Kota</a>
+      <a href="#faq" class="hover:text-teal-600 whitespace-nowrap">FAQ</a>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Urgensi & Latar Belakang -->
+    <section id="urgensi" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-8 space-y-6 text-slate-700 leading-relaxed text-base">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 block">Kepatuhan Hukum &amp; Lingkungan Kerja</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Mengapa Sertifikasi Higiene Industri Muda (HIMU) Mutlak Dibutuhkan?
+        </h2>
+        <p>
+          Banyak kecelakaan kerja terjadi seketika, namun <strong>Penyakit Akibat Kerja (PAK)</strong> membunuh perlahan. Paparan debu silika, kebisingan melebihi 85 dB(A), pencahayaan buruk di area presisi, serta paparan uap pelarut organik di lini produksi dapat merusak kesehatan tenaga kerja secara permanen dan memicu tuntutan hukum.
+        </p>
+        <p>
+          Pemerintah melalui <strong>Permenaker No. 5 Tahun 2018</strong> mewajibkan setiap tempat kerja melakukan pengukuran dan pengendalian lingkungan kerja secara berkala. Seorang <strong>Higiene Industri Muda (HIMU) bersertifikat BNSP</strong> adalah personel garda terdepan yang memvalidasi apakah Nilai Ambang Batas (NAB) lingkungan kerja pabrik Anda masih dalam batas aman atau telah melanggar batas legal.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-teal-500/10 text-teal-600 flex items-center justify-center font-bold text-sm">01</div>
+            <h4 class="font-bold text-slate-900 text-sm">Mencegah PAK Kronis &amp; Klaim Kompensasi</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Mendeteksi bahaya kimia dan kebisingan sebelum menyebabkan <em>Noise Induced Hearing Loss (NIHL)</em> atau gangguan pernapasan menahun pada karyawan.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-sm">02</div>
+            <h4 class="font-bold text-slate-900 text-sm">Pemenuhan Audit SMK3 &amp; ISO 45001</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Memenuhi kriteria evaluasi lingkungan kerja pada Audit PP 50/2012 kriteria 9.1 dan pemantauan klausul 8 &amp; 9 standar keselamatan ISO 45001:2018.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 p-6 rounded-3xl bg-slate-900 text-white space-y-5 border border-slate-800 shadow-xl">
+        <h3 class="font-serif text-lg font-bold text-teal-400">Jenjang Profesi Higiene Industri</h3>
+        <ul class="space-y-4 text-xs leading-relaxed">
+          <li class="pb-3 border-b border-white/10 space-y-1">
+            <span class="font-bold text-white block text-sm">HIMU (Higiene Industri Muda)</span>
+            <span class="text-slate-300">Tingkat operasional: Mampu mengoperasikan instrumen ukur, melakukan sampling pajanan personal/area, dan menyusun laporan data teknis.</span>
+          </li>
+          <li class="pb-3 border-b border-white/10 space-y-1">
+            <span class="font-bold text-white block text-sm">HIMA (Higiene Industri Madya)</span>
+            <span class="text-slate-300">Tingkat analis: Mampu merancang sistem rekayasa (*engineering control* seperti ventilasi industri) dan mengevaluasi data risiko higienis.</span>
+          </li>
+          <li class="space-y-1">
+            <span class="font-bold text-white block text-sm">HIU (Higiene Industri Utama)</span>
+            <span class="text-slate-300">Tingkat manajerial puncak: Menetapkan kebijakan corporate industrial hygiene, riset pajanan toksikologi, dan audit makro.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: 5 Faktor Lingkungan Kerja Permenaker 5/2018 -->
+    <section id="faktor-lingkungan" class="space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 block">Ruang Lingkup Kompetensi</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          5 Faktor Bahaya Lingkungan Kerja yang Wajib Dikuasai
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Peserta pelatihan HIMU dipersiapkan untuk menguasai metode pengukuran dan analisis sesuai parameter standar Permenaker No. 5 Tahun 2018:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-lg">1</div>
+          <h3 class="font-bold text-slate-900 text-base">Faktor Fisika</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Pengukuran kebisingan (Sound Level Meter &amp; Noise Dosimeter NAB 85 dBA), iklim kerja panas (ISBB), pencahayaan (Lux Meter), radiasi, dan getaran mekanik seluruh tubuh/lengan.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-lg">2</div>
+          <h3 class="font-bold text-slate-900 text-base">Faktor Kimia &amp; Toksikologi</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Sampling gas berbahaya, uap pelarut kimia (VOC), uap asam, serta debu total dan debu respirabel menggunakan Personal Dust Sampler sesuai standar metode NIOSH/OSHA.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-lg">3</div>
+          <h3 class="font-bold text-slate-900 text-base">Faktor Ergonomi</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Identifikasi risiko postur kerja janggal, gerakan berulang (*repetitive motion*), dan penanganan beban manual (*manual handling*) menggunakan instrumen REBA, RULA, dan NIOSH Lifting Equation.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-lg">4</div>
+          <h3 class="font-bold text-slate-900 text-base">Faktor Biologi</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Pengenalan dan pemantauan mikroorganisme di udara lingkungan kerja tertutup (bakteri, jamur/mold, virus) serta sanitasi fasilitas air dan toilet industri.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-lg">5</div>
+          <h3 class="font-bold text-slate-900 text-base">Faktor Psikologi Kerja</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Evaluasi beban kerja mental, stres kerja, ketidakjelasan peran, dan survei kepuasan faktor ergonomi kognitif di tempat kerja.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 text-white shadow-sm space-y-3 flex flex-col justify-center">
+          <h3 class="font-bold text-teal-300 text-base">Sistem Pengendalian (Hierarki Kontrol)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Penyusunan rekomendasi mitigasi mulai dari eliminasi, substitusi, rekayasa teknik (*local exhaust ventilation*), pengendalian administratif, hingga penyediaan APD spesifik.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Interactive Eligibility Checker -->
+    <section id="kalkulator-syarat" class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white border border-white/10 shadow-2xl space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-400 block">Kalkulator Kelayakan Portofolio</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Cek Syarat Kelayakan Peserta Sertifikasi HIMU BNSP
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Pilih latar belakang pendidikan terakhir Anda untuk mengetahui masa kerja minimal yang disyaratkan oleh Asesor BNSP sebelum mendaftar:
+        </p>
+      </div>
+
+      <!-- Checker Tabs Simulation / Matrix -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-teal-400/50 transition-colors space-y-3">
+          <div class="text-teal-400 font-bold text-sm">Jalur S1 / D4 K3</div>
+          <div class="text-2xl font-black text-white">0 Bulan</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Lulusan S1/D4 Keselamatan &amp; Kesehatan Kerja dapat langsung mendaftar (*fresh graduate friendly*) dengan melampirkan transkrip nilai relevan dan laporan magang/praktik.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-teal-400/50 transition-colors space-y-3">
+          <div class="text-teal-400 font-bold text-sm">Jalur S1 Teknik (Non-K3)</div>
+          <div class="text-2xl font-black text-white">&ge; 6 Bulan</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Lulusan S1 Teknik (Kimia, Mesin, Lingkungan, Industri, Sipil) membutuhkan minimal 6 bulan pengalaman kerja di bidang K3 atau operasional industri.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-teal-400/50 transition-colors space-y-3">
+          <div class="text-teal-400 font-bold text-sm">Jalur S1 Non-Teknik</div>
+          <div class="text-2xl font-black text-white">&ge; 1 Tahun</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Lulusan S1 bidang umum lainnya disyaratkan memiliki pengalaman kerja minimal 1 tahun di bidang K3, pemantauan lingkungan, atau operasional produksi.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-teal-400/50 transition-colors space-y-3">
+          <div class="text-teal-400 font-bold text-sm">Jalur D3 Teknik</div>
+          <div class="text-2xl font-black text-white">&ge; 1.5 Tahun</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Lulusan D3 bidang Teknik membutuhkan akumulasi pengalaman kerja minimal 1.5 tahun di bidang K3 atau laboratorium industri.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-teal-400/50 transition-colors space-y-3">
+          <div class="text-teal-400 font-bold text-sm">Jalur D3 Non-Teknik</div>
+          <div class="text-2xl font-black text-white">&ge; 2 Tahun</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Lulusan D3 Non-Teknik memerlukan pengalaman minimal 2 tahun yang dibuktikan dengan surat keterangan kerja dari perusahaan.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-teal-400/50 transition-colors space-y-3">
+          <div class="text-teal-400 font-bold text-sm">Jalur SMA / SMK Sederajat</div>
+          <div class="text-2xl font-black text-white">&ge; 3 - 5 Tahun</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Lulusan SMA/SMK wajib memiliki portofolio pengalaman kerja lapangan minimal 3 sampai 5 tahun di bidang higiene industri atau tim K3 perusahaan.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10">
+        <p class="text-xs text-slate-300">
+          Belum yakin apakah portofolio Anda memenuhi syarat uji kompetensi BNSP? Tim kami siap membantu pra-verifikasi dokumen Anda gratis.
+        </p>
+        <a
+          href={waLink("Halo KonsultanK3, saya ingin verifikasi berkas dan portofolio saya apakah memenuhi syarat untuk sertifikasi HIMU BNSP")}
+          target="_blank"
+          rel="noopener"
+          class="px-5 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs uppercase tracking-wider whitespace-nowrap"
+        >
+          Verifikasi Berkas Gratis
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 4: In-House Multi-Kota -->
+    <section id="in-house-kota" class="space-y-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 block">Jangkauan Layanan In-House</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Layanan Pelatihan &amp; Pengukuran HIMU di Kota Industri Utama
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Konsultan K3 Indonesia melayani penyelenggaraan Public Class daring/luring serta program <strong>In-House Training &amp; Uji Kompetensi langsung di pabrik atau site industri Anda</strong> di seluruh Indonesia:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Jabodetabek &amp; Jawa Barat</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Jakarta, Kawasan Industri MM2100, Jababeka, Delta Silicon (Cikarang), KIIC, Surya Cipta (Karawang), Cilegon, Tangerang, dan Bogor.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Jawa Timur &amp; Jawa Tengah</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Surabaya (Rungkut, SIER), Gresik (JIIPE), Sidoarjo, Pasuruan (PIER), Tuban, Semarang (Kawasan Wijayakusuma &amp; BSB), dan Cilacap.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900 text-base">Sumatra, Kalimantan &amp; Timur</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Medan (KIM), Pekanbaru, Duri, Palembang, Batam, Balikpapan (Kariangau), Samarinda, Makassar, dan kawasan industri Morowali.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-teal-50 border border-teal-200 text-xs text-teal-800 flex items-center justify-between">
+        <span>Butuh paket in-house training gabungan beserta kalibrasi dan audit higiene industri?</span>
+        <a href="/in-house-training-k3-jakarta-surabaya-balikpapan/" class="font-bold underline hover:text-teal-950">
+          Lihat Skema In-House Training Hub &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 5: FAQ -->
+    <section id="faq" class="space-y-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 block">Pertanyaan Umum</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Frequently Asked Questions (FAQ) Higiene Industri Muda
+        </h2>
+      </div>
+
+      <div class="divide-y divide-slate-200 border-y border-slate-200">
+        {pageSchema["@graph"][3].mainEntity.map((item, idx) => (
+          <div class="py-5 space-y-2">
+            <h3 class="font-bold text-slate-900 text-base flex items-start gap-3">
+              <span class="text-teal-600 font-serif font-black">Q{idx + 1}.</span>
+              <span>{item.name}</span>
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed pl-8">
+              {item.acceptedAnswer.text}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Bottom Conversion Banner -->
+    <section class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white relative overflow-hidden shadow-2xl border border-white/10">
+      <div class="relative z-10 max-w-2xl space-y-6">
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Kuasai Standar Pengukuran Lingkungan Kerja &amp; Raih Sertifikat HIMU BNSP
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Amankan sertifikat kompetensi resmi berlogo Garuda Emas. Fasilitas lengkap: modul komprehensif, simulasi alat ukur, bimbingan portofolio pra-asesmen, dan jaminan kelayakan ujian.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a
+            href={waLink("Halo KonsultanK3, mohon kirimkan proposal resmi dan silabus pelatihan HIMU BNSP untuk perusahaan kami.")}
+            target="_blank"
+            rel="noopener"
+            class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-slate-950 font-bold text-sm shadow-lg shadow-teal-500/20 transition-all"
+          >
+            Minta Proposal &amp; Jadwal Terdekat
+          </a>
+          <a
+            href="/kontak/"
+            class="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-colors"
+          >
+            Hubungi Tim Konsultan
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
