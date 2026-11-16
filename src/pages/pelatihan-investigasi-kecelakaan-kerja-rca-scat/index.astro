@@ -1,0 +1,518 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Investigasi Kecelakaan Kerja RCA & SCAT";
+const description = "Pelatihan investigasi kecelakaan kerja bersertifikat metode RCA & SCAT. Kuasai analisis akar masalah, pengumpulan bukti 4P, dan pelaporan Disnaker Kemnaker.";
+const canonical = "/pelatihan-investigasi-kecelakaan-kerja-rca-scat/";
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan K3", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "Investigasi Kecelakaan Kerja RCA & SCAT", "item": "https://konsultank3.com/pelatihan-investigasi-kecelakaan-kerja-rca-scat/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Investigasi Kecelakaan Kerja & Analisis Akar Masalah (RCA & SCAT)",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "educationalCredentialAwarded": "Sertifikat Investigator Kecelakaan Kerja (RCA & SCAT Method)",
+      "occupationalCategory": "Incident Investigator / Safety Officer / HSE Specialist",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "In-House / Public Workshop",
+        "courseWorkload": "PT16H"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Asistensi Investigasi Insiden & Audit Pelaporan K3 Kemnaker",
+      "serviceType": "Accident Investigation and Root Cause Analysis Consulting",
+      "description": "Pendampingan tim investigasi independen dalam menganalisis insiden fatal/luka berat, penyusunan formulir pelaporan resmi Disnaker (Permenaker 03/1998), dan perumusan tindakan korektif sistemik.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "areaServed": "Indonesia"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa perbedaan metode Root Cause Analysis (RCA) dan SCAT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Root Cause Analysis (RCA) adalah payung metodologi pemecahan masalah untuk menemukan akar penyebab insiden (seperti 5-Whys dan Fishbone). Sedangkan SCAT (Systematic Cause Analysis Technique) adalah instrumen analisis terstruktur berstandar DNV/Loss Causation Model yang menelusuri secara runtut mulai dari deskripsi insiden, penyebab langsung (unsafe acts & conditions), penyebab dasar (faktor manusia & pekerjaan), hingga kegagalan kendali manajemen (lack of control)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa batas waktu wajib lapor kecelakaan kerja ke Disnaker menurut hukum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Berdasarkan Permenaker No. 03/MEN/1998 Pasal 2, pengurus perusahaan wajib melaporkan tiap kecelakaan kerja secara tertulis ke Kantor Dinas Ketenagakerjaan setempat dalam waktu tidak lebih dari 2 x 24 jam terhitung sejak terjadinya insiden, menggunakan Formulir Bentuk 3 KK2 A."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang dimaksud dengan prinsip 4P dalam pengumpulan bukti kecelakaan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prinsip 4P adalah standar pengumpulan bukti fisik dan dokumenter di TKP agar tidak ada bukti krusial yang hilang, meliputi: People (wawancara saksi dan korban), Parts (kondisi fisik mesin/alat kerja), Position (posisi korban dan tata letak tempat kejadian), dan Paperwork (SOP, JSA, permit kerja, riwayat pelatihan, dan logbook pemeliharaan)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mengapa investigasi kecelakaan modern tidak boleh berhenti pada kesimpulan 'Human Error'?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Human error (kelalaian pekerja) hampir selalu merupakan gejala atau konsekuensi dari kelemahan sistem yang lebih dalam—seperti desain alat yang buruk, target produksi berlebihan, pelatihan yang tidak efektif, ketiadaan SOP yang jelas, atau budaya permisif terhadap bahaya. Menghentikan investigasi pada 'human error' membuat bahaya laten tetap ada dan insiden serupa pasti akan terulang kembali."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={pageSchema}>
+  <!-- Hero Section -->
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Pelatihan K3</a>
+        <span>/</span>
+        <span class="text-slate-300">Investigasi Kecelakaan Kerja RCA &amp; SCAT</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold border border-amber-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+            Beyond Blame Culture &bull; Permenaker 03/1998 &amp; DNV SCAT Method
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">Investigasi Kecelakaan Kerja</span>: Metode RCA &amp; SCAT
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Tingkatkan keahlian tim HSE dan pengawas lapangan dalam membedah insiden kerja: dari pengamanan TKP 4P, analisis penyebab dasar sistemik, hingga kepatuhan pelaporan wajib Disnaker tanpa saling menyalahkan.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo KonsultanK3, kami ingin berdiskusi mengenai pendaftaran / In-House Pelatihan Investigasi Kecelakaan Kerja RCA & SCAT")}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all transform hover:-translate-y-0.5"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Konsultasi Pelatihan In-House
+            </a>
+            <a
+              href="#metode-scat"
+              class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-colors"
+            >
+              Pelajari Matriks SCAT
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Program Highlights -->
+        <div class="lg:col-span-5">
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 backdrop-blur-sm shadow-2xl space-y-6">
+            <h3 class="font-serif text-lg font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+              Keunggulan Kurikulum
+            </h3>
+            
+            <dl class="space-y-4 text-xs sm:text-sm">
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Kerangka Metodologi</dt>
+                <dd class="text-white font-semibold text-right">Frank Bird Loss Causation &amp; SCAT</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Pengumpulan Fakta</dt>
+                <dd class="text-amber-300 font-semibold text-right">Protokol 4P (People, Parts, Pos, Paper)</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Kepatuhan Hukum</dt>
+                <dd class="text-white font-semibold text-right">Permenaker 03/1998 &amp; Form 3 KK2</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Output Pelatihan</dt>
+                <dd class="text-white font-semibold text-right">Laporan Investigasi &amp; CAPA Bebas Bias</dd>
+              </div>
+              <div class="flex justify-between">
+                <dt class="text-slate-400">Sasaran Peserta</dt>
+                <dd class="text-emerald-400 font-semibold text-right">HSE, Supervisor, Line Manager, P2K3</dd>
+              </div>
+            </dl>
+
+            <div class="pt-2">
+              <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200 leading-relaxed">
+                <strong>Ingat:</strong> Tujuan investigasi keselamatan bukanlah mencari siapa yang bersalah untuk dihukum, melainkan membongkar mengapa sistem kontrol manajemen gagal melindungi pekerja.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Navigation Anchor Strip -->
+  <div class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm text-xs sm:text-sm font-medium">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex overflow-x-auto gap-6 py-3 scrollbar-none text-slate-600">
+      <a href="#urgensi" class="hover:text-amber-600 whitespace-nowrap">Mengapa RCA &amp; SCAT?</a>
+      <a href="#protokol-4p" class="hover:text-amber-600 whitespace-nowrap">Protokol Bukti 4P</a>
+      <a href="#metode-scat" class="hover:text-amber-600 whitespace-nowrap text-amber-700 font-bold">Model SCAT &amp; Domino</a>
+      <a href="#pelaporan-hukum" class="hover:text-amber-600 whitespace-nowrap">Kewajiban Form 3 KK2</a>
+      <a href="#silabus" class="hover:text-amber-600 whitespace-nowrap">Silabus Pelatihan</a>
+      <a href="#faq" class="hover:text-amber-600 whitespace-nowrap">FAQ</a>
+    </div>
+  </div>
+
+  <!-- Main Content Body -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Urgensi Investigasi Modern -->
+    <section id="urgensi" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-8 space-y-6 text-slate-700 leading-relaxed text-base">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Paradigma Keselamatan Modern</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Keluar dari Budaya Saling Menyalahkan (Blame Culture) Menuju Perbaikan Sistemik
+        </h2>
+        <p>
+          Dalam praktik konvensional di banyak pabrik dan proyek, laporan investigasi kecelakaan sering kali berakhir pada kesimpulan dangkal: <em>"Korban kurang hati-hati"</em> atau <em>"Pekerja tidak mematuhi SOP"</em>. Rekomendasi yang dibuat pun klise: <em>"Korban ditegur dan diinstruksikan lebih waspada"</em>.
+        </p>
+        <p>
+          Kesimpulan seperti ini berbahaya. Mengkambinghitamkan kelalaian individu (*human error*) tidak pernah menyelesaikan bahaya mendasar di tempat kerja. Enam bulan kemudian, ketika orang lain berada di posisi yang sama di bawah tekanan kerja dan desain mesin yang sama buruknya, insiden fatal yang serupa akan terulang kembali.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-5 rounded-2xl bg-rose-50 border border-rose-200 space-y-2">
+            <h4 class="font-bold text-rose-900 text-sm">Investigasi Tradisional (Cacat Metodologi)</h4>
+            <p class="text-xs text-rose-800 leading-relaxed">
+              Fokus mencari pelaku, menghentikan penelusuran pada tindakan tidak aman (*unsafe act*), mengabaikan faktor organisasi, dan menghasilkan rekomendasi hukuman yang membuat pekerja lain takut melapor insiden *near miss*.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-2">
+            <h4 class="font-bold text-emerald-900 text-sm">Investigasi RCA &amp; SCAT (Sistemik)</h4>
+            <p class="text-xs text-emerald-800 leading-relaxed">
+              Membedah lapisan penyebab hingga ke kegagalan kontrol manajemen (*lack of control*), merancang rekayasa teknik (*engineering control*), dan menciptakan lingkungan kerja yang aman secara desain.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 p-6 rounded-3xl bg-slate-900 text-white space-y-5 border border-slate-800 shadow-xl">
+        <h3 class="font-serif text-lg font-bold text-amber-400">Piramida Insiden Frank Bird</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Dari studi 1,75 juta kecelakaan industri, untuk setiap:
+        </p>
+        <div class="space-y-3 text-xs">
+          <div class="p-3 rounded-xl bg-rose-500/20 border border-rose-500/30 flex justify-between items-center">
+            <span class="font-bold text-rose-200">1 Fatality / Major Injury</span>
+            <span class="text-white font-extrabold">1</span>
+          </div>
+          <div class="p-3 rounded-xl bg-amber-500/20 border border-amber-500/30 flex justify-between items-center">
+            <span class="font-bold text-amber-200">Luka Ringan (Minor Injury)</span>
+            <span class="text-white font-extrabold">10</span>
+          </div>
+          <div class="p-3 rounded-xl bg-blue-500/20 border border-blue-500/30 flex justify-between items-center">
+            <span class="font-bold text-blue-200">Kerusakan Alat (Property Damage)</span>
+            <span class="text-white font-extrabold">30</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex justify-between items-center">
+            <span class="font-bold text-emerald-200">Kejadian Nyaris Celaka (Near Miss)</span>
+            <span class="text-white font-extrabold">600</span>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-400 italic">
+          Investigasi yang baik pada 600 kejadian near miss adalah kunci utama meniadakan angka 1 kecelakaan fatal.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Protokol Pengumpulan Bukti 4P -->
+    <section id="protokol-4p" class="space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Teknik Olah TKP Insiden</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Protokol Pengumpulan Bukti 4P: Menjaga Integritas Data Lapangan
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Sebelum TKP berubah atau dibersihkan untuk kelanjutan produksi, tim investigator wajib mengamankan 4 kategori bukti krusial (*4P Framework*):
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- P1: People -->
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold text-base">P1</div>
+          <h3 class="font-serif text-lg font-bold text-slate-900">People (Saksi &amp; Korban)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Teknik wawancara kognitif tanpa tekanan intimidatif terhadap saksi mata, operator, rekan kerja, dan pengawas shift. Mengidentifikasi apa yang mereka lihat, dengar, dan rasakan sebelum dentuman atau insiden terjadi.
+          </p>
+        </div>
+
+        <!-- P2: Parts -->
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold text-base">P2</div>
+          <h3 class="font-serif text-lg font-bold text-slate-900">Parts (Mesin &amp; Alat)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Inspeksi fisik serpihan material, patahan logam, kondisi kabel listrik, keausan safety valve, pengujian sensor interlock, serta kesesuaian APD yang digunakan saat kejadian berlangsung.
+          </p>
+        </div>
+
+        <!-- P3: Position -->
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold text-base">P3</div>
+          <h3 class="font-serif text-lg font-bold text-slate-900">Position (Lokasi &amp; Jejak)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Pemetaan sketsa TKP berjarak terukur, titik ceceran darah/oli, posisi tuas kendali mesin, jarak sudut pandang saksi, arah pencahayaan, serta kondisi cuaca dan kebisingan lingkungan kerja.
+          </p>
+        </div>
+
+        <!-- P4: Paperwork -->
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold text-base">P4</div>
+          <h3 class="font-serif text-lg font-bold text-slate-900">Paperwork (Dokumen K3)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Verifikasi kelayakan Surat Izin Kerja Aman (PTW), Formulir JSA (*Job Safety Analysis*), riwayat pelatihan dan lisensi kompetensi operator, logbook perawatan berkala mesin, dan SOP terkait.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Metode SCAT (Systematic Cause Analysis Technique) -->
+    <section id="metode-scat" class="p-8 sm:p-12 rounded-3xl bg-slate-900 text-white space-y-10 border border-slate-800">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 block">Analisis Berstandar Internasional</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Menelusuri Akar Masalah Menggunakan Matriks SCAT DNV
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Metode SCAT menghubungkan insiden melalui 5 rantai sebab-akibat (*Domino Sequence*) yang menelusuri kelemahan terdalam pada kontrol manajemen:
+        </p>
+      </div>
+
+      <!-- Domino Flow -->
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-xs">
+        <!-- 1 -->
+        <div class="p-4 rounded-xl bg-slate-800/80 border border-white/10 space-y-2">
+          <span class="text-amber-400 font-bold block text-sm">1. Akibat (Loss)</span>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            Cidera fatal, amputasi, kerusakan fasilitas pabrik, pencemaran lingkungan, atau terhentinya rantai produksi.
+          </p>
+        </div>
+
+        <!-- 2 -->
+        <div class="p-4 rounded-xl bg-slate-800/80 border border-white/10 space-y-2">
+          <span class="text-amber-400 font-bold block text-sm">2. Insiden Kontak</span>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            Terjepit roda gigi, tersengat arus listrik 380V, terpapar uap asam pekat, atau tertimpa beban crane.
+          </p>
+        </div>
+
+        <!-- 3 -->
+        <div class="p-4 rounded-xl bg-slate-800/80 border border-white/10 space-y-2">
+          <span class="text-amber-400 font-bold block text-sm">3. Penyebab Langsung</span>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            *Unsafe Acts*: Tidak memakai LOTO.<br/>
+            *Unsafe Conditions*: Guard mesin dilepas saat perbaikan.
+          </p>
+        </div>
+
+        <!-- 4 -->
+        <div class="p-4 rounded-xl bg-slate-800/80 border border-white/10 space-y-2">
+          <span class="text-amber-400 font-bold block text-sm">4. Penyebab Dasar</span>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            *Faktor Manusia*: Kelelahan shift panjang.<br/>
+            *Faktor Kerja*: Tidak ada jadwal maintenance preventif mesin.
+          </p>
+        </div>
+
+        <!-- 5 -->
+        <div class="p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 space-y-2">
+          <span class="text-emerald-300 font-bold block text-sm">5. Lack of Control</span>
+          <p class="text-slate-200 text-[11px] leading-relaxed">
+            Standar SOP LOTO tidak mencukupi, prosedur induksi kontraktor tidak berjalan, atau audit internal SMK3 tidak menindak temuan.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-xs text-slate-300 leading-relaxed">
+        <strong class="text-white">Mengapa SCAT Unggul?</strong> SCAT menyediakan daftar kode penyebab baku yang mencegah investigator membuat kesimpulan spekulatif. Rekomendasi tindakan korektif yang dihasilkan langsung menyasar perbaikan SOP, pengadaan pengaman mesin rekayasa, atau penataan ulang beban kerja.
+      </div>
+    </section>
+
+    <!-- Section 4: Kepatuhan Pelaporan Hukum ke Disnaker (Permenaker 03/1998) -->
+    <section id="pelaporan-hukum" class="p-8 sm:p-12 rounded-3xl bg-amber-50/70 border border-amber-200 space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block">Kepatuhan Hukum Ketenagakerjaan</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Kewajiban Pelaporan Insiden ke Pengawas Ketenagakerjaan (Disnaker)
+        </h2>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          Berdasarkan <strong>Permenaker No. 03/MEN/1998</strong>, manajemen perusahaan memiliki kewajiban yuridis ketat dalam melaporkan insiden kerja untuk menghindari sanksi pidana dan memastikan hak santunan BPJS Ketenagakerjaan:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-amber-200 shadow-sm space-y-3">
+          <div class="text-amber-600 font-bold text-sm">Laporan Awal &bull; Maksimal 2 x 24 Jam</div>
+          <h4 class="font-bold text-slate-900 text-base">Formulir Bentuk 3 KK2 A</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Wajib diserahkan ke Dinas Ketenagakerjaan setempat dan BPJS Ketenagakerjaan berisi identitas korban, jam kejadian, kronologi singkat, dan penanganan medis darurat pertama.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-amber-200 shadow-sm space-y-3">
+          <div class="text-amber-600 font-bold text-sm">Laporan Hasil Penyelidikan &bull; Pasca Investigasi</div>
+          <h4 class="font-bold text-slate-900 text-base">Formulir Bentuk 3 KK2 B, C, &amp; D</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Laporan komprehensif setelah korban sembuh atau setelah penyelidikan mendalam selesai, mencakup kepastian hari kerja hilang, vonis cacat dokter, dan tindakan pencegahan perusahaan.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-white border border-amber-300 text-xs text-slate-700">
+        <strong>Penting bagi HRD &amp; HSE:</strong> Keterlambatan melaporkan insiden ke Disnaker melewati 2x24 jam dapat menggugurkan klaim jaminan kecelakaan kerja (JKK) BPJS Ketenagakerjaan dan membuka ruang sanksi teguran pidana pelanggaran K3.
+      </div>
+    </section>
+
+    <!-- Section 5: Silabus Pembelajaran Kursus -->
+    <section id="silabus" class="space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Kurikulum Workshop Intensif</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Silabus Pembelajaran Calon Investigator Kecelakaan Kerja
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Disusun untuk memberikan keterampilan analitis praktis yang langsung dapat diimplementasikan di tempat kerja:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900">Hari 1: Respon Awal, Olah TKP 4P &amp; Wawancara</h4>
+          <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+            <li>Aspek hukum investigasi kecelakaan (UU 1/1970 &amp; Permenaker 03/1998).</li>
+            <li>Protokol isolasi TKP, pengamanan bukti digital (CCTV), dan dokumentasi foto.</li>
+            <li>Teknik wawancara kognitif saksi (*cognitive interview technique*).</li>
+            <li>Simulasi praktik wawancara studi kasus insiden luka parah.</li>
+          </ul>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900">Hari 2: Bedah RCA (5-Whys, Fishbone) &amp; Praktik SCAT DNV</h4>
+          <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+            <li>Kapan menggunakan 5-Whys vs Diagram Ishikawa (Fishbone).</li>
+            <li>Pengisian lembar kerja SCAT (*Systematic Cause Analysis Technique*).</li>
+            <li>Perumusan rekomendasi perbaikan berbasis hierarki pengendalian risiko.</li>
+            <li>Penyusunan draf laporan investigasi resmi dan simulasi presentasi manajemen.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Frequently Asked Questions</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Pertanyaan Umum Seputar Pelatihan Investigasi Kecelakaan
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto text-xs sm:text-sm">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Siapa saja yang sebaiknya mengikuti pelatihan ini?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Pelatihan ini sangat disarankan untuk HSE Officer/Manager, Pengawas Operasional Lapangan (Supervisor/Mandor), Manajer Produksi &amp; Pemeliharaan, Tim Legal Korporasi, serta seluruh anggota Panitia Pembina K3 (P2K3).
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Apakah pelatihan ini mencakup sertifikasi BNSP?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Kami menyediakan jalur sertifikasi kompetensi internal bersertifikat PJK3 serta opsi fasilitasi uji kompetensi skema Petugas Investigasi Kecelakaan Kerja di bawah naungan Badan Nasional Sertifikasi Profesi (BNSP).
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Bisakah pelatihan menggunakan studi kasus kecelakaan nyata perusahaan kami?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Bisa. Dalam skema In-House Training, instruktur senior kami dapat menggunakan studi kasus anonim dari riwayat insiden perusahaan Anda untuk dianalisis bersama menggunakan SCAT, sehingga menghasilkan perbaikan SOP nyata.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Berapa lama waktu yang wajar untuk menyelesaikan laporan investigasi?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Laporan awal wajib dikirim dalam 2x24 jam ke Disnaker. Sedangkan investigasi mendalam RCA/SCAT internal biasanya diselesaikan dalam waktu 7 hingga 14 hari kerja tergantung kompleksitas pengujian teknis laboratorium atau rekonstruksi alat.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead CTA Section -->
+    <section class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white border border-amber-500/20 shadow-2xl relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-60 h-60 rounded-full bg-amber-500/10 blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-3xl space-y-6 relative z-10">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+          In-House &amp; Executive Safety Training
+        </span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          Cetak Investigator Handal dan Cegah Insiden Berulang
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Hubungi kami untuk mendapatkan silabus lengkap, penawaran pelatihan In-House korporasi, atau asistensi investigasi insiden independen bersama konsultan K3 berlisensi.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a
+            href={waLink("Halo KonsultanK3, kami ingin berdiskusi mengenai In-House Pelatihan Investigasi Kecelakaan Kerja RCA & SCAT.")}
+            target="_blank"
+            rel="noopener"
+            class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-2"
+          >
+            <span>Hubungi via WhatsApp ({WA_DISPLAY})</span>
+            &rarr;
+          </a>
+          <a
+            href="/downloads/Formulir-JSA-Job-Safety-Analysis.html"
+            class="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-colors"
+          >
+            Download Formulir JSA &amp; Mitigasi
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

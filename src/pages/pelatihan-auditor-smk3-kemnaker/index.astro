@@ -1,0 +1,604 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Auditor SMK3 Kemnaker RI & Jasa Perpanjangan SKP";
+const description = "Pelatihan sertifikasi Auditor SMK3 Kemnaker RI & jasa perpanjangan SKP resmi. Kuasai 166 kriteria audit PP 50/2012, studi kasus industri, dan ujian lisensi.";
+const canonical = "/pelatihan-auditor-smk3-kemnaker/";
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan K3", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "Auditor SMK3 Kemnaker", "item": "https://konsultank3.com/pelatihan-auditor-smk3-kemnaker/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Sertifikasi Auditor SMK3 Kemnaker RI & Perpanjangan SKP",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "educationalCredentialAwarded": "Sertifikat & SKP Auditor SMK3 Kemnaker RI",
+      "occupationalCategory": "K3 Auditor / Lead Auditor SMK3",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Blended / In-House / Public",
+        "courseWorkload": "PT40H"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Konsultasi & Pengurusan Perpanjangan SKP Auditor SMK3",
+      "serviceType": "Occupational Safety and Health Auditor Licensing Service",
+      "description": "Layanan asistensi audit internal SMK3, evaluasi portofolio audit, dan pengurusan perpanjangan SKP Auditor SMK3 resmi via portal Kemnaker RI.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "areaServed": "Indonesia"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa perbedaan Auditor Internal SMK3 dan Auditor Eksternal SMK3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Auditor Internal SMK3 adalah personel internal perusahaan bersertifikat yang ditunjuk untuk memverifikasi efektivitas penerapan SMK3 secara berkala di tempat kerja. Auditor Eksternal SMK3 adalah auditor senior yang bekerja di bawah Lembaga Audit Independen resmi yang ditunjuk oleh Menteri Ketenagakerjaan untuk melaksanakan audit sertifikasi formal guna menerbitkan sertifikat emas atau perak SMK3."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama masa berlaku SKP Auditor SMK3 Kemnaker RI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SKP (Surat Keputusan Penunjukan) Auditor SMK3 Kemnaker berlaku selama 3 (tiga) tahun. Pemegang SKP wajib memperpanjang lisensinya sebelum masa berlakunya berakhir dengan menyertakan bukti portofolio audit SMK3 yang telah dilakukan selama masa penunjukan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa tarif resmi PNBP untuk perpanjangan SKP Auditor SMK3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Berdasarkan PP No. 41 Tahun 2023 tentang Penerimaan Negara Bukan Pajak (PNBP) di lingkungan Kementerian Ketenagakerjaan, tarif resmi evaluasi dokumen sebesar Rp120.000 dan penerbitan perpanjangan SKP sebesar Rp150.000 (total PNBP murni Rp270.000), di luar biaya pembinaan, verifikasi berkas, atau jasa administrasi PJK3."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah sertifikat Ahli K3 Umum wajib dimiliki sebelum ikut Auditor SMK3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, kepemilikan sertifikat pembinaan dan SKP Ahli K3 Umum yang masih aktif merupakan syarat prasyarat mutlak yang diwajibkan oleh Kemnaker RI untuk dapat didaftarkan dalam program pembinaan Auditor SMK3."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa kriteria audit yang dipelajari dalam pembinaan Auditor SMK3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Peserta mempelajari 166 kriteria audit SMK3 yang tercantum dalam Lampiran II PP No. 50 Tahun 2012, meliputi 12 elemen audit mulai dari komitmen kebijakan, perencanaan, pengendalian operasi, hingga peninjauan ulang manajemen."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={pageSchema}>
+  <!-- Hero Header -->
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Pelatihan K3</a>
+        <span>/</span>
+        <span class="text-slate-300">Auditor SMK3 Kemnaker</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold border border-amber-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+            Sertifikasi Resmi Kemnaker RI &bull; PP No. 50 Tahun 2012
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pembinaan <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">Auditor SMK3 Kemnaker RI</span> &amp; Perpanjangan SKP
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Tingkatkan kapabilitas kepatuhan industri dengan mencetak Auditor Internal berlisensi resmi. Kuasai metodologi audit 166 kriteria, penentuan temuan mayor/minor, serta layanan perpanjangan SKP Auditor Kemnaker sebelum masa berlaku berakhir.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo KonsultanK3, kami ingin berkonsultasi mengenai pendaftaran Pelatihan Auditor SMK3 Kemnaker / Pengurusan Perpanjangan SKP")}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all transform hover:-translate-y-0.5"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Konsultasi Program &amp; SKP
+            </a>
+            <a
+              href="#silabus"
+              class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-colors"
+            >
+              Lihat 166 Kriteria Audit
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Quick Highlights -->
+        <div class="lg:col-span-5">
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 backdrop-blur-sm shadow-2xl space-y-6">
+            <h3 class="font-serif text-lg font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+              Profil Program Sertifikasi
+            </h3>
+            
+            <dl class="space-y-4 text-xs sm:text-sm">
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Sertifikasi &amp; Lisensi</dt>
+                <dd class="text-white font-semibold text-right">Kemnaker RI (Sertifikat + SKP)</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Landasan Hukum</dt>
+                <dd class="text-amber-300 font-semibold text-right">PP No. 50/2012 &amp; UU 1/1970</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Prasyarat Wajib</dt>
+                <dd class="text-white font-semibold text-right">Ahli K3 Umum Aktif (Min. D3/S1)</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Masa Berlaku SKP</dt>
+                <dd class="text-white font-semibold text-right">3 Tahun (Dapat Diperpanjang)</dd>
+              </div>
+              <div class="flex justify-between">
+                <dt class="text-slate-400">Cakupan Evaluasi</dt>
+                <dd class="text-emerald-400 font-semibold text-right">166 Kriteria / 12 Elemen</dd>
+              </div>
+            </dl>
+
+            <div class="pt-2">
+              <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200 leading-relaxed">
+                <strong>Catatan Kepatuhan:</strong> Audit internal SMK3 wajib dilakukan minimal 1 kali per tahun oleh Auditor yang ditunjuk pengurus perusahaan sebagai syarat pra-audit eksternal.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Navigation Anchor Strip -->
+  <div class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm text-xs sm:text-sm font-medium">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex overflow-x-auto gap-6 py-3 scrollbar-none text-slate-600">
+      <a href="#urgensi" class="hover:text-amber-600 whitespace-nowrap">Urgensi Auditor</a>
+      <a href="#kriteria-audit" class="hover:text-amber-600 whitespace-nowrap">Tingkatan 166 Kriteria</a>
+      <a href="#silabus" class="hover:text-amber-600 whitespace-nowrap">Silabus &amp; Kurikulum</a>
+      <a href="#perpanjangan-skp" class="hover:text-amber-600 whitespace-nowrap text-amber-700 font-bold">Layanan Perpanjangan SKP</a>
+      <a href="#syarat" class="hover:text-amber-600 whitespace-nowrap">Syarat Pendaftaran</a>
+      <a href="#faq" class="hover:text-amber-600 whitespace-nowrap">FAQ</a>
+    </div>
+  </div>
+
+  <!-- Content Sections -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Urgensi Auditor SMK3 Internal -->
+    <section id="urgensi" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-8 space-y-6 text-slate-700 leading-relaxed text-base">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Kewajiban Perusahaan &amp; Regulasi</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Mengapa Perusahaan Membutuhkan Auditor SMK3 Berlisensi Kemnaker?
+        </h2>
+        <p>
+          Berdasarkan <strong>Peraturan Pemerintah No. 50 Tahun 2012</strong> Pasal 5, setiap perusahaan yang mempekerjakan minimal 100 orang pekerja atau memiliki potensi bahaya tinggi (seperti petrokimia, migas, konstruksi, pertambangan, dan manufaktur berat) <strong>wajib menerapkan Sistem Manajemen Keselamatan dan Kesehatan Kerja (SMK3)</strong>.
+        </p>
+        <p>
+          Namun, sertifikasi emas atau perak dari Kemnaker RI tidak dapat diraih secara instan. Pada Pasal 14 ayat (1) ditegaskan bahwa pengurus perusahaan wajib melakukan <em>peninjauan ulang dan audit internal secara berkala</em> untuk menguji efektivitas sistem sebelum diaudit oleh Lembaga Audit Eksternal resmi.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold text-sm">01</div>
+            <h4 class="font-bold text-slate-900 text-sm">Persiapan Audit Eksternal Tanpa Temuan Mayor</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Auditor internal bertugas mendeteksi kesenjangan operasional (*gap analysis*), mencegah temuan kategori kritis/mayor yang dapat membatalkan sertifikat emas SMK3.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-sm">02</div>
+            <h4 class="font-bold text-slate-900 text-sm">Poin Plus Kredensial Tender Korporasi</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Memiliki auditor internal ber-SKP aktif membuktikan kepada Owner proyek migas/BUMN bahwa sistem keselamatan perusahaan dikontrol secara objektif dan sistematis.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 p-6 rounded-3xl bg-slate-900 text-white space-y-5 border border-slate-800 shadow-xl">
+        <h3 class="font-serif text-lg font-bold text-amber-400">Hierarki Kewenangan Auditor K3</h3>
+        <ul class="space-y-4 text-xs leading-relaxed">
+          <li class="pb-3 border-b border-white/10 space-y-1">
+            <span class="font-bold text-white block text-sm">Auditor Internal SMK3</span>
+            <span class="text-slate-300">Pegawai perusahaan yang telah lulus pelatihan pembinaan Auditor SMK3 Kemnaker dan memiliki sertifikat/SKP penunjukan. Menjalankan audit mandiri berkala di lingkungan internal.</span>
+          </li>
+          <li class="pb-3 border-b border-white/10 space-y-1">
+            <span class="font-bold text-white block text-sm">Auditor Eksternal SMK3 (Senior)</span>
+            <span class="text-slate-300">Auditor profesional yang teregistrasi di Kemnaker dan bernaung di bawah Lembaga Audit Independen resmi (PJK3 Audit) untuk melakukan sertifikasi nasional.</span>
+          </li>
+          <li class="space-y-1">
+            <span class="font-bold text-white block text-sm">Pengawas Ketenagakerjaan K3</span>
+            <span class="text-slate-300">Aparatur Sipil Negara (ASN) Pengawas Disnaker / Kemnaker yang berwenang melakukan inspeksi yuridis dan penegakan hukum ketenagakerjaan.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: 166 Kriteria Audit PP 50/2012 -->
+    <section id="kriteria-audit" class="space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Kerangka Teknis Evaluasi</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Struktur Tingkatan Audit SMK3: 64, 122, dan 166 Kriteria
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Sesuai Lampiran II PP No. 50 Tahun 2012, pembinaan Auditor SMK3 mendalami 12 elemen wajib dengan kedalaman kriteria yang disesuaikan dengan tingkat risiko perusahaan:
+        </p>
+      </div>
+
+      <!-- Table Matrix -->
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-slate-900 text-white font-semibold uppercase tracking-wider text-[11px]">
+            <tr>
+              <th class="p-4 sm:p-5">Tingkat Penilaian Audit</th>
+              <th class="p-4 sm:p-5">Jumlah Kriteria</th>
+              <th class="p-4 sm:p-5">Target Profil Perusahaan</th>
+              <th class="p-4 sm:p-5">Ambang Kelulusan Sertifikat</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-700">
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-slate-900">Tingkat Awal (Basic)</td>
+              <td class="p-4 sm:p-5"><span class="px-2.5 py-1 rounded-full bg-slate-100 font-bold text-slate-800">64 Kriteria</span></td>
+              <td class="p-4 sm:p-5">Perusahaan kecil dengan tingkat potensi bahaya rendah</td>
+              <td class="p-4 sm:p-5">
+                <span class="text-emerald-700 font-semibold block">0–59%: Kurang</span>
+                <span class="text-amber-700 font-semibold block">60–84%: Baik (Sertifikat Perak)</span>
+                <span class="text-emerald-600 font-bold block">85–100%: Memuaskan (Bendera Emas)</span>
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors bg-amber-50/30">
+              <td class="p-4 sm:p-5 font-bold text-slate-900">Tingkat Transisi (Intermediate)</td>
+              <td class="p-4 sm:p-5"><span class="px-2.5 py-1 rounded-full bg-amber-100 font-bold text-amber-800">122 Kriteria</span></td>
+              <td class="p-4 sm:p-5">Perusahaan menengah dengan proses kerja berisiko sedang</td>
+              <td class="p-4 sm:p-5">
+                <span class="text-emerald-700 font-semibold block">0–59%: Tindakan Hukum</span>
+                <span class="text-amber-700 font-semibold block">60–84%: Sertifikat Perak</span>
+                <span class="text-emerald-600 font-bold block">85–100%: Bendera Emas Kemnaker</span>
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-slate-900">Tingkat Lanjutan (Advanced)</td>
+              <td class="p-4 sm:p-5"><span class="px-2.5 py-1 rounded-full bg-emerald-100 font-bold text-emerald-800">166 Kriteria</span></td>
+              <td class="p-4 sm:p-5 font-medium text-slate-900">Perusahaan besar &gt;100 pekerja atau risiko bahaya tinggi (Migas, Petrokimia, Manufaktur Berat, Tambang)</td>
+              <td class="p-4 sm:p-5 font-bold text-emerald-600">
+                Wajib 85–100% untuk meraih Bendera Emas SMK3 Lanjutan
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Elemen Card Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <span class="text-xs font-bold text-amber-600 uppercase">Elemen 1 s/d 4</span>
+          <h4 class="font-bold text-slate-900 text-sm">Fondasi &amp; Perencanaan</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Pembangunan komitmen kebijakan K3, tinjauan kontrak, pengendalian dokumen, dan pengorganisasian P2K3 di tempat kerja.
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <span class="text-xs font-bold text-amber-600 uppercase">Elemen 5 s/d 8</span>
+          <h4 class="font-bold text-slate-900 text-sm">Operasional Lapangan &amp; Bahaya</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Pembelian barang/jasa, keamanan bekerja, standar pemeliharaan sarana/prasarana, dan kesiapsiagaan tanggap darurat industri.
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <span class="text-xs font-bold text-amber-600 uppercase">Elemen 9 s/d 12</span>
+          <h4 class="font-bold text-slate-900 text-sm">Inspeksi, Investigasi &amp; Audit</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Pemeriksaan kesehatan, investigasi insiden, pencatatan data kecelakaan kerja, dan audit internal berkala SMK3.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Silabus & Kurikulum Pelatihan -->
+    <section id="silabus" class="p-8 sm:p-12 rounded-3xl bg-slate-900 text-white space-y-10 border border-slate-800">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 block">Kurikulum Standar Kemnaker RI</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Silabus Pembelajaran Calon Auditor SMK3
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Disusun berbasis kompetensi resmi untuk menghasilkan auditor yang tajam dalam melakukan observasi lapangan, teliti memeriksa dokumen bukti, dan independen dalam mengambil keputusan audit:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Module 1 -->
+        <div class="p-6 rounded-2xl bg-slate-800/60 border border-white/10 space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">M-1</span>
+            <h4 class="font-bold text-white text-base">Kerangka Hukum &amp; Kebijakan SMK3 Nasional</h4>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+            <li>Kebijakan K3 Nasional dan perkembangan regulasi ketenagakerjaan.</li>
+            <li>Prinsip dasar dan pemahaman mendalam PP No. 50 Tahun 2012.</li>
+            <li>Tanggung jawab hukum pengurus, auditor internal, dan auditor eksternal.</li>
+          </ul>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="p-6 rounded-2xl bg-slate-800/60 border border-white/10 space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">M-2</span>
+            <h4 class="font-bold text-white text-base">Bedah Mendalam 166 Kriteria Audit</h4>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+            <li>Pemilahan kriteria Kritis, Mayor, dan Minor.</li>
+            <li>Interpretasi bukti objektif yang sah (*hard copy*, digital record, interview).</li>
+            <li>Studi kasus pemenuhan klausul teknis di sektor manufaktur dan migas.</li>
+          </ul>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="p-6 rounded-2xl bg-slate-800/60 border border-white/10 space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">M-3</span>
+            <h4 class="font-bold text-white text-base">Teknik &amp; Metodologi Audit Lapangan</h4>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+            <li>Penyusunan Jadwal &amp; Rencana Audit (*Audit Plan*).</li>
+            <li>Teknik wawancara audit tanpa intimidasi dan sampling data objektif.</li>
+            <li>Teknik observasi fisik dan pengujian verifikasi peralatan keselamatan.</li>
+          </ul>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="p-6 rounded-2xl bg-slate-800/60 border border-white/10 space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">M-4</span>
+            <h4 class="font-bold text-white text-base">Pelaporan Audit &amp; Ujian Evaluasi Kemnaker</h4>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+            <li>Penyusunan Lembar Laporan Ketidaksesuaian (*CAR - Corrective Action Request*).</li>
+            <li>Presentasi hasil audit dalam rapat penutupan (*Closing Meeting*).</li>
+            <li>Ujian evaluasi teori komprehensif dan ujian studi kasus resmi Kemnaker RI.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Jasa Perpanjangan SKP Auditor SMK3 -->
+    <section id="perpanjangan-skp" class="p-8 sm:p-12 rounded-3xl bg-amber-50 border border-amber-200/80 space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block">Layanan Khusus Pemegang Lisensi</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Jasa Pengurusan &amp; Perpanjangan SKP Auditor SMK3 Kemnaker RI
+        </h2>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          SKP Auditor SMK3 memiliki masa berlaku <strong>3 tahun</strong>. Jangan biarkan lisensi Anda kedaluwarsa lebih dari 1 tahun karena berisiko diwajibkan mengikuti pelatihan ulang (*retraining*) dari awal oleh Kemnaker RI.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-2xl bg-white border border-amber-200 shadow-sm space-y-3">
+          <div class="text-amber-600 font-bold text-lg">01. Verifikasi Portofolio Audit</div>
+          <h4 class="font-bold text-slate-900 text-sm">Review Logbook &amp; Laporan Audit</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Kami membantu memeriksa kelengkapan bukti rekapitulasi audit internal yang pernah Anda pimpin selama 3 tahun terakhir agar sesuai format Kemnaker RI.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-2xl bg-white border border-amber-200 shadow-sm space-y-3">
+          <div class="text-amber-600 font-bold text-lg">02. Transparansi Tarif PNBP</div>
+          <h4 class="font-bold text-slate-900 text-sm">Sesuai PP No. 41 Tahun 2023</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Tarif resmi PNBP negara sebesar Rp120.000 (evaluasi) + Rp150.000 (penerbitan SKP) dibayarkan langsung secara transparan dengan bukti billing resmi Simponi.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-2xl bg-white border border-amber-200 shadow-sm space-y-3">
+          <div class="text-amber-600 font-bold text-lg">03. Fast Track TEMANK3 Portal</div>
+          <h4 class="font-bold text-slate-900 text-sm">Monitoring Terpusat</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Seluruh proses input berkas, koordinasi surat permohonan perusahaan, hingga penerbitan SKP fisik/elektronik baru dipantau langsung oleh tim legalitas kami.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white border border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm">Masa Berlaku SKP Auditor Anda Hampir Habis?</h4>
+          <p class="text-xs text-slate-600">Konsultasikan status berkas Anda minimal 2 bulan sebelum masa kedaluwarsa untuk memastikan kelancaran administrasi audit perusahaan.</p>
+        </div>
+        <a
+          href={waLink("Halo KonsultanK3, saya ingin konsultasi perpanjangan SKP Auditor SMK3 yang hampir habis.")}
+          target="_blank"
+          rel="noopener"
+          class="shrink-0 px-5 py-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-md transition-colors"
+        >
+          Perpanjang SKP Auditor Sekarang &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 5: Persyaratan Peserta -->
+    <section id="syarat" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Kriteria Administratif</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Persyaratan Peserta Pelatihan Auditor SMK3
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Mengingat Auditor SMK3 adalah kualifikasi tingkat mahir yang memegang kewenangan verifikasi kepatuhan hukum, peserta wajib memenuhi persyaratan formal berikut:
+        </p>
+
+        <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+          <li class="flex items-start gap-3">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">&check;</span>
+            <span><strong>Pendidikan Formal:</strong> Minimal Diploma 3 (D3) atau Sarjana (S1) semua jurusan teknik/sains/kesehatan atau relevan.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">&check;</span>
+            <span><strong>Prasyarat Kualifikasi:</strong> Wajib memiliki Sertifikat &amp; SKP <strong>Ahli K3 Umum Kemnaker RI</strong> yang masih aktif.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">&check;</span>
+            <span><strong>Surat Tugas / Rekomendasi:</strong> Surat penugasan resmi dari pimpinan perusahaan untuk mengikuti pembinaan auditor.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">&check;</span>
+            <span><strong>Dokumen Pribadi:</strong> Salinan Ijazah, KTP, dan pas foto resmi berlatar belakang merah.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-6">
+        <h3 class="font-serif text-lg font-bold text-slate-900">Output Kelulusan yang Diterima</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Peserta yang dinyatakan lulus ujian evaluasi teori dan simulasi audit berhak mendapatkan paket legalitas resmi:
+        </p>
+
+        <div class="space-y-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-md bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold">📜</span>
+            <div>
+              <span class="font-bold text-slate-900 block">Sertifikat Auditor SMK3 Kemnaker RI</span>
+              <span class="text-slate-500 text-[11px]">Diterbitkan langsung oleh Kementerian Ketenagakerjaan RI.</span>
+            </div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-md bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold">💳</span>
+            <div>
+              <span class="font-bold text-slate-900 block">Surat Keputusan Penunjukan (SKP) Auditor</span>
+              <span class="text-slate-500 text-[11px]">Bukti kewenangan legal audit berlaku 3 tahun.</span>
+            </div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-md bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold">📁</span>
+            <div>
+              <span class="font-bold text-slate-900 block">Audit Toolkit &amp; 166 Checklist Template</span>
+              <span class="text-slate-500 text-[11px]">Template kerja Excel &amp; Word siap pakai untuk audit mandiri di perusahaan.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Frequently Asked Questions</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Pertanyaan Umum Seputar Auditor SMK3
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto text-xs sm:text-sm">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Apakah sertifikat Auditor SMK3 bisa digunakan di luar perusahaan saat ini?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Sertifikat kelulusan kompetensi melekat pada individu Anda seumur hidup. Namun, SKP (Surat Keputusan Penunjukan) terikat pada perusahaan yang mendaftarkan Anda. Bila Anda pindah kerja, SKP dapat dimutasikan ke perusahaan baru melalui prosedur mutasi SKP Kemnaker.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Berapa lama durasi pelatihan pembinaan Auditor SMK3?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Pelatihan berlangsung selama 40 jam pelajaran (umumnya 4 hari intensif), mencakup pemaparan regulasi, bedah 166 kriteria, workshop penyusunan audit plan, simulasi studi kasus temuan ketidaksesuaian, dan ujian evaluasi resmi.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Apa yang terjadi jika SKP Auditor kedaluwarsa lebih dari 1 tahun?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Sesuai arahan teknis Kemnaker, jika masa berlaku SKP telah mati lebih dari 1 tahun tanpa perpanjangan, pemilik lisensi berisiko diwajibkan mengikuti program penyegaran (*refreshment course*) atau pembinaan ulang penuh sebelum SKP baru dapat diterbitkan kembali.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Bagaimana jika perusahaan ingin menyelenggarakan kelas In-House?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Kami menyediakan skema In-House Training khusus untuk perusahaan yang ingin melatih tim audit internal minimal 10–15 orang sekaligus. Jadwal, studi kasus, dan simulasi audit disesuaikan langsung dengan proses bisnis dan lokasi fasilitas kerja Anda.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead CTA Section -->
+    <section class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white border border-amber-500/20 shadow-2xl relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-60 h-60 rounded-full bg-amber-500/10 blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-3xl space-y-6 relative z-10">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+          Pendaftaran &amp; Evaluasi Portofolio Terbuka
+        </span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          Siapkan Tim Auditor Internal Anda Menuju Bendera Emas SMK3
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Dapatkan silabus lengkap, jadwal pembinaan terdekat, proposal penawaran In-House korporasi, atau bantuan perpanjangan SKP Auditor Kemnaker bersama konsultan ahli kami.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a
+            href={waLink("Halo KonsultanK3, kami ingin mendaftar Pelatihan Auditor SMK3 Kemnaker RI / konsultasi perpanjangan SKP.")}
+            target="_blank"
+            rel="noopener"
+            class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-2"
+          >
+            <span>Hubungi via WhatsApp ({WA_DISPLAY})</span>
+            &rarr;
+          </a>
+          <a
+            href="/panduan-penerapan-smk3/"
+            class="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-colors"
+          >
+            Pelajari Panduan Audit SMK3
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

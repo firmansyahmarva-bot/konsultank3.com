@@ -1,0 +1,573 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Spill Response B3 & Oil Spill Drill K3";
+const description = "Pelatihan spill response B3 dan simulasi oil spill drill industri. Kuasai teknik penanganan tumpahan kimia, standar spill kit, serta SOP kepatuhan lingkungan.";
+const canonical = "/pelatihan-spill-response-b3-oil-spill-drill/";
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan K3", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "Spill Response B3 & Drill", "item": "https://konsultank3.com/pelatihan-spill-response-b3-oil-spill-drill/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan & Simulasi Tanggap Darurat Spill Response B3 & Oil Spill Drill",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "educationalCredentialAwarded": "Sertifikat Kompetensi Tanggap Darurat Tumpahan B3 & HNS",
+      "occupationalCategory": "Emergency Response Team (ERT) / Spill Responder",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "In-House Practical Drill / Workshop",
+        "courseWorkload": "PT16H"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Konsultasi Emergency Response Plan & Simulasi Drill Tumpahan B3",
+      "serviceType": "Hazardous Spill Control and Environmental Drill Consulting",
+      "description": "Perancangan skenario simulasi tumpahan B3, audit kesiapan spill kit, dan pelatihan tanggap darurat tumpahan minyak/kimia untuk kawasan industri, pelabuhan, dan pabrik.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "areaServed": "Indonesia"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa dasar hukum kewajiban pelatihan penanggulangan tumpahan B3 di perusahaan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kewajiban ini didasarkan pada Kepmenaker No. 187/MEN/1999 tentang Pengendalian Bahan Kimia Berbahaya di Tempat Kerja, PP No. 22 Tahun 2021 tentang Penyelenggaraan Perlindungan dan Pengelolaan Lingkungan Hidup, serta PP No. 50 Tahun 2012 (Elemen 6.7 Kesiapan Menghadapi Keadaan Darurat)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa perbedaan Tier 1, Tier 2, dan Tier 3 dalam insiden tumpahan minyak/B3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tier 1 adalah tumpahan skala kecil yang mampu ditanggulangi sendiri oleh tim internal perusahaan menggunakan peralatan lokal. Tier 2 adalah tumpahan skala menengah yang membutuhkan bantuan sumber daya eksternal (rekanan industri atau otoritas pelabuhan/daerah). Tier 3 adalah tumpahan skala masif/bencana nasional yang memerlukan mobilisasi nasional dan koordinasi antar kementerian/lembaga."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peralatan apa saja yang wajib ada dalam Chemical Spill Kit standar industri?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Spill kit standar industri wajib mencakup absorbent pads/rolls khusus kimia, absorbent socks/booms untuk pembendungan, absorbent pillows untuk tampungan pekat, bahan penetralisir (neutralizer), kantong limbah B3 berlabel resmi, seal pembuangan, sekop/sapu non-sparking, serta APD kimia lengkap (sarung tangan nitril/butyl, kacamata goggle, respirator kimia, dan coverall tyvek)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah pelatihan spill response ini disertai dengan latihan simulasi lapangan (drill)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, program kami memprioritaskan 60% waktu untuk praktik lapangan (*live drill scenario*), meliputi pengamanan area, pembendungan cairan menggunakan boom, mitigasi saluran drainase, teknik netralisasi aman, dan prosedur dekontaminasi personel."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={pageSchema}>
+  <!-- Hero Section -->
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Pelatihan K3</a>
+        <span>/</span>
+        <span class="text-slate-300">Spill Response B3 &amp; Oil Drill</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold border border-amber-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+            Tanggap Darurat Kimia &bull; Permenaker 187/1999 &amp; PP 22/2021
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">Spill Response B3</span> &amp; Simulasi Oil Spill Drill
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Bangun kesiapsiagaan Tim Tanggap Darurat (*Emergency Response Team*) dalam mengendalikan tumpahan kimia berbahaya, kebocoran hidrokarbon, dan pencemaran B3 di fasilitas darat (*onshore*) maupun perairan (*marine jetty*).
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo KonsultanK3, kami ingin berdiskusi mengenai penyelenggaraan In-House Training Spill Response B3 & Oil Spill Drill di fasilitas kami")}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all transform hover:-translate-y-0.5"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Konsultasi Pelatihan In-House
+            </a>
+            <a
+              href="#sop-tindakan"
+              class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-colors"
+            >
+              Lihat 8 Langkah SOP
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Program Highlights -->
+        <div class="lg:col-span-5">
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 backdrop-blur-sm shadow-2xl space-y-6">
+            <h3 class="font-serif text-lg font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+              Fokus Utama Pembinaan
+            </h3>
+            
+            <dl class="space-y-4 text-xs sm:text-sm">
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Metode Pelatihan</dt>
+                <dd class="text-white font-semibold text-right">40% Teori &amp; 60% Skenario Lapangan</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Regulasi Acuan</dt>
+                <dd class="text-amber-300 font-semibold text-right">Permenaker 187/99 &amp; PP 22/2021</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Standar Internasional</dt>
+                <dd class="text-white font-semibold text-right">IMO OPRC &amp; NFPA 472 HNS</dd>
+              </div>
+              <div class="flex justify-between pb-3 border-b border-white/10">
+                <dt class="text-slate-400">Peserta Sasaran</dt>
+                <dd class="text-white font-semibold text-right">ERT, HSE Officer, Warehouse &amp; Logistik</dd>
+              </div>
+              <div class="flex justify-between">
+                <dt class="text-slate-400">Durasi Rekomendasi</dt>
+                <dd class="text-emerald-400 font-semibold text-right">2 Hari Intensif (Workshop + Drill)</dd>
+              </div>
+            </dl>
+
+            <div class="pt-2">
+              <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-xs text-rose-200 leading-relaxed">
+                <strong>Peringatan Hukum:</strong> Kegagalan menanggulangi tumpahan B3 yang mencemari lingkungan hidup dapat dikenai sanksi pidana dan denda administratif berat sesuai UU Perlindungan Lingkungan Hidup (UU 32/2009 &amp; PP 22/2021).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Navigation Anchor Strip -->
+  <div class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm text-xs sm:text-sm font-medium">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex overflow-x-auto gap-6 py-3 scrollbar-none text-slate-600">
+      <a href="#urgensi" class="hover:text-amber-600 whitespace-nowrap">Risiko Industri</a>
+      <a href="#tingkatan-tier" class="hover:text-amber-600 whitespace-nowrap">Matriks Tier 1–3</a>
+      <a href="#sop-tindakan" class="hover:text-amber-600 whitespace-nowrap text-amber-700 font-bold">8 Langkah SOP Penanganan</a>
+      <a href="#silabus" class="hover:text-amber-600 whitespace-nowrap">Materi &amp; Simulasi Drill</a>
+      <a href="#standar-spill-kit" class="hover:text-amber-600 whitespace-nowrap">Standar Isi Spill Kit</a>
+      <a href="#faq" class="hover:text-amber-600 whitespace-nowrap">FAQ</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Urgensi Kesiapsiagaan -->
+    <section id="urgensi" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-8 space-y-6 text-slate-700 leading-relaxed text-base">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Kepatuhan Lingkungan &amp; Keselamatan</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Ancaman Tumpahan B3: Dari Bahaya Fatalitas hingga Sanksi Pidana Lingkungan
+        </h2>
+        <p>
+          Tumpahan bahan kimia berbahaya (asam pekat, pelarut organik, bahan korosif) serta ceceran minyak bumi (*hydrocarbon spills*) di tempat kerja merupakan salah satu keadaan darurat dengan eskalasi tercepat. Kegagalan respon dalam <strong>5 hingga 15 menit pertama</strong> dapat mengakibatkan kebakaran hebat, ledakan uap, paparan gas beracun ke pekerja, atau pencemaran saluran air umum.
+        </p>
+        <p>
+          Berdasarkan <strong>Kepmenaker No. 187/MEN/1999</strong>, pengusaha yang menyimpan atau menggunakan bahan kimia berbahaya dengan kuantitas melebihi Nilai Ambang Kuantitas (NAK) wajib memiliki personil ahli yang mampu mengoperasikan prosedur tanggap darurat kimia. Lebih jauh lagi, audit SMK3 PP 50/2012 kriteria 6.7 mewajibkan pengujian rencana tanggap darurat dilakukan secara teratur melalui latihan simulasi keadaan darurat (*emergency drill*).
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+              Kerugian Nyata Tanpa Pelatihan
+            </h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Kepanikan pekerja, pemakaian APD yang salah jenis, penetralan zat kimia yang memicu reaksi eksotermik mematikan, serta bocornya zat B3 ke drainase publik yang berujung segel KLHK.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              Keuntungan Tanggap Darurat Terlatih
+            </h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Tim tanggap darurat sigap membendung dalam hitungan menit, limbah B3 terisolasi aman, proses produksi segera pulih tanpa korban cidera, dan lolos uji verifikasi AMDAL/PROPER.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 p-6 rounded-3xl bg-slate-900 text-white space-y-5 border border-slate-800 shadow-xl">
+        <h3 class="font-serif text-lg font-bold text-amber-400">Regulasi yang Mewajibkan Drill</h3>
+        <ul class="space-y-4 text-xs leading-relaxed">
+          <li class="pb-3 border-b border-white/10 space-y-1">
+            <span class="font-bold text-white block text-sm">Permenaker 187/MEN/1999</span>
+            <span class="text-slate-300">Wajib memiliki prosedur penanggulangan keadaan darurat kimia dan melatih Petugas K3 Kimia / Ahli K3 Kimia di fasilitas industri.</span>
+          </li>
+          <li class="pb-3 border-b border-white/10 space-y-1">
+            <span class="font-bold text-white block text-sm">PP No. 22 Tahun 2021 (Pasal 275)</span>
+            <span class="text-slate-300">Penghasil limbah B3 wajib memiliki sistem tanggap darurat dan melakukan simulasi penanggulangan tumpahan minimal 1 kali dalam 1 tahun.</span>
+          </li>
+          <li class="space-y-1">
+            <span class="font-bold text-white block text-sm">PP No. 50 Tahun 2012 (Kriteria 6.7)</span>
+            <span class="text-slate-300">Prosedur menghadapi keadaan darurat diuji secara berkala oleh personil yang berkompeten dan diinstruksikan kepada seluruh tenaga kerja.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: Matriks Tier 1, 2, 3 -->
+    <section id="tingkatan-tier" class="space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Klasifikasi Eskalasi Krisis</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Matriks Penanganan Tumpahan: Tier 1, Tier 2, dan Tier 3
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Sesuai standar internasional IPIECA &amp; IMO OPRC, strategi mitigasi tumpahan diklasifikasikan ke dalam 3 tingkatan eskalasi krisis operasional:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Tier 1 -->
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+          <div class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
+            Tier 1 &bull; Respon Lokal
+          </div>
+          <h3 class="font-serif text-lg font-bold text-slate-900">Tumpahan Skala Fasilitas</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Insiden tumpahan operasional di area kerja terlokalisir (misalnya drum bocor di gudang B3 atau tumpahan tangki transfer skala &lt;1 drum).
+          </p>
+          <div class="pt-2 border-t border-slate-100 text-xs space-y-1.5">
+            <div class="text-slate-500 font-medium">Kekuatan Responder:</div>
+            <div class="font-bold text-slate-800">Tim Internal Pabrik / Petugas K3</div>
+            <div class="text-slate-500 font-medium mt-2">Peralatan:</div>
+            <div class="text-slate-800">Spill kit lokal, absorbent booms, APD level C.</div>
+          </div>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="p-6 rounded-2xl bg-white border border-amber-200 shadow-sm space-y-4">
+          <div class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold">
+            Tier 2 &bull; Bantuan Kawasan / Regional
+          </div>
+          <h3 class="font-serif text-lg font-bold text-slate-900">Tumpahan Meluas ke Area Luar</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Tumpahan melewati batas selokan fasilitas, mendekati sungai, dermaga jetty, atau membutuhkan bantuan pemadam kebakaran dan kawasan industri terdekat.
+          </p>
+          <div class="pt-2 border-t border-slate-100 text-xs space-y-1.5">
+            <div class="text-slate-500 font-medium">Kekuatan Responder:</div>
+            <div class="font-bold text-slate-800">ERT + Bantuan Mutual Aid Kawasan</div>
+            <div class="text-slate-500 font-medium mt-2">Peralatan:</div>
+            <div class="text-slate-800">Oil boom sungai/laut, vacuum truck, skimmer.</div>
+          </div>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="p-6 rounded-2xl bg-white border border-rose-200 shadow-sm space-y-4">
+          <div class="inline-block px-3 py-1 rounded-full bg-rose-100 text-rose-800 text-xs font-bold">
+            Tier 3 &bull; Bencana Nasional / Multinasional
+          </div>
+          <h3 class="font-serif text-lg font-bold text-slate-900">Pencemaran Skala Masif</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Bencana tumpahan kapal tanker, kebocoran pipa bawah laut, atau ledakan tangki bahan kimia curah yang mengancam pesisir dan keselamatan publik luas.
+          </p>
+          <div class="pt-2 border-t border-slate-100 text-xs space-y-1.5">
+            <div class="text-slate-500 font-medium">Kekuatan Responder:</div>
+            <div class="font-bold text-slate-800">Komando Nasional (KLHK, Ditjen Hubla, TNI-AL)</div>
+            <div class="text-slate-500 font-medium mt-2">Peralatan:</div>
+            <div class="text-slate-800">Offshore containment barrier, dispersant aerial spray.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 8 Langkah SOP Penanganan Tumpahan -->
+    <section id="sop-tindakan" class="p-8 sm:p-12 rounded-3xl bg-slate-900 text-white space-y-10 border border-slate-800">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 block">Tactical Standard Operating Procedure</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          8 Langkah Baku Respon Cepat Tumpahan B3 &amp; Kimia
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Protokol tindakan terstandar yang dilatihkan kepada responder untuk memastikan tumpahan terkendali tanpa menimbulkan korban jiwa atau ledakan:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs sm:text-sm">
+        <!-- Step 1 -->
+        <div class="p-5 rounded-2xl bg-slate-800/70 border border-white/10 space-y-2">
+          <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-xs">1</span>
+          <h4 class="font-bold text-white text-base">Hentikan Sumber (Stop Source)</h4>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Jika aman, segera tutup valve, tegakkan drum yang terguling, atau matikan sakelar pompa transfer untuk memutus aliran zat tumpah.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-5 rounded-2xl bg-slate-800/70 border border-white/10 space-y-2">
+          <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-xs">2</span>
+          <h4 class="font-bold text-white text-base">Identifikasi Zat &amp; Baca SDS</h4>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Cek label B3, kode GHS, dan dokumen Lembar Data Keselamatan (SDS/MSDS) untuk mengetahui sifat reaktif, flamabilitas, dan APD wajib.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-5 rounded-2xl bg-slate-800/70 border border-white/10 space-y-2">
+          <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-xs">3</span>
+          <h4 class="font-bold text-white text-base">Amankan &amp; Evakuasi Area</h4>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Pasang safety line, posisikan diri berlawanan arah angin (*upwind*), matikan sumber panas/api, dan evakuasi pekerja non-darurat.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-5 rounded-2xl bg-slate-800/70 border border-white/10 space-y-2">
+          <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-xs">4</span>
+          <h4 class="font-bold text-white text-base">Lindungi Saluran Drainase</h4>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Tutup grill got, pasang drain cover polyurethane, dan bentangkan absorbent boom untuk mencegah cairan masuk ke gorong-gorong pabrik.
+          </p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="p-5 rounded-2xl bg-slate-800/70 border border-white/10 space-y-2">
+          <span class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-xs">5</span>
+          <h4 class="font-bold text-white text-base">Bendung &amp; Lokalisir (Contain)</h4>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Lingkari genangan dari pinggir terluar ke pusat menggunakan *absorbent socks/booms* khusus kimia atau hidrokarbon.
+          </p>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="p-5 rounded-2xl bg-slate-800/70 border border-white/10 space-y-2">
+          <span class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-xs">6</span>
+          <h4 class="font-bold text-white text-base">Serap &amp; Netralkan (Absorb)</h4>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Tebarkan absorbent pads atau serbuk penetral asam/basa yang tepat secara merata hingga cairan terikat sempurna tanpa tersisa.
+          </p>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="p-5 rounded-2xl bg-slate-800/70 border border-white/10 space-y-2">
+          <span class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-xs">7</span>
+          <h4 class="font-bold text-white text-base">Kemas Limbah B3 Resmi</h4>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Kumpulkan sisa serapan dengan sekop non-sparking ke dalam kantong limbah B3 tebal, ikat rapat, beri label identitas B3, dan catat logbook TPS B3.
+          </p>
+        </div>
+
+        <!-- Step 8 -->
+        <div class="p-5 rounded-2xl bg-slate-800/70 border border-white/10 space-y-2">
+          <span class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-xs">8</span>
+          <h4 class="font-bold text-white text-base">Dekontaminasi &amp; Restock Kit</h4>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Bersihkan personel yang bertugas, periksa kondisi APD, restock isi kotak spill kit yang telah terpakai, dan buat laporan investigasi insiden.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Silabus Pelatihan & Simulasi Drill -->
+    <section id="silabus" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Kurikulum Workshop &amp; Praktik</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Silabus Pembelajaran &amp; Skenario Drill Lapangan
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Dirancang untuk melatih memori otot (*muscle memory*) seluruh anggota tim penanggulangan keadaan darurat industri:
+        </p>
+
+        <div class="space-y-4 text-xs sm:text-sm">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+            <h4 class="font-bold text-slate-900">Modul 1: Karakteristik B3, GHS &amp; Analisis Lembar Data Keselamatan (SDS)</h4>
+            <p class="text-xs text-slate-600">Teknik cepat membaca 16 bagian dokumen SDS, interpretasi piktogram GHS bahaya ledakan/racun, dan penentuan batas aman paparan.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+            <h4 class="font-bold text-slate-900">Modul 2: Pemilihan &amp; Uji Kecocokan APD Kimia (Level A, B, C, D)</h4>
+            <p class="text-xs text-slate-600">Prosedur pemakaian (*donning*) dan pelepasan (*doffing*) coverall kedap kimia, sarung tangan nitril/neoprene, serta canister respirator uap organik/asam.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+            <h4 class="font-bold text-slate-900">Modul 3: Teknik Operasional Spill Kit &amp; Penggelaran Boom</h4>
+            <p class="text-xs text-slate-600">Perbedaan absorbent pad universal (abu-abu), oil-only (putih), dan hazardous chemical (kuning), serta teknik penutupan lubang got secara instan.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+            <h4 class="font-bold text-slate-900">Modul 4: Skenario Simulasi Drill Keadaan Darurat Lapangan</h4>
+            <p class="text-xs text-slate-600">Latihan nyata penanganan tumpahan drum bocor atau ceceran minyak di area bongkar muat dengan pengujian waktu respon tanggap (*response time audit*).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5: Standar Isi Spill Kit Box -->
+      <div id="standar-spill-kit" class="lg:col-span-6 p-6 sm:p-8 rounded-3xl bg-amber-50/70 border border-amber-200 space-y-6">
+        <h3 class="font-serif text-lg font-bold text-slate-900">Standar Inventaris Spill Kit Box Industri</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          KonsultanK3 membantu mengaudit dan merekomendasikan konfigurasi isi Spill Kit Box yang disesuaikan dengan kapasitas tangki fasilitas Anda:
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs bg-white rounded-xl border border-amber-200 overflow-hidden">
+            <thead class="bg-amber-600 text-white font-semibold">
+              <tr>
+                <th class="p-3">Komponen Spill Kit</th>
+                <th class="p-3">Fungsi Teknis</th>
+                <th class="p-3">Kapasitas Minimum</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-amber-100 text-slate-700">
+              <tr>
+                <td class="p-3 font-bold text-slate-900">Absorbent Boom / Sock</td>
+                <td class="p-3">Membendung perimeter luapan cairan</td>
+                <td class="p-3">4 – 8 buah (panjang 1.2 – 3m)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-slate-900">Absorbent Pads</td>
+                <td class="p-3">Menyerap tumpahan di permukaan lantai</td>
+                <td class="p-3">50 – 100 lembar</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-slate-900">Absorbent Pillows</td>
+                <td class="p-3">Menampung titik kebocoran yang menetes</td>
+                <td class="p-3">4 – 6 buah bantal serap</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-slate-900">Drain Cover / Penutup Got</td>
+                <td class="p-3">Mencegah zat B3 mengalir ke riol umum</td>
+                <td class="p-3">1 unit lembar magnet/poly</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-slate-900">Alat Sekop Non-Sparking</td>
+                <td class="p-3">Membersihkan serbuk tanpa percikan api</td>
+                <td class="p-3">1 set sekop polimer khusus</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-slate-900">Kantong &amp; Seal B3</td>
+                <td class="p-3">Wadah penampung limbah pasca-serap</td>
+                <td class="p-3">10 kantong tebal berlabel B3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white border border-amber-300 text-xs text-slate-700">
+          <span class="font-bold text-amber-800 block mb-1">Butuh Pengadaan atau Refill Bahan Spill Kit?</span>
+          Kami juga mendampingi audit kelayakan isi kotak spill kit eksisting perusahaan Anda agar memenuhi standar verifikasi inspeksi lingkungan.
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 block">Frequently Asked Questions</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Pertanyaan Umum Seputar Spill Response &amp; Drill
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto text-xs sm:text-sm">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Berapa sering perusahaan wajib melaksanakan latihan drill tumpahan B3?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Sesuai regulasi PP No. 22 Tahun 2021 dan standar audit SMK3 PP 50/2012 kriteria 6.7, simulasi tanggap darurat tumpahan B3 wajib dilaksanakan secara terencana minimal <strong>1 (satu) kali dalam setiap tahun</strong>, dengan hasil evaluasi respon didokumentasikan resmi.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Apakah pelatihan ini bisa diselenggarakan secara In-House di pabrik kami?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Sangat disarankan. Pelatihan In-House memungkinkan instruktur meninjau langsung *layout* gudang kimia, titik rawan ceceran, karakteristik SDS bahan baku Anda, dan menguji skenario drill di fasilitas nyata tempat kerja Anda.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Apakah peserta yang lulus akan memperoleh sertifikat?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Ya, setiap peserta yang mengikuti sesi workshop teori dan lulus evaluasi simulasi drill lapangan akan menerima <em>Sertifikat Pelatihan Tanggap Darurat Spill Response B3 &amp; HNS</em> lengkap dengan daftar jam pelajaran dan materi yang ditempuh.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h4 class="font-bold text-slate-900">Apa perbedaan absorbent putih, abu-abu, dan kuning?</h4>
+          <p class="text-slate-600 leading-relaxed text-xs">
+            Warna putih adalah *Oil-Only Absorbent* (menolak air, hanya menyerap minyak/hidrokarbon). Warna abu-abu adalah *Universal Absorbent* (menyerap air, minyak, dan cairan non-agresif). Warna kuning adalah *HazMat/Chemical Absorbent* khusus untuk menyerap asam pekat, basa, dan zat kimia berbahaya korosif.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead CTA Section -->
+    <section class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white border border-amber-500/20 shadow-2xl relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-60 h-60 rounded-full bg-amber-500/10 blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-3xl space-y-6 relative z-10">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+          In-House Training &amp; Emergency Drill Simulation
+        </span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          Pastikan Tim ERT Anda Siap Tangani Insiden Tumpahan Kimia
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Hubungi konsultan kami untuk merancang skenario simulasi tumpahan B3 yang spesifik dengan bahan kimia di pabrik Anda, menyusun SOP respon, dan menyiapkan sertifikasi tim responder Anda.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a
+            href={waLink("Halo KonsultanK3, kami ingin mengundang pelatihan In-House Spill Response B3 & Oil Drill di fasilitas kami.")}
+            target="_blank"
+            rel="noopener"
+            class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-2"
+          >
+            <span>Konsultasi Pelatihan In-House ({WA_DISPLAY})</span>
+            &rarr;
+          </a>
+          <a
+            href="/alat-pelindung-diri/"
+            class="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-colors"
+          >
+            Standar APD Kimia Industri
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
