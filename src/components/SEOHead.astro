@@ -1,6 +1,8 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import { WA_SCHEMA } from '../data/contact.js';
+import jakartaWoff2 from '@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2?url';
+import aliceWoff2 from '@fontsource/alice/files/alice-latin-400-normal.woff2?url';
 
 interface Props {
   title: string;
@@ -24,6 +26,7 @@ const {
 
 const siteUrl = 'https://konsultank3.com';
 const fullCanonical = canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
+const isDefaultOgImage = ogImage.endsWith('/hero-safety-officer.jpg');
 
 const defaultSchema = {
   "@context": "https://schema.org",
@@ -61,32 +64,40 @@ const defaultSchema = {
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#020617" />
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="robots" content={robots} />
 <link rel="canonical" href={fullCanonical} />
 <link rel="icon" type="image/png" href="/assets/favicon.png" />
-<link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/assets/images/logo.png" />
 
-<!-- Google Fonts preconnect & stylesheet -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Alice&family=Figtree:ital,wght@0,300..900;1,300..900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<!-- Self-hosted critical Webfonts preload -->
+<link rel="preload" href={jakartaWoff2} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={aliceWoff2} as="font" type="font/woff2" crossorigin />
 
 <!-- Open Graph / Facebook -->
+<meta property="og:locale" content="id_ID" />
 <meta property="og:type" content={type} />
 <meta property="og:url" content={fullCanonical} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content={title} />
+{isDefaultOgImage && (
+  <>
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="714" />
+  </>
+)}
 <meta property="og:site_name" content="Konsultan K3 Indonesia" />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={fullCanonical} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={ogImage} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={fullCanonical} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
 
 <!-- View Transitions for ultra-smooth app-like page changes -->
 <ClientRouter />

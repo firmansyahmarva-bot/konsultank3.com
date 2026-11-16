@@ -20,7 +20,7 @@ const navLinks = [
   <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
     <div class="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
       <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping inline-block"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-glow inline-block" aria-hidden="true"></span>
         Batch Kemnaker
       </span>
       <span class="text-slate-300 text-[11px] sm:text-xs">
@@ -29,7 +29,7 @@ const navLinks = [
     </div>
     <div class="hidden sm:flex items-center gap-3 text-xs shrink-0">
       <span class="text-slate-400">Hotline Kepatuhan K3:</span>
-      <a href={waLink("Halo KonsultanK3, saya ingin konsultasi program K3")} 
+      <a href={waLink("Halo Kak, saya mau konsultasi program K3")} 
          target="_blank" 
          rel="noopener" 
          class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors flex items-center gap-1">
@@ -40,8 +40,8 @@ const navLinks = [
 </div>
 
 <!-- Main Sticky Blurred Navigation Header -->
-<header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-4">
+<header id="site-header" class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-white/10">
+  <div class="header-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-4">
     
     <!-- Logo with Sunburst Emblem -->
     <a href="/" class="flex items-center gap-3 text-white transition-opacity hover:opacity-90 group shrink-0">
@@ -68,9 +68,10 @@ const navLinks = [
         return (
           <a
             href={link.href}
+            aria-current={isActive ? 'page' : undefined}
             class={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
               isActive
-                ? 'text-amber-400 bg-white/5 font-semibold'
+                ? 'text-amber-400 bg-white/10 font-semibold'
                 : 'text-slate-300 hover:text-white hover:bg-white/5'
             }`}
           >
@@ -83,10 +84,10 @@ const navLinks = [
     <!-- Right Action Button & Mobile Hamburger -->
     <div class="flex items-center gap-3">
       <a
-        href={waLink("Halo KonsultanK3, saya ingin konsultasi sertifikasi K3")}
+        href={waLink("Halo Kak, saya mau konsultasi sertifikasi K3")}
         target="_blank"
         rel="noopener"
-        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-md shadow-emerald-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
+        class="btn-shine hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-md shadow-emerald-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -114,7 +115,7 @@ const navLinks = [
   </div>
 
   <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu" class="hidden xl:hidden bg-slate-950/98 border-b border-white/10 px-4 pt-2 pb-6 space-y-1">
+  <div id="mobile-menu" data-lenis-prevent class="hidden xl:hidden bg-slate-950/98 border-b border-white/10 px-4 pt-2 pb-6 space-y-1">
     {navLinks.map((link) => (
       <a
         href={link.href}
@@ -125,10 +126,10 @@ const navLinks = [
     ))}
     <div class="pt-4 border-t border-white/10">
       <a
-        href={waLink("Halo KonsultanK3, saya ingin konsultasi sertifikasi K3")}
+        href={waLink("Halo Kak, saya mau konsultasi sertifikasi K3")}
         target="_blank"
         rel="noopener"
-        class="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-base font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/20"
+        class="btn-shine flex items-center justify-center gap-2 w-full py-3 rounded-xl text-base font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/20"
       >
         <span>Hubungi via WhatsApp (24/7)</span>
       </a>
@@ -143,13 +144,44 @@ const navLinks = [
     const hamIcon = document.getElementById('hamburger-icon');
     const closeIcon = document.getElementById('close-icon');
 
-    if (btn && menu) {
+    const closeMenu = () => {
+      if (!btn || !menu) return;
+      btn.setAttribute('aria-expanded', 'false');
+      menu.classList.add('hidden');
+      hamIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    };
+
+    if (btn && menu && !btn.dataset.menuBound) {
+      btn.dataset.menuBound = '1';
       btn.addEventListener('click', () => {
         const isExpanded = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', String(!isExpanded));
         menu.classList.toggle('hidden');
         hamIcon?.classList.toggle('hidden');
         closeIcon?.classList.toggle('hidden');
+      });
+
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+      });
+    }
+
+    const win = window as Window & { __k3EscMenuBound?: boolean };
+    if (!win.__k3EscMenuBound) {
+      win.__k3EscMenuBound = true;
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const m = document.getElementById('mobile-menu');
+          const b = document.getElementById('mobile-menu-btn');
+          if (m && !m.classList.contains('hidden')) {
+            b?.setAttribute('aria-expanded', 'false');
+            m.classList.add('hidden');
+            document.getElementById('hamburger-icon')?.classList.remove('hidden');
+            document.getElementById('close-icon')?.classList.add('hidden');
+            b?.focus();
+          }
+        }
       });
     }
   }

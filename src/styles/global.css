@@ -12,7 +12,7 @@
   }
 
   :root {
-    --font-sans: 'Plus Jakarta Sans', 'Figtree', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-serif: 'Alice', 'Centabel Book', Georgia, serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
@@ -22,13 +22,26 @@
     --brand-accent-hover: #07873d;
     --brand-gold: #f59e0b;          /* Construction / Safety Gold */
     --brand-blue: #1d4ed8;          /* Electric Royal Blue */
+
+    /* Motion & Elevation Tokens */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -6px rgba(15, 23, 42, 0.06);
+    --shadow-card-hover: 0 4px 12px rgba(15, 23, 42, 0.06), 0 20px 40px -12px rgba(15, 23, 42, 0.14);
   }
 
   html {
-    scroll-behavior: smooth;
     font-family: var(--font-sans);
     color: #1e293b;
     background-color: #f8fafc;
+    scroll-padding-top: 5.5rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html:not(.lenis-smooth) {
+      scroll-behavior: smooth;
+    }
   }
 
   body {
@@ -36,9 +49,18 @@
     min-height: 100vh;
   }
 
+  picture {
+    display: contents;
+  }
+
   ::selection {
     background-color: #0f172a;
     color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
   }
 }
 
@@ -54,23 +76,25 @@
   font-family: 'Centabel Book', 'Alice', Georgia, serif;
 }
 
-/* Pulsing Beacon */
+/* Subtle live dot (replaces harsh infinite ping) */
 @keyframes pulseGlow {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.8;
+    opacity: 0.85;
   }
   50% {
-    transform: scale(1.15);
-    opacity: 0.4;
+    transform: scale(1.18);
+    opacity: 0.45;
   }
 }
 
 .animate-pulse-glow {
-  animation: pulseGlow 2s infinite ease-in-out;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: pulseGlow 2.4s infinite ease-in-out;
+  }
 }
 
-/* Glassmorphism utility */
+/* Glassmorphism & Premium Card Surfaces */
 .glass-nav {
   background: rgba(15, 23, 42, 0.92);
   backdrop-filter: blur(16px);
@@ -81,16 +105,287 @@
 .glass-card {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: var(--shadow-card);
 }
 
-/* Smooth micro-interactions */
-.card-hover-lift {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+/* Sticky Header Scroll Polish */
+#site-header {
+  view-transition-name: site-header;
+  transition: background-color 0.3s var(--ease-out-expo),
+              box-shadow 0.3s var(--ease-out-expo),
+              border-color 0.3s var(--ease-out-expo);
 }
+
+#site-header .header-inner {
+  transition: height 0.3s var(--ease-out-expo);
+}
+
+#site-header.is-scrolled {
+  background-color: rgba(2, 6, 23, 0.96);
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 32px -8px rgba(2, 6, 23, 0.45);
+}
+
+@media (min-width: 768px) {
+  #site-header.is-scrolled .header-inner {
+    height: 3.75rem;
+  }
+}
+
+/* Smooth Card Micro-Interactions */
+.card-hover-lift {
+  box-shadow: var(--shadow-card);
+  transition: transform 0.35s var(--ease-out-expo),
+              box-shadow 0.35s var(--ease-out-expo),
+              border-color 0.25s ease;
+}
+
 .card-hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Glossy CTA Button Light Sweep (compositor-only) */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.24) 50%, transparent 75%);
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn-shine:hover::after {
+    transform: translateX(120%);
+    transition: transform 0.7s var(--ease-out-expo);
+  }
+}
+
+/* Scroll Reading Progress Bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981 0%, #34d399 55%, #f59e0b 100%);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 60;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    @keyframes k3-grow-progress {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    #scroll-progress {
+      animation: k3-grow-progress auto linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #scroll-progress {
+    display: none;
+  }
+}
+
+/* Scroll-Driven Subtle Image De-Zoom inside Section Cards */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes k3-img-settle {
+      from {
+        transform: scale(1.06);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    #site-main section:not(:first-of-type) .overflow-hidden > img,
+    #site-main section:not(:first-of-type) .overflow-hidden > picture > img {
+      animation: k3-img-settle auto linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 85%;
+    }
+  }
+}
+
+/* Progressive Scroll Reveals */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-ready .reveal-item {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+    transition: opacity 0.65s var(--ease-out-expo),
+                transform 0.7s var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal-ready .reveal-item.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .reveal-ready .reveal-hero-item {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    animation: k3-hero-rise 0.7s var(--ease-out-expo) var(--hero-delay, 0ms) forwards;
+  }
+
+  @keyframes k3-hero-rise {
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes k3-sticker-wobble {
+    0%   { transform: rotate(-2deg) scale(0.92); }
+    45%  { transform: rotate(2deg) scale(1.05); }
+    75%  { transform: rotate(-3deg) scale(0.99); }
+    100% { transform: rotate(-2deg) scale(1); }
+  }
+
+  [data-mid-cta].is-visible .cta-sticker-badge {
+    animation: k3-sticker-wobble 0.75s var(--ease-out-expo) 0.15s both;
+  }
+}
+
+/* Custom Smooth Page Transitions (Astro ClientRouter) */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes k3-vt-out {
+    to {
+      opacity: 0;
+      transform: translate3d(0, -10px, 0);
+    }
+  }
+
+  @keyframes k3-vt-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 12px, 0);
+    }
+  }
+
+  ::view-transition-old(root) {
+    animation: k3-vt-out 0.2s cubic-bezier(0.4, 0, 1, 1) both;
+  }
+
+  ::view-transition-new(root) {
+    animation: k3-vt-in 0.34s var(--ease-out-expo) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* WhatsApp Quick-Intent Popover Panel (Top Layer + Fallback) */
+@supports not selector(:popover-open) {
+  .wa-popover-panel:not([data-fallback-open]) {
+    display: none;
+  }
+}
+
+.wa-popover-panel {
+  position: fixed;
+  margin: 0;
+  inset: auto 1rem 5.25rem auto;
+  z-index: 60;
+  opacity: 0;
+  transform-origin: bottom right;
+  transition-property: opacity, transform, display, overlay;
+  transition-duration: 0.25s;
+  transition-timing-function: var(--ease-out-expo);
+  transition-behavior: allow-discrete;
+}
+
+@media (min-width: 768px) {
+  .wa-popover-panel {
+    inset: auto 1.5rem 5.75rem auto;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wa-popover-panel {
+    transform: translate3d(0, 12px, 0) scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-popover-panel {
+    transition-duration: 0.1s;
+  }
+}
+
+:is(.wa-popover-panel:popover-open, .wa-popover-panel[data-fallback-open]):where(:not([data-closing])) {
+  display: block;
+  opacity: 1;
+
+  @starting-style {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transform: translate3d(0, 0, 0) scale(1);
+
+    @starting-style {
+      transform: translate3d(0, 12px, 0) scale(0.96);
+    }
+  }
+}
+
+/* Mobile Sticky WA Bar & Desktop Nudge */
+.wa-mobile-bar-hidden {
+  transform: translateY(115%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wa-nudge-bubble:not([hidden]) {
+    animation: k3-nudge-in 0.4s var(--ease-out-expo) both;
+  }
+
+  @keyframes k3-nudge-in {
+    from {
+      opacity: 0;
+      transform: translate3d(10px, 4px, 0) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+}
+
+/* FAQ Accordion Polish */
+details {
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+details[open] {
+  box-shadow: var(--shadow-card);
+}
+
+details summary {
+  cursor: pointer;
 }
 
 /* Rich Editorial Content Typography */
@@ -152,10 +447,38 @@ article.prose strong {
 
 article.prose blockquote {
   border-left: 4px solid #f59e0b;
-  padding-left: 1.25rem;
   margin: 1.5rem 0;
   color: #1e293b;
   background-color: #f8fafc;
   padding: 1rem 1.25rem;
   border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+article.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.925rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+article.prose th {
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+}
+
+article.prose td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+article.prose tr:nth-child(even) td {
+  background-color: #f8fafc;
 }

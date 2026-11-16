@@ -361,7 +361,7 @@ const homeSchema = {
                   <span>Detail &amp; Silabus</span> &rarr;
                 </a>
                 <a
-                  href={waLink(`Halo KonsultanK3, saya ingin konsultasi pendaftaran: ${item.title}`)}
+                  href={waLink(`Halo Kak, saya mau konsultasi pendaftaran: ${item.title}`)}
                   target="_blank"
                   rel="noopener"
                   class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors"
@@ -401,7 +401,7 @@ const homeSchema = {
           <p class="text-sm text-slate-600">Amankan kursi sebelum kuota batch ditutup resmi oleh sistem TemanK3 Kemnaker.</p>
         </div>
         <a
-          href={waLink("Halo KonsultanK3, mohon kirimkan jadwal lengkap batch pelatihan K3")}
+          href={waLink("Halo Kak, boleh minta kirimkan jadwal lengkap batch pelatihan K3")}
           target="_blank"
           rel="noopener"
           class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shrink-0 flex items-center gap-2"
@@ -438,7 +438,7 @@ const homeSchema = {
                       </td>
                       <td class="py-4 px-6 text-right">
                         <a
-                          href={waLink(`Halo KonsultanK3, saya ingin daftar program: ${b.program} tanggal ${batch.tanggal}`)}
+                          href={waLink(`Halo Kak, saya mau daftar program: ${b.program} tanggal ${batch.tanggal}`)}
                           target="_blank"
                           rel="noopener"
                           class="inline-block px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold transition-colors"
@@ -454,7 +454,7 @@ const homeSchema = {
                       </td>
                       <td class="py-4 px-6 text-right">
                         <a
-                          href={waLink(`Halo KonsultanK3, saya ingin tanya jadwal dan biaya terbaru program: ${b.program}`)}
+                          href={waLink(`Halo Kak, saya mau tanya jadwal dan biaya terbaru program: ${b.program}`)}
                           target="_blank"
                           rel="noopener"
                           class="inline-block px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold transition-colors"
@@ -599,7 +599,7 @@ const homeSchema = {
 
       <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
         <a
-          href={waLink("Halo KonsultanK3, saya ingin meminta penawaran resmi untuk pelatihan K3")}
+          href={waLink("Halo Kak, saya mau meminta penawaran resmi untuk pelatihan K3")}
           target="_blank"
           rel="noopener"
           class="px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 flex items-center gap-2"
@@ -619,17 +619,18 @@ const homeSchema = {
 
   <!-- Interactive script for Hero Quick Quote -->
   <script>
-    import { WA_NUMBER } from '../data/contact.js';
+    import { waLink } from '../data/contact.js';
 
     function setupQuoteForm() {
       const form = document.getElementById('hero-quote-form');
-      if (form) {
+      if (form && !form.dataset.waBound) {
+        form.dataset.waBound = '1';
         form.addEventListener('submit', (e) => {
           e.preventDefault();
           const prog = (document.getElementById('hero-prog') as HTMLSelectElement)?.value;
           const qty = (document.getElementById('hero-qty') as HTMLSelectElement)?.value;
-          const msg = `Halo KonsultanK3, saya ingin konsultasi pendaftaran program: ${prog} untuk ${qty}. Mohon info jadwal terdekat, silabus lengkap, dan penawaran biayanya.`;
-          window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+          const msg = `Halo Kak, saya mau konsultasi pendaftaran program: ${prog} untuk ${qty}. Boleh info jadwal terdekat, silabus lengkap, dan penawaran biayanya? 🙏`;
+          window.open(waLink(msg), '_blank', 'noopener,noreferrer');
         });
       }
     }

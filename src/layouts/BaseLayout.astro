@@ -1,8 +1,11 @@
 ---
+import '@fontsource-variable/plus-jakarta-sans';
+import '@fontsource/alice/latin.css';
 import '../styles/global.css';
 import SEOHead from '../components/SEOHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import MidCTA from '../components/MidCTA.astro';
 import WhatsAppCTA from '../components/WhatsAppCTA.astro';
 
 interface Props {
@@ -29,7 +32,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
   <head>
     <SEOHead
       title={title}
@@ -42,11 +45,16 @@ const {
     />
   </head>
   <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+    <div id="scroll-progress" aria-hidden="true"></div>
     <Header />
-    <main class="flex-grow">
+    <main id="site-main" class="flex-grow">
       <slot />
     </main>
     <Footer />
+    <MidCTA presetMessage={presetMessage} />
     <WhatsAppCTA presetMessage={presetMessage} />
+    <script>
+      import '../scripts/motion.js';
+    </script>
   </body>
 </html>
