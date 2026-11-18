@@ -159,7 +159,7 @@
   inset-inline-end: 0.75rem;
   margin: 0.35rem 0 0 0;
   inline-size: min(92dvw, 25rem);
-  max-inline-size: calc(100dvw - 1.5rem);
+  max-inline-size: calc(100% - 1.5rem);
   block-size: fit-content;
   max-block-size: calc(100dvh - 5.5rem);
   overflow-y: auto;
@@ -520,10 +520,9 @@
   }
 }
 
-/* Mobile Sticky WA Bar & Desktop Nudge */
-.wa-mobile-bar-hidden {
-  transform: translateY(115%);
-  pointer-events: none;
+/* Mobile WhatsApp button and desktop nudge */
+.wa-mobile-button-hidden {
+  visibility: hidden;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -649,11 +648,4 @@ article.prose td {
 
 article.prose tr:nth-child(even) td {
   background-color: #f8fafc;
-}
-
-#wa-mobile-bar {
-  background: rgb(12 39 72 / .78);
-  border-top-color: rgb(182 217 255 / .32);
-  -webkit-backdrop-filter: blur(18px) saturate(135%);
-  backdrop-filter: blur(18px) saturate(135%);
 }

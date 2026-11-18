@@ -163,38 +163,19 @@ const quickIntents = [
   </button>
 </div>
 
-<!-- Mobile Sticky Bottom Bar (<768px, appears after scroll) -->
-<div
-  id="wa-mobile-bar"
-  class="md:hidden fixed inset-x-0 bottom-0 z-50 px-3 pt-2 pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-950/92 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_30px_rgba(2,6,23,0.35)] wa-mobile-bar-hidden transition-transform duration-300 ease-out"
+<!-- Mobile floating WhatsApp link -->
+<a
+  id="wa-mobile-button"
+  href={mainWaUrl}
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat WhatsApp"
+  class="wa-mobile-button-hidden md:hidden fixed right-4 bottom-[calc(1rem+env(safe-area-inset-bottom))] z-50 grid size-14 place-items-center rounded-full bg-emerald-700 text-white shadow-xl ring-2 ring-white/80 hover:bg-emerald-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-600"
 >
-  <div class="max-w-lg mx-auto flex items-center gap-2">
-    <a
-      href={mainWaUrl}
-      target="_blank"
-      rel="noopener"
-      class="btn-shine flex-1 min-h-[44px] px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-[0.99] text-white font-bold text-sm shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 transition-all"
-    >
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
       </svg>
-      <span>Chat WhatsApp</span>
-    </a>
-    <button
-      type="button"
-      id="wa-mobile-topics"
-      popovertarget="wa-intent-panel"
-      aria-haspopup="dialog"
-      aria-controls="wa-intent-panel"
-      class="min-h-[44px] px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white text-xs font-semibold flex items-center gap-1.5 shrink-0 transition-colors"
-    >
-      <span>Pilih Topik</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-        <path d="M18 15l-6-6-6 6"/>
-      </svg>
-    </button>
-  </div>
-</div>
+</a>
 
 <script>
   let supportsDisplayTransition: boolean | undefined;
@@ -246,11 +227,9 @@ const quickIntents = [
     const panel = document.getElementById('wa-intent-panel');
     const closeBtn = document.getElementById('wa-panel-close');
     const fabBtn = document.getElementById('wa-fab-btn');
-    const mobileTopicsBtn = document.getElementById('wa-mobile-topics');
     const nudge = document.getElementById('wa-nudge');
     const nudgeOpen = document.getElementById('wa-nudge-open');
     const nudgeClose = document.getElementById('wa-nudge-close');
-    const mobileBar = document.getElementById('wa-mobile-bar');
 
     const hasPopoverApi = Object.hasOwn(HTMLElement.prototype, 'popover');
 
@@ -263,13 +242,9 @@ const quickIntents = [
       }
     };
 
-    if (panel && !hasPopoverApi) {
-      [fabBtn, mobileTopicsBtn].forEach((trigger) => {
-        if (trigger && !trigger.dataset.waBound) {
-          trigger.dataset.waBound = '1';
-          trigger.addEventListener('click', openPanel);
-        }
-      });
+    if (panel && !hasPopoverApi && fabBtn && !fabBtn.dataset.waBound) {
+      fabBtn.dataset.waBound = '1';
+      fabBtn.addEventListener('click', openPanel);
     }
 
     if (panel && closeBtn && !closeBtn.dataset.waBound) {
@@ -311,23 +286,23 @@ const quickIntents = [
       }, 8000);
     }
 
-    // Mobile sticky bar visibility based on scroll (> 260px) & keyboard state
-    const updateBar = () => {
-      const bar = document.getElementById('wa-mobile-bar');
-      if (!bar) return;
+    // Mobile WhatsApp button visibility based on scroll (> 260px) & keyboard state
+    const updateMobileButton = () => {
+      const button = document.getElementById('wa-mobile-button');
+      if (!button) return;
       const active = document.activeElement;
       const inputFocused = active instanceof HTMLElement && /^(INPUT|TEXTAREA|SELECT)$/.test(active.tagName);
       const show = window.scrollY > 260 && !inputFocused;
-      bar.classList.toggle('wa-mobile-bar-hidden', !show);
+      button.classList.toggle('wa-mobile-button-hidden', !show);
     };
 
-    updateBar();
+    updateMobileButton();
     const win = window as Window & { __k3WaScrollBound?: boolean };
     if (!win.__k3WaScrollBound) {
       win.__k3WaScrollBound = true;
-      window.addEventListener('scroll', updateBar, { passive: true });
-      document.addEventListener('focusin', updateBar);
-      document.addEventListener('focusout', () => setTimeout(updateBar, 50));
+      window.addEventListener('scroll', updateMobileButton, { passive: true });
+      document.addEventListener('focusin', updateMobileButton);
+      document.addEventListener('focusout', () => setTimeout(updateMobileButton, 50));
     }
   }
 
