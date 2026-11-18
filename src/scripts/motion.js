@@ -171,7 +171,10 @@ function initReveals() {
     '#site-main section h2',
     '#site-main article.prose > h2',
     '#site-main article.prose > blockquote',
-    '#site-main article.prose > table'
+    '#site-main article.prose > table',
+    'footer .rounded-3xl',
+    'footer .proof-tile',
+    'footer .bento-card'
   ];
 
   const seen = new Set();

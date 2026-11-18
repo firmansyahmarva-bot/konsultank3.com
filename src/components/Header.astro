@@ -3,189 +3,618 @@ import { WA_DISPLAY, waLink } from '../data/contact.js';
 
 const currentPath = Astro.url.pathname;
 
-const navLinks = [
-  { name: 'Beranda', href: '/' },
-  { name: 'Katalog Pelatihan', href: '/pelatihan/' },
-  { name: 'Ahli K3 Umum', href: '/pelatihan-ahli-k3-umum/' },
-  { name: 'K3 Kebakaran', href: '/pelatihan-k3-kebakaran/' },
-  { name: 'K3 Listrik', href: '/pelatihan-k3-listrik/' },
-  { name: 'Ruang Terbatas', href: '/pelatihan-k3-ruang-terbatas/' },
-  { name: 'Audit SMK3', href: '/panduan-penerapan-smk3/' },
-  { name: 'Tentang Kami', href: '/tentang-kami/' },
+const isPelatihanActive =
+  currentPath.startsWith('/pelatihan') || currentPath.startsWith('/lpk-k3') || currentPath.startsWith('/in-house');
+const isKonsultasiActive =
+  currentPath.startsWith('/panduan-penerapan-smk3') ||
+  currentPath.startsWith('/konsultasi-') ||
+  currentPath.startsWith('/jasa-') ||
+  currentPath.startsWith('/contractor-') ||
+  currentPath.startsWith('/executive-') ||
+  currentPath.startsWith('/safety-culture') ||
+  currentPath.startsWith('/audit-kepatuhan') ||
+  currentPath.startsWith('/fire-risk') ||
+  currentPath.startsWith('/management-of-change') ||
+  currentPath.startsWith('/penilaian-risiko') ||
+  currentPath.startsWith('/program-pengendalian') ||
+  currentPath.startsWith('/alat-pelindung') ||
+  currentPath.startsWith('/materi-safety');
+const isRegulasiActive =
+  currentPath.startsWith('/downloads/') ||
+  currentPath.startsWith('/penyakit-akibat-kerja') ||
+  currentPath.startsWith('/artikel');
+
+const kemnakerPrograms = [
+  { name: 'Ahli K3 Umum', tag: 'SKP Kemnaker', href: '/pelatihan-ahli-k3-umum/' },
+  { name: 'Ahli K3 Umum Semarang', tag: 'Jateng', href: '/pelatihan-ahli-k3-umum-semarang/' },
+  { name: 'Auditor SMK3', tag: 'PP 50/2012', href: '/pelatihan-auditor-smk3-kemnaker/' },
+  { name: 'K3 Kebakaran (Kelas A–D)', tag: 'Kep.186/1999', href: '/pelatihan-k3-kebakaran/' },
+  { name: 'Teknisi & Ahli K3 Listrik', tag: 'Permen 12/2015', href: '/pelatihan-k3-listrik/' },
+  { name: 'K3 Ruang Terbatas', tag: 'Confined Space', href: '/pelatihan-k3-ruang-terbatas/' },
+  { name: 'Petugas P3K Tempat Kerja', tag: 'Kemnaker & BNSP', href: '/pelatihan-petugas-p3k-kemnaker-bnsp/' },
+];
+
+const bnspPrograms = [
+  { name: 'POP Pertambangan', tag: 'Minerba', href: '/pelatihan-pop-pertambangan-bnsp/' },
+  { name: 'Ahli K3 Konstruksi', tag: 'Muda & Madya', href: '/pelatihan-ahli-k3-konstruksi-muda-madya/' },
+  { name: 'Higiene Industri (HIMU)', tag: 'BNSP', href: '/pelatihan-higiene-industri-muda-himu-bnsp/' },
+  { name: 'Petugas Gas Beracun H2S', tag: 'Migas', href: '/pelatihan-petugas-gas-beracun-h2s-bnsp/' },
+  { name: 'K3 Rumah Sakit & Faskes', tag: 'K3RS', href: '/pelatihan-k3-rumah-sakit-faskes-bnsp/' },
+  { name: 'K3 Laboratorium', tag: 'Biosafety', href: '/pelatihan-k3-laboratorium-bnsp/' },
+  { name: 'PPPA & POPAL Air Limbah', tag: 'Lingkungan', href: '/pelatihan-pppa-popal/' },
+  { name: 'PPPU & POIPPU Emisi', tag: 'Udara', href: '/pelatihan-pppu-poippu/' },
+];
+
+const corporatePrograms = [
+  { name: 'In-House Training Multi-Kota', desc: 'Jakarta, Surabaya & Balikpapan', href: '/in-house-training-k3-jakarta-surabaya-balikpapan/' },
+  { name: 'Spill Response B3 & Drill', desc: 'Tanggap darurat tumpahan kimia & minyak', href: '/pelatihan-spill-response-b3-oil-spill-drill/' },
+  { name: 'Investigasi Insiden RCA & SCAT', desc: 'Analisis akar penyebab kecelakaan kerja', href: '/pelatihan-investigasi-kecelakaan-kerja-rca-scat/' },
+  { name: 'LPK K3 Kota Tangerang', desc: 'Pusat pembinaan kawasan Jabodetabek', href: '/lpk-k3-tangerang/' },
+];
+
+const konsultasiSystem = [
+  { name: 'Audit SMK3 PP 50/2012', desc: 'Pendampingan 64–166 kriteria', href: '/panduan-penerapan-smk3/' },
+  { name: 'Konsultasi IMS (ISO & SMK3)', desc: 'Integrasi ISO 45001, 9001 & 14001', href: '/konsultasi-integrated-management-system/' },
+  { name: 'Audit Kepatuhan Regulasi K3', desc: 'Legal register & verifikasi izin', href: '/audit-kepatuhan-regulasi-k3/' },
+  { name: 'Pengesahan P2K3 & Lisensi P3K', desc: 'Pengurusan kelembagaan Disnaker', href: '/jasa-pengesahan-p2k3-lisensi-p3k/' },
+  { name: 'CSMS Kontraktor K3', desc: 'Prakualifikasi & sistem vendor', href: '/contractor-safety-management-system-csms/' },
+  { name: 'Executive Safety Leadership', desc: 'Workshop tata kelola direksi & GM', href: '/executive-safety-leadership/' },
+  { name: 'Safety Culture Assessment', desc: 'Maturity score & roadmap budaya K3', href: '/safety-culture-assessment/' },
+];
+
+const konsultasiEngineering = [
+  { name: 'Studi HAZOP / HAZID', desc: 'Identifikasi bahaya proses pabrik', href: '/jasa-konsultasi-hazop/' },
+  { name: 'Fire Risk Assessment', desc: 'Audit proteksi & risiko kebakaran', href: '/fire-risk-assessment/' },
+  { name: 'Management of Change (MOC)', desc: 'Kendali perubahan & PSSR fasilitas', href: '/management-of-change-k3/' },
+  { name: 'Audit Risiko Ergonomi', desc: 'Asesmen Permenaker 5/2018 & stasiun kerja', href: '/penilaian-risiko-ergonomi/' },
+  { name: 'Pengendalian Kebisingan', desc: 'Pemetaan dBA & program konversi', href: '/program-pengendalian-kebisingan/' },
+  { name: 'Standar Pemilihan APD', desc: 'Kelayakan SNI/ANSI Permenakertrans 08/2010', href: '/alat-pelindung-diri/' },
+  { name: 'Materi Safety Talk Harian', desc: 'Topik P5M siap pakai tim lapangan', href: '/materi-safety-talk-harian/' },
+];
+
+const regulasiLinks = [
+  { name: 'Checklist Audit SMK3 166 Kriteria', desc: 'Instrumen evaluasi PP 50/2012', href: '/downloads/Checklist-Audit-SMK3-166-Kriteria.html' },
+  { name: 'Template Formulir JSA Excel', desc: 'Format identifikasi bahaya kerja', href: '/downloads/Formulir-JSA-Job-Safety-Analysis.html' },
+  { name: 'Tabel NAB Kebisingan K3', desc: 'Referensi batas pajanan aman', href: '/downloads/Tabel-Nilai-Ambang-Batas-Kebisingan-K3.html' },
+  { name: 'Pencegahan Penyakit Akibat Kerja', desc: 'Panduan medis & higiene industri', href: '/penyakit-akibat-kerja/' },
+  { name: 'Artikel & Pustaka K3', desc: 'Arsip referensi teknis sejak 2011', href: '/artikel/' },
 ];
 ---
 
-<!-- Top Announcement Bar -->
-<div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-white/5 relative z-50">
+<!-- Top Executive Authority Strip -->
+<div class="bg-slate-950 text-slate-200 text-xs py-2 px-4 border-b border-slate-800 relative z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-    <div class="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
-      <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-glow inline-block" aria-hidden="true"></span>
-        Batch Kemnaker
+    <div class="flex items-center gap-2 min-w-0">
+      <span class="inline-flex items-center gap-2 font-semibold text-white truncate">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-glow shrink-0" aria-hidden="true"></span>
+        <span>PJK3 Resmi Berlisensi Kemnaker RI &amp; BNSP</span>
       </span>
-      <span class="text-slate-300 text-[11px] sm:text-xs">
-        Konsultasi sertifikasi dan pelatihan K3 - hubungi kami via WhatsApp
-      </span>
+      <span class="hidden lg:inline text-slate-400 shrink-0">&bull;</span>
+      <span class="hidden lg:inline text-slate-300 truncate">Melayani Pelatihan &amp; Audit Seluruh Indonesia</span>
     </div>
-    <div class="hidden sm:flex items-center gap-3 text-xs shrink-0">
-      <span class="text-slate-400">Hotline Kepatuhan K3:</span>
-      <a href={waLink("Halo Kak, saya mau konsultasi program K3")} 
-         target="_blank" 
-         rel="noopener" 
-         class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors flex items-center gap-1">
-        <span>{WA_DISPLAY}</span>
+    <div class="hidden sm:flex items-center gap-4 shrink-0">
+      <a href="mailto:info@konsultank3.com" class="text-slate-300 hover:text-white transition-colors hidden md:inline">
+        info@konsultank3.com
+      </a>
+      <a
+        href={waLink('Halo Kak, saya mau konsultasi program pelatihan dan sertifikasi K3 🙏')}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/25 font-bold transition-colors"
+      >
+        <span>WhatsApp: {WA_DISPLAY}</span>
       </a>
     </div>
   </div>
 </div>
 
-<!-- Main Sticky Blurred Navigation Header -->
-<header id="site-header" class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-white/10">
-  <div class="header-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-4">
-    
-    <!-- Logo with Sunburst Emblem -->
-    <a href="/" class="flex items-center gap-3 text-white transition-opacity hover:opacity-90 group shrink-0">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<!-- Sticky Bright Frost Executive Navigation -->
+<header id="site-header" class="site-header sticky top-0 z-40">
+  <div class="header-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[4.25rem] flex items-center justify-between gap-4">
+
+    <!-- Corporate Wordmark -->
+    <a href="/" class="site-logo flex items-center gap-3 group shrink-0">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center text-slate-950 shadow-md shadow-amber-500/25 group-hover:scale-105 transition-transform">
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           <path d="m9 12 2 2 4-4"/>
         </svg>
       </div>
       <div>
-        <div class="font-extrabold text-lg sm:text-xl tracking-tight leading-none text-white">
-          Konsultan<span class="text-amber-400">K3</span><span class="text-xs text-slate-400 font-normal">.com</span>
+        <div class="font-extrabold text-lg sm:text-xl tracking-tight leading-none text-slate-950">
+          Konsultan<span class="text-amber-600">K3</span><span class="text-xs text-slate-500 font-semibold">.com</span>
         </div>
-        <div class="text-[9px] tracking-widest text-slate-400 uppercase font-medium mt-1">
-          Safety & Compliance Partner
+        <div class="text-[9px] tracking-[0.14em] text-slate-500 uppercase font-bold mt-1">
+          Safety &amp; Compliance Partner
         </div>
       </div>
     </a>
 
-    <!-- Desktop Nav Links -->
-    <nav class="hidden xl:flex items-center gap-1">
-      {navLinks.map((link) => {
-        const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
-        return (
+    <!-- Single Semantic Navigation Landmark -->
+    <nav class="site-nav flex items-center" aria-label="Navigasi Utama">
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        popovertarget="site-menu"
+        popovertargetaction="toggle"
+        aria-controls="site-menu"
+        class="menu-button inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-800 text-xs font-bold transition-colors cursor-pointer"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <span>Menu</span>
+      </button>
+
+      <ul id="site-menu" class="site-menu" popover="auto" data-lenis-prevent>
+        <li>
           <a
-            href={link.href}
-            aria-current={isActive ? 'page' : undefined}
-            class={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
-              isActive
-                ? 'text-amber-400 bg-white/10 font-semibold'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+            href="/"
+            aria-current={currentPath === '/' ? 'page' : undefined}
+            class={`block px-3.5 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap ${
+              currentPath === '/'
+                ? 'bg-emerald-50 text-emerald-800 border border-emerald-200/80'
+                : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100/80'
             }`}
           >
-            {link.name}
+            Beranda
           </a>
-        );
-      })}
+        </li>
+
+        <!-- Dropdown 1: Pelatihan K3 Mega-Menu -->
+        <li class="nav-dropdown">
+          <button
+            type="button"
+            aria-expanded="false"
+            aria-controls="dd-pelatihan"
+            popovertarget="dd-pelatihan"
+            aria-current={isPelatihanActive ? 'page' : undefined}
+            class={`dropdown-trigger w-full flex items-center justify-between lg:justify-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
+              isPelatihanActive
+                ? 'bg-emerald-50 text-emerald-800 border border-emerald-200/80'
+                : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100/80'
+            }`}
+          >
+            <span>Pelatihan K3</span>
+            <svg class="nav-chevron w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+
+          <div id="dd-pelatihan" class="dropdown-panel w-full lg:w-[46rem]" data-lenis-prevent>
+            <div class="mega-scroll p-3 lg:p-5">
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                <div>
+                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 px-2 pb-2 border-b border-slate-100 mb-2">
+                    Sertifikasi Kemnaker RI
+                  </div>
+                  <ul class="space-y-0.5">
+                    {kemnakerPrograms.map((item) => (
+                      <li>
+                        <a href={item.href} class="flex items-center justify-between gap-2 px-2 py-1.5 rounded-lg text-xs font-medium text-slate-700 hover:text-emerald-800 hover:bg-emerald-50/70 transition-colors">
+                          <span>{item.name}</span>
+                          <span class="text-[10px] font-semibold text-slate-400 shrink-0">{item.tag}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 px-2 pb-2 border-b border-slate-100 mb-2">
+                    Sertifikasi BNSP &amp; Sektor
+                  </div>
+                  <ul class="space-y-0.5">
+                    {bnspPrograms.map((item) => (
+                      <li>
+                        <a href={item.href} class="flex items-center justify-between gap-2 px-2 py-1.5 rounded-lg text-xs font-medium text-slate-700 hover:text-emerald-800 hover:bg-emerald-50/70 transition-colors">
+                          <span>{item.name}</span>
+                          <span class="text-[10px] font-semibold text-slate-400 shrink-0">{item.tag}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-700 px-2 pb-2 border-b border-slate-100 mb-2">
+                    Program Korporat &amp; Wilayah
+                  </div>
+                  <ul class="space-y-1.5">
+                    {corporatePrograms.map((item) => (
+                      <li>
+                        <a href={item.href} class="block px-2.5 py-2 rounded-xl bg-slate-50/80 hover:bg-emerald-50/70 border border-slate-200/60 hover:border-emerald-200 transition-colors">
+                          <div class="text-xs font-bold text-slate-900">{item.name}</div>
+                          <div class="text-[11px] text-slate-500 mt-0.5">{item.desc}</div>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 px-1">
+                <span class="text-[11px] font-semibold text-slate-500">SKP &amp; Sertifikat Resmi Kemnaker RI / BNSP</span>
+                <a href="/pelatihan/" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 inline-flex items-center gap-1">
+                  <span>Lihat Semua Katalog Pelatihan</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Dropdown 2: Konsultasi & Audit Mega-Menu -->
+        <li class="nav-dropdown">
+          <button
+            type="button"
+            aria-expanded="false"
+            aria-controls="dd-konsultasi"
+            popovertarget="dd-konsultasi"
+            aria-current={isKonsultasiActive ? 'page' : undefined}
+            class={`dropdown-trigger w-full flex items-center justify-between lg:justify-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
+              isKonsultasiActive
+                ? 'bg-emerald-50 text-emerald-800 border border-emerald-200/80'
+                : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100/80'
+            }`}
+          >
+            <span>Konsultasi &amp; Audit</span>
+            <svg class="nav-chevron w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+
+          <div id="dd-konsultasi" class="dropdown-panel w-full lg:w-[36rem]" data-lenis-prevent>
+            <div class="mega-scroll p-3 lg:p-5">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                <div>
+                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 px-2 pb-2 border-b border-slate-100 mb-2">
+                    Sistem Manajemen &amp; Kepatuhan
+                  </div>
+                  <ul class="space-y-1">
+                    {konsultasiSystem.map((item) => (
+                      <li>
+                        <a href={item.href} class="block px-2.5 py-1.5 rounded-lg hover:bg-emerald-50/70 transition-colors">
+                          <div class="text-xs font-bold text-slate-900">{item.name}</div>
+                          <div class="text-[11px] text-slate-500">{item.desc}</div>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 px-2 pb-2 border-b border-slate-100 mb-2">
+                    Engineering &amp; Kajian Teknis
+                  </div>
+                  <ul class="space-y-1">
+                    {konsultasiEngineering.map((item) => (
+                      <li>
+                        <a href={item.href} class="block px-2.5 py-1.5 rounded-lg hover:bg-emerald-50/70 transition-colors">
+                          <div class="text-xs font-bold text-slate-900">{item.name}</div>
+                          <div class="text-[11px] text-slate-500">{item.desc}</div>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Dropdown 3: Regulasi & Unduhan -->
+        <li class="nav-dropdown">
+          <button
+            type="button"
+            aria-expanded="false"
+            aria-controls="dd-regulasi"
+            popovertarget="dd-regulasi"
+            aria-current={isRegulasiActive ? 'page' : undefined}
+            class={`dropdown-trigger w-full flex items-center justify-between lg:justify-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
+              isRegulasiActive
+                ? 'bg-emerald-50 text-emerald-800 border border-emerald-200/80'
+                : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100/80'
+            }`}
+          >
+            <span>Regulasi &amp; Unduhan</span>
+            <svg class="nav-chevron w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+
+          <div id="dd-regulasi" class="dropdown-panel w-full lg:w-[21rem]" data-lenis-prevent>
+            <div class="mega-scroll p-3 lg:p-4">
+              <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-600 px-2 pb-2 border-b border-slate-100 mb-2">
+                Dokumen &amp; Pustaka K3
+              </div>
+              <ul class="space-y-1">
+                {regulasiLinks.map((item) => (
+                  <li>
+                    <a href={item.href} class="block px-2.5 py-2 rounded-lg hover:bg-emerald-50/70 transition-colors">
+                      <div class="text-xs font-bold text-slate-900">{item.name}</div>
+                      <div class="text-[11px] text-slate-500">{item.desc}</div>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a
+            href="/tentang-kami/"
+            aria-current={currentPath.startsWith('/tentang-kami') ? 'page' : undefined}
+            class={`block px-3.5 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap ${
+              currentPath.startsWith('/tentang-kami')
+                ? 'bg-emerald-50 text-emerald-800 border border-emerald-200/80'
+                : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100/80'
+            }`}
+          >
+            Tentang Kami
+          </a>
+        </li>
+
+        <!-- Narrow-only Contact & CTA Footer inside Mobile Drawer -->
+        <li class="menu-mobile-cta pt-3 mt-2 border-t border-slate-200 space-y-2">
+          <a
+            href="/kontak/"
+            class="block text-center px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-800 font-bold text-sm"
+          >
+            Kontak &amp; Lokasi Kantor
+          </a>
+          <a
+            href={waLink('Halo Kak, saya mau konsultasi sertifikasi K3 🙏')}
+            target="_blank"
+            rel="noopener"
+            class="btn-shine flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 shadow-lg shadow-emerald-600/25"
+          >
+            <span>Konsultasi Gratis via WhatsApp</span>
+          </a>
+        </li>
+      </ul>
     </nav>
 
-    <!-- Right Action Button & Mobile Hamburger -->
-    <div class="flex items-center gap-3">
+    <!-- Right Action Buttons -->
+    <div class="header-actions flex items-center gap-2.5 shrink-0">
       <a
-        href={waLink("Halo Kak, saya mau konsultasi sertifikasi K3")}
+        href="/kontak/"
+        aria-current={currentPath.startsWith('/kontak') ? 'page' : undefined}
+        class={`hidden xl:inline-flex items-center px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${
+          currentPath.startsWith('/kontak')
+            ? 'text-emerald-800 bg-emerald-50'
+            : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100'
+        }`}
+      >
+        Kontak
+      </a>
+      <a
+        href={waLink('Halo Kak, saya mau konsultasi sertifikasi K3 🙏')}
         target="_blank"
         rel="noopener"
-        class="btn-shine hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-md shadow-emerald-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
+        class="btn-shine hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 shadow-md shadow-emerald-600/25 transition-all hover:-translate-y-0.5 active:translate-y-0"
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
         <span>Konsultasi Gratis</span>
       </a>
-
-      <!-- Mobile Hamburger Button -->
-      <button
-        id="mobile-menu-btn"
-        type="button"
-        class="xl:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-      >
-        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
     </div>
 
-  </div>
-
-  <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu" data-lenis-prevent class="hidden xl:hidden bg-slate-950/98 border-b border-white/10 px-4 pt-2 pb-6 space-y-1">
-    {navLinks.map((link) => (
-      <a
-        href={link.href}
-        class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-white/5"
-      >
-        {link.name}
-      </a>
-    ))}
-    <div class="pt-4 border-t border-white/10">
-      <a
-        href={waLink("Halo Kak, saya mau konsultasi sertifikasi K3")}
-        target="_blank"
-        rel="noopener"
-        class="btn-shine flex items-center justify-center gap-2 w-full py-3 rounded-xl text-base font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/20"
-      >
-        <span>Hubungi via WhatsApp (24/7)</span>
-      </a>
-    </div>
   </div>
 </header>
 
+<script is:inline>
+  (() => {
+    const h = document.getElementById('site-header');
+    const i = h && h.querySelector('.header-inner');
+    if (h && i) {
+      h.classList.add('is-wide');
+      if (i.scrollWidth > i.clientWidth) h.classList.remove('is-wide');
+    }
+  })();
+</script>
+
 <script>
-  function setupMenu() {
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const hamIcon = document.getElementById('hamburger-icon');
-    const closeIcon = document.getElementById('close-icon');
+  let navResizeObserver: ResizeObserver | null = null;
+  let lastCollapsedWidth = 0;
 
-    const closeMenu = () => {
-      if (!btn || !menu) return;
-      btn.setAttribute('aria-expanded', 'false');
-      menu.classList.add('hidden');
-      hamIcon?.classList.remove('hidden');
-      closeIcon?.classList.add('hidden');
-    };
+  function positionFallbackPopover(trigger: HTMLElement, panel: HTMLElement) {
+    if (typeof CSS !== 'undefined' && CSS.supports?.('position-area', 'block-end')) return;
+    const tr = trigger.getBoundingClientRect();
+    const pr = panel.getBoundingClientRect();
+    const pad = 16;
+    let top = tr.bottom + 8;
+    if (top + pr.height > window.innerHeight - pad && tr.top - pr.height - 8 > pad) {
+      top = tr.top - pr.height - 8;
+    }
+    const left = Math.max(pad, Math.min(tr.left, window.innerWidth - pr.width - pad));
+    panel.style.top = `${Math.round(top)}px`;
+    panel.style.left = `${Math.round(left)}px`;
+  }
 
-    if (btn && menu && !btn.dataset.menuBound) {
-      btn.dataset.menuBound = '1';
-      btn.addEventListener('click', () => {
-        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!isExpanded));
-        menu.classList.toggle('hidden');
-        hamIcon?.classList.toggle('hidden');
-        closeIcon?.classList.toggle('hidden');
-      });
-
-      menu.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', closeMenu);
-      });
+  function setupResponsiveNav() {
+    if (navResizeObserver) {
+      navResizeObserver.disconnect();
+      navResizeObserver = null;
     }
 
-    const win = window as Window & { __k3EscMenuBound?: boolean };
-    if (!win.__k3EscMenuBound) {
-      win.__k3EscMenuBound = true;
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          const m = document.getElementById('mobile-menu');
-          const b = document.getElementById('mobile-menu-btn');
-          if (m && !m.classList.contains('hidden')) {
-            b?.setAttribute('aria-expanded', 'false');
-            m.classList.add('hidden');
-            document.getElementById('hamburger-icon')?.classList.remove('hidden');
-            document.getElementById('close-icon')?.classList.add('hidden');
-            b?.focus();
+    const header = document.getElementById('site-header');
+    const inner = header?.querySelector('.header-inner') as HTMLElement | null;
+    const siteMenu = document.getElementById('site-menu');
+    if (!header || !inner || !siteMenu) return;
+
+    const hasPopoverApi = Object.hasOwn(HTMLElement.prototype, 'popover');
+    const dropdownItems = Array.from(header.querySelectorAll('.nav-dropdown')) as HTMLLIElement[];
+
+    const syncLayout = (forceMeasure = false) => {
+      const currentlyWide = header.classList.contains('is-wide');
+      const currentWidth = header.clientWidth;
+
+      // Avoid layout thrash while collapsed unless header grew wider
+      if (!forceMeasure && !currentlyWide && currentWidth <= lastCollapsedWidth) {
+        return;
+      }
+
+      const menuWasOpen = hasPopoverApi && !currentlyWide && siteMenu.matches(':popover-open');
+
+      header.classList.add('is-measuring');
+      header.classList.add('is-wide');
+      const fitsInline = inner.scrollWidth <= inner.clientWidth;
+
+      if (fitsInline) {
+        lastCollapsedWidth = 0;
+        if (hasPopoverApi) siteMenu.removeAttribute('popover');
+        siteMenu.removeAttribute('data-fallback-open');
+
+        dropdownItems.forEach((li) => {
+          const trigger = li.querySelector('.dropdown-trigger') as HTMLButtonElement | null;
+          const panel = li.querySelector('.dropdown-panel') as HTMLElement | null;
+          if (!trigger || !panel) return;
+          if (hasPopoverApi) {
+            panel.setAttribute('popover', 'auto');
+            panel.hidden = false;
+          } else {
+            panel.hidden = true;
           }
+          trigger.setAttribute('aria-expanded', 'false');
+        });
+      } else {
+        header.classList.remove('is-wide');
+        lastCollapsedWidth = currentWidth;
+        if (hasPopoverApi) {
+          siteMenu.setAttribute('popover', 'auto');
+          if (menuWasOpen && !siteMenu.matches(':popover-open')) {
+            try { siteMenu.showPopover(); } catch {}
+          }
+        }
+
+        dropdownItems.forEach((li) => {
+          const trigger = li.querySelector('.dropdown-trigger') as HTMLButtonElement | null;
+          const panel = li.querySelector('.dropdown-panel') as HTMLElement | null;
+          if (!trigger || !panel) return;
+          if (hasPopoverApi) panel.removeAttribute('popover');
+          panel.style.top = '';
+          panel.style.left = '';
+          panel.hidden = true;
+          trigger.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      requestAnimationFrame(() => header.classList.remove('is-measuring'));
+    };
+
+    // Fallback toggle if browser lacks native Popover API
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    if (menuBtn && !hasPopoverApi && !menuBtn.dataset.navBound) {
+      menuBtn.dataset.navBound = '1';
+      menuBtn.addEventListener('click', () => {
+        if (!header.classList.contains('is-wide')) {
+          siteMenu.toggleAttribute('data-fallback-open');
         }
       });
     }
+
+    // Bind dropdown triggers, hover previews & toggle positioning
+    dropdownItems.forEach((li) => {
+      if (li.dataset.navBound) return;
+      li.dataset.navBound = '1';
+
+      const trigger = li.querySelector('.dropdown-trigger') as HTMLButtonElement | null;
+      const panel = li.querySelector('.dropdown-panel') as HTMLElement | null;
+      if (!trigger || !panel) return;
+
+      let hoverPreview = false;
+
+      if (hasPopoverApi) {
+        panel.addEventListener('toggle', (e: Event) => {
+          const toggleEvent = e as ToggleEvent;
+          const isOpen = toggleEvent.newState === 'open';
+          trigger.setAttribute('aria-expanded', String(isOpen));
+          if (isOpen && header.classList.contains('is-wide')) {
+            requestAnimationFrame(() => positionFallbackPopover(trigger, panel));
+          } else {
+            hoverPreview = false;
+          }
+        });
+      }
+
+      li.addEventListener('pointerenter', (e: PointerEvent) => {
+        if (!hasPopoverApi || !header.classList.contains('is-wide')) return;
+        if (!window.matchMedia('(hover: hover)').matches || e.pointerType === 'touch') return;
+        if (!panel.matches(':popover-open')) {
+          hoverPreview = true;
+          try {
+            (panel as any).showPopover({ source: trigger });
+          } catch {
+            try { panel.showPopover(); } catch {}
+          }
+        }
+      });
+
+      li.addEventListener('pointerleave', (e: PointerEvent) => {
+        if (!hasPopoverApi || !header.classList.contains('is-wide')) return;
+        if (e.pointerType === 'touch' || !hoverPreview) return;
+        if (panel.matches(':popover-open')) {
+          try { panel.hidePopover(); } catch {}
+        }
+        hoverPreview = false;
+      });
+
+      trigger.addEventListener('click', (e: MouseEvent) => {
+        if (header.classList.contains('is-wide') && hasPopoverApi) {
+          if (hoverPreview && panel.matches(':popover-open')) {
+            e.preventDefault();
+            hoverPreview = false;
+          }
+        } else {
+          e.preventDefault();
+          const willOpen = panel.hidden;
+          panel.hidden = !willOpen;
+          trigger.setAttribute('aria-expanded', String(willOpen));
+        }
+      });
+
+      li.addEventListener('focusout', (e: FocusEvent) => {
+        if (!hasPopoverApi || !header.classList.contains('is-wide')) return;
+        const related = e.relatedTarget as Node | null;
+        if (related && !li.contains(related) && panel.matches(':popover-open')) {
+          try { panel.hidePopover(); } catch {}
+        }
+      });
+    });
+
+    // Close popovers cleanly when clicking any nav link
+    if (!siteMenu.dataset.linkCloseBound) {
+      siteMenu.dataset.linkCloseBound = '1';
+      siteMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (hasPopoverApi) {
+            if (siteMenu.matches(':popover-open')) {
+              try { siteMenu.hidePopover(); } catch {}
+            }
+            dropdownItems.forEach((li) => {
+              const p = li.querySelector('.dropdown-panel') as HTMLElement | null;
+              if (p?.matches(':popover-open')) {
+                try { p.hidePopover(); } catch {}
+              }
+            });
+          } else {
+            siteMenu.removeAttribute('data-fallback-open');
+          }
+        });
+      });
+    }
+
+    syncLayout(true);
+
+    if ('ResizeObserver' in window) {
+      navResizeObserver = new ResizeObserver(() => syncLayout(false));
+      navResizeObserver.observe(header);
+      navResizeObserver.observe(siteMenu);
+    }
   }
 
-  // Support Astro View Transitions page changes
-  document.addEventListener('astro:page-load', setupMenu);
+  document.addEventListener('astro:page-load', setupResponsiveNav);
 </script>

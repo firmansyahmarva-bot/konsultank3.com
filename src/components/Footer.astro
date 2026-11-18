@@ -1,113 +1,212 @@
 ---
 const currentYear = new Date().getFullYear();
+
+const kemnakerLinks = [
+  { label: 'Ahli K3 Umum', href: '/pelatihan-ahli-k3-umum/' },
+  { label: 'Auditor SMK3', href: '/pelatihan-auditor-smk3-kemnaker/' },
+  { label: 'K3 Kebakaran (A–D)', href: '/pelatihan-k3-kebakaran/' },
+  { label: 'Teknisi & Ahli K3 Listrik', href: '/pelatihan-k3-listrik/' },
+  { label: 'K3 Ruang Terbatas', href: '/pelatihan-k3-ruang-terbatas/' },
+  { label: 'Petugas P3K Kerja', href: '/pelatihan-petugas-p3k-kemnaker-bnsp/' },
+  { label: 'LPK K3 Kota Tangerang', href: '/lpk-k3-tangerang/' },
+  { label: 'Semua Jadwal Pelatihan', href: '/pelatihan/' },
+];
+
+const bnspLinks = [
+  { label: 'POP Pertambangan', href: '/pelatihan-pop-pertambangan-bnsp/' },
+  { label: 'Ahli K3 Konstruksi', href: '/pelatihan-ahli-k3-konstruksi-muda-madya/' },
+  { label: 'Higiene Industri (HIMU)', href: '/pelatihan-higiene-industri-muda-himu-bnsp/' },
+  { label: 'Petugas Gas Beracun H2S', href: '/pelatihan-petugas-gas-beracun-h2s-bnsp/' },
+  { label: 'K3 Rumah Sakit & Faskes', href: '/pelatihan-k3-rumah-sakit-faskes-bnsp/' },
+  { label: 'K3 Laboratorium', href: '/pelatihan-k3-laboratorium-bnsp/' },
+  { label: 'Spill Response B3 & Drill', href: '/pelatihan-spill-response-b3-oil-spill-drill/' },
+  { label: 'Investigasi RCA & SCAT', href: '/pelatihan-investigasi-kecelakaan-kerja-rca-scat/' },
+];
+
+const konsultasiLinks = [
+  { label: 'Audit SMK3 PP 50/2012', href: '/panduan-penerapan-smk3/' },
+  { label: 'Pengesahan P2K3 & P3K', href: '/jasa-pengesahan-p2k3-lisensi-p3k/' },
+  { label: 'Konsultasi IMS & ISO', href: '/konsultasi-integrated-management-system/' },
+  { label: 'CSMS Kontraktor K3', href: '/contractor-safety-management-system-csms/' },
+  { label: 'Safety Leadership Direksi', href: '/executive-safety-leadership/' },
+  { label: 'Audit Risiko Ergonomi', href: '/penilaian-risiko-ergonomi/' },
+  { label: 'Pengendalian Kebisingan', href: '/program-pengendalian-kebisingan/' },
+  { label: 'Standar Pemilihan APD', href: '/alat-pelindung-diri/' },
+  { label: 'Penyakit Akibat Kerja', href: '/penyakit-akibat-kerja/' },
+  { label: 'Materi Safety Talk', href: '/materi-safety-talk-harian/' },
+  { label: 'Management of Change', href: '/management-of-change-k3/' },
+];
+
+const downloadLinks = [
+  { label: 'Checklist SMK3 166 Kriteria', href: '/downloads/Checklist-Audit-SMK3-166-Kriteria.html' },
+  { label: 'Formulir JSA Kerja Aman', href: '/downloads/Formulir-JSA-Job-Safety-Analysis.html' },
+  { label: 'Tabel NAB Kebisingan K3', href: '/downloads/Tabel-Nilai-Ambang-Batas-Kebisingan-K3.html' },
+];
+const linkGroups = [
+  { title: 'Konsultasi & Audit', links: [
+    { label: 'Audit Kepatuhan Regulasi K3', href: '/audit-kepatuhan-regulasi-k3/' },
+    { label: 'Konsultasi HAZOP', href: '/jasa-konsultasi-hazop/' },
+    ...konsultasiLinks.slice(0, 7),
+    ...konsultasiLinks.slice(10),
+  ] },
+  { title: 'Pelatihan Kemnaker', links: kemnakerLinks },
+  { title: 'Pelatihan BNSP & In-House', links: [
+    { label: 'Pelatihan In-House', href: '/in-house-training-k3-jakarta-surabaya-balikpapan/' },
+    ...bnspLinks,
+  ] },
+  { title: 'Panduan & Unduhan', links: [
+    { label: 'Artikel K3', href: '/artikel/' },
+    ...konsultasiLinks.slice(7, 10),
+    ...downloadLinks,
+  ] },
+];
 ---
 
-<footer class="bg-slate-950 text-slate-400 border-t border-white/10 pt-16 pb-24 md:pb-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Top Grid: 4 Columns -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
-      
-      <!-- Brand & Corporate Backing -->
-      <div class="lg:col-span-2 space-y-4">
-        <a href="/" class="flex items-center gap-3 text-white">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="m9 12 2 2 4-4"/>
-            </svg>
-          </div>
-          <div>
-            <span class="font-extrabold text-xl text-white">Konsultan<span class="text-amber-400">K3</span>.com</span>
-            <div class="text-[10px] tracking-wider text-slate-400 uppercase">Portal Edukasi &amp; Konsultasi K3</div>
-          </div>
-        </a>
-        <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
-          Portal referensi ilmiah kepatuhan Keselamatan dan Kesehatan Kerja (K3) industri terpercaya di Indonesia sejak 2011. Didukung oleh konsultan senior bersama PJK3 mitra berlisensi Kemnaker RI &amp; BNSP.
-        </p>
+<div class="footer-scene">
+  <figure class="footer-photos">
+    <img src="/assets/images/footer-consulting.webp" width="1752" height="897" loading="lazy" decoding="async" alt="Ilustrasi rapat konsultasi, peninjauan lapangan, dan pembahasan hasil" />
+    <img src="/assets/images/footer-training.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Ilustrasi kelompok berseragam, pelatihan di kelas, dan praktik lapangan" />
+    <figcaption>Ilustrasi kegiatan</figcaption>
+  </figure>
 
-        <!-- Compliance Badge -->
-        <div class="inline-flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300">
-          <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 font-bold">
-            K3
-          </div>
-          <div>
-            <div class="font-semibold text-white">Konsultasi &amp; Pelatihan K3</div>
-            <div class="text-slate-400 text-[11px]">Bersama PJK3 Mitra Berlisensi Kemnaker RI</div>
-          </div>
+  <footer class="glass-footer">
+    <div class="footer-inner">
+      <div class="footer-intro">
+        <div>
+          <a class="footer-brand" href="/">KonsultanK3.com</a>
+          <h2>Dari asesmen hingga penerapan.</h2>
         </div>
+        <a class="footer-contact btn-shine" href="/kontak/">Hubungi Kami <span aria-hidden="true">↗</span></a>
       </div>
 
-      <!-- Column 1: Pelatihan K3 Kemnaker -->
-      <div class="space-y-3">
-        <h3 class="text-sm font-bold uppercase tracking-wider text-white">Pelatihan K3</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/pelatihan-ahli-k3-umum/" class="hover:text-amber-400 transition-colors">Ahli K3 Umum (Kemnaker)</a></li>
-          <li><a href="/pelatihan-auditor-smk3-kemnaker/" class="hover:text-amber-400 transition-colors">Auditor SMK3 (Kemnaker)</a></li>
-          <li><a href="/pelatihan-pop-pertambangan-bnsp/" class="hover:text-amber-400 transition-colors">POP Pertambangan (BNSP)</a></li>
-          <li><a href="/pelatihan-ahli-k3-konstruksi-muda-madya/" class="hover:text-amber-400 transition-colors">Ahli K3 Konstruksi (Muda/Madya)</a></li>
-          <li><a href="/pelatihan-higiene-industri-muda-himu-bnsp/" class="hover:text-amber-400 transition-colors">Higiene Industri Muda (HIMU)</a></li>
-          <li><a href="/pelatihan-petugas-gas-beracun-h2s-bnsp/" class="hover:text-amber-400 transition-colors">Petugas Gas Beracun H2S</a></li>
-          <li><a href="/pelatihan-petugas-p3k-kemnaker-bnsp/" class="hover:text-amber-400 transition-colors">Petugas P3K (Kemnaker &amp; BNSP)</a></li>
-          <li><a href="/pelatihan-k3-rumah-sakit-faskes-bnsp/" class="hover:text-amber-400 transition-colors">K3 Rumah Sakit &amp; Faskes</a></li>
-          <li><a href="/pelatihan-k3-laboratorium-bnsp/" class="hover:text-amber-400 transition-colors">K3 Laboratorium (Biosafety)</a></li>
-          <li><a href="/pelatihan-spill-response-b3-oil-spill-drill/" class="hover:text-amber-400 transition-colors">Spill Response B3 &amp; Drill</a></li>
-          <li><a href="/pelatihan-investigasi-kecelakaan-kerja-rca-scat/" class="hover:text-amber-400 transition-colors">Investigasi Insiden (RCA &amp; SCAT)</a></li>
-          <li><a href="/pelatihan-k3-kebakaran/" class="hover:text-amber-400 transition-colors">K3 Penanggulangan Kebakaran</a></li>
-          <li><a href="/pelatihan-k3-listrik/" class="hover:text-amber-400 transition-colors">Teknisi & Ahli K3 Listrik</a></li>
-          <li><a href="/pelatihan-k3-ruang-terbatas/" class="hover:text-amber-400 transition-colors">K3 Ruang Terbatas (Confined Space)</a></li>
-          <li><a href="/lpk-k3-tangerang/" class="hover:text-amber-400 transition-colors">LPK K3 Kota Tangerang</a></li>
-          <li><a href="/pelatihan/" class="text-emerald-400 font-semibold hover:underline">Semua Jadwal Pelatihan &rarr;</a></li>
-        </ul>
-      </div>
+      <nav class="footer-links" aria-label="Layanan dan sumber daya">
+        {linkGroups.map(({ title, links }) => (
+          <section>
+            <h3>{title}</h3>
+            <ul>
+              {links.map(({ label, href }) => <li><a href={href}>{label}</a></li>)}
+            </ul>
+          </section>
+        ))}
+      </nav>
 
-      <!-- Column 2: Konsultasi & Audit -->
-      <div class="space-y-3">
-        <h3 class="text-sm font-bold uppercase tracking-wider text-white">Konsultasi & Audit</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/panduan-penerapan-smk3/" class="hover:text-amber-400 transition-colors">Audit SMK3 PP 50/2012</a></li>
-          <li><a href="/jasa-pengesahan-p2k3-lisensi-p3k/" class="hover:text-amber-400 transition-colors">Pengesahan P2K3 &amp; Lisensi P3K</a></li>
-          <li><a href="/konsultasi-integrated-management-system/" class="hover:text-amber-400 transition-colors">Konsultasi IMS (ISO &amp; SMK3)</a></li>
-          <li><a href="/contractor-safety-management-system-csms/" class="hover:text-amber-400 transition-colors">CSMS Kontraktor K3</a></li>
-          <li><a href="/executive-safety-leadership/" class="hover:text-amber-400 transition-colors">Executive Safety Leadership</a></li>
-          <li><a href="/penilaian-risiko-ergonomi/" class="hover:text-amber-400 transition-colors">Audit Risiko Ergonomi</a></li>
-          <li><a href="/program-pengendalian-kebisingan/" class="hover:text-amber-400 transition-colors">Pengendalian Kebisingan Industri</a></li>
-          <li><a href="/alat-pelindung-diri/" class="hover:text-amber-400 transition-colors">Standar Pemilihan APD SNI/ANSI</a></li>
-          <li><a href="/penyakit-akibat-kerja/" class="hover:text-amber-400 transition-colors">Pencegahan Penyakit Akibat Kerja</a></li>
-          <li><a href="/materi-safety-talk-harian/" class="hover:text-amber-400 transition-colors">Materi Safety Talk Harian</a></li>
-          <li><a href="/management-of-change-k3/" class="hover:text-amber-400 transition-colors">Management of Change (MOC)</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3: Download & Regulasi -->
-      <div class="space-y-3">
-        <h3 class="text-sm font-bold uppercase tracking-wider text-white">Pusat Unduhan & Legal</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/downloads/Checklist-Audit-SMK3-166-Kriteria.html" class="hover:text-amber-400 transition-colors">Checklist SMK3 166 Kriteria</a></li>
-          <li><a href="/downloads/Formulir-JSA-Job-Safety-Analysis.html" class="hover:text-amber-400 transition-colors">Template Formulir JSA Excel</a></li>
-          <li><a href="/downloads/Tabel-Nilai-Ambang-Batas-Kebisingan-K3.html" class="hover:text-amber-400 transition-colors">Tabel NAB Kebisingan K3</a></li>
-          <li><a href="/kebijakan-privasi/" class="hover:text-amber-400 transition-colors">Kebijakan Privasi</a></li>
-          <li><a href="/syarat-ketentuan/" class="hover:text-amber-400 transition-colors">Syarat & Ketentuan</a></li>
-          <li><a href="/kontak/" class="text-amber-400 font-semibold hover:underline">Hubungi Konsultan &rarr;</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Bottom Strip -->
-    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-      <div>
-        &copy; 2011–{currentYear} <strong>KonsultanK3.com</strong>. Hak cipta dilindungi undang-undang.
-      </div>
-      <div class="flex items-center gap-4 text-slate-400">
-        <span class="inline-flex items-center gap-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          Standar Kepatuhan Zero Accident
-        </span>
-        <span>•</span>
-        <span>UU No. 1 Tahun 1970 & PP No. 50 Tahun 2012</span>
+      <div class="footer-legal">
+        <p>© 2011–{currentYear} KonsultanK3.com</p>
+        <nav aria-label="Perusahaan dan kebijakan">
+          <a href="/tentang-kami/">Tentang Kami</a>
+          <a href="/kebijakan-privasi/">Kebijakan Privasi</a>
+          <a href="/syarat-ketentuan/">Syarat &amp; Ketentuan</a>
+        </nav>
       </div>
     </div>
+  </footer>
+</div>
 
-  </div>
-</footer>
+<style>
+  .footer-scene {
+    display: flow-root;
+    position: relative;
+    isolation: isolate;
+    background: #0a1522;
+  }
+
+  .footer-photos {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    margin: 0 0 -100svh;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .footer-photos img { display: block; width: 100%; height: auto; }
+  .footer-photos figcaption {
+    grid-column: 1 / -1;
+    padding: .5rem 1rem;
+    color: #b6cbe1;
+    font-size: .75rem;
+  }
+
+  .glass-footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 88svh;
+    min-height: 76svh;
+    padding: clamp(2rem, 5vw, 5rem) clamp(1.25rem, 5vw, 5rem) 2rem;
+    color: #fff;
+    background: linear-gradient(180deg, rgb(10 28 53 / .64), rgb(10 23 39 / .96) 72%);
+    border-top: 1px solid rgb(207 230 255 / .35);
+    box-shadow: 0 -12px 50px rgb(7 19 33 / .25);
+    -webkit-backdrop-filter: blur(12px) saturate(85%);
+    backdrop-filter: blur(12px) saturate(85%);
+  }
+
+  .footer-inner { max-width: 84rem; margin-inline: auto; }
+  .footer-intro, .footer-legal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-brand { color: #d8e6f1; font-size: .875rem; font-weight: 700; }
+  .footer-intro h2 {
+    max-width: 18ch;
+    margin: .625rem 0 0;
+    font-size: clamp(2rem, 4.2vw, 4.375rem);
+    font-weight: 650;
+    line-height: 1.06;
+    letter-spacing: -.045em;
+  }
+
+  .footer-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: .875rem 1.25rem;
+    border: 1px solid rgb(214 234 255 / .6);
+    border-radius: 2rem;
+    background: rgb(224 238 255 / .12);
+    font-weight: 700;
+  }
+  .footer-contact:hover { background: rgb(224 238 255 / .22); }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.75rem;
+    margin-top: clamp(2rem, 5vw, 4rem);
+    padding: 2rem 0;
+    border-block: 1px solid rgb(218 234 255 / .24);
+  }
+
+  .footer-links h3 { margin: 0 0 .75rem; font-size: .95rem; font-weight: 700; }
+  .footer-links ul { display: grid; gap: .25rem; margin: 0; padding: 0; list-style: none; }
+  .footer-links a, .footer-legal { color: #d5e2ef; font-size: .875rem; }
+  .footer-links a { display: inline-block; padding-block: .3rem; }
+  .footer-links a:hover, .footer-legal a:hover, .footer-brand:hover {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: .25em;
+  }
+
+  .footer-legal { padding-top: 1.25rem; }
+  .footer-legal p { margin: 0; }
+  .footer-legal nav { display: flex; flex-wrap: wrap; gap: .625rem 1.25rem; }
+
+  @media (max-width: 767px) {
+    .footer-photos { grid-template-columns: 1fr; }
+    .footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; }
+    .glass-footer { padding-bottom: calc(6rem + env(safe-area-inset-bottom)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .footer-photos { position: relative; height: auto; margin-bottom: 0; }
+    .glass-footer { min-height: auto; margin-top: 0; }
+  }
+</style>
