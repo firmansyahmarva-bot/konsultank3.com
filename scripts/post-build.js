@@ -180,6 +180,18 @@ if (fs.existsSync(path.join(rootDir, '_redirects'))) {
   console.log('✓ _redirects synchronized to dist');
 }
 
+// Root-hosted builds need the editable downloads copied alongside the HTML.
+const distTemplatesDir = path.join(distDir, 'assets', 'templates');
+if (fs.existsSync(distTemplatesDir)) {
+  const rootTemplatesDir = path.join(rootDir, 'assets', 'templates');
+  fs.mkdirSync(rootTemplatesDir, { recursive: true });
+  for (const entry of fs.readdirSync(distTemplatesDir, { withFileTypes: true })) {
+    if (entry.isFile() && /\.(xlsx|docx)$/i.test(entry.name)) {
+      fs.copyFileSync(path.join(distTemplatesDir, entry.name), path.join(rootTemplatesDir, entry.name));
+    }
+  }
+}
+
 // 3. Sync all HTML files to root
 function syncHtmlFiles(currentDistDir, relativeSubPath = '') {
   const entries = fs.readdirSync(currentDistDir, { withFileTypes: true });
