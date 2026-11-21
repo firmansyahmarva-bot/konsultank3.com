@@ -1,0 +1,438 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Oil Spill Response Pekanbaru Dumai B3 Drill";
+const description = "Pelatihan Oil Spill Response dan Tanggap Darurat Tumpahan B3 di Pekanbaru, Dumai, Duri, Siak. Teknik containment boom dan skimmer kilang. Cek WA.";
+const canonical = "/pelatihan-oil-spill-response-pekanbaru-dumai/";
+const ogImage = "https://konsultank3.com/assets/images/pelatihan-h2s-balikpapan-hero.jpg";
+
+const faqs = [
+  {
+    q: "Mengapa fasilitas migas dan pelabuhan di Pekanbaru, Duri, dan Dumai wajib melakukan Oil Spill Response & B3 Drill?",
+    a: "Perusahaan hulu-hilir minyak dan gas di Wilayah Kerja Rokan (Duri, Minas, Bangko), refinery dan tangki CPO ekspor di Dumai, serta operasi tongkang sungai Siak terikat kewajiban PP No. 22 Tahun 2021 tentang Penyelenggaraan Perlindungan dan Pengelolaan Lingkungan Hidup, Perpres No. 109 Tahun 2006 tentang Penanggulangan Keadaan Darurat Tumpahan Minyak di Laut, serta standar PROPER KLHK untuk memiliki tim Emergency Response Team (ERT) dan latihan drill minimal 1 kali setahun."
+  },
+  {
+    q: "Apa beda penanganan tumpahan minyak di jalur darat/sungai berarus (Sungai Siak) vs area perairan pelabuhan Dumai?",
+    a: "Pada alur Sungai Siak atau parit drainase lapangan minyak Duri–Pekanbaru, penyebaran boom harus menggunakan sudut defleksi (angling) agar arus tidak menyebabkan minyak melompati skirt boom (entrainment), serta pemasangan culvert blocking. Sedangkan di dermaga Dumai atau perairan Selat Rupat, tim fokus pada pola pengurungan boom J/U-configuration dengan dua boat penarik, operasi weir/oleophilic skimmer, serta strategi proteksi garis pantai mangrove."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan Oil Spill Response & B3 Drill korporasi di Riau?",
+    a: "Estimasi investasi per peserta untuk pelatihan Oil Spill Response / IMO Level 1 & Emergency B3 Drill berkisar Rp12.500.000 hingga Rp15.000.000, sedangkan untuk paket In-House simulasi skala penuh menggunakan peralatan oil boom, skimmer, powerpack, dan spill kit langsung di lokasi jetty atau terminal perusahaan di Riau akan disesuaikan berdasarkan skenario drill serta jumlah tim ERT."
+  },
+  {
+    q: "Bagaimana klasifikasi tingkatan Tier 1, Tier 2, dan Tier 3 dalam penanggulangan tumpahan minyak?",
+    a: "Tier 1 adalah tumpahan lokal bervolume kecil (umumnya <= 10 barel) yang wajib langsung tertangani oleh tim dan peralatan ERT fasilitas itu sendiri. Tier 2 adalah tumpahan skala menengah yang membutuhkan bantuan antar-fasilitas/daerah terdekat (mutual aid), sedangkan Tier 3 melibatkan koordinasi nasional lintas kementerian dan sumber daya internasional."
+  },
+  {
+    q: "Apakah simulasi drill menghasilkan dokumen evaluasi resmi untuk audit PROPER KLHK & SKK Migas?",
+    a: "Ya. Seluruh peserta maupun perusahaan penyelenggara In-House Drill akan mendapatkan sertifikat pelatihan penanggulangan tumpahan minyak/B3 beserta ringkasan laporan evaluasi skenario simulasi (After Action Report, dokumentasi deployment tim, serta catatan perbaikan response time) yang siap dilampirkan pada audit PROPER maupun SMK3."
+  },
+  {
+    q: "Apakah materi juga mencakup penanganan limbah residu pembersihan minyak (oily waste & used absorbent)?",
+    a: "Tentu. Tahap pemulihan mengajarkan pemisahan antara air berminyak yang dipompa ke tangki penampung sementara (bladder/portable tank) dengan limbah padat terkontaminasi (used oil absorbent pad, PPE terkontaminasi) guna dikemas, dilabeli simbol B3, dan dimanifestasikan ke pengolah limbah berizin."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan Spill Response B3 & Drill", "item": "https://konsultank3.com/pelatihan-spill-response-b3-oil-spill-drill/" },
+        { "@type": "ListItem", "position": 3, "name": "Oil Spill Response Pekanbaru Dumai", "item": "https://konsultank3.com/pelatihan-oil-spill-response-pekanbaru-dumai/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Oil Spill Response & Tanggap Darurat Tumpahan B3 Pekanbaru, Duri & Dumai",
+      "description": description,
+      "courseCode": "OSR-B3-PKU-DUM",
+      "educationalCredentialAwarded": "Sertifikat Pelatihan Oil Spill Response Tier 1 & Evaluasi Simulasi Drill",
+      "occupationalCategory": "Tim Tanggap Darurat Tumpahan Minyak / Marine & Plant ERT",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "12500000",
+        "highPrice": "15000000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT32H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Migas & Terminal Pelabuhan Riau (Pekanbaru - Duri - Minas - Dumai)",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dumai",
+            "addressRegion": "Riau",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & Simulasi Oil Spill Drill Riau & Kepri",
+      "serviceType": "Pembinaan & Emergency Drill Penanggulangan Tumpahan Minyak dan B3",
+      "url": "https://konsultank3.com/pelatihan-oil-spill-response-pekanbaru-dumai/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Pekanbaru",
+        "Minas",
+        "Duri",
+        "Dumai",
+        "Lubuk Gaung",
+        "Pelintung",
+        "Siak",
+        "Perawang",
+        "Sungai Pakning",
+        "Batam"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, kami butuh penawaran Pelatihan Oil Spill Response / Simulasi B3 Drill untuk fasilitas di Pekanbaru / Duri / Dumai."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan-spill-response-b3-oil-spill-drill/" class="hover:text-amber-400 transition-colors">Spill Response B3 &amp; Drill</a>
+        <span>/</span>
+        <span class="text-slate-300">Pekanbaru &amp; Dumai</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 text-amber-300 text-xs font-semibold border border-amber-500/25">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse-glow"></span>
+            Perpres 109/2006 &amp; PP 22/2021 &bull; Koridor Migas Pekanbaru &ndash; Minas &ndash; Duri &ndash; Jetty Dumai
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-cyan-200">Oil Spill Response Pekanbaru &amp; Dumai</span> B3 Drill
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program pembinaan teknik penanggulangan tumpahan minyak dan bahan kimia B3 (<strong>Tier 1 / IMO OPRC</strong>) lengkap dengan simulasi pemasangan <em>oil boom</em>, pengoperasian <em>skimmer</em>, dan proteksi garis pantai di terminal kilang Dumai, Siak, Duri, serta Pekanbaru.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, perusahaan kami ingin konsultasi jadwal & proposal Oil Spill Response Drill di Pekanbaru / Dumai / Riau.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Ajukan Proposal Spill Drill WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="/pelatihan-spill-response-b3-oil-spill-drill/"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Lihat Protokol Induk Spill B3 &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Fokus Kompetensi</span>
+              <p class="text-white font-bold text-sm">Tier 1 &amp; B3 Drill</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Medan Uji</span>
+              <p class="text-white font-bold text-sm">Darat, Sungai, Dermaga</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kepatuhan Audit</span>
+              <p class="text-white font-bold text-sm">PROPER &amp; SMK3 6.7</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Klaster Wilayah</span>
+              <p class="text-amber-300 font-bold text-sm">Rokan, Dumai, Siak</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/pelatihan-h2s-balikpapan-hero.jpg"
+              alt="Simulasi penanggulangan tumpahan minyak, B3 kilang dan proteksi dermaga migas di Riau"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500 text-slate-950 mb-2">
+                Kesiapan Tim ERT Terminal, Kilang &amp; Tongkang
+              </span>
+              <div class="text-lg font-bold">Fast Containment, Skimming &amp; Recovery</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Deployment oil boom sesuai kecepatan arus, pengoperasian pompa transfer limbah cair B3, serta dokumentasi drill PROPER.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">Bukti Drill PROPER KLHK</div>
+              <div class="text-[10px] text-slate-400">Standar PP 22/2021</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">🛢️</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House Terminal &amp; Site</div>
+              <div class="text-[10px] text-slate-400">Pekanbaru &bull; Duri &bull; Dumai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-amber-500/10 border-b border-amber-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-amber-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Wilayah Operasi Migas &amp; Pelabuhan Riau:
+      </span>
+      <span class="text-slate-700">Tersedia pelatihan IMO Tier 1/B3 Response serta fasilitasi Annual Spill Drill langsung di jeti/lokasi pabrik Anda.</span>
+      <a
+        href={waLink("Halo Kak, minta penawaran dan jadwal pelatihan Oil Spill Response di Pekanbaru / Dumai.")}
+        target="_blank"
+        rel="noopener"
+        class="text-amber-900 hover:text-amber-950 font-bold underline ml-1"
+      >
+        Konsultasi Skenario WA ({WA_DISPLAY}) &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Tier Comparison Table -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Mengapa Kompleks Migas Riau &amp; Jetty Dumai Memerlukan Drill Spesifik Medan Sungai &amp; Laut?</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Berbeda dari ceceran gudang darat biasa, operasi hulu-hilir migas dan pelabuhan curah cair di <strong>Pekanbaru, Minas, Duri, Sungai Pakning, Siak, dan pelabuhan internasional Dumai</strong> berhadapan langsung dengan pipa distribusi bertekanan, fasilitas transfer selang tanker (ship-to-shore), serta anak sungai bermuara ke Selat Malaka yang memiliki pasang surut dan ekosistem bakau sensitif.
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Melengkapi panduan dasar di <a href="/pelatihan-spill-response-b3-oil-spill-drill/" class="text-amber-700 font-bold underline">Pelatihan Spill Response B3 &amp; Oil Spill Drill</a>, program regional Riau menitikberatkan pada penyusunan <em>Incident Command System (ICS)</em>, pengujian kecepatan penggelaran boom melintang arus, pengoperasian unit pompa skimmer hidrolik, serta pencatatan performa respons untuk penilaian PROPER KLHK maupun inspeksi Kesyahbandaran.
+        </p>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-4">Fokus Penanggulangan</th>
+              <th class="py-3.5 px-4">Skenario Riau (Darat/Sungai/Dermaga)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Tier 1 On-Site Containment</td>
+              <td class="py-3 px-4">Ceceran pipa gathering station, tangki timbun &amp; manifold jetty Dumai</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Fast-Current Boom Deployment</td>
+              <td class="py-3 px-4">Teknik sudut defleksi boom pada arus Sungai Siak agar bebas entrainment</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Skimmer &amp; Recovery Pump</td>
+              <td class="py-3 px-4">Pengoperasian weir/disc/brush skimmer untuk minyak berat &amp; produk CPO/B3</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Proteksi Ekosistem &amp; Limbah</td>
+              <td class="py-3 px-4">Teknik pembersihan tepi pantai bakau &amp; pemindahan residu ke storage B3</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Estimasi Investasi</td>
+              <td class="py-3 px-4 font-semibold text-amber-700">Rp12,5 – 15,0 jt / peserta (atau kontrak paket drill tim ERT)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Regional Industrial & Terminal Grid -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Koridor Energi &amp; Maritim Sumatra Tengah</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Cakupan Pelatihan Pekanbaru, Duri, Siak, Dumai hingga Kepulauan Riau</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Dumai, Lubuk Gaung &amp; Pelintung</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Kawasan konsentrasi kilang pengolahan BBM, terminal tangki timbun petrokimia, serta dermaga ekspor minyak nabati terbesar di pantai timur Sumatra.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Duri, Minas &amp; Rokan Hulu/Hilir</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Kontraktor fasilitas produksi migas darat (flowline, gathering station, tangki cuci) yang diwajibkan rutin menguji kesiapan spill trailer di lapangan.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Pekanbaru, Siak &amp; Perawang</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pengamanan bongkar muat BBM, pelumas, dan bahan kimia proses pabrik sepanjang alur Sungai Siak agar terhindar dari kontaminasi perairan umum.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Sungai Pakning &amp; Bengkalis</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pelatihan kesigapan awak pelabuhan khusus pengapalan minyak mentah, bunker BBM kapal, serta proteksi alur pesisir Selat Bengkalis.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Kampar, Pelalawan &amp; Indragiri Hulu</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Simulasi penanganan kebocoran tangki bahan bakar pembangkit listrik maupun tumpahan bahan kimia B3 gudang industri kehutanan &amp; perkebunan.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Batam, Tanjung Uban &amp; Natuna</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Sinergi pelatihan tim tanggap darurat maritim, shorebase lepas pantai, galangan kapal, dan depot BBM jalur pelayaran internasional Kepri.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Cross-Link Technical Companions -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-5">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Integrasi Keselamatan Kilang &amp; B3</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-extrabold text-slate-900">Kompetensi Pelengkap Tim ERT Fasilitas Migas &amp; Pelabuhan</h2>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Dalam situasi kebocoran pipa atau tangki minyak mentah di area terisolasi maupun tangki bund-wall, tumpahan cairan hidrokarbon sering disertai paparan gas beracun serta risiko kebakaran uap mudah menyala:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <a href="/pelatihan-h2s-balikpapan/" class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-colors">
+            <strong class="text-amber-800 block mb-1">Petugas Gas Beracun H2S BNSP &rarr;</strong>
+            <span class="text-slate-600 text-xs">Pengukuran aman gas H2S dan penggunaan SCBA sebelum tim spill responder memasuki area kebocoran.</span>
+          </a>
+          <a href="/pelatihan-popal-sidoarjo-surabaya-gresik/" class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-colors">
+            <strong class="text-amber-800 block mb-1">POPAL &amp; Pengendalian Limbah Cair BNSP &rarr;</strong>
+            <span class="text-slate-600 text-xs">Pengolahan air tercemar minyak (oil-water separator) pasca-insiden agar baku mutu IPAL terpenuhi.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white shadow-xl space-y-5">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-300">Rancang Skenario Drill Tahunan Anda</span>
+        <h3 class="font-serif text-2xl font-bold">Minta Penawaran Pelatihan &amp; Audit Spill Kit</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Informasikan lokasi terminal/kilang, daftar peralatan eksisting (oil boom, skimmer, vacuum truck, spill kit), serta jumlah personel tim ERT untuk kami buatkan proposal teknis lengkap.
+        </p>
+        <a
+          href={waLink("Halo Kak, kami mau minta proposal In-House Oil Spill Response & B3 Drill untuk fasilitas kami di Riau.")}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center w-full py-3.5 px-5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition-colors"
+        >
+          Konsultasi Tim ERT via WhatsApp ({WA_DISPLAY}) &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 3B: Tahapan Response Drill & Perlengkapan Lapangan -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Standar Incident Command System &amp; Peralatan</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Alur Eksekusi 4 Tahap Oil Spill Drill &amp; Paket Pembinaan Korporasi</h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Untuk terminal bahan bakar, dermaga ekspor CPO Dumai, maupun area produksi lapangan minyak Riau, keberhasilan pengendalian diukur dari ketepatan waktu (response time) pada empat fase kritis berikut:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+          <h3 class="text-xl font-bold text-slate-900">Empat Fase Teknis Penanggulangan Lapangan</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 list-disc pl-5 leading-relaxed">
+            <li><strong>1. Evaluasi Awal &amp; Aktivasi ICS (0–15 Menit Pertama):</strong> Isolasi sumber kebocoran manifold/pipa (emergency shutdown valve), identifikasi tipe hidrokarbon (ringan vs berat/CPO), cek detektor gas LEL/H2S, dan aktivasi tim komando darurat.</li>
+            <li><strong>2. Isolasi &amp; Pelokalan (Containment Boom):</strong> Penentuan panjang boom minimum (&ge; 3x panjang kapal/lebar alur), pemasangan pelampung jangkar (anchor buoy), serta penerapan teknik chevron atau cascading boom di sungai berarus Siak.</li>
+            <li><strong>3. Penyerapan &amp; Pemompaan (Skimming &amp; Recovery):</strong> Pengoperasian skimmer oleofilik/drum/weir sesuai viskositas minyak pada temperatur tropis Riau serta penyedotan ke tangki tampung darurat dan vacuum truck.</li>
+            <li><strong>4. Dekontaminasi, Limbah B3 &amp; After-Action Report:</strong> Pembilasan APD tim responder, penimbangan drum limbah padat/cair B3 hasil clean-up untuk manifest pengangkut resmi, dan penyusunan berita acara evaluasi drill KLHK/SKK Migas.</li>
+          </ul>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200 space-y-4">
+          <h3 class="text-xl font-bold text-slate-900">Cakupan Paket Pelatihan &amp; Simulasi Tim ERT</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Investasi pelatihan Oil Spill Response korporasi (<strong>Rp12,5–15 jt per peserta</strong> untuk program IMO Tier 1/sertifikasi responder, serta penawaran kontrak paket untuk Annual In-House Site Drill) meliputi dukungan penuh:
+          </p>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700 list-disc pl-5 leading-relaxed">
+            <li><strong>Termasuk:</strong> Penyusunan naskah skenario drill (tabletop + full deployment) sesuai layout jetty/kilang Anda, instruktur praktisi senior migas-maritim, lembar evaluasi ketepatan waktu (logsheet drill), dan sertifikat kompetensi peserta.</li>
+            <li><strong>Audit Kesiapan Spill Equipment:</strong> Kami membantu menilai kondisi skirt boom, kekuatan pompa powerpack, dan kecukupan stok oil absorbent boom/pad di gudang terminal sebelum inspeksi tahunan pengawas.</li>
+            <li><strong>Catatan Mobilisasi:</strong> Kebutuhan perahu kerja (mooring boat) eksisting pelabuhan dan logistik perjalanan tim instruktur ke lokasi site Riau/Kepri dirinci jelas pada proposal teknis resmi.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Frequently Asked Questions</span>
+        <h2 class="font-serif text-3xl font-extrabold text-slate-900">FAQ Pelatihan Oil Spill Response Pekanbaru &amp; Dumai</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {faqs.map((item) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">{item.q}</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

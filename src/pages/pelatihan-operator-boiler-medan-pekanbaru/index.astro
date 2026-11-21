@@ -1,0 +1,526 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Operator Boiler Medan Pekanbaru SIO Kemnaker";
+const description = "Pelatihan Operator Boiler Kelas I dan II Kemnaker di Medan, Pekanbaru, Riau. Sertifikasi SIO ketel uap PKS dan oleokimia. Cek jadwal WA.";
+const canonical = "/pelatihan-operator-boiler-medan-pekanbaru/";
+const ogImage = "https://konsultank3.com/assets/images/smk3-audit.jpg";
+
+const faqs = [
+  {
+    q: "Mengapa operator ketel uap di Medan dan Pekanbaru wajib memiliki SIO Operator Boiler Kemnaker?",
+    a: "Berdasarkan Permenaker No. 37 Tahun 2016 tentang Keselamatan dan Kesehatan Kerja Bejana Tekanan dan Tangki Timbun serta Undang-Undang Uap 1930, pengoperasian pesawat uap (ketel uap/boiler) memiliki risiko ledakan tekanan tinggi dan bahaya termal. Setiap operator di PKS CPO, pabrik oleokimia KIM Medan, maupun pabrik pulp di Riau wajib mengantongi Surat Izin Operator (SIO) aktif dari Kemnaker RI."
+  },
+  {
+    q: "Apa perbedaan kewenangan Operator Boiler Kelas II dan Kelas I Kemnaker RI?",
+    a: "Operator Boiler Kelas II berwenang mengoperasikan ketel uap dengan kapasitas produksi uap paling banyak 10 ton per jam (<= 10 ton/jam). Sementara Operator Boiler Kelas I berwenang mengoperasikan ketel uap berkapasitas lebih dari 10 ton per jam (> 10 ton/jam) serta membawahi koordinasi kerja operator Kelas II pada unit power plant atau cogeneration boiler industri."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan dan Sertifikasi SIO Operator Boiler di Medan dan Riau?",
+    a: "Estimasi investasi pembinaan resmi Kemnaker RI meliputi Operator Boiler Kelas II (kapasitas s.d. 10 ton/jam) berkisar Rp6.500.000 hingga Rp8.000.000 per peserta, sedangkan Operator Boiler Kelas I (kapasitas di atas 10 ton/jam) berkisar Rp7.500.000 hingga Rp9.500.000 per peserta. Tersedia tarif grup In-House khusus grup perkebunan kelapa sawit dan kawasan industri Sumatra."
+  },
+  {
+    q: "Berapa orang operator boiler yang dibutuhkan per shift pada pabrik kelapa sawit atau refinery?",
+    a: "Umumnya satu unit PKS berkapasitas 30–60 TBS/jam membagi operasional ke dalam 2 hingga 3 shift kerja (24 jam operasional saat panen puncak). Setiap shift wajib dijaga minimal 1 Operator Boiler ber-SIO aktif sesuai kapasitas ketel uap terpasang, ditambah asisten pengendali air umpan (water treatment) agar tidak terjadi kekosongan pengawasan saat cuti atau rotasi."
+  },
+  {
+    q: "Apa syarat pendaftaran sertifikasi Operator Boiler Kelas I maupun Kelas II?",
+    a: "Calon peserta Kelas II minimal lulusan SLTP/SMA/SMK sederajat dengan pengalaman kerja pembantu operator minimal 1 tahun, fotokopi KTP, surat keterangan sehat dokter, pas foto latar merah, dan surat tugas perusahaan. Untuk Kelas I dipersyaratkan minimal lulusan SMA/SMK dengan sertifikat/SIO Kelas II minimal 2 tahun atau pengalaman boiler kapasitas besar sesuai ketentuan verifikasi TemanK3."
+  },
+  {
+    q: "Apakah pelatihan mencakup penanganan darurat low water level dan kegagalan safety valve?",
+    a: "Ya. Materi praktik dan studi kasus membahas pengawasan tinggi air gelas penduga (sight glass), prosedur blowdown berkala, pencegahan kerak (scale) pada pipa api maupun pipa air (fire tube & water tube), kalibrasi pressure gauge, pengujian katup pengaman (safety valve), serta langkah shutdown darurat bila terjadi dry firing."
+  },
+  {
+    q: "Berapa lama masa berlaku SIO Operator Boiler dan bagaimana cara perpanjangannya?",
+    a: "SIO (Lisensi K3) Operator Pesawat Uap/Boiler Kemnaker RI berlaku selama 5 tahun sejak diterbitkan dan dapat diperpanjang melalui PJK3 sebelum habis masa berlakunya dengan melampirkan bukti kerja aktif, salinan SIO lama, serta surat keterangan sehat terbaru."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Program Pelatihan K3", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "Operator Boiler Medan Pekanbaru", "item": "https://konsultank3.com/pelatihan-operator-boiler-medan-pekanbaru/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Operator Boiler Kelas I & II Medan, Riau & Pekanbaru SIO Kemnaker RI",
+      "description": description,
+      "courseCode": "SIO-BOILER-MDN-PKU",
+      "educationalCredentialAwarded": "Sertifikat Pembinaan & Lisensi K3 (SIO) Operator Pesawat Uap Kemnaker RI",
+      "occupationalCategory": "Operator Pesawat Uap / Ketel Uap Industri",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "6500000",
+        "highPrice": "9500000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT40H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Industri Sumatra Utara & Riau (Medan - Pekanbaru - Dumai)",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Medan",
+            "addressRegion": "Sumatera Utara",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & Sertifikasi SIO Operator Boiler Sumatra Utara & Riau",
+      "serviceType": "Pembinaan Operator Pesawat Uap & Ketel Uap Kemnaker RI",
+      "url": "https://konsultank3.com/pelatihan-operator-boiler-medan-pekanbaru/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Medan",
+        "KIM Medan",
+        "Deli Serdang",
+        "Tanjung Morawa",
+        "Sei Mangkei",
+        "Pekanbaru",
+        "Siak",
+        "Perawang",
+        "Dumai",
+        "Kampar",
+        "Pelalawan"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info jadwal dan biaya Pelatihan Operator Boiler SIO Kemnaker untuk wilayah Medan / Pekanbaru / Riau."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Program Pelatihan K3</a>
+        <span>/</span>
+        <span class="text-slate-300">Operator Boiler Medan &amp; Pekanbaru</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/15 text-orange-300 text-xs font-semibold border border-orange-500/25">
+            <span class="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse-glow"></span>
+            Permenaker 37/2016 &amp; UU Uap &bull; Koridor Industri Medan &ndash; Sei Mangkei &ndash; Pekanbaru &ndash; Dumai
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-200">Operator Boiler Medan &amp; Pekanbaru</span> SIO Kemnaker
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program pembinaan dan penerbitan <strong>SIO Operator Pesawat Uap (Ketel Uap/Boiler) Kelas II dan Kelas I</strong> berlisensi resmi Kemnaker RI untuk PKS kelapa sawit, kilang oleokimia, pabrik karet, tekstil, serta pembangkit biomassa di Sumatra Utara dan Riau.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, perusahaan kami butuh jadwal dan penawaran Pelatihan SIO Operator Boiler Kemnaker di area Medan / Pekanbaru / Riau.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal &amp; Biaya WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="#perbedaan-kelas"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Cek Syarat Kelas I vs II &darr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kualifikasi</span>
+              <p class="text-white font-bold text-sm">Kelas II &amp; Kelas I</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Batas Kapasitas</span>
+              <p class="text-white font-bold text-sm">&le;10 vs &gt;10 Ton/Jam</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Dokumen Legal</span>
+              <p class="text-white font-bold text-sm">SIO &amp; Buku Kerja</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Jangkauan</span>
+              <p class="text-amber-300 font-bold text-sm">KIM, Sei Mangkei, Riau</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/smk3-audit.jpg"
+              alt="Pemeriksaan K3 pesawat uap, boiler industri, dan pengawasan instrumen tekanan kerja di Sumatra"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-orange-600 text-white mb-2">
+                Kepatuhan Pesawat Uap &amp; PKS Audit ISPO/RSPO
+              </span>
+              <div class="text-lg font-bold">Zero Dry-Firing &amp; Keandalan Ketel Uap Pabrik</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Pengendalian air umpan, kalibrasi safety valve, dan kesiapan riksa uji berkala Disnakertrans Sumut &amp; Riau.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-orange-500 text-white flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">SIO Kemnaker RI 5 Tahun</div>
+              <div class="text-[10px] text-slate-400">Terverifikasi TemanK3</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">🔥</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House Estate &amp; Pabrik</div>
+              <div class="text-[10px] text-slate-400">Medan &bull; Siak &bull; Dumai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-orange-500/10 border-b border-orange-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-orange-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Sumatra Utara &amp; Riau:
+      </span>
+      <span class="text-slate-700">Jadwal kelas reguler blended &amp; pembinaan In-House di lokasi PKS / kawasan industri.</span>
+      <a
+        href={waLink("Halo Kak, minta jadwal pelatihan SIO Operator Boiler terdekat untuk tim pabrik kami di Medan / Pekanbaru.")}
+        target="_blank"
+        rel="noopener"
+        class="text-orange-800 hover:text-orange-950 font-bold underline ml-1"
+      >
+        Konfirmasi Slot via WhatsApp ({WA_DISPLAY}) &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Regulatory Facts -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-orange-700 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Mengapa Operator Boiler Wajib Ber-SIO di Sabuk Sawit &amp; Oleokimia?</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Di koridor ekonomi Sumatra bagian utara—mulai dari <strong>KIM Medan, Tanjung Morawa, KEK Sei Mangkei, Pekanbaru, Perawang, hingga kawasan refinery Dumai</strong>—hampir seluruh pabrik pengolahan kelapa sawit (PKS), pulp &amp; paper, serta produk oleokimia bergantung pada ketel uap (boiler) bertekanan tinggi untuk menggerakkan turbin uap dan proses sterilisasi.
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Setiap kelalaian pembacaan gelas penduga air atau tersumbatnya katup pengaman berpotensi menyebabkan <em>boiler explosion</em> yang menghentikan total operasional pabrik dan melanggar pengawasan Disnakertrans Provinsi Sumatra Utara maupun Riau. Melalui sertifikasi resmi Kemnaker RI, perusahaan memastikan hanya operator terlatih yang memegang kendali panel uap, sekaligus melengkapi berkas wajib audit <strong>ISPO, RSPO, dan SMK3 PP 50/2012</strong>.
+        </p>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Parameter Program</th>
+              <th class="py-3.5 px-5">Standar Ketentuan Kemnaker RI</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Nama Skema Resmi</td>
+              <td class="py-3 px-5">Operator Pesawat Uap (Ketel Uap/Boiler) Kelas II &amp; Kelas I</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Landasan Hukum</td>
+              <td class="py-3 px-5">UU No. 1/1970, UU Uap 1930, PP Uap, Permenaker 37/2016</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Koridor Layanan Utama</td>
+              <td class="py-3 px-5">Medan, Deli Serdang, Simalungun, Pekanbaru, Siak, Dumai, Kampar</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Durasi Pembinaan</td>
+              <td class="py-3 px-5">4–5 Hari (Teori Regulasi, Termodinamika Dasar &amp; Evaluasi Praktik)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Luaran Dokumen</td>
+              <td class="py-3 px-5">Sertifikat Pembinaan K3 + Kartu Lisensi K3 (SIO) + Buku Kerja</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Estimasi Biaya</td>
+              <td class="py-3 px-5 font-semibold text-orange-700">Kelas II Rp6,5–8 jt &bull; Kelas I Rp7,5–9,5 jt / peserta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Kelas II vs Kelas I Comparison -->
+    <section id="perbedaan-kelas" class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-orange-700 block">Klasifikasi Kapasitas Ketel Uap</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Perbandingan Operator Boiler Kelas II vs Kelas I</h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Salah memilih kelas SIO merupakan temuan klasik saat riksa uji pesawat uap berkala. Pastikan kelas lisensi operator melebihi atau tepat sama dengan kapasitas uap maksimum tertera pada akte izin ketel uap pabrik Anda.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-5">
+          <div class="flex items-center justify-between gap-4">
+            <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-bold text-xs">Kelas II (Kapasitas Standar)</span>
+            <span class="text-sm font-bold text-slate-900">&le; 10 Ton Uap/Jam</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Operator Boiler Kelas II</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Cocok untuk boiler berkapasitas kecil hingga menengah pada pabrik tahu/pengolahan makanan, hotel, rumah sakit, pabrik tekstil/garmen, pengeringan kayu (kiln dry), serta auxiliary boiler berkapasitas hingga 10 ton/jam.
+          </p>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700 list-disc pl-5">
+            <li><strong>Syarat Pendidikan:</strong> Minimal SLTP/sederajat (umumnya SMK/SMA Teknik Mesin).</li>
+            <li><strong>Pengalaman:</strong> Membantu pengoperasian pesawat uap minimal 1 tahun.</li>
+            <li><strong>Kewenangan:</strong> Mengoperasikan 1 unit ketel uap &le; 10 ton/jam di bawah pengawasan penanggung jawab teknik pabrik.</li>
+            <li><strong>Rentang Investasi:</strong> <strong>Rp6.500.000 – Rp8.000.000 / peserta</strong> (tergantung kota &amp; metode).</li>
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-900 text-white border border-orange-500/30 shadow-xl space-y-5">
+          <div class="flex items-center justify-between gap-4">
+            <span class="px-3 py-1 rounded-full bg-orange-500 text-white font-bold text-xs">Kelas I (Kapasitas Industri Besar)</span>
+            <span class="text-sm font-bold text-orange-300">&gt; 10 Ton Uap/Jam</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">Operator Boiler Kelas I</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Wajib bagi PKS kelapa sawit berkapasitas 30–90 TBS/jam (yang umumnya memakai boiler cangkang &amp; fiber 20–45 ton/jam), pabrik kelapa terpadu, refinery oleokimia KIM/Dumai, pabrik ban, serta PLTU biomassa dan pulp &amp; paper di Riau.
+          </p>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-200 list-disc pl-5">
+            <li><strong>Syarat Pendidikan:</strong> Minimal SLTA/SMK/Sederajat jurusan teknik/IPA.</li>
+            <li><strong>Pengalaman:</strong> Memegang sertifikat Kelas II aktif atau pengalaman mengoperasikan boiler industri &ge; 2 tahun.</li>
+            <li><strong>Kewenangan:</strong> Mengoperasikan seluruh kapasitas boiler &gt; 10 ton/jam sekaligus mengoordinasi operator Kelas II pada shift yang sama.</li>
+            <li><strong>Rentang Investasi:</strong> <strong>Rp7.500.000 – Rp9.500.000 / peserta</strong> (tergantung kota &amp; paket grup).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Regional Industrial Corridors (Multi-City SEO) -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-orange-700 block">Cakupan Klaster Industri Sumatra</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Layanan Pelatihan &amp; In-House Operator Boiler Medan hingga Pekanbaru &amp; Dumai</h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Tidak perlu memberangkatkan puluhan kru boiler sekaligus ke Pulau Jawa dan mengosongkan ruang kontrol pabrik. Tim pembinaan PJK3 kami melayani kelas publik regional maupun pelaksanaan In-House di kawasan industri utama Sumatra Utara dan Riau.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Medan &amp; Kawasan Industri Medan (KIM 1–4)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Melayani industri manufaktur makanan-minuman, pengolahan karet remah (crumb rubber), pengemasan, serta refinery minyak goreng di koridor Belawan, Marelan, dan KIM Mabar.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Deli Serdang, Tanjung Morawa &amp; Serdang Bedagai</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Mendukung pabrik pulp kertas, kayu lapis, dan PKS di jalur lintas timur Lubuk Pakam hingga Tebing Tinggi agar seluruh kepala regu boiler bersertifikat Kelas I.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">KEK Sei Mangkei, Simalungun &amp; Asahan</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Program pembinaan khusus klaster industri hilir oleokimia, biodisel, dan pembangkit biomassa tenaga uap bertekanan tinggi di Simalungun dan Kisaran.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Pekanbaru, Kampar &amp; Rokan Hulu</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Penyelenggaraan kelas sertifikasi reguler maupun In-House grup perkebunan di koridor Pekanbaru–Bangkinang–Pasir Pengaraian untuk ketel uap water-tube cangkang sawit.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Siak, Perawang &amp; Pelalawan (Pangkalan Kerinci)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pelatihan intensif bagi tim utility power boiler kapasitas besar (&gt; 50 ton/jam), chemical recovery boiler, dan pabrik kertas di sepanjang aliran Sungai Siak.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Dumai, Bengkalis &amp; Indragiri Hilir</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Sertifikasi operator thermal oil heater dan steam boiler di pelabuhan CPO ekspor serta fasilitas penyimpanan minyak nabati kawasan industri Lubuk Gaung &amp; Pelintung.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Technical Risk Focus & Syllabus -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 space-y-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-orange-700 block">Kurikulum Pembinaan Resmi Kemnaker RI</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Materi Inti Pelatihan &amp; Evaluasi Teknis Boiler</h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Kurikulum memadukan ketentuan peraturan perundangan K3 uap Indonesia dengan praktik pengoperasian sehari-hari pada boiler bahan bakar solid (cangkang/fiber/batubara), gas, maupun minyak residu.
+        </p>
+
+        <div class="space-y-4">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-base mb-1">1. Peraturan Perundang-undangan Pesawat Uap &amp; Pengawasan K3</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              UU No. 1/1970, Undang-Undang Uap 1930, Peraturan Uap 1930, serta klasifikasi bejana bertekanan dan kewajiban Akte Izin Pesawat Uap serta prosedur pemeriksaan berkala (riksa uji).
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-base mb-1">2. Konstruksi Ketel Uap (Fire Tube, Water Tube &amp; Thermal Oil)</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Mengenal komponen ruang bakar (furnace), superheater, economizer, air preheater, sootblower, sistem draft udara (FD/ID Fan), hingga pembuangan abu.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-base mb-1">3. Apendages (Perlengkapan Pengaman Wajib Boiler)</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Fungsi dan pengecekan rutin dua gelas penduga, tingkap pengaman (safety valve), manometer dengan strip merah tekanan maksimum, keran cabang tiga, peluit tanda bahaya rendah air, dan keran penguras (blowdown valve).
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-base mb-1">4. Pengolahan Air Umpan Boiler (Boiler Water Treatment)</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Pengendalian kesadahan (hardness), silika, pH, TDS, oksigen terlarut, dosis bahan kimia anti-kerak &amp; anti-korosi, serta teknik continuous &amp; intermittent blowdown untuk mencegah pipa pecah (tube rupture).
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-base mb-1">5. Prosedur Start-Up, Normal Running, Shutdown &amp; Tanggap Darurat</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Tahapan pemanasan lambat (slow firing), sinkronisasi uap ke header/turbin, deteksi carryover atau priming, serta prosedur darurat ketika level air hilang dari gelas penduga.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 space-y-6">
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-5">
+          <h3 class="font-serif text-xl font-bold text-slate-900">Checklist Kelengkapan Dokumen Peserta</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Pastikan berkas berikut dikirimkan ke tim administrasi PJK3 minimal H-7 sebelum pembukaan kelas agar verifikasi akun TemanK3 berjalan lancar:
+          </p>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2.5">
+              <span class="font-bold text-orange-600">01.</span>
+              <span>Scan KTP aktif dan ijazah pendidikan terakhir sesuai ketentuan kelas yang dipilih.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="font-bold text-orange-600">02.</span>
+              <span>Pas foto terbaru latar belakang merah (resolusi tajam untuk pencetakan kartu lisensi).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="font-bold text-orange-600">03.</span>
+              <span>Surat keterangan pengalaman kerja atau fotokopi SIO Kelas II (khusus pendaftaran Kelas I).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="font-bold text-orange-600">04.</span>
+              <span>Surat tugas resmi perusahaan serta surat keterangan sehat dari dokter / klinik.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="font-bold text-orange-600">05.</span>
+              <span>Pakta integritas peserta pembinaan keselamatan pesawat uap Kemnaker RI.</span>
+            </li>
+          </ul>
+          <div class="pt-3 border-t border-slate-200">
+            <p class="text-xs text-slate-600 mb-3">
+              Membutuhkan dukungan audit SMK3 atau riksa uji alat sekaligus untuk pabrik Anda?
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="/audit-kepatuhan-regulasi-k3/" class="text-xs font-bold text-orange-700 hover:underline">Layanan Audit Kepatuhan &amp; SMK3 &rarr;</a>
+              <span class="text-slate-300">|</span>
+              <a href="/pelatihan/" class="text-xs font-bold text-slate-700 hover:underline">Lihat Program Pelatihan Lainnya &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-gradient-to-br from-orange-600 to-amber-600 text-white shadow-xl space-y-4">
+          <span class="inline-block px-3 py-1 rounded-full bg-white/20 text-xs font-bold">In-House Training Pabrik &amp; PKS</span>
+          <h3 class="font-serif text-2xl font-bold">Kirim 6–15 Operator Sekaligus Lebih Efisien</h3>
+          <p class="text-xs sm:text-sm text-orange-50 leading-relaxed">
+            Untuk perusahaan perkebunan sawit, pabrik oleokimia, maupun klaster energi di Sumatra Utara dan Riau, kami menyediakan opsi <strong>In-House Training</strong> sehingga materi dan praktik langsung merujuk pada P&amp;ID boiler yang terpasang di pabrik Anda.
+          </p>
+          <a
+            href={waLink("Halo Kak, kami mau minta penawaran In-House Pelatihan SIO Operator Boiler untuk grup perusahaan di Sumatra.")}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center w-full py-3.5 px-5 rounded-xl bg-slate-950 hover:bg-slate-900 text-white font-bold text-sm transition-colors"
+          >
+            Ajukan Proposal In-House via WhatsApp &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-orange-700 block">Frequently Asked Questions</span>
+        <h2 class="font-serif text-3xl font-extrabold text-slate-900">Pertanyaan Seputar SIO Operator Boiler Kemnaker</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {faqs.map((item) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">{item.q}</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

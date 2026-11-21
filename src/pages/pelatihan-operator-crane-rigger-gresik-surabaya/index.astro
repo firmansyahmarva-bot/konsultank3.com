@@ -1,0 +1,457 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Operator Crane Rigger Gresik Surabaya Kemnaker";
+const description = "Pelatihan Operator Crane dan Juru Ikat Rigger Kemnaker di Gresik, Surabaya, Sidoarjo. Sertifikasi SIO angkat-angkut proyek JIIPE dan pelabuhan.";
+const canonical = "/pelatihan-operator-crane-rigger-gresik-surabaya/";
+const ogImage = "https://konsultank3.com/assets/images/pelatihan-k3-ruang-terbatas-batam-hero.jpg";
+
+const faqs = [
+  {
+    q: "Mengapa operator crane dan juru ikat beban (rigger) di Gresik dan Surabaya wajib ber-SIO Kemnaker?",
+    a: "Permenaker No. 8 Tahun 2020 tentang Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut mensyaratkan setiap operator crane (mobile, tower, overhead/Gantry) serta juru ikat beban (rigger) memiliki Lisensi K3 (SIO) aktif dari Kemnaker RI. Di kawasan JIIPE Gresik, terminal petikemas Tanjung Perak, maupun galangan kapal Lamongan dan Surabaya, pengawas proyek mewajibkan SIO sebagai syarat izin kerja (PTW) pengangkatan."
+  },
+  {
+    q: "Apa perbedaan pembagian Kelas III, Kelas II, dan Kelas I pada SIO Operator Crane?",
+    a: "Sesuai Permenaker 8/2020, klasifikasi kapasitas angkat pada kran angkat (seperti Mobile Crane maupun Overhead Crane) dibagi menjadi Kelas III untuk kapasitas hingga 25 ton (<= 25 ton), Kelas II untuk kapasitas di atas 25 ton hingga 100 ton (> 25 s.d. 100 ton), dan Kelas I untuk kapasitas di atas 100 ton (> 100 ton)."
+  },
+  {
+    q: "Mengapa Juru Ikat (Rigger) harus ikut tersertifikasi meskipun operator crane sudah memegang SIO?",
+    a: "Operator crane di dalam kabin sering mengalami titik buta (blind spot) saat pengangkatan beban di fabrikasi baja, kapal, maupun konstruksi smelter. Rigger bertugas menghitung pusat gravitasi beban (center of gravity), memilih sling/shackle dengan Safe Working Load (SWL) yang aman, memberi isyarat tangan/radio standar kepada operator, dan memastikan tidak ada kegagalan pengikatan."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan SIO Operator Crane dan Juru Ikat (Rigger) di Jawa Timur?",
+    a: "Estimasi investasi resmi Kemnaker RI per peserta untuk Juru Ikat Beban (Rigger) berkisar Rp5.000.000 hingga Rp6.500.000, sedangkan Operator Crane (Overhead/Gantry, Mobile, atau Tower Crane Kelas III–I) berkisar Rp6.000.000 hingga Rp9.500.000 tergantung jenjang kapasitas angkat dan skema In-House maupun publik."
+  },
+  {
+    q: "Jenis crane apa saja yang dapat disertifikasi dalam program ini?",
+    a: "Pembinaan mencakup Overhead Crane / Hoist / Gantry Crane di pabrik manufaktur SIER Rungkut dan Sidoarjo, Mobile Crane / Truck Mounted Crane / Crawler Crane proyek konstruksi, hingga Tower Crane pembangunan gedung dan dermaga."
+  },
+  {
+    q: "Apa syarat pendaftaran untuk kenaikan kelas atau peserta baru Operator Crane dan Rigger?",
+    a: "Peserta Rigger minimal berpendidikan SLTP/sederajat dengan pengalaman kerja terkait minimal 1 tahun, sehat jasmani dan tidak buta warna. Untuk Operator Crane Kelas III minimal pendidikan SLTP/SLTA, sedangkan Kelas II dan Kelas I wajib menyertakan bukti pengalaman atau lisensi kelas di bawahnya sesuai aturan Permenaker 8/2020."
+  },
+  {
+    q: "Apakah tersedia ujian praktik lapangan dengan unit crane milik perusahaan di Gresik atau Surabaya?",
+    a: "Bisa. Melalui skema In-House Training di lokasi workshop, pelabuhan, atau pabrik Anda di Gresik, Surabaya, Sidoarjo, Pasuruan, atau Tuban, uji praktik pengangkatan, inspeksi wire rope, dan evaluasi load chart dilakukan langsung pada unit pesawat angkat yang beroperasi."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Program Pelatihan K3", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "Operator Crane & Rigger Gresik Surabaya", "item": "https://konsultank3.com/pelatihan-operator-crane-rigger-gresik-surabaya/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Operator Crane (Kelas III/II/I) & Juru Ikat Rigger Gresik Surabaya Kemnaker RI",
+      "description": description,
+      "courseCode": "SIO-CRANE-RIGGER-SUB",
+      "educationalCredentialAwarded": "Sertifikat Pembinaan & Kartu Lisensi K3 (SIO) Pesawat Angkat Kemnaker RI",
+      "occupationalCategory": "Operator Pesawat Angkat / Juru Ikat (Rigger)",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "5000000",
+        "highPrice": "9500000",
+        "offerCount": "4"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT36H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Maritim & Industri Gresik - Surabaya - Sidoarjo",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Gresik",
+            "addressRegion": "Jawa Timur",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Pelatihan & Sertifikasi SIO Crane dan Rigger Jawa Timur",
+      "serviceType": "Pembinaan Operator Pesawat Angkat & Rigger Kemnaker RI",
+      "url": "https://konsultank3.com/pelatihan-operator-crane-rigger-gresik-surabaya/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Gresik",
+        "JIIPE Manyar",
+        "Surabaya",
+        "Tanjung Perak",
+        "Rungkut SIER",
+        "Sidoarjo",
+        "Lamongan",
+        "Tuban",
+        "Pasuruan PIER"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya butuh info jadwal dan biaya Pelatihan SIO Operator Crane atau Rigger Kemnaker untuk wilayah Gresik / Surabaya / Jawa Timur."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Program Pelatihan K3</a>
+        <span>/</span>
+        <span class="text-slate-300">Operator Crane &amp; Rigger Gresik Surabaya</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 text-amber-300 text-xs font-semibold border border-amber-500/25">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse-glow"></span>
+            Permenaker 8/2020 &bull; Koridor JIIPE Gresik &ndash; Tanjung Perak Surabaya &ndash; Sidoarjo &ndash; Tuban
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-emerald-300">Operator Crane &amp; Rigger Gresik Surabaya</span> Kemnaker
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Pembinaan dan penerbitan <strong>SIO Operator Crane (Overhead, Mobile, Tower)</strong> serta <strong>Juru Ikat Beban (Rigger)</strong> resmi Kemnaker RI untuk operasional pelabuhan, galangan kapal, smelter tembaga, dan pabrik baja di Jawa Timur.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, tim kami butuh sertifikasi SIO Operator Crane / Rigger Kemnaker di area Gresik / Surabaya / Sidoarjo.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal &amp; Biaya WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="#tabel-kelas-crane"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Cek Pembagian Kelas III/II/I &darr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Skema Resmi</span>
+              <p class="text-white font-bold text-sm">Crane &amp; Rigger</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kapasitas Angkat</span>
+              <p class="text-white font-bold text-sm">&le;25T | 25–100T | &gt;100T</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Jenis Unit</span>
+              <p class="text-white font-bold text-sm">Overhead, Mobile, Tower</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Area Operasi</span>
+              <p class="text-amber-300 font-bold text-sm">JIIPE, Perak, Lamongan</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/pelatihan-k3-ruang-terbatas-batam-hero.jpg"
+              alt="Aktivitas rigging dan pengoperasian pesawat angkat industri maritim Gresik Surabaya"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500 text-slate-950 mb-2">
+                Standar Lifting Plan &amp; Inspection
+              </span>
+              <div class="text-lg font-bold">Zero Dropped Object &amp; Load Chart Mastery</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Inspeksi wire rope, shackle SWL, sinyal rigger, dan pencegahan kegagalan outrigger crane di area pelabuhan.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">SIO Kemnaker RI</div>
+              <div class="text-[10px] text-slate-400">Permenaker No. 8/2020</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">🏗️</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House Pelabuhan &amp; Pabrik</div>
+              <div class="text-[10px] text-slate-400">Gresik &bull; Surabaya &bull; Tuban</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-amber-500/10 border-b border-amber-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-amber-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Jawa Timur Koridor Pantura &amp; Gerbangkertosusila:
+      </span>
+      <span class="text-slate-700">Jadwal reguler dan paket pembinaan In-House Rigger + Operator Crane di lokasi kerja.</span>
+      <a
+        href={waLink("Halo Kak, boleh kirimkan jadwal SIO Operator Crane & Rigger untuk area Gresik / Surabaya?")}
+        target="_blank"
+        rel="noopener"
+        class="text-amber-900 hover:text-amber-950 font-bold underline ml-1"
+      >
+        Minta Jadwal via WhatsApp ({WA_DISPLAY}) &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Specs Table -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Kebutuhan Kritis Operator Crane &amp; Rigger di Poros Maritim Gresik–Surabaya</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Kawasan <strong>JIIPE Manyar Gresik, Kawasan Industri Gresik (KIG), Pelabuhan Teluk Lamong, Tanjung Perak Surabaya, hingga pabrik baja dan galangan kapal di Lamongan dan Tuban</strong> memusatkan aktivitas pengangkatan beban berat setiap hari. Di banyak proyek EPC dan vendor logistik, satu insiden seling putus atau ketidakseimbangan beban langsung memicu penghentian proyek oleh main contractor.
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Melalui regulasi <strong>Permenaker No. 8 Tahun 2020</strong>, pemerintah memisahkan secara tegas kompetensi <strong>Juru Ikat Beban (Rigger)</strong> dengan <strong>Operator Crane</strong> sesuai kapasitas kelas (Kelas III, II, dan I). Kami membina tim rigging dan lifting perusahaan Anda agar lulus uji Kemnaker dan siap memenuhi syarat audit HSE kontraktor besar di Jawa Timur.
+        </p>
+      </div>
+
+      <div id="tabel-kelas-crane" class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-4">Skema Lisensi (SIO)</th>
+              <th class="py-3.5 px-4">Kapasitas / Lingkup</th>
+              <th class="py-3.5 px-4">Estimasi Biaya</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Juru Ikat (Rigger)</td>
+              <td class="py-3 px-4">Pengikatan beban, hitung SWL, inspeksi sling &amp; hand signal</td>
+              <td class="py-3 px-4 font-semibold text-amber-700">Rp5,0 – 6,5 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Operator Crane Kelas III</td>
+              <td class="py-3 px-4">Kran angkat (Mobile / Overhead / Tower) kapasitas s.d. 25 ton</td>
+              <td class="py-3 px-4 font-semibold text-amber-700">Rp6,0 – 7,5 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Operator Crane Kelas II</td>
+              <td class="py-3 px-4">Kapasitas angkat di atas 25 ton hingga 100 ton</td>
+              <td class="py-3 px-4 font-semibold text-amber-700">Rp7,0 – 8,5 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Operator Crane Kelas I</td>
+              <td class="py-3 px-4">Heavy lifting kapasitas di atas 100 ton (&gt; 100 ton)</td>
+              <td class="py-3 px-4 font-semibold text-amber-700">Rp8,0 – 9,5 jt</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Jenis Pesawat Angkat -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Spesialisasi Unit Pesawat Angkat</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Cakupan Pembinaan Berdasarkan Jenis Crane di Tempat Kerja</h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Pastikan jenis alat pada sertifikat dan kartu SIO sesuai dengan pesawat angkat yang dioperasikan di lapangan agar tidak bermasalah saat verifikasi P2K3 maupun pengawas Disnaker Jawa Timur.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="text-xs font-bold uppercase tracking-wider text-amber-700">Manufaktur &amp; Bengkel Baja</div>
+          <h3 class="text-xl font-bold text-slate-900">Overhead, Hoist &amp; Gantry Crane</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Umum beroperasi pada lini pabrik peleburan baja, fabrikasi tangki, pembangkit listrik, serta gudang logistik di Sidoarjo, KIG Gresik, dan Rungkut SIER. Menekankan keamanan limit switch, pengereman jembatan rel, dan anti-tabrakan (anti-collision).
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="text-xs font-bold uppercase tracking-wider text-amber-700">Konstruksi, Dermaga &amp; Yard</div>
+          <h3 class="text-xl font-bold text-slate-900">Mobile, Crawler &amp; Pedestal Crane</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Fokus pada pembacaan grafik beban (<em>load moment indicator</em> / load chart), perhitungan daya dukung tanah di bawah outrigger pad, manajemen jarak aman jalur SUTT, dan stabilitas crane pada radius kerja panjang.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="text-xs font-bold uppercase tracking-wider text-amber-700">Proyek High-Rise &amp; Infrastruktur</div>
+          <h3 class="text-xl font-bold text-slate-900">Tower Crane &amp; Juru Ikat (Rigger)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pembinaan kolaboratif antara operator kabin menara dengan tim Rigger di lantai proyek untuk pengendalian kecepatan angin (anemometer limit), komunikasi radio anti-interferensi, serta sudut sling maksimum saat pengikatan tulangan dan bekisting.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Multi-City Jawa Timur Hub Grid -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Koridor Industri Jawa Timur</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Melayani Perusahaan di Gresik, Surabaya, Sidoarjo hingga Tuban &amp; Lamongan</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Gresik (JIIPE Manyar, KIG &amp; Krikilan)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Sertifikasi masal kru lifting untuk kawasan industri smelter tembaga, pabrik pupuk petrokimia, semen, dan pelabuhan deep-sea JIIPE.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Surabaya (Tanjung Perak, Teluk Lamong &amp; SIER)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pembinaan operator container gantry, mobile harbor crane, galangan kapal Perak, dan overhead crane manufaktur Rungkut–Tandes.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Sidoarjo &amp; Mojokerto (Berbek, Ngoro NIP)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Mendukung perusahaan konstruksi besi, komponen pipa, karoseri, dan pergudangan beban berat di koridor Waru–Krian–Ngoro.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Lamongan (Integrated Shorebase &amp; Shipyard)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Program Rigger &amp; Operator Crawler/Pedestal Crane bagi kontraktor migas lepas pantai dan fabrikasi anjungan di Paciran–Brondong.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Tuban &amp; Bojonegoro (Klaster Semen, Kilang &amp; Migas)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pembinaan tim pemeliharaan mekanikal dan proyek ekspansi kilang minyak maupun terminal batu bara di pesisir utara Tuban.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Pasuruan (PIER Rembang) &amp; Probolinggo</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Sertifikasi Kemnaker untuk pabrik makanan skala ekspor, PLTU, dan perusahaan jasa sewa crane sepanjang jalur tol Trans Jawa Timur.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Rigging Technical Audit Checklist + Cross-links -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-5">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Materi Praktik Lapangan</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-extrabold text-slate-900">Kompetensi Inti Rigging Calculation &amp; Inspeksi Alat Bantu Angkat</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-1">Kriteria Afkir Wire Rope &amp; Webbing</h3>
+            <p class="text-slate-600">Mengidentifikasi putus kawat (broken wires), bird-caging, kinking, dan keausan webbing sling sesuai standar ASME B30.9.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-1">Sudut Pengikatan &amp; Faktor Tegangan</h3>
+            <p class="text-slate-600">Menghitung penurunan kapasitas SWL akibat sudut kaki sling di bawah 60 derajat serta perbedaan hitch basket, vertical, dan choker.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-1">Komunikasi Isyarat Tangan &amp; Radio</h3>
+            <p class="text-slate-600">Penyeragaman bahasa sinyal (hoist up, boom down, swing, travel, emergency stop) agar zero miscommunication antara Rigger dan Operator.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-1">Penyusunan Critical Lifting Plan</h3>
+            <p class="text-slate-600">Penilaian kapasitas crane terhadap berat bersih, berat hook block, spreader bar, serta jarak aman radius ayun saat tandem lift.</p>
+          </div>
+        </div>
+        <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs sm:text-sm text-amber-950">
+          <strong>Catatan Pengelolaan Gudang &amp; Yard:</strong> Bila tim logistik Anda mengoperasikan alat angkut forklift selain crane, padukan juga jadwal pembinaan <a href="/pelatihan-sio-forklift-bekasi/" class="font-bold underline">SIO Operator Forklift Kemnaker</a> agar seluruh kru logistik patuh Permenaker 8/2020.
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white space-y-5 shadow-xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-300">Paket Rigger + Operator Crane</span>
+        <h3 class="font-serif text-2xl font-bold">Jadwalkan In-House di Lokasi Proyek Jawa Timur</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Pelaksanaan In-House memungkinkan instruktur melakukan uji praktik langsung menggunakan unit crane dan alat bantu angkat milik perusahaan Anda di Gresik, Surabaya, atau Sidoarjo—lebih relevan sekaligus menghemat biaya perjalanan tim proyek.
+        </p>
+        <div class="space-y-2 text-xs text-slate-200 pt-2 border-t border-white/10">
+          <div>• Dokumen: KTP, Ijazah, Surat Sehat, Foto Latar Merah, Surat Tugas.</div>
+          <div>• Masa berlaku SIO Resmi: 5 Tahun sejak tanggal diterbitkan Kemnaker RI.</div>
+          <div>• Dukungan penuh: <a href="/pelatihan/" class="text-amber-300 underline font-semibold">Lihat Semua Program Sertifikasi K3 Lainnya</a>.</div>
+        </div>
+        <a
+          href={waLink("Halo Kak, kami mau konsultasi pengadaan In-House Pelatihan Operator Crane & Rigger di Gresik / Surabaya.")}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center w-full py-3.5 px-5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition-colors"
+        >
+          Hubungi Tim Pembinaan ({WA_DISPLAY}) &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 5: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Pertanyaan Umum</span>
+        <h2 class="font-serif text-3xl font-extrabold text-slate-900">FAQ Pelatihan Operator Crane &amp; Rigger</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {faqs.map((item) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">{item.q}</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

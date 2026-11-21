@@ -1,0 +1,422 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan SIO Alat Berat Kendari Morowali Kemnaker RI";
+const description = "Pelatihan SIO Operator Alat Berat Excavator, Wheel Loader, Dump Truck, dan Bulldozer Kemnaker di Kendari, Morowali, Halmahera. Cek jadwal WA.";
+const canonical = "/pelatihan-sio-alat-berat-kendari-morowali/";
+const ogImage = "https://konsultank3.com/assets/images/pelatihan-pop-pertambangan-samarinda-hero.jpg";
+
+const faqs = [
+  {
+    q: "Mengapa operator alat berat tambang dan smelter di Kendari dan Morowali wajib memiliki SIO Kemnaker RI?",
+    a: "Berdasarkan Permenaker No. 8 Tahun 2020 tentang Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut, seluruh pengoperasian Excavator, Wheel Loader, Bulldozer, Motor Grader, Articulated Dump Truck, dan Crane di luar maupun di area industri smelter/konstruksi sipil mensyaratkan pengemudi yang memegang Lisensi K3 (Surat Izin Operator / SIO) aktif dari Kemnaker RI serta SIMPER perusahaan yang mengacu pada regulasi Kepmen ESDM 1827K/2018."
+  },
+  {
+    q: "Jenis alat berat apa saja yang bisa disertifikasi SIO dalam satu batch pelatihan?",
+    a: "Jenis unit yang dapat disertifikasi mencakup Excavator / Backhoe Loader, Wheel Loader / Skid Steer, Bulldozer, Motor Grader, Dump Truck Tambang (DT / ADT), Vibro Compactor / Roller, hingga Crane Excavator atau Mobile Crane. Setiap jenis pesawat memiliki penulisan kategori alat yang spesifik pada kartu SIO Kemnaker RI."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan & Sertifikasi SIO Operator Alat Berat di Sulawesi dan Maluku Utara?",
+    a: "Estimasi investasi pembinaan dan penerbitan SIO Operator Alat Berat Kemnaker RI berkisar Rp5.800.000 hingga Rp7.800.000 per peserta untuk setiap jenis alat (tergantung skema publik online-blended vs In-House di lokasi site tambang/smelter). Tersedia penyesuaian tarif grup bagi kontraktor tambang nikel maupun proyek infrastruktur yang mendaftarkan 10 peserta atau lebih."
+  },
+  {
+    q: "Apa perbedaan SIO Operator Alat Berat Kemnaker dengan SIMPER tambang yang diterbitkan KTT?",
+    a: "SIMPER (Surat Izin Mengemudi Perusahaan) diterbitkan secara internal oleh Kepala Teknik Tambang (KTT) untuk izin melintas di area IUP tambang tertentu sesuai Kepmen ESDM 1827K/2018. Namun, secara ketenagakerjaan nasional dan pada kawasan industri smelter, pelabuhan jeti, maupun proyek konstruksi sipil di luar IUP, perusahaan tetap wajib melengkapi operator dengan SIO resmi Kemnaker RI (Permenaker 8/2020) sebagai bukti kompetensi hukum nasional."
+  },
+  {
+    q: "Bagaimana jika operator tambang kami sudah berpengalaman kerja namun belum memiliki ijazah SLTA?",
+    a: "Sesuai ketentuan Permenaker No. 8 Tahun 2020, syarat pendidikan minimum untuk operator pesawat angkat/angkut kategori alat berat dasar seperti Excavator, Bulldozer, dan Loader dimulai dari tingkat SLTP/sederajat dengan pengalaman membantu operator minimal 1 tahun, berusia minimal 19 tahun, sehat jasmani dan tidak buta warna."
+  },
+  {
+    q: "Apakah pelatihan In-House bisa dilakukan langsung di kawasan IMIP Morowali, Konawe, atau Weda Bay?",
+    a: "Bisa. Melalui skema In-House Training, tim PJK3 dan instruktur bersertifikat hadir ke site tambang, jetty, atau workshop alat berat perusahaan di Sulawesi Tengah, Sulawesi Tenggara, maupun Halmahera untuk pembinaan kelas teori serta uji praktik langsung menggunakan unit perusahaan sehingga operasional produksi tidak lumpuh total."
+  },
+  {
+    q: "Berapa lama masa berlaku SIO Alat Berat Kemnaker dan bagaimana proses perpanjangannya?",
+    a: "Kartu Lisensi K3 (SIO) Operator Alat Berat berlaku selama 5 (lima) tahun sejak tanggal diterbitkan dan tercatat di portal TemanK3 Kemnaker RI. Menjelang masa berlaku habis, perusahaan dapat memperpanjang melalui PJK3 tanpa mengulang pembinaan penuh selama tidak melewati batas waktu kadaluwarsa."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Program Pelatihan K3", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "SIO Alat Berat Kendari Morowali", "item": "https://konsultank3.com/pelatihan-sio-alat-berat-kendari-morowali/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan SIO Operator Alat Berat (Excavator, Loader, Dozer, Dump Truck) Kendari Morowali Kemnaker RI",
+      "description": description,
+      "courseCode": "SIO-ALATBERAT-KDI-MRW",
+      "educationalCredentialAwarded": "Sertifikat Pembinaan & Kartu Lisensi K3 (SIO) Pesawat Angkat-Angkut Kemnaker RI",
+      "occupationalCategory": "Operator Alat Berat Tambang & Konstruksi",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "5800000",
+        "highPrice": "7800000",
+        "offerCount": "4"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT32H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Nikel & Smelter Sulawesi - Maluku Utara (Kendari, Morowali, Halmahera)",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kendari",
+            "addressRegion": "Sulawesi Tenggara",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & Sertifikasi SIO Alat Berat Sulawesi & Halmahera",
+      "serviceType": "Pembinaan Operator Pesawat Angkat dan Pesawat Angkut Kemnaker RI",
+      "url": "https://konsultank3.com/pelatihan-sio-alat-berat-kendari-morowali/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Kendari",
+        "Konawe",
+        "Konawe Utara",
+        "Kolaka",
+        "Pomalaa",
+        "Morowali",
+        "Morowali Utara",
+        "Luwu Timur",
+        "Sorowako",
+        "Weda Bay Halmahera",
+        "Pulau Obi"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, kami mau info jadwal dan biaya Pelatihan SIO Alat Berat (Excavator / Loader / Dozer / DT) Kemnaker untuk wilayah Kendari / Morowali."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Program Pelatihan K3</a>
+        <span>/</span>
+        <span class="text-slate-300">SIO Alat Berat Kendari &amp; Morowali</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-yellow-500/15 text-yellow-300 text-xs font-semibold border border-yellow-500/25">
+            <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse-glow"></span>
+            Permenaker 8/2020 &bull; Poros Hilirisasi Nikel Kendari &ndash; Konawe &ndash; Morowali &ndash; Weda Bay
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-300 to-emerald-300">SIO Alat Berat Kendari &amp; Morowali</span> Kemnaker RI
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program pembinaan dan sertifikasi resmi <strong>SIO Operator Excavator, Wheel Loader, Bulldozer, Motor Grader, hingga Dump Truck</strong> Kemnaker RI bagi kontraktor pertambangan nikel, operasional pelabuhan jeti, dan kawasan smelter industri Indonesia Timur.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, perusahaan kami butuh jadwal dan penawaran SIO Operator Alat Berat Kemnaker di area Kendari / Morowali / Sulawesi.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal &amp; Paket Unit WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="#jenis-unit-sio"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Lihat Daftar Unit SIO &darr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Unit Utama</span>
+              <p class="text-white font-bold text-sm">Exca, Loader, Dozer, DT</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Regulasi</span>
+              <p class="text-white font-bold text-sm">Permenaker 8/2020</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Masa Berlaku</span>
+              <p class="text-white font-bold text-sm">SIO Resmi 5 Tahun</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Klaster Industri</span>
+              <p class="text-yellow-300 font-bold text-sm">Morowali, Konawe, Obi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/pelatihan-pop-pertambangan-samarinda-hero.jpg"
+              alt="Pengoperasian alat berat pertambangan dan pengawasan K3 pengangkutan material nikel di Sulawesi"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-yellow-500 text-slate-950 mb-2">
+                Kesiapan Pra-Mobilisasi Kontraktor Tambang &amp; Smelter
+              </span>
+              <div class="text-lg font-bold">Zero Rollover, Blind-Spot &amp; Slip Lereng</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Standar P2H harian alat berat, batas kemiringan kerja aman, komunikasi radio haul road, serta riksa uji pesawat angkut.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-yellow-500 text-slate-950 flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">Kartu Lisensi K3 (SIO)</div>
+              <div class="text-[10px] text-slate-400">Portal Resmi TemanK3</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">🚜</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House Site &amp; Jetty</div>
+              <div class="text-[10px] text-slate-400">Kendari &bull; Morowali &bull; Halmahera</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-yellow-500/10 border-b border-yellow-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-yellow-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Poros Hilirisasi Sulawesi &amp; Maluku Utara:
+      </span>
+      <span class="text-slate-700">Melayani penerbitan SIO perorangan maupun rombongan kontraktor site IMIP, VDNI, Pomalaa, dan Weda Bay.</span>
+      <a
+        href={waLink("Halo Kak, boleh info jadwal SIO Alat Berat terdekat dan syarat rombongan untuk site kami?")}
+        target="_blank"
+        rel="noopener"
+        class="text-yellow-900 hover:text-yellow-950 font-bold underline ml-1"
+      >
+        Konsultasi Kuota via WhatsApp ({WA_DISPLAY}) &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Unit Matrix -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Mengapa Kontraktor di Kendari–Morowali Wajib Melengkapi Operator Dengan SIO Kemnaker?</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Pada operasional penambangan laterit nikel, jalan angkut (haul road), dermaga barging ore, hingga pabrik pemurnian RKEF dan HPAL di koridor <strong>Kendari, Konawe, Pomalaa Kolaka, hingga Morowali dan Weda Bay</strong>, ribuan alat berat bekerja berdampingan dalam kontur berlumpur dan curam. Kesalahan titik stabilitas excavator di bench tambang atau rem blong dump truck saat membawa ore basah merupakan penyumbang insiden fatal terbanyak.
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Selain kewajiban internal <strong>SIMPER Kepala Teknik Tambang (KTT)</strong>, kawasan industri smelter dan pelabuhan umum berpatokan pada pengawasan ketenagakerjaan <strong>Permenaker No. 8 Tahun 2020</strong>. Memiliki <strong>SIO Kemnaker RI</strong> membuat operator langsung lolos verifikasi pra-mobilisasi antar-site lintas kontraktor tanpa tertahan proses audit HSE.
+        </p>
+      </div>
+
+      <div id="jenis-unit-sio" class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-4">Kategori Pesawat Angkut</th>
+              <th class="py-3.5 px-4">Fokus Penilaian Lapangan</th>
+              <th class="py-3.5 px-4">Estimasi Biaya</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">SIO Operator Excavator</td>
+              <td class="py-3 px-4">Stabilitas track, jarak aman tebing bench, radius swing &amp; P2H hidrolik</td>
+              <td class="py-3 px-4 font-semibold text-amber-700">Rp5,8 – 7,8 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">SIO Operator Wheel Loader</td>
+              <td class="py-3 px-4">Titik pusat beban bucket, jarak pandang stockpiling &amp; rem artikulasi</td>
+              <td class="py-3 px-4 font-semibold text-amber-700">Rp5,8 – 7,8 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">SIO Bulldozer &amp; Motor Grader</td>
+              <td class="py-3 px-4">Pembuatan tanggul pengaman (safety berm), leveling haul road &amp; ROPS/FOPS</td>
+              <td class="py-3 px-4 font-semibold text-amber-700">Rp5,8 – 7,8 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">SIO Dump Truck / Compactor</td>
+              <td class="py-3 px-4">Pengecekan brake system, batas muatan &amp; posisi dumping stabil di disposal</td>
+              <td class="py-3 px-4 font-semibold text-amber-700">Rp5,8 – 7,8 jt</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Regional Nickel & Heavy Equipment Corridors -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Koridor Pertambangan &amp; Industri Indonesia Timur</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Cakupan Pembinaan Kontraktor Alat Berat Sulawesi hingga Maluku Utara</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Morowali &amp; Morowali Utara (IMIP / Bahodopi)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Sertifikasi rombongan operator wheel loader gudang slag, excavator feeding smelter, serta armada dump truck hauling di kawasan terpadu Sulawesi Tengah.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Kendari, Konawe &amp; Konawe Utara</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Melayani kontraktor IUP nikel dan kawasan industri Morosi/Konawe untuk pemenuhan lisensi operator excavator pembukaan lahan hingga barging ore di jetty.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Kolaka, Pomalaa &amp; Bombana</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Dukungan pelatihan operator grader, compactor, dan bulldozer untuk perawatan jalan tambang maupun pembangunan proyek pabrik HPAL baru.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Luwu Timur &amp; Sorowako (Sulawesi Selatan)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Program perpanjangan serta peningkatan kompetensi operator alat berat standar Kemnaker bagi subkontraktor operasi tambang terpadu Sulsel.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Weda Bay (Halmahera) &amp; Pulau Obi</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Kelas blended &amp; In-House mobilisasi langsung ke Maluku Utara agar operator site pulau terpencil tetap memenuhi syarat audit SIO Kemnaker RI.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Palu, Makassar &amp; Balikpapan IKN</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Mendukung perusahaan jasa rental alat berat konstruksi jalan tol, kuari batu split, dan pembangunan infrastruktur kawasan Indonesia Timur.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Technical Syllabus & Mining Ecosystem Links -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-5">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Kurikulum Uji Teori &amp; Praktik</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-extrabold text-slate-900">Kompetensi Kunci yang Diuji Pada Pembinaan Alat Berat</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-1">Pemeriksaan Awal Harian (P2H)</h3>
+            <p class="text-slate-600">Inspeksi level oli hidrolik, selang tekanan tinggi, undercarriage, pin pengunci bucket, lampu rotari, alarm mundur, dan sistem rem sebelum start engine.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-1">Geometri Tanah &amp; Pencegahan Terguling</h3>
+            <p class="text-slate-600">Membaca tanda retakan lereng disposal/quarry, posisi track menghadap lereng saat memanjat, serta prosedur pengoperasian pada kondisi hujan.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-1">Interaksi Alat Berat &amp; Light Vehicle</h3>
+            <p class="text-slate-600">Mengatasi area blind spot di sekitar radius swing excavator serta aturan klakson standar (1x start, 2x maju, 3x mundur) dan protokol komunikasi HT.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-1">Penguncian LOTO &amp; Isolasi Energi</h3>
+            <p class="text-slate-600">Memasang wheel chock, menurunkan attachment menyentuh tanah, serta mengaktifkan sakelar master battery isolation sebelum servis mekanik.</p>
+          </div>
+        </div>
+        <div class="p-4 rounded-2xl bg-yellow-50 border border-yellow-200 text-xs sm:text-sm text-amber-950">
+          <strong>Lengkapi Sertifikasi Pengawas &amp; Proyek Tambang Anda:</strong> Kontraktor yang memobilisasi kru alat berat di area tambang umumnya turut mewajibkan kepala pengawas memiliki sertifikat <a href="/pelatihan-pop-pertambangan-samarinda/" class="font-bold underline">POP Pertambangan BNSP</a> serta proyek sipil smelter dilengkapi <a href="/pelatihan-ahli-k3-konstruksi-makassar-balikpapan/" class="font-bold underline">Ahli K3 Konstruksi BNSP/Kemnaker</a>.
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white shadow-xl space-y-5">
+        <span class="text-xs font-bold uppercase tracking-wider text-yellow-300">Pendaftaran Kolektif Site &amp; Perorangan</span>
+        <h3 class="font-serif text-2xl font-bold">Minta Penawaran In-House atau Jadwal Terdekat</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Kirimkan daftar jenis unit alat berat serta jumlah operator yang ingin disertifikasi di Kendari, Morowali, atau Halmahera. Tim kami akan memetakan jalur tercepat hingga kartu SIO Kemnaker RI terbit.
+        </p>
+        <ul class="space-y-2 text-xs text-slate-200 border-t border-white/10 pt-3">
+          <li>• Berkas: KTP, Ijazah minimal SLTP, Surat Sehat Dokter, Pas Foto 3x4 &amp; 4x6 Merah.</li>
+          <li>• Tambahan: Surat Tugas Perusahaan / Surat Keterangan Pengalaman Kerja Operator.</li>
+          <li>• Cek juga program <a href="/pelatihan-operator-crane-rigger-gresik-surabaya/" class="text-yellow-300 underline">SIO Operator Crane &amp; Rigger</a> bila perusahaan memiliki unit mobile/crawler crane.</li>
+        </ul>
+        <a
+          href={waLink("Halo Kak, kami mau minta quotation resmi Pelatihan SIO Alat Berat Kemnaker untuk operator kami di Kendari / Morowali.")}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center w-full py-3.5 px-5 rounded-xl bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold text-sm transition-colors"
+        >
+          Hubungi Admin Pelatihan ({WA_DISPLAY}) &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 4: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Frequently Asked Questions</span>
+        <h2 class="font-serif text-3xl font-extrabold text-slate-900">FAQ Pelatihan SIO Alat Berat Kemnaker</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {faqs.map((item) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">{item.q}</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

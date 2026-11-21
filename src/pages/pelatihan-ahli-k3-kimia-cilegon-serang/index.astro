@@ -1,0 +1,447 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Ahli K3 Kimia Cilegon Serang Resmi Kemnaker";
+const description = "Pelatihan Ahli K3 Kimia dan Petugas K3 Kimia Kemnaker di Cilegon, Serang, Banten. Kepatuhan Kepmenaker 187/1999 pabrik petrokimia. Info jadwal WA.";
+const canonical = "/pelatihan-ahli-k3-kimia-cilegon-serang/";
+const ogImage = "https://konsultank3.com/assets/images/pelatihan-h2s-balikpapan-hero.jpg";
+
+const faqs = [
+  {
+    q: "Mengapa pabrik di Cilegon, Merak, dan Serang wajib memiliki Petugas K3 Kimia serta Ahli K3 Kimia?",
+    a: "Kepmenaker No. Kep. 187/MEN/1999 tentang Pengendalian Bahan Kimia Berbahaya di Tempat Kerja mewajibkan perusahaan yang memproduksi, menyimpan, mengangkut, atau memakai bahan kimia berbahaya melebihi Nilai Ambang Kuantitas (NAK) membentuk pengendalian khusus berupa penunjukan Petugas K3 Kimia (untuk semua kategori potensi bahaya) dan Ahli K3 Kimia (wajib bagi perusahaan Potensi Bahaya Besar)."
+  },
+  {
+    q: "Apa batas perbedaan antara Perusahaan Potensi Bahaya Menengah dan Potensi Bahaya Besar di Kepmenaker 187/1999?",
+    a: "Perusahaan dengan kuantitas bahan kimia berbahaya lebih kecil atau sama dengan Nilai Ambang Kuantitas (NAK) termasuk Potensi Bahaya Menengah dan wajib memiliki minimal 1 Petugas K3 Kimia (sistem non-shift) atau 3 Petugas K3 Kimia (sistem shift), serta menyusun LDKB/SDS dan label. Sementara perusahaan yang melampaui NAK masuk kategori Potensi Bahaya Besar dan wajib menambah minimal 1 Ahli K3 Kimia serta 2–5 Petugas K3 Kimia bersertifikat Kemnaker."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan Petugas K3 Kimia vs Ahli K3 Kimia Kemnaker RI?",
+    a: "Estimasi investasi per peserta untuk Petugas K3 Kimia (pembinaan 5 hari) berkisar Rp8.000.000 hingga Rp10.000.000, sedangkan pembinaan penuh Ahli K3 Kimia Kemnaker RI (kurikulum intensif sekitar 12–14 hari kerja termasuk ujian komprehensif dan penyusunan kertas kerja pengendalian B3) berkisar Rp12.500.000 hingga Rp16.000.000."
+  },
+  {
+    q: "Apa persyaratan pendidikan untuk menjadi Petugas K3 Kimia maupun Ahli K3 Kimia?",
+    a: "Calon Petugas K3 Kimia minimal lulusan SLTA/SMK (diutamakan Kimia/Teknik Industri/IPA) dengan pengalaman kerja pada instalasi atau gudang bahan kimia. Sementara calon Ahli K3 Kimia dipersyaratkan minimal D3 atau S1 jurusan Teknik Kimia, Kimia Murni, Teknik Lingkungan, Farmasi, atau teknik relevan sesuai verifikasi akun PJK3 di TemanK3."
+  },
+  {
+    q: "Apakah pelatihan membahas sistem klasifikasi SDS (GHS) 16 bagian dan tanggap darurat tumpahan B3?",
+    a: "Ya. Peserta mempelajari pembacaan Lembar Data Keselamatan Bahan (LDKB/SDS) berbasis Globally Harmonized System (GHS) terbaru, identifikasi piktogram bahaya, penyimpanan kimia inkompatibel (asam vs basa, oksidator vs bahan mudah terbakar), manajemen tangki timbun bertekanan, hingga kesiapan Emergency Response Plan (ERP) kebocoran gas beracun."
+  },
+  {
+    q: "Bagaimana jika pabrik kami berlokasi di kawasan KIEC Cilegon, Anyer, Cikande, atau Tangerang?",
+    a: "Anda dapat mengikuti jadwal publik terdekat atau mengajukan program In-House Training langsung untuk departemen HSE, Produksi, QC Lab, dan Gudang Kimia di koridor Banten–Jawa Barat agar kepatuhan LDKB, penyimpanan tangki B3, dan audit SMK3 dapat dibereskan serentak."
+  },
+  {
+    q: "Berapa lama masa berlaku SKP dan Lisensi K3 Kimia Kemnaker RI?",
+    a: "Kartu Lisensi K3 Petugas K3 Kimia berlaku selama 5 tahun, sedangkan Surat Keputusan Penunjukan (SKP) dan Kartu Kewenangan Ahli K3 Kimia berlaku selama 3 tahun dan wajib diperpanjang melalui PJK3 sebelum masa aktifnya habis."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Program Pelatihan K3", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "Ahli K3 Kimia Cilegon Serang", "item": "https://konsultank3.com/pelatihan-ahli-k3-kimia-cilegon-serang/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Ahli K3 Kimia & Petugas K3 Kimia Cilegon Serang Kemnaker RI",
+      "description": description,
+      "courseCode": "K3-KIMIA-CLG-SRG",
+      "educationalCredentialAwarded": "Sertifikat Pembinaan, SKP & Lisensi K3 Kimia Kemnaker RI",
+      "occupationalCategory": "Ahli K3 Kimia / Petugas K3 Kimia Industri",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "8000000",
+        "highPrice": "16000000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT100H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Petrokimia & Manufaktur Cilegon - Serang - Banten",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cilegon",
+            "addressRegion": "Banten",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & Sertifikasi Ahli K3 Kimia Banten & Jawa Barat",
+      "serviceType": "Pembinaan Pengendalian Bahan Kimia Berbahaya Kemnaker RI",
+      "url": "https://konsultank3.com/pelatihan-ahli-k3-kimia-cilegon-serang/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Cilegon",
+        "KIEC Cilegon",
+        "Anyer",
+        "Merak",
+        "Serang",
+        "Cikande",
+        "Kragilan",
+        "Tangerang",
+        "Bekasi",
+        "Karawang"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info jadwal dan biaya Pelatihan Ahli K3 Kimia / Petugas K3 Kimia Kemnaker di Cilegon / Serang / Banten."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Program Pelatihan K3</a>
+        <span>/</span>
+        <span class="text-slate-300">Ahli K3 Kimia Cilegon &amp; Serang</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/15 text-purple-300 text-xs font-semibold border border-purple-500/25">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse-glow"></span>
+            Kepmenaker 187/MEN/1999 &bull; Koridor Petrokimia Cilegon &ndash; Merak &ndash; Anyer &ndash; Serang Cikande
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-fuchsia-200 to-emerald-300">Ahli K3 Kimia Cilegon &amp; Serang</span> Resmi Kemnaker
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program pembinaan sertifikasi <strong>Ahli K3 Kimia</strong> dan <strong>Petugas K3 Kimia</strong> resmi Kemnaker RI untuk kepatuhan Nilai Ambang Kuantitas (NAK), manajemen LDKB/SDS, serta pengendalian potensi bahaya besar di sabuk industri kimia Banten hingga Jabodetabek.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, saya mau konsultasi jadwal dan biaya Pelatihan Ahli / Petugas K3 Kimia Kemnaker untuk wilayah Cilegon / Serang.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal &amp; Biaya WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="#nak-perbedaan"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Cek Kuota Wajib NAK 187/1999 &darr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Skema Kompetensi</span>
+              <p class="text-white font-bold text-sm">Petugas &amp; Ahli Kimia</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Fokus Regulasi</span>
+              <p class="text-white font-bold text-sm">Kepmen 187/1999</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Standar Label</span>
+              <p class="text-white font-bold text-sm">GHS &amp; LDKB (SDS)</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Sabuk Kimia</span>
+              <p class="text-purple-300 font-bold text-sm">KIEC, Anyer, Cikande</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/pelatihan-h2s-balikpapan-hero.jpg"
+              alt="Inspeksi fasilitas proses petrokimia, tangki penyimpanan bahan kimia berbahaya dan deteksi uap beracun di Cilegon"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-purple-600 text-white mb-2">
+                Pengendalian Major Hazard &amp; PROPER KLHK
+              </span>
+              <div class="text-lg font-bold">Keamanan Proses Kimia &amp; Kepatuhan NAK</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Menekan risiko kebocoran amonia, klorin, hidrokarbon, serta penyimpanan B3 reaktif di pabrik Banten.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">SKP &amp; Lisensi Kemnaker</div>
+              <div class="text-[10px] text-slate-400">Petugas &amp; Ahli K3 Kimia</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">⚗️</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House Banten &amp; Jabar</div>
+              <div class="text-[10px] text-slate-400">Cilegon &bull; Serang &bull; Cikande</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-purple-500/10 border-b border-purple-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-purple-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Sabuk Industri Banten:
+      </span>
+      <span class="text-slate-700">Tersedia batch reguler Petugas K3 Kimia &amp; Ahli K3 Kimia Kemnaker serta In-House korporasi.</span>
+      <a
+        href={waLink("Halo Kak, boleh kirim jadwal terdekat Pelatihan Petugas / Ahli K3 Kimia untuk pabrik kami di Cilegon / Serang?")}
+        target="_blank"
+        rel="noopener"
+        class="text-purple-800 hover:text-purple-950 font-bold underline ml-1"
+      >
+        Cek Jadwal via WhatsApp ({WA_DISPLAY}) &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + NAK Ratio Table -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-700 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Mengapa Industri Petrokimia Cilegon–Serang Wajib Memenuhi Kepmenaker 187/1999?</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Koridor <strong>Cilegon (KIEC), Anyer, Merak, hingga Kragilan dan Cikande Serang</strong> merupakan pusat industri petrokimia hulu-hilir, baja, resin polimer, baterai EV, dan farmasi terbesar di Indonesia. Di lingkungan ini, bahan kimia toksik, mudah terbakar (flammable), maupun reaktif tersimpan dalam skala tonase besar—baik di tangki timbun maupun reaktor proses.
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Pengawas Ketenagakerjaan Provinsi Banten mewajibkan setiap perusahaan mengidentifikasi status potensi bahayanya berdasarkan <strong>Nilai Ambang Kuantitas (NAK)</strong>. Ketiadaan <strong>Ahli K3 Kimia</strong> atau kurangnya rasio <strong>Petugas K3 Kimia per shift</strong> langsung menjadi temuan mayor saat inspeksi Disnaker maupun audit SMK3 serta PROPER lingkungan.
+        </p>
+      </div>
+
+      <div id="nak-perbedaan" class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-4">Kewajiban Hukum</th>
+              <th class="py-3.5 px-4">Potensi Bahaya Menengah (&le; NAK)</th>
+              <th class="py-3.5 px-4">Potensi Bahaya Besar (&gt; NAK)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Petugas K3 Kimia</td>
+              <td class="py-3 px-4">Min. 1 (non-shift) / 3 orang (shift)</td>
+              <td class="py-3 px-4">Min. 2 (non-shift) / 5 orang (shift)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Ahli K3 Kimia</td>
+              <td class="py-3 px-4">Direkomendasikan</td>
+              <td class="py-3 px-4 font-semibold text-purple-700">Wajib Minimal 1 Orang di Tempat Kerja</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Pengendalian Teknis</td>
+              <td class="py-3 px-4">Prosedur kerja aman, LDKB, pemeriksaan instalasi 1x/tahun</td>
+              <td class="py-3 px-4">Audit dokumen pengendalian hazard, LDKB, riksa instalasi 6 bulan sekali</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Estimasi Biaya</td>
+              <td class="py-3 px-4 font-semibold text-purple-700">Petugas Rp8–10 jt / peserta</td>
+              <td class="py-3 px-4 font-semibold text-purple-700">Ahli Rp12,5–16 jt / peserta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Regional Industrial Clusters -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-700 block">Koridor Industri Kimia Banten &amp; Jawa Barat</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Layanan Pelatihan Wilayah Cilegon, Serang, Tangerang hingga Karawang</h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Selain mengakomodasi peserta reguler dari kawasan industri Banten bagian barat, kami siap menurunkan instruktur dan ahli K3 kimia untuk In-House Training di kompleks pabrik yang memiliki reaktor, tangki pelarut, maupun fasilitas penyimpanan gas industri.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Cilegon &amp; Kawasan Industri KIEC</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Industri baja, pengolahan gas alam, pembangkit uap industri, dan manufaktur bahan kimia dasar dengan tuntutan ketat penunjukan Ahli K3 Kimia tetap.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Merak, Bojonegara &amp; Anyer</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Terminal tangki bahan kimia cair curah (liquid chemical jetty), pabrik resin PVC, polietilen, serta bahan pewarna dan intermediet petrokimia.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Serang Timur, Kragilan &amp; Cikande</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Modern Industrial Estate Cikande dan pabrik pulp, alas kaki (penggunaan lem pelarut toluena/MEK), metal plating, serta kertas di Serang.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Tangerang (Pasar Kemis, Balaraja &amp; Cikupa)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pabrik cat, pelapis logam (coating), produk rumah tangga kimia, dan gudang bahan kimia farmasi dengan keharusan memiliki Petugas K3 Kimia di tiap shift.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Bekasi, MM2100 &amp; Jababeka</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pabrik komponen otomotif (elektroplating dan painting line), manufaktur kimia presisi, dan cold storage sistem amonia industri.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Karawang (KIIC &amp; Suryacipta)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pabrik sel baterai kendaraan listrik, bahan kimia pelapis baja, serta fasilitas industri pendukung dengan manajemen LDKB ketat.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Syllabus Breakdown & Related Competencies -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 space-y-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-700 block">Silabus Teknis Pengendalian Bahan Kimia</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Kompetensi Inti yang Dikuasai Ahli &amp; Petugas K3 Kimia</h2>
+
+        <div class="space-y-4">
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 text-base mb-1">1. Identifikasi &amp; Perhitungan Nilai Ambang Kuantitas (NAK)</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Tata cara menyusun inventarisasi bahan kimia berbahaya, mengonversi tonase di area produksi maupun tangki penyimpanan, serta melaporkannya ke Dinas Tenaga Kerja Provinsi.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 text-base mb-1">2. Manajemen LDKB / SDS &amp; Pelabelan GHS</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Audit 16 seksi Lembar Data Keselamatan Bahan, verifikasi kompatibilitas penyimpanan kimia berbahaya (chemical compatibility matrix), serta pemasangan tanda peringatan NFPA 704 &amp; piktogram GHS.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 text-base mb-1">3. Pengendalian Lingkungan Kerja &amp; Gas Beracun</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Pemantauan Nilai Ambang Batas (NAB) uap organik (VOC), asam sulfat, amonia, dan H2S di ruang produksi menggunakan prinsip ventilasi industri dan alat pelindung pernapasan SCBA/respirator kartrid.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 text-base mb-1">4. Pencegahan Major Accident &amp; Rencana Tanggap Darurat</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Konsep Process Safety Management (PSM), studi skenario kebocoran tak terkendali, sistem tanggul penahan (secondary containment), eye-wash/safety shower, dan tata laksana evakuasi pabrik kimia.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 space-y-6">
+        <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+          <h3 class="font-serif text-xl font-bold text-slate-900">Integrasi Program Kepatuhan Kimia Industri</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Di pabrik petrokimia dan pengolahan bahan kimia, kepatuhan K3 kimia sering kali diaudit beririsan dengan keahlian tanggap darurat dan ruang terbatas. Lengkapi juga lini kompetensi tim Anda melalui:
+          </p>
+          <ul class="space-y-3 text-xs sm:text-sm">
+            <li class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+              <a href="/pelatihan-spill-response-b3-oil-spill-drill/" class="font-bold text-purple-700 hover:underline block">Spill Response B3 &amp; Emergency Drill &rarr;</a>
+              <span class="text-xs text-slate-600">Simulasi penanganan ceceran asam, pelarut, dan bahan kimia B3 di gudang.</span>
+            </li>
+            <li class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+              <a href="/pelatihan-k3-ruang-terbatas/" class="font-bold text-purple-700 hover:underline block">K3 Ruang Terbatas (Confined Space) &rarr;</a>
+              <span class="text-xs text-slate-600">Prosedur aman pembersihan tangki kimia, reaktor, dan vessel tertutup.</span>
+            </li>
+            <li class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+              <a href="/pelatihan-higiene-industri-muda-himu-bnsp/" class="font-bold text-purple-700 hover:underline block">Ahli Higiene Industri Muda (HIMU BNSP) &rarr;</a>
+              <span class="text-xs text-slate-600">Pengukuran NAB pajanan uap kimia pekerja dan strategi pengendalian paparan.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-900 text-white shadow-xl space-y-4">
+          <h3 class="font-serif text-xl font-bold">Butuh Penawaran Resmi Untuk Divisi HSE &amp; HRD?</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Kirimkan kebutuhan kuota peserta (Petugas vs Ahli K3 Kimia) serta rencana metode pembinaan. Kami kirimkan brosur silabus Kemnaker beserta quotation resmi hari ini juga.
+          </p>
+          <a
+            href={waLink("Halo Kak, minta brosur dan quotation resmi Pelatihan Petugas / Ahli K3 Kimia Kemnaker untuk perusahaan kami di Banten / Jabar.")}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center w-full py-3.5 px-5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-colors"
+          >
+            Minta Brosur &amp; Quotation WA ({WA_DISPLAY}) &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-700 block">Frequently Asked Questions</span>
+        <h2 class="font-serif text-3xl font-extrabold text-slate-900">FAQ Pelatihan Ahli &amp; Petugas K3 Kimia Kemnaker</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {faqs.map((item) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">{item.q}</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

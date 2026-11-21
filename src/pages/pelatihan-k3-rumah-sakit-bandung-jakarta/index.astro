@@ -1,0 +1,451 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan K3 Rumah Sakit K3RS Bandung Jakarta BNSP";
+const description = "Pelatihan K3 Rumah Sakit K3RS BNSP di Bandung, Cimahi, Bogor, dan Jakarta. Pemenuhan standar akreditasi Kemenkes, LAFKI, serta KARS. Info jadwal WA.";
+const canonical = "/pelatihan-k3-rumah-sakit-bandung-jakarta/";
+const ogImage = "https://konsultank3.com/assets/images/training-session.jpg";
+
+const faqs = [
+  {
+    q: "Mengapa rumah sakit di Bandung, Bogor, dan Jakarta wajib menunjuk penanggung jawab K3RS tersertifikasi BNSP?",
+    a: "Permenkes No. 66 Tahun 2016 tentang Keselamatan dan Kesehatan Kerja Rumah Sakit (K3RS) serta standar Akreditasi Rumah Sakit Kemenkes RI (Standar MFK - Manajemen Fasilitas dan Keselamatan melalui KARS, LAFKI, atau LARS-DHP) mewajibkan setiap rumah sakit dan klinik utama memiliki Komite/Unit K3RS yang dikelola oleh tenaga berkompetensi sah untuk mengawal manajemen B3 medis, kebakaran RS, proteksi radiasi, dan keselamatan utilitas."
+  },
+  {
+    q: "Apa fokus penilaian dalam Uji Kompetensi K3 Rumah Sakit (K3RS) BNSP?",
+    a: "Peserta diuji pemahamannya atas dokumen HVA (Hazard Vulnerability Analysis), identifikasi risiko ergonomi perawat & petugas gizi, pengawasan limbah medis B3 & sitotoksik, penyusunan Hospital Disaster Plan (kode merah/kode biru/evakuasi pasien tirah baring), pemeriksaan sistem gas medis & genset RS, serta pelaporan insiden pajanan benda tajam (needle-stick injury)."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan K3 Rumah Sakit K3RS BNSP untuk tim Bandung dan Jabodetabek?",
+    a: "Estimasi investasi pembinaan dan asesmen BNSP per peserta untuk kelas blended online berkisar Rp5.000.000 hingga Rp6.500.000, sedangkan untuk paket publik tatap muka atau In-House pendampingan langsung di fasilitas rumah sakit di Bandung, Cimahi, Bogor, atau Jakarta berkisar Rp6.000.000 hingga Rp7.500.000 tergantung kuota peserta."
+  },
+  {
+    q: "Siapa saja personel rumah sakit dan klinik yang paling tepat mengikuti pelatihan K3RS BNSP?",
+    a: "Ketua atau Sekretaris Komite K3RS, Kepala Instalasi Pemeliharaan Sarana Rumah Sakit (IPSRS), penanggung jawab MFK (Manajemen Fasilitas & Keselamatan), Manajer Keperawatan, Sanitarian/Kesling RS, hingga petugas K3 klinik utama, laboratorium klinik besar, dan RSUD di Jawa Barat serta DKI Jakarta."
+  },
+  {
+    q: "Apakah sertifikat K3RS BNSP berlaku untuk survei akreditasi oleh lembaga independen seperti KARS atau LAFKI?",
+    a: "Ya. Sertifikat kompetensi berlogo Garuda dari BNSP menjadi bukti objektif yang diakui kuat dalam telusur dokumen dan wawancara surveior akreditasi (baik standar Kemenkes RI, KARS, LAFKI, maupun LARS) sebagai bukti bahwa program MFK dan K3RS diampu oleh SDM yang telah teruji kompetensinya."
+  },
+  {
+    q: "Bisakah menyelenggarakan Pelatihan K3RS secara In-House khusus satu grup rumah sakit swasta atau RSUD?",
+    a: "Sangat bisa dan paling direkomendasikan menjelang survei akreditasi atau re-akreditasi. Pada skema In-House, studi kasus penyusunan Hospital Safety Index, pengecekan jalur evakuasi rawat inap, dan identifikasi bahaya CSSD/laundry langsung mengacu pada kondisi fisik rumah sakit Anda."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan K3 Rumah Sakit & Faskes BNSP", "item": "https://konsultank3.com/pelatihan-k3-rumah-sakit-faskes-bnsp/" },
+        { "@type": "ListItem", "position": 3, "name": "K3RS Bandung & Jakarta", "item": "https://konsultank3.com/pelatihan-k3-rumah-sakit-bandung-jakarta/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan K3 Rumah Sakit (K3RS) Bandung, Jawa Barat & Jakarta Sertifikasi BNSP",
+      "description": description,
+      "courseCode": "K3RS-BNSP-BDG-JKT",
+      "educationalCredentialAwarded": "Sertifikat Pelatihan & Sertifikat Kompetensi K3 Rumah Sakit BNSP",
+      "occupationalCategory": "Penanggung Jawab K3 Rumah Sakit / Tim MFK Akreditasi RS",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "5000000",
+        "highPrice": "7500000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Online", "Blended", "Onsite"],
+        "courseWorkload": "PT32H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Faskes Bandung Raya - Jawa Barat - Jabodetabek",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bandung",
+            "addressRegion": "Jawa Barat",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & Pendampingan K3RS Akreditasi Jakarta & Bandung",
+      "serviceType": "Pembinaan Manajemen K3 Rumah Sakit & Fasilitas Pelayanan Kesehatan BNSP",
+      "url": "https://konsultank3.com/pelatihan-k3-rumah-sakit-bandung-jakarta/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Bandung",
+        "Cimahi",
+        "Padalarang",
+        "Sumedang",
+        "Bogor",
+        "Depok",
+        "Bekasi",
+        "Tangerang",
+        "Jakarta",
+        "Cirebon",
+        "Karawang"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, kami dari bagian K3RS / SDM Rumah Sakit ingin menanyakan jadwal & biaya Pelatihan K3RS BNSP area Bandung / Jakarta."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan-k3-rumah-sakit-faskes-bnsp/" class="hover:text-amber-400 transition-colors">K3 Rumah Sakit &amp; Faskes BNSP</a>
+        <span>/</span>
+        <span class="text-slate-300">Bandung &amp; Jakarta</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/15 text-teal-300 text-xs font-semibold border border-teal-500/25">
+            <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse-glow"></span>
+            Permenkes 66/2016 &amp; Akreditasi MFK &bull; Koridor Bandung Raya &ndash; Bogor &ndash; Bekasi &ndash; Jakarta
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-300 to-cyan-200">K3 Rumah Sakit (K3RS) Bandung &amp; Jakarta</span> BNSP
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program pembinaan sertifikasi resmi <strong>K3 Rumah Sakit (K3RS) berlisensi BNSP</strong> guna menyiapkan Komite K3RS, tim IPSRS, serta pokja MFK di RSUD, rumah sakit vertikal, RS swasta, dan klinik utama menghadapi survei akreditasi Kemenkes, KARS, dan LAFKI.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, rumah sakit kami membutuhkan jadwal & penawaran Pelatihan K3RS BNSP wilayah Bandung / Jabodetabek.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-sm shadow-xl shadow-teal-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal &amp; Biaya WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="/pelatihan-k3-rumah-sakit-faskes-bnsp/"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Silabus Induk K3 Faskes &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Regulasi Kunci</span>
+              <p class="text-white font-bold text-sm">Permenkes 66/2016</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kesesuaian MFK</span>
+              <p class="text-white font-bold text-sm">KARS &amp; LAFKI</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Metode Kelas</span>
+              <p class="text-white font-bold text-sm">Blended &amp; In-House</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Jangkauan</span>
+              <p class="text-teal-300 font-bold text-sm">Jabar &amp; DKI Jakarta</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/training-session.jpg"
+              alt="Pembinaan pokja MFK dan Komite K3 Rumah Sakit untuk kesiapan akreditasi di Bandung dan Jakarta"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-teal-600 text-white mb-2">
+                Standar Manajemen Fasilitas &amp; Keselamatan (MFK)
+              </span>
+              <div class="text-lg font-bold">Audit Ready Paripurna RSUD &amp; Swasta</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Penyusunan HVA, penanggulangan B3 medis, kode darurat RS, serta keselamatan gedung faskes bertingkat.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">Sertifikat BNSP Resmi</div>
+              <div class="text-[10px] text-slate-400">Standar SKKNI K3RS</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">🏥</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House RS &amp; Klinik</div>
+              <div class="text-[10px] text-slate-400">Bandung &bull; Bogor &bull; Jakarta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-teal-500/10 border-b border-teal-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-teal-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Faskes Jawa Barat &amp; Jabodetabek:
+      </span>
+      <span class="text-slate-700">Tersedia batch uji kompetensi BNSP bulanan serta pelatihan tim MFK In-House di lingkungan rumah sakit.</span>
+      <a
+        href={waLink("Halo Kak, minta jadwal pelatihan K3RS BNSP terdekat untuk tim kami di Bandung / Jakarta.")}
+        target="_blank"
+        rel="noopener"
+        class="text-teal-800 hover:text-teal-950 font-bold underline ml-1"
+      >
+        Konsultasi Jadwal WA ({WA_DISPLAY}) &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + MFK & K3RS Matrix -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Tantangan Spesifik K3RS di RS Perkotaan Bandung, Bogor &amp; Jakarta</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Rumah sakit rujukan vertikal, RS tipe A/B/C swasta, dan jejaring klinik di <strong>Bandung Raya, Cimahi, Bogor, Depok, Bekasi, Tangerang, hingga DKI Jakarta</strong> beroperasi dengan kepadatan pasien tinggi, instalasi gedung bertingkat, serta layanan risiko khusus seperti radioterapi, kemoterapi sitotoksik, sentral sterilisasi (CSSD), dan instalasi oksigen cair.
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Ketika surveior akreditasi (KARS/LAFKI/LARS-DHP) menilai bab <strong>Manajemen Fasilitas dan Keselamatan (MFK)</strong> serta audit kepatuhan <strong>Permenkes No. 66/2016</strong>, bukti sertifikasi SDM pengampu K3RS menjadi indikator wajib. Pelatihan ini memperkuat materi dasar dari halaman <a href="/pelatihan-k3-rumah-sakit-faskes-bnsp/" class="text-teal-700 font-bold underline">K3 Rumah Sakit &amp; Fasilitas Kesehatan BNSP</a> dengan praktik penyusunan instrumen telusur akreditasi RS di Jabar–Jabodetabek.
+        </p>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-4">Fokus Audit Akreditasi</th>
+              <th class="py-3.5 px-4">Output Pembinaan K3RS BNSP</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">HVA &amp; Manajemen Bencana RS</td>
+              <td class="py-3 px-4">Dokumen Hazard Vulnerability Analysis &amp; aktivasi Hospital Disaster Plan</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Pengelolaan B3 &amp; Limbah Medis</td>
+              <td class="py-3 px-4">Inventarisasi SDS bahan farmasi/desinfektan, spill kit sitotoksik &amp; TPS B3</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Proteksi Kebakaran &amp; Evakuasi Pasien</td>
+              <td class="py-3 px-4">Simulasi Kode Merah (Code Red) dan rute evakuasi pasien non-ambulatori</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Keselamatan Utilitas &amp; Pra-Konstruksi</td>
+              <td class="py-3 px-4">Implementasi PCRA &amp; ICRA saat renovasi ruangan RS serta uji genset/UPS/gas medik</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Estimasi Investasi</td>
+              <td class="py-3 px-4 font-semibold text-teal-700">Blended Rp5–6,5 jt &bull; Offline/In-House Rp6–7,5 jt</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Regional Faskes Clusters -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block">Jangkauan Rumah Sakit &amp; Klinik Jawa Barat – DKI</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Layanan K3RS di Bandung, Cimahi, Jabodetabek hingga Cirebon</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Bandung, Cimahi &amp; Padalarang</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Mendampingi RS rujukan provinsi, rumah sakit pendidikan kedokteran, RS ibu-anak, serta klinik spesialis di koridor Bandung Raya.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">DKI Jakarta (Pusat, Selatan, Timur, Barat, Utara)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Fokus pada keselamatan gedung RS bertingkat tinggi, pengendalian risiko ruang isolasi bertekanan negatif, serta manajemen evakuasi vertikal ICU.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Bogor, Depok &amp; Cibinong</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pembinaan tim IPSRS, sanitasi kesling, dan pokja MFK menjelang re-akreditasi paripurna maupun pemenuhan standar operasional RS baru.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Bekasi, Karawang &amp; Purwakarta</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            RS layanan trauma center kawasan industri serta klinik perusahaan besar dengan tuntutan ganda kepatuhan Permenkes 66/2016 dan SMK3 Kemnaker.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Tangerang, BSD &amp; Tangerang Selatan</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Memperkuat kesiapan grup jaringan RS modern dalam penilaian risiko keamanan pasien, pengunjung, dan tenaga kesehatan lintas unit layanan.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Cirebon, Garut &amp; Tasikmalaya</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Kelas blended efisien tanpa perlu meninggalkan shift pelayanan RS secara massal bagi tim K3 faskes wilayah Priangan Timur dan Pantura Jabar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Cross-Program Synergies for Hospital Teams -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-5">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block">Ekosistem Kompetensi Rumah Sakit</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-extrabold text-slate-900">Kombinasi Pelatihan Pendukung Pokja MFK &amp; Laboratorium Klinik</h2>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Selain menunjuk Koordinator K3RS ber-Sertifikat BNSP, rumah sakit tipe A–C dan klinik terakreditasi umumnya menugaskan tim pendukung dari unit-unit berisiko spesifik agar seluruh elemen penilaian telusur tidak menyisakan catatan rekomendatif:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <a href="/pelatihan-k3-laboratorium-yogyakarta-semarang/" class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-teal-400 transition-colors">
+            <strong class="text-teal-800 block mb-1">K3 Laboratorium &amp; Patologi Klinik &rarr;</strong>
+            <span class="text-slate-600 text-xs">Pengendalian agen biologis (BSL), formalin histologi, dan spill kit laboratorium medis RS.</span>
+          </a>
+          <a href="/pelatihan-ahli-k3-kebakaran-jakarta/" class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-teal-400 transition-colors">
+            <strong class="text-teal-800 block mb-1">Petugas &amp; Ahli K3 Kebakaran Kelas D–A &rarr;</strong>
+            <span class="text-slate-600 text-xs">Tim tanggap darurat Red Code hospital untuk evakuasi vertikal, APAR, dan hidran gedung RS.</span>
+          </a>
+          <a href="/pelatihan-petugas-p3k-semarang-kendal-batang/" class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-teal-400 transition-colors">
+            <strong class="text-teal-800 block mb-1">Petugas P3K Klinik Perusahaan Kemnaker &rarr;</strong>
+            <span class="text-slate-600 text-xs">Pelatihan bagi staf non-klinis, sekuriti, dan tim tanggap darurat gedung faskes.</span>
+          </a>
+          <a href="/pelatihan-k3-listrik-karawang-cikarang-bekasi/" class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-teal-400 transition-colors">
+            <strong class="text-teal-800 block mb-1">Teknisi K3 Listrik IPSRS Rumah Sakit &rarr;</strong>
+            <span class="text-slate-600 text-xs">Keandalan panel ruang operasi OK, trafo RS, dan sinkronisasi back-up genset tanpa jeda.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white shadow-xl space-y-5">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-300">Proposal Akreditasi MFK &amp; K3RS</span>
+        <h3 class="font-serif text-2xl font-bold">Minta Quotation Kolektif RSUD / Grup Rumah Sakit</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Kirimkan jumlah delegasi dari Komite K3RS, IPSRS, dan Kesling rumah sakit Anda. Kami bantu susunkan rincian anggaran, TOR pelatihan, hingga jadwal asesmen BNSP terpadu.
+        </p>
+        <ul class="space-y-2 text-xs text-slate-200 border-t border-white/10 pt-3">
+          <li>• Persyaratan: KTP, Ijazah minimal D3/S1 Kesehatan/K3/Teknik/Umum, Surat Tugas RS.</li>
+          <li>• Portofolio pendukung: SK Penunjukan K3RS, laporan P2K3/HVA, atau dokumen kerja MFK.</li>
+        </ul>
+        <a
+          href={waLink("Halo Kak, mohon kirimkan brosur & quotation Pelatihan K3RS BNSP untuk tim rumah sakit kami.")}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center w-full py-3.5 px-5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm transition-colors"
+        >
+          Hubungi Tim Pembinaan K3RS ({WA_DISPLAY}) &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 3B: Pemetaan Risiko Unit Layanan RS & Ketentuan Peserta -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block">Instrumen Telusur Lapangan Surveior</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Pemetaan Risiko Unit Faskes &amp; Rincian Fasilitas Pembinaan K3RS</h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Selama asesmen BNSP maupun survei lapangan akreditasi rumah sakit di Bandung, Bogor, dan Jakarta, tim K3RS dituntut membuktikan kendali teknis spesifik pada setiap zona layanan pasien maupun non-klinis berikut ini:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+          <h3 class="text-xl font-bold text-slate-900">Prioritas Evaluasi Unit Berisiko Tinggi Rumah Sakit</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 list-disc pl-5 leading-relaxed">
+            <li><strong>IGD, Ruang Operasi (OK) &amp; ICU:</strong> Proteksi paparan darah/cairan tubuh infeksius, penerapan alur limbah benda tajam, kelistrikan cadangan UPS/genset dalam batas detik, serta tekanan udara ruang isolasi.</li>
+            <li><strong>Farmasi Pencampuran Obat Kanker &amp; CSSD:</strong> Pencegahan pajanan obat sitotoksik melalui laminar airflow/BSC, kontrol paparan uap etilen oksida atau hidrogen peroksida autoklaf sterilisasi, serta suhu kerja aman.</li>
+            <li><strong>Radiologi &amp; Kedokteran Nuklir:</strong> Monitoring dosis radiasi pekerja melalui TLD badge, integritas pintu timbal, dan pemeliharaan kalibrasi proteksi paparan sesuai standar BAPETEN.</li>
+            <li><strong>Laundry, Gizi &amp; Boiler IPSRS:</strong> Ergonomi angkat-angkut linen basah, pengendalian bahaya termal kompor/mesin pengering, uap air panas, serta penyimpanan tabung LPG &amp; oksigen sentral rumah sakit.</li>
+          </ul>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200 space-y-4">
+          <h3 class="text-xl font-bold text-slate-900">Kelengkapan Program &amp; Skema In-House Manajemen RS</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Rentang investasi pembinaan K3RS BNSP (<strong>Blended Rp5–6,5 jt</strong> dan <strong>Tatap Muka/In-House Rp6–7,5 jt per peserta</strong> dengan penyesuaian tarif grup RS) sudah mencakup paket siap pakai pokja akreditasi:
+          </p>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700 list-disc pl-5 leading-relaxed">
+            <li><strong>Termasuk:</strong> Softcopy template instrumen HVA, PCRA renovasi ruangan, contoh SK Komite K3RS, modul pembelajaran SKKNI, biaya asesmen kompetensi resmi LSP BNSP, serta penerbitan sertifikat.</li>
+            <li><strong>Opsi In-House Tim Akreditasi:</strong> Rumah sakit dapat mengundang fasilitator untuk membina sekaligus 10–25 anggota pokja MFK &amp; penanggung jawab ruangan agar selaras menghadapi simulasi telusur akreditasi.</li>
+            <li><strong>Dukungan Administrasi BLUD/Swasta:</strong> Tersedia TOR, jadwal terperinci, penawaran resmi ber-NPWP, dan faktur pajak lengkap untuk pengajuan anggaran diklat rumah sakit.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block">Frequently Asked Questions</span>
+        <h2 class="font-serif text-3xl font-extrabold text-slate-900">FAQ Pelatihan K3 Rumah Sakit K3RS Bandung &amp; Jakarta</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {faqs.map((item) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">{item.q}</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

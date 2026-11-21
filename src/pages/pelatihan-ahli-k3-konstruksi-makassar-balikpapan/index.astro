@@ -1,0 +1,445 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan K3 Konstruksi Makassar Balikpapan BNSP SKK";
+const description = "Pelatihan Ahli K3 Konstruksi Makassar dan Balikpapan. Persiapan SKK BNSP Muda, Madya, dan Kemnaker untuk proyek smelter Sulawesi serta IKN.";
+const canonical = "/pelatihan-ahli-k3-konstruksi-makassar-balikpapan/";
+const ogImage = "https://konsultank3.com/assets/images/training-session.jpg";
+
+const faqs = [
+  {
+    q: "Mengapa tenaga K3 konstruksi di Sulawesi dan Kalimantan harus membedakan jalur Kemnaker dan SKK Konstruksi BNSP?",
+    a: "Dalam tender pemerintah (PUPR, pelabuhan, jalan tol) maupun proyek EPC smelter dan IKN di Kalimantan Timur, dokumen legalitas merujuk dua koridor: SKK Konstruksi Ahli K3 Konstruksi (Muda/Madya/Utama melalui LSP berlisensi BNSP & LPJK) sebagai syarat pemenuhan tenaga ahli proyek PUPR/SMKK Permen PUPR 10/2021, serta Ahli Muda K3 Konstruksi Kemnaker RI untuk kepatuhan pengawasan ketenagakerjaan UU No. 1/1970."
+  },
+  {
+    q: "Berapa estimasi biaya pembinaan K3 Konstruksi Kemnaker vs sertifikasi SKK BNSP di Makassar dan Balikpapan?",
+    a: "Estimasi investasi pembinaan Ahli Muda K3 Konstruksi Kemnaker RI berkisar Rp7.000.000 hingga Rp9.000.000 per peserta, sedangkan program fasilitasi pembinaan dan uji kompetensi SKK Konstruksi BNSP jenjang Muda atau Madya (Jenjang 7/8/9) berkisar Rp6.500.000 hingga Rp10.500.000 tergantung pengalaman kerja dan klasifikasi jabatan."
+  },
+  {
+    q: "Apa syarat mengikuti Sertifikasi Ahli K3 Konstruksi Jenjang 7 (Muda) dan Jenjang 8 (Madya)?",
+    a: "Sesuai standar SKKNI & LPJK, Jenjang 7 (Ahli Muda) mensyaratkan S1/D4 Teknik Sipil, Arsitektur, Lingkungan, K3, atau teknik relevan (fresh graduate / berpengalaman >= 0–2 tahun sesuai ketentuan skema). Untuk Jenjang 8 (Ahli Madya), peserta wajib membuktikan pengalaman proyek konstruksi minimal 2–6 tahun pada subklasifikasi K3 Konstruksi disertai portofolio laporan RK3K/RKK proyek."
+  },
+  {
+    q: "Bisakah pelatihan diikuti dari lokasi proyek smelter di Morowali, Konawe, Palu, atau Penajam Paser Utara (IKN)?",
+    a: "Sangat bisa. Kami menyelenggarakan kelas blended online interaktif beserta pendampingan asesmen jarak jauh yang dirancang khusus untuk Safety Engineer dan Site Manager yang bertugas di site terpencil Sulawesi Tengah, Sulawesi Tenggara, maupun zona pembangunan infrastruktur Balikpapan–Sepaku, serta paket In-House langsung di Makassar atau Balikpapan."
+  },
+  {
+    q: "Apakah pelatihan membahas penyusunan RKK (Rencana Keselamatan Konstruksi) sesuai Permen PUPR 10/2021?",
+    a: "Ya. Materi mencakup penyusunan RKK Penawaran dan RKK Pelaksanaan berbasis 5 elemen SMKK (Kepemimpinan & Partisipasi Pekerja, Perencanaan Keselamatan Konstruksi/IBPRP, Dukungan Keselamatan Konstruksi, Operasi Keselamatan Konstruksi, serta Evaluasi Kinerja) yang menjadi syarat lolos prakualifikasi tender BUMN karya maupun swasta."
+  },
+  {
+    q: "Apa perbedaan peran Ahli K3 Konstruksi di proyek jalan/jembatan dibandingkan pembangunan smelter?",
+    a: "Pada proyek jalan tol, bendungan, dan jembatan di Sulawesi Selatan atau Kaltim, fokus risiko terletak pada penggalian lereng, manajemen lalu lintas proyek, dan pengecoran struktur girder. Di proyek EPC smelter Morowali–Konawe, pengawasan berfokus pada pemasangan perancah tinggi, pekerjaan panas massal (hot work), pengangkatan struktur baja berat (heavy rigging), serta koordinasi subkontraktor multidisiplin."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan Ahli K3 Konstruksi", "item": "https://konsultank3.com/pelatihan-ahli-k3-konstruksi-muda-madya/" },
+        { "@type": "ListItem", "position": 3, "name": "K3 Konstruksi Makassar Balikpapan", "item": "https://konsultank3.com/pelatihan-ahli-k3-konstruksi-makassar-balikpapan/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Ahli K3 Konstruksi (Muda & Madya) Makassar, Sulawesi & Balikpapan BNSP SKK / Kemnaker",
+      "description": description,
+      "courseCode": "AK3-KONST-MKS-BPN",
+      "educationalCredentialAwarded": "Sertifikat Kompetensi Kerja (SKK) K3 Konstruksi BNSP / Sertifikat Pembinaan Kemnaker RI",
+      "occupationalCategory": "Ahli K3 Konstruksi / Safety Engineer Sipil & EPC",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "6500000",
+        "highPrice": "10500000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Online", "Blended", "Onsite"],
+        "courseWorkload": "PT40H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Infrastruktur Sulawesi & Kalimantan Timur (Makassar - Balikpapan - Morowali - IKN)",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Makassar",
+            "addressRegion": "Sulawesi Selatan",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & Sertifikasi Ahli K3 Konstruksi Indonesia Timur",
+      "serviceType": "Pembinaan Ahli Muda/Madya K3 Konstruksi SKK BNSP & Kemnaker RI",
+      "url": "https://konsultank3.com/pelatihan-ahli-k3-konstruksi-makassar-balikpapan/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Makassar",
+        "Maros",
+        "Gowa",
+        "Morowali",
+        "Kendari",
+        "Konawe",
+        "Palu",
+        "Balikpapan",
+        "Samarinda",
+        "Sepaku IKN",
+        "Manado"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info pendaftaran Pelatihan Ahli K3 Konstruksi (BNSP SKK atau Kemnaker) untuk proyek di Makassar / Sulawesi / Balikpapan."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan-ahli-k3-konstruksi-muda-madya/" class="hover:text-amber-400 transition-colors">Ahli K3 Konstruksi Induk</a>
+        <span>/</span>
+        <span class="text-slate-300">Makassar &amp; Balikpapan</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/15 text-indigo-300 text-xs font-semibold border border-indigo-500/25">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse-glow"></span>
+            Permen PUPR 10/2021 (SMKK) &bull; Koridor Makassar &ndash; Morowali &ndash; Kendari &ndash; Balikpapan &ndash; IKN
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-sky-200 to-amber-300">Ahli K3 Konstruksi Makassar &amp; Balikpapan</span> BNSP SKK &amp; Kemnaker
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program akselerasi sertifikasi <strong>Ahli K3 Konstruksi Muda &amp; Madya</strong> untuk pemenuhan personel tender SMKK LPJK, kontraktor proyek pelabuhan Makassar New Port, infrastruktur IKN Sepaku, serta konstruksi smelter industri di Sulawesi.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, saya mau info pembinaan & uji SKK BNSP / Kemnaker Ahli K3 Konstruksi untuk area Makassar / Balikpapan / IKN.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal &amp; Syarat SKK WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="/pelatihan-ahli-k3-konstruksi-muda-madya/"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Lihat Halaman Program Induk &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Jalur Tersedia</span>
+              <p class="text-white font-bold text-sm">SKK BNSP &amp; Kemnaker</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Jenjang Ahli</span>
+              <p class="text-white font-bold text-sm">Muda (7) &amp; Madya (8)</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Dokumen Tender</span>
+              <p class="text-white font-bold text-sm">RKK &amp; IBPRP SMKK</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Wilayah Proyek</span>
+              <p class="text-indigo-300 font-bold text-sm">Sulawesi &amp; Kaltim</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/training-session.jpg"
+              alt="Pelatihan pembinaan RKK dan kompetensi Ahli K3 Konstruksi proyek Sulawesi dan Kalimantan Timur"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-indigo-600 text-white mb-2">
+                Kesiapan Prakualifikasi Tender PUPR &amp; EPC
+              </span>
+              <div class="text-lg font-bold">SMKK Permen PUPR 10/2021 Terpenuhi</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Pendampingan portofolio proyek, penyusunan dokumen RKK, dan verifikasi sistem SIKI/LPJK.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">SKK LPJK &amp; SKP Kemnaker</div>
+              <div class="text-[10px] text-slate-400">Sah Untuk Tender Nasional</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">🌉</div>
+            <div>
+              <div class="text-xs font-bold text-white">Blended Dari Site Proyek</div>
+              <div class="text-[10px] text-slate-400">Makassar &bull; Morowali &bull; Balikpapan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-indigo-500/10 border-b border-indigo-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-indigo-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Koridor Proyek Indonesia Timur:
+      </span>
+      <span class="text-slate-700">Konsultasi syarat ijazah S1/D4 dan konversi pengalaman proyek ke Jenjang 7 (Muda) atau 8 (Madya).</span>
+      <a
+        href={waLink("Halo Kak, mohon bantu cek kecocokan syarat pengalaman saya untuk SKK BNSP / Kemnaker Ahli K3 Konstruksi.")}
+        target="_blank"
+        rel="noopener"
+        class="text-indigo-800 hover:text-indigo-950 font-bold underline ml-1"
+      >
+        Verifikasi Syarat via WhatsApp ({WA_DISPLAY}) &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Regional Infrastructure Context -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-indigo-700 block">Konteks Proyek Indonesia Timur</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Tuntutan Personel Ahli K3 Konstruksi di Gerbang Makassar &amp; Balikpapan</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Pusat pertumbuhan konstruksi nasional kini terkonsentrasi pada dua poros strategis: <strong>Sulawesi</strong> (pembangunan smelter hilirisasi nikel di Morowali dan Konawe, kawasan industri KIMA Makassar, jalan tol Trans Sulawesi, serta jalur kereta api) dan <strong>Kalimantan Timur</strong> (pengembangan pelabuhan Balikpapan, fasilitas RDMP kilang, serta konektivitas Ibu Kota Nusantara / IKN di Penajam Paser Utara).
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Kontraktor lokal maupun konsorsium subkontraktor kerap terhenti di tahap verifikasi dokumen lelang karena belum memiliki Ahli K3 Konstruksi terdaftar pada sistem LPJK (SKK BNSP) maupun penunjukan Kemnaker RI. Program ini melengkapi kurikulum induk pada halaman <a href="/pelatihan-ahli-k3-konstruksi-muda-madya/" class="text-indigo-700 font-bold underline">Pelatihan Ahli K3 Konstruksi Muda &amp; Madya</a> dengan studi kasus spesifik lokasi proyek Indonesia Timur.
+        </p>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-4">Jalur Sertifikasi</th>
+              <th class="py-3.5 px-4">Fokus Penilaian</th>
+              <th class="py-3.5 px-4">Estimasi Biaya</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">SKK Konstruksi Muda (Jenjang 7 BNSP)</td>
+              <td class="py-3 px-4">Syarat tender SMKK PUPR proyek risiko kecil–sedang &amp; portofolio SIKI</td>
+              <td class="py-3 px-4 font-semibold text-indigo-700">Rp6,5 – 8,0 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">SKK Konstruksi Madya (Jenjang 8 BNSP)</td>
+              <td class="py-3 px-4">Kepala Divisi QHSE proyek besar, jembatan bentang panjang &amp; gedung tinggi</td>
+              <td class="py-3 px-4 font-semibold text-indigo-700">Rp8,5 – 10,5 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Ahli Muda K3 Konstruksi Kemnaker RI</td>
+              <td class="py-3 px-4">Kepatuhan UU 1/1970, SKP Kemnaker, pengawasan struktur &amp; scaffolding</td>
+              <td class="py-3 px-4 font-semibold text-indigo-700">Rp7,0 – 9,0 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Paket Ganda Kontraktor EPC (Grup)</td>
+              <td class="py-3 px-4">In-House penyusunan RKK proyek + sertifikasi tim HSE site</td>
+              <td class="py-3 px-4 font-semibold text-indigo-700">Penyesuaian Kuota Korporasi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Regional Project Corridors Grid -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-indigo-700 block">Jangkauan Layanan Site Konstruksi</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Fokus Proyek di Koridor Sulawesi Selatan, Tengah, Tenggara &amp; Kalimantan Timur</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Makassar, Maros &amp; Gowa (KIMA &amp; MNP)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Mendukung kontraktor sipil dermaga, pergudangan logistik Makassar New Port, bendungan Pamukkulu, dan infrastruktur jalan tol layang.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Morowali &amp; Morowali Utara (IMIP / Kawasan Smelter)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Kebutuhan mendesak Safety Officer &amp; Ahli K3 Konstruksi untuk pekerjaan ereksi struktur baja berat, pondasi tiang pancang, dan jalur pipa pabrik nikel.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Kendari, Konawe &amp; Pomalaa (Sultra)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pengawasan proyek konstruksi kawasan industri baterai HPAL, pelabuhan jeti ore, serta infrastruktur air bersih kawasan pertambangan Sulawesi Tenggara.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Balikpapan &amp; Penajam Paser Utara (IKN Sepaku)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Memenuhi kualifikasi wajib tenaga ahli SMKK pada paket proyek pembangunan kementerian, multi-utility tunnel, dan jaringan jalan bebas hambatan.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Samarinda, Bontang &amp; Sangatta</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Mendampingi proyek sipil jembatan, bangunan industri pupuk/LNG, dan fasilitas sipil di area hauling serta workshop pertambangan Kalimantan Timur.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Palu, Manado &amp; Bitung (Kaltara–Sulut)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pembinaan fleksibel daring maupun blended bagi kontraktor rekonstruksi tahan gempa Sulawesi Tengah serta proyek kawasan ekonomi khusus Bitung.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Technical Modules & Companion Programs -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-5">
+        <span class="text-xs font-bold uppercase tracking-widest text-indigo-700 block">Teknis Pelaksanaan Konstruksi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-extrabold text-slate-900">Materi Praktis Pengawasan Site Berisiko Tinggi</h2>
+        <ul class="space-y-3 text-xs sm:text-sm text-slate-700 list-disc pl-5 leading-relaxed">
+          <li><strong>Sistem Manajemen Keselamatan Konstruksi (SMKK):</strong> Pembuatan RKK Pelaksanaan, Identifikasi Bahaya, Penilaian Risiko &amp; Pengendalian (IBPRP), serta laporan rutin P2K3 proyek.</li>
+          <li><strong>Penggalian, Penahan Tanah &amp; Dewatering:</strong> Mengatasi keruntuhan dinding galian (shoring &amp; trenching) di area tanah lunak maupun gambut pesisir Kalimantan dan Sulawesi.</li>
+          <li><strong>Perancah (Scaffolding) &amp; Bekisting Beton:</strong> Inspeksi tagging perancah, penempatan baseplate di permukaan tanah miring, dan batas aman beban kerja selama pengecoran plat/kolom.</li>
+          <li><strong>Pengelolaan Subkontraktor &amp; Izin Kerja Khusus:</strong> Evaluasi HSE subkontraktor harian, Safety Induction pekerja baru proyek, serta verifikasi JSA sebelum eksekusi pengelasan dan pengangkatan baja.</li>
+        </ul>
+
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-2">
+          <strong class="block text-slate-900">Program Pendukung Pekerjaan Kritis Proyek Sipil &amp; Smelter:</strong>
+          <p>
+            Di proyek pembangunan smelter Sulawesi atau gedung bertingkat IKN, Ahli K3 Konstruksi wajib memastikan pekerja lapangan juga memiliki lisensi teknis khusus seperti <a href="/pelatihan-k3-ketinggian-palembang-jakarta/" class="text-indigo-700 font-bold underline">K3 Bekerja di Ketinggian (TKPK/TKBT)</a> serta <a href="/pelatihan-operator-crane-rigger-gresik-surabaya/" class="text-indigo-700 font-bold underline">SIO Operator Crane &amp; Rigger Kemnaker</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white shadow-xl space-y-5">
+        <span class="text-xs font-bold uppercase tracking-wider text-indigo-300">Fast-Track Verification</span>
+        <h3 class="font-serif text-2xl font-bold">Cek Kecocokan Dokumen SIKI / TemanK3 Anda Sekarang</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Banyak permohonan SKK BNSP tertunda berminggu-minggu akibat kesesuaian jurusan ijazah, surat referensi pengalaman kerja proyek, atau akun Portal Perizinan PUPR/SIKI yang belum tervalidasi. Tim admin kami memeriksa berkas Anda sebelum pendaftaran final.
+        </p>
+        <div class="space-y-2 text-xs text-slate-200 border-t border-white/10 pt-3">
+          <div>1. Scan Ijazah D3/D4/S1 Teknik atau relevan &amp; transkrip.</div>
+          <div>2. Scan KTP, NPWP, dan pas foto latar belakang formal.</div>
+          <div>3. CV Pengalaman Proyek Konstruksi &amp; Surat Referensi Perusahaan.</div>
+        </div>
+        <a
+          href={waLink("Halo Kak, ini CV/ijazah saya untuk cek syarat daftar Ahli K3 Konstruksi BNSP SKK atau Kemnaker area Makassar / Balikpapan.")}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center w-full py-3.5 px-5 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-sm transition-colors"
+        >
+          Konsultasi Berkas via WhatsApp ({WA_DISPLAY}) &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 3B: Silabus SMKK & Rincian Biaya -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-indigo-700 block">Panduan Tender &amp; Unit Kompetensi</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Cakupan Materi SMKK &amp; Kelengkapan Penawaran Biaya Peserta</h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Selain membekali peserta menghadapi wawancara asesor BNSP maupun ujian pengawas Kemnaker RI, pembinaan dirancang langsung agar alumni mampu menyusun dokumen SMKK standar proyek strategis Indonesia Timur.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+          <h3 class="text-xl font-bold text-slate-900">Materi Inti Uji Kompetensi &amp; Praktik Site</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 list-disc pl-5 leading-relaxed">
+            <li><strong>Peraturan Jasa Konstruksi &amp; SMKK:</strong> Penerapan PP No. 14/2021, Permen PUPR No. 10/2021, serta pengisian pos biaya SMKK (9 komponen biaya keselamatan konstruksi pada BOQ tender).</li>
+            <li><strong>IBPRP &amp; Analisis Tingkat Risiko Konstruksi:</strong> Pemisahan proyek risiko kecil, sedang, dan besar sesuai jumlah pekerja, alat berat terpakai, serta teknologi struktur bentang panjang atau bangunan tinggi.</li>
+            <li><strong>Pengawasan Pekerjaan Khusus Konstruksi:</strong> Keselamatan galian dalam &gt; 1,5 meter di tanah lunak pesisir, pekerjaan beton pracetak (erection girder), ruang terbatas gorong-gorong box culvert, dan jalur lalu lintas proyek aktif.</li>
+            <li><strong>Audit Internal &amp; Pelaporan Insiden Proyek:</strong> Penghitungan indikator kinerja utama (lagging &amp; leading indicators), Frequency Rate, Severity Rate, serta investigasi near-miss di lokasi konstruksi.</li>
+          </ul>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200 space-y-4">
+          <h3 class="text-xl font-bold text-slate-900">Cakupan Investasi &amp; Ketentuan Korporasi</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Rentang investasi standar publik maupun pendampingan (<strong>Kemnaker Rp7–9 jt</strong> dan <strong>SKK BNSP Rp6,5–10,5 jt</strong>) sudah dirancang agar bagian HRD atau pengadaan proyek tidak direpotkan administrasi tersembunyi:
+          </p>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700 list-disc pl-5 leading-relaxed">
+            <li><strong>Termasuk:</strong> Modul digital SMKK &amp; template RKK siap pakai, bimbingan pra-asesmen portofolio, biaya ujian lembaga sertifikasi/asesor BNSP atau penerbitan lisensi Kemnaker, serta sertifikat resmi.</li>
+            <li><strong>Skema Pembayaran Proyek:</strong> Tersedia penerbitan penawaran harga resmi (quotation), faktur pajak, dan termin korporasi bagi kontraktor BUMN maupun swasta yang mengirim 3–15 personel site sekaligus.</li>
+            <li><strong>Catatan Teknis:</strong> Biaya akomodasi transportasi uji luring (jika jadwal tatap muka luar kota) serta pajak sesuai peraturan perpajakan dikonfirmasi transparan pada surat penawaran final.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-indigo-700 block">Frequently Asked Questions</span>
+        <h2 class="font-serif text-3xl font-extrabold text-slate-900">FAQ Pelatihan Ahli K3 Konstruksi Makassar &amp; Balikpapan</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {faqs.map((item) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">{item.q}</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

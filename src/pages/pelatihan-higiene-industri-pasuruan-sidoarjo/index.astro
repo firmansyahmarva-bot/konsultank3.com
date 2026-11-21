@@ -1,0 +1,436 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { WA_DISPLAY, waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Higiene Industri HIMU Pasuruan Sidoarjo BNSP";
+const description = "Pelatihan Ahli Higiene Industri Muda HIMU BNSP di Pasuruan PIER, Sidoarjo, Mojokerto, Gresik. Pengukuran NAB kebisingan, debu, dan kimia. Cek WA.";
+const canonical = "/pelatihan-higiene-industri-pasuruan-sidoarjo/";
+const ogImage = "https://konsultank3.com/assets/images/hero-safety-officer.jpg";
+
+const faqs = [
+  {
+    q: "Mengapa pabrik di Pasuruan (PIER), Sidoarjo, dan Mojokerto membutuhkan Ahli Higiene Industri Muda (HIMU) BNSP?",
+    a: "Permenaker No. 5 Tahun 2018 tentang Keselamatan dan Kesehatan Kerja Lingkungan Kerja mewajibkan setiap tempat kerja yang memiliki faktor bahaya fisika (kebisingan > 85 dBA, iklim kerja panas/ISBB di ruang oven/peleburan, getaran), kimia (debu silika/kayu, uap pelarut lem sepatu & cat), maupun biologi melaksanakan pengukuran berkala dan pengendalian oleh personel higiene industri yang kompeten dan terverifikasi."
+  },
+  {
+    q: "Apa tugas utama pemegang sertifikat Higiene Industri Muda (HIMU) BNSP di lingkungan manufaktur?",
+    a: "HIMU bertanggung jawab memetakan Similar Exposure Group (SEG) pekerja, menyusun rencana sampling lingkungan kerja menggunakan sound level meter, personal dust sampler, wet-bulb globe thermometer (WBGT), dan pompa gas kimia, mengevaluasi hasil uji laboratorium terhadap Nilai Ambang Batas (NAB), serta merekomendasikan rekayasa teknik ventilasi lokal (Local Exhaust Ventilation / LEV) dan rotasi kerja."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan Ahli Higiene Industri Muda (HIMU) BNSP?",
+    a: "Estimasi investasi pembinaan dan asesmen uji kompetensi BNSP untuk jenjang Ahli Higiene Industri Muda (HIMU) berkisar Rp6.500.000 hingga Rp9.500.000 per peserta, tergantung format kelas (blended interaktif atau tatap muka/In-House korporasi) dan kelengkapan modul studi kasus perhitungan NAB Permenaker 5/2018."
+  },
+  {
+    q: "Apa syarat pendidikan dan pengalaman untuk mengikuti sertifikasi HIMU BNSP?",
+    a: "Jalur Ahli Higiene Industri Muda (HIMU) BNSP terbuka bagi lulusan S1/D4 jurusan Kesehatan Masyarakat/K3, Teknik Lingkungan, Teknik Kimia, Kimia, atau Teknik Keselamatan dengan minimal pengalaman kerja terkait bidang HSE/K3 sesuai ketentuan skema BNSP (atau lulusan D3 berpengalaman lapangan lebih lama di higiene industri/K3 lingkungan kerja sesuai verifikasi LSP)."
+  },
+  {
+    q: "Bagaimana perbedaan fungsi Ahli K3 Umum vs Ahli Higiene Industri Muda (HIMU) saat audit SMK3?",
+    a: "Ahli K3 Umum mengelola kebijakan menyeluruh P2K3 dan kepatuhan keselamatan mesin/sistem manajemen, sedangkan HIMU adalah spesialis teknis pengendalian bahaya kesehatan kerja jangka panjang (mencegah Penyakit Akibat Kerja / PAK seperti tuli akibat bising NIHL, asma akibat isosianat/tepung, atau keracunan kronis pelarut benzena/n-heksana) berbasis pengukuran ilmiah faktor lingkungan kerja."
+  },
+  {
+    q: "Bisakah perusahaan di Pasuruan PIER, Sidoarjo, atau Gresik menggabungkan HIMU untuk seluruh tim HSE grup?",
+    a: "Bisa. Melalui format In-House Training, studi kasus pengukuran NAB dan perencanaan ventilasi langsung diarahkan pada proses spesifik lini pabrik Anda—mulai dari lini pengelasan, peleburan kaca/logam, penggilingan tepung/pakan, hingga lini pengecatan otomotif dan lem alas kaki."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan Higiene Industri Muda (HIMU) BNSP", "item": "https://konsultank3.com/pelatihan-higiene-industri-muda-himu-bnsp/" },
+        { "@type": "ListItem", "position": 3, "name": "HIMU Pasuruan & Sidoarjo", "item": "https://konsultank3.com/pelatihan-higiene-industri-pasuruan-sidoarjo/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Ahli Higiene Industri Muda (HIMU) Pasuruan, Sidoarjo & Jawa Timur BNSP",
+      "description": description,
+      "courseCode": "HIMU-BNSP-PAS-SDA",
+      "educationalCredentialAwarded": "Sertifikat Pelatihan & Sertifikat Kompetensi Higiene Industri Muda (HIMU) BNSP",
+      "occupationalCategory": "Ahli Higiene Industri / Industrial Hygienist",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "6500000",
+        "highPrice": "9500000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Online", "Blended", "Onsite"],
+        "courseWorkload": "PT40H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Manufaktur Pasuruan PIER - Sidoarjo - Ngoro Mojokerto - Surabaya",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Pasuruan",
+            "addressRegion": "Jawa Timur",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & Sertifikasi Higiene Industri (HIMU) Jawa Timur",
+      "serviceType": "Pembinaan Ahli Higiene Industri Muda (HIMU) Sertifikasi BNSP",
+      "url": "https://konsultank3.com/pelatihan-higiene-industri-pasuruan-sidoarjo/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Pasuruan",
+        "PIER Pasuruan",
+        "Pandaan",
+        "Gempol",
+        "Sidoarjo",
+        "Berbek",
+        "Mojokerto",
+        "Ngoro NIP",
+        "Surabaya Rungkut SIER",
+        "Gresik JIIPE",
+        "Tuban"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info jadwal, syarat ijazah, dan biaya Pelatihan Higiene Industri Muda (HIMU) BNSP area Pasuruan / Sidoarjo / Jatim."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan-higiene-industri-muda-himu-bnsp/" class="hover:text-amber-400 transition-colors">Higiene Industri Muda BNSP</a>
+        <span>/</span>
+        <span class="text-slate-300">Pasuruan &amp; Sidoarjo</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/15 text-cyan-300 text-xs font-semibold border border-cyan-500/25">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse-glow"></span>
+            Permenaker 5/2018 &bull; Koridor Industri Pasuruan PIER &ndash; Sidoarjo &ndash; Ngoro Mojokerto &ndash; Gresik
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-200 to-emerald-300">Higiene Industri (HIMU) Pasuruan &amp; Sidoarjo</span> BNSP
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program sertifikasi <strong>Ahli Higiene Industri Muda (HIMU) BNSP</strong> guna menyiapkan spesialis pengukuran Nilai Ambang Batas (NAB) kebisingan, suhu panas WBGT, debu pabrik, serta pengendalian uap pelarut kimia di sabuk manufaktur Jawa Timur.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, tim HSE pabrik kami mau konsultasi jadwal & biaya Sertifikasi HIMU BNSP untuk wilayah Pasuruan / Sidoarjo.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Cek Syarat &amp; Jadwal via WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="/pelatihan-higiene-industri-muda-himu-bnsp/"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Lihat Halaman Induk HIMU &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Skema BNSP</span>
+              <p class="text-white font-bold text-sm">Ahli Muda (HIMU)</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Standar Acuan</span>
+              <p class="text-white font-bold text-sm">Permenaker 5/2018</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Fokus Uji</span>
+              <p class="text-white font-bold text-sm">NAB Fisika &amp; Kimia</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Klaster Jatim</span>
+              <p class="text-cyan-300 font-bold text-sm">PIER, Berbek, Ngoro</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/hero-safety-officer.jpg"
+              alt="Ahli Higiene Industri melaksanakan inspeksi faktor bahaya lingkungan kerja pabrik di Pasuruan dan Sidoarjo"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-cyan-600 text-white mb-2">
+                Pencegahan Penyakit Akibat Kerja (PAK) Manufaktur
+              </span>
+              <div class="text-lg font-bold">Sampling SEG, Evaluasi NAB &amp; Rekayasa LEV</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Solusi terukur untuk mengendalikan bising mesin stamping, uap lem alas kaki, debu silika kaca, dan panas tungku peleburan.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-600 text-white flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">Sertifikat Kompetensi BNSP</div>
+              <div class="text-[10px] text-slate-400">Standar Higiene Industri</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">🎧</div>
+            <div>
+              <div class="text-xs font-bold text-white">Pasuruan &bull; Sidoarjo &bull; Jatim</div>
+              <div class="text-[10px] text-slate-400">Blended &amp; In-House Pabrik</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-cyan-500/10 border-b border-cyan-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-cyan-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Sabuk Industri Jawa Timur Bagian Tengah:
+      </span>
+      <span class="text-slate-700">Konsultasi penyesuaian persyaratan pengalaman kerja D3/S1 untuk uji kompetensi HIMU BNSP.</span>
+      <a
+        href={waLink("Halo Kak, boleh minta jadwal HIMU BNSP terdekat & panduan jalur pengalaman kerjanya?")}
+        target="_blank"
+        rel="noopener"
+        class="text-cyan-800 hover:text-cyan-950 font-bold underline ml-1"
+      >
+        Konsultasi Admin WA ({WA_DISPLAY}) &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Exposure Hazard Matrix -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-700 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Peran Krusial HIMU BNSP di Pabrik Pasuruan PIER &amp; Sidoarjo</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Koridor <strong>Pasuruan (PIER Rembang, Pandaan, Gempol), Sidoarjo (Berbek, Waru, Krian), hingga Ngoro Industrial Park (NIP) Mojokerto</strong> menjadi basis konsentrasi pabrik makanan-minuman, rokok kretek/skm, kaca lembaran, peleburan logam, hingga manufaktur alas kaki dan furnitur ekspor. Di lini produksi tersebut, faktor bahaya jangka panjang—seperti bising konstan 90 dBA, panas radiasi tanur, uap toluena/pelarut lem, serta debu organik maupun silika—menuntut keahlian spesifik di luar pengawasan keselamatan mesin biasa.
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Halaman regional ini memperdalam jalur kualifikasi yang telah diuraikan pada halaman induk <a href="/pelatihan-higiene-industri-muda-himu-bnsp/" class="text-cyan-700 font-bold underline">Pelatihan Ahli Higiene Industri Muda (HIMU) BNSP</a>, membantu tim HSE dan dokter perusahaan mematuhi batas aman <strong>Permenaker No. 5 Tahun 2018</strong> sekaligus menekan klaim penyakit akibat kerja (PAK).
+        </p>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-4">Faktor Bahaya Pabrik</th>
+              <th class="py-3.5 px-4">Parameter Pengukuran HIMU (Permen 5/2018)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Kebisingan Mesin Stamping / Boiler</td>
+              <td class="py-3 px-4">Batas NAB 85 dBA (8 jam/hari), noise mapping, personal noise dosimetry</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Iklim Kerja Panas (Kiln / Furnace)</td>
+              <td class="py-3 px-4">Pengukuran Indeks Suhu Basah dan Bola (ISBB/WBGT) &amp; rasio kerja–istirahat</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Debu Terhirup &amp; Uap Kimia VOC</td>
+              <td class="py-3 px-4">Sampling pompa udara personal (gravimetri/NIOSH), evaluasi LEV &amp; respirator</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Ergonomi &amp; Pencahayaan Lini QC</td>
+              <td class="py-3 px-4">Verifikasi tingkat pencahayaan (Lux meter) dan postur manual material handling</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-slate-900">Estimasi Biaya</td>
+              <td class="py-3 px-4 font-semibold text-cyan-700">Rp6.500.000 – Rp9.500.000 / peserta (BNSP)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Regional Industrial Estates -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-700 block">Koridor Manufaktur Jawa Timur</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Melayani Perusahaan di Pasuruan, Sidoarjo, Mojokerto hingga Gresik &amp; Tuban</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Pasuruan (PIER Rembang, Pandaan &amp; Beji)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pabrik kaca lembaran, kemasan logam, otomotif komponen, minuman, dan farmasi dengan tuntutan pengukuran iklim kerja panas dan kebisingan tinggi.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Sidoarjo (Berbek, Waru &amp; Krian)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Industri alas kaki ekspor, pengepakan kertas karton, peleburan baja, dan pengolahan makanan laut dengan pengawasan ketat ventilasi uap lem &amp; amonia.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Mojokerto (Ngoro Industrial Park)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Klaster pabrik elektronik, kertas, pakan ternak, dan kosmetik yang rutin melaksanakan pemeriksaan lingkungan kerja semesteran bersama PJK3/balai K3.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Surabaya (Rungkut SIER &amp; Margomulyo)</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Kantor pusat QHSE perusahaan multinasional dan fasilitas produksi kimia ringan, pelumas, dan komponen presisi di ibu kota Jawa Timur.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Gresik (JIIPE, KIG) &amp; Tuban</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pabrik pupuk petrokimia, semen, peleburan tembaga, dan kayu lapis dengan tantangan debu terhirup serta paparan gas proses industri berat.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base">Malang, Kediri &amp; Probolinggo</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Mendukung praktisi HSE industri tembakau, rokok skala besar, tekstil, dan pembangkit tenaga uap PLTU melalui jadwal blended efisien.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Cross-Links + Registration CTA -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-5">
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-700 block">Sinergi Tim Kesehatan Kerja &amp; Lingkungan</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-extrabold text-slate-900">Pelatihan Lainnya yang Mendukung Audit K3 Lingkungan Jawa Timur</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <a href="/pelatihan-popal-sidoarjo-surabaya-gresik/" class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-cyan-400 transition-colors">
+            <strong class="text-cyan-800 block mb-1">POPAL &amp; PPPA BNSP Jawa Timur &rarr;</strong>
+            <span class="text-slate-600 text-xs">Pengendalian limbah cair IPAL dan emisi udara luar bagi perusahaan peserta PROPER di Sidoarjo–Gresik.</span>
+          </a>
+          <a href="/pelatihan-auditor-smk3-surabaya-sidoarjo-gresik/" class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-cyan-400 transition-colors">
+            <strong class="text-cyan-800 block mb-1">Auditor SMK3 PP 50/2012 Surabaya &rarr;</strong>
+            <span class="text-slate-600 text-xs">Menyiapkan audit internal elemen pemantauan lingkungan kerja &amp; pemeriksaan kesehatan tenaga kerja.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white shadow-xl space-y-5">
+        <span class="text-xs font-bold uppercase tracking-wider text-cyan-300">Verifikasi Persyaratan LSP BNSP</span>
+        <h3 class="font-serif text-2xl font-bold">Cek Syarat Ijazah &amp; Pengalaman Untuk Skema HIMU</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Kirimkan ringkasan ijazah (S1/D4/D3) serta uraian pengalaman kerja HSE Anda melalui WhatsApp. Konsultan kami akan mengonfirmasi berkas pra-asesmen BNSP Anda secara cepat.
+        </p>
+        <a
+          href={waLink("Halo Kak, bantu cek kesesuaian ijazah & pengalaman saya untuk Pelatihan Higiene Industri Muda (HIMU) BNSP.")}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center w-full py-3.5 px-5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition-colors"
+        >
+          Verifikasi Syarat HIMU WA ({WA_DISPLAY}) &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 3B: Metodologi IH & Rincian Biaya HIMU -->
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-700 block">Metodologi Pengukuran Lingkungan Kerja</span>
+        <h2 class="text-3xl font-serif font-extrabold text-slate-900">Alur Kerja 4 Tahap Higiene Industri &amp; Kelengkapan Program HIMU BNSP</h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Untuk mencegah hasil uji laboratorium pihak ketiga sekadar menumpuk menjadi arsip kertas tanpa perbaikan di lantai produksi, pembinaan HIMU membekali peserta siklus lengkap <em>Anticipation, Recognition, Evaluation, dan Control</em>:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+          <h3 class="text-xl font-bold text-slate-900">Empat Pilar Kompetensi Higiene Industri di Pabrik</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 list-disc pl-5 leading-relaxed">
+            <li><strong>1. Antisipasi &amp; Pengenalan Bahaya (Walk-Through Survey):</strong> Inventarisasi SDS bahan baku lem, pelarut, dan produk antara guna mendeteksi rute pajanan inhalasi, absorpsi kulit, dan energi fisik mesin sebelum keluhan PAK muncul.</li>
+            <li><strong>2. Pembentukan Similar Exposure Group (SEG):</strong> Mengelompokkan operator dengan profil tugas dan durasi pajanan sejenis agar biaya pengambilan sampel udara personal maupun noise dosimetry jauh lebih tepat sasaran.</li>
+            <li><strong>3. Evaluasi Statistik &amp; Interpretasi NAB:</strong> Membandingkan hasil rata-rata tertimbang waktu (8-Hour TWA), Short-Term Exposure Limit (STEL), dan Ceiling Permenaker 5/2018 serta menghitung rasio tingkat pajanan campuran pelarut organik (additive mixture formula).</li>
+            <li><strong>4. Rekayasa Pengendalian Teknik (LEV &amp; Akustik):</strong> Menentukan capture velocity yang dibutuhkan pada local exhaust hood lini pengecatan/pencampuran lem, pengendalian vibrasi perkakas tangan, serta pemilihan Noise Reduction Rating (NRR) earplug yang realistis.</li>
+          </ul>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200 space-y-4">
+          <h3 class="text-xl font-bold text-slate-900">Fasilitas Peserta &amp; Skema Investasi HIMU BNSP</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Investasi pembinaan dan uji kompetensi Ahli Higiene Industri Muda (HIMU) BNSP sebesar <strong>Rp6.500.000 – Rp9.500.000 per peserta</strong> dirancang komprehensif untuk praktisi HSE, industrial hygienist pemula, dan tenaga kesehatan kerja perusahaan:
+          </p>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700 list-disc pl-5 leading-relaxed">
+            <li><strong>Termasuk:</strong> Modul teknis lengkap Permenaker 5/2018, lembar kerja perhitungan contoh soal NAB kimia &amp; kebisingan, bimbingan simulasi asesmen wawancara oleh master trainer, biaya ujian LSP berlisensi BNSP, serta penerbitan sertifikat resmi.</li>
+            <li><strong>Diskon Grup Industri Jawa Timur:</strong> Tersedia skema paket In-House maupun pengiriman kolektif 3–10 delegasi lintas plant grup perusahaan di koridor Pasuruan PIER, Sidoarjo, Mojokerto, dan Gresik.</li>
+            <li><strong>Kesiapan Audit Berkas:</strong> Konsultan kami memverifikasi kecukupan ijazah (S1/D4/D3) dan dokumen pengalaman HSE Anda sebelum hari-H agar uji kompetensi berjalan lancar.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-700 block">Frequently Asked Questions</span>
+        <h2 class="font-serif text-3xl font-extrabold text-slate-900">FAQ Pelatihan Higiene Industri Muda (HIMU) Pasuruan &amp; Sidoarjo</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {faqs.map((item) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">{item.q}</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
