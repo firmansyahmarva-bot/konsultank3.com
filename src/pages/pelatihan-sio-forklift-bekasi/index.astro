@@ -1,0 +1,755 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
+
+const title = "Pelatihan SIO Operator Forklift Bekasi Resmi Kemnaker";
+const description = "Pelatihan SIO Operator Forklift resmi Kemnaker RI di Bekasi dan Cikarang. Praktik unit kelas I dan II, in-house MM2100 serta Jababeka. Cek jadwal WA.";
+const canonical = "/pelatihan-sio-forklift-bekasi/";
+const ogImage = "https://konsultank3.com/assets/images/pelatihan-sio-forklift-bekasi-hero.jpg";
+
+const faqs = [
+  {
+    q: "Apa syarat mengikuti pelatihan SIO Operator Forklift di Bekasi?",
+    a: "Sesuai Permenaker No. 8 Tahun 2020, calon peserta wajib berusia minimal 18 tahun, sehat jasmani dan rohani (dibuktikan surat keterangan sehat dokter), berpendidikan minimal SMP/SMA sederajat untuk Kelas II atau SMA/SMK sederajat untuk Kelas I, melampirkan fotokopi KTP, pasfoto latar belakang merah, serta surat rekomendasi perusahaan jika dikirim sebagai utusan pabrik atau gudang."
+  },
+  {
+    q: "Apa perbedaan SIO Forklift Kelas I dan Kelas II Kemnaker RI?",
+    a: "SIO Forklift Kelas II berwenang mengoperasikan forklift dengan kapasitas angkat di bawah 15 ton (paling umum untuk counterbalance, reach truck, dan forklift gudang 2,5–10 ton). Sedangkan SIO Forklift Kelas I berwenang mengoperasikan forklift berkapasitas di atas 15 ton (termasuk reach stacker dan heavy forklift logistik/kontainer) serta berhak mengawasi operator Kelas II."
+  },
+  {
+    q: "Berapa estimasi biaya pelatihan SIO Forklift Bekasi untuk perusahaan dan mandiri?",
+    a: "Estimasi investasi kelas public offline di Bekasi berkisar Rp4.800.000–Rp6.000.000 per peserta untuk Kelas II (< 15 ton) dan Rp6.000.000–Rp7.500.000 untuk Kelas I (> 15 ton), sudah termasuk modul, praktik unit forklift, konsumsi, evaluasi, serta pengurusan Sertifikat & Lisensi SIO Kemnaker RI. Untuk paket in-house di pabrik kawasan MM2100, Jababeka, atau EJIP tersedia tarif korporasi sesuai kuota peserta."
+  },
+  {
+    q: "Berapa lama durasi pelatihan dan berapa lama kartu SIO terbit?",
+    a: "Pelatihan berlangsung 3 hingga 4 hari kerja efektif (teori K3 pesawat angkat-angkut, perhitungan beban aman, pemeriksaan P2H harian, serta praktik olah gerak unit dan ujian evaluasi). Setelah dinyatakan lulus, Surat Keterangan Lulus (SKL) sementara dapat diterbitkan sambil menunggu pencetakan kartu fisik SIO/Lisensi K3 melalui sistem TemanK3 Kemnaker RI."
+  },
+  {
+    q: "Apakah bisa mengadakan In-House Training SIO Forklift di pabrik kawasan Cikarang dan Cibitung?",
+    a: "Bisa. Kami rutin menyelenggarakan in-house training langsung di fasilitas gudang dan manufaktur di MM2100 Cibitung, Kawasan Industri Jababeka, EJIP, Delta Silicon, GIIC Deltamas, BIIE Hyundai, hingga Marunda dan Narogong menggunakan unit forklift operasional perusahaan Anda."
+  },
+  {
+    q: "Apakah bisa sekalian mengurus perpanjangan SIO Forklift yang sudah habis masa berlakunya?",
+    a: "Ya. Masa berlaku Lisensi/SIO Operator Forklift Kemnaker RI adalah 5 (lima) tahun. Kami melayani proses perpanjangan SIO sebelum maupun sesudah masa berlaku berakhir dengan estimasi biaya Rp2.200.000–Rp2.800.000 per peserta, meliputi verifikasi dokumen lama, penyegaran materi K3, dan penerbitan kartu perpanjangan resmi."
+  },
+  {
+    q: "Apakah keaslian SIO Forklift bisa dicek saat audit pelanggan atau sidak Disnaker Bekasi?",
+    a: "Ya. Seluruh sertifikat pembinaan dan Lisensi/SIO K3 Operator Forklift diterbitkan melalui PJK3 penunjukan resmi Kemnaker RI dan dilengkapi QR code serta nomor registrasi yang dapat diverifikasi langsung melalui portal TemanK3 maupun saat inspeksi UPTD Pengawasan Ketenagakerjaan Wilayah II Jawa Barat."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Katalog Pelatihan", "item": "https://konsultank3.com/pelatihan/" },
+        { "@type": "ListItem", "position": 3, "name": "SIO Forklift Bekasi", "item": "https://konsultank3.com/pelatihan-sio-forklift-bekasi/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan & Sertifikasi SIO Operator Forklift Bekasi Resmi Kemnaker RI",
+      "description": description,
+      "courseCode": "SIO-FL-BKS-KEMNAKER",
+      "educationalCredentialAwarded": "Sertifikat Pembinaan & Surat Izin Operator (SIO) Forklift Kemnaker RI",
+      "occupationalCategory": "Operator Pesawat Angkat dan Pesawat Angkut (Forklift)",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "4800000",
+        "highPrice": "7500000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT32H",
+        "location": {
+          "@type": "Place",
+          "name": "Pusat Praktik & Pelatihan K3 Bekasi - Cikarang",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bekasi",
+            "addressRegion": "Jawa Barat",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & In-House SIO Forklift Wilayah Bekasi dan Cikarang",
+      "serviceType": "Sertifikasi Operator Pesawat Angkat & Angkut Kemnaker RI",
+      "url": "https://konsultank3.com/pelatihan-sio-forklift-bekasi/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Kota Bekasi",
+        "Kabupaten Bekasi",
+        "Cikarang",
+        "Cibitung",
+        "Tambun",
+        "MM2100",
+        "Jababeka",
+        "Delta Silicon",
+        "Deltamas",
+        "Narogong"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info jadwal dan biaya Pelatihan SIO Operator Forklift Kemnaker di Bekasi."
+>
+  <!-- Hero Section -->
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan/" class="hover:text-amber-400 transition-colors">Katalog Pelatihan</a>
+        <span>/</span>
+        <span class="text-slate-300">SIO Forklift Bekasi</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold border border-amber-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse-glow"></span>
+            Permenaker No. 8 Tahun 2020 &bull; Koridor Industri Bekasi &amp; Cikarang
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan &amp; Sertifikasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">SIO Operator Forklift Bekasi</span> Resmi Kemnaker
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program pembinaan resmi Kementerian Ketenagakerjaan RI untuk mencetak operator forklift bersertifikat dan berlisensi Surat Izin Operator (SIO) Kelas I &amp; II bagi pabrik manufaktur, pusat logistik, dan pergudangan di kawasan Bekasi, Cibitung, dan Cikarang.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, saya mau info jadwal dan biaya Pelatihan SIO Forklift Kemnaker di Bekasi.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal &amp; Biaya WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="#biaya"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Lihat Estimasi Biaya &amp; Silabus
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kewenangan</span>
+              <p class="text-white font-bold text-sm">Kelas I &amp; II Kemnaker</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi Pembinaan</span>
+              <p class="text-white font-bold text-sm">3 – 4 Hari (30–40 JP)</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Zona Industri</span>
+              <p class="text-white font-bold text-sm">MM2100 &amp; Jababeka</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Masa Berlaku SIO</span>
+              <p class="text-emerald-400 font-bold text-sm">5 Tahun (TemanK3)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Hero Photo Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/pelatihan-sio-forklift-bekasi-hero.jpg"
+              alt="Pelatihan SIO Operator Forklift di gudang industri Bekasi"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500 text-slate-950 mb-2">
+                Teori Regulasi + Praktik Unit Langsung
+              </span>
+              <div class="text-lg font-bold">Standar Operasi Gudang &amp; Pabrik Bekasi</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Uji kestabilan beban, inspeksi P2H harian, olah gerak lorong sempit, dan verifikasi lisensi Kemnaker RI.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">Lisensi Resmi Kemnaker</div>
+              <div class="text-[10px] text-slate-400">Terdata Portal TemanK3</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">🏭</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House Cikarang &amp; Cibitung</div>
+              <div class="text-[10px] text-slate-400">Praktik di Gudang Klien</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notice Strip -->
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-amber-500/10 border-b border-amber-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-amber-900">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Kelas Bekasi &amp; Cikarang:
+      </span>
+      <span class="text-slate-700">Tersedia Public Class Bekasi, Perpanjangan SIO, dan In-House Pabrik.</span>
+      <a
+        href={waLink("Halo Kak, boleh minta jadwal batch SIO Forklift Bekasi bulan ini dan penawaran corporate?")}
+        target="_blank"
+        rel="noopener"
+        class="text-emerald-700 hover:text-emerald-800 font-bold underline ml-1"
+      >
+        Cek Jadwal via WhatsApp &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Summary Table -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Apa Itu Pelatihan SIO Forklift Bekasi?</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          <strong>Pelatihan SIO Operator Forklift Bekasi</strong> adalah pembinaan resmi berbasis <strong>Permenaker No. 8 Tahun 2020</strong> untuk membekali operator gudang dan pabrik agar mampu mengoperasikan forklift secara aman sekaligus memperoleh <strong>Sertifikat &amp; Lisensi Surat Izin Operator (SIO) Kemnaker RI</strong>. Pelatihan berlangsung 3–4 hari (teori K3 dan praktik unit langsung) di area Bekasi–Cikarang maupun secara in-house di lokasi pabrik.
+        </p>
+        <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 leading-relaxed">
+          <strong>Catatan Audit Gudang:</strong> Mengoperasikan forklift tanpa SIO sah melanggar UU No. 1 Tahun 1970 dan langsung menjadi temuan mayor pada audit SMK3 PP 50/2012, ISO 45001, maupun inspeksi pelanggan otomotif dan logistik.
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Informasi Utama</th>
+              <th class="py-3.5 px-5">Detail Program Bekasi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Lembaga Penerbit</td>
+              <td class="py-3 px-5">Kementerian Ketenagakerjaan RI (via PJK3 Resmi)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Dokumen Terbit</td>
+              <td class="py-3 px-5">Sertifikat Pembinaan K3 + Kartu Lisensi SIO</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Jenjang Kelas</td>
+              <td class="py-3 px-5">Kelas II (&lt; 15 Ton) &amp; Kelas I (&ge; 15 Ton)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Durasi &amp; Metode</td>
+              <td class="py-3 px-5">3 – 4 Hari (Teori + Praktik Unit Lapangan / In-House)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Estimasi Biaya</td>
+              <td class="py-3 px-5 font-semibold text-emerald-700">Mulai Rp4.800.000 / peserta (Kelas II Corporate/Public)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Masa Berlaku</td>
+              <td class="py-3 px-5">5 Tahun (Dapat diperpanjang sebelum kedaluwarsa)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Local Industrial Context Bekasi & Cikarang -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-2">Konteks Industri Bekasi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Mengapa Operator Forklift di Kawasan Bekasi &amp; Cikarang Wajib Mengantongi SIO Resmi?
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Koridor Bekasi hingga Cikarang merupakan klaster manufaktur dan pusat distribusi logistik terpadat di Indonesia. Ribuan unit forklift counterbalance (diesel, LPG, elektrik), reach truck rak tinggi, hingga reach stacker beroperasi 24 jam penuh di lintas shift pabrik otomotif, FMCG, bahan kimia, dan gudang 3PL.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold text-xl">⚖️</div>
+          <h3 class="font-bold text-slate-900 text-lg">Kepatuhan Audit Disnaker &amp; Klien Tier-1</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pabrik pemasok otomotif, elektronik, dan FMCG di Bekasi rutin diaudit oleh <strong>UPTD Pengawasan Ketenagakerjaan Wilayah II Jawa Barat</strong> serta auditor vendor CSMS. Kepemilikan SIO yang aktif bagi setiap operator shift merupakan syarat kelulusan wajib.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-700 flex items-center justify-center font-bold text-xl">📦</div>
+          <h3 class="font-bold text-slate-900 text-lg">Risiko Gudang Rak Tinggi &amp; Lalu Lintas</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Kecelakaan forklift terguling, palet jatuh dari rak tinggi, atau benturan dengan pejalan kaki sering berakar pada kesalahan membaca <em>load chart</em> dan titik berat beban. Pembekalan teknis mencegah kerusakan aset bernilai ratusan juta rupiah.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center font-bold text-xl">🛡️</div>
+          <h3 class="font-bold text-slate-900 text-lg">Perlindungan Hukum &amp; Klaim BPJS</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Apabila terjadi insiden kecelakaan kerja yang melibatkan unit forklift tanpa operator bersertifikat SIO resmi, manajemen berisiko terkena sanksi pidana pelanggaran UU No. 1 Tahun 1970 serta kendala investigasi klaim asuransi kerja.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-400">Jangkauan Kawasan Industri</span>
+            <h3 class="text-xl sm:text-2xl font-bold font-serif text-white mt-1">Area Layanan Public &amp; In-House Forklift Bekasi Raya</h3>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami mau minta penawaran In-House Training SIO Forklift untuk gudang/pabrik kami di Bekasi/Cikarang.")}
+            target="_blank"
+            rel="noopener"
+            class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-colors whitespace-nowrap self-start md:self-auto"
+          >
+            Ajukan Penawaran In-House &rarr;
+          </a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-slate-300">
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">MM2100 Industrial Town (Cibitung)</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Jababeka I–VI (Cikarang)</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">EJIP &amp; BIIE Hyundai (Cikarang Selatan)</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Delta Silicon &amp; GIIC Deltamas</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Kawasan Industri Tambun &amp; Setu</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Koridor Narogong &amp; Bantargebang</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Marunda Center &amp; Tarumajaya</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Medan Satria &amp; Bekasi Barat</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Legal Basis & Class Matrix -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-2">Dasar Hukum &amp; Klasifikasi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Regulasi Permenaker No. 8 Tahun 2020 &amp; Perbedaan Kelas SIO Forklift
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Ketentuan sertifikasi operator forklift kini mengacu pada <strong>Permenaker No. 8 Tahun 2020</strong> tentang Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut (menggantikan Permenakertrans No. PER.09/MEN/VII/2010), bersama <strong>UU No. 1 Tahun 1970</strong> dan <strong>PP No. 50 Tahun 2012 (SMK3)</strong>. Setiap unit forklift juga wajib memiliki surat keterangan layak pakai (Riksa Uji berkala), di samping SIO operatornya.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-4 px-5">Aspek</th>
+              <th class="py-4 px-5 bg-emerald-950">SIO Forklift Kelas II</th>
+              <th class="py-4 px-5 bg-amber-950">SIO Forklift Kelas I</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Batas Kapasitas Angkat</td>
+              <td class="py-3.5 px-5"><strong>Di bawah 15 Ton</strong> (2 ton, 3 ton, 5 ton, hingga 10 ton)</td>
+              <td class="py-3.5 px-5"><strong>Di atas 15 Ton</strong> (heavy forklift, kontainer / reach stacker)</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Syarat Pendidikan Minimal</td>
+              <td class="py-3.5 px-5">Minimal SMP / sederajat (disarankan SMA/SMK)</td>
+              <td class="py-3.5 px-5">Minimal SMA / SMK / sederajat</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Pengalaman Kerja</td>
+              <td class="py-3.5 px-5">Berpengalaman mengoperasikan / membantu operasi minimal 1 tahun</td>
+              <td class="py-3.5 px-5">Berpengalaman minimal 2 tahun sesuai jenis pesawat angkut</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Kewenangan Tambahan</td>
+              <td class="py-3.5 px-5">Mengoperasikan forklift &lt; 15 ton dan melakukan P2H harian</td>
+              <td class="py-3.5 px-5">Mengoperasikan seluruh kelas forklift &amp; membina operator Kelas II</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Aplikasi Umum di Bekasi</td>
+              <td class="py-3.5 px-5">Gudang manufaktur, 3PL, line produksi otomotif &amp; makanan</td>
+              <td class="py-3.5 px-5">Depo peti kemas, pabrik baja berat, proyek konstruksi besar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Syllabus & Practical Photo -->
+    <section id="silabus" class="space-y-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block">Silabus Resmi Kemnaker RI</span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+            Materi Pembinaan Teori &amp; Praktik Pemeriksaan P2H
+          </h2>
+          <div class="h-1 w-20 bg-amber-500 rounded-full"></div>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Kurikulum dirancang sesuai standar Ditjen Binwasnaker &amp; K3 Kemnaker RI agar operator tidak hanya mahir menyetir di lorong gudang, tetapi memahami kestabilan segitiga gravitasi, perawatan sistem hidrolik, serta disiplin pemeriksaan harian (P2H) sebelum menyalakan mesin.
+          </p>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Sebagai alat kerja lapangan langsung, tim gudang Anda juga dapat memanfaatkan template <a href="/artikel/form-p2h-forklift/" class="text-emerald-700 font-bold underline">Form P2H Forklift Excel &amp; Panduan Pengisian</a> untuk mendokumentasikan temuan sabuk pengaman, rem, garpu, maupun kebocoran selang hidrolik sebelum tiap shift dimulai.
+          </p>
+        </div>
+
+        <div class="lg:col-span-6">
+          <figure class="rounded-3xl overflow-hidden border border-slate-200 shadow-lg bg-white">
+            <img
+              src="/assets/images/pelatihan-sio-forklift-bekasi-praktik.jpg"
+              alt="Instruktur dan peserta pelatihan SIO forklift memeriksa mast dan garpu P2H di Bekasi"
+              class="w-full h-auto object-cover"
+            />
+            <figcaption class="px-5 py-3 text-xs text-slate-600 bg-slate-50 border-t border-slate-200">
+              Praktik pemeriksaan harian (P2H) komponen mast, rantai pengangkat, dan garpu forklift bersama instruktur K3.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Kelompok Materi</th>
+              <th class="py-3.5 px-5">Pokok Bahasan Utama</th>
+              <th class="py-3.5 px-5">Beban JP</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">1. Kebijakan &amp; Regulasi K3</td>
+              <td class="py-3.5 px-5">UU No. 1/1970, Permenaker No. 8/2020, kewajiban operator ber-SIO, serta tanggung jawab hukum pengoperasian pesawat angkut.</td>
+              <td class="py-3.5 px-5 font-mono">4 – 6 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">2. Pengetahuan Dasar Forklift</td>
+              <td class="py-3.5 px-5">Jenis tenaga penggerak (diesel, LPG, baterai elektrik), sistem hidrolik, transmisi, mast, carriage, garpu, dan alat pengaman standar.</td>
+              <td class="py-3.5 px-5 font-mono">6 – 8 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">3. Stabilitas &amp; Load Chart</td>
+              <td class="py-3.5 px-5">Prinsip segitiga stabilitas, perhitungan titik pusat beban (<em>load center</em>), kapasitas angkat aman, serta pencegahan unit terguling (<em>tip-over</em>).</td>
+              <td class="py-3.5 px-5 font-mono">6 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">4. Pengoperasian Aman &amp; P2H</td>
+              <td class="py-3.5 px-5">Prosedur <em>pre-use inspection</em> (P2H), manuver di tanjakan/loading dock, visibilitas beban, sinyal klakson, serta jarak aman pejalan kaki.</td>
+              <td class="py-3.5 px-5 font-mono">6 – 8 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">5. Praktik Lapangan &amp; Evaluasi</td>
+              <td class="py-3.5 px-5">Simulasi pemindahan palet zig-zag, penumpukan rak tinggi (<em>stacking/unstacking</em>), ujian tertulis, dan evaluasi praktik oleh penguji resmi.</td>
+              <td class="py-3.5 px-5 font-mono">8 – 12 JP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5: Pricing & Inclusions -->
+    <section id="biaya" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-2">Transparansi Investasi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Estimasi Biaya Pelatihan SIO Forklift Bekasi 2026
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Berikut kisaran investasi resmi untuk penyelenggaraan tatap muka dan sertifikasi SIO Kemnaker RI di wilayah Bekasi &amp; Cikarang. Harga final menyesuaikan kelas kapasitas unit, jumlah peserta yang didaftarkan, dan lokasi praktik.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-800 text-xs font-bold border border-emerald-500/20">Paling Banyak Dipilih</span>
+            <h3 class="text-xl font-bold text-slate-900">Public Class Kelas II (&lt; 15 Ton)</h3>
+            <div class="text-2xl font-extrabold font-serif text-emerald-700">Rp4.800.000 – Rp6.000.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; Durasi 3 hari tatap muka Bekasi</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Ideal bagi perusahaan logistik, gudang distribusi, dan manufaktur dengan unit forklift standar 2,5 hingga 10 ton.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau cek penawaran resmi Public Class SIO Forklift Kelas II di Bekasi.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center transition-colors shadow-md"
+          >
+            Tanya Jadwal Kelas II &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-800 text-xs font-bold border border-amber-500/20">Heavy Duty &gt; 15 Ton</span>
+            <h3 class="text-xl font-bold text-slate-900">Public Class Kelas I (&ge; 15 Ton)</h3>
+            <div class="text-2xl font-extrabold font-serif text-slate-900">Rp6.000.000 – Rp7.500.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; Durasi 4 hari (40 JP)</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Untuk operator forklift kapasitas besar, container handler, atau supervisor logistik yang membina operator Kelas II.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info Pelatihan SIO Forklift Kelas I (>15 ton) di Bekasi.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition-colors"
+          >
+            Tanya Jadwal Kelas I &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-950 text-white border border-white/10 shadow-xl flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold border border-amber-400/30">Hemat Korporasi</span>
+            <h3 class="text-xl font-bold text-white">In-House Pabrik &amp; Perpanjangan</h3>
+            <div class="text-2xl font-extrabold font-serif text-amber-400">Paket Khusus Perusahaan</div>
+            <p class="text-xs text-slate-400">Perpanjangan SIO 5 tahunan: Rp2.200.000 – Rp2.800.000</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Instruktur &amp; penguji hadir langsung di pabrik/gudang kawasan MM2100, Jababeka, atau EJIP. Praktik langsung pada unit kerja perusahaan Anda.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami mau minta proposal In-House Training / Perpanjangan SIO Forklift untuk pabrik di Bekasi.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition-colors"
+          >
+            Minta Proposal Korporasi &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-3">
+          <h3 class="font-bold text-slate-900 text-base">Fasilitas yang Sudah Termasuk</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Sertifikat Pembinaan &amp; Kartu Lisensi SIO resmi Kemnaker RI (terdata TemanK3)</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Surat Keterangan Lulus (SKL) sementara selama proses pencetakan kartu fisik</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Modul pembinaan K3 pesawat angkat-angkut, training kit, dan ATK</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Akses unit forklift praktik lapangan, makan siang, dan coffee break kelas tatap muka</span></li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold text-slate-900 text-base">Catatan Administrasi &amp; Pengecualian</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Belum termasuk akomodasi hotel/penginapan peserta luar kota dan transportasi pribadi</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Penerapan pajak (PPN / PPh 23) disesuaikan dengan penagihan resmi korporasi (invoice &amp; faktur)</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Peserta praktik lapangan wajib mengenakan sepatu keselamatan (<em>safety shoes</em>) pribadi</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Tersedia diskon tarif grup untuk pengiriman minimal 3–5 operator dari satu perusahaan</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Requirements & 5-Step Process -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-2">Persyaratan &amp; Proses Resmi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Syarat Dokumen &amp; Alur Penerbitan SIO Forklift Kemnaker
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+          <h3 class="text-lg font-bold font-serif text-amber-400">Kelengkapan Berkas Peserta:</h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan KTP asli yang masih berlaku</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan ijazah pendidikan terakhir (min. SMP/sederajat Kelas II, SMA/SMK Kelas I)</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat Keterangan Sehat jasmani &amp; bebas buta warna dari dokter/klinik</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Pasfoto formal terbaru berlatar belakang merah (kemeja rapi)</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat Keterangan Kerja / Surat Penugasan perusahaan (untuk utusan perusahaan)</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Kopian SIO lama (khusus peserta perpanjangan 5 tahunan)</span></li>
+          </ul>
+          <div class="pt-4 border-t border-white/10 text-xs text-slate-400 leading-relaxed">
+            Pembinaan diselenggarakan bekerja sama dengan PJK3 resmi terakreditasi Ditjen Binwasnaker &amp; K3 Kemnaker RI dan diajar oleh instruktur praktisi K3 Pesawat Angkat-Angkut bersertifikat.
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shrink-0">1</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Verifikasi Berkas &amp; Penentuan Kelas (I atau II)</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Konsultasikan kapasitas forklift yang dioperasikan di pabrik Bekasi Anda agar penunjukan Kelas I atau Kelas II tepat sasaran.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shrink-0">2</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Registrasi Peserta &amp; Input Sistem TemanK3</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Data peserta didaftarkan ke portal pengajuan resmi Kemnaker RI sebelum hari pembukaan kelas dimulai.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shrink-0">3</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Pembinaan Teori Regulasi &amp; Hitung Beban</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Mengikuti sesi kelas interaktif mengenai Permenaker 8/2020, diagram beban, dan prosedur P2H bersama instruktur K3.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shrink-0">4</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Ujian Teori &amp; Praktik Mengemudi Unit Forklift</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Penilaian langsung kemampuan inspeksi pra-operasi, pengangkatan palet, manuver aman, dan parkir unit sesuai standar penguji.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shrink-0">5</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Penerbitan SKL, Sertifikat &amp; Kartu SIO Resmi</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Peserta yang lulus memperoleh SKL untuk kebutuhan operasional awal sambil menunggu sertifikat dan kartu lisensi SIO diterbitkan Kemnaker RI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-2">Tanya Jawab Bekasi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Pertanyaan yang Sering Diajukan Seputar SIO Forklift Bekasi
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((item) => (
+          <details class="p-6 rounded-2xl bg-white border border-slate-200 group shadow-sm">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>{item.q}</span>
+              <span class="text-emerald-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="pt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-4">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 8: Related Programs & Final CTA -->
+    <section class="space-y-8">
+      <div class="p-6 rounded-3xl bg-white border border-slate-200 space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Program &amp; Sumber Daya Terkait</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+          <li>
+            <a href="/artikel/form-p2h-forklift/" class="text-emerald-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Download Form P2H Forklift Excel</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-ahli-k3-kebakaran-jakarta/" class="text-emerald-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Ahli K3 Kebakaran Jakarta</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-k3-ruang-terbatas-batam/" class="text-emerald-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan K3 Ruang Terbatas Batam</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-k3-listrik/" class="text-emerald-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Teknisi &amp; Ahli K3 Listrik</span>
+            </a>
+          </li>
+          <li>
+            <a href="/in-house-training-k3-jakarta-surabaya-balikpapan/" class="text-emerald-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Layanan In-House Training K3 Multi-Kota</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan/" class="text-emerald-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Katalog Lengkap Pelatihan K3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white shadow-2xl border border-white/10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Siapkan Operator Forklift Gudang Anda Sesuai Standar Kemnaker RI
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Dapatkan jadwal batch terdekat di Bekasi atau proposal in-house training khusus pabrik Anda di MM2100, Jababeka, EJIP, dan Deltamas.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3 shrink-0">
+          <a
+            href={waLink("Halo Kak, saya mau daftar Pelatihan SIO Operator Forklift di Bekasi. Boleh info jadwal dan biayanya?")}
+            target="_blank"
+            rel="noopener"
+            class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-all"
+          >
+            Chat WhatsApp Sekarang &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

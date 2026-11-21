@@ -1,0 +1,633 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Petugas P3K Semarang Kendal Batang Kemnaker";
+const description = "Pelatihan Petugas P3K di Tempat Kerja Kemnaker RI dan BNSP di Semarang, Kendal, dan Batang. Praktik CPR, AED, evakuasi pabrik KIW dan KITB. Cek biaya.";
+const canonical = "/pelatihan-petugas-p3k-semarang-kendal-batang/";
+const ogImage = "https://konsultank3.com/assets/images/training-session.jpg";
+
+const faqs = [
+  {
+    q: "Berapa jumlah Petugas P3K berlisensi yang wajib dimiliki pabrik di Semarang, Kendal, dan Batang?",
+    a: "Berdasarkan Lampiran I Permenakertrans No. Per.15/MEN/VIII/2008, pabrik dengan potensi bahaya tinggi (tekstil/garmen mesin potong, logam, kimia, konstruksi di KIW Semarang, KIK Kendal, KITB Batang, atau Ungaran) wajib menyediakan minimal 1 Petugas P3K berlisensi untuk setiap 100 orang pekerja atau kurang per shift. Sedangkan kantor atau risiko rendah wajib memiliki rasio 1 : 150 pekerja."
+  },
+  {
+    q: "Apa beda sertifikat Petugas P3K Kemnaker RI vs Sertifikasi First Aider BNSP?",
+    a: "Sertifikat & Kartu Lisensi Petugas P3K Kemnaker RI diterbitkan melalui PJK3 resmi dengan surat penunjukan perusahaan dan menjadi dokumen kepatuhan hukum langsung saat audit SMK3 kriteria 6.8 maupun pemeriksaan Disnaker Jateng. Sementara sertifikat BNSP berlogo Garuda Emas melekat pada kompetensi profesi individu berbasis SKKNI dan sering dipersyaratkan pada tender proyek internasional."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan Petugas P3K di koridor Semarang–Kendal–Batang?",
+    a: "Estimasi investasi kelas Public Offline resmi Kemnaker RI (3 hari, 30 JP + praktik CPR/AED/balut-bidai) berkisar Rp4.500.000–Rp6.000.000 per peserta, sedangkan skema sertifikasi BNSP atau paket gabungan berkisar Rp4.800.000–Rp7.200.000 per peserta. Untuk perusahaan garmen dan manufaktur padat karya tersedia paket In-House Training Jawa Tengah."
+  },
+  {
+    q: "Apakah pelatihan P3K sudah mencakup praktik Resusitasi Jantung Paru (CPR), penggunaan AED, dan penanganan patah tulang?",
+    a: "Ya. Porsi praktik klinis di ruang kelas meliputi teknik RJP/CPR menggunakan manekin resusitasi dengan indikator kedalaman kompresi, simulasi AED (Automated External Defibrillator), penanganan tersedak (Heimlich maneuver), kontrol perdarahan, pembalutan serta pembidaian fraktur, hingga prosedur evakuasi tandu korban."
+  },
+  {
+    q: "Apakah bisa mengadakan In-House Training P3K langsung di pabrik kawasan Kendal (KIK), Batang (KITB), Demak, atau Solo?",
+    a: "Bisa. Instruktur medis dan K3 kami melayani pelaksanaan in-house langsung di pabrik atau poliklinik perusahaan sepanjang koridor Semarang, Kaliwungu/Kendal, Batang, Demak, Kudus, Ungaran, Salatiga, hingga Solo Raya dengan alat peraga lengkap."
+  },
+  {
+    q: "Apa kaitan antara jumlah Petugas P3K dengan isi serta kelas Kotak P3K (Tipe A, B, C) di pabrik?",
+    a: "Permenakertrans 15/2008 mengatur penempatan Kotak P3K sesuai jumlah pekerja: Tipe A untuk 25 pekerja atau kurang, Tipe B untuk 50 pekerja atau kurang, dan Tipe C untuk 100 pekerja atau kurang—selalu diawasi oleh Petugas P3K berlisensi agar stok obat bebas kedaluwarsa serta siap dipakai di setiap lantai produksi."
+  },
+  {
+    q: "Bagaimana syarat berkas peserta dan masa berlaku lisensi Petugas P3K Kemnaker RI?",
+    a: "Calon peserta menyiapkan scan KTP, ijazah terakhir minimal SLTA/sederajat, surat keterangan sehat jasmani dan rohani, pasfoto latar belakang merah, serta surat penunjukan perusahaan. Lisensi Petugas P3K Kemnaker berlaku selama 3 (tiga) tahun dan dapat diperpanjang secara resmi."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Petugas P3K di Tempat Kerja", "item": "https://konsultank3.com/pelatihan-petugas-p3k-kemnaker-bnsp/" },
+        { "@type": "ListItem", "position": 3, "name": "Petugas P3K Semarang Kendal Batang", "item": "https://konsultank3.com/pelatihan-petugas-p3k-semarang-kendal-batang/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan & Sertifikasi Petugas P3K Semarang, Kendal & Batang Kemnaker RI & BNSP",
+      "description": description,
+      "courseCode": "P3K-SMG-JATENG",
+      "educationalCredentialAwarded": "Sertifikat & Kartu Lisensi Petugas P3K Kemnaker RI / BNSP",
+      "occupationalCategory": "Petugas P3K di Tempat Kerja / Workplace First Aider",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "4500000",
+        "highPrice": "7200000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT30H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Industri Semarang, Kendal & Batang",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Semarang",
+            "addressRegion": "Jawa Tengah",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & In-House Petugas P3K Semarang, Kendal, Batang, Demak dan Solo",
+      "serviceType": "Pembinaan & Lisensi Petugas P3K di Tempat Kerja",
+      "url": "https://konsultank3.com/pelatihan-petugas-p3k-semarang-kendal-batang/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Semarang",
+        "KIW Semarang",
+        "Candi Semarang",
+        "Kendal",
+        "Kawasan Industri Kendal",
+        "Batang",
+        "KIT Batang",
+        "Demak",
+        "Ungaran",
+        "Kudus",
+        "Solo"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info jadwal dan biaya Pelatihan Petugas P3K Kemnaker/BNSP di Semarang, Kendal, atau Batang."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan-petugas-p3k-kemnaker-bnsp/" class="hover:text-amber-400 transition-colors">Petugas P3K Tempat Kerja</a>
+        <span>/</span>
+        <span class="text-slate-300">Semarang, Kendal &amp; Batang</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 text-rose-300 text-xs font-semibold border border-rose-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse-glow"></span>
+            Permenakertrans 15/2008 &bull; Kawasan Industri Semarang &ndash; Kendal &ndash; Batang
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-300 to-amber-300">Petugas P3K Semarang, Kendal &amp; Batang</span> Resmi Kemnaker
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program pembinaan sertifikasi Pertolongan Pertama Pada Kecelakaan (P3K) berlisensi Kemnaker RI dan BNSP untuk pabrik garmen, tekstil, elektronik, makanan, dan logistik di KIW Semarang, KIK Kendal, KITB Batang, Demak, Ungaran, hingga Solo.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, saya mau info jadwal dan biaya Pelatihan Petugas P3K Kemnaker di Semarang, Kendal, Batang.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal &amp; Biaya WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="/pelatihan-petugas-p3k-kemnaker-bnsp/"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Program Induk Petugas P3K &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Pilihan Lisensi</span>
+              <p class="text-white font-bold text-sm">Kemnaker RI &amp; BNSP</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi Program</span>
+              <p class="text-white font-bold text-sm">3 Hari (30 JP)</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Praktik Medis</span>
+              <p class="text-white font-bold text-sm">CPR, AED &amp; Bidai</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Koridor Industri</span>
+              <p class="text-rose-300 font-bold text-sm">KIW, KIK, KITB Jateng</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/training-session.jpg"
+              alt="Pembinaan Petugas P3K di Tempat Kerja untuk kawasan industri Semarang Kendal dan Batang"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-rose-500 text-white mb-2">
+                Kepatuhan SMK3 6.8 &amp; Audit Disnaker Jateng
+              </span>
+              <div class="text-lg font-bold">Kesiapan Tim First Aider Pabrik Jawa Tengah</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Latihan klinis CPR manekin, defibrilator AED, kontrol perdarahan, serta rasio wajib kotak P3K per shift.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">Lisensi Resmi Kemnaker</div>
+              <div class="text-[10px] text-slate-400">Permenakertrans 15/2008</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">🏥</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House Pabrik Jateng</div>
+              <div class="text-[10px] text-slate-400">Semarang &bull; Kendal &bull; Batang</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-rose-500/10 border-b border-rose-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-rose-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Jawa Tengah:
+      </span>
+      <span class="text-slate-700">Melayani Public Class Semarang serta In-House langsung di KIW, KIK Kendal, KITB Batang, Demak, dan Solo.</span>
+      <a
+        href={waLink("Halo Kak, boleh minta jadwal pelatihan Petugas P3K Semarang terdekat dan penawaran in-house pabrik?")}
+        target="_blank"
+        rel="noopener"
+        class="text-rose-800 hover:text-rose-950 font-bold underline ml-1"
+      >
+        Cek Jadwal via WhatsApp &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Summary Table -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-rose-600 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Kewajiban Petugas P3K di Koridor Semarang–Kendal–Batang</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Melalui program induk <a href="/pelatihan-petugas-p3k-kemnaker-bnsp/" class="text-rose-700 font-bold underline">Pelatihan Petugas P3K di Tempat Kerja Kemnaker RI &amp; BNSP</a>, perusahaan padat karya di <strong>Semarang, Kendal, Batang, Demak, Ungaran, dan Solo</strong> wajib menyiapkan minimal 1 petugas P3K berlisensi untuk setiap 100 pekerja berisiko tinggi (atau 1 : 150 risiko rendah) guna memenuhi Permenakertrans No. 15/2008 selama pembinaan intensif 3 hari (30 JP).
+        </p>
+        <div class="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-950 leading-relaxed">
+          <strong>Layanan Legalitas Pendukung:</strong> Jika perusahaan juga membutuhkan bantuan pengurusan pengesahan P2K3 serta perizinan kelembagaan ke Disnakertrans Jateng, lihat layanan <a href="/jasa-pengesahan-p2k3-lisensi-p3k/" class="font-bold underline">Jasa Pengesahan P2K3 &amp; Lisensi P3K</a>.
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Informasi Utama</th>
+              <th class="py-3.5 px-5">Detail Program Jawa Tengah</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Jalur Sertifikasi</td>
+              <td class="py-3 px-5">Kemnaker RI (Sertifikat &amp; Lisensi) atau BNSP First Aider</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Cakupan Kota</td>
+              <td class="py-3 px-5">Semarang, Kendal, Batang, Demak, Ungaran, Kudus, Solo</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Durasi &amp; Praktik</td>
+              <td class="py-3 px-5">3 Hari (30 JP): Manekin CPR, AED, Balut-Bidai, Evakuasi</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Rasio Wajib Pabrik</td>
+              <td class="py-3 px-5">1 Petugas per &le; 100 karyawan (bahaya tinggi) per shift</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Estimasi Biaya</td>
+              <td class="py-3 px-5 font-semibold text-rose-700">Kemnaker Rp4,5–6 jt &bull; BNSP/Dual Rp4,8–7,2 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Masa Berlaku</td>
+              <td class="py-3 px-5">3 Tahun (Syarat Wajib Audit SMK3 Kriteria 6.8)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Central Java Industrial Workforce Context -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-rose-600 block mb-2">Konteks Padat Karya Jawa Tengah</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Mengapa Pabrik di Semarang, Kendal &amp; Batang Wajib Menunjuk Tim P3K di Tiap Shift?
+        </h2>
+        <div class="h-1 w-20 bg-rose-500 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Ekspansi kawasan industri sepanjang pantai utara Jawa Tengah membawa ribuan tenaga kerja baru di pabrik garmen, sepatu, elektronik, furnitur, komponen otomotif, serta pengolahan pangan. Pada pabrik dengan jumlah pekerja 1.000–5.000 orang yang beroperasi 2–3 shift, pemenuhan rasio petugas P3K di tiap gedung produksi dan shift malam menjadi fokus inspeksi rutin.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-rose-500/10 text-rose-700 flex items-center justify-center font-bold text-xl">🏭</div>
+          <h3 class="font-bold text-slate-900 text-lg">Semarang &amp; Ungaran (KIW, Candi, BSB)</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pabrik garmen, farmasi, minuman, dan pergudangan di KIW Tugu, Kawasan Candi Ngaliyan, Terboyo, BSB, hingga Ungaran wajib memiliki petugas P3K siaga penanganan pingsan massal, luka mesin jahit/potong, maupun cedera ergonomi.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold text-xl">⚙️</div>
+          <h3 class="font-bold text-slate-900 text-lg">Kawasan Industri Kendal (KIK)</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Tenant PMA di KIK Kendal menerapkan standar audit pembeli internasional (buyer compliance / BSCI / WRAP) yang mensyaratkan rasio petugas P3K berlisensi sah serta isi kotak P3K sesuai Permenakertrans 15/2008.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center font-bold text-xl">🏗️</div>
+          <h3 class="font-bold text-slate-900 text-lg">KIT Batang, Demak &amp; Solo Raya</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Proyek konstruksi dan pabrik kaca/baterai/panel surya di KITB Batang serta tekstil Demak, Kudus, dan Solo membutuhkan tim first aider terlatih untuk merespons trauma kecelakaan berat pada golden minutes pertama.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Ratio & First Aid Box Compliance Table -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-rose-600 block mb-2">Rasio Hukum Permenakertrans 15/2008</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Matriks Rasio Petugas P3K &amp; Kebutuhan Kotak P3K di Pabrik
+        </h2>
+        <div class="h-1 w-20 bg-rose-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Klasifikasi Tempat Kerja</th>
+              <th class="py-3.5 px-5">Jumlah Pekerja</th>
+              <th class="py-3.5 px-5">Minimal Petugas P3K</th>
+              <th class="py-3.5 px-5">Rekomendasi Kotak P3K</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Potensi Bahaya Rendah (Kantor / Ritel)</td>
+              <td class="py-3.5 px-5">25 – 150 orang</td>
+              <td class="py-3.5 px-5 font-bold">Minimal 1 Petugas</td>
+              <td class="py-3.5 px-5">Tipe A (&le;25), Tipe B (&le;50), atau Tipe C (&le;100)</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Potensi Bahaya Tinggi (Pabrik / Proyek)</td>
+              <td class="py-3.5 px-5">&le; 100 orang / shift</td>
+              <td class="py-3.5 px-5 font-bold text-rose-700">Minimal 1 Petugas / 100 pekerja</td>
+              <td class="py-3.5 px-5">1 Kotak Tipe C (atau kelipatan Tipe B) tiap 100 pekerja</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Pabrik Padat Karya Multi-Gedung</td>
+              <td class="py-3.5 px-5">&gt; 500 orang (multi-shift)</td>
+              <td class="py-3.5 px-5 font-bold text-rose-700">Kelipatan 100 pekerja merata per shift</td>
+              <td class="py-3.5 px-5">Kotak P3K di tiap line + Ruang P3K wajib (&ge; 100 pekerja)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Syllabus Summary -->
+    <section id="silabus" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-rose-600 block mb-2">Kurikulum 30 Jam Pelajaran</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Materi Teori Medis Kerja &amp; Simulasi Praktik Lapangan
+        </h2>
+        <div class="h-1 w-20 bg-rose-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Modul Pembinaan P3K</th>
+              <th class="py-3.5 px-5">Materi &amp; Keterampilan Praktik</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">1. Regulasi &amp; Manajemen Fasilitas P3K</td>
+              <td class="py-3.5 px-5">Permenakertrans 15/2008, anatomi dasar, pencatatan buku kegiatan P3K, serta pengelolaan isi kotak P3K dan ruang klinik pabrik.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">2. Bantuan Hidup Dasar (CPR / RJP &amp; AED)</td>
+              <td class="py-3.5 px-5">Penilaian kesadaran DRABC, teknik kompresi dada dan napas buatan pada manekin dewasa, serta penggunaan unit simulator AED.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">3. Penanganan Luka, Perdarahan, Syok &amp; Luka Bakar</td>
+              <td class="py-3.5 px-5">Kontrol perdarahan arteri/vena, penanganan luka bakar termal &amp; bahan kimia, pingsan, dan serangan panas di lantai pabrik.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">4. Pembidaian Fraktur, Evakuasi &amp; Ujian Kemnaker</td>
+              <td class="py-3.5 px-5">Pembalutan mitela dan spalk patah tulang, teknik angkut korban cedera tulang belakang, serta evaluasi teori dan praktik.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5: Pricing -->
+    <section id="biaya" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-rose-600 block mb-2">Transparansi Investasi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Estimasi Biaya Pelatihan Petugas P3K Semarang, Kendal &amp; Batang 2026
+        </h2>
+        <div class="h-1 w-20 bg-rose-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl bg-white border-2 border-rose-400 shadow-md flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-rose-500/10 text-rose-800 text-xs font-bold border border-rose-500/20">Kepatuhan Hukum Pabrik</span>
+            <h3 class="text-xl font-bold text-slate-900">Petugas P3K Kemnaker RI</h3>
+            <div class="text-2xl font-extrabold font-serif text-rose-700">Rp4.500.000 – Rp6.000.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; 3 hari tatap muka (30 JP)</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Mencakup modul, praktik manekin CPR &amp; AED, konsumsi, training kit, Sertifikat Pembinaan, Buku Kegiatan, dan Kartu Lisensi Kemnaker RI.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info jadwal dan biaya Pelatihan Petugas P3K Kemnaker di Semarang/Kendal/Batang.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs text-center transition-colors shadow-md"
+          >
+            Info Kelas Kemnaker &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-800 text-xs font-bold border border-blue-500/20">Kompetensi Profesi</span>
+            <h3 class="text-xl font-bold text-slate-900">P3K BNSP / Dual Sertifikasi</h3>
+            <div class="text-2xl font-extrabold font-serif text-slate-900">Rp4.800.000 – Rp7.200.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; Asesmen LSP / Kombinasi</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Ideal bagi first aider profesional, perawat perusahaan, maupun proyek konstruksi yang memerlukan sertifikat Garuda Emas BNSP.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau tanya pilihan Sertifikasi P3K BNSP atau paket kombinasi Kemnaker + BNSP di Semarang.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition-colors"
+          >
+            Tanya Jalur BNSP &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-950 text-white border border-white/10 shadow-xl flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-emerald-400/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">Hemat Pabrik Padat Karya</span>
+            <h3 class="text-xl font-bold text-white">In-House KIW, KIK &amp; KITB</h3>
+            <div class="text-2xl font-extrabold font-serif text-emerald-400">Penawaran Khusus Grup</div>
+            <p class="text-xs text-slate-400">Minimum kuota kelompok pabrik Jawa Tengah</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Instruktur hadir langsung ke pabrik Anda di Semarang, Kendal, Batang, Demak, atau Solo membawa perlengkapan praktik CPR, AED, dan tandu evakuasi.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami mau minta proposal In-House Pelatihan Petugas P3K untuk pabrik kami di Jawa Tengah.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center transition-colors"
+          >
+            Minta Proposal Pabrik &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Requirements & Flow -->
+    <section class="space-y-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+          <h3 class="text-lg font-bold font-serif text-amber-400">Kelengkapan Berkas Peserta:</h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan KTP aktif dan pasfoto berwarna latar belakang merah</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan ijazah terakhir minimal SLTA / sederajat</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat Keterangan Sehat jasmani dan rohani dari dokter/klinik</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat Penugasan resmi dari HRD / pimpinan perusahaan</span></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold text-xs shrink-0">1</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Hitung Rasio Kebutuhan Shift &amp; Cek Berkas</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Kami bantu memverifikasi jumlah petugas wajib sesuai total karyawan per shift di pabrik Anda.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold text-xs shrink-0">2</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Pembinaan 30 JP &amp; Simulasi Klinis</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Mengikuti kelas interaktif regulasi P3K serta praktik langsung resusitasi CPR, AED, dan pembidaian.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold text-xs shrink-0">3</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Ujian Evaluasi &amp; Penerbitan Lisensi Kemnaker</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Lulus uji teori dan praktik menghasilkan sertifikat resmi dan kartu kewenangan Petugas P3K.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-rose-600 block mb-2">Tanya Jawab Jawa Tengah</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Pertanyaan Seputar Pelatihan Petugas P3K Semarang, Kendal &amp; Batang
+        </h2>
+        <div class="h-1 w-20 bg-rose-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((item) => (
+          <details class="p-6 rounded-2xl bg-white border border-slate-200 group shadow-sm">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>{item.q}</span>
+              <span class="text-rose-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="pt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-4">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 8: Related & Final CTA -->
+    <section class="space-y-8">
+      <div class="p-6 rounded-3xl bg-white border border-slate-200 space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Program Induk &amp; Layanan Jawa Tengah Terkait</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+          <li>
+            <a href="/pelatihan-petugas-p3k-kemnaker-bnsp/" class="text-rose-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Halaman Induk Pelatihan Petugas P3K Tempat Kerja</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-ahli-k3-umum-semarang/" class="text-rose-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Ahli K3 Umum Semarang &amp; Jateng</span>
+            </a>
+          </li>
+          <li>
+            <a href="/jasa-pengesahan-p2k3-lisensi-p3k/" class="text-rose-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Jasa Pengesahan P2K3 &amp; Lisensi P3K Disnaker</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-ahli-k3-kebakaran-jakarta/" class="text-rose-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Ahli K3 Kebakaran Kemnaker</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-auditor-smk3-surabaya-sidoarjo-gresik/" class="text-rose-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Auditor SMK3 Surabaya Sidoarjo Gresik</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan/" class="text-rose-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Katalog Lengkap Pelatihan K3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white shadow-2xl border border-white/10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Penuhi Rasio Petugas P3K Pabrik Anda di Jawa Tengah
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Jadwalkan kelas Public Semarang atau In-House Training langsung di KIW Semarang, KIK Kendal, KITB Batang, Demak, Ungaran, dan Solo.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <a
+            href={waLink("Halo Kak, saya mau daftar Pelatihan Petugas P3K Kemnaker untuk wilayah Semarang, Kendal, atau Batang.")}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-all"
+          >
+            Chat WhatsApp Sekarang &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

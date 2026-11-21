@@ -1,0 +1,683 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
+
+const title = "Pelatihan K3 Listrik Karawang Cikarang Bekasi Kemnaker";
+const description = "Pelatihan Teknisi dan Ahli K3 Listrik Kemnaker RI di Karawang, Cikarang, dan Bekasi. Kepatuhan panel pabrik KIIC, Suryacipta, MM2100. Cek jadwal WA.";
+const canonical = "/pelatihan-k3-listrik-karawang-cikarang-bekasi/";
+const ogImage = "https://konsultank3.com/assets/images/pelatihan-k3-listrik-karawang-hero.jpg";
+
+const faqs = [
+  {
+    q: "Mengapa pabrik di Karawang, Cikarang, dan Bekasi wajib memiliki Teknisi dan Ahli K3 Listrik Kemnaker?",
+    a: "Permenaker No. 12 Tahun 2015 tentang Keselamatan dan Kesehatan Kerja Listrik di Tempat Kerja mewajibkan setiap perusahaan dengan instalasi berdaya besar maupun pembangkitan, transmisi, dan distribusi listrik (termasuk gardu induk pabrik, panel MV 20 kV, trafo, dan mesin produksi otomatis di KIIC, Suryacipta, MM2100, serta Jababeka) ditangani oleh Teknisi K3 Listrik dan/atau diawasi Ahli K3 Listrik berlisensi Kemnaker RI."
+  },
+  {
+    q: "Apa batas kapasitas daya yang mewajibkan perusahaan menunjuk Ahli K3 Listrik (bukan sekadar Teknisi)?",
+    a: "Sesuai Pasal 7 Permenaker No. 12 Tahun 2015, setiap perusahaan yang memiliki pembangkitan listrik lebih dari 200 kVA wajib mempunyai Ahli K3 Listrik di tempat kerja. Pabrik otomotif, baja, kertas, serta pusat data di koridor Karawang–Cikarang–Bekasi umumnya mengoperasikan gardu distribusi di atas 200 kVA hingga belasan MVA sehingga wajib memiliki Ahli K3 Listrik bersama tim Teknisi K3 Listrik."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan Teknisi dan Ahli K3 Listrik di koridor Karawang–Bekasi?",
+    a: "Estimasi investasi per peserta untuk program resmi Kemnaker RI meliputi: Teknisi K3 Listrik (7 hari pembinaan) berkisar Rp8.000.000–Rp10.500.000, sedangkan Ahli K3 Listrik (10–12 hari pembinaan) berkisar Rp11.000.000–Rp15.000.000. Untuk pabrik di KIIC, Suryacipta, Jababeka, atau MM2100 tersedia paket In-House Training korporasi dengan penyesuaian tarif grup."
+  },
+  {
+    q: "Apa perbedaan tugas dan syarat pendidikan Teknisi K3 Listrik vs Ahli K3 Listrik?",
+    a: "Teknisi K3 Listrik (syarat pendidikan minimal SLTA/SMK Teknik Elektro atau pengalaman relevan) berwenang melakukan pemasangan, pemeliharaan, perbaikan, serta pengujian rutin instalasi dan peralatan listrik secara aman. Sementara Ahli K3 Listrik (minimal D3/S1 Teknik Elektro atau teknik relevan) berwenang melakukan perencanaan sistem proteksi, analisis bahaya arc flash, pemeriksaan dan pengujian berkala bersama pengawas, serta evaluasi kepatuhan PUIL."
+  },
+  {
+    q: "Apakah materi pelatihan mencakup pengukuran grounding, Tahanan Isolasi, dan LOTO panel pabrik?",
+    a: "Ya. Peserta mempelajari metode praktis penggunaan Earth Tester untuk memverifikasi resistansi pembumian di bawah 5 Ohm, Megger/Insulation Tester pada kabel feeder dan motor industri, evaluasi ELCB/RCD, manajemen risiko arc flash serta prosedur Lockout-Tagout (LOTO) saat pemeliharaan panel distribusi."
+  },
+  {
+    q: "Bisakah menyelenggarakan In-House Training K3 Listrik di kawasan KIIC Karawang, Suryacipta, Jababeka, atau MM2100?",
+    a: "Sangat bisa. Tim instruktur kami melayani pelaksanaan in-house langsung di fasilitas pabrik koridor Bekasi–Cikarang–Karawang–Purwakarta tanpa mengganggu target produksi lintas shift, sehingga seluruh departemen Engineering dan Utility Facility dapat tersertifikasi sekaligus."
+  },
+  {
+    q: "Berapa lama masa berlaku Lisensi dan SKP K3 Listrik Kemnaker RI?",
+    a: "Lisensi K3 dan Surat Keputusan Penunjukan (SKP) Teknisi maupun Ahli K3 Listrik berlaku selama 3 (tiga) tahun dan dapat diperpanjang melalui PJK3 resmi dengan melampirkan rekap laporan pemeliharaan atau pemeriksaan instalasi listrik tempat kerja."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pelatihan K3 Listrik Kemnaker", "item": "https://konsultank3.com/pelatihan-k3-listrik/" },
+        { "@type": "ListItem", "position": 3, "name": "K3 Listrik Karawang Cikarang Bekasi", "item": "https://konsultank3.com/pelatihan-k3-listrik-karawang-cikarang-bekasi/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Teknisi & Ahli K3 Listrik Karawang, Cikarang & Bekasi Kemnaker RI",
+      "description": description,
+      "courseCode": "K3-LISTRIK-KRW-BKS",
+      "educationalCredentialAwarded": "Sertifikat Pembinaan, SKP & Kartu Lisensi K3 Listrik Kemnaker RI",
+      "occupationalCategory": "Teknisi K3 Listrik / Ahli K3 Listrik Industri",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "8000000",
+        "highPrice": "15000000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT80H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Industri Karawang, Cikarang & Bekasi",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Karawang",
+            "addressRegion": "Jawa Barat",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & In-House K3 Listrik Karawang, Cikarang, Bekasi dan Purwakarta",
+      "serviceType": "Pembinaan & Sertifikasi Keselamatan Ketenagalistrikan Kemnaker RI",
+      "url": "https://konsultank3.com/pelatihan-k3-listrik-karawang-cikarang-bekasi/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Karawang",
+        "KIIC Karawang",
+        "Suryacipta",
+        "KIM Karawang",
+        "Cikarang",
+        "Jababeka",
+        "MM2100 Cibitung",
+        "Bekasi",
+        "GIIC Deltamas",
+        "Purwakarta"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info jadwal dan biaya Pelatihan K3 Listrik Kemnaker di Karawang / Cikarang / Bekasi."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan-k3-listrik/" class="hover:text-amber-400 transition-colors">Pelatihan K3 Listrik</a>
+        <span>/</span>
+        <span class="text-slate-300">Karawang, Cikarang &amp; Bekasi</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-300 text-xs font-semibold border border-blue-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse-glow"></span>
+            Permenaker No. 12/2015 &bull; Sabuk Manufaktur Karawang &ndash; Cikarang &ndash; Bekasi
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-amber-300">K3 Listrik Karawang, Cikarang &amp; Bekasi</span> Resmi Kemnaker
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program pembinaan sertifikasi <strong>Teknisi K3 Listrik</strong> dan <strong>Ahli K3 Listrik</strong> berlisensi Kemnaker RI untuk departemen Engineering, Utility, dan Maintenance pabrik otomotif, elektronik, dan FMCG di kawasan KIIC, Suryacipta, MM2100, Jababeka, hingga Purwakarta.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, saya mau info jadwal dan biaya Pelatihan Teknisi / Ahli K3 Listrik di Karawang, Cikarang, Bekasi.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal &amp; Biaya WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="/pelatihan-k3-listrik/"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Silabus Induk K3 Listrik &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kualifikasi</span>
+              <p class="text-white font-bold text-sm">Teknisi &amp; Ahli K3</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Ambang Wajib</span>
+              <p class="text-white font-bold text-sm">Daya &gt; 200 kVA</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Standar Acuan</span>
+              <p class="text-white font-bold text-sm">PUIL &amp; Permen 12/2015</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Wilayah Industri</span>
+              <p class="text-cyan-300 font-bold text-sm">KIIC, Jababeka, MM2100</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/pelatihan-k3-listrik-karawang-hero.jpg"
+              alt="Teknisi dan Ahli K3 Listrik mengenakan pelindung busur api di gardu panel pabrik Karawang"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-500 text-white mb-2">
+                Pencegahan Arc Flash &amp; Kebakaran Listrik
+              </span>
+              <div class="text-lg font-bold">Proteksi Panel MV/LV Pabrik Koridor Timur</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Kepatuhan gardu distribusi, trafo pabrik, grounding, dan prosedur LOTO untuk tim maintenance Jawa Barat.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">SKP &amp; Lisensi Kemnaker</div>
+              <div class="text-[10px] text-slate-400">Terdata Portal TemanK3</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">⚡</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House Sabuk Industri</div>
+              <div class="text-[10px] text-slate-400">Karawang &bull; Cikarang &bull; Bekasi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-blue-500/10 border-b border-blue-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-blue-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Koridor Karawang &ndash; Cikarang &ndash; Bekasi:
+      </span>
+      <span class="text-slate-700">Tersedia pembinaan Teknisi K3 Listrik, Ahli K3 Listrik, dan paket In-House Pabrik.</span>
+      <a
+        href={waLink("Halo Kak, boleh minta jadwal K3 Listrik terdekat untuk wilayah Karawang, Cikarang, dan Bekasi?")}
+        target="_blank"
+        rel="noopener"
+        class="text-blue-800 hover:text-blue-950 font-bold underline ml-1"
+      >
+        Cek Jadwal via WhatsApp &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Summary Table -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-700 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Kepatuhan K3 Listrik di Sabuk Industri Timur</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Perusahaan manufaktur di <strong>Karawang, Cikarang, Bekasi, dan Purwakarta</strong> yang mengoperasikan jaringan listrik industri wajib menunjuk personel tersertifikasi melalui program <a href="/pelatihan-k3-listrik/" class="text-blue-700 font-bold underline">Pelatihan Teknisi &amp; Ahli K3 Listrik Kemnaker RI</a>. Mengacu <strong>Permenaker No. 12 Tahun 2015</strong>, fasilitas dengan pembangkitan atau kapasitas daya lebih dari <strong>200 kVA</strong> wajib memiliki Ahli K3 Listrik serta teknisi pelaksana berlisensi resmi.
+        </p>
+        <div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-xs text-blue-950 leading-relaxed">
+          <strong>Fokus Pencegahan Kebakaran Pabrik:</strong> Arus hubung singkat pada panel kapasitor bank dan kabel feeder trafo merupakan pemicu utama kebakaran gudang dan lini produksi otomotif—sebab itu sertifikasi listrik kerap dipadukan dengan pengendalian api aktif.
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Aspek Program</th>
+              <th class="py-3.5 px-5">Ketentuan Kemnaker RI</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Jalur Kompetensi</td>
+              <td class="py-3 px-5">Teknisi K3 Listrik (7 hari) &amp; Ahli K3 Listrik (10–12 hari)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Cakupan Kota</td>
+              <td class="py-3 px-5">Karawang, Cikarang, Bekasi, Cibitung, Purwakarta, Subang</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Regulasi Pengawasan</td>
+              <td class="py-3 px-5">Permenaker 12/2015, PUIL, &amp; Pengawasan Disnaker Jabar</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Dokumen Terbit</td>
+              <td class="py-3 px-5">Sertifikat Pembinaan, SKP Penunjukan &amp; Kartu Lisensi K3</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Estimasi Biaya</td>
+              <td class="py-3 px-5 font-semibold text-blue-700">Teknisi Rp8–10,5 jt &bull; Ahli Rp11–15 jt / peserta</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Masa Berlaku</td>
+              <td class="py-3 px-5">3 Tahun (Diperpanjang via PJK3 Resmi Kemnaker)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Regional Industrial Corridor -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-700 block mb-2">Peta Kebutuhan Industri</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Tantangan Kelistrikan Pabrik di Koridor Karawang, Cikarang &amp; Bekasi
+        </h2>
+        <div class="h-1 w-20 bg-blue-600 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Dari lini perakitan otomotif berbasis robotik di Karawang hingga pabrik kemasan dan cold storage di Bekasi, kontinuitas pasokan listrik berdaya tinggi (20 kV hingga panel LVMDP) membutuhkan perawatan aktif tanpa kecelakaan sengatan ataupun busur api listrik.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-700 flex items-center justify-center font-bold text-xl">🏭</div>
+          <h3 class="font-bold text-slate-900 text-lg">Klaster Karawang &amp; Purwakarta</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Kawasan KIIC, Suryacipta, KIM Karawang, dan Bukit Indah City (Purwakarta) mengoperasikan gardu distribusi daya besar serta jalur busbar berbeban tinggi yang rutin diaudit oleh <strong>UPTD Pengawasan Ketenagakerjaan Wilayah II Jawa Barat</strong>.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold text-xl">⚙️</div>
+          <h3 class="font-bold text-slate-900 text-lg">Klaster Cikarang &amp; Deltamas</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pabrik di Jababeka I–VI, EJIP, Delta Silicon, GIIC Deltamas, dan Hyundai BIIE menuntut teknisi maintenance yang kompeten melakukan thermography panel, pengujian pembumian, dan isolasi energi LOTO saat shutdown mesin.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center font-bold text-xl">🔌</div>
+          <h3 class="font-bold text-slate-900 text-lg">Klaster Cibitung &amp; Kota Bekasi</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Industri di MM2100, Tambun, Narogong, hingga Medan Satria menghadapi risiko gangguan harmonisa kapasitor bank, kebocoran arus, serta proteksi penyalur petir gudang logistik berstruktur baja.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Technical Scope & Comparison -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-700 block mb-2">Kewenangan Legalitas</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Pembagian Wewenang Teknisi K3 Listrik vs Ahli K3 Listrik
+        </h2>
+        <div class="h-1 w-20 bg-blue-600 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Untuk rincian lengkap modul nasional, lihat juga halaman utama <a href="/pelatihan-k3-listrik/" class="text-blue-700 font-bold underline">Program Teknisi &amp; Ahli K3 Listrik Kemnaker RI</a>. Berikut pemetaan posisi yang tepat bagi tim ketenagalistrikan pabrik Anda:
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Kriteria Pembeda</th>
+              <th class="py-3.5 px-5 bg-blue-950">Teknisi K3 Listrik</th>
+              <th class="py-3.5 px-5 bg-slate-800">Ahli K3 Listrik</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Syarat Pendidikan</td>
+              <td class="py-3.5 px-5">Minimal SLTA / SMK Listrik / sederajat + pengalaman 2 tahun</td>
+              <td class="py-3.5 px-5">Minimal D3 atau S1 Teknik Elektro / jurusan teknik relevan</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Peran di Pabrik</td>
+              <td class="py-3.5 px-5">Pelaksana instalasi, perbaikan, PM panel, &amp; switching aman</td>
+              <td class="py-3.5 px-5">Perancang sistem keselamatan, inspeksi berkala, &amp; analisis risiko</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Kewajiban Regulasi</td>
+              <td class="py-3.5 px-5">Wajib mendampingi aktivitas kerja bertegangan &amp; perawatan panel</td>
+              <td class="py-3.5 px-5">Wajib dimiliki perusahaan dengan daya terpasang &gt; 200 kVA</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Output Dokumen</td>
+              <td class="py-3.5 px-5">Sertifikat Pembinaan &amp; Buku/Kartu Lisensi Teknisi K3 Listrik</td>
+              <td class="py-3.5 px-5">Sertifikat, SKP Penunjukan, &amp; Lisensi Ahli K3 Listrik Kemnaker</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Syllabus Highlights -->
+    <section id="silabus" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-700 block mb-2">Kurikulum Teknis</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Pokok Materi Pembinaan &amp; Praktik Pengujian Instalasi Pabrik
+        </h2>
+        <div class="h-1 w-20 bg-blue-600 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Kelompok Materi</th>
+              <th class="py-3.5 px-5">Fokus Kompetensi Lapangan</th>
+              <th class="py-3.5 px-5">Jenjang</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">1. Kebijakan &amp; Standar PUIL / SNI</td>
+              <td class="py-3.5 px-5">Penerapan Permenaker 12/2015, Permenaker 02/1989 (Penyalur Petir), dan pemenuhan standar inspeksi riksa uji instalasi pabrik.</td>
+              <td class="py-3.5 px-5">Teknisi &amp; Ahli</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">2. Bahaya Sengatan, Arc Flash &amp; LOTO</td>
+              <td class="py-3.5 px-5">Perhitungan batas pendekatan aman (<em>arc flash boundary</em>), pemilihan sarung tangan bertegangan &amp; APD, serta prosedur isolasi energi LOTO.</td>
+              <td class="py-3.5 px-5">Teknisi &amp; Ahli</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">3. Sistem Pembumian &amp; Proteksi Arus Bocor</td>
+              <td class="py-3.5 px-5">Teknik pengukuran grounding panel/trafo dengan Earth Tester, koordinasi MCB/MCCB/ACB, serta uji trip ELCB/RCCB.</td>
+              <td class="py-3.5 px-5">Teknisi &amp; Ahli</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">4. Klasifikasi Area Berbahaya (Ex-Proof)</td>
+              <td class="py-3.5 px-5">Persyaratan instalasi listrik di area mudah meledak (ruang cat otomotif, gudang kimia, ruang baterai forklift elektrik).</td>
+              <td class="py-3.5 px-5">Ahli K3 Listrik</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">5. Praktik Riksa Uji, Seminar &amp; Ujian Kemnaker</td>
+              <td class="py-3.5 px-5">Observasi instalasi, penyusunan laporan pemeriksaan kelaikan listrik industri, dan evaluasi resmi bersama pengawas ketenagakerjaan.</td>
+              <td class="py-3.5 px-5">Teknisi &amp; Ahli</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5: Pricing -->
+    <section id="biaya" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-700 block mb-2">Investasi Sertifikasi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Estimasi Biaya Pelatihan K3 Listrik Karawang, Cikarang &amp; Bekasi 2026
+        </h2>
+        <div class="h-1 w-20 bg-blue-600 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Nilai investasi disesuaikan dengan jenjang kualifikasi (Teknisi atau Ahli K3 Listrik), metode pelaksanaan (Blended vs Public Tatap Muka), serta jumlah personel perusahaan yang diikutsertakan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-800 text-xs font-bold border border-blue-500/20">Pelaksana Maintenance</span>
+            <h3 class="text-xl font-bold text-slate-900">Teknisi K3 Listrik Kemnaker</h3>
+            <div class="text-2xl font-extrabold font-serif text-blue-700">Rp8.000.000 – Rp10.500.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; Durasi pembinaan 7 hari</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Mencakup pembekalan teori, praktik pengukuran grounding/isolasi, modul, konsumsi tatap muka, serta pengurusan Sertifikat &amp; Lisensi Kemnaker RI.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info pendaftaran Teknisi K3 Listrik Kemnaker wilayah Karawang/Cikarang/Bekasi.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs text-center transition-colors shadow-md"
+          >
+            Info Kelas Teknisi &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border-2 border-slate-900 shadow-md flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-800 text-xs font-bold border border-amber-500/20">Mandatori Daya &gt; 200 kVA</span>
+            <h3 class="text-xl font-bold text-slate-900">Ahli K3 Listrik Kemnaker</h3>
+            <div class="text-2xl font-extrabold font-serif text-slate-900">Rp11.000.000 – Rp15.000.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; Durasi 10–12 hari efektif</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Termasuk bimbingan kertas kerja pemeriksaan instalasi, seminar evaluasi, Sertifikat Resmi, SKP Penunjukan, dan Kartu Lisensi Ahli K3 Listrik.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info pendaftaran Ahli K3 Listrik Kemnaker wilayah Karawang/Cikarang/Bekasi.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition-colors"
+          >
+            Info Kelas Ahli K3 Listrik &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-950 text-white border border-white/10 shadow-xl flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-emerald-400/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">Hemat Tim Pabrik</span>
+            <h3 class="text-xl font-bold text-white">In-House Sabuk Industri Timur</h3>
+            <div class="text-2xl font-extrabold font-serif text-emerald-400">Penawaran Paket Grup</div>
+            <p class="text-xs text-slate-400">Khusus kawasan KIIC, Suryacipta, Jababeka &amp; MM2100</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Selenggarakan pembinaan langsung di fasilitas pabrik Anda dengan observasi studi kasus gardu induk dan panel lini produksi milik perusahaan.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami mau minta proposal In-House K3 Listrik untuk tim utility pabrik di Karawang/Cikarang/Bekasi.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center transition-colors"
+          >
+            Minta Proposal Pabrik &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-3">
+          <h3 class="font-bold text-slate-900 text-base">Komponen Termasuk dalam Investasi</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Sertifikat Pembinaan, SKP &amp; Lisensi resmi Kemnaker RI (terdata TemanK3)</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Modul PUIL, bahan ajar regulasi, training kit, dan pendampingan observasi praktik</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Konsumsi makan siang dan coffee break untuk peserta kelas tatap muka</span></li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold text-slate-900 text-base">Ketentuan Tambahan Korporasi</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Belum termasuk akomodasi hotel/transportasi peserta luar daerah dan PPN 11%</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Tersedia tarif khusus pengiriman kolektif (&ge; 3 personel per batch)</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Verifikasi ijazah &amp; pengalaman kerja dilakukan sebelum penagihan batch</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Requirements & Process -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-700 block mb-2">Syarat &amp; Alur Pembinaan</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Kelengkapan Berkas &amp; Tahapan Sertifikasi Kemnaker RI
+        </h2>
+        <div class="h-1 w-20 bg-blue-600 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+          <h3 class="text-lg font-bold font-serif text-amber-400">Syarat Administrasi Peserta:</h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan KTP asli &amp; pasfoto formal latar belakang merah</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan ijazah terakhir (min. SLTA/SMK untuk Teknisi; min. D3/S1 Teknik untuk Ahli K3 Listrik)</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat Keterangan Sehat dari dokter (tidak buta warna, layak kerja kelistrikan)</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat Penugasan perusahaan &amp; keterangan pengalaman kerja bidang teknik listrik</span></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0">1</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Verifikasi Ijazah &amp; Penentuan Jenjang</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Konsultasikan latar belakang ijazah dan kapasitas daya kVA pabrik untuk menentukan jalur Teknisi atau Ahli.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0">2</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Registrasi Sistem TemanK3 Kemnaker RI</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Berkas diunggah ke portal resmi Kemnaker sebelum kelas pembinaan resmi dibuka.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0">3</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Pembekalan Regulasi, PUIL &amp; Praktik Pengujian</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Pendalaman materi proteksi arus bocor, pembumian, arc flash, dan prosedur LOTO.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0">4</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Evaluasi Teori, Observasi &amp; Penerbitan Lisensi</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Ujian evaluasi resmi menghasilkan Sertifikat Pembinaan, SKP, serta Kartu Lisensi Kemnaker RI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-700 block mb-2">Tanya Jawab Regional</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Pertanyaan Seputar Pelatihan K3 Listrik Karawang, Cikarang &amp; Bekasi
+        </h2>
+        <div class="h-1 w-20 bg-blue-600 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((item) => (
+          <details class="p-6 rounded-2xl bg-white border border-slate-200 group shadow-sm">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>{item.q}</span>
+              <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="pt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-4">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 8: Related & Final CTA -->
+    <section class="space-y-8">
+      <div class="p-6 rounded-3xl bg-white border border-slate-200 space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Program Induk &amp; Pelatihan Industri Terkait</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+          <li>
+            <a href="/pelatihan-k3-listrik/" class="text-blue-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Halaman Induk Pelatihan K3 Listrik Kemnaker</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-sio-forklift-bekasi/" class="text-blue-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan SIO Operator Forklift Bekasi</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-pppu-tangerang-bekasi-jakarta/" class="text-blue-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan PPPU &amp; POIPPU Tangerang Bekasi Jakarta</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-ahli-k3-kebakaran-jakarta/" class="text-blue-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Ahli K3 Kebakaran Jakarta</span>
+            </a>
+          </li>
+          <li>
+            <a href="/panduan-penerapan-smk3/" class="text-blue-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Panduan Audit SMK3 PP 50/2012</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan/" class="text-blue-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Katalog Lengkap Pelatihan K3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white shadow-2xl border border-white/10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Amankan Sertifikasi Teknisi &amp; Ahli K3 Listrik Pabrik Anda
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Dapatkan jadwal batch terdekat atau penawaran In-House Training khusus kawasan KIIC Karawang, Suryacipta, Jababeka, Deltamas, dan MM2100 Bekasi.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <a
+            href={waLink("Halo Kak, saya mau daftar Pelatihan K3 Listrik Kemnaker di Karawang, Cikarang, atau Bekasi.")}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-all"
+          >
+            Chat WhatsApp Sekarang &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

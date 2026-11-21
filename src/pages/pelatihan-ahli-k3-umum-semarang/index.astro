@@ -45,11 +45,17 @@ const pageSchema = {
       }
     },
     {
-      "@type": ["EducationalOrganization", "LocalBusiness"],
-      "name": "Pusat Pelatihan Ahli K3 Umum Semarang - KonsultanK3.com",
+      "@type": "Service",
+      "name": "Pelatihan & Sertifikasi Ahli K3 Umum Semarang - KonsultanK3.com",
+      "serviceType": "Pembinaan & Sertifikasi Calon Ahli K3 Umum Kemnaker RI",
       "url": "https://konsultank3.com/pelatihan-ahli-k3-umum-semarang/",
       "description": description,
-      "telephone": "+62-895-1025-3435",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
       "areaServed": [
         "Kota Semarang",
         "Kabupaten Semarang",
@@ -59,13 +65,7 @@ const pageSchema = {
         "Batang",
         "Salatiga",
         "Jawa Tengah"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kota Semarang",
-        "addressRegion": "Jawa Tengah",
-        "addressCountry": "ID"
-      }
+      ]
     },
     {
       "@type": "FAQPage",

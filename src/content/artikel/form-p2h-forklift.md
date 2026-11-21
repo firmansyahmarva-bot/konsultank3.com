@@ -60,6 +60,6 @@ Isi kolom temuan dengan komponen, gejala, dan tahap pemeriksaannya. Pada contoh 
 
 Supervisor mencatat bahwa FL-07 ditahan pada shift pagi dan meneruskan temuan kepada maintenance. Pada pergantian shift, operator pengganti menerima status tersebut bersama referensi form. Setelah perbaikan, petugas berwenang mencatat hasil pemeriksaan ulang, menyelesaikan pemeriksaan yang sebelumnya tertunda sesuai prosedur, dan mencatat keputusan pelepasan unit. Form awal dan catatan pemeriksaan ulang tetap tersimpan agar riwayatnya dapat ditelusuri.
 
-P2H adalah catatan operasional. Pemeriksaan dan pengujian formal pesawat angkat dan angkut mengikuti [Permenaker Nomor 8 Tahun 2020](https://jdih.kemnaker.go.id/peraturan/detail/1668/peraturan-menteri-ketenagakerjaan-nomor-8-tahun-2020).
+P2H adalah catatan operasional. Pemeriksaan dan pengujian formal pesawat angkat dan angkut mengikuti [Permenaker Nomor 8 Tahun 2020](https://jdih.kemnaker.go.id/peraturan/detail/1668/peraturan-menteri-ketenagakerjaan-nomor-8-tahun-2020), dan setiap operator yang mengemudikan unit di gudang maupun pabrik wajib mengantongi lisensi melalui [Pelatihan SIO Operator Forklift Bekasi &amp; Cikarang resmi Kemnaker RI](/pelatihan-sio-forklift-bekasi/).
 
 Rekap temuan berulang dan status tindak lanjut dalam [laporan bulanan K3](/artikel/contoh-laporan-bulanan-k3/).

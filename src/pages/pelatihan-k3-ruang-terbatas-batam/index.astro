@@ -1,0 +1,737 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
+
+const title = "Pelatihan K3 Ruang Terbatas Batam Resmi Kemnaker RI";
+const description = "Pelatihan K3 Ruang Terbatas (Confined Space) resmi Kemnaker RI di Batam. Praktik multi-gas detector, entry permit, SCBA & tripod rescue galangan.";
+const canonical = "/pelatihan-k3-ruang-terbatas-batam/";
+const ogImage = "https://konsultank3.com/assets/images/pelatihan-k3-ruang-terbatas-batam-hero.jpg";
+
+const faqs = [
+  {
+    q: "Mengapa pekerjaan di galangan kapal dan industri Batam wajib memiliki lisensi K3 Ruang Terbatas Kemnaker?",
+    a: "Aktivitas di galangan kapal Tanjung Uncang, Batu Ampar, fabrikasi offshore di Kabil, hingga pembersihan tangki dan saluran limbah di kawasan industri Batamindo melibatkan ruang sempit seperti ballast tank, cargo hold, double bottom, dan pressure vessel. Kecelakaan kekurangan oksigen atau keracunan uap las/cat sangat fatal sehingga Kemnaker mewajibkan personel memiliki lisensi resmi."
+  },
+  {
+    q: "Apa perbedaan Teknisi / Petugas Madya, Utama, dan Rescue Ruang Terbatas Kemnaker?",
+    a: "Petugas/Teknisi Madya berwenang menjalankan identifikasi bahaya, isolasi energi (LOTO), pengukuran gas atmosfer awal, serta pengawasan masuk ruang terbatas. Petugas Utama memiliki kewenangan masuk bekerja dan memimpin prosedur keselamatan di dalam tangki. Sedangkan Petugas K3 Rescue Ruang Terbatas berfokus pada teknik penyelamatan korban, sistem tripod winch, dan pemakaian SCBA darurat. Catatan: penyesuaian regulasi Permenaker No. 11 Tahun 2023 juga mengatur kompetensi Teknisi K3 Ruang Terbatas."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan K3 Ruang Terbatas (Confined Space) di Batam?",
+    a: "Estimasi biaya per peserta untuk kelas resmi Kemnaker RI meliputi: Petugas K3 Rescue Ruang Terbatas Rp6.000.000–Rp7.500.000, Petugas/Teknisi Madya Rp6.500.000–Rp8.500.000, dan Petugas/Teknisi Utama Rp7.500.000–Rp9.800.000. Untuk tim shipyard atau perusahaan manufaktur di Batam tersedia penawaran paket In-House Training."
+  },
+  {
+    q: "Berapa batas aman kadar oksigen dan gas berbahaya sebelum masuk tangki kapal?",
+    a: "Mengacu SK Dirjen Binwasnaker No. KEP.113/DJPPK/IX/2006 dan Permenaker No. 5/2018, kadar Oksigen (O2) aman berada pada rentang 19,5% hingga 23,5%, gas mudah terbakar (LEL) harus di bawah 10% (idealnya 0% sebelum kerja panas), CO di bawah 25 ppm, dan H2S di bawah 1 ppm."
+  },
+  {
+    q: "Alat keselamatan apa saja yang dipraktikkan selama pelatihan di Batam?",
+    a: "Peserta melakukan praktik langsung dengan pompa hisap multi-gas detector untuk pengukuran berlapis (atas, tengah, bawah tangki), penyusunan formulir Confined Space Entry Permit, prosedur Lockout-Tagout (LOTO), ventilasi mekanik blower/exhaust, pemasangan full-body harness, pengoperasian tripod rescue winch, serta pemakaian SCBA."
+  },
+  {
+    q: "Apakah pelatihan bisa diselenggarakan secara In-House langsung di galangan kapal Batam atau Bintan?",
+    a: "Bisa. Kami melayani program In-House Training K3 Ruang Terbatas di lokasi galangan kapal Tanjung Uncang, Batu Ampar, Kabil, Batamindo Muka Kuning, Sekupang, hingga kawasan industri Lobam di Pulau Bintan menggunakan simulator tangki maupun fasilitas praktik perusahaan."
+  },
+  {
+    q: "Apa syarat berkas pendaftaran pelatihan K3 Ruang Terbatas Kemnaker?",
+    a: "Calon peserta menyiapkan scan KTP, scan ijazah terakhir (minimal SMA/SMK sederajat untuk Petugas/Teknisi), surat keterangan sehat jasmani tidak memiliki riwayat klaustrofobia/asma/jantung berat dari dokter, pasfoto latar belakang merah, dan surat penugasan perusahaan."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "K3 Ruang Terbatas", "item": "https://konsultank3.com/pelatihan-k3-ruang-terbatas/" },
+        { "@type": "ListItem", "position": 3, "name": "K3 Ruang Terbatas Batam", "item": "https://konsultank3.com/pelatihan-k3-ruang-terbatas-batam/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan & Sertifikasi K3 Ruang Terbatas (Confined Space) Batam Kemnaker RI",
+      "description": description,
+      "courseCode": "CS-BTM-KEMNAKER",
+      "educationalCredentialAwarded": "Sertifikat Pembinaan & Lisensi Kewenangan K3 Ruang Terbatas Kemnaker RI",
+      "occupationalCategory": "Teknisi / Petugas K3 Ruang Terbatas & Confined Space Rescuer",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "6000000",
+        "highPrice": "9800000",
+        "offerCount": "3"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT36H",
+        "location": {
+          "@type": "Place",
+          "name": "Pusat Pelatihan & Simulasi Confined Space Batam",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Batam",
+            "addressRegion": "Kepulauan Riau",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & In-House K3 Ruang Terbatas Wilayah Batam dan Kepri",
+      "serviceType": "Pembinaan & Sertifikasi Confined Space Kemnaker RI",
+      "url": "https://konsultank3.com/pelatihan-k3-ruang-terbatas-batam/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Batam",
+        "Tanjung Uncang",
+        "Batu Ampar",
+        "Kabil",
+        "Batamindo Muka Kuning",
+        "Sekupang",
+        "Panbil",
+        "Pulau Bintan",
+        "Kepulauan Riau"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info jadwal dan biaya Pelatihan K3 Ruang Terbatas (Confined Space) Kemnaker di Batam."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan-k3-ruang-terbatas/" class="hover:text-amber-400 transition-colors">K3 Ruang Terbatas</a>
+        <span>/</span>
+        <span class="text-slate-300">Batam &amp; Kepulauan Riau</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 text-purple-300 text-xs font-semibold border border-purple-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse-glow"></span>
+            Kep.113/DJPPK/IX/2006 &amp; Permenaker 11/2023 &bull; Shipyard &amp; Kawasan Industri Batam
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan &amp; Sertifikasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-amber-300 to-emerald-400">K3 Ruang Terbatas Batam</span> (Confined Space)
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Program pembinaan resmi Kemnaker RI untuk pekerja galangan kapal, fabrikasi offshore, tank cleaning, dan utilitas pabrik di Tanjung Uncang, Kabil, Batu Ampar, dan Batamindo. Kuasai deteksi gas atmosfer, LOTO, sistem entry permit, SCBA, dan teknik tripod rescue.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, saya mau info jadwal dan biaya Pelatihan Confined Space / K3 Ruang Terbatas Kemnaker di Batam.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal Batam</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="#biaya"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Lihat Biaya &amp; Silabus Rescue
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kualifikasi</span>
+              <p class="text-white font-bold text-sm">Madya, Utama &amp; Rescue</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi Pembinaan</span>
+              <p class="text-white font-bold text-sm">3 – 5 Hari (Teori + Drill)</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Klaster Utama</span>
+              <p class="text-white font-bold text-sm">Galangan &amp; Offshore Batam</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Sertifikasi</span>
+              <p class="text-emerald-400 font-bold text-sm">Lisensi Kemnaker RI</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/pelatihan-k3-ruang-terbatas-batam-hero.jpg"
+              alt="Pekerja galangan kapal di Batam memasuki lubang tangki ruang terbatas dengan tripod rescue"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-purple-500 text-white mb-2">
+                Shipyard, Marine &amp; Petrochemical Ready
+              </span>
+              <div class="text-lg font-bold">Keselamatan Kerja Tangki &amp; Ruang Sempit</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Praktik non-entry rescue dengan tripod winch, pengamanan standby attendant, dan pengukuran gas bertingkat.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-500 text-white flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">Lisensi Resmi Kemnaker</div>
+              <div class="text-[10px] text-slate-400">Terdata Portal TemanK3</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">⚓</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House Shipyard Batam</div>
+              <div class="text-[10px] text-slate-400">Tanjung Uncang &bull; Kabil &bull; Batamindo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-purple-500/10 border-b border-purple-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-purple-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Kelas Batam &amp; Kepulauan Riau:
+      </span>
+      <span class="text-slate-700">Tersedia kelas Teknisi Madya, Utama, Rescue, serta In-House Galangan Kapal &amp; Pabrik.</span>
+      <a
+        href={waLink("Halo Kak, boleh minta jadwal batch K3 Ruang Terbatas di Batam bulan ini?")}
+        target="_blank"
+        rel="noopener"
+        class="text-purple-800 hover:text-purple-950 font-bold underline ml-1"
+      >
+        Cek Jadwal via WhatsApp &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Quick Info Table -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-700 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Apa Itu Pelatihan K3 Ruang Terbatas Batam?</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          <strong>Pelatihan K3 Ruang Terbatas (Confined Space) Batam</strong> adalah pembinaan resmi <strong>Kemnaker RI</strong> bagi pekerja dan pengawas yang bekerja di dalam tangki kapal, ruang mesin sempit, silo, atau manhole industri di Pulau Batam. Selama 3–5 hari peserta mempelajari pengujian atmosfer multi-gas, sistem izin masuk, LOTO, ventilasi paksa, pemakaian SCBA, serta simulasi evakuasi penyelamatan.
+        </p>
+        <div class="p-4 rounded-2xl bg-purple-50 border border-purple-200 text-xs text-purple-950 leading-relaxed">
+          <strong>Prioritas Shipyard &amp; Tank Cleaning:</strong> Lebih dari separuh korban jiwa kecelakaan ruang terbatas berasal dari pekerja atau penolong yang langsung turun tanpa pengujian gas dan tanpa mengenakan alat bantu napas SCBA.
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Informasi Utama</th>
+              <th class="py-3.5 px-5">Spesifikasi Program Batam</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Lembaga Penerbit</td>
+              <td class="py-3 px-5">Kementerian Ketenagakerjaan RI (via PJK3 Resmi)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Jenjang Kualifikasi</td>
+              <td class="py-3 px-5">Petugas/Teknisi Madya, Utama &amp; K3 Rescue Ruang Terbatas</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Durasi Pembinaan</td>
+              <td class="py-3 px-5">3 – 5 Hari (Teori Regulasi + Praktik Simulasi Tangki)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Zona Industri Batam</td>
+              <td class="py-3 px-5">Tanjung Uncang, Kabil, Batu Ampar, Batamindo, Sekupang</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Estimasi Biaya</td>
+              <td class="py-3 px-5 font-semibold text-purple-700">Rescue mulai Rp6 jt &bull; Madya Rp6,5–8,5 jt &bull; Utama Rp7,5–9,8 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Dokumen Terbit</td>
+              <td class="py-3 px-5">Sertifikat Pembinaan &amp; Kartu Lisensi K3 Kemnaker RI</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Batam Industrial & Shipyard Context -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-700 block mb-2">Konteks Industri Batam</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Mengapa Galangan Kapal &amp; Pabrik di Batam Membutuhkan Petugas Confined Space Berlisensi?
+        </h2>
+        <div class="h-1 w-20 bg-purple-600 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Pulau Batam merupakan pusat perkapalan, fabrikasi modul lepas pantai, terminal tangki penyimpanan minyak/kimia, dan manufaktur elektronik terbesar di Kepulauan Riau. Tingginya frekuensi pekerjaan perbaikan lambung kapal, pengelasan dalam ruang kedap, serta pembersihan tangki dan IPAL menuntut kru yang bersertifikat penuh.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-purple-500/10 text-purple-700 flex items-center justify-center font-bold text-xl">🚢</div>
+          <h3 class="font-bold text-slate-900 text-lg">Perbaikan Kapal &amp; Fabrikasi Offshore</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pekerja sandblasting, painting, dan pengelasan di dalam <em>ballast tank</em>, <em>void space</em>, dan <em>double bottom</em> kapal di Tanjung Uncang maupun Kabil berhadapan langsung dengan uap pelarut beracun serta risiko kekurangan oksigen.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold text-xl">🛢️</div>
+          <h3 class="font-bold text-slate-900 text-lg">Terminal Tangki &amp; Kawasan Batamindo</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Operasi pembersihan tangki bahan bakar, boiler, dan sumur IPAL industri di Batamindo, Panbil, dan Kabil mewajibkan penerbitan izin masuk ruang terbatas (<em>Entry Permit</em>) yang hanya sah ditandatangani petugas berkompeten.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center font-bold text-xl">📋</div>
+          <h3 class="font-bold text-slate-900 text-lg">Kepatuhan Audit Klien Internasional</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pemilik kapal asing dan kontraktor migas yang menyerahkan proyek ke galangan Batam mensyaratkan bukti lisensi Kemnaker RI untuk setiap <em>Confined Space Watcher / Entrant / Gas Tester</em> sebelum pekerjaan dimulai.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-400">Klaster Layanan Kepulauan Riau</span>
+            <h3 class="text-xl sm:text-2xl font-bold font-serif text-white mt-1">Wilayah Layanan Pelatihan Confined Space Batam &amp; Bintan</h3>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami mau ajukan In-House Training K3 Ruang Terbatas di galangan kapal/pabrik kami di Batam.")}
+            target="_blank"
+            rel="noopener"
+            class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs transition-colors whitespace-nowrap self-start md:self-auto"
+          >
+            Ajukan In-House Batam &rarr;
+          </a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-slate-300">
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Tanjung Uncang (Zona Galangan Kapal)</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Kabil Integrated Industrial Estate</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Batu Ampar &amp; Tanjung Sengkuang</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Batamindo Industrial Park (Muka Kuning)</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Sekupang &amp; Sagulung</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Panbil &amp; Bintang Industrial Park</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Kawasan Industri Lobam (Pulau Bintan)</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Karimun &amp; Kepulauan Riau Sekitar</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Legal Basis & Atmosphere Limits -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-700 block mb-2">Dasar Hukum &amp; Standar Atmosfer</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Regulasi K3 Ruang Terbatas &amp; Parameter Uji Gas Pra-Masuk
+        </h2>
+        <div class="h-1 w-20 bg-purple-600 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Pembinaan merujuk pada <strong>Kep. Dirjen Binwasnaker No. KEP.113/DJPPK/IX/2006</strong>, <strong>Permenaker No. 11 Tahun 2023</strong> tentang Keselamatan dan Kesehatan Kerja di Ruang Terbatas, serta <strong>Permenaker No. 5 Tahun 2018</strong> untuk nilai ambang batas atmosfer ruang kerja.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Parameter Gas Atmosfer</th>
+              <th class="py-3.5 px-5">Batas Aman Kerja</th>
+              <th class="py-3.5 px-5">Risiko Jika Melewati Ambang</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Kadar Oksigen (O2)</td>
+              <td class="py-3.5 px-5 font-mono font-bold text-emerald-700">19,5% – 23,5%</td>
+              <td class="py-3.5 px-5">Di bawah 19,5% memicu asfiksia/pingsan; di atas 23,5% meningkatkan risiko kebakaran eksplosif (kaya oksigen).</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Gas Mudah Terbakar (LEL)</td>
+              <td class="py-3.5 px-5 font-mono font-bold text-emerald-700">&lt; 10% LEL (0% Hot Work)</td>
+              <td class="py-3.5 px-5">Percikan gerinda, las, atau listrik statis dapat memicu ledakan di dalam tangki tertutup.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Karbon Monoksida (CO)</td>
+              <td class="py-3.5 px-5 font-mono font-bold text-amber-700">&lt; 25 ppm (TWA)</td>
+              <td class="py-3.5 px-5">Gas tidak berbau dari mesin diesel/las yang mengikat hemoglobin dan menghentikan suplai oksigen ke otak.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Hidrogen Sulfida (H2S)</td>
+              <td class="py-3.5 px-5 font-mono font-bold text-red-700">&lt; 1 ppm (TWA)</td>
+              <td class="py-3.5 px-5">Gas beracun hasil pembusukan organik/sludge tangki kapal yang melumpuhkan indra penciuman pada kadar tinggi.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Syllabus & Practical Photo -->
+    <section id="silabus" class="space-y-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-purple-700 block">Silabus &amp; Praktik Simulasi</span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+            Materi Pembinaan &amp; Pengujian Gas Berlapis Sebelum Masuk Tangki
+          </h2>
+          <div class="h-1 w-20 bg-purple-600 rounded-full"></div>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Peserta tidak hanya belajar teori regulasi di kelas, melainkan berlatih langsung prosedur pembukaan manhole yang aman, pengujian atmosfer bertingkat dengan selang pompa detektor (karena perbedaan massa jenis tiap gas), penerapan ventilasi <em>supply/exhaust</em>, hingga pengangkatan korban menggunakan tripod rescue.
+          </p>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Untuk proyek yang juga berisiko paparan gas asam tinggi pada fasilitas tangki kilang, tim Anda dapat memadukan program ini dengan sertifikasi <a href="/pelatihan-h2s-balikpapan/" class="text-purple-700 font-bold underline">Petugas Gas Beracun H2S BNSP</a> maupun <a href="/pelatihan-ahli-k3-kebakaran-jakarta/" class="text-purple-700 font-bold underline">K3 Penanggulangan Kebakaran Kemnaker</a>.
+          </p>
+        </div>
+
+        <div class="lg:col-span-6">
+          <figure class="rounded-3xl overflow-hidden border border-slate-200 shadow-lg bg-white">
+            <img
+              src="/assets/images/pelatihan-k3-ruang-terbatas-batam-praktik.jpg"
+              alt="Instruktur dan peserta pelatihan confined space Batam melakukan uji multi-gas pada lubang tangki"
+              class="w-full h-auto object-cover"
+            />
+            <figcaption class="px-5 py-3 text-xs text-slate-600 bg-slate-50 border-t border-slate-200">
+              Praktik pengukuran atmosfer ruang terbatas menggunakan selang pompa multi-gas detector sebelum izin masuk diterbitkan.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Modul Pelatihan</th>
+              <th class="py-3.5 px-5">Materi Teori &amp; Praktik</th>
+              <th class="py-3.5 px-5">Durasi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">1. Regulasi &amp; Karakteristik Ruang Terbatas</td>
+              <td class="py-3.5 px-5">Kep.113/DJPPK/IX/2006, Permenaker 11/2023, identifikasi ruang terbatas berizin khusus vs non-izin, serta tugas Entrant, Attendant &amp; Entry Supervisor.</td>
+              <td class="py-3.5 px-5 font-mono">6 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">2. Isolasi Energi (LOTO) &amp; Entry Permit</td>
+              <td class="py-3.5 px-5">Prosedur pemutusan energi listrik/pipa/mekanik (LOTO), blanking flange, purging, serta pengisian dokumen Confined Space Entry Permit.</td>
+              <td class="py-3.5 px-5 font-mono">6 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">3. Deteksi Gas &amp; Ventilasi Mekanis</td>
+              <td class="py-3.5 px-5">Pengoperasian multi-gas detector (O2, LEL, CO, H2S), teknik sampling top-middle-bottom tangki, serta pengaturan blower/exhaust ducting.</td>
+              <td class="py-3.5 px-5 font-mono">8 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">4. APD Pernapasan &amp; Tripod Rescue Drill</td>
+              <td class="py-3.5 px-5">Penggunaan full-body harness, Work SCBA, pemasangan tripod &amp; retrieval winch, simulasi non-entry rescue dan entry rescue korban di manhole.</td>
+              <td class="py-3.5 px-5 font-mono">12 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">5. Evaluasi Teori &amp; Praktik Kemnaker</td>
+              <td class="py-3.5 px-5">Ujian komprehensif teori dan penilaian simulasi penyelamatan lapangan bersama instruktur dan tim penguji.</td>
+              <td class="py-3.5 px-5 font-mono">4 JP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5: Pricing -->
+    <section id="biaya" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-700 block mb-2">Investasi Sertifikasi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Estimasi Biaya Pelatihan K3 Ruang Terbatas Batam 2026
+        </h2>
+        <div class="h-1 w-20 bg-purple-600 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Biaya di bawah berlaku untuk kelas resmi berlisensi Kemnaker RI sudah termasuk penggunaan peralatan praktik SCBA, multi-gas detector, full-body harness, serta tripod rescue simulator.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-800 text-xs font-bold border border-amber-500/20">Tim Tanggap Darurat</span>
+            <h3 class="text-xl font-bold text-slate-900">Petugas K3 Rescue Ruang Terbatas</h3>
+            <div class="text-2xl font-extrabold font-serif text-slate-900">Rp6.000.000 – Rp7.500.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; 3 hari intensif praktik rescue</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Fokus pada teknik penyelamatan korban, pengoperasian sistem katrol tripod, SCBA, dan kesiapsiagaan tim rescue galangan/pabrik.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info Pelatihan K3 Rescue Ruang Terbatas di Batam.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition-colors"
+          >
+            Cek Jadwal Rescue &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border-2 border-purple-400 shadow-md flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-800 text-xs font-bold border border-purple-500/20">Paling Umum di Industri</span>
+            <h3 class="text-xl font-bold text-slate-900">Teknisi / Petugas Madya Ruang Terbatas</h3>
+            <div class="text-2xl font-extrabold font-serif text-purple-700">Rp6.500.000 – Rp8.500.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; 4 hari teori &amp; praktik alat</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Kualifikasi wajib bagi pengawas pintu masuk, gas tester, dan personel pembuat entry permit ruang terbatas di shipyard dan manufaktur.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau daftar Pelatihan Teknisi / Petugas Madya K3 Ruang Terbatas di Batam.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs text-center transition-colors shadow-md"
+          >
+            Daftar Kelas Madya &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-950 text-white border border-white/10 shadow-xl flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-emerald-400/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">Entrant &amp; Korporasi</span>
+            <h3 class="text-xl font-bold text-white">Teknisi Utama &amp; In-House Batam</h3>
+            <div class="text-2xl font-extrabold font-serif text-emerald-400">Rp7.500.000 – Rp9.800.000</div>
+            <p class="text-xs text-slate-400">In-House Galangan / Pabrik: Paket khusus korporasi</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Pembinaan Petugas Utama (5 hari) maupun pelatihan kolektif langsung di galangan kapal Tanjung Uncang, Kabil, dan Batamindo.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami mau info Petugas Utama atau proposal In-House Confined Space untuk perusahaan di Batam.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center transition-colors"
+          >
+            Minta Proposal Batam &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-3">
+          <h3 class="font-bold text-slate-900 text-base">Fasilitas yang Sudah Termasuk</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Sertifikat Pembinaan &amp; Kartu Lisensi K3 Ruang Terbatas resmi Kemnaker RI</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Peminjaman alat praktik (Multi-Gas Detector, SCBA, Harness, Tripod Winch)</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Modul pelatihan, training kit, makan siang, serta coffee break selama kelas tatap muka</span></li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold text-slate-900 text-base">Catatan Administrasi &amp; Praktik</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Belum termasuk penginapan hotel peserta dari luar Pulau Batam dan PPN sesuai penagihan</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Tersedia diskon grup khusus bagi galangan kapal atau subkontraktor dengan kuota &ge; 5 kru</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Peserta wajib fit secara medis (tidak takut ruang sempit dan layak memakai respirator)</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Requirements & 5-Step Flow -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-700 block mb-2">Syarat &amp; Alur Pendaftaran</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Kelengkapan Berkas &amp; Tahapan Sertifikasi Ruang Terbatas
+        </h2>
+        <div class="h-1 w-20 bg-purple-600 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+          <h3 class="text-lg font-bold font-serif text-amber-400">Syarat Administrasi Peserta:</h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan KTP aktif dan pasfoto formal berlatar belakang merah</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan ijazah terakhir minimal SMA/SMK sederajat</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat Keterangan Sehat dari dokter (menyatakan layak kerja fisik &amp; memakai SCBA)</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat Penugasan resmi perusahaan (untuk penerbitan kartu lisensi K3)</span></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xs shrink-0">1</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Penentuan Kualifikasi (Madya, Utama, atau Rescue)</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Konsultasikan peran pekerja Anda di galangan atau pabrik Batam agar sesuai kebutuhan audit klien.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xs shrink-0">2</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Verifikasi Berkas Medis &amp; Registrasi TemanK3</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Berkas ijazah, surat sehat, dan identitas didaftarkan ke portal pengajuan Kemnaker RI.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xs shrink-0">3</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Pembekalan Teori Regulasi, LOTO &amp; Entry Permit</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Memahami aspek hukum, hazard atmosfer, ventilasi tangki, dan prosedur izin kerja aman.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xs shrink-0">4</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Simulasi Tangki, Gas Test, SCBA &amp; Tripod Rescue</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Praktik lapangan menguji gas berlapis dan melakukan skenario penyelamatan korban secara tim.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xs shrink-0">5</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Ujian Evaluasi &amp; Penerbitan Lisensi K3 Kemnaker</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Peserta yang lulus menerima sertifikat pembinaan dan kartu lisensi resmi K3 Ruang Terbatas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-700 block mb-2">Tanya Jawab Batam</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Pertanyaan Seputar Pelatihan K3 Ruang Terbatas Batam
+        </h2>
+        <div class="h-1 w-20 bg-purple-600 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((item) => (
+          <details class="p-6 rounded-2xl bg-white border border-slate-200 group shadow-sm">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>{item.q}</span>
+              <span class="text-purple-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="pt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-4">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 8: Related & Final CTA -->
+    <section class="space-y-8">
+      <div class="p-6 rounded-3xl bg-white border border-slate-200 space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Program &amp; Layanan Terkait</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+          <li>
+            <a href="/pelatihan-k3-ruang-terbatas/" class="text-purple-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Program Utama K3 Ruang Terbatas Kemnaker</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-h2s-balikpapan/" class="text-purple-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Petugas Gas H2S Balikpapan</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-ahli-k3-kebakaran-jakarta/" class="text-purple-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Ahli K3 Kebakaran Jakarta</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-sio-forklift-bekasi/" class="text-purple-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan SIO Operator Forklift Bekasi</span>
+            </a>
+          </li>
+          <li>
+            <a href="/alat-pelindung-diri/" class="text-purple-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Panduan Standar Alat Pelindung Diri (APD)</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan/" class="text-purple-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Katalog Lengkap Pelatihan K3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white shadow-2xl border border-white/10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Amankan Sertifikasi K3 Ruang Terbatas Tim Anda di Batam
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Jadwalkan pembinaan Teknisi Madya, Utama, atau Rescue Confined Space untuk kebutuhan proyek galangan kapal dan pabrik di Batam &amp; Kepri.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <a
+            href={waLink("Halo Kak, saya mau daftar Pelatihan K3 Ruang Terbatas Kemnaker di Batam. Mohon info jadwal dan penawarannya.")}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-all"
+          >
+            Chat WhatsApp Sekarang &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

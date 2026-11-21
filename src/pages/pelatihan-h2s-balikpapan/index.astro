@@ -1,0 +1,745 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Petugas Gas H2S Balikpapan Sertifikat BNSP";
+const description = "Pelatihan & uji kompetensi Petugas Gas Beracun H2S BNSP di Balikpapan. Praktik gas detector, SCBA/EEBA & rescue migas Kaltim. Cek jadwal & biaya.";
+const canonical = "/pelatihan-h2s-balikpapan/";
+const ogImage = "https://konsultank3.com/assets/images/pelatihan-h2s-balikpapan-hero.jpg";
+
+const faqs = [
+  {
+    q: "Siapa saja yang wajib mengikuti Pelatihan Petugas Gas H2S BNSP di Balikpapan?",
+    a: "Pelatihan ini wajib diikuti oleh pekerja kilang minyak, kontraktor hulu migas (drilling, well service, workover, wireline), teknisi pengolahan gas/LNG, pekerja geothermal, hingga tim safety standby ruang terbatas di kawasan industri Balikpapan, Kariangau, Handil, Senipah, dan Bontang yang berpotensi terpapar gas Hidrogen Sulfida."
+  },
+  {
+    q: "Apa saja syarat pendaftaran sertifikasi Petugas Penanganan Bahaya Gas H2S BNSP?",
+    a: "Calon asesi minimal lulusan SLTA/SMK sederajat dengan pengalaman kerja di sektor migas, petrokimia, atau K3 minimal 1–2 tahun (atau lulusan D3/S1 Teknik/K3). Dokumen yang perlu disiapkan meliputi fotokopi KTP, ijazah terakhir, CV/surat pengalaman kerja, pasfoto latar belakang merah, dan surat rekomendasi perusahaan bila diutus instansi."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan H2S Balikpapan bersertifikat BNSP?",
+    a: "Untuk skema Blended/Online pra-asesmen + uji kompetensi BNSP berkisar Rp5.500.000–Rp6.800.000 per peserta. Sementara kelas Public Offline di Balikpapan (lengkap dengan TUK, praktik SCBA/EEBA, multi-gas detector, modul, dan konsumsi) berkisar Rp7.000.000–Rp9.500.000 per peserta. Untuk pengiriman tim atau in-house di yard/rig tersedia tarif paket korporasi."
+  },
+  {
+    q: "Berapa Nilai Ambang Batas (NAB) paparan gas H2S menurut regulasi Indonesia?",
+    a: "Berdasarkan Permenaker No. 5 Tahun 2018 dan standar keselamatan migas, batas pajanan rata-rata 8 jam kerja (TWA) adalah 1 ppm, batas pajanan jangka pendek 15 menit (STEL) adalah 5 ppm, dan ambang bahaya langsung terhadap jiwa/kesehatan (IDLH) adalah 100 ppm. Pada konsentrasi di atas 100 ppm, indra penciuman lumpuh seketika (olfactory fatigue)."
+  },
+  {
+    q: "Apakah pelatihan di Balikpapan mencakup praktik langsung alat SCBA dan Gas Detector?",
+    a: "Ya. Sesi praktik lapangan mencakup inspeksi pra-pakai, bump test dan kalibrasi dasar portable gas detector, teknik pemasangan Work SCBA (300 bar) serta Escape SCBA/EEBA di bawah batas waktu aman, penggunaan buddy system, pembacaan arah angin (wind sock), dan skenario evakuasi korban."
+  },
+  {
+    q: "Apakah sertifikat H2S BNSP diakui untuk tender kontraktor migas dan kilang di Kalimantan Timur?",
+    a: "Ya. Sertifikat kompetensi berlogo Garuda Emas yang diterbitkan oleh BNSP melalui Lembaga Sertifikasi Profesi (LSP) terlisensi diakui secara nasional oleh KKKS migas, operator kilang, kontraktor EPC, dan perusahaan penunjang energi di seluruh wilayah Kalimantan Timur dan Indonesia."
+  },
+  {
+    q: "Bisakah menyelenggarakan In-House Training H2S di yard Kariangau, Senipah, atau site offshore?",
+    a: "Sangat bisa. Tim instruktur dan asesor LSP mitra kami siap hadir langsung di fasilitas basecamp, yard fabrikasi, maupun lokasi proyek di Balikpapan, Handil, Muara Badak, Bontang, hingga Sangatta menyesuaikan jadwal rotasi kru (crew change)."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Petugas Gas H2S BNSP", "item": "https://konsultank3.com/pelatihan-petugas-gas-beracun-h2s-bnsp/" },
+        { "@type": "ListItem", "position": 3, "name": "Pelatihan H2S Balikpapan", "item": "https://konsultank3.com/pelatihan-h2s-balikpapan/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan & Uji Kompetensi Petugas Penanganan Bahaya Gas H2S BNSP Balikpapan",
+      "description": description,
+      "courseCode": "H2S-BPN-BNSP",
+      "educationalCredentialAwarded": "Sertifikat Kompetensi Petugas Penanganan Bahaya Gas H2S BNSP",
+      "occupationalCategory": "H2S Safety Officer / Oil & Gas Safety Personnel",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "5500000",
+        "highPrice": "9500000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT24H",
+        "location": {
+          "@type": "Place",
+          "name": "Pusat Pelatihan & Uji Kompetensi Migas Balikpapan",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Balikpapan",
+            "addressRegion": "Kalimantan Timur",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & In-House Sertifikasi H2S Balikpapan dan Kaltim",
+      "serviceType": "Sertifikasi Kompetensi Penanganan Gas H2S BNSP",
+      "url": "https://konsultank3.com/pelatihan-h2s-balikpapan/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Balikpapan",
+        "Kariangau",
+        "Handil",
+        "Senipah",
+        "Samboja",
+        "Muara Badak",
+        "Bontang",
+        "Samarinda",
+        "Penajam Paser Utara"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info jadwal dan biaya Pelatihan Petugas Gas H2S BNSP di Balikpapan."
+>
+  <!-- Hero Section -->
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan-petugas-gas-beracun-h2s-bnsp/" class="hover:text-amber-400 transition-colors">Petugas Gas H2S BNSP</a>
+        <span>/</span>
+        <span class="text-slate-300">Balikpapan &amp; Kaltim</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 text-red-400 text-xs font-semibold border border-red-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse-glow"></span>
+            Sertifikasi Kompetensi BNSP &bull; Hub Migas &amp; Kilang Balikpapan
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan &amp; Sertifikasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-300 to-amber-400">Petugas Gas Beracun H2S Balikpapan</span> Resmi BNSP
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Pembekalan teknis dan uji kompetensi resmi BNSP untuk kru operasi, maintenance, dan tim HSE kontraktor migas serta kilang di Balikpapan, Delta Mahakam, dan Bontang. Kuasai deteksi gas, pemakaian Work SCBA &amp; EEBA, hingga protokol rescue darurat.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, saya mau info jadwal dan biaya Pelatihan H2S BNSP di Balikpapan.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-red-500 to-orange-600 hover:from-red-400 hover:to-orange-500 text-slate-950 font-bold text-sm shadow-xl shadow-red-500/20 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal Balikpapan</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="#biaya"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Lihat Biaya &amp; Skema Uji
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Sertifikat</span>
+              <p class="text-white font-bold text-sm">Garuda Emas BNSP</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi Program</span>
+              <p class="text-white font-bold text-sm">3 Hari (24 JP)</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Praktik Alat</span>
+              <p class="text-white font-bold text-sm">SCBA, EEBA &amp; Gas Test</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Wilayah Operasi</span>
+              <p class="text-amber-400 font-bold text-sm">Balikpapan &amp; Mahakam</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/pelatihan-h2s-balikpapan-hero.jpg"
+              alt="Pelatihan petugas gas H2S dengan SCBA dan detektor gas di kilang Balikpapan"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-red-500 text-white mb-2">
+                Standar Operasi Kilang &amp; Hulu Migas
+              </span>
+              <div class="text-lg font-bold">Deteksi Gas, SCBA &amp; Prosedur Rescue</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Persiapan wajib kru kontraktor sebelum mobilisasi ke zona gas asam (sour gas) dan proyek kilang Balikpapan.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-red-500 text-white flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">Asesmen Asesor BNSP</div>
+              <div class="text-[10px] text-slate-400">Standar SKKNI Migas</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">🛢️</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House Yard &amp; Site</div>
+              <div class="text-[10px] text-slate-400">Balikpapan &bull; Handil &bull; Bontang</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-red-500/10 border-b border-red-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-red-900">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Kelas Balikpapan &amp; Kalimantan Timur:
+      </span>
+      <span class="text-slate-700">Tersedia kelas Public Offline Balikpapan, Blended Pra-Uji, dan In-House Yard Kontraktor.</span>
+      <a
+        href={waLink("Halo Kak, boleh minta jadwal uji kompetensi H2S BNSP di Balikpapan bulan ini?")}
+        target="_blank"
+        rel="noopener"
+        class="text-red-700 hover:text-red-900 font-bold underline ml-1"
+      >
+        Cek Jadwal via WhatsApp &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Quick Info Table -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-red-600 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Apa Itu Pelatihan H2S BNSP di Balikpapan?</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          <strong>Pelatihan Petugas Gas Beracun H2S Balikpapan</strong> adalah program pembekalan dan uji kompetensi resmi <strong>BNSP</strong> bagi personel industri migas, kilang, dan petrokimia di Kalimantan Timur. Selama 3 hari peserta mempelajari sifat toksikologi H2S, cara kerja detektor gas, pemakaian Work SCBA dan EEBA, serta teknik penyelamatan darurat untuk meraih sertifikat kompetensi berlogo Garuda Emas.
+        </p>
+        <div class="p-4 rounded-2xl bg-red-50 border border-red-200 text-xs text-red-950 leading-relaxed">
+          <strong>Fakta Kritis di Lapangan:</strong> Pada konsentrasi &ge; 100 ppm, H2S melumpuhkan saraf penciuman secara instan sehingga bau telur busuk hilang—membuat pekerja mengira area sudah aman sebelum terjadi <em>knockdown</em>.
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Informasi Utama</th>
+              <th class="py-3.5 px-5">Spesifikasi Program Balikpapan</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Lembaga Penerbit</td>
+              <td class="py-3 px-5">BNSP RI (via LSP Sektor Migas &amp; K3 Terlisensi)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Skema Kompetensi</td>
+              <td class="py-3 px-5">Petugas Penanganan Bahaya Gas Beracun H2S</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Durasi &amp; Metode</td>
+              <td class="py-3 px-5">3 Hari (Pembekalan Teori + Praktik Alat + Asesmen TUK)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Area Cakupan</td>
+              <td class="py-3 px-5">Balikpapan, Kariangau, Handil, Senipah, Muara Badak, Bontang</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Estimasi Biaya</td>
+              <td class="py-3 px-5 font-semibold text-red-700">Blended Rp5,5–6,8 jt &bull; Offline Balikpapan Rp7–9,5 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Masa Berlaku</td>
+              <td class="py-3 px-5">3 Tahun (Memenuhi syarat tender &amp; pass masuk site migas)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Balikpapan & Kaltim Industry Demand -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-red-600 block mb-2">Konteks Industri Balikpapan</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Mengapa Sertifikasi H2S Wajib bagi Kontraktor Energi di Balikpapan &amp; Delta Mahakam?
+        </h2>
+        <div class="h-1 w-20 bg-red-500 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Sebagai pusat logistik energi nasional di Kalimantan Timur, proyek pengembangan kilang (RDMP Balikpapan), pabrik petrokimia di Bontang, bengkel fabrikasi alat berat di Kariangau, serta operasi lapangan minyak dan gas di Cekungan Kutai dan Selat Makassar mewajibkan standar izin masuk (<em>site pass</em>) bebas insiden gas beracun.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-red-500/10 text-red-700 flex items-center justify-center font-bold text-xl">🔥</div>
+          <h3 class="font-bold text-slate-900 text-lg">Zona <em>Turnaround</em> Kilang &amp; <em>Sour Service</em></h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pekerjaan pembukaan flange pipa, pembersihan separator, tangki sludge, dan pengelasan di area kilang maupun fasilitas pemrosesan gas mengandung akumulasi H2S serta gas mudah terbakar yang wajib dipantau petugas berkompetensi resmi.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold text-xl">📋</div>
+          <h3 class="font-bold text-slate-900 text-lg">Syarat Prakualifikasi CSMS Kontraktor</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Vendor penunjang migas di Sepinggan, Somber, Manggar, hingga Kariangau wajib membuktikan personel lapangannya memiliki sertifikat H2S BNSP yang sah pada evaluasi dokumen <a href="/contractor-safety-management-system-csms/" class="text-red-700 font-semibold underline">CSMS</a> dan pemeriksaan gate pass.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-slate-900/10 text-slate-900 flex items-center justify-center font-bold text-xl">🚑</div>
+          <h3 class="font-bold text-slate-900 text-lg">Kesiapan Evakuasi Cepat (Zero-Fatality)</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Dalam kecelakaan H2S, penolong yang panik masuk tanpa mengenakan SCBA justru sering menjadi korban kedua. Pelatihan menekankan disiplin <em>buddy system</em>, zona aman arah angin, dan teknik penyelamatan terukur.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-400">Klaster Layanan Kalimantan Timur</span>
+            <h3 class="text-xl sm:text-2xl font-bold font-serif text-white mt-1">Wilayah Layanan Pelatihan &amp; TUK H2S Balikpapan Raya</h3>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami butuh jadwal In-House H2S BNSP untuk kru kontraktor kami di Balikpapan/Kaltim.")}
+            target="_blank"
+            rel="noopener"
+            class="px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-semibold text-xs transition-colors whitespace-nowrap self-start md:self-auto"
+          >
+            Request Proposal In-House &rarr;
+          </a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-slate-300">
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Kariangau Industrial Estate (KIK)</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Koridor Sepinggan, Batakan &amp; Manggar</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Somber &amp; Pelabuhan Logistik Semayang</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Handil, Senipah &amp; Samboja</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Muara Badak &amp; Tanjung Santan</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Kawasan Petrokimia &amp; LNG Bontang</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Penajam Paser Utara &amp; Sepaku (IKN)</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Samarinda &amp; Kutai Kartanegara</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Legal Basis & Toxicology Matrix -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-red-600 block mb-2">Dasar Hukum &amp; Toksikologi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Nilai Ambang Batas (NAB) H2S &amp; Landasan Regulasi Nasional
+        </h2>
+        <div class="h-1 w-20 bg-red-500 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Penyelenggaraan kompetensi merujuk pada <strong>UU No. 1 Tahun 1970</strong>, <strong>Permenaker No. 5 Tahun 2018</strong> tentang Keselamatan dan Kesehatan Kerja Lingkungan Kerja (penetapan NAB bahan kimia), <strong>Kepmenaker tentang SKKNI Penanganan Bahaya Gas H2S</strong>, serta pedoman keselamatan kerja hulu migas (SKK Migas &amp; Ditjen Migas).
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Konsentrasi Gas H2S</th>
+              <th class="py-3.5 px-5">Kategori / Status</th>
+              <th class="py-3.5 px-5">Dampak Fisiologis &amp; Tindakan Wajib</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-mono font-bold text-emerald-700">1 ppm (TWA)</td>
+              <td class="py-3.5 px-5">NAB 8 Jam Kerja</td>
+              <td class="py-3.5 px-5">Batas pajanan harian aman tanpa alat bantu napas khusus (Permenaker 5/2018). Mulai tercium bau menyengat khas telur busuk.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-mono font-bold text-amber-700">5 ppm (STEL)</td>
+              <td class="py-3.5 px-5">NAB 15 Menit</td>
+              <td class="py-3.5 px-5">Iritasi mata dan saluran napas ringan. Alarm rendah <em>gas detector</em> aktif; identifikasi sumber kebocoran segera.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-mono font-bold text-orange-700">10 – 50 ppm</td>
+              <td class="py-3.5 px-5">Zona Bahaya Menengah</td>
+              <td class="py-3.5 px-5">Iritasi akut mata (<em>keratoconjunctivitis</em>), batuk, sakit kepala. Wajib memakai alat bantu pernapasan SCBA sebelum masuk area.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-mono font-bold text-red-700">100 ppm (IDLH)</td>
+              <td class="py-3.5 px-5">Lumpuh Penciuman Instan</td>
+              <td class="py-3.5 px-5"><strong>Berbahaya langsung bagi nyawa.</strong> Bau telur busuk hilang karena kelumpuhan saraf olfaktori; dilarang keras bekerja tanpa SCBA tekanan positif.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-mono font-bold text-red-900">&ge; 500 ppm</td>
+              <td class="py-3.5 px-5">Fatal / Knockdown</td>
+              <td class="py-3.5 px-5">Pingsan dalam 1–2 tarikan napas dan henti napas cepat. Evakuasi hanya boleh dilakukan tim penyelamat ber-Work SCBA.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Syllabus & Practical Photo -->
+    <section id="silabus" class="space-y-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-red-600 block">Unit Kompetensi &amp; Praktik</span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+            Kurikulum SKKNI &amp; Praktik Detektor Gas – SCBA di Balikpapan
+          </h2>
+          <div class="h-1 w-20 bg-red-500 rounded-full"></div>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Pembekalan menggabungkan pendalaman unit kompetensi SKKNI dengan simulasi lapangan nyata. Peserta tidak sekadar menghafal angka NAB, tetapi dilatih langsung membaca kalibrasi detektor multigas, membedakan fungsi Work SCBA dan Escape SCBA (EEBA), serta mengendalikan kepanikan saat alarm evakuasi berbunyi.
+          </p>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Bagi pekerja yang juga bertugas di area tangki tertutup kilang maupun kapal suplai di Pelabuhan Semayang, sertifikasi ini sangat relevan dipadukan dengan program <a href="/pelatihan-k3-ruang-terbatas/" class="text-red-700 font-bold underline">K3 Bekerja di Ruang Terbatas (Confined Space)</a>.
+          </p>
+        </div>
+
+        <div class="lg:col-span-6">
+          <figure class="rounded-3xl overflow-hidden border border-slate-200 shadow-lg bg-white">
+            <img
+              src="/assets/images/pelatihan-h2s-balikpapan-praktik.jpg"
+              alt="Instruktur mendemonstrasikan detektor gas H2S dan EEBA kepada peserta pelatihan di Balikpapan"
+              class="w-full h-auto object-cover"
+            />
+            <figcaption class="px-5 py-3 text-xs text-slate-600 bg-slate-50 border-t border-slate-200">
+              Demonstrasi pengoperasian multi-gas detector dan tabung pernapasan darurat EEBA bersama instruktur K3 migas.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Modul / Unit Kompetensi</th>
+              <th class="py-3.5 px-5">Fokus Materi &amp; Praktik</th>
+              <th class="py-3.5 px-5">Durasi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">1. Karakteristik &amp; Toksikologi H2S</td>
+              <td class="py-3.5 px-5">Sifat fisik (lebih berat dari udara, 1,19 kali), batas ledak (LEL/UEL), pembentukan asam sulfat korosif, dan NAB Permenaker 5/2018.</td>
+              <td class="py-3.5 px-5 font-mono">4 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">2. Deteksi &amp; Pemantauan Gas</td>
+              <td class="py-3.5 px-5">Personal H2S monitor, <em>multi-gas detector</em> dengan pompa hisap, kalibrasi nol (<em>fresh air zero</em>), bump test, dan penentuan zona bahaya.</td>
+              <td class="py-3.5 px-5 font-mono">5 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">3. Penggunaan Work SCBA &amp; EEBA</td>
+              <td class="py-3.5 px-5">Inspeksi silinder 300 bar, tes kebocoran masker (<em>positive pressure fit check</em>), donning/doffing di bawah target waktu, dan perhitungan udara sisa.</td>
+              <td class="py-3.5 px-5 font-mono">6 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">4. Prosedur Tanggap Darurat &amp; Rescue</td>
+              <td class="py-3.5 px-5">Pembacaan wind sock, muster point upwind, metode drag/carry korban H2S dengan SCBA, serta pertolongan pertama gangguan napas.</td>
+              <td class="py-3.5 px-5 font-mono">5 JP</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">5. Uji Kompetensi Asesor BNSP</td>
+              <td class="py-3.5 px-5">Verifikasi portofolio, ujian tertulis SKKNI, demonstrasi penggunaan gas detector &amp; SCBA, serta wawancara mendalam asesor LSP.</td>
+              <td class="py-3.5 px-5 font-mono">4 JP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5: Pricing -->
+    <section id="biaya" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-red-600 block mb-2">Investasi Sertifikasi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Estimasi Biaya Pelatihan Petugas Gas H2S Balikpapan 2026
+        </h2>
+        <div class="h-1 w-20 bg-red-500 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Rincian biaya menyesuaikan metode pelaksanaan (Blended vs Full Offline di Balikpapan), kelengkapan fasilitas praktik peralatan SCBA/Gas Detector, dan jumlah peserta perusahaan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-800 text-xs font-bold border border-blue-500/20">Hemat &amp; Fleksibel</span>
+            <h3 class="text-xl font-bold text-slate-900">Blended Pra-Uji + Asesmen BNSP</h3>
+            <div class="text-2xl font-extrabold font-serif text-slate-900">Rp5.500.000 – Rp6.800.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; 2 hari teori interaktif + 1 hari asesmen</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Cocok untuk pekerja berpengalaman di site lepas pantai atau kontraktor Kaltim yang butuh efisiensi waktu sebelum jadwal uji TUK.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info kelas Blended Petugas H2S BNSP wilayah Balikpapan.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition-colors"
+          >
+            Info Kelas Blended &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border-2 border-red-400 shadow-md flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-800 text-xs font-bold border border-red-500/20">Tatap Muka Balikpapan</span>
+            <h3 class="text-xl font-bold text-slate-900">Public Offline Balikpapan + Praktik</h3>
+            <div class="text-2xl font-extrabold font-serif text-red-700">Rp7.000.000 – Rp9.500.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; 3 hari penuh di hotel/TUK Balikpapan</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Pelatihan tatap muka menyeluruh termasuk peminjaman unit Work SCBA, EEBA, multi-gas detector, simulasi lapangan, dan uji kompetensi BNSP.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info jadwal Public Class Offline H2S BNSP di Balikpapan.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs text-center transition-colors shadow-md"
+          >
+            Daftar Kelas Offline Balikpapan &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-950 text-white border border-white/10 shadow-xl flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold border border-amber-400/30">Kontraktor &amp; Yard</span>
+            <h3 class="text-xl font-bold text-white">In-House Site / Yard Kaltim</h3>
+            <div class="text-2xl font-extrabold font-serif text-amber-400">Penawaran Paket Grup</div>
+            <p class="text-xs text-slate-400">Disesuaikan kuota peserta &amp; mobilisasi asesor</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Instruktur &amp; asesor TUK hadir langsung di Kariangau, Handil, Muara Badak, atau site perusahaan Anda dengan skenario risiko fasilitas Anda.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami mau minta proposal In-House H2S BNSP untuk kru kami di Balikpapan/Kaltim.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition-colors"
+          >
+            Minta Proposal In-House &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-3">
+          <h3 class="font-bold text-slate-900 text-base">Komponen yang Sudah Termasuk</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Biaya pembekalan, asesmen TUK, dan sertifikat resmi Petugas Gas H2S BNSP</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Modul pelatihan, training kit, dan pendampingan penyusunan portofolio pra-asesmen</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Penggunaan alat praktik (Work SCBA, EEBA, dan portable gas detector) pada kelas offline</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Konsumsi makan siang &amp; coffee break selama pelaksanaan kelas tatap muka</span></li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold text-slate-900 text-base">Ketentuan Tambahan &amp; Korporasi</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Belum termasuk tiket pesawat, penginapan hotel peserta luar kota, dan pajak (PPN)</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Tersedia harga khusus korporasi bagi pendaftaran kolektif (&ge; 3 peserta per batch)</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Tersedia surat keterangan proses sertifikasi bagi peserta yang sudah dinyatakan kompeten</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Requirements & Process -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-red-600 block mb-2">Syarat &amp; Alur Asesmen</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Persyaratan Peserta &amp; Tahapan Uji Kompetensi BNSP
+        </h2>
+        <div class="h-1 w-20 bg-red-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+          <h3 class="text-lg font-bold font-serif text-amber-400">Berkas Wajib Pra-Asesmen BNSP:</h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan KTP yang masih berlaku</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan ijazah terakhir (min. SLTA/SMK dengan pengalaman kerja relevan, atau D3/S1)</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Curriculum Vitae (CV) terbaru &amp; Surat Keterangan Pengalaman Kerja industri</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Pasfoto warna terbaru berlatar belakang merah</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat rekomendasi / penugasan perusahaan (jika dikirim korporasi)</span></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shrink-0">1</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Verifikasi Persyaratan &amp; Portofolio Kerja</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Kirim ijazah dan CV melalui WhatsApp agar tim kami memvalidasi kesesuaian pengalaman kerja dengan skema LSP migas/K3.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shrink-0">2</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Pembekalan Materi SKKNI &amp; Regulasi</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Peserta mengikuti pemaparan mendalam dari praktisi K3 migas berpengalaman mengenai toksikologi dan prosedur kerja aman.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shrink-0">3</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Simulasi Praktik Detektor Gas &amp; SCBA</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Latihan langsung pengoperasian alat uji gas dan pemasangan SCBA bertekanan tinggi sebelum menghadapi asesor.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shrink-0">4</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Uji Kompetensi TUK Bersama Asesor BNSP</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Asesmen objektif meliputi uji tulis, demonstrasi praktik alat, dan wawancara studi kasus kedaruratan H2S.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shrink-0">5</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Penerbitan Sertifikat Kompetensi Garuda Emas BNSP</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Peserta yang direkomendasikan Kompeten (K) menerima sertifikat resmi BNSP yang tercatat dalam sistem nasional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-red-600 block mb-2">Tanya Jawab Balikpapan</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Pertanyaan Seputar Pelatihan Petugas Gas H2S Balikpapan
+        </h2>
+        <div class="h-1 w-20 bg-red-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((item) => (
+          <details class="p-6 rounded-2xl bg-white border border-slate-200 group shadow-sm">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>{item.q}</span>
+              <span class="text-red-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="pt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-4">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 8: Related & Final CTA -->
+    <section class="space-y-8">
+      <div class="p-6 rounded-3xl bg-white border border-slate-200 space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Program &amp; Layanan Terkait Kalimantan Timur</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+          <li>
+            <a href="/pelatihan-petugas-gas-beracun-h2s-bnsp/" class="text-red-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Program Utama Petugas Gas H2S BNSP</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-pop-pertambangan-samarinda/" class="text-red-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan POP Pertambangan Samarinda</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-k3-ruang-terbatas-batam/" class="text-red-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan K3 Ruang Terbatas Batam</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-spill-response-b3-oil-spill-drill/" class="text-red-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Spill Response B3 &amp; Oil Spill</span>
+            </a>
+          </li>
+          <li>
+            <a href="/in-house-training-k3-jakarta-surabaya-balikpapan/" class="text-red-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Layanan In-House K3 Balikpapan &amp; Nasional</span>
+            </a>
+          </li>
+          <li>
+            <a href="/contractor-safety-management-system-csms/" class="text-red-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Konsultasi CSMS Kontraktor Migas</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white shadow-2xl border border-white/10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Amankan Sertifikasi H2S BNSP Kru Anda di Balikpapan
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Konsultasikan jadwal terdekat di Balikpapan, verifikasi berkas pengalaman kerja, atau minta proposal in-house training khusus proyek migas dan kilang Anda.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <a
+            href={waLink("Halo Kak, saya mau daftar Pelatihan Petugas Gas H2S BNSP di Balikpapan. Mohon info jadwal dan biayanya.")}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex px-6 py-3.5 rounded-xl bg-gradient-to-r from-red-500 to-orange-600 hover:from-red-400 hover:to-orange-500 text-slate-950 font-bold text-sm shadow-lg transition-all"
+          >
+            Chat WhatsApp Sekarang &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

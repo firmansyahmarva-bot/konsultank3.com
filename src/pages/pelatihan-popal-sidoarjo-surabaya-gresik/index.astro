@@ -1,0 +1,645 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
+
+const title = "Pelatihan POPAL PPPA Sidoarjo Surabaya Gresik BNSP";
+const description = "Pelatihan dan uji kompetensi POPAL serta PPPA BNSP di Sidoarjo, Surabaya, dan Gresik. Penuhi baku mutu IPAL industri Jawa Timur dan PROPER. Cek jadwal.";
+const canonical = "/pelatihan-popal-sidoarjo-surabaya-gresik/";
+const ogImage = "https://konsultank3.com/assets/images/training-session.jpg";
+
+const faqs = [
+  {
+    q: "Mengapa pabrik di Sidoarjo, Surabaya, dan Gresik wajib mensertifikasi operator IPAL dengan POPAL dan PPPA BNSP?",
+    a: "Industri pangan, kertas, tekstil, logam, dan kimia di kawasan Berbek, Rungkut (SIER), Waru, Krian, hingga Manyar/JIIPE Gresik diawasi ketat oleh DLH Provinsi Jawa Timur serta Dinas Lingkungan Hidup kabupaten/kota terkait pembuangan efluen ke Daerah Aliran Sungai Brantas. Permen LHK No. P.5/2014 dan PP No. 22/2021 mewajibkan IPAL dikelola personel bersertifikat kompetensi resmi BNSP."
+  },
+  {
+    q: "Apa beda kewenangan sertifikat POPAL BNSP dan PPPA BNSP untuk pengelolaan limbah cair pabrik?",
+    a: "POPAL (Penanggung Jawab Operasional Pengolahan Air Limbah) berada pada level operator/teknisi harian yang menjalankan pompa dosing, aerasi, dewatering lumpur B3, serta sampling harian bak IPAL. Sedangkan PPPA (Penanggung Jawab Pengendalian Pencemaran Air) berada pada level pengawas/manajerial yang merencanakan sistem pengendalian pencemaran air, menginterpretasi hasil laboratorium COD/BOD/TSS, dan menyusun pelaporan persetujuan teknis (Pertek) serta PROPER."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan POPAL dan PPPA BNSP di wilayah Sidoarjo, Surabaya, dan Gresik?",
+    a: "Estimasi investasi per peserta mencakup: skema POPAL BNSP berkisar Rp6.000.000–Rp8.500.000, sedangkan skema PPPA BNSP berkisar Rp7.500.000–Rp10.500.000 termasuk pembekalan SKKNI No. 187/2016, pendampingan penyusunan portofolio bukti kerja IPAL, serta uji kompetensi asesor resmi BNSP. Untuk tim lingkungan satu pabrik tersedia paket In-House Jawa Timur."
+  },
+  {
+    q: "Apa syarat pendidikan dan pengalaman kerja peserta POPAL dan PPPA BNSP?",
+    a: "Untuk POPAL minimal lulusan SMA/SMK sederajat dengan pengalaman kerja operasional IPAL minimal 1–2 tahun (atau D3/S1 Teknik Lingkungan/Kimia). Sedangkan untuk PPPA dipersyaratkan minimal D3/S1 Teknik Lingkungan/Kimia/Biologi dengan pengalaman relevan (atau SLTA dengan pengalaman manajerial pengendalian pencemaran air minimal 5 tahun)."
+  },
+  {
+    q: "Bagaimana jika peserta berasal dari Pasuruan (PIER) atau Mojokerto (Ngoro), apakah bisa ikut kelas Sidoarjo–Surabaya?",
+    a: "Tentu bisa. Kelas pembekalan dan TUK di koridor Surabaya–Sidoarjo–Gresik rutin diikuti oleh staf lingkungan dari kawasan PIER Pasuruan, Ngoro Industrial Park Mojokerto, hingga Lamongan dan Tuban. Tersedia pula skema Blended Learning untuk menghemat waktu perjalanan."
+  },
+  {
+    q: "Portofolio apa saja yang dinilai saat wawancara uji kompetensi POPAL dan PPPA?",
+    a: "Asesor LSP menilai dokumen riil dari fasilitas IPAL perusahaan Anda seperti diagram alir proses IPAL (WWTP), logbook debit harian serta pemakaian koagulan/flokulan, laporan hasil uji laboratorium eksternal terakreditasi (COD, BOD, TSS, pH, amoniak), manifest limbah lumpur IPAL, dan SOP tanggap darurat kebocoran."
+  },
+  {
+    q: "Berapa lama masa berlaku sertifikat kompetensi POPAL dan PPPA BNSP?",
+    a: "Sertifikat kompetensi berlogo Garuda Emas BNSP berlaku selama 3 (tiga) tahun dan dapat diperpanjang melalui asesmen ulang sebelum masa berlaku berakhir agar skor PROPER dan status kepatuhan Simpel KLHK perusahaan tetap terjaga."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Sertifikasi BNSP PPPA & POPAL", "item": "https://konsultank3.com/pelatihan-pppa-popal/" },
+        { "@type": "ListItem", "position": 3, "name": "POPAL Sidoarjo Surabaya Gresik", "item": "https://konsultank3.com/pelatihan-popal-sidoarjo-surabaya-gresik/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan & Sertifikasi POPAL & PPPA BNSP Sidoarjo, Surabaya & Gresik",
+      "description": description,
+      "courseCode": "POPAL-PPPA-JATIM",
+      "educationalCredentialAwarded": "Sertifikat Kompetensi BNSP POPAL / PPPA",
+      "occupationalCategory": "Operator IPAL / Penanggung Jawab Pengendalian Pencemaran Air",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "6000000",
+        "highPrice": "10500000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT28H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Industri Sidoarjo, Surabaya & Gresik",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Sidoarjo",
+            "addressRegion": "Jawa Timur",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & Uji Kompetensi POPAL PPPA Sidoarjo, Surabaya, Gresik dan Pasuruan",
+      "serviceType": "Sertifikasi Kompetensi Pengolahan Air Limbah Industri BNSP",
+      "url": "https://konsultank3.com/pelatihan-popal-sidoarjo-surabaya-gresik/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Sidoarjo",
+        "Berbek",
+        "Waru",
+        "Krian",
+        "Surabaya",
+        "SIER Rungkut",
+        "Margomulyo",
+        "Gresik",
+        "JIIPE Manyar",
+        "Pasuruan PIER",
+        "Mojokerto"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info jadwal dan biaya Sertifikasi POPAL / PPPA BNSP di Sidoarjo, Surabaya, dan Gresik."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan-pppa-popal/" class="hover:text-amber-400 transition-colors">BNSP PPPA &amp; POPAL</a>
+        <span>/</span>
+        <span class="text-slate-300">Sidoarjo, Surabaya &amp; Gresik</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 text-teal-300 text-xs font-semibold border border-teal-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse-glow"></span>
+            SKKNI No. 187/2016 &bull; Klaster Industri Sidoarjo &ndash; Surabaya &ndash; Gresik
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">POPAL &amp; PPPA BNSP Sidoarjo, Surabaya &amp; Gresik</span>
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Pembekalan uji kompetensi resmi BNSP untuk operator instalasi pengolahan air limbah (POPAL) dan manajer pengendalian pencemaran air (PPPA) bagi pabrik pangan, kertas, tekstil, logam, dan kimia di Jawa Timur.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, saya mau info jadwal dan biaya Sertifikasi POPAL / PPPA BNSP di Sidoarjo, Surabaya, Gresik.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal &amp; Biaya WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="/pelatihan-pppa-popal/"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Lihat Skema Induk PPPA/POPAL &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Skema Uji</span>
+              <p class="text-white font-bold text-sm">POPAL &amp; PPPA BNSP</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Kepatuhan</span>
+              <p class="text-white font-bold text-sm">Pertek &amp; PROPER KLHK</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi Program</span>
+              <p class="text-white font-bold text-sm">3 – 4 Hari + Asesmen</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Zona Industri</span>
+              <p class="text-teal-300 font-bold text-sm">SIER, Berbek, JIIPE</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/training-session.jpg"
+              alt="Pembekalan uji kompetensi POPAL dan PPPA BNSP untuk industri Sidoarjo Surabaya Gresik"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-teal-500 text-slate-950 mb-2">
+                Kepatuhan Efluen &amp; Baku Mutu IPAL
+              </span>
+              <div class="text-lg font-bold">Sertifikasi Operator &amp; Penanggung Jawab IPAL</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Pendampingan portofolio data uji laboratorium COD/BOD/TSS serta kesiapan wawancara asesor LSP Lingkungan.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-teal-500 text-slate-950 flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">Garuda Emas BNSP</div>
+              <div class="text-[10px] text-slate-400">Standar SKKNI 187/2016</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">💧</div>
+            <div>
+              <div class="text-xs font-bold text-white">Gerbangkertosusila</div>
+              <div class="text-[10px] text-slate-400">Sidoarjo &bull; Surabaya &bull; Gresik</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-teal-500/10 border-b border-teal-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-teal-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Wilayah Jawa Timur:
+      </span>
+      <span class="text-slate-700">Verifikasi portofolio IPAL dan pengelompokan skema POPAL vs PPPA dibimbing sebelum hari uji.</span>
+      <a
+        href={waLink("Halo Kak, boleh minta jadwal uji POPAL / PPPA BNSP wilayah Sidoarjo dan Surabaya?")}
+        target="_blank"
+        rel="noopener"
+        class="text-teal-800 hover:text-teal-950 font-bold underline ml-1"
+      >
+        Tanya Jadwal via WhatsApp &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Summary Table -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Sertifikasi IPAL Industri di Koridor Sidoarjo–Surabaya–Gresik</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Program <a href="/pelatihan-pppa-popal/" class="text-teal-700 font-bold underline">Sertifikasi BNSP PPPA &amp; POPAL</a> untuk kawasan industri <strong>Sidoarjo, Surabaya, Gresik, Pasuruan, dan Mojokerto</strong> menyiapkan operator IPAL (POPAL) serta penanggung jawab manajemen air limbah (PPPA) agar memenuhi ketentuan Pertek Pembuangan Air Limbah, pelaporan SIMPEL KLHK, dan inspeksi DLH Jawa Timur dalam waktu 3–4 hari pembekalan serta asesmen.
+        </p>
+        <div class="p-4 rounded-2xl bg-teal-50 border border-teal-200 text-xs text-teal-950 leading-relaxed">
+          <strong>Catatan PROPER &amp; DAS Brantas:</strong> Ketidakpatuhan pada kepemilikan sertifikat personel IPAL berisiko langsung menurunkan peringkat PROPER perusahaan dan menghambat persetujuan teknis izin pembuangan limbah cair.
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Informasi Utama</th>
+              <th class="py-3.5 px-5">Detail Program Jawa Timur</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Lembaga Penerbit</td>
+              <td class="py-3 px-5">BNSP RI (melalui LSP Bidang Lingkungan Resmi)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Skema Pilihan</td>
+              <td class="py-3 px-5">POPAL (Operator IPAL) &amp; PPPA (Penanggung Jawab)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Cakupan Wilayah</td>
+              <td class="py-3 px-5">Sidoarjo, Surabaya, Gresik, Pasuruan (PIER), Mojokerto</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Durasi Pembinaan</td>
+              <td class="py-3 px-5">3 – 4 Hari (Bimbingan SKKNI, Portofolio &amp; Asesmen)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Estimasi Biaya</td>
+              <td class="py-3 px-5 font-semibold text-teal-700">POPAL Rp6–8,5 jt &bull; PPPA Rp7,5–10,5 jt / peserta</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Masa Berlaku</td>
+              <td class="py-3 px-5">3 Tahun (Syarat Wajib PROPER &amp; Pertek KLHK)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Regional Industrial Context -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block mb-2">Konteks Lingkungan Industri Jatim</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Mengapa Pabrik di Sidoarjo, Surabaya &amp; Gresik Harus Menyiapkan Personel POPAL dan PPPA?
+        </h2>
+        <div class="h-1 w-20 bg-teal-600 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Segitiga industri Gerbangkertosusila memiliki kepadatan tinggi pabrik pengolahan makanan-minuman, kertas, farmasi, penyamakan, pelapisan logam (<em>electroplating</em>), hingga petrokimia—semuanya menghasilkan beban limbah cair organik maupun kimia yang dipantau berkala oleh regulator.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-teal-500/10 text-teal-700 flex items-center justify-center font-bold text-xl">🏭</div>
+          <h3 class="font-bold text-slate-900 text-lg">Klaster Sidoarjo &amp; Surabaya (SIER)</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pabrik di Berbek, Rungkut (SIER), Waru, Krian, Trosobo, dan Margomulyo wajib menjaga parameter efluen (BOD, COD, TSS, pH, minyak-lemak) sebelum disalurkan ke IPAL terpadu kawasan maupun badan air penerima.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-700 flex items-center justify-center font-bold text-xl">⚗️</div>
+          <h3 class="font-bold text-slate-900 text-lg">Klaster Gresik (JIIPE &amp; Manyar)</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Industri pupuk, semen, smelter, oleokimia, dan pelabuhan industri di Gresik wajib memiliki penanggung jawab PPPA untuk mengawal kepatuhan PP 22/2021 serta audit pengendalian pencemaran air berskala besar.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold text-xl">📊</div>
+          <h3 class="font-bold text-slate-900 text-lg">Penilaian PROPER &amp; Pelaporan Sparing</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Ketersediaan operator IPAL bersertifikat POPAL dan pengawas PPPA menjadi poin kepatuhan administratif sekaligus kesiapan teknis mengoperasikan pemantauan air limbah kontinyu (SPARING) bagi industri berdebit besar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: POPAL vs PPPA Role Matrix -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block mb-2">Perbandingan Skema Kompetensi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Memilih Skema POPAL atau PPPA Sesuai Jabatan Pabrik Anda
+        </h2>
+        <div class="h-1 w-20 bg-teal-600 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Untuk referensi unit kompetensi lengkap nasional, kunjungi halaman utama <a href="/pelatihan-pppa-popal/" class="text-teal-700 font-bold underline">Sertifikasi BNSP PPPA &amp; POPAL Air Limbah</a>. Gunakan tabel ringkas ini untuk menentukan peserta yang tepat dari pabrik Anda:
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Aspek Perbandingan</th>
+              <th class="py-3.5 px-5 bg-teal-950">POPAL (Operator IPAL)</th>
+              <th class="py-3.5 px-5 bg-slate-800">PPPA (Penanggung Jawab)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Fokus Pekerjaan</td>
+              <td class="py-3.5 px-5">Operasional harian bak equalisasi, aerasi, clarifier, dosing bahan kimia, dan sampling efluen</td>
+              <td class="py-3.5 px-5">Identifikasi sumber pencemaran air, penetapan target beban cemar, evaluasi efisiensi IPAL, &amp; tanggap darurat</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Target Jabatan</td>
+              <td class="py-3.5 px-5">Operator WWTP/IPAL, Teknisi Utility Lingkungan, Analis Laboratorium IPAL</td>
+              <td class="py-3.5 px-5">HSE Supervisor, Environmental Engineer, Utility Manager, Koordinator PROPER</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Syarat Pendidikan</td>
+              <td class="py-3.5 px-5">Min. SMA/SMK + pengalaman IPAL (1–2 tahun) atau D3/S1 relevan</td>
+              <td class="py-3.5 px-5">Min. D3/S1 Lingkungan/Kimia/Teknik + pengalaman, atau SLTA dengan pengalaman 5 tahun</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Kewajiban Pabrik</td>
+              <td class="py-3.5 px-5">Wajib ada pada setiap shift operasional unit instalasi pengolahan air limbah</td>
+              <td class="py-3.5 px-5">Wajib sebagai penanggung jawab legalitas lingkungan perusahaan</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Syllabus Summary -->
+    <section id="silabus" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block mb-2">Kurikulum Uji BNSP</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Materi Pembekalan SKKNI &amp; Klinik Portofolio IPAL
+        </h2>
+        <div class="h-1 w-20 bg-teal-600 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Tahap Pembinaan</th>
+              <th class="py-3.5 px-5">Materi &amp; Output Bukti Kerja</th>
+              <th class="py-3.5 px-5">Skema</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">1. Pemetaan Sumber &amp; Karakteristik Limbah</td>
+              <td class="py-3.5 px-5">Inventarisasi titik sumber air limbah produksi vs domestik, perhitungan neraca air, dan penetapan parameter kritis baku mutu Jatim.</td>
+              <td class="py-3.5 px-5">PPPA</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">2. Pengoperasian Unit Fisika–Kimia–Biologi IPAL</td>
+              <td class="py-3.5 px-5">Pengaturan pH netralisasi, koagulasi-flokulasi (<em>jar test</em>), kendali DO &amp; MLSS pada lumpur aktif, serta pengelolaan sludge B3.</td>
+              <td class="py-3.5 px-5">POPAL &amp; PPPA</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">3. Sampling &amp; Pemantauan Efluen</td>
+              <td class="py-3.5 px-5">Prosedur pengambilan contoh uji sesaat vs komposit sesuai SNI, pengawetan sampel, pembacaan laporan lab terakreditasi KAN, dan pelaporan SIMPEL.</td>
+              <td class="py-3.5 px-5">POPAL &amp; PPPA</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">4. Penanggulangan Kedaruratan &amp; Asesmen LSP</td>
+              <td class="py-3.5 px-5">SOP penanganan <em>overflow</em> atau kegagalan sistem biologi IPAL, penyusunan portofolio APL-01/02, dan uji tulis serta wawancara asesor BNSP.</td>
+              <td class="py-3.5 px-5">POPAL &amp; PPPA</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5: Pricing -->
+    <section id="biaya" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block mb-2">Transparansi Investasi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Estimasi Biaya Pelatihan POPAL &amp; PPPA Sidoarjo, Surabaya &amp; Gresik 2026
+        </h2>
+        <div class="h-1 w-20 bg-teal-600 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Tarif sudah mencakup pembekalan penuh SKKNI, asistensi penyusunan portofolio bukti kerja sebelum hari uji, biaya asesmen TUK resmi, hingga penerbitan sertifikat Garuda Emas BNSP.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-teal-500/10 text-teal-800 text-xs font-bold border border-teal-500/20">Level Operator IPAL</span>
+            <h3 class="text-xl font-bold text-slate-900">POPAL BNSP (Koridor Jatim)</h3>
+            <div class="text-2xl font-extrabold font-serif text-teal-700">Rp6.000.000 – Rp8.500.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; 3 hari pembinaan + asesmen</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Ideal bagi operator harian unit IPAL/WWTP pabrik di Sidoarjo, Surabaya, Gresik, Pasuruan, dan Mojokerto.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info jadwal dan biaya sertifikasi POPAL BNSP di Sidoarjo / Surabaya / Gresik.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs text-center transition-colors shadow-md"
+          >
+            Info Kelas POPAL &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border-2 border-slate-900 shadow-md flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-800 text-xs font-bold border border-blue-500/20">Level Manajerial &amp; PROPER</span>
+            <h3 class="text-xl font-bold text-slate-900">PPPA BNSP (Koridor Jatim)</h3>
+            <div class="text-2xl font-extrabold font-serif text-slate-900">Rp7.500.000 – Rp10.500.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; 3–4 hari pembinaan + asesmen</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Untuk Environmental Supervisor, Manager Utility, atau koordinator pelaporan baku mutu efluen perusahaan.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info jadwal dan biaya sertifikasi PPPA BNSP di Sidoarjo / Surabaya / Gresik.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition-colors"
+          >
+            Info Kelas PPPA &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-950 text-white border border-white/10 shadow-xl flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-emerald-400/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">Paket Tim Lingkungan</span>
+            <h3 class="text-xl font-bold text-white">Bundling POPAL + PPPA / In-House</h3>
+            <div class="text-2xl font-extrabold font-serif text-emerald-400">Penawaran Khusus Grup</div>
+            <p class="text-xs text-slate-400">Tersedia In-House di SIER, Berbek, PIER &amp; JIIPE</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Hemat biaya dengan mendaftarkan tim operator POPAL dan penanggung jawab PPPA sekaligus atau in-house di pabrik Anda.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami mau minta penawaran paket tim POPAL & PPPA atau In-House di pabrik Jawa Timur.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center transition-colors"
+          >
+            Minta Penawaran Tim &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Requirements & Flow -->
+    <section class="space-y-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+          <h3 class="text-lg font-bold font-serif text-amber-400">Berkas Pra-Asesmen LSP BNSP:</h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan KTP &amp; pasfoto warna latar belakang merah</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan ijazah terakhir &amp; Curriculum Vitae (CV) pengalaman kerja IPAL</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat rekomendasi / keterangan kerja dari perusahaan</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Portofolio operasional IPAL (diagram proses, logbook debit/bahan kimia, hasil uji lab)</span></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">1</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Verifikasi Skema (POPAL vs PPPA) &amp; Berkas</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Penyesuaian ijazah serta uraian tugas harian Anda di fasilitas IPAL agar tepat memilih skema uji.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">2</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Pembekalan SKKNI 187/2016 &amp; Bedah Kasus</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Pendalaman perhitungan beban pencemaran, operasi IPAL, serta pemenuhan baku mutu Jatim bersama instruktur lingkungan.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">3</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Bimbingan Portofolio &amp; Uji Kompetensi Asesor</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Klinik perapian bukti kerja dilanjutkan uji tulis, studi kasus, dan wawancara bersama asesor BNSP hingga terbit sertifikat resmi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block mb-2">Tanya Jawab Jawa Timur</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Pertanyaan Seputar Pelatihan POPAL &amp; PPPA Sidoarjo, Surabaya, Gresik
+        </h2>
+        <div class="h-1 w-20 bg-teal-600 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((item) => (
+          <details class="p-6 rounded-2xl bg-white border border-slate-200 group shadow-sm">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>{item.q}</span>
+              <span class="text-teal-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="pt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-4">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 8: Related & Final CTA -->
+    <section class="space-y-8">
+      <div class="p-6 rounded-3xl bg-white border border-slate-200 space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Program Induk &amp; Layanan Kepatuhan Terkait</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+          <li>
+            <a href="/pelatihan-pppa-popal/" class="text-teal-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Halaman Induk Sertifikasi BNSP PPPA &amp; POPAL</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-pppu-tangerang-bekasi-jakarta/" class="text-teal-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan PPPU &amp; POIPPU Emisi Udara BNSP</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-auditor-smk3-surabaya-sidoarjo-gresik/" class="text-teal-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Auditor SMK3 Surabaya Sidoarjo Gresik</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-k3-laboratorium-bnsp/" class="text-teal-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Petugas K3 Laboratorium BNSP</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-spill-response-b3-oil-spill-drill/" class="text-teal-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Spill Response Limbah B3</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan/" class="text-teal-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Katalog Lengkap Pelatihan K3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white shadow-2xl border border-white/10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Pastikan Pengelola IPAL Perusahaan Anda Tersertifikasi BNSP
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Kirimkan kebutuhan sertifikasi POPAL atau PPPA pabrik Anda di Sidoarjo, Surabaya, Gresik, Pasuruan, atau Mojokerto untuk jadwal dan pendampingan portofolio terdekat.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <a
+            href={waLink("Halo Kak, saya mau daftar Pelatihan POPAL / PPPA BNSP di Sidoarjo, Surabaya, atau Gresik.")}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-all"
+          >
+            Chat WhatsApp Sekarang &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

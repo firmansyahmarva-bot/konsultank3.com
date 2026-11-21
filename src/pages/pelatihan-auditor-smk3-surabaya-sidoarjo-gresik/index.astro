@@ -1,0 +1,629 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
+
+const title = "Pelatihan Auditor SMK3 Surabaya Sidoarjo Gresik Kemnaker";
+const description = "Pelatihan Auditor SMK3 resmi Kemnaker RI di Surabaya, Sidoarjo, dan Gresik. Bedah 166 kriteria PP 50/2012, simulasi audit pabrik, dan perpanjangan SKP.";
+const canonical = "/pelatihan-auditor-smk3-surabaya-sidoarjo-gresik/";
+const ogImage = "https://konsultank3.com/assets/images/smk3-audit.jpg";
+
+const faqs = [
+  {
+    q: "Perusahaan mana di Surabaya, Sidoarjo, dan Gresik yang wajib melaksanakan audit SMK3 PP No. 50 Tahun 2012?",
+    a: "Sesuai Pasal 5 PP No. 50 Tahun 2012, setiap perusahaan yang mempekerjakan paling sedikit 100 orang atau mempunyai tingkat potensi bahaya tinggi (seperti industri kimia, smelter, pupuk, baja, pembangkit listrik, pelabuhan, dan konstruksi berat di Surabaya, SIER Rungkut, Berbek Sidoarjo, JIIPE Gresik, hingga PIER Pasuruan) wajib menerapkan serta diaudit SMK3 melalui Lembaga Audit Independen Kemnaker."
+  },
+  {
+    q: "Apa syarat mutlak mengikuti Pelatihan Auditor SMK3 Kemnaker di Surabaya?",
+    a: "Peserta wajib berpendidikan minimal D3 atau S1 semua jurusan dan telah memiliki Sertifikat Pembinaan serta SKP Ahli K3 Umum Kemnaker RI yang masih aktif. Syarat administrasi tambahan mencakup scan KTP, ijazah terakhir, pasfoto latar belakang merah, dan surat penugasan pimpinan perusahaan."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan Auditor SMK3 Surabaya, Sidoarjo, dan Gresik?",
+    a: "Estimasi investasi per peserta meliputi: metode Blended Interactive Learning berkisar Rp4.800.000–Rp6.000.000, sedangkan kelas Public Offline di Surabaya (4 hari tatap muka, studi kasus 166 kriteria, konsumsi, serta ujian resmi) berkisar Rp6.500.000–Rp8.500.000. Tersedia pula paket In-House Tim Audit Internal untuk grup perusahaan Jawa Timur dan layanan perpanjangan SKP Auditor."
+  },
+  {
+    q: "Berapa kriteria audit SMK3 yang dibedah selama pelatihan di Surabaya?",
+    a: "Pelatihan membedah tuntas ketiga tingkat penerapan audit dalam Lampiran II PP No. 50/2012, yaitu Tingkat Awal (64 kriteria), Tingkat Transisi (122 kriteria), dan Tingkat Lanjutan (166 kriteria) yang terbagi ke dalam 12 elemen penilaian untuk meraih sertifikat Bendera Perak atau Bendera Emas."
+  },
+  {
+    q: "Apa beda sertifikat Bendera Perak dan Bendera Emas pada audit eksternal SMK3?",
+    a: "Tingkat pencapaian penerapan SMK3 berkisar 60%–84% pada kategori awal/transisi/lanjutan memperoleh Sertifikat Perak, sedangkan pencapaian 85%–100% tanpa temuan kategori kritikal berhak meraih Sertifikat Bendera Emas yang ditandatangani langsung oleh Menteri Ketenagakerjaan RI."
+  },
+  {
+    q: "Apakah bisa mengurus perpanjangan SKP Auditor SMK3 yang hampir habis di wilayah Jawa Timur?",
+    a: "Bisa. Masa berlaku SKP Auditor SMK3 adalah 3 tahun. Melalui halaman induk Auditor SMK3 Kemnaker kami, kami melayani verifikasi logbook portofolio audit internal selama 3 tahun terakhir, transparansi PNBP resmi PP 41/2023, serta pengurusan perpanjangan SKP melalui sistem TemanK3."
+  },
+  {
+    q: "Bisakah menyelenggarakan In-House Training Auditor Internal SMK3 di pabrik Pasuruan, Mojokerto, atau Gresik?",
+    a: "Sangat bisa. Kami melayani in-house workshop audit internal berbasis fasilitas riil pabrik di Surabaya, Sidoarjo, Gresik, Pasuruan (PIER), Mojokerto (Ngoro), hingga Malang dan Tuban agar seluruh tim P2K3 dan kepala departemen siap menghadapi audit eksternal."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Auditor SMK3 Kemnaker", "item": "https://konsultank3.com/pelatihan-auditor-smk3-kemnaker/" },
+        { "@type": "ListItem", "position": 3, "name": "Auditor SMK3 Surabaya Sidoarjo Gresik", "item": "https://konsultank3.com/pelatihan-auditor-smk3-surabaya-sidoarjo-gresik/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan Auditor SMK3 Kemnaker RI Surabaya, Sidoarjo & Gresik",
+      "description": description,
+      "courseCode": "AUD-SMK3-SBY-JATIM",
+      "educationalCredentialAwarded": "Sertifikat & SKP Auditor SMK3 Kemnaker RI",
+      "occupationalCategory": "Auditor Internal SMK3 / Lead Auditor PP 50/2012",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "4800000",
+        "highPrice": "8500000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT40H",
+        "location": {
+          "@type": "Place",
+          "name": "Koridor Korporasi Surabaya, Sidoarjo & Gresik",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Surabaya",
+            "addressRegion": "Jawa Timur",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan Auditor SMK3 & In-House Audit Jawa Timur",
+      "serviceType": "Pembinaan Auditor SMK3 & Pendampingan Audit PP 50/2012",
+      "url": "https://konsultank3.com/pelatihan-auditor-smk3-surabaya-sidoarjo-gresik/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Surabaya",
+        "SIER Rungkut",
+        "Tanjung Perak",
+        "Sidoarjo",
+        "Berbek",
+        "Gresik",
+        "JIIPE Manyar",
+        "Pasuruan PIER",
+        "Mojokerto Ngoro",
+        "Malang",
+        "Tuban"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info jadwal dan biaya Pelatihan Auditor SMK3 Kemnaker di Surabaya / Sidoarjo / Gresik."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan-auditor-smk3-kemnaker/" class="hover:text-amber-400 transition-colors">Auditor SMK3 Kemnaker</a>
+        <span>/</span>
+        <span class="text-slate-300">Surabaya, Sidoarjo &amp; Gresik</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-300 text-xs font-semibold border border-amber-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse-glow"></span>
+            PP No. 50 Tahun 2012 &bull; Sentra Korporasi Surabaya &ndash; Sidoarjo &ndash; Gresik
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">Auditor SMK3 Surabaya, Sidoarjo &amp; Gresik</span> Kemnaker RI
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Pembekalan resmi 166 kriteria audit SMK3 dan simulasi temuan lapangan bagi manajemen HSE, sekretaris P2K3, dan calon auditor internal korporasi di kawasan industri Surabaya, Sidoarjo, Gresik, Pasuruan, hingga Mojokerto menuju pencapaian Bendera Emas.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, saya mau info jadwal dan biaya Pelatihan Auditor SMK3 Kemnaker di Surabaya, Sidoarjo, Gresik.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi Jadwal &amp; Biaya WA</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="/pelatihan-auditor-smk3-kemnaker/"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Program Induk &amp; Perpanjangan SKP &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Skala Audit</span>
+              <p class="text-white font-bold text-sm">64, 122 &amp; 166 Kriteria</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Prasyarat</span>
+              <p class="text-white font-bold text-sm">Sertifikat AK3 Umum</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi Pembinaan</span>
+              <p class="text-white font-bold text-sm">4 Hari (40 JP)</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Wilayah Industri</span>
+              <p class="text-amber-400 font-bold text-sm">Jatim &amp; Surabaya Raya</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/smk3-audit.jpg"
+              alt="Tim Auditor SMK3 melakukan verifikasi kepatuhan mesin dan dokumen pabrik di Jawa Timur"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500 text-slate-950 mb-2">
+                Audit Eksternal &amp; Internal PP 50/2012
+              </span>
+              <div class="text-lg font-bold">Persiapan Bendera Emas Korporasi Jatim</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Kuasai klasifikasi temuan kritikal, mayor, dan minor sebelum penilaian Lembaga Audit Independen.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">Sertifikat &amp; SKP Kemnaker</div>
+              <div class="text-[10px] text-slate-400">Auditor Resmi PP 50/2012</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">📋</div>
+            <div>
+              <div class="text-xs font-bold text-white">Toolkit 166 Kriteria</div>
+              <div class="text-[10px] text-slate-400">Surabaya &bull; Sidoarjo &bull; Gresik</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-amber-500/10 border-b border-amber-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-amber-950">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Jawa Timur:
+      </span>
+      <span class="text-slate-700">Tersedia kelas Blended, Public Offline Surabaya, In-House Audit Internal, dan Perpanjangan SKP.</span>
+      <a
+        href={waLink("Halo Kak, boleh minta jadwal batch Auditor SMK3 Surabaya terdekat dan informasi biayanya?")}
+        target="_blank"
+        rel="noopener"
+        class="text-amber-800 hover:text-amber-950 font-bold underline ml-1"
+      >
+        Cek Jadwal via WhatsApp &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Summary Table -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Kesiapan Audit SMK3 Perusahaan di Surabaya Raya</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          Melalui program induk <a href="/pelatihan-auditor-smk3-kemnaker/" class="text-amber-700 font-bold underline">Pembinaan Auditor SMK3 Kemnaker RI</a>, para pemegang SKP Ahli K3 Umum di <strong>Surabaya, Sidoarjo, Gresik, Pasuruan, dan Mojokerto</strong> dibekali kemampuan mengaudit seluruh 12 elemen dan 166 kriteria <strong>PP No. 50 Tahun 2012</strong> selama 4 hari (40 JP) untuk memastikan sistem manajemen K3 pabrik siap menghadapi audit eksternal maupun pemenuhan tender BUMN.
+        </p>
+        <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 leading-relaxed">
+          <strong>Referensi Kerja Auditor:</strong> Lengkapi persiapan audit internal pabrik Anda dengan membaca <a href="/panduan-penerapan-smk3/" class="font-bold underline">Panduan Penerapan SMK3</a> serta mengunduh <a href="/downloads/Checklist-Audit-SMK3-166-Kriteria.html" class="font-bold underline">Checklist Audit SMK3 166 Kriteria</a>.
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Informasi Utama</th>
+              <th class="py-3.5 px-5">Detail Program Jawa Timur</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Lembaga Penerbit</td>
+              <td class="py-3 px-5">Kementerian Ketenagakerjaan RI (via PJK3 Resmi)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Syarat Prasyarat</td>
+              <td class="py-3 px-5">D3/S1 + Sertifikat &amp; SKP Ahli K3 Umum Aktif</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Wilayah Sasaran</td>
+              <td class="py-3 px-5">Surabaya, Sidoarjo, Gresik, Pasuruan, Mojokerto, Malang</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Durasi Pembinaan</td>
+              <td class="py-3 px-5">4 Hari (40 Jam Pelajaran + Simulasi Audit &amp; Ujian)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Estimasi Biaya</td>
+              <td class="py-3 px-5 font-semibold text-amber-700">Blended Rp4,8–6 jt &bull; Offline Surabaya Rp6,5–8,5 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Masa Berlaku SKP</td>
+              <td class="py-3 px-5">3 Tahun (Mendukung layanan perpanjangan SKP Kemnaker)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: East Java Industrial Hubs -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block mb-2">Ekosistem Korporasi Jawa Timur</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Mengapa Korporasi di Surabaya, Sidoarjo &amp; Gresik Membutuhkan Auditor Internal Bersertifikat?
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Surabaya Raya adalah pusat kantor regional BUMN, pabrik padat karya, pelabuhan peti kemas Tanjung Perak, serta industri berat dan kimia di Jawa Timur. Audit internal SMK3 yang dilakukan oleh personel bersertifikat memastikan temuan kritikal diselesaikan sebelum auditor independen datang menilai.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold text-xl">🏢</div>
+          <h3 class="font-bold text-slate-900 text-lg">Kantor Pusat &amp; Pelabuhan Surabaya</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Perusahaan konstruksi, logistik Tanjung Perak, galangan kapal, dan manufaktur di SIER Rungkut serta Margomulyo menggunakan sertifikasi SMK3 sebagai syarat mutlak kepatuhan PP 50/2012 maupun tender proyek nasional.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center font-bold text-xl">🏭</div>
+          <h3 class="font-bold text-slate-900 text-lg">Klaster Padat Karya Sidoarjo–Pasuruan</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Ratusan pabrik makanan, kertas, alas kaki, dan furnitur di Sidoarjo, PIER Pasuruan, dan Ngoro Mojokerto yang mempekerjakan &gt; 100 karyawan wajib diaudit berkala tiap 3 tahun sekali.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-700 flex items-center justify-center font-bold text-xl">⚒️</div>
+          <h3 class="font-bold text-slate-900 text-lg">Industri Risiko Tinggi Gresik &amp; Tuban</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Kawasan industri berat JIIPE Manyar, pabrik semen, pupuk, smelter, dan oleokimia di Gresik wajib memenuhi level lanjutan <strong>166 kriteria audit</strong> tanpa temuan kategori kritikal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Audit Tiers & 12 Elements Matrix -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block mb-2">Tingkat Penilaian PP 50/2012</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Klasifikasi Audit SMK3 (64, 122 &amp; 166 Kriteria) &amp; Kategori Temuan
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Tingkat Audit SMK3</th>
+              <th class="py-3.5 px-5">Jumlah Kriteria</th>
+              <th class="py-3.5 px-5">Peruntukan Perusahaan</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Tingkat Awal</td>
+              <td class="py-3.5 px-5 font-mono font-bold">64 Kriteria</td>
+              <td class="py-3.5 px-5">Perusahaan kecil atau tingkat potensi bahaya rendah yang baru memulai audit formal SMK3</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Tingkat Transisi</td>
+              <td class="py-3.5 px-5 font-mono font-bold">122 Kriteria</td>
+              <td class="py-3.5 px-5">Perusahaan manufaktur menengah dengan risiko operasional sedang–tinggi</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-amber-800">Tingkat Lanjutan</td>
+              <td class="py-3.5 px-5 font-mono font-bold text-amber-700">166 Kriteria</td>
+              <td class="py-3.5 px-5">Perusahaan besar atau kategori bahaya tinggi (kimia, energi, konstruksi berat, smelter, logistik besar)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Syllabus Highlights -->
+    <section id="silabus" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block mb-2">Kurikulum Pembinaan</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Struktur Materi Pelatihan Auditor SMK3 40 Jam Pelajaran
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Sesi Pembinaan</th>
+              <th class="py-3.5 px-5">Topik Pendalaman &amp; Praktik Audit</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">1. Landasan Hukum &amp; Mekanisme Audit PP 50/2012</td>
+              <td class="py-3.5 px-5">Peran auditor internal vs eksternal, kode etik auditor, dan integrasi dengan sistem manajemen ISO 45001.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">2. Bedah Tuntas 12 Elemen &amp; 166 Kriteria</td>
+              <td class="py-3.5 px-5">Pembuktian dokumen objektif pada elemen kebijakan, perencanaan, pengendalian perancangan, kontraktor, P3K/kebakaran, hingga tinjauan manajemen.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">3. Teknik Wawancara, Sampling &amp; Klasifikasi Temuan</td>
+              <td class="py-3.5 px-5">Membedakan temuan Minor, Mayor, dan Kritikal; teknik penulisan Non-Conformity Report (NCR) serta rapat pembukaan dan penutupan audit.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">4. Simulasi Studi Kasus Pabrik &amp; Ujian Kemnaker</td>
+              <td class="py-3.5 px-5">Latihan penghitungan persentase skor audit (Perak vs Emas) serta evaluasi ujian tertulis dan presentasi laporan audit.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5: Pricing -->
+    <section id="biaya" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block mb-2">Transparansi Investasi</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Estimasi Biaya Pelatihan Auditor SMK3 Surabaya, Sidoarjo &amp; Gresik 2026
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-800 text-xs font-bold border border-blue-500/20">Fleksibel Daring</span>
+            <h3 class="text-xl font-bold text-slate-900">Blended Interactive Learning</h3>
+            <div class="text-2xl font-extrabold font-serif text-slate-900">Rp4.800.000 – Rp6.000.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; 4 hari interaktif (40 JP)</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Cocok bagi Ahli K3 Umum di Surabaya, Gresik, Malang, dan kota sekitar Jawa Timur yang membutuhkan efisiensi jadwal.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info kelas Blended Auditor SMK3 Kemnaker wilayah Surabaya/Jatim.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition-colors"
+          >
+            Info Kelas Blended &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border-2 border-amber-400 shadow-md flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-800 text-xs font-bold border border-amber-500/20">Tatap Muka Surabaya</span>
+            <h3 class="text-xl font-bold text-slate-900">Public Offline Surabaya</h3>
+            <div class="text-2xl font-extrabold font-serif text-amber-700">Rp6.500.000 – Rp8.500.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; Hotel / Pusat Pelatihan Surabaya</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Pembinaan tatap muka intensif lengkap dengan simulasi kasus 166 kriteria, toolkit kerja audit Excel, konsumsi, dan penerbitan Sertifikat &amp; SKP Kemnaker.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info jadwal Public Offline Auditor SMK3 Kemnaker di Surabaya.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition-colors shadow-md"
+          >
+            Daftar Kelas Surabaya &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-950 text-white border border-white/10 shadow-xl flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-emerald-400/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">Korporasi &amp; SKP Renewal</span>
+            <h3 class="text-xl font-bold text-white">In-House &amp; Perpanjangan SKP</h3>
+            <div class="text-2xl font-extrabold font-serif text-emerald-400">Penawaran Khusus Grup</div>
+            <p class="text-xs text-slate-400">Tersedia pendampingan pra-audit 166 kriteria di pabrik</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Bentuk tim auditor internal korporasi langsung di fasilitas Anda di Surabaya, Sidoarjo, atau Gresik, maupun urus perpanjangan SKP Auditor via TemanK3.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami mau minta proposal In-House Auditor SMK3 atau konsultasi perpanjangan SKP di Jawa Timur.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center transition-colors"
+          >
+            Minta Penawaran Korporasi &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Requirements & Flow -->
+    <section class="space-y-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+          <h3 class="text-lg font-bold font-serif text-amber-400">Syarat Administrasi Auditor SMK3:</h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan Sertifikat &amp; SKP Ahli K3 Umum Kemnaker RI yang masih aktif</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan ijazah terakhir minimal D3 atau S1 semua jurusan</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan KTP aktif dan pasfoto formal berlatar belakang merah</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat Tugas / Rekomendasi pimpinan perusahaan untuk pengurusan SKP</span></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">1</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Verifikasi Prasyarat SKP Ahli K3 Umum</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Memastikan masa berlaku SKP AK3U aktif sehingga permohonan Auditor SMK3 langsung diterima sistem TemanK3.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">2</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Pembinaan 40 JP &amp; Workshop Studi Kasus</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Membedah pembuktian dokumen 166 kriteria, teknik wawancara audit, serta penulisan temuan NCR.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">3</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Ujian Evaluasi &amp; Terbit Sertifikat + SKP Kemnaker</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Lulus ujian resmi menghasilkan Sertifikat Auditor dan SKP berwenang memimpin audit internal perusahaan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block mb-2">Tanya Jawab Jawa Timur</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Pertanyaan Seputar Pelatihan Auditor SMK3 Surabaya, Sidoarjo &amp; Gresik
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((item) => (
+          <details class="p-6 rounded-2xl bg-white border border-slate-200 group shadow-sm">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>{item.q}</span>
+              <span class="text-amber-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="pt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-4">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 8: Related & Final CTA -->
+    <section class="space-y-8">
+      <div class="p-6 rounded-3xl bg-white border border-slate-200 space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Program Induk &amp; Alat Kerja Auditor</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+          <li>
+            <a href="/pelatihan-auditor-smk3-kemnaker/" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Halaman Induk Auditor SMK3 &amp; Perpanjangan SKP</span>
+            </a>
+          </li>
+          <li>
+            <a href="/panduan-penerapan-smk3/" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Panduan Penerapan SMK3 PP 50/2012</span>
+            </a>
+          </li>
+          <li>
+            <a href="/downloads/Checklist-Audit-SMK3-166-Kriteria.html" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Download Checklist Audit SMK3 166 Kriteria</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-popal-sidoarjo-surabaya-gresik/" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan POPAL &amp; PPPA Sidoarjo Surabaya Gresik</span>
+            </a>
+          </li>
+          <li>
+            <a href="/konsultasi-integrated-management-system/" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Konsultasi Integrasi SMK3 &amp; ISO 45001</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan/" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Katalog Lengkap Pelatihan K3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white shadow-2xl border border-white/10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Siapkan Tim Auditor Internal Perusahaan Anda di Jawa Timur
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Dapatkan jadwal batch Surabaya terdekat, penawaran In-House Audit Internal pabrik di Sidoarjo/Gresik, atau bantuan perpanjangan SKP Auditor Kemnaker.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <a
+            href={waLink("Halo Kak, saya mau daftar Pelatihan Auditor SMK3 Kemnaker di Surabaya, Sidoarjo, atau Gresik.")}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-bold text-sm shadow-lg transition-all"
+          >
+            Chat WhatsApp Sekarang &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

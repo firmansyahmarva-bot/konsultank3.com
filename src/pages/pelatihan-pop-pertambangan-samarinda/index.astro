@@ -1,0 +1,717 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
+
+const title = "Pelatihan POP Pertambangan Samarinda Resmi BNSP ESDM";
+const description = "Pelatihan & sertifikasi Pengawas Operasional Pertama (POP) Pertambangan BNSP di Samarinda & Kaltim. Bimbingan 8 unit Kepmen 1827 & logbook KTT.";
+const canonical = "/pelatihan-pop-pertambangan-samarinda/";
+const ogImage = "https://konsultank3.com/assets/images/pelatihan-pop-pertambangan-samarinda-hero.jpg";
+
+const faqs = [
+  {
+    q: "Apa syarat pendidikan dan pengalaman kerja untuk ikut POP Pertambangan di Samarinda?",
+    a: "Mengacu standar kompetensi pengawas operasional minerba dan LSP sektor pertambangan: lulusan Sarjana (S1/S2/S3) wajib memiliki pengalaman kerja minimal 1 tahun di pertambangan, Diploma 3 (D3) minimal 3 tahun, dan lulusan SMA/SMK sederajat minimal 10 tahun pengalaman operasional tambang yang dibuktikan surat keterangan resmi perusahaan atau KTT."
+  },
+  {
+    q: "Berapa estimasi biaya Pelatihan & Uji Kompetensi POP Pertambangan di Samarinda?",
+    a: "Estimasi biaya untuk format Blended/Online pra-uji + asesmen TUK BNSP berkisar Rp5.500.000–Rp7.000.000 per peserta. Sementara Public Class Offline di Samarinda (termasuk fasilitas ruang hotel, pendampingan portofolio, konsumsi, serta asesmen LSP) berkisar Rp7.500.000–Rp11.000.000 per peserta, dengan paket khusus korporasi untuk in-house site tambang."
+  },
+  {
+    q: "Apa saja 8 unit kompetensi wajib yang diujikan pada sertifikasi POP BNSP?",
+    a: "Delapan unit kompetensi POP mencakup: (1) Peraturan perundang-undangan keselamatan pertambangan, (2) Tugas & tanggung jawab pengawas operasional, (3) Pertemuan keselamatan terencana (P5M/Safety Talk), (4) Investigasi kecelakaan tambang, (5) Identifikasi bahaya & pengendalian risiko (IBPR), (6) Pembuatan Job Safety Analysis (JSA), (7) Perlindungan lingkungan tambang, dan (8) Inspeksi keselamatan pertambangan."
+  },
+  {
+    q: "Bagaimana alur pengesahan Kartu Pengawas Operasional oleh Kepala Teknik Tambang (KTT)?",
+    a: "Setelah peserta dinyatakan Kompeten dan menerima sertifikat POP resmi BNSP/ESDM, perusahaan pemegang IUP/IUPK/IUJP mengajukan pengesahan pengawas operasional kepada KTT sesuai Kepmen ESDM 1827 K/30/MEM/2018. Sertifikat POP merupakan syarat mutlak bagi foreman dan supervisor lapangan sebelum menerima kartu pengesahan KTT."
+  },
+  {
+    q: "Apakah penyelenggaraan POP di Samarinda juga melayani site Kutai Kartanegara, Sangatta, dan Berau?",
+    a: "Ya. Selain kelas publik di Kota Samarinda, tim instruktur dan master asesor LSP mitra kami secara rutin melaksanakan in-house training dan TUK sewaktu di site tambang Tenggarong, Loa Janan, Sebulu, Sangatta (Kutai Timur), Berau, hingga Kutai Barat menyesuaikan rotasi roster kerja."
+  },
+  {
+    q: "Dokumen bukti kerja (portofolio) apa saja yang harus disiapkan sebelum asesmen POP?",
+    a: "Peserta perlu menyiapkan bukti nyata dari site tempat bekerja seperti notulen/absensi P5M, form JSA yang pernah disusun, lembar inspeksi pit atau hauling road, laporan IBPR area kerja, serta contoh laporan awal investigasi insiden/nearmiss. Tim kami akan membimbing penyusunan portofolio tersebut sebelum sesi wawancara asesor."
+  },
+  {
+    q: "Apakah sertifikat POP Pertambangan BNSP berlaku untuk kontraktor jasa pertambangan (IUJP)?",
+    a: "Ya. Baik pengawas dari perusahaan pemilik konsesi (IUP/IUPK) maupun kontraktor penambangan, hauling, blasting, dan pemeliharaan alat berat pemegang IUJP di Kalimantan Timur wajib memiliki pengawas operasional berlisensi POP sesuai regulasi SMKP Minerba."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://konsultank3.com/" },
+        { "@type": "ListItem", "position": 2, "name": "POP Pertambangan BNSP", "item": "https://konsultank3.com/pelatihan-pop-pertambangan-bnsp/" },
+        { "@type": "ListItem", "position": 3, "name": "POP Pertambangan Samarinda", "item": "https://konsultank3.com/pelatihan-pop-pertambangan-samarinda/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Pelatihan & Sertifikasi POP Pertambangan Samarinda Resmi BNSP - ESDM",
+      "description": description,
+      "courseCode": "POP-SMD-BNSP",
+      "educationalCredentialAwarded": "Sertifikat Kompetensi Pengawas Operasional Pertama (POP) BNSP",
+      "occupationalCategory": "Frontline Mining Supervisor / Pengawas Operasional Pertama",
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "IDR",
+        "lowPrice": "5500000",
+        "highPrice": "11000000",
+        "offerCount": "2"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Blended"],
+        "courseWorkload": "PT36H",
+        "location": {
+          "@type": "Place",
+          "name": "Pusat Pelatihan & Uji Kompetensi Tambang Samarinda",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Samarinda",
+            "addressRegion": "Kalimantan Timur",
+            "addressCountry": "ID"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Layanan Pelatihan & In-House POP Pertambangan Samarinda dan Kalimantan Timur",
+      "serviceType": "Sertifikasi Kompetensi Pengawas Operasional Pertama (POP) BNSP",
+      "url": "https://konsultank3.com/pelatihan-pop-pertambangan-samarinda/",
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Konsultan K3 Indonesia",
+        "url": "https://konsultank3.com",
+        "telephone": "+62-895-1025-3435"
+      },
+      "areaServed": [
+        "Samarinda",
+        "Tenggarong",
+        "Kutai Kartanegara",
+        "Kutai Timur",
+        "Sangatta",
+        "Bontang",
+        "Berau",
+        "Kutai Barat",
+        "Kalimantan Timur"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={pageSchema}
+  presetMessage="Halo Kak, saya mau info jadwal dan biaya Pelatihan POP Pertambangan BNSP di Samarinda."
+>
+  <header class="w-full relative bg-slate-950 text-white pt-12 pb-20 border-b border-white/10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+
+      <nav class="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/pelatihan-pop-pertambangan-bnsp/" class="hover:text-amber-400 transition-colors">POP Pertambangan BNSP</a>
+        <span>/</span>
+        <span class="text-slate-300">Samarinda &amp; Kaltim</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold border border-amber-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse-glow"></span>
+            Kepmen ESDM No. 1827 K/2018 &bull; Sentra Tambang Samarinda &amp; Kukar
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Pelatihan &amp; Sertifikasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">POP Pertambangan Samarinda</span> Resmi BNSP
+          </h1>
+
+          <p class="text-slate-300 font-sans text-base sm:text-lg leading-relaxed max-w-2xl">
+            Pembekalan intensif 8 unit kompetensi Pengawas Operasional Pertama (POP) dan pendampingan penyusunan portofolio JSA, IBPR, serta logbook inspeksi untuk foreman dan supervisor tambang batubara di Samarinda, Kutai Kartanegara, Sangatta, dan Berau.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href={waLink("Halo Kak, saya mau info jadwal dan biaya Pelatihan POP Pertambangan BNSP di Samarinda.")}
+              target="_blank"
+              rel="noopener"
+              class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-bold text-sm shadow-xl shadow-amber-500/20 transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <span>Konsultasi POP Samarinda</span>
+              <span>&rarr;</span>
+            </a>
+            <a
+              href="#biaya"
+              class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all"
+            >
+              Cek Biaya &amp; Syarat Masa Kerja
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-center sm:text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Regulasi Wajib</span>
+              <p class="text-white font-bold text-sm">Kepmen ESDM 1827</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Materi Uji</span>
+              <p class="text-white font-bold text-sm">8 Unit Kompetensi</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Durasi Program</span>
+              <p class="text-white font-bold text-sm">4 Hari (Pembekalan + Uji)</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-0.5">Pengesahan</span>
+              <p class="text-emerald-400 font-bold text-sm">Syarat Sah Kartu KTT</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+            <img
+              src="/assets/images/pelatihan-pop-pertambangan-samarinda-hero.jpg"
+              alt="Pengawas operasional tambang POP melakukan pengawasan pit terbuka di Samarinda Kalimantan Timur"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500 text-slate-950 mb-2">
+                Good Mining Practice &bull; SMKP Minerba
+              </span>
+              <div class="text-lg font-bold">Kualifikasi Pengawas Lini Depan Tambang</div>
+              <p class="text-xs text-slate-300 mt-1">
+                Kunci kepatuhan inspeksi pit, jalan hauling, K3 alat berat, dan pengesahan Kepala Teknik Tambang.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -left-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-lg">✓</div>
+            <div>
+              <div class="text-xs font-bold text-white">Sertifikat Garuda BNSP</div>
+              <div class="text-[10px] text-slate-400">Diakui Ditjen Minerba</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-5 p-3.5 rounded-2xl bg-slate-900/90 border border-white/15 backdrop-blur-md shadow-xl items-center gap-3">
+            <div class="text-xl">⛏️</div>
+            <div>
+              <div class="text-xs font-bold text-white">In-House Site Tambang</div>
+              <div class="text-[10px] text-slate-400">Samarinda &bull; Kukar &bull; Sangatta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside aria-label="Informasi Pembaruan & Jadwal" class="w-full bg-amber-500/10 border-b border-amber-500/20 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+      <span class="inline-flex items-center gap-1.5 font-bold text-amber-900">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Diperbarui November 2026 &bull; Kelas Samarinda &amp; Kalimantan Timur:
+      </span>
+      <span class="text-slate-700">Verifikasi syarat ijazah &amp; masa kerja tambang gratis sebelum mendaftar uji BNSP.</span>
+      <a
+        href={waLink("Halo Kak, boleh bantu cek syarat masa kerja saya untuk daftar POP Pertambangan Samarinda?")}
+        target="_blank"
+        rel="noopener"
+        class="text-amber-900 hover:text-amber-700 font-bold underline ml-1"
+      >
+        Cek Syarat via WhatsApp &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- Section 1: Quick Answer + Summary Table -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block">Ringkasan Jawaban Cepat</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-900">Apa Itu Pelatihan POP Pertambangan Samarinda?</h2>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          <strong>Pelatihan POP Pertambangan Samarinda</strong> adalah pembekalan teknis 8 unit kompetensi dan uji sertifikasi profesi <strong>BNSP</strong> bagi pengawas lini depan (<em>foreman/supervisor</em>) di perusahaan tambang dan kontraktor jasa pertambangan Kalimantan Timur. Sertifikat POP merupakan syarat wajib pengesahan pengawas operasional oleh Kepala Teknik Tambang (KTT) sesuai <strong>Kepmen ESDM No. 1827 K/2018</strong>.
+        </p>
+        <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 leading-relaxed">
+          <strong>Keterkaitan Audit SMKP:</strong> Menempatkan pengawas lapangan tanpa sertifikat POP resmi menjadi temuan kritis dalam evaluasi <a href="/pendampingan-smkp-minerba/" class="font-bold underline">SMKP Minerba</a> dan pengawasan Inspektur Tambang ESDM.
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Informasi Utama</th>
+              <th class="py-3.5 px-5">Detail POP Pertambangan Samarinda</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Lembaga Penerbit</td>
+              <td class="py-3 px-5">BNSP RI (melalui LSP Pertambangan / ESDM Resmi)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Dasar Regulasi</td>
+              <td class="py-3 px-5">Permen ESDM 26/2018 &amp; Kepmen ESDM 1827 K/30/MEM/2018</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Durasi Pembinaan</td>
+              <td class="py-3 px-5">4 Hari (3 hari pembekalan &amp; portofolio + 1 hari asesmen)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Metode Pelaksanaan</td>
+              <td class="py-3 px-5">Public Class Offline Samarinda, Blended, dan In-House Site</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Estimasi Biaya</td>
+              <td class="py-3 px-5 font-semibold text-amber-700">Blended Rp5,5–7 jt &bull; Offline Samarinda Rp7,5–11 jt</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 font-bold text-slate-900">Target Jabatan</td>
+              <td class="py-3 px-5">Foreman, Pit Supervisor, Maintenance Spv, Safety Officer Tambang</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Samarinda & Kaltim Mining Corridor -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-2">Konteks Pertambangan Kaltim</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Kebutuhan Pengawas Berkompetensi POP di Koridor Tambang Samarinda &amp; Kutai
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Samarinda dan Kabupaten Kutai Kartanegara menjadi jantung aktivitas pertambangan batubara di Kalimantan Timur, tempat puluhan pemegang konsesi IUP/PKP2B serta ratusan kontraktor alat berat, pengangkutan (<em>hauling</em>), dan jetty tongkang beroperasi. Tingginya dinamika operasi pit menuntut pengawas lini depan yang cakap secara regulasi dan teknis.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold text-xl">📜</div>
+          <h3 class="font-bold text-slate-900 text-lg">Mandatori Pengesahan KTT</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Sesuai Lampiran II Kepmen ESDM 1827 K/2018, setiap pengawas operasional tidak sah melaksanakan tugas pengawasan sebelum diangkat KTT dengan syarat utama memegang sertifikat kompetensi POP yang berlaku.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center font-bold text-xl">🚛</div>
+          <h3 class="font-bold text-slate-900 text-lg">Pengendalian Risiko Pit &amp; Hauling</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pengawasan lereng pit, genangan air tambang, <em>dumping point</em>, dan interaksi alat berat di jalan tambang membutuhkan pengawas yang menguasai metode IBPR, JSA, dan inspeksi lapangan terstruktur sebelum shift dimulai.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-700 flex items-center justify-center font-bold text-xl">📊</div>
+          <h3 class="font-bold text-slate-900 text-lg">Kesiapan Audit SMKP Minerba</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Kontraktor IUJP yang diaudit pemilik IUP wajib memenuhi rasio pengawas operasional bersertifikat. Gunakan juga <a href="/artikel/checklist-audit-internal-smkp-minerba/" class="text-amber-700 font-semibold underline">Checklist Audit Internal SMKP Minerba</a> kami untuk verifikasi kepatuhan site.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-400">Jangkauan Wilayah Site</span>
+            <h3 class="text-xl sm:text-2xl font-bold font-serif text-white mt-1">Cakupan Kelas Samarinda &amp; In-House Site Tambang Kaltim</h3>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami mau adakan In-House Training POP BNSP langsung di site tambang kami di Kalimantan Timur.")}
+            target="_blank"
+            rel="noopener"
+            class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-xs transition-colors whitespace-nowrap self-start md:self-auto"
+          >
+            Ajukan In-House Site &rarr;
+          </a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-slate-300">
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Kota Samarinda &amp; Palaran</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Loa Janan, Loa Kulu &amp; Tenggarong</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Sebulu &amp; Muara Kaman (Kukar)</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Sanga-Sanga &amp; Muara Jawa</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Sangatta &amp; Bengalon (Kutai Timur)</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Tanjung Redeb (Berau)</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Melak &amp; Kutai Barat</div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 font-medium">Paser &amp; Penajam Paser Utara</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Legal Basis & Experience Matrix -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-2">Syarat Wajib Kepmen ESDM 1827</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Matriks Pendidikan &amp; Pengalaman Kerja Peserta Uji POP
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Sebelum mendaftar uji kompetensi di Samarinda, pastikan latar belakang pendidikan dan masa kerja Anda di sektor pertambangan mineral dan batubara memenuhi ambang minimum berikut sesuai <strong>Permen ESDM No. 26 Tahun 2018</strong> dan ketentuan LSP terkait.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">Jenjang Pendidikan Terakhir</th>
+              <th class="py-3.5 px-5">Minimal Pengalaman Tambang</th>
+              <th class="py-3.5 px-5">Bukti Pendukung Wajib</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">SMA / SMK / Sederajat</td>
+              <td class="py-3.5 px-5 font-semibold text-amber-700">Minimal 10 Tahun di pertambangan</td>
+              <td class="py-3.5 px-5">Surat keterangan pengalaman kerja resmi &amp; ijazah legalisir</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Diploma 3 (D3) Semua Jurusan</td>
+              <td class="py-3.5 px-5 font-semibold text-amber-700">Minimal 3 Tahun di pertambangan</td>
+              <td class="py-3.5 px-5">Surat keterangan masa kerja tambang, CV, &amp; ijazah D3</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Sarjana (S1 / D4 / S2 / S3)</td>
+              <td class="py-3.5 px-5 font-semibold text-emerald-700">Minimal 1 Tahun di pertambangan</td>
+              <td class="py-3.5 px-5">Surat pengalaman kerja dari HRD/KTT tambang &amp; ijazah S1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: 8 Competency Units + Practical Photo -->
+    <section id="silabus" class="space-y-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block">8 Unit Kompetensi SKKNI</span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+            Silabus Pembekalan &amp; Workshop Portofolio Lapangan
+          </h2>
+          <div class="h-1 w-20 bg-amber-500 rounded-full"></div>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Banyak peserta gagal saat uji asesor bukan karena kurang pengalaman di pit, melainkan karena belum terbiasa menyusun portofolio bukti kerja sesuai bahasa kompetensi SKKNI. Sesi pelatihan kami di Samarinda melatih peserta menyusun dokumen P5M, IBPR, JSA, dan laporan inspeksi secara terstruktur.
+          </p>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Perusahaan tambang yang sedang menyiapkan sistem kepatuhan kontraktor dan dokumen lengkap dapat melihat layanan terkait pada halaman <a href="/penyusunan-dokumen-smkp-kontraktor-tambang/" class="text-amber-700 font-bold underline">Penyusunan Dokumen SMKP Kontraktor Tambang</a>.
+          </p>
+        </div>
+
+        <div class="lg:col-span-6">
+          <figure class="rounded-3xl overflow-hidden border border-slate-200 shadow-lg bg-white">
+            <img
+              src="/assets/images/pelatihan-pop-pertambangan-samarinda-praktik.jpg"
+              alt="Diskusi penyusunan peta risiko IBPR dan portofolio POP pertambangan di Samarinda"
+              class="w-full h-auto object-cover"
+            />
+            <figcaption class="px-5 py-3 text-xs text-slate-600 bg-slate-50 border-t border-slate-200">
+              Pendampingan penyusunan dokumen portofolio IBPR, JSA, dan inspeksi area tambang sebelum uji asesor BNSP.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+          <thead class="bg-slate-900 text-white uppercase text-xs">
+            <tr>
+              <th class="py-3.5 px-5">No</th>
+              <th class="py-3.5 px-5">Unit Kompetensi Wajib POP</th>
+              <th class="py-3.5 px-5">Output Portofolio / Praktik</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="py-3 px-5 font-mono">01</td><td class="py-3 px-5 font-bold text-slate-900">Melaksanakan Peraturan Perundang-undangan Keselamatan Pertambangan</td><td class="py-3 px-5">Pemetaan kewajiban Kepmen ESDM 1827 &amp; peran pengawas operasional</td></tr>
+            <tr><td class="py-3 px-5 font-mono">02</td><td class="py-3 px-5 font-bold text-slate-900">Melaksanakan Tugas &amp; Tanggung Jawab Keselamatan Pertambangan</td><td class="py-3 px-5">Uraian akuntabilitas pengawas pada area pit, bengkel, dan jalan angkut</td></tr>
+            <tr><td class="py-3 px-5 font-mono">03</td><td class="py-3 px-5 font-bold text-slate-900">Melaksanakan Pertemuan Keselamatan Pertambangan Terencana</td><td class="py-3 px-5">Rencana &amp; simulasi P5M / Safety Talk terstruktur dengan daftar hadir</td></tr>
+            <tr><td class="py-3 px-5 font-mono">04</td><td class="py-3 px-5 font-bold text-slate-900">Melaksanakan Investigasi Kecelakaan</td><td class="py-3 px-5">Analisis penyebab langsung/dasar insiden tambang &amp; tindakan korektif</td></tr>
+            <tr><td class="py-3 px-5 font-mono">05</td><td class="py-3 px-5 font-bold text-slate-900">Melaksanakan Identifikasi Bahaya &amp; Pengendalian Risiko (IBPR)</td><td class="py-3 px-5">Matriks IBPR/HIRADC area operasi dengan hierarki pengendalian</td></tr>
+            <tr><td class="py-3 px-5 font-mono">06</td><td class="py-3 px-5 font-bold text-slate-900">Melaksanakan Peraturan Keselamatan Kerja &amp; Membuat JSA</td><td class="py-3 px-5">Dokumen Job Safety Analysis (JSA) untuk pekerjaan kritis/non-rutin</td></tr>
+            <tr><td class="py-3 px-5 font-mono">07</td><td class="py-3 px-5 font-bold text-slate-900">Melaksanakan Perlindungan Lingkungan Pertambangan</td><td class="py-3 px-5">Pengelolaan limbah B3 oli bekas, kolam pengendapan (settling pond), &amp; debu</td></tr>
+            <tr><td class="py-3 px-5 font-mono">08</td><td class="py-3 px-5 font-bold text-slate-900">Melaksanakan Inspeksi Keselamatan Pertambangan</td><td class="py-3 px-5">Checklist inspeksi terencana pit/workshop beserta tindak lanjut temuan</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5: Pricing -->
+    <section id="biaya" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-2">Investasi Program</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Estimasi Biaya Pelatihan POP Pertambangan Samarinda 2026
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Biaya investasi mencakup pembekalan instruktur berpengalaman pertambangan minerba, pendampingan penyusunan portofolio hingga siap uji, serta asesmen sertifikasi oleh asesor resmi BNSP.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-800 text-xs font-bold border border-blue-500/20">Efisien Roster Site</span>
+            <h3 class="text-xl font-bold text-slate-900">Blended / Online Pra-Uji BNSP</h3>
+            <div class="text-2xl font-extrabold font-serif text-slate-900">Rp5.500.000 – Rp7.000.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; 3 hari pembekalan + 1 hari asesmen</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Solusi tepat bagi pengawas di site terpencil Kaltim tanpa harus meninggalkan operasi lapangan dalam waktu lama.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info kelas Blended POP Pertambangan BNSP wilayah Samarinda.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition-colors"
+          >
+            Info Kelas Blended &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border-2 border-amber-400 shadow-md flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-800 text-xs font-bold border border-amber-500/20">Tatap Muka Samarinda</span>
+            <h3 class="text-xl font-bold text-slate-900">Public Offline Samarinda (Hotel + TUK)</h3>
+            <div class="text-2xl font-extrabold font-serif text-amber-700">Rp7.500.000 – Rp11.000.000</div>
+            <p class="text-xs text-slate-500">Estimasi per peserta &bull; 4 hari intensif tatap muka</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Pembinaan tatap muka di hotel mitra Samarinda, klinik penyusunan logbook &amp; IBPR intensif, serta uji kompetensi langsung di Tempat Uji Kompetensi.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, saya mau info jadwal Public Class Offline POP Pertambangan di Samarinda.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition-colors shadow-md"
+          >
+            Daftar Kelas Samarinda &rarr;
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-950 text-white border border-white/10 shadow-xl flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="px-3 py-1 rounded-full bg-emerald-400/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">Khusus Pemegang IUP &amp; IUJP</span>
+            <h3 class="text-xl font-bold text-white">In-House Site Tambang Kaltim</h3>
+            <div class="text-2xl font-extrabold font-serif text-emerald-400">Penawaran Paket Grup</div>
+            <p class="text-xs text-slate-400">Hemat biaya mobilisasi kru ke kota</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Instruktur dan asesor LSP hadir langsung ke basecamp tambang Anda di Kutai Kartanegara, Sangatta, atau Berau.
+            </p>
+          </div>
+          <a
+            href={waLink("Halo Kak, kami mau minta proposal In-House Training & Uji POP Pertambangan langsung di site kami.")}
+            target="_blank"
+            rel="noopener"
+            class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center transition-colors"
+          >
+            Minta Proposal Site Tambang &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-3">
+          <h3 class="font-bold text-slate-900 text-base">Sudah Termasuk dalam Investasi</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Pembekalan 8 unit kompetensi, template portofolio (IBPR, JSA, P5M), dan e-modul</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Biaya pendaftaran asesmen dan uji kompetensi bersama asesor resmi BNSP</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Penerbitan Sertifikat Kompetensi POP resmi berlogo Garuda Emas BNSP</span></li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">✓</span><span>Ruang kelas representatif, makan siang, dan coffee break untuk peserta kelas offline</span></li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold text-slate-900 text-base">Pengecualian &amp; Skema Perusahaan</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Tidak termasuk penginapan hotel peserta luar Samarinda (bisa dibantu booking opsional) dan PPN</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Pengiriman &ge; 5 pengawas dari satu perusahaan berhak atas penyesuaian harga grup</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">&bull;</span><span>Verifikasi dokumen administrasi dilakukan 100% tuntas sebelum pembayaran batch</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Requirements & 5-Step Flow -->
+    <section class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-2">Administrasi &amp; Tahapan Uji</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Kelengkapan Berkas &amp; Alur Sertifikasi POP BNSP
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white border border-white/10 space-y-5">
+          <h3 class="text-lg font-bold font-serif text-amber-400">Daftar Berkas Administrasi POP:</h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan KTP aktif dan pasfoto formal latar merah</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Scan ijazah pendidikan terakhir sesuai syarat masa kerja</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Surat Keterangan Pengalaman Kerja resmi dari perusahaan tambang</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Curriculum Vitae (CV) riwayat penugasan operasional tambang</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span>Portofolio bukti kerja lapangan (JSA, IBPR, inspeksi, P5M)</span></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">1</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Pra-Verifikasi Ijazah &amp; Masa Kerja Tambang</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Kami cek kelayakan syarat pengalaman kerja Anda lebih dulu agar tidak tertolak saat verifikasi LSP.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">2</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Pembekalan 8 Unit Kompetensi Kepmen 1827</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Mengikuti kelas pembekalan teori keselamatan pertambangan bersama praktisi industri minerba.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">3</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Klinik Penyusunan Portofolio &amp; APL-01/APL-02</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Bimbingan merapikan formulir asesmen mandiri serta dokumen bukti kerja nyata dari site.</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">4</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Uji Kompetensi Tulis, Observasi &amp; Wawancara</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Menjalani evaluasi langsung bersama Asesor Kompetensi berlisensi BNSP hingga rekomendasi Kompeten (K).</p>
+            </div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">5</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Penerbitan Sertifikat BNSP &amp; Pengesahan KTT</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Sertifikat POP terbit resmi untuk diajukan sebagai pengesahan Kartu Pengawas Operasional oleh KTT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: FAQ -->
+    <section id="faq" class="space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-2">Tanya Jawab Samarinda</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          Pertanyaan Seputar Pelatihan POP Pertambangan Samarinda
+        </h2>
+        <div class="h-1 w-20 bg-amber-500 mt-3 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((item) => (
+          <details class="p-6 rounded-2xl bg-white border border-slate-200 group shadow-sm">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>{item.q}</span>
+              <span class="text-amber-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="pt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-4">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 8: Related & Final CTA -->
+    <section class="space-y-8">
+      <div class="p-6 rounded-3xl bg-white border border-slate-200 space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">Program &amp; Panduan Pertambangan Terkait</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+          <li>
+            <a href="/pelatihan-pop-pertambangan-bnsp/" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Program Utama POP Pertambangan BNSP</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-h2s-balikpapan/" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Petugas Gas H2S Balikpapan</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pendampingan-smkp-minerba/" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pendampingan Audit SMKP Minerba</span>
+            </a>
+          </li>
+          <li>
+            <a href="/artikel/checklist-audit-internal-smkp-minerba/" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Checklist Audit Internal SMKP Minerba</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan-investigasi-kecelakaan-kerja-rca-scat/" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Pelatihan Investigasi Kecelakaan RCA &amp; SCAT</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pelatihan/" class="text-amber-700 hover:underline font-medium flex items-center gap-1.5">
+              <span>&rarr;</span><span>Katalog Lengkap Pelatihan K3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white shadow-2xl border border-white/10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Siapkan Pengawas Tambang Anda Lulus Uji POP BNSP
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Kirimkan data pendidikan dan masa kerja tim Anda melalui WhatsApp untuk cek kelayakan syarat POP serta jadwal batch Samarinda terdekat.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <a
+            href={waLink("Halo Kak, saya mau daftar Pelatihan POP Pertambangan BNSP di Samarinda. Mohon cek berkas dan jadwalnya.")}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-bold text-sm shadow-lg transition-all"
+          >
+            Chat WhatsApp Sekarang &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
