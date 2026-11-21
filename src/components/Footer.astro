@@ -193,10 +193,24 @@ const linkGroups = [
   }
 
   .footer-links h3 { margin: 0; font-size: .95rem; font-weight: 700; }
-  .footer-links ul { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; margin: 0; padding: 0; list-style: none; }
+  .footer-links ul { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
   .footer-links a, .footer-legal { color: #d5e2ef; font-size: .875rem; }
-  .footer-links a { display: inline-block; padding-block: .3rem; }
-  .footer-links a:hover, .footer-legal a:hover, .footer-brand:hover {
+  .footer-links a, .footer-legal nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: .45rem .8rem;
+    border: 1px solid rgb(171 207 245 / .28);
+    border-radius: .6rem;
+    background: rgb(138 184 234 / .10);
+    color: #e9f3ff;
+  }
+  .footer-links a:is(:hover, :focus-visible), .footer-legal nav a:is(:hover, :focus-visible) {
+    border-color: rgb(171 207 245 / .6);
+    background: rgb(138 184 234 / .22);
+    color: #fff;
+  }
+  .footer-brand:hover {
     color: #fff;
     text-decoration: underline;
     text-underline-offset: .25em;
