@@ -1,4 +1,11 @@
 export const pillars = {
+  'pendampingan-smkp-minerba': {
+    id: 'pendampingan-smkp-minerba',
+    title: 'Penerapan SMKP Minerba',
+    shortName: 'Keselamatan Pertambangan',
+    path: '/pendampingan-smkp-minerba/',
+    anchorText: 'Pendampingan Penerapan SMKP Minerba di Kalimantan'
+  },
   'program-pengendalian-kebisingan': {
     id: 'program-pengendalian-kebisingan',
     title: 'Program Pengendalian Kebisingan Industri',

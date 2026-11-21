@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { waLink } from '../../data/contact.js';
+import { smkpServices } from '../../data/smkp-services.js';
+
+export function getStaticPaths() {
+  return smkpServices.map(service => ({
+    params: { smkpService: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const canonical = `/${service.slug}/`;
+const url = new URL(canonical, Astro.site).href;
+const related = smkpServices.filter(item => item.slug !== service.slug);
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': new URL('/#organization', Astro.site).href,
+      name: 'Konsultan K3 Indonesia',
+      url: Astro.site?.href,
+    },
+    {
+      '@type': 'Service',
+      '@id': `${url}#service`,
+      name: service.title,
+      description: service.description,
+      url,
+      areaServed: { '@type': 'Place', name: 'Kalimantan' },
+      provider: { '@id': new URL('/#organization', Astro.site).href },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Beranda', item: Astro.site?.href },
+        { '@type': 'ListItem', position: 2, name: service.title, item: url },
+      ],
+    },
+  ],
+};
+const whatsapp = waLink(service.message);
+---
+<BaseLayout title={service.seoTitle} description={service.description} canonical={canonical} schema={schema} presetMessage={service.message}>
+  <header class="bg-slate-950 text-white">
+    <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+      <nav aria-label="Breadcrumb" class="mb-7 text-sm text-slate-300">
+        <a class="underline underline-offset-4" href="/">Beranda</a>
+        <span aria-hidden="true" class="mx-2">/</span>
+        <span aria-current="page">{service.title}</span>
+      </nav>
+      <h1 class="max-w-4xl font-serif text-4xl leading-tight sm:text-6xl">{service.title}</h1>
+      <p class="mt-5 max-w-3xl text-lg leading-relaxed text-slate-200">{service.intro}</p>
+      <p class="mt-5 text-sm font-semibold text-amber-300">{service.areas}</p>
+      <a class="mt-7 inline-flex rounded-xl bg-emerald-700 px-5 py-3 font-bold text-white hover:bg-emerald-600" href={whatsapp} target="_blank" rel="noopener noreferrer">{service.cta}</a>
+    </div>
+  </header>
+
+  <div class="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-8 lg:grid-cols-[minmax(0,1fr)_17rem]">
+    <div class="min-w-0 space-y-9">
+      {service.sections.map(([heading, body]) => (
+        <section>
+          <h2 class="font-serif text-2xl font-bold text-slate-950 sm:text-3xl">{heading}</h2>
+          <p class="mt-3 leading-relaxed">{body}</p>
+        </section>
+      ))}
+
+      <section aria-labelledby="contoh">
+        <h2 id="contoh" class="font-serif text-2xl font-bold text-slate-950 sm:text-3xl">{service.example.heading}</h2>
+        <p id="contoh-keterangan" class="mt-3 mb-4 text-sm text-slate-600">Ilustrasi format keluaran. Isi dan penanggung jawab disesuaikan dengan lingkup site.</p>
+        <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white focus-visible:outline-2 focus-visible:outline-emerald-700" tabindex="0" role="region" aria-labelledby="contoh">
+          <table class="w-full min-w-150 text-left text-sm" aria-labelledby="contoh" aria-describedby="contoh-keterangan">
+            <thead class="bg-slate-900 text-white">
+              <tr>{service.example.columns.map(column => <th scope="col" class="p-3">{column}</th>)}</tr>
+            </thead>
+            <tbody>
+              {service.example.rows.map(row => (
+                <tr class="border-t border-slate-200 align-top">
+                  {row.map((cell, index) => index === 0
+                    ? <th scope="row" class="p-3 font-semibold">{cell}</th>
+                    : <td class="p-3">{cell}</td>)}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl font-bold text-slate-950 sm:text-3xl">Koordinasi dan kunjungan site di Kalimantan</h2>
+        <p class="mt-3 leading-relaxed">{service.local}</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl font-bold text-slate-950 sm:text-3xl">Pertanyaan sebelum meminta penawaran</h2>
+        <div class="mt-4 space-y-3">
+          {service.faqs.map(([question, answer]) => (
+            <details class="rounded-xl border border-slate-200 bg-white p-4">
+              <summary class="cursor-pointer font-semibold text-slate-950">{question}</summary>
+              <p class="mt-3 leading-relaxed">{answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <p class="text-sm text-slate-600">
+        Acuan lingkup mencakup <a class="font-semibold text-emerald-800 underline underline-offset-4" href="https://jdih.esdm.go.id/peraturan/Keputusan%20Menteri%20ESDM%20Nomor%201827%20K%2030%20MEM%202018.pdf">Lampiran IV Kepmen ESDM 1827 K/30/MEM/2018</a>. Ketentuan teknis dan persyaratan site dikonfirmasi saat penetapan lingkup.
+      </p>
+    </div>
+
+    <aside class="self-start space-y-7 rounded-2xl border border-slate-200 bg-white p-5 lg:sticky lg:top-24">
+      <section>
+        <h2 class="font-serif text-xl font-bold text-slate-950">Siapkan lingkup proyek</h2>
+        <p class="mt-3 text-sm leading-relaxed">Sampaikan nama perusahaan, lokasi site, kebutuhan utama, dan target waktu.</p>
+        <a class="mt-4 block rounded-xl bg-emerald-700 px-4 py-3 text-center text-sm font-bold text-white hover:bg-emerald-600" href={whatsapp} target="_blank" rel="noopener noreferrer">{service.cta}</a>
+        <a class="mt-3 block text-sm font-semibold text-emerald-800 underline underline-offset-4" href="/kontak/">Hubungi tim melalui halaman kontak</a>
+      </section>
+      <nav aria-label="Layanan terkait">
+        <h2 class="font-serif text-xl font-bold text-slate-950">Layanan terkait</h2>
+        <ul class="mt-3 space-y-3 text-sm font-semibold text-emerald-800">
+          {related.map(item => <li><a class="underline underline-offset-4" href={`/${item.slug}/`}>{item.title}</a></li>)}
+          <li><a class="underline underline-offset-4" href={service.related[0]}>{service.related[1]}</a></li>
+          {service.slug === 'pendampingan-audit-internal-smkp-minerba' && (
+            <li><a class="underline underline-offset-4" href="/artikel/checklist-audit-internal-smkp-minerba/">Checklist audit internal SMKP Minerba</a></li>
+          )}
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</BaseLayout>

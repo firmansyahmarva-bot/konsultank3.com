@@ -13,7 +13,8 @@ const artikel = defineCollection({
       'program-pengendalian-kebisingan',
       'alat-pelindung-diri',
       'penyakit-akibat-kerja',
-      'panduan-penerapan-smk3'
+      'panduan-penerapan-smk3',
+      'pendampingan-smkp-minerba'
     ]),
     updated: z.coerce.date(),
     draft: z.boolean().default(false),
